@@ -1,10 +1,10 @@
 /datum/job/roguetown/monk
-	title = "Acolyte"
+	title = "Cleric"
 	flag = MONK
 	department_flag = CHURCHMEN
 	faction = "Station"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 10
+	spawn_positions = 10
 
 	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_ACOLYTE_PATRONS
@@ -20,7 +20,7 @@
 /datum/outfit/job/roguetown/monk
 	name = "Acolyte"
 	jobtype = /datum/job/roguetown/monk
-	allowed_patrons = list(/datum/patron/divine/pestra, /datum/patron/divine/astrata, /datum/patron/divine/eora) //Eora content from Stonekeep
+	allowed_patrons = ALL_ACOLYTE_PATRONS
 
 /datum/outfit/job/roguetown/monk/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -58,11 +58,6 @@
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
-		if(/datum/patron/divine/eora) //Eora content from Stonekeep
-			head = /obj/item/clothing/head/roguetown/eoramask
-			neck = /obj/item/clothing/neck/roguetown/psicross/eora
-			shoes = /obj/item/clothing/shoes/roguetown/sandals
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
 		else
 			head = /obj/item/clothing/head/roguetown/roguehood/astrata
 			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
@@ -82,7 +77,6 @@
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("perception", -1)
-		H.cmode_music = 'sound/music/combat_clergy.ogg'
 
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells(H)
