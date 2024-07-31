@@ -214,6 +214,8 @@
 
 /mob/living/carbon/human/species/goblin/after_creation()
 	..()
+	//gives gender and genitals
+	makesexy()
 	if(src.dna && src.dna.species)
 		src.dna.species.soundpack_m = new /datum/voicepack/male/goblin()
 		src.dna.species.soundpack_f = new /datum/voicepack/male/goblin()
@@ -426,11 +428,7 @@
 	soundloop.stop()
 	. = ..()
 
-/mob/living/carbon/human/species/goblin/sexy
-	name = "sexable goblin"
-
-/mob/living/carbon/human/species/goblin/sexy/after_creation()
-	. = ..()
+/mob/living/carbon/human/species/goblin/proc/makesexy()
 	defiant = 0
 	bypasssexable = TRUE
 	//cant find a way to recolor the sprite accessories for genitals, fml -vide
