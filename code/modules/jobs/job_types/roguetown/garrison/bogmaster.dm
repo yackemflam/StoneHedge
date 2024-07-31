@@ -79,8 +79,8 @@
 
 /obj/effect/proc_holder/spell/self/convertrole/bog
 	name = "Recruit Hedgeknight"
-	new_role = "Bog Guard"
-	recruitment_faction = "Bog Guard"
+	new_role = "Hedge Knight"
+	recruitment_faction = "Hedge Knight"
 	recruitment_message = "Serve the bog, %RECRUIT!"
 	accept_message = "FOR THE HEDGE!"
 	refuse_message = "I refuse."

@@ -1,5 +1,5 @@
 /datum/job/roguetown/puritan
-	title = "Inquisitor"
+	title = "Witcher"
 	flag = PURITAN
 	department_flag = CHURCHMEN
 	faction = "Station"
@@ -39,7 +39,7 @@
 	L.mind.add_antag_datum(new_antag)
 
 /datum/outfit/job/roguetown/puritan
-	name = "Inquisitor"
+	name = "Witcher"
 	jobtype = /datum/job/roguetown/puritan
 	allowed_patrons = list(/datum/patron/old_god)
 

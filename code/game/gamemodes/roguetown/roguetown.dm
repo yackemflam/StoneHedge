@@ -195,7 +195,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list("King",
 	"Queen Consort",
 	"Merchant",
-	"Priest",
+	"Prophet",
 	"Knight")
 	var/num_bandits = 0
 	if(num_players() >= 10)
@@ -254,8 +254,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 
 
 /datum/game_mode/chaosmode/proc/pick_aspirants()
-	var/list/possible_jobs_aspirants = list("Royal Heir", "Guard Captain", "Steward", "Hand", "Knight")
-	var/list/possible_jobs_helpers = list("Guard Captain", "Royal Heir", "Hand",  "Steward", "Knight")
+	var/list/possible_jobs_aspirants = list("Royal Heir", "Watchmen Captain", "Steward", "Hand", "Knight")
+	var/list/possible_jobs_helpers = list("Watchmen Captain", "Royal Heir", "Hand",  "Steward", "Knight")
 	var/list/rolesneeded = list("Aspirant","Loyalist","Supporter")
 
 	antag_candidates = get_players_for_role(ROLE_ASPIRANT)
@@ -357,19 +357,19 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list(
 	"King",
 	"Queen Consort",
-	"Dungeoneer",
-	"Inquisitor",
+	"Beastmaster",
+	"Witcher",
 	"Confessor",
 	"Watchman",
 	"Man at Arms",
+	"Prophet",
 	"Priest",
-	"Acolyte",
-	"Cleric",
-	"Guard Captain",
-	"Court Magician",
+	"Priest",
+	"Watchmen Captain",
+	"Magician",
 	"Templar",
-	"Bog Guard",
-	"Bog Master",
+	"Hedge Knight",
+	"Hedgemaster",
 	"Knight"
 	)
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
@@ -404,21 +404,21 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list(
 	"King",
 	"Queen Consort",
-	"Dungeoneer",
-	"Inquisitor",
+	"Beastmaster",
+	"Witcher",
 	"Confessor",
 	"Watchman",
 	"Man at Arms",
+	"Prophet",
 	"Priest",
-	"Acolyte",
-	"Cleric",
-	"Guard Captain",
-	"Court Magician",
+	"Priest",
+	"Watchmen Captain",
+	"Magician",
 	"Templar",
-	"Bog Guard",
-	"Bog Master",
+	"Hedge Knight",
+	"Hedgemaster",
 	"Knight",
-	"Mortician",
+	"Gravesinger",
 	"Desert Rider",
 	"Desert Rider Mercenary",
 	"Grenzelhoft Mercenary"

@@ -47,7 +47,7 @@
 				index = H.real_name
 			S.name = "bogman tabard ([index])"
 /datum/outfit/job/roguetown/bogguardsman
-	name = "Bog Guard"
+	name = "Hedge Knight"
 	/// Whether or not we are a crossbowman
 	var/is_crossbowman = FALSE
 

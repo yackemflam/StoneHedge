@@ -1,5 +1,5 @@
 /datum/job/roguetown/lady
-	title = "Consort"
+	title = "Queen Consort"
 	flag = LADY
 	department_flag = NOBLEMEN
 	faction = "Station"

@@ -77,13 +77,13 @@
 	name = "guard captain's key"
 	desc = "This key belongs to the captain of the guard."
 	icon_state = "cheesekey"
-	lockid = "sheriff"
+	lockid = "watchmen captain"
 
 /obj/item/roguekey/bailiff
 	name = "bailiff's key"
 	desc = "This key belongs to the bailiff."
 	icon_state = "cheesekey"
-	lockid = "sheriff"
+	lockid = "watchmen captain"
 
 /obj/item/roguekey/merchant
 	name = "merchant's key"
@@ -218,7 +218,7 @@
 	name = "priest's key"
 	desc = "This is the master key of the church."
 	icon_state = "cheesekey"
-	lockid = "priest"
+	lockid = "Prophet"
 
 /obj/item/roguekey/tower
 	name = "tower key"

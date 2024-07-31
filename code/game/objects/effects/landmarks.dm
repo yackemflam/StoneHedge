@@ -93,7 +93,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/bogguardlate
 	name = "Bogguardlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Bog Master", "Bog Guard")
+	jobspawn_override = list("Hedgemaster", "Hedge Knight")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vagrantlate
@@ -145,7 +145,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/guard_captain
-	name = "Guard Captain"
+	name = "Watchmen Captain"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/noble
@@ -169,11 +169,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/magician
-	name = "Court Magician"
+	name = "Magician"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/physician
-	name = "Court Physician"
+	name = "Physician"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/guardsman
@@ -185,11 +185,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/bogmaster
-	name = "Bog Master"
+	name = "Hedgemaster"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/bogguardsman
-	name = "Bog Guard"
+	name = "Hedge Knight"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/bailiff
@@ -201,11 +201,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/veteran
-	name = "Veteran"
+	name = "Guild Captain"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/dungeoneer
-	name = "Dungeoneer"
+	name = "Beastmaster"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/watchman
@@ -221,15 +221,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/priest
-	name = "Priest"
+	name = "Prophet"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/cleric
-	name = "Cleric"
+	name = "Priest"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/monk
-	name = "Acolyte"
+	name = "Priest"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/druid
@@ -241,7 +241,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/puritan
-	name = "Inquisitor"
+	name = "Witcher"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/shepherd
@@ -314,7 +314,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/gravedigger
-	name = "Mortician"
+	name = "Gravesinger"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/mercenary
@@ -326,7 +326,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/lady
-	name = "Consort Candidate"
+	name = "Queen Consort"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prince

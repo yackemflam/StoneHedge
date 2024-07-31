@@ -50,7 +50,7 @@
 	if(istype(P, /obj/item/keyring))
 		var/obj/item/keyring/K = P
 		for(var/obj/item/roguekey/KE in K.keys)
-			if(KE.lockid == "dungeoneer" || KE.lockid == "garrison")
+			if(KE.lockid == "Beastmaster" || KE.lockid == "garrison")
 				togglelock(user)
 				return attack_hand(user)
 

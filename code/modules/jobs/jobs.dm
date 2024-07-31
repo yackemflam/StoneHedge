@@ -60,10 +60,10 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 	ROLE_PAI))
 
 GLOBAL_LIST_INIT(noble_positions, list(
-	"King",
+	"Monarch",
 	"Queen Consort",
 	"Royal Heir",
-	"Guard Captain",
+	"Watchmen Captain",
 	"Bailiff",
 	"Councillor",
 	"Steward",
@@ -72,28 +72,28 @@ GLOBAL_LIST_INIT(noble_positions, list(
 ))
 
 GLOBAL_LIST_INIT(courtier_positions, list(
-	"Court Magician",
-	"Court Physician",
+	"Magician",
+	"Physician",
 	"Jester",
 	"Butler",
 ))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
 	"Watchman",
-	"Bog Guard",
-	"Bog Master",
+	"Hedge Knight",
+	"Hedgemaster",
 	"Royal Guard",
-	"Dungeoneer",
+	"Beastmaster",
 	"Gatemaster",
 	"Town Sheriff",
 ))
 
 GLOBAL_LIST_INIT(church_positions, list(
-	"Priest",
-	"Inquisitor",
+	"Prophet",
+	"Witcher",
 	"Confessor",
-	"Acolyte",
-	"Mortician",
+	"Priest",
+	"Gravesinger",
 	"Templar",
 	"Druid",
 ))
@@ -135,7 +135,7 @@ GLOBAL_LIST_INIT(mercenary_positions, list(
 	"Mercenary",
 	"Grenzelhoft Mercenary",
 	"Desert Rider Mercenary",
-	"Veteran",
+	"Guild Captain",
 ))
 
 GLOBAL_LIST_INIT(apprentices_positions, list(

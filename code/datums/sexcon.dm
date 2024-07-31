@@ -245,13 +245,13 @@
 	virginity = FALSE
 	if(mind)
 		switch(mind.assigned_role)
-			if("Priest")
+			if("Prophet")
 				add_stress(/datum/stressevent/virginchurch)
 				// adjust_triumphs(-2)
-			if("Acolyte")
+			if("Priest")
 				add_stress(/datum/stressevent/virginchurch)
 				// adjust_triumphs(-3)
-			if("Cleric")
+			if("Priest")
 				add_stress(/datum/stressevent/virginchurch)
 				// adjust_triumphs(-2)
 

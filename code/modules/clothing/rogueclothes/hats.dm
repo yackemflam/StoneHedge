@@ -176,7 +176,7 @@
 	sewrepair = TRUE
 
 /obj/item/clothing/head/roguetown/priestmask/pickup(mob/living/user)
-	if((user.job != "Priest") && (user.job != "Priestess"))
+	if((user.job != "Prophet") && (user.job != "Priestess"))
 		to_chat(user, "<font color='yellow'>UNWORTHY HANDS TOUCH THE VISAGE, CEASE OR BE PUNISHED</font>")
 		spawn(30)
 			if(loc == user)
@@ -430,7 +430,7 @@
 /obj/item/clothing/head/roguetown/priesthat
 	name = "priest's hat"
 	desc = ""
-	icon_state = "priest"
+	icon_state = "Prophet"
 	//dropshrink = 0
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	dynamic_hair_suffix = "+generic"

@@ -73,7 +73,7 @@
 
 /mob/living/carbon/human/proc/coronate_lord()
 	set name = "Coronate"
-	set category = "Priest"
+	set category = "Prophet"
 	if(!mind)
 		return
 	if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
@@ -116,7 +116,7 @@
 
 /mob/living/carbon/human/proc/churchexcommunicate()
 	set name = "Curse"
-	set category = "Priest"
+	set category = "Prophet"
 	if(stat)
 		return
 	var/inputty = input("Curse someone... (curse them again to remove it)", "Sinner Name") as text|null
@@ -145,7 +145,7 @@
 
 /mob/living/carbon/human/proc/churchannouncement()
 	set name = "Announcement"
-	set category = "Priest"
+	set category = "Prophet"
 	if(stat)
 		return
 	var/inputty = input("Make an announcement", "ROGUETOWN") as text|null
@@ -165,7 +165,7 @@
 
 /obj/effect/proc_holder/spell/self/convertrole/monk
 	name = "Recruit Acolyte"
-	new_role = "Acolyte"
+	new_role = "Priest"
 	recruitment_faction = "Church"
 	recruitment_message = "Serve the ten, %RECRUIT!"
 	accept_message = "FOR THE TEN!"
