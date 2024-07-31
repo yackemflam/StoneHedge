@@ -7,7 +7,7 @@
 		if(!valid_headshot_link(null, headshot_link, TRUE))
 			return
 		var/mob/user = usr
-		var/list/dat = list("<img src='[headshot_link]' width='525px' height='550px'>")
+		var/list/dat = list("<img src='[headshot_link]' width='525px' height='575px'>")
 		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]'s Headshot</div>", 310, 320)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
@@ -19,7 +19,7 @@
 		if(!valid_headshot_link(null, nsfwheadshot_link, TRUE))
 			return
 		var/mob/user = usr
-		var/list/dat = list("<img src='[nsfwheadshot_link]' width='525px' height='550px'>")
+		var/list/dat = list("<img src='[nsfwheadshot_link]' width='525px' height='575px'>")
 		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]'s NSFW Headshot</div>", 310, 320)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
