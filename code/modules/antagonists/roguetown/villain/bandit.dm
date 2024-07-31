@@ -7,7 +7,7 @@
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "bandit"
 	confess_lines = list(
-		"FREEDOM!!!",
+		"FREEDOM!!!", 
 		"I WILL NOT LIVE IN YOUR WALLS!",
 		"I WILL NOT FOLLOW YOUR RULES!",
 	)
@@ -157,7 +157,7 @@
 			beltl = /obj/item/flashlight/flare/torch/lantern
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/full
 			gloves = /obj/item/clothing/gloves/roguetown/leather
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/pigface
+			head = /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
 			if(prob(30))
 				neck = /obj/item/clothing/neck/roguetown/bervor
 			else

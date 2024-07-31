@@ -10,7 +10,7 @@
 	chargedloop = null
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	sound = 'sound/magic/heal.ogg'
-	invocation = "Ignis!"
+	invocation = "Cleansing flames, kindle!"
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
@@ -91,6 +91,7 @@
 			qdel(underworld_spirit)
 			ghost.mind.transfer_to(target, TRUE)
 		target.grab_ghost(force = TRUE) // even suicides
+		target.remove_client_colour(/datum/client_colour/monochrome)
 		target.emote("breathgasp")
 		target.Jitter(100)
 		target.update_body()

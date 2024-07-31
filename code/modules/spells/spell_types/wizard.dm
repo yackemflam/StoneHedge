@@ -4,7 +4,7 @@
 
 	school = "evocation"
 	charge_max = 200
-	clothes_req = FALSE
+	clothes_req = TRUE
 	invocation = "FORTI GY AMA"
 	invocation_type = "shout"
 	range = 7
@@ -265,22 +265,20 @@
 /obj/effect/proc_holder/spell/aoe_turf/repulse
 	name = "Repulse"
 	desc = ""
-	base_icon_state = "spell"
-	action_icon_state = "repulse"
-	overlay_state = "repulse"
-	charge_max = 200
-	clothes_req = FALSE
-	invocation = "FROS RO DAH"
+	charge_max = 400
+	clothes_req = TRUE
+	invocation = "GITTAH WEIGH"
 	invocation_type = "shout"
-	range = 3
-	cooldown_min = 900
+	range = 5
+	cooldown_min = 150
 	selection_type = "view"
-	sound = 'sound/magic/repulse.ogg'
-	associated_skill = /datum/skill/magic/arcane
-	var/maxthrow = 3
+	sound = 'sound/blank.ogg'
+	var/maxthrow = 5
 	var/sparkle_path = /obj/effect/temp_visual/gravpush
 	var/anti_magic_check = TRUE
 	var/repulse_force = MOVE_FORCE_EXTREMELY_STRONG
+
+	action_icon_state = "repulse"
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/targets,mob/user = usr, stun_amt = 40)
 	var/list/thrownatoms = list()
