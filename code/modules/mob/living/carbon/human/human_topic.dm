@@ -8,7 +8,7 @@
 			return
 		var/mob/user = usr
 		var/list/dat = list("<img src='[headshot_link]' width='525px' height='575px'>")
-		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]'s Headshot</div>", 550, 600)
+		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]'s Headshot</div>", 550, 625)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return
@@ -20,7 +20,7 @@
 			return
 		var/mob/user = usr
 		var/list/dat = list("<img src='[nsfwheadshot_link]' width='525px' height='575px'>")
-		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]'s NSFW Headshot</div>", 550, 600)
+		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]'s NSFW Headshot</div>", 550, 625)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return
