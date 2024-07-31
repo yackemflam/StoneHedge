@@ -5,7 +5,7 @@
 	name = "Drakian"
 	id = "dracon"
 	desc = "The most ancient and proud race. We are strong, independent Creachers that follow no masters and accept no compromise. \
-	Our empire, the Muhwing Dynasty, has ruled the great plains east of Rockhill for thousands of years- and for good reason. We are immaculate \
+	Our empire, the Muhwing Dynasty, has ruled the great plains east of StoneHedge for thousands of years- and for good reason. We are immaculate \
 	warriors, raised from birth to be immaculately powerful and hardy. Mages are rare amongst us, and very little crafts and writing exists in our empire beyond the practical. \
 	Though we are incredibly powerful and sturdy, the rest of our aspects are...lacking. Members of my race are undefeated in strength, but lack in the dexterity for lucky, decisive blows."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)

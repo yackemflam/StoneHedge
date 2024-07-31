@@ -675,7 +675,7 @@
 	if(!user.is_literate())
 		. += "I have no idea what it says."
 	else
-		. += "It says \"TOWN ON ROCKHILL\""
+		. += "It says \"TOWN ON STONEHEDGE\""
 
 /obj/structure/fluff/buysign
 	icon_state = "signwrote"

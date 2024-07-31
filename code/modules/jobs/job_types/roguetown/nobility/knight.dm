@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	allowed_patrons = ALL_DIVINE_PATRONS
-	tutorial = "A knight with expert training; Born in a far away land and raised as a squire from a young age, now you make Rockhill your home. It is up to you to decide what path you will take, and who you may call your Lord."
+	tutorial = "A knight with expert training; Born in a far away land and raised as a squire from a young age, now you make StoneHedge your home. It is up to you to decide what path you will take, and who you may call your Lord."
 	display_order = JDO_KNIGHT
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/knight
