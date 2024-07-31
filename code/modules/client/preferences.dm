@@ -150,9 +150,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/update_mutant_colors = TRUE
 
 	var/headshot_link
+	var/nsfwheadshot_link
 	var/list/violated = list()
 	var/list/descriptor_entries = list()
 	var/defiant = TRUE
+	var/horniboi = FALSE
 
 	var/datum/char_accent/char_accent = "No accent"
 
@@ -418,7 +420,10 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
-				dat += "<br><img src='[headshot_link]' width='100px' height='100px'>"
+				dat += "<br><img src='[headshot_link]' width='125px' height='125x'>"
+			dat += "<br><b>NSFW Headshot:</b> <a href='?_src_=prefs;preference=nsfwheadshot;task=input'>Change</a>"
+			if(nsfwheadshot_link != null)
+				dat += "<br><img src='[nsfwheadshot_link]' width='125px' height='125px'>"
 			dat += "</td>"
 
 			dat += "</tr></table>"
@@ -687,6 +692,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
 	dat += "<b>Be defiant:</b> <a href='?_src_=prefs;preference=be_defiant'>[(defiant) ? "Yes":"No"]</a><br>"
+	dat += "<b>Be snowflake:</b> <a href='?_src_=prefs;preference=be_horniboi'>[(horniboi) ? "Yes":"No"]</a><br>"
 	dat += "<b>Be voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a>"
 	dat += "</td>"
 	dat += "</tr>"
@@ -1527,7 +1533,7 @@ Slots: [job.spawn_positions]</span>
 				if("headshot")
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
-					to_chat(user, "<span class='notice'>Keep in mind that the photo will be downsized to 250x250 pixels, so the more square the photo, the better it will look.</span>")
+					to_chat(user, "<span class='notice'>Keep in mind that the photo will be sized to 250x250 pixels, so the more square the photo, the better it will look.</span>")
 					var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", headshot_link) as text|null
 					if(new_headshot_link == null)
 						return
@@ -1542,6 +1548,23 @@ Slots: [job.spawn_positions]</span>
 					headshot_link = new_headshot_link
 					to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
 					log_game("[user] has set their Headshot image to '[headshot_link]'.")
+
+				if("nsfwheadshot")
+					to_chat(user, "<span class='notice'>Finally a place to show it all.</span>")
+					var/new_nsfwheadshot_link = input(user, "Input the nsfw headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "NSFW Headshot", nsfwheadshot_link) as text|null
+					if(new_nsfwheadshot_link == null)
+						return
+					if(new_nsfwheadshot_link == "")
+						nsfwheadshot_link = null
+						ShowChoices(user)
+						return
+					if(!valid_headshot_link(user, new_nsfwheadshot_link))
+						nsfwheadshot_link = null
+						ShowChoices(user)
+						return
+					nsfwheadshot_link = new_nsfwheadshot_link
+					to_chat(user, "<span class='notice'>Successfully updated nsfwheadshot picture</span>")
+					log_game("[user] has set their Nsfwheadshot image to '[nsfwheadshot_link]'.")
 
 				if("species")
 
@@ -1943,6 +1966,13 @@ Slots: [job.spawn_positions]</span>
 					else
 						to_chat(user, span_boldwarning("You fully immerse yourself in the grim experience, waiving your resistance from people violating you, but letting you do the same unto other non-defiants"))
 
+				if("be_horniboi")
+					horniboi = !horniboi
+					if(horniboi)
+						to_chat(user, span_notice("You will now not see people's NSFW reference pics."))
+					else
+						to_chat(user, span_boldwarning("You will now see people's NSFW reference pics."))
+
 				if("schizo_voice")
 					toggles ^= SCHIZO_VOICE
 					if(toggles & SCHIZO_VOICE)
@@ -2069,6 +2099,7 @@ Slots: [job.spawn_positions]</span>
 	character.set_patron(selected_patron)
 	character.backpack = backpack
 	character.defiant = defiant
+	character.horniboi = horniboi
 
 	character.jumpsuit_style = jumpsuit_style
 
@@ -2079,6 +2110,7 @@ Slots: [job.spawn_positions]</span>
 	character.dna.real_name = character.real_name
 
 	character.headshot_link = headshot_link
+	character.nsfwheadshot_link = nsfwheadshot_link
 
 	if(parent)
 		var/list/L = get_player_curses(parent.ckey)

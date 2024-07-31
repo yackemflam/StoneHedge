@@ -112,6 +112,7 @@
 	var/datum/devotion/devotion = null // Used for cleric_holder for priests
 
 	var/headshot_link = null
+	var/nsfwheadshot_link = null
 
 	var/datum/charflaw/charflaw
 	///used for in-round gained roles for examine.
