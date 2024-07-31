@@ -5,7 +5,7 @@
 	name = "Sissean"
 	id = "lizardfolk"
 	desc = "<b>Sissean</b><br>\
-	Sisseans are semi-aquatic reptilian humanoids that have lived in the low bogs surrounding Rockhill for centuries. \
+	Sisseans are semi-aquatic reptilian humanoids that have lived in the low bogs surrounding StoneHedge for centuries. \
 	Though not as inclined to industry as the dwarves, and not as crafty as the other Humen and Wild-Kin natives, our strength is enormous, eclipsed only perhaps by the Draken.\
 	Though we are less perceptive and slower than other races, our constitution and strength are impressive. \
 	We also have sharp claws and teeth."

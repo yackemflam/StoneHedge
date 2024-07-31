@@ -179,7 +179,7 @@
 	..()
 
 /obj/structure/fluff/walldeco/customflag
-	name = "rockhill flag"
+	name = "stonehedge flag"
 	desc = ""
 	icon_state = "wallflag"
 

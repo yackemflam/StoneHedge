@@ -426,7 +426,7 @@
 #define SKIN_COLOR_GRENZELHOFT "fff0e9"
 #define SKIN_COLOR_HAMMERHOLD "ffe0d1"
 #define SKIN_COLOR_AVAR "fcccb3"
-#define SKIN_COLOR_ROCKHILL "edc6b3"
+#define SKIN_COLOR_STONEHEDGE "edc6b3"
 #define SKIN_COLOR_OTAVA "e2b9a3"
 #define SKIN_COLOR_ETRUSCA "d9a284"
 #define SKIN_COLOR_GRONN "c9a893"

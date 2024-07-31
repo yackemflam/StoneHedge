@@ -70,7 +70,7 @@
 		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
 		"Hammerhold" = SKIN_COLOR_HAMMERHOLD,
 		"Avar" = SKIN_COLOR_AVAR,
-		"Rockhill" = SKIN_COLOR_ROCKHILL,
+		"StoneHedge" = SKIN_COLOR_STONEHEDGE,
 		"Otava" = SKIN_COLOR_OTAVA,
 		"Etrusca" = SKIN_COLOR_ETRUSCA,
 		"Gronn" = SKIN_COLOR_GRONN,
