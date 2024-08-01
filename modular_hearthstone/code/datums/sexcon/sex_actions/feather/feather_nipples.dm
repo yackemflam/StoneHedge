@@ -17,7 +17,7 @@
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_shirt)
 			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
-			if(pantsies.flags_inv == HIDEBOOB)
+			if(shirtsies.flags_inv == HIDEBOOB)
 				return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE

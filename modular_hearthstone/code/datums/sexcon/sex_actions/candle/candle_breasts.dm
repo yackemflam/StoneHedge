@@ -15,7 +15,7 @@
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_shirt)
 			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
-			if(pantsies.flags_inv == HIDEBOOB)
+			if(shirtsies.flags_inv == HIDEBOOB)
 				return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE
@@ -23,7 +23,7 @@
 		return FALSE
 	var/obj/item/candle/C = get_candle_in_either_hand(user)
 	if(!C.lit)
-		to_chat(usr, span_warning("Lit it first!"))
+		to_chat(usr, span_warning("I should light it first."))
 		return FALSE
 
 	return TRUE
