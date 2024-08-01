@@ -9,8 +9,12 @@
 /datum/sex_action/armpit_nuzzle/can_perform(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
-	if(!get_location_accessible(target, BODY_ZONE_CHEST))
-		return FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/targethuman = target
+		if(targethuman.wear_shirt)
+			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
+			if(pantsies.flags_inv == HIDEBOOB)
+				return FALSE
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
 	return TRUE

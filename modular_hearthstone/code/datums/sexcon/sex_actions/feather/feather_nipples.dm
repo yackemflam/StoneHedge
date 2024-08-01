@@ -13,8 +13,12 @@
 /datum/sex_action/feather_nipples/can_perform(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
-	if(!get_location_accessible(target, BODY_ZONE_CHEST))
-		return FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/targethuman = target
+		if(targethuman.wear_shirt)
+			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
+			if(pantsies.flags_inv == HIDEBOOB)
+				return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE
 	if(!get_feather_in_either_hand(user))
