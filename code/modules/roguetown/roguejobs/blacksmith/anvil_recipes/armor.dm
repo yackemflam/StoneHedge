@@ -39,6 +39,13 @@
 	created_item = /obj/item/clothing/under/roguetown/chainlegs/iron
 	i_type = "Armor"
 
+/datum/anvil_recipe/armor/studdedskirt
+	name = "Studded Skirt (+1 Leather Skirt)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/clothing/under/roguetown/trou/skirt)
+	created_item = /obj/item/clothing/under/roguetown/chainlegs/iron/studdedskirt
+	i_type = "Armor"
+
 /datum/anvil_recipe/armor/platemask
 	name = "Mask"
 	req_bar = /obj/item/ingot/iron
@@ -188,6 +195,18 @@
 	name = "Chain Skirt"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/under/roguetown/chainlegs/skirt
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/chainskirt
+	name = "Chain Fishnet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/under/roguetown/tights/stockings/fishnet/chain
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/ichainfishnet
+	name = "Chain Fishnet"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/under/roguetown/tights/stockings/fishnet/chain/iron
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/plateskirt

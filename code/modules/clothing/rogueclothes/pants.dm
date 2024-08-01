@@ -114,6 +114,16 @@
 	desc = "Trousers made of fine leather."
 	icon_state = "leathertrou"
 
+/obj/item/clothing/under/roguetown/trou/skirt
+	name = "leather skirt"
+	desc = "Short skirt made of fine leather."
+	icon_state = "leatherskirt"
+
+/obj/item/clothing/under/roguetown/chainlegs/iron/studdedskirt
+	name = "studded skirt"
+	desc = "Short studded skirt made of fine leather and iron."
+	icon_state = "studdedskirt"
+
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
 	desc = "Dark trousers worn by morticians while performing burial rites."
