@@ -381,8 +381,7 @@
 	if(!user.getorganslot(ORGAN_SLOT_TESTICLES) && !user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
-		if(!user.mind.has_antag_datum(/datum/antagonist/vampirelord) && !user.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) && !user.mind.has_antag_datum(/datum/antagonist/vampire) && !user.mind.has_antag_datum(/datum/antagonist/vampire/lesser))
-			return FALSE
+		return FALSE
 	return TRUE
 
 /datum/sex_controller/proc/handle_passive_ejaculation()
@@ -396,8 +395,7 @@
 
 /datum/sex_controller/proc/can_use_penis()
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
-		if(!user.mind.has_antag_datum(/datum/antagonist/vampirelord) && !user.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) && !user.mind.has_antag_datum(/datum/antagonist/vampire) && !user.mind.has_antag_datum(/datum/antagonist/vampire/lesser))
-			return FALSE
+		return FALSE
 	return TRUE
 
 /datum/sex_controller/proc/considered_limp()
