@@ -19,8 +19,10 @@
 	accessory_type = /datum/sprite_accessory/vagina/human
 	var/pregnant = FALSE
 	var/fertility = TRUE
+	var/initialbellysize = 0
+	var/preggotimer
 
-/obj/item/organ/vagina/proc/be_impregnated(mob/living/carbon/human/father)
+/obj/item/organ/vagina/proc/be_impregnated(mob/living/father)
 	if(pregnant)
 		return
 	if(!owner)
@@ -29,6 +31,39 @@
 		return
 	to_chat(owner, span_love("I feel a surge of warmth in my belly, I’m definitely pregnant!"))
 	pregnant = TRUE
+	if(owner.getorganslot(ORGAN_SLOT_BREASTS))
+		var/obj/item/organ/breasts/breasties = owner.getorganslot(ORGAN_SLOT_BREASTS)
+		if(breasties.lactating = FALSE)
+			breasties.lactating = TRUE
+			to_chat(owner, span_love("My breasts should start lactating soon..."))
+	if(owner.getorganslot(ORGAN_SLOT_BELLY))
+		var/obj/item/organ/belly/bellyussy = owner.getorganslot(ORGAN_SLOT_BELLY)
+		initialbellysize = bellyussy.belly_size
+		//there is no birthing so hopefully 2 hours for one stage is enough to last till round end, there is 0 to 3 belly sizes.
+		addtimer(CALLBACK(src, PROC_REF(handle_preggoness)), 2 HOURS, TIMER_STOPPABLE)
+
+/obj/item/organ/vagina/proc/handle_preggoness()
+	var/obj/item/organ/belly/bellyussy = owner.getorganslot(ORGAN_SLOT_BELLY)
+	var/datum/sprite_accessory/belly/bellyacc = bellyussy.accessory_type
+	if(bellyussy.belly_size < 3)
+		to_chat(owner, span_love("I notice my belly has grown as my pregnancy progresses."))
+		bellyussy.belly_size += 1
+		bellyacc.get_icon_state()
+		owner.update_body_parts(TRUE)
+		preggotimer = addtimer(CALLBACK(src, PROC_REF(handle_preggoness)), 2 HOURS, TIMER_STOPPABLE)
+	else
+		deltimer(preggotimer)
+
+/obj/item/organ/vagina/proc/undo_preggoness()
+	deltimer(preggotimer)
+	pregnant = FALSE
+	to_chat(owner, span_love("I feel my belly shrink to how it was before. Pregnancy is no more."))
+	if(owner.getorganslot(ORGAN_SLOT_BELLY))
+		var/obj/item/organ/belly/bellyussy = owner.getorganslot(ORGAN_SLOT_BELLY)
+		var/datum/sprite_accessory/belly/bellyacc = bellyussy.accessory_type
+		bellyussy.belly_size = initialbellysize
+	bellyacc.get_icon_state()
+	owner.update_body_parts(TRUE)
 
 /obj/item/organ/breasts
 	name = "breasts"
