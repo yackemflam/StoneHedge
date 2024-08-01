@@ -33,7 +33,7 @@
 /obj/item/organ/breasts
 	name = "breasts"
 	icon_state = "breasts"
-	dropshrink = 1.25
+	dropshrink = 0.8
 	visible_organ = TRUE
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_BREASTS
