@@ -250,6 +250,12 @@
 		return
 	action_target.adjustOxyLoss(oxyloss_amt)
 
+//To show that they are choking
+	var/choke_message = pick("gasps for air!", "chokes!")
+	if(prob(33) && oxyloss_amt >= 1)
+		action_target.visible_message(span_warning("[action_target] [choke_message]"))
+		action_target.emote("gasp", forced = TRUE)
+
 /datum/sex_controller/proc/perform_sex_action(mob/living/action_target, arousal_amt, pain_amt, giving)
 	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
 		arousal_amt *=2
@@ -375,7 +381,8 @@
 	if(!user.getorganslot(ORGAN_SLOT_TESTICLES) && !user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
-		return FALSE
+		if(!user.mind.has_antag_datum(/datum/antagonist/vampirelord) && !user.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) && !user.mind.has_antag_datum(/datum/antagonist/vampire) && !user.mind.has_antag_datum(/datum/antagonist/vampire/lesser))
+			return FALSE
 	return TRUE
 
 /datum/sex_controller/proc/handle_passive_ejaculation()
@@ -389,7 +396,8 @@
 
 /datum/sex_controller/proc/can_use_penis()
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
-		return FALSE
+		if(!user.mind.has_antag_datum(/datum/antagonist/vampirelord) && !user.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) && !user.mind.has_antag_datum(/datum/antagonist/vampire) && !user.mind.has_antag_datum(/datum/antagonist/vampire/lesser))
+			return FALSE
 	return TRUE
 
 /datum/sex_controller/proc/considered_limp()
@@ -560,7 +568,7 @@
 		return FALSE
 	if(action.check_incapacitated && user.incapacitated())
 		return FALSE
-	var/mob/living/carbon/human/userino = user 
+	var/mob/living/carbon/human/userino = user
 	if(action.check_same_tile)
 		var/same_tile = (get_turf(user) == get_turf(target))
 		var/grab_bypass = (action.aggro_grab_instead_same_tile && userino.get_highest_grab_state_on(target) == GRAB_AGGRESSIVE)
