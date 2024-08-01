@@ -14,7 +14,9 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_pants)
-			return FALSE
+			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
+			if(pantsies.flags_inv == HIDECROTCH)
+				return FALSE
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
