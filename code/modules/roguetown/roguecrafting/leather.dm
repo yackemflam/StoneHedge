@@ -125,6 +125,12 @@
 	reqs = list(/obj/item/natural/hide = 2)
 	sellprice = 26
 
+/datum/crafting_recipe/roguetown/leather/bra
+	name = "leather bra armor"
+	result = /obj/item/clothing/suit/roguetown/armor/leather/bikini/bra
+	reqs = list(/obj/item/natural/hide = 2)
+	sellprice = 26
+
 /datum/crafting_recipe/roguetown/leather/hidearmor
 	name = "hide armor"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/hide
@@ -135,6 +141,13 @@
 /datum/crafting_recipe/roguetown/leather/hidebikini
 	name = "hide bikini armor"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
+	reqs = list(/obj/item/natural/hide = 2,
+				/obj/item/natural/fur = 1)
+	sellprice = 26
+
+/datum/crafting_recipe/roguetown/leather/hide/bra
+	name = "hide bikini armor"
+	result = /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini/bra
 	reqs = list(/obj/item/natural/hide = 2,
 				/obj/item/natural/fur = 1)
 	sellprice = 26
