@@ -420,10 +420,10 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
-				dat += "<br><img src='[headshot_link]' width='125px' height='125x'>"
+				dat += "<br><img src='[headshot_link]' width='225px' height='275x'>"
 			dat += "<br><b>NSFW Headshot:</b> <a href='?_src_=prefs;preference=nsfwheadshot;task=input'>Change</a>"
 			if(nsfwheadshot_link != null)
-				dat += "<br><img src='[nsfwheadshot_link]' width='125px' height='125px'>"
+				dat += "<br><img src='[nsfwheadshot_link]' width='225px' height='275px'>"
 			dat += "</td>"
 
 			dat += "</tr></table>"
@@ -1533,7 +1533,7 @@ Slots: [job.spawn_positions]</span>
 				if("headshot")
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
-					to_chat(user, "<span class='notice'>Keep in mind that the photo will be sized to 250x250 pixels, so the more square the photo, the better it will look.</span>")
+					to_chat(user, "<span class='notice'>Keep in mind that the photo will be sized to 525x575 pixels, so the more square the photo, the better it will look.</span>")
 					var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", headshot_link) as text|null
 					if(new_headshot_link == null)
 						return
