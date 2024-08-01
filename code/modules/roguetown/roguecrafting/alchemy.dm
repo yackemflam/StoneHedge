@@ -46,3 +46,15 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot,/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot,/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot)
 	reqs = list(/obj/item/reagent_containers/glass/bottle = 3, /obj/item/ash = 3, /obj/item/reagent_containers/food/snacks/rogue/honey = 2)
 	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/alchemy/antipreg_pot
+	name = "Anti Pregnancy Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/antipregnancy)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/ash = 1, /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/alchemy/antipreg_pot_3x
+	name = "3x Anti Pregnancy Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/antipregnancy,/obj/item/reagent_containers/glass/bottle/rogue/antipregnancy,/obj/item/reagent_containers/glass/bottle/rogue/antipregnancy)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 3, /obj/item/ash = 3, /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 2)
+	craftdiff = 1

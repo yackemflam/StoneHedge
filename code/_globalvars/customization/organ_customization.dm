@@ -12,7 +12,7 @@ GLOBAL_LIST_INIT(named_ball_sizes, list(
 
 GLOBAL_LIST_INIT(named_breast_sizes, list(
 	"flat" = 0,
-	"sery small" = 1,
+	"very small" = 1,
 	"small" = 2,
 	"normal" = 3,
 	"large" = 4,

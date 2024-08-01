@@ -72,6 +72,21 @@
 	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
 	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
 
+/datum/roguestock/import/antipregger
+	name = "Crate of Anti Pregnancy Potions"
+	desc = "Pink that fixes mistakes."
+	item_type = /obj/structure/closet/crate/chest/steward/redpotion
+	export_price = 70
+	importexport_amt = 1
+
+/obj/structure/closet/crate/chest/steward/redpotion/Initialize()
+	. = ..()
+	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
+
 /datum/roguestock/import/knight
 	name = "Knight Equipment Crate"
 	desc = "Kit for a Knight."
