@@ -15,11 +15,15 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_pants)
-			return FALSE
+			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
+			if(pantsies.flags_inv == HIDECROTCH)
+				return FALSE
 	if(ishuman(target))
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_pants)
-			return FALSE
+			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
+			if(pantsies.flags_inv == HIDECROTCH)
+				return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
 	if(!user.sexcon.can_use_penis())

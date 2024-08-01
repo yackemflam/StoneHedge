@@ -16,9 +16,15 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_pants)
-			return FALSE
-	if(!get_location_accessible(target, BODY_ZONE_CHEST))
-		return FALSE
+			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
+			if(pantsies.flags_inv == HIDECROTCH)
+				return FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/targethuman = target
+		if(targethuman.wear_shirt)
+			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
+			if(shirtsies.flags_inv == HIDEBOOB)
+				return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
