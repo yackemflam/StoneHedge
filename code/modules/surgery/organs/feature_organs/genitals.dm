@@ -33,8 +33,9 @@
 	pregnant = TRUE
 	if(owner.getorganslot(ORGAN_SLOT_BREASTS))
 		var/obj/item/organ/breasts/breasties = owner.getorganslot(ORGAN_SLOT_BREASTS)
-		breasties.lactating = TRUE
-		to_chat(owner, span_love("My breasts should start lactating soon..."))
+		if(breasties.lactating = FALSE)
+			breasties.lactating = TRUE
+			to_chat(owner, span_love("My breasts should start lactating soon..."))
 	if(owner.getorganslot(ORGAN_SLOT_BELLY))
 		var/obj/item/organ/belly/bellyussy = owner.getorganslot(ORGAN_SLOT_BELLY)
 		initialbellysize = bellyussy.belly_size
@@ -61,10 +62,6 @@
 		var/obj/item/organ/belly/bellyussy = owner.getorganslot(ORGAN_SLOT_BELLY)
 		var/datum/sprite_accessory/belly/bellyacc = bellyussy.accessory_type
 		bellyussy.belly_size = initialbellysize
-	if(owner.getorganslot(ORGAN_SLOT_BREASTS))
-		var/obj/item/organ/breasts/breasties = owner.getorganslot(ORGAN_SLOT_BREASTS)
-		breasties.lactating = TRUE
-		to_chat(owner, span_love("My breasts likely stopped lactating."))
 	bellyacc.get_icon_state()
 	owner.update_body_parts(TRUE)
 
