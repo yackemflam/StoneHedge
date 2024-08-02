@@ -109,6 +109,14 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/church)
+"aeJ" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/cavewet/bogcaves{
+	first_time_text = "The Underdark..";
+	name = "Underdark"
+	})
 "aeT" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -359,7 +367,11 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/church)
 "anO" = (
-/turf/open/water/sewer,
+/obj/structure/flora/roguetree{
+	icon_state = "t4";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "anZ" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/goatmale,
@@ -545,6 +557,12 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/town/basement)
+"aub" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t2"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "auj" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy,
 /area/rogue/outdoors/town{
@@ -820,6 +838,13 @@
 /area/rogue/outdoors/rtfield{
 	first_time_text = null
 	})
+"aFH" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t3";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "aFM" = (
 /obj/structure/fluff/walldeco/chains,
 /turf/open/floor/rogue/ruinedwood{
@@ -2992,6 +3017,13 @@
 "bWf" = (
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/tavern)
+"bWi" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t3";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "bWu" = (
 /obj/structure/roguewindow/openclose{
 	dir = 4
@@ -4983,7 +5015,7 @@
 /turf/open/floor/rogue/tile/masonic/spiral,
 /area/rogue/indoors/town/garrison)
 "doM" = (
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t4"
 	},
 /turf/open/water/cleanshallow,
@@ -5002,6 +5034,7 @@
 	pixel_y = 26;
 	icon_state = "torchwall0"
 	},
+/obj/structure/spacevine,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
 "dpo" = (
@@ -5617,6 +5650,12 @@
 /area/rogue/outdoors/bog{
 	first_time_text = "Swampwyld"
 	})
+"dKr" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t3"
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/mountains)
 "dKy" = (
 /obj/structure/bed/rogue/inn/hay,
 /turf/open/floor/rogue/hexstone,
@@ -6483,7 +6522,7 @@
 	})
 "esz" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t3"
 	},
 /turf/open/floor/rogue/grass,
@@ -6841,7 +6880,7 @@
 	first_time_text = null
 	})
 "eEJ" = (
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t4"
 	},
 /turf/open/floor/rogue/dirt,
@@ -7684,7 +7723,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "fiY" = (
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t3"
 	},
 /turf/open/floor/rogue/grass,
@@ -7796,6 +7835,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
+"fnz" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t2";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
 "fnS" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/cloak/raincloak/mortus,
@@ -7922,6 +7968,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
+"ftS" = (
+/obj/structure/spacevine,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/town/basement)
 "ftX" = (
 /obj/structure/glowshroom,
 /obj/structure/spider/stickyweb,
@@ -7999,8 +8049,9 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "fxj" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t5"
+/obj/structure/flora/roguetree{
+	icon_state = "t5";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
@@ -10148,8 +10199,9 @@
 /area/rogue/outdoors/mountains)
 "hep" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t3"
+/obj/structure/flora/roguetree{
+	icon_state = "t3";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
@@ -10853,8 +10905,9 @@
 /area/rogue/outdoors/beach)
 "hHc" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t6"
+/obj/structure/flora/roguetree{
+	icon_state = "t6";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/tribalfort)
@@ -11006,6 +11059,12 @@
 	icon_state = "rockwd"
 	},
 /area/rogue/under/town/sewer)
+"hMW" = (
+/obj/effect/landmark/start/vagrantlate{
+	dir = 8
+	},
+/turf/open/water/swamp,
+/area/rogue/outdoors/bog)
 "hNc" = (
 /obj/structure/table/vtable,
 /turf/open/floor/rogue/ruinedwood{
@@ -11058,6 +11117,13 @@
 	dir = 4
 	},
 /area/rogue/outdoors/town/roofs)
+"hQu" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t5";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
 "hQR" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -11915,7 +11981,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "iuk" = (
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t12"
 	},
 /turf/open/floor/rogue/dirt,
@@ -13142,6 +13208,15 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"jpV" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t5";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/water/river{
+	icon_state = "rockwd"
+	},
+/area/rogue/under/town/sewer)
 "jqc" = (
 /obj/structure/roguewindow/openclose,
 /turf/open/transparent/openspace,
@@ -14109,8 +14184,9 @@
 	},
 /area/rogue/under/cave)
 "kcP" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t2"
+/obj/structure/flora/roguetree{
+	icon_state = "t2";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/bog)
@@ -14722,6 +14798,12 @@
 /obj/item/storage/belt/rogue/pouch,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/garrison)
+"kye" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t3"
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "kyu" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/rogue/grass,
@@ -15207,6 +15289,12 @@
 /obj/structure/glowshroom,
 /turf/open/water/swamp,
 /area/rogue/outdoors/bog)
+"kNn" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t3"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "kNt" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -15651,8 +15739,9 @@
 /area/rogue/outdoors/beach)
 "lfL" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t3"
+/obj/structure/flora/roguetree{
+	icon_state = "t3";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/magiciantower{
@@ -16039,7 +16128,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog/dense)
 "lte" = (
-/obj/structure/flora/tree/jungle/small,
+/obj/structure/flora/roguetree{
+	icon_state = "t4";
+	desc = "An old, beloved tree that even elves could love."
+	},
 /turf/open/water/river{
 	icon_state = "rockwd"
 	},
@@ -16188,8 +16280,9 @@
 /area/rogue/outdoors/caves)
 "lAO" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t3"
+/obj/structure/flora/roguetree{
+	icon_state = "t3";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -17214,6 +17307,12 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
+"mjG" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t6"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "mkk" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -17577,10 +17676,11 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/tribalfort)
 "mze" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t5"
+/obj/structure/flora/roguetree{
+	icon_state = "t2";
+	desc = "An old, beloved tree that even elves could love."
 	},
-/turf/open/floor/rogue/dirt,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "mzq" = (
 /obj/structure/fluff/railing/border{
@@ -17630,8 +17730,9 @@
 /area/rogue/outdoors/mountains)
 "mAK" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t4"
+/obj/structure/flora/roguetree{
+	icon_state = "t4";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
@@ -18101,7 +18202,6 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "mSA" = (
-/obj/item/natural/rock/coal,
 /obj/structure/flora/newtree,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/tribalfort)
@@ -18858,6 +18958,11 @@
 /obj/item/bedsheet/rogue/cloth,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/dwarfin)
+"nqu" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/woods)
 "nqw" = (
 /obj/structure/flora/newtree,
 /turf/open/water/swamp,
@@ -18885,8 +18990,9 @@
 	first_time_text = "Palace Courtyard"
 	})
 "nrS" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t6"
+/obj/structure/flora/roguetree{
+	icon_state = "t6";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -18948,8 +19054,9 @@
 	},
 /area/rogue/indoors/town)
 "nth" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t2"
+/obj/structure/flora/roguetree{
+	icon_state = "t2";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
@@ -19470,6 +19577,15 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
+"nMQ" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t4";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/water,
+/area/rogue/outdoors/bog/dense{
+	first_time_text = "THE SHROUDHEDGE"
+	})
 "nNe" = (
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/rogue/woodturned,
@@ -20043,11 +20159,9 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/underworld)
 "ofD" = (
-/obj/structure/flora/roguetree{
-	desc = "An old, beloved tree that even elves could love."
-	},
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/bog)
+/obj/structure/spacevine,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/woods)
 "ofZ" = (
 /turf/closed/mineral/rogue,
 /area/rogue/under/cave)
@@ -20176,8 +20290,9 @@
 /area/rogue)
 "omw" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t6"
+/obj/structure/flora/roguetree{
+	icon_state = "t6";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/tribalfort)
@@ -20367,6 +20482,15 @@
 /area/rogue/under/cavewet/bogcaves{
 	first_time_text = "The Underdark..";
 	name = "Underdark"
+	})
+"otO" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t3";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
 	})
 "ouj" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy/cand,
@@ -20590,7 +20714,9 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "oCH" = (
-/obj/structure/flora/roguetree/burnt,
+/obj/structure/flora/roguetree{
+	icon_state = "t4"
+	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "oCU" = (
@@ -21512,8 +21638,9 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/bath)
 "pik" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t2"
+/obj/structure/flora/roguetree{
+	icon_state = "t2";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/water/river{
 	icon_state = "rockwd"
@@ -22003,7 +22130,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "pBF" = (
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t12"
 	},
 /turf/open/water/cleanshallow,
@@ -22072,6 +22199,13 @@
 "pEL" = (
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
 /area/rogue/indoors/town/dwarfin)
+"pEN" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t4";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/bog)
 "pEP" = (
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
@@ -22828,10 +22962,11 @@
 	first_time_text = "THE SHROUDHEDGE"
 	})
 "qjp" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t2"
+/obj/structure/flora/roguetree{
+	icon_state = "t2";
+	desc = "An old, beloved tree that even elves could love."
 	},
-/turf/open/floor/rogue/dirt,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "qjt" = (
 /obj/structure/roguewindow/stained/silver{
@@ -23001,7 +23136,7 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/town/manor)
 "qpj" = (
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t12"
 	},
 /turf/open/floor/rogue/grass,
@@ -23069,7 +23204,7 @@
 /turf/closed/wall/shroud,
 /area/rogue/outdoors/mountains)
 "qsg" = (
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t5"
 	},
 /turf/open/water/cleanshallow,
@@ -23605,7 +23740,10 @@
 	name = "Academy"
 	})
 "qJW" = (
-/obj/structure/flora/roguetree/evil,
+/obj/structure/flora/roguetree{
+	icon_state = "t3";
+	desc = "An old, beloved tree that even elves could love."
+	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "qJZ" = (
@@ -24090,8 +24228,9 @@
 	},
 /area/rogue/outdoors/town/roofs)
 "rgu" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t2"
+/obj/structure/flora/roguetree{
+	icon_state = "t2";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
@@ -24736,6 +24875,11 @@
 	icon_state = "greenstone"
 	},
 /area/rogue/indoors/town/garrison)
+"rBE" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t4"
+	},
+/area/rogue/outdoors/woods)
 "rBF" = (
 /obj/structure/stairs{
 	dir = 4
@@ -25294,7 +25438,9 @@
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/tavern)
 "rYa" = (
-/obj/structure/flora/roguetree/evil,
+/obj/structure/flora/roguetree{
+	icon_state = "t5"
+	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "rYn" = (
@@ -25453,8 +25599,9 @@
 /area/rogue/indoors/town/tavern)
 "sec" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t5"
+/obj/structure/flora/roguetree{
+	icon_state = "t5";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
@@ -26106,8 +26253,9 @@
 /area/rogue/indoors/town/shop)
 "sAP" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t6"
+/obj/structure/flora/roguetree{
+	icon_state = "t6";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/magiciantower{
@@ -26151,7 +26299,7 @@
 	},
 /area/rogue/indoors/town/shop)
 "sCc" = (
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t12"
 	},
 /turf/open/floor/rogue/grass,
@@ -26571,7 +26719,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "sTM" = (
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t4"
 	},
 /turf/open/floor/rogue/grass,
@@ -26861,7 +27009,9 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/tavern)
 "tfJ" = (
-/obj/structure/flora/roguetree/evil,
+/obj/structure/flora/roguetree{
+	icon_state = "t4"
+	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "tfL" = (
@@ -26910,6 +27060,10 @@
 	dir = 4
 	},
 /area/rogue/indoors/town/church)
+"thB" = (
+/obj/item/natural/rock/coal,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/tribalfort)
 "thZ" = (
 /obj/effect/landmark/start/shepherd,
 /turf/open/floor/rogue/dirt,
@@ -26985,8 +27139,9 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/basement)
 "tlA" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t6"
+/obj/structure/flora/roguetree{
+	icon_state = "t6";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/tribalfort)
@@ -28091,6 +28246,11 @@
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
 /turf/open/floor/rogue/grass,
 /area/rogue/under/town/basement)
+"ucx" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spacevine,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "ucL" = (
 /turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/mountains)
@@ -28376,8 +28536,9 @@
 	first_time_text = "Swampwyld"
 	})
 "ups" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t5"
+/obj/structure/flora/roguetree{
+	icon_state = "t5";
+	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
@@ -29606,10 +29767,12 @@
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
 "vjQ" = (
-/mob/living/simple_animal/hostile/mushroom,
-/obj/structure/flora/roguetree/evil,
-/turf/open/floor/rogue/dirt,
-/area/rogue/under/cavewet/bogcaves)
+/obj/structure/flora/roguetree{
+	icon_state = "t3";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/woods)
 "vjX" = (
 /obj/effect/wisp,
 /turf/open/floor/rogue/dirt,
@@ -30359,6 +30522,13 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
+"vLV" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t4";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "vLX" = (
 /obj/effect/wisp,
 /turf/open/floor/rogue/naturalstone,
@@ -31133,7 +31303,9 @@
 "wlN" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/roguetree/evil,
+/obj/structure/flora/roguetree{
+	desc = "An old, beloved tree that even elves could love."
+	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "wmn" = (
@@ -31618,6 +31790,16 @@
 "wDc" = (
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/church)
+"wDh" = (
+/obj/structure/flora/roguetree{
+	icon_state = "t4";
+	desc = "An old, beloved tree that even elves could love."
+	},
+/turf/open/water/river{
+	dir = 8;
+	icon_state = "rockwd"
+	},
+/area/rogue/under/town/sewer)
 "wDv" = (
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/magician{
@@ -32501,7 +32683,7 @@
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/outdoors/woods)
 "xjG" = (
-/obj/structure/flora/roguetree/evil{
+/obj/structure/flora/roguetree{
 	icon_state = "t12"
 	},
 /turf/open/floor/rogue/grass,
@@ -32903,13 +33085,13 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "xAH" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t4"
+/obj/structure/flora/roguegrass,
+/obj/structure/flora/roguetree{
+	icon_state = "t5";
+	desc = "An old, beloved tree that even elves could love."
 	},
-/turf/open/water/river{
-	icon_state = "rockwd"
-	},
-/area/rogue/under/town/sewer)
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "xAK" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1";
@@ -33265,11 +33447,9 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "xOd" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t4"
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/bog)
+/obj/structure/spacevine,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "xOh" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle{
 	dir = 8
@@ -33746,11 +33926,12 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "yfR" = (
-/obj/structure/flora/roguetree/evil{
-	icon_state = "t2"
+/obj/structure/flora/roguetree{
+	icon_state = "t5";
+	desc = "An old, beloved tree that even elves could love."
 	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/bog)
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "ygm" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog/dense{
@@ -63666,7 +63847,7 @@ rkE
 rkE
 rkE
 rkE
-nEd
+tRX
 nEd
 dPj
 dPj
@@ -64259,7 +64440,7 @@ sqJ
 esc
 esc
 cgg
-nEd
+tRX
 idm
 rkE
 rkE
@@ -64288,7 +64469,7 @@ rkE
 rkE
 rkE
 rkE
-nEd
+tRX
 nEd
 nEd
 nEd
@@ -64416,7 +64597,7 @@ sqJ
 esc
 esc
 cgg
-nEd
+tRX
 idm
 rkE
 rkE
@@ -64445,7 +64626,7 @@ rkE
 rkE
 rkE
 tgg
-nEd
+tRX
 cao
 yjI
 bPU
@@ -64565,8 +64746,8 @@ idm
 idm
 idm
 cgg
-nEd
-nEd
+tRX
+tRX
 cgg
 nEd
 cgg
@@ -64722,13 +64903,13 @@ idm
 idm
 idm
 cgg
+tRX
 nEd
 nEd
 nEd
-nEd
-nEd
-nEd
-nEd
+tRX
+tRX
+tRX
 nEd
 nEd
 jEU
@@ -64762,7 +64943,7 @@ nEd
 nEd
 nEd
 nEd
-nEd
+tRX
 dzj
 idm
 idm
@@ -64918,7 +65099,7 @@ nEd
 nEd
 nEd
 cao
-nEd
+tRX
 dzj
 dzj
 idm
@@ -65040,7 +65221,7 @@ sqJ
 cgg
 cgg
 cgg
-nEd
+tRX
 nEd
 cgg
 cgg
@@ -65049,8 +65230,8 @@ nEd
 nEd
 eVs
 eVs
-nEd
-nEd
+tRX
+tRX
 nEd
 eVs
 eVs
@@ -65197,13 +65378,13 @@ sqJ
 cgg
 sVT
 cgg
-nEd
+aeJ
 nEd
 cgg
 sqJ
 sVT
 cgg
-nEd
+tRX
 nEd
 nEd
 nEd
@@ -65355,12 +65536,12 @@ cgg
 sVT
 sVT
 cgg
-nEd
+tRX
 cgg
 sqJ
 sVT
 cgg
-nEd
+tRX
 nEd
 cgg
 cgg
@@ -65677,8 +65858,8 @@ dzj
 dzj
 tfW
 dzj
-xJM
-xJM
+jNg
+jNg
 dzj
 tfW
 tfW
@@ -65694,8 +65875,8 @@ xJM
 xJM
 dzj
 dzj
-xJM
-xJM
+jNg
+jNg
 xJM
 vPH
 xJM
@@ -66467,7 +66648,7 @@ tfW
 xJM
 tfW
 dzj
-xJM
+jNg
 xJM
 xJM
 tfW
@@ -66480,8 +66661,8 @@ dzj
 vPH
 xJM
 xJM
-xJM
-xJM
+jNg
+jNg
 xJM
 aIm
 aPR
@@ -66615,8 +66796,8 @@ aZN
 ild
 jIQ
 jIQ
-axW
-xJM
+ftS
+jNg
 dzj
 tfW
 xJM
@@ -66624,7 +66805,7 @@ xJM
 xJM
 tfW
 dzj
-xJM
+jNg
 xJM
 xJM
 tfW
@@ -74297,12 +74478,12 @@ idm
 "}
 (103,1,2) = {"
 tfW
-uim
+jpV
 tWo
 fqi
 dXv
 fqi
-xAH
+lte
 bVE
 bVE
 fqi
@@ -74340,7 +74521,7 @@ fqi
 fqi
 fqi
 fqi
-auK
+wDh
 rNH
 rGL
 gpN
@@ -76664,7 +76845,7 @@ woK
 oFg
 kZh
 lCL
-rJM
+nMQ
 ygm
 psq
 psq
@@ -82814,7 +82995,7 @@ cuh
 cuh
 cuh
 iDo
-gUx
+aFH
 kME
 bzY
 qbE
@@ -83064,7 +83245,7 @@ cuh
 cuh
 cuh
 ccA
-pRg
+mjG
 bzY
 cTO
 xye
@@ -83132,7 +83313,7 @@ kaP
 fYz
 fYz
 bwH
-gUx
+aFH
 bxc
 qOH
 fKZ
@@ -83279,7 +83460,7 @@ cuh
 cuh
 iDo
 ndb
-aGE
+qJW
 cuF
 fDm
 bxc
@@ -83383,7 +83564,7 @@ iDo
 iDo
 bwH
 bzY
-aGE
+kNn
 pTq
 pTq
 cuh
@@ -83526,7 +83707,7 @@ vrB
 cuh
 pTq
 bzY
-qJW
+ylX
 xHn
 sAi
 bAf
@@ -83749,7 +83930,7 @@ qbE
 xBH
 cuF
 qOH
-bxr
+yfR
 fDm
 rJr
 bzY
@@ -83764,7 +83945,7 @@ bwH
 snw
 fDm
 cuF
-gUx
+aFH
 bwH
 bwH
 cuF
@@ -84506,7 +84687,7 @@ cuh
 cuh
 jIx
 mQs
-aGE
+qJW
 sOo
 dks
 bzY
@@ -84552,7 +84733,7 @@ bwH
 atP
 bzY
 bzY
-gUx
+aFH
 cuF
 cuF
 bwH
@@ -84703,7 +84884,7 @@ bnZ
 bzY
 bzY
 bwH
-gUx
+aFH
 snw
 fDm
 cuF
@@ -85869,7 +86050,7 @@ bwH
 xBH
 cuF
 cuF
-bxr
+yfR
 gmp
 snw
 snw
@@ -86241,7 +86422,7 @@ snw
 wWf
 pTq
 pTq
-ccA
+vjQ
 kgw
 rbR
 pTq
@@ -86544,7 +86725,7 @@ cuh
 "}
 (26,1,3) = {"
 cuh
-gUx
+aFH
 bzY
 wWf
 wWf
@@ -86844,7 +87025,7 @@ iDo
 bAf
 bwH
 snw
-bxr
+yfR
 cuF
 qSK
 snw
@@ -86993,7 +87174,7 @@ cuF
 cuF
 snw
 snw
-bxr
+yfR
 xBH
 bzY
 xBH
@@ -87075,7 +87256,7 @@ djg
 bwH
 snw
 bwH
-gUx
+aFH
 snw
 bwH
 bwH
@@ -87394,7 +87575,7 @@ bxc
 bxc
 bzY
 tlB
-gUx
+aFH
 bwH
 wCs
 cuF
@@ -87488,7 +87669,7 @@ cuh
 cuh
 bzY
 cuF
-gUx
+aFH
 cuh
 cuh
 cuh
@@ -87965,13 +88146,13 @@ cuh
 cuh
 cuh
 wWf
-jae
+vjQ
 pvk
 bwH
 bwH
 bwH
 dOB
-bnZ
+bWi
 pTq
 wWf
 cuh
@@ -88019,8 +88200,8 @@ tlB
 xBH
 dxB
 bwH
-bzY
-bxc
+xOd
+ucx
 cuF
 cuF
 bzY
@@ -88177,7 +88358,7 @@ bwH
 dxB
 dxB
 bzY
-ccA
+nqu
 cuF
 bzY
 bzY
@@ -88200,7 +88381,7 @@ cuF
 css
 snw
 snw
-gUx
+kye
 snw
 bwH
 snw
@@ -88313,7 +88494,7 @@ bzY
 bzY
 bzY
 bwH
-gUx
+aFH
 iLl
 cuh
 cuh
@@ -88334,7 +88515,7 @@ hPv
 iDo
 bwH
 inh
-ccA
+ofD
 tWW
 bzY
 qVo
@@ -88411,7 +88592,7 @@ egm
 bwH
 dxB
 bwH
-rYa
+yfR
 dks
 rJr
 bzY
@@ -88492,8 +88673,8 @@ tlB
 cuF
 bzY
 ccA
-ccA
-bzY
+ofD
+xOd
 bzY
 rJr
 cuF
@@ -88536,7 +88717,7 @@ rJr
 rEE
 snw
 cuF
-gUx
+kye
 xBH
 wWf
 wWf
@@ -88547,7 +88728,7 @@ wWf
 tWW
 bzY
 bzY
-gUx
+kye
 bwH
 vSz
 snw
@@ -88650,8 +88831,8 @@ cuF
 bzY
 ccA
 qVo
-bzY
-bzY
+xOd
+xOd
 rJr
 cuF
 cyA
@@ -88882,7 +89063,7 @@ snw
 iDo
 iDo
 bwH
-bxr
+yfR
 bwH
 rxs
 bwH
@@ -88930,7 +89111,7 @@ pTq
 pTq
 pTq
 iDo
-gUx
+aFH
 bzY
 bzY
 bwH
@@ -88960,7 +89141,7 @@ xBH
 fAf
 bzY
 bwH
-gUx
+aFH
 fDm
 fDm
 fDm
@@ -89043,7 +89224,7 @@ dQO
 bzY
 bzY
 bwH
-nth
+vLV
 wWf
 qwm
 wWf
@@ -89267,7 +89448,7 @@ nNG
 bxc
 bzY
 cuF
-gUx
+aFH
 cuF
 snw
 snw
@@ -89286,7 +89467,7 @@ cyA
 cyA
 cyA
 oqs
-gUx
+kye
 snw
 cMg
 nNG
@@ -89355,7 +89536,7 @@ qbE
 qbE
 bzY
 bxc
-rYa
+nrc
 bwH
 hPv
 qTY
@@ -89386,7 +89567,7 @@ tWW
 ite
 ite
 bwH
-nrc
+yfR
 iDo
 gik
 bwH
@@ -89506,12 +89687,12 @@ oSp
 eNk
 bwH
 bwH
-rYa
+nrc
 fIi
 waE
 bzY
 bwH
-bxr
+yfR
 iDo
 bwH
 bwH
@@ -89543,10 +89724,10 @@ hre
 dks
 bwH
 bwH
-sTM
+bwH
 ccA
 ccA
-bxr
+vLV
 iDo
 iDo
 bwH
@@ -89712,7 +89893,7 @@ bzY
 xBH
 bxc
 bzY
-gUx
+aFH
 cuF
 snw
 snw
@@ -89849,7 +90030,7 @@ bzY
 bzY
 snw
 snw
-gUx
+aFH
 bwH
 iDo
 snw
@@ -89977,7 +90158,7 @@ bzY
 tWW
 bxc
 bzY
-nth
+vLV
 vrB
 iDo
 iDo
@@ -89987,7 +90168,7 @@ aqy
 cuF
 dtp
 tWW
-nth
+vLV
 bwH
 bwH
 bwH
@@ -90011,7 +90192,7 @@ bwH
 snw
 snw
 bzY
-fYz
+xAH
 fYz
 fYz
 fYz
@@ -90778,7 +90959,7 @@ pTq
 hXm
 hXm
 hXm
-vjQ
+kMv
 cuh
 "}
 (53,1,3) = {"
@@ -91220,7 +91401,7 @@ cMg
 cMg
 cMg
 cMg
-gUx
+aFH
 css
 jXf
 hPv
@@ -92487,7 +92668,7 @@ guv
 ccA
 snw
 piN
-gUx
+aFH
 bzY
 cuh
 tDh
@@ -95777,7 +95958,7 @@ vSz
 iDo
 cMg
 bzY
-rYa
+yfR
 cuF
 enG
 snw
@@ -96245,7 +96426,7 @@ snw
 enG
 iDo
 bwH
-rYa
+nth
 cMg
 bzY
 inh
@@ -97197,7 +97378,7 @@ cuF
 vrB
 fDm
 bwH
-nrc
+nth
 rwZ
 mvp
 rwZ
@@ -97792,7 +97973,7 @@ snw
 iDo
 iDo
 bxc
-vnd
+rBE
 fDm
 mge
 bwH
@@ -98890,7 +99071,7 @@ bwH
 nNG
 bwH
 snw
-rYa
+sTM
 bzY
 bzY
 snw
@@ -98981,7 +99162,7 @@ bxc
 bwH
 tOv
 bxc
-sTM
+vLV
 fEv
 bxc
 bxc
@@ -99769,7 +99950,7 @@ bwH
 bwH
 bzY
 bwH
-bxr
+yfR
 cMg
 dXa
 dXa
@@ -100486,7 +100667,7 @@ eNk
 ccA
 ccA
 uAS
-bxr
+rYa
 cuF
 fDm
 bwH
@@ -100865,7 +101046,7 @@ wkE
 bzY
 bwH
 bwH
-bxr
+yfR
 iDo
 bwH
 bzY
@@ -101582,7 +101763,7 @@ eKW
 iZP
 iZP
 oZu
-rYa
+sTM
 cuF
 cuF
 bwH
@@ -101800,7 +101981,7 @@ bzY
 snw
 snw
 oYA
-sTM
+vLV
 snw
 bxc
 opT
@@ -101892,7 +102073,7 @@ xKq
 oZu
 lzG
 lzG
-xOd
+fxj
 lzG
 lzG
 prf
@@ -102031,7 +102212,7 @@ iDo
 snw
 bwH
 cMg
-rgu
+aub
 fDm
 xKq
 qDl
@@ -102360,7 +102541,7 @@ lzG
 lzG
 prf
 kqw
-kcP
+doM
 prf
 prf
 kqw
@@ -102436,7 +102617,7 @@ cuF
 wkE
 rBZ
 bwH
-sTM
+vLV
 coU
 bwH
 cuF
@@ -102661,7 +102842,7 @@ oZu
 qDl
 prM
 prf
-doM
+pEN
 prf
 prf
 prf
@@ -102815,7 +102996,7 @@ oZu
 qDl
 bQP
 oZu
-qDl
+fnz
 prf
 prf
 iQo
@@ -102823,7 +103004,7 @@ prf
 qAs
 cow
 prf
-doM
+aJN
 iQo
 prM
 kqw
@@ -102845,7 +103026,7 @@ prf
 rop
 prf
 qMF
-kcP
+doM
 prf
 kqw
 kqw
@@ -103066,7 +103247,7 @@ wkE
 bwH
 cuF
 gtg
-bxr
+yfR
 bwH
 igy
 igy
@@ -103451,7 +103632,7 @@ qDl
 prf
 iQo
 uGq
-qsg
+kcP
 iQo
 prf
 kqw
@@ -103616,7 +103797,7 @@ lzG
 lzG
 prf
 uGq
-qsg
+doM
 sba
 prM
 prM
@@ -104246,7 +104427,7 @@ prf
 iQo
 prf
 prf
-qsg
+doM
 kqw
 kqw
 prf
@@ -104550,14 +104731,14 @@ gSB
 uBB
 prf
 prf
-lzG
-xWe
-fxj
+hyM
+hyM
+hyM
 gco
 lzG
 lzG
 xWe
-lzG
+hyM
 prf
 prf
 aro
@@ -104707,7 +104888,7 @@ rop
 prf
 prf
 prf
-xWe
+mze
 nIK
 qDl
 bJT
@@ -104715,8 +104896,8 @@ lzG
 lzG
 oZu
 kqw
-prf
-lzG
+prM
+anO
 aro
 oQE
 oQE
@@ -104863,8 +105044,8 @@ prM
 kqw
 prf
 prf
-aJN
-xWe
+prf
+hyM
 oVM
 uFe
 eky
@@ -104872,7 +105053,7 @@ lzG
 lzG
 hKU
 qDl
-lzG
+hyM
 qMF
 oQE
 oQE
@@ -105019,19 +105200,19 @@ kqw
 prf
 prf
 prf
-xWe
-xWe
 lzG
-qjp
+mze
+lzG
+qDl
 iaL
 eky
 lzG
 lzG
-oZu
+oCH
 oZu
 bCN
-xWe
-gUo
+lzG
+aIU
 oQE
 oQE
 oQE
@@ -105176,7 +105357,7 @@ kqw
 kqw
 prf
 prf
-xWe
+hyM
 nIK
 kti
 lzG
@@ -105188,19 +105369,19 @@ ntI
 oZu
 yiK
 lzG
-xWe
-xWe
-lzG
-xWe
+hyM
+mze
+hyM
+hyM
 oVM
 aAV
 lzG
 lzG
-lzG
+anO
 aAV
-fxj
 lzG
-xWe
+lzG
+fxj
 oQE
 oQE
 oQE
@@ -105333,8 +105514,8 @@ aAA
 kqw
 prM
 prf
-xWe
-fxj
+anO
+lzG
 uFe
 qDl
 ajB
@@ -105345,21 +105526,21 @@ lzG
 nST
 qDl
 lzG
-yfR
 lzG
 lzG
-yfR
+lzG
+lzG
 qDl
 uFe
 uFe
-xWe
 lzG
 lzG
 lzG
 lzG
-fxj
-fxj
-xWe
+lzG
+lzG
+lzG
+mze
 oQE
 oQE
 oQE
@@ -105489,8 +105670,8 @@ uFe
 prf
 prf
 prf
-xWe
-xWe
+anO
+lzG
 uFe
 uFe
 qDl
@@ -105509,15 +105690,15 @@ vCS
 yiK
 iaL
 uFe
-fxj
-ofD
-xWe
+lzG
+qDl
+lzG
 oZu
 qDl
 rvb
 jhd
 lzG
-xWe
+mze
 oQE
 oQE
 oQE
@@ -105648,12 +105829,12 @@ prf
 prf
 hyM
 lzG
-lzG
-fxj
+uFe
+uFe
 uFe
 qDl
 bCN
-oZu
+qjp
 lzG
 lzG
 lzG
@@ -105667,7 +105848,7 @@ hKU
 uFe
 eky
 qDl
-mze
+qDl
 oZu
 hKU
 oZu
@@ -105675,7 +105856,7 @@ oZu
 rrL
 lzG
 lzG
-fxj
+anO
 oQE
 oQE
 oQE
@@ -105803,13 +105984,13 @@ uFe
 uFe
 xvB
 xvB
-xWe
+hyM
 oVM
-fMP
-vbF
+hMW
+vCR
 uFe
-lzG
-qjp
+uFe
+qDl
 hln
 oZu
 lzG
@@ -105832,7 +106013,7 @@ uFe
 hKU
 oZu
 oVM
-fxj
+hyM
 oQE
 oQE
 oQE
@@ -105960,12 +106141,12 @@ uFe
 uFe
 kcg
 xvB
-xWe
-xWe
+mze
+lzG
 uFe
 eky
 uFe
-lzG
+uFe
 uFe
 eky
 uFe
@@ -105989,7 +106170,7 @@ pHJ
 hIN
 oZu
 lzG
-lzG
+hyM
 hPz
 hPz
 gUo
@@ -106118,7 +106299,7 @@ uFe
 kcg
 xvB
 xvB
-fxj
+lzG
 iaL
 uFe
 iaL
@@ -106132,7 +106313,7 @@ ibW
 oZu
 nwd
 oZu
-yfR
+lzG
 eky
 eky
 hln
@@ -106275,7 +106456,7 @@ uFe
 kcg
 xvB
 xvB
-xWe
+mze
 lzG
 uFe
 uFe
@@ -106432,8 +106613,8 @@ uFe
 xvB
 kcg
 xvB
-xWe
 fxj
+hyM
 uFe
 uFe
 ajB
@@ -106445,12 +106626,12 @@ cow
 uFe
 lzG
 vbF
-qDl
+hQu
 oQE
 oQE
+mze
+uFe
 lzG
-anO
-fxj
 qDl
 uFe
 uFe
@@ -106458,7 +106639,7 @@ uFe
 uFe
 fMP
 lzG
-lzG
+hyM
 uFe
 hPz
 vOQ
@@ -106590,18 +106771,18 @@ xvB
 kcg
 xvB
 fEk
-xWe
-xWe
-xWe
+lzG
+mze
+lzG
 uFe
 uFe
 uFe
-fxj
 lzG
 lzG
 lzG
-yfR
 lzG
+hyM
+mze
 oQE
 oQE
 oQE
@@ -106612,10 +106793,10 @@ uFe
 uFe
 uFe
 uFe
-fxj
-xWe
-xWe
-xWe
+lzG
+lzG
+mze
+mze
 oQE
 oQE
 oQE
@@ -106749,14 +106930,14 @@ fEk
 oQE
 oQE
 fEk
-xWe
-xWe
-xWe
-xWe
-xWe
-xWe
+mze
+hyM
 lzG
 lzG
+anO
+hyM
+lzG
+mze
 oQE
 oQE
 oQE
@@ -106767,9 +106948,9 @@ oQE
 oQE
 uFe
 uFe
-fxj
-xWe
-xWe
+anO
+hyM
+hyM
 oQE
 oQE
 oQE
@@ -108852,7 +109033,7 @@ fxd
 jeV
 wkf
 wkf
-sCc
+dKr
 cgX
 wpA
 fxd
@@ -111061,7 +111242,7 @@ ctU
 jaZ
 wlk
 cnt
-eRQ
+thB
 eRQ
 eRQ
 jaZ
@@ -124857,7 +125038,7 @@ lAQ
 lAQ
 peT
 peT
-kSB
+otO
 grJ
 xfi
 blk
