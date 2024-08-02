@@ -192,8 +192,6 @@
 	..()
 	density = TRUE
 
-#undef PILLORY_HEAD_OFFSET
-
 ////TRIBAL STUFF////
 /obj/item/roguekey/tribal
 	name = "worn key"
