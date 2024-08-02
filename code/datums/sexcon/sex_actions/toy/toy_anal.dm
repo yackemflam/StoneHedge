@@ -15,8 +15,9 @@
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
-			if(pantsies.flags_inv == HIDECROTCH)
-				return FALSE
+			if(pantsies.flags_inv == HIDECROTCH) 
+				if(pantsies.genitalaccess == FALSE) 
+					return FALSE
 	if(!get_dildo_in_either_hand(user))
 		return FALSE
 	return TRUE

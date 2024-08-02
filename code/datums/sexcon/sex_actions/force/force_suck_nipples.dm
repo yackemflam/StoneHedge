@@ -13,8 +13,13 @@
 /datum/sex_action/force_suck_nipples/can_perform(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
-	if(!get_location_accessible(user, BODY_ZONE_CHEST))
-		return FALSE
+	if(ishuman(user))
+		var/mob/living/carbon/human/userhuman = user
+		if(userhuman.wear_shirt)
+			var/obj/item/clothing/suit/roguetown/shirtsies = userhuman.wear_shirt
+			if(shirtsies.flags_inv == HIDEBOOB)
+				if(shirtsies.genitalaccess == FALSE)
+					return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_BREASTS))
@@ -22,7 +27,7 @@
 	return TRUE
 
 /datum/sex_action/force_suck_nipples/on_start(mob/living/user, mob/living/target)
-	user.visible_message(span_warning("[user] forces [target]'s head down to swallow and suck on their nipples!"))
+	user.visible_message(span_warning("[user] forces [target]'s head down to suck on their nipples!"))
 	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
 /datum/sex_action/force_suck_nipples/on_perform(mob/living/user, mob/living/target)

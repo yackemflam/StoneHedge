@@ -18,6 +18,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	flags_inv = HIDECROTCH
+	var/genitalaccess = FALSE
 
 /obj/item/clothing/under/roguetown/AdjustClothes(mob/user)
 #ifdef MATURESERVER
@@ -118,11 +119,13 @@
 	name = "leather skirt"
 	desc = "Short skirt made of fine leather."
 	icon_state = "leatherskirt"
+	genitalaccess = TRUE
 
 /obj/item/clothing/under/roguetown/chainlegs/iron/studdedskirt
 	name = "studded skirt"
 	desc = "Short studded skirt made of fine leather and iron."
 	icon_state = "studdedskirt"
+	genitalaccess = TRUE
 
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
@@ -211,16 +214,19 @@
 	name = "chain skirt"
 	icon_state = "chain_skirt"
 	item_state = "chain_skirt"
+	genitalaccess = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/skirt
 	name = "plated skirt"
 	icon_state = "plate_skirt"
 	item_state = "plate_skirt"
+	genitalaccess = TRUE
 
 /obj/item/clothing/under/roguetown/carapacelegs/skirt
 	name = "carapace plated skirt"
 	icon_state = "carapace_skirt"
 	item_state = "carapace_skirt"
+	genitalaccess = TRUE
 
 /obj/item/clothing/under/roguetown/loincloth
 	name = "loincloth"
@@ -230,9 +236,11 @@
 //	adjustable = CAN_CADJUST
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
+	genitalaccess = TRUE
 
 /obj/item/clothing/under/roguetown/loincloth/brown
 	color = CLOTHING_BROWN
+	
 
 /obj/item/clothing/under/roguetown/loincloth/pink
 	color = "#b98ae3"

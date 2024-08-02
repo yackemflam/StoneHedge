@@ -13,8 +13,9 @@
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
-			if(pantsies.flags_inv == HIDECROTCH)
-				return FALSE
+			if(pantsies.flags_inv == HIDECROTCH) 
+				if(pantsies.genitalaccess == FALSE) 
+					return FALSE
 	return TRUE
 
 /datum/sex_action/masturbate_anus/on_start(mob/living/user, mob/living/target)

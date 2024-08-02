@@ -25,6 +25,7 @@
 	experimental_onhip = TRUE
 	nodismemsleeves = TRUE
 	flags_inv = HIDEBOOB|HIDECROTCH
+	var/genitalaccess = FALSE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
@@ -87,6 +88,7 @@
 	item_state = "chainbra"
 	desc = "Try not to get your nipple caught between the chains."
 	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/carapace
 	slot_flags = ITEM_SLOT_ARMOR
@@ -184,6 +186,7 @@
 	item_state = "halfplatebra"
 	desc = "Half plate that's even half-er, still just as protective somehow."
 	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/full
 	name = "plate armor"
@@ -208,6 +211,7 @@
 	item_state = "platebra"
 	desc = "The black and white line between absolute protection and none."
 	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	name = "iron breastplate"
@@ -431,6 +435,7 @@
 	item_state = "leatherbra"
 	desc = "Flexible cowhide armor. Lightweight, better than nothing, Although the bottom half is literally covered by nothing, it somehow still protects the full torso!"
 	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini
 	name = "studded leather bikini"
@@ -448,6 +453,7 @@
 	item_state = "studleatherbra"
 	desc = "Studded leather is the most durable of all hides and leathers and about as light. Although the bottom half is literally covered by nothing, it somehow still protects the full torso!"
 	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
 	name = "hide bikini"
@@ -465,6 +471,7 @@
 	item_state = "hidearmorbra"
 	desc = "A light armor of wildbeast hide. Far more durable than leather. This will not keep a person warm though... The bottom half is literally covered by nothing, it somehow still protects the full torso!"
 	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest
 	name = "leather vest"

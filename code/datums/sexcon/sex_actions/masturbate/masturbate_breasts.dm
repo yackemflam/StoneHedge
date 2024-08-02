@@ -11,8 +11,13 @@
 /datum/sex_action/masturbate_breasts/can_perform(mob/living/user, mob/living/target)
 	if(user != target)
 		return FALSE
-	if(!get_location_accessible(user, BODY_ZONE_CHEST))
-		return FALSE
+	if(ishuman(user))
+		var/mob/living/carbon/human/userhuman = user
+		if(userhuman.wear_shirt)
+			var/obj/item/clothing/suit/roguetown/shirtsies = userhuman.wear_shirt
+			if(shirtsies.flags_inv == HIDEBOOB)
+				if(shirtsies.genitalaccess == FALSE)
+					return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE
 	return TRUE
