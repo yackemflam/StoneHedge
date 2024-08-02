@@ -58,6 +58,8 @@
 	var/immune_to_genderswap = FALSE
 	var/armor_class = ARMOR_CLASS_NONE
 
+	var/genitalaccess = FALSE
+
 	sellprice = 1
 
 /obj/item

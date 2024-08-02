@@ -18,7 +18,6 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	flags_inv = HIDECROTCH
-	var/genitalaccess = FALSE
 
 /obj/item/clothing/under/roguetown/AdjustClothes(mob/user)
 #ifdef MATURESERVER

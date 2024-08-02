@@ -25,7 +25,6 @@
 	experimental_onhip = TRUE
 	nodismemsleeves = TRUE
 	flags_inv = HIDEBOOB|HIDECROTCH
-	var/genitalaccess = FALSE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
