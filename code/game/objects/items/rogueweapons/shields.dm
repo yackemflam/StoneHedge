@@ -81,7 +81,7 @@
 	if(!overlays.len)
 		var/icon/J = new('icons/roguetown/weapons/wood_heraldry.dmi')
 		var/list/istates = J.IconStates()
-		var/picked_name = input(user, "Choose a Heraldry", "ROGUETOWN", name) as null|anything in sortList(istates)
+		var/picked_name = input(user, "Choose a Heraldry", "DREAM KEEP", name) as null|anything in sortList(istates)
 		if(!picked_name)
 			picked_name = "none"
 		var/mutable_appearance/M = mutable_appearance('icons/roguetown/weapons/wood_heraldry.dmi', picked_name)
@@ -158,7 +158,7 @@
 	if(!overlays.len)
 		var/icon/J = new('icons/roguetown/weapons/shield_heraldry.dmi')
 		var/list/istates = J.IconStates()
-		var/picked_name = input(user, "Choose a Heraldry", "ROGUETOWN", name) as null|anything in sortList(istates)
+		var/picked_name = input(user, "Choose a Heraldry", "DREAM KEEP", name) as null|anything in sortList(istates)
 		if(!picked_name)
 			picked_name = "none"
 		var/mutable_appearance/M = mutable_appearance('icons/roguetown/weapons/shield_heraldry.dmi', picked_name)

@@ -34,13 +34,13 @@
 	if(!coin_loaded)
 		to_chat(user, span_warning("The machine doesn't respond. It needs a coin."))
 		return
-	var/send2place = input(user, "Where to? (Person or #number)", "ROGUETOWN", null)
+	var/send2place = input(user, "Where to? (Person or #number)", "DREAM KEEP", null)
 	if(!send2place)
 		return
-	var/sentfrom = input(user, "Who is this letter from?", "ROGUETOWN", null)
+	var/sentfrom = input(user, "Who is this letter from?", "DREAM KEEP", null)
 	if(!sentfrom)
 		sentfrom = "Anonymous"
-	var/t = stripped_multiline_input("Write Your Letter", "ROGUETOWN", no_trim=TRUE)
+	var/t = stripped_multiline_input("Write Your Letter", "DREAM KEEP", no_trim=TRUE)
 	if(t)
 		if(length(t) > 2000)
 			to_chat(user, span_warning("Too long. Try again."))
@@ -125,8 +125,8 @@
 		if(P.w_class >= WEIGHT_CLASS_BULKY)
 			return
 		if(alert(user, "Send Mail?",,"YES","NO") == "YES")
-			var/send2place = input(user, "Where to? (Person or #number)", "ROGUETOWN", null)
-			var/sentfrom = input(user, "Who is this from?", "ROGUETOWN", null)
+			var/send2place = input(user, "Where to? (Person or #number)", "DREAM KEEP", null)
+			var/sentfrom = input(user, "Who is this from?", "DREAM KEEP", null)
 			if(!sentfrom)
 				sentfrom = "Anonymous"
 			if(findtext(send2place, "#"))

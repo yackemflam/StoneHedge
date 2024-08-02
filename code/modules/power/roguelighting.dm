@@ -300,7 +300,7 @@
 		else
 			if(!on)
 				return
-		if (alert(usr, "Feed [W] to the fire?", "ROGUETOWN", "Yes", "No") != "Yes")
+		if (alert(usr, "Feed [W] to the fire?", "DREAM KEEP", "Yes", "No") != "Yes")
 			return
 		qdel(W)
 		user.visible_message(span_warning("[user] feeds [W] to [src]."))

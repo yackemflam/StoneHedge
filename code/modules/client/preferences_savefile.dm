@@ -238,7 +238,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	defiant	= sanitize_integer(defiant, FALSE, TRUE, TRUE)
 	horniboi = sanitize_integer(horniboi, FALSE, TRUE, TRUE)
 
-	//ROGUETOWN
+	//DREAM KEEP
 	parallax = PARALLAX_INSANE
 
 	return TRUE
