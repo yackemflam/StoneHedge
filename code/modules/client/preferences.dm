@@ -2123,7 +2123,7 @@ Slots: [job.spawn_positions]</span>
 		character.update_hair()
 		character.update_body_parts(redraw = TRUE)
 
-	character.char_accent = char_accent.name
+	character.char_accent = "[char_accent.name]"
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)
