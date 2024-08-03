@@ -8,7 +8,17 @@
 	organ_dna_type = /datum/organ_dna/penis
 	accessory_type = /datum/sprite_accessory/penis/human
 	var/penis_size = DEFAULT_PENIS_SIZE
-	
+
+/obj/item/organ/anus
+	//only for storing stuff
+	name = "anus"
+	icon_state = "anus"
+	dropshrink = 0.5
+	visible_organ = TRUE
+	zone = BODY_ZONE_PRECISE_GROIN
+	slot = ORGAN_SLOT_ANUS
+	accessory_type = /datum/sprite_accessory/none
+
 /obj/item/organ/vagina
 	name = "vagina"
 	icon_state = "vagina"

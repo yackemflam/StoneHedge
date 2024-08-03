@@ -1,7 +1,7 @@
 
 /datum/advclass/puritan
-	name = "Witcher"
-	tutorial = "Witchers Hunt the various supernatural threats to the continent if Grimoiria and it's denizens. They find frequent work in Stone Hedge, given it's closeness to magickal phenomena."
+	name = "Hierophant"
+	tutorial = "Hierophants Hunt the various supernatural threats to the continent if Grimoiria and it's denizens. They find frequent work in Stone Hedge, given it's closeness to magickal phenomena."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_TOLERATED_UP
 	outfit = /datum/outfit/job/roguetown/adventurer/puritan

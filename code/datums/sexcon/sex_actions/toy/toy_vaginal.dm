@@ -40,11 +40,11 @@
 					to_chat(H, span_userdanger("This will sting a little."))
 			if(W && W.transformed == TRUE)
 				to_chat(H, span_userdanger("This will HURT."))
-	user.visible_message(span_warning("[user] shoves \the [dildo] in her cunt..."))
+	user.visible_message(span_warning("[user] shoves \the [dildo] in their cunt..."))
 
 /datum/sex_action/toy_vagina/on_perform(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
-	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks her cunt with \the [dildo]."))
+	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks their cunt with \the [dildo]."))
 	playsound(user, 'sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
@@ -54,7 +54,7 @@
 
 /datum/sex_action/toy_vagina/on_finish(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
-	user.visible_message(span_warning("[user] pulls \the [dildo] from her cunt."))
+	user.visible_message(span_warning("[user] pulls \the [dildo] from their cunt."))
 
 /datum/sex_action/toy_vagina/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())
@@ -105,11 +105,11 @@
 		var/obj/item/reagent_containers/glass/contdildo = dildo
 		if(contdildo.spillable)
 			to_chat(user, span_info("\the [contdildo] will likely spill inside me."))
-	user.visible_message(span_warning("[user] shoves \the [dildo] in her cunt..."))
+	user.visible_message(span_warning("[user] shoves \the [dildo] in their cunt..."))
 
 /datum/sex_action/toy_vaginatwo/on_perform(mob/living/user, mob/living/target)
 	var/obj/item/dildo = user.get_active_held_item()
-	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks her cunt with \the [dildo]."))
+	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks their cunt with \the [dildo]."))
 	playsound(user, 'sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 
 	if(dildo.get_temperature() >= FIRE_MINIMUM_TEMPERATURE_TO_SPREAD)
@@ -121,6 +121,8 @@
 	if(istype(user.get_active_held_item(), /obj/item/rogueweapon))
 		var/obj/item/rogueweapon/wdildo = dildo
 		var/cutchance = 10*sc.speed //multiplies with speed
+		if(user.lying) //less odds if laying
+			cutchance *= 0.5
 		if(wdildo.sharpness >= IS_SHARP && sc.speed > SEX_SPEED_LOW && prob(cutchance))
 			ouchietext = pick("OUCH! \the [wdildo] cuts my insides!", "ACK! \the [wdildo] poked my walls!", "OW! \the [wdildo] cut my lower lips!", "ACK! \the [wdildo] stabs my womb!")
 			to_chat(user, span_userdanger(ouchietext))
@@ -132,6 +134,8 @@
 
 		var/mob/living/carbon/human/userussy = user
 		var/woundchance = 5*sc.speed //multiplies with speed
+		if(user.lying) //less odds if laying
+			woundchance *= 0.5
 		if(prob(woundchance))
 			if(prob(90))
 				to_chat(user, span_userdanger("OUCH! \the [wdildo] bleeds my cunt!!!"))
@@ -141,9 +145,20 @@
 				to_chat(user, span_userdanger("AHH!!! \the [wdildo] TEARS my cunt!!!"))
 				var/obj/item/bodypart/chest/gr = userussy.get_bodypart(BODY_ZONE_PRECISE_GROIN)
 				gr.add_wound(/datum/wound/slash, TRUE, FALSE)
+
+	if(istype(user.get_active_held_item(), /obj/item/ammo_casing/caseless/rogue))
+		var/obj/item/ammo_casing/caseless/rogue/adildo = dildo
+		var/cutchance = 10*sc.speed //multiplies with speed
+		if(user.lying) //less odds if laying
+			cutchance *= 0.5
+		if(sc.speed > SEX_SPEED_LOW && prob(cutchance))
+			ouchietext = pick("OUCH! \the [adildo] cuts my insides!", "ACK! \the [adildo] poked my walls!", "OW! \the [adildo] cut my lower lips!", "ACK! \the [adildo] stabs my womb!")
+			to_chat(user, span_userdanger(span_userdanger(ouchietext)))
+			user.apply_damage(rand(5,10), BRUTE, BODY_ZONE_PRECISE_GROIN)
+
 	if(istype(user.get_active_held_item(), /obj/item/reagent_containers/glass))
 		var/obj/item/reagent_containers/glass/contdildo = dildo
-		var/spillchance = 25*sc.speed //multiplies with speed
+		var/spillchance = 15*sc.speed //multiplies with speed
 		if(user.lying) //double spill odds if lying down due gravity and stuff.
 			spillchance *= 2
 		if(contdildo.spillable && prob(spillchance) && contdildo.reagents.total_volume)
@@ -156,7 +171,7 @@
 
 /datum/sex_action/toy_vaginatwo/on_finish(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_funobject_in_hand(user)
-	user.visible_message(span_warning("[user] pulls \the [dildo] from her cunt."))
+	user.visible_message(span_warning("[user] pulls \the [dildo] from their cunt."))
 
 /datum/sex_action/toy_vaginatwo/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())

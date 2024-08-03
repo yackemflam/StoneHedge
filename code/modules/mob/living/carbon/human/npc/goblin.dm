@@ -438,11 +438,11 @@
 		name = "male goblin"
 		real_name = "male goblin"
 		var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
-		testicles = new /obj/item/organ/testicles
+		testicles = new /obj/item/organ/testicles/internal
 		testicles.ball_size = rand(3)
 		testicles.Insert(src)
 		var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
-		penis = new /obj/item/organ/penis
+		penis = new /obj/item/organ/penis/internal
 		penis.penis_size = rand(3)
 		penis.Insert(src)
 	else
@@ -450,21 +450,21 @@
 		name = "female goblin"
 		real_name = "female goblin"
 		var/obj/item/organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
-		breasts = new /obj/item/organ/breasts
+		breasts = new /obj/item/organ/breasts/internal
 		breasts.breast_size = rand(10)
 		breasts.Insert(src)
 		var/obj/item/organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
-		vagina = new /obj/item/organ/vagina
+		vagina = new /obj/item/organ/vagina/internal
 		vagina.Insert(src)
 		if(prob(5)) //5 chance to be dickgirl
 			name = "futa goblin"
 			real_name = "futa goblin"
 			var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
-			testicles = new /obj/item/organ/testicles
+			testicles = new /obj/item/organ/testicles/internal
 			testicles.ball_size = rand(3)
 			testicles.Insert(src)
 			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
-			penis = new /obj/item/organ/penis
+			penis = new /obj/item/organ/penis/internal
 			penis.penis_size = rand(3)
 			penis.Insert(src)
 	update_body_parts()
