@@ -155,7 +155,7 @@
 		if(ejacmessaged != 1)
 			target.visible_message(span_info("With every load I swallow, with Eora's blessing I feel more satiated so I may go longer."))
 			ejacmessaged = 1
-		target.adjust_nutrition(100)
+		target.adjust_nutrition(200)
 	else
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	after_ejaculation()
@@ -166,8 +166,17 @@
 	log_combat(user, user, "Ejaculated")
 	user.visible_message(span_love("[user] makes a mess!"))
 	//small heal burst, this should not happen often due the delay on how often one can cum.
-	//user.adjustBruteLoss(-10)
-	//user.adjustFireLoss(-5)
+	var/sexhealrand = rand(5, 15)
+	if(HAS_TRAIT(user, TRAIT_SEXDEVO))
+		var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
+		if(sexhealmult < 2) //so its never below 2 for ones with trait.
+			sexhealmult = 2
+		sexhealrand *= sexhealmult
+		to_chat(user, span_green("I feel Eora's blessing."))
+	user.adjustBruteLoss(-sexhealrand)
+	sexhealrand *= 0.5
+	user.adjustFireLoss(-sexhealrand)
+	
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(user))
 	after_ejaculation()
@@ -177,7 +186,7 @@
 	if(ejacmessaged != 1)
 		user.visible_message(span_info("With every ejaculation I feel Eora's blessing satiate me so I may go longer."))
 		ejacmessaged = 1
-	user.adjust_nutrition(50)
+	user.adjust_nutrition(100)
 	set_arousal(40)
 	adjust_charge(-CHARGE_FOR_CLIMAX)
 	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
@@ -258,8 +267,8 @@
 
 /datum/sex_controller/proc/perform_sex_action(mob/living/action_target, arousal_amt, pain_amt, giving)
 	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
-		arousal_amt *=2
-		if(rand(10) == 1) //1 in 10th percent chance each action to emit the message so they know who the fuckin' with.
+		arousal_amt *= 2
+		if(prob(10)) //10 perc chance each action to emit the message so they know who the fuckin' with.
 			var/lovermessage = pick("This feels so good!","I am in heaven!","This is too good to be possible!","By the ten!","I can't stop, too good!")
 			to_chat(action_target, span_love(lovermessage))
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
@@ -276,16 +285,30 @@
 	//disabled as people keep BITCHING about it.
 	//go go gadget sex healing.. magic?
 	//if(user.buckled?.sleepy)
-		//very small healing, should heal 1 points brute every 4 times it trigger, 1 fire every 10 times.
-		//user.adjustBruteLoss(-0.25)
-		//user.adjustFireLoss(-0.1)
+	var/sexhealrand = rand(0.1, 0.3)
+	if(HAS_TRAIT(user, TRAIT_SEXDEVO))
+		var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
+		if(sexhealmult < 2) //so its never below 2 for ones with trait.
+			sexhealmult = 2
+		sexhealrand *= sexhealmult
+		if(prob(2))
+			to_chat(user, span_green("I feel Eora smile upon on me."))
+			sexhealrand += 1
+	user.adjustBruteLoss(-sexhealrand)
+	sexhealrand *= 0.5
+	user.adjustFireLoss(-sexhealrand)
 
 	//grant devotion through sex because who needs praying.
 	//not sure if it works right but i dont need to test cuz its asked to be commented out anyway, ffs.
-	//if(user.patron)
-	//	if(!user.mind.get_skill_level(/datum/skill/magic/holy))
-	//		if(user.devotion?.devotion < user.devotion?.max_devotion)
-	//			user.devotion?.update_devotion(rand(1,2))
+	if(user.patron && user.mind.get_skill_level(/datum/skill/magic/holy))
+		var/mob/living/carbon/human/devouser = user
+		var/datum/devotion/C = devouser.devotion
+		if(C.devotion < C.max_devotion)
+			C.update_devotion(rand(1,2))
+			if(HAS_TRAIT(devouser, TRAIT_SEXDEVO))
+				C.update_devotion(rand(4,8))
+				if(prob(3))
+					to_chat(devouser, span_info("I feel Eora guide me."))
 	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)

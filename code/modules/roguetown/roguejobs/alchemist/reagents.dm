@@ -14,11 +14,14 @@
 	else
 		//can overfill you with blood, but at a slower rate
 		M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_MAXIMUM)
-	M.adjustBruteLoss(-0.5*REM, 0)
-	M.adjustFireLoss(-0.5*REM, 0)
-	M.adjustOxyLoss(-1, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1*REM)
+	M.adjustBruteLoss(-1.5*REM, 0)
+	M.adjustFireLoss(-1.5*REM, 0)
+	M.adjustOxyLoss(-1.5, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2*REM)
 	M.adjustCloneLoss(-1*REM, 0)
+	if(prob(25)) //25% chance per mob life to heal a wound.
+		to_chat(M, span_nicegreen("I feel one of my wounds mend."))
+		M.heal_wounds(1)
 	..()
 	. = 1
 

@@ -137,6 +137,7 @@
 	domain = "Saint of the Love, Life and Beauty"
 	desc = "Blind love for all, without a shred of hate in her heart"
 	worshippers = "Lovers, Harlots, Doting Grandparents"
+	mob_traits = list(TRAIT_SEXDEVO)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/bud
 	t2 = /obj/effect/proc_holder/spell/invoked/eoracurse
