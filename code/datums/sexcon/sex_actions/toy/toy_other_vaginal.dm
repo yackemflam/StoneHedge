@@ -122,7 +122,7 @@
 		var/cutchance = 10*sc.speed //multiplies with speed
 		if(wdildo.sharpness >= IS_SHARP && sc.speed > SEX_SPEED_LOW && prob(cutchance))
 			ouchietext = pick("OUCH! \the [wdildo] cuts [target]'s insides!", "ACK! \the [wdildo] poked [target]'s walls!", "OW! \the [wdildo] cut [target]'s lower lips!", "ACK! \the [wdildo] stabs [target]'s womb!")
-			tuser.visible_message(span_userdanger(ouchietext))
+			user.visible_message(span_userdanger(ouchietext))
 			user.apply_damage(rand(10,20), BRUTE, BODY_ZONE_PRECISE_GROIN)
 		if(wdildo.sharpness == IS_BLUNT && sc.speed > SEX_SPEED_MID && prob(cutchance))
 			ouchietext = pick("OUCH! \the [wdildo] scrapes [target]'s insides!", "GUH! \the [wdildo] bruises [target]'s womb!", "OW! \the [wdildo] is pulls [target]'s cunt!", "AGH! \the [wdildo] smashes [target]'s womb!")
