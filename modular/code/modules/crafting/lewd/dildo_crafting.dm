@@ -37,3 +37,9 @@
 	req_bar = /obj/item/ingot/gold
 	created_item = list(/obj/item/dildo/gold, /obj/item/dildo/gold, /obj/item/dildo/gold)
 	i_type = "General"
+
+/datum/anvil_recipe/glass_dildo
+	name = "Glass dildo 3x"
+	req_bar = /obj/item/ingot/glass
+	created_item = list(/obj/item/dildo/glass, /obj/item/dildo/glass, /obj/item/dildo/glass)
+	i_type = "General"
