@@ -146,9 +146,9 @@
 		var/spillchance = 25*sc.speed //multiplies with speed
 		if(user.lying) //double spill odds if lying down due gravity and stuff.
 			spillchance *= 2
-		if(contdildo.spillable && sc.speed > SEX_SPEED_LOW  && prob(spillchance) && contdildo.reagents.total_volume)
+		if(contdildo.spillable && prob(spillchance) && contdildo.reagents.total_volume)
 			to_chat(user, span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill my cunt.", "I feed my cunt with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into my cunt.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into me.")))
-			addtimer(CALLBACK(contdildo.reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, rand(1,2), TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
+			addtimer(CALLBACK(contdildo.reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, sc.speed, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
 			playsound(user.loc, 'sound/misc/mat/endin.ogg', 100, TRUE)
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
