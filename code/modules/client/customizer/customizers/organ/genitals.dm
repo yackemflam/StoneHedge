@@ -207,17 +207,17 @@
 
 /datum/customizer_choice/organ/testicles/handle_topic(mob/user, list/href_list, datum/preferences/prefs, datum/customizer_entry/entry, customizer_type)
 	..()
-	var/datum/customizer_entry/organ/testicles/testicles_entry = entry
-	switch(href_list["customizer_task"])
-		if("ball_size")
-			var/named_size = input(user, "Choose your ball size:", "Character Preference", find_key_by_value(GLOB.named_ball_sizes, testicles_entry.ball_size)) as anything in GLOB.named_ball_sizes
-			if(isnull(named_size))
-				return
-			var/new_size = GLOB.named_ball_sizes[named_size]
-			testicles_entry.ball_size = sanitize_integer(new_size, MIN_TESTICLES_SIZE, MAX_TESTICLES_SIZE, DEFAULT_TESTICLES_SIZE)
+	if(can_customize_size)
+		var/datum/customizer_entry/organ/testicles/testicles_entry = entry
+		switch(href_list["customizer_task"])
+			if("ball_size")
+				var/named_size = input(user, "Choose your ball size:", "Character Preference", find_key_by_value(GLOB.named_ball_sizes, testicles_entry.ball_size)) as anything in GLOB.named_ball_sizes
+				if(isnull(named_size))
+					return
+				var/new_size = GLOB.named_ball_sizes[named_size]
+				testicles_entry.ball_size = sanitize_integer(new_size, MIN_TESTICLES_SIZE, MAX_TESTICLES_SIZE, DEFAULT_TESTICLES_SIZE)
 		if("virile")
 			testicles_entry.virility = !testicles_entry.virility
-
 /datum/customizer/organ/testicles/external
 	customizer_choices = list(/datum/customizer_choice/organ/testicles/external)
 
@@ -445,6 +445,7 @@
 		/datum/sprite_accessory/vagina/human,
 		/datum/sprite_accessory/vagina/gaping,
 		/datum/sprite_accessory/vagina/hairy,
+		/datum/sprite_accessory/vagina/extrahairy,
 		)
 	allows_accessory_color_customization = TRUE
 

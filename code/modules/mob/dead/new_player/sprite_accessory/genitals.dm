@@ -92,7 +92,7 @@
 /datum/sprite_accessory/testicles
 	icon = 'icons/mob/sprite_accessory/genitals/testicles.dmi'
 	color_key_name = "Sack"
-	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_LAYER)
+	relevant_layers = list(BODY_BEHIND_LAYER,BODY_ADJ_LAYER)
 
 /datum/sprite_accessory/testicles/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
@@ -115,7 +115,7 @@
 /datum/sprite_accessory/breasts
 	icon = 'icons/mob/sprite_accessory/genitals/breasts.dmi'
 	color_key_name = "Breasts"
-	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_LAYER)
+	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_FRONT_FRONT_LAYER)
 
 /datum/sprite_accessory/breasts/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/breasts/badonkers = organ
@@ -191,7 +191,7 @@
 /datum/sprite_accessory/belly
 	icon = 'icons/mob/sprite_accessory/genitals/belly.dmi'
 	color_key_name = "Belly"
-	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_LAYER)
+	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_FRONT_LAYER)
 
 /datum/sprite_accessory/belly/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/belly/belleh = organ

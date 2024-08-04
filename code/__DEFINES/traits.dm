@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_GOODLOVER = span_love("It's a lucky thing to share my bed."),
 	TRAIT_SEEDKNOW = span_info("I know which seeds grow which crops."),
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
-	TRAIT_SEXDEVO = span_info("I am able to recover significant devotion through sex.")
+	TRAIT_SEXDEVO = span_info("Sex is more benefical to me.")
 ))
 
 // trait accessor defines

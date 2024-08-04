@@ -9,7 +9,7 @@
 	allowed_races = RACES_ALL_KINDS
 	tutorial = "A tribal druidic shaman that works with shaman magic to heal the wounded and bring the dead back. They also take care of the farming on the side."
 	display_order = JDO_TRIBALSHAMAN
-	spells = list(/obj/effect/proc_holder/spell/self/convertrole/tribal)
+	spells = list(/obj/effect/proc_holder/spell/self/convertrole/tribal, /obj/effect/proc_holder/spell/invoked/cure_rot, /obj/effect/proc_holder/spell/invoked/heal/shaman, /obj/effect/proc_holder/spell/invoked/revive/shaman)
 	outfit = /datum/outfit/job/roguetown/tribalshaman
 	min_pq = 0
 	max_pq = null
@@ -56,14 +56,10 @@
 		H.change_stat("intelligence", 2)
 		H.change_stat("endurance", 1)
 		H.change_stat("perception", -1)
-
-	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
-	var/datum/devotion/C = new /datum/devotion(H, H.patron)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/cure_rot)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/heal/shaman)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/revive/shaman)
-	C.grant_spells_priest(H)
-	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
+		ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
+		var/datum/devotion/C = new /datum/devotion(H, H.patron)
+		C.grant_spells_priest(H)
+		H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 
 /obj/effect/proc_holder/spell/self/convertrole/tribal
 	name = "Recruit Tribemember"

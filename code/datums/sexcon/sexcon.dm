@@ -295,17 +295,21 @@
 	//go go gadget sex healing.. magic?
 	//if(user.buckled?.sleepy)
 	var/sexhealrand = rand(0.1, 0.3)
-	if(HAS_TRAIT(user, TRAIT_SEXDEVO))
-		var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
-		if(sexhealmult < 2) //so its never below 2 for ones with trait.
-			sexhealmult = 2
-		sexhealrand *= sexhealmult
-		if(prob(2))
-			to_chat(user, span_green("I feel Eora smile upon on me."))
-			sexhealrand += 1
+	if(user.health < user.maxHealth) //so its not spammy
+		if(HAS_TRAIT(user, TRAIT_SEXDEVO))
+			var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
+			if(sexhealmult < 2) //so its never below 2 for ones with trait.
+				sexhealmult = 2
+			sexhealrand *= sexhealmult
+			//extra heals target
+			if(!target.cmode)
+				target.adjustBruteLoss(-sexhealrand)
+				target.adjustFireLoss(-sexhealrand/2)
+			if(prob(2))
+				to_chat(user, span_green("I feel Eora smile upon on me."))
+				sexhealrand *= 2
 	user.adjustBruteLoss(-sexhealrand)
-	sexhealrand *= 0.5
-	user.adjustFireLoss(-sexhealrand)
+	target.adjustFireLoss(-sexhealrand/2)
 
 	//grant devotion through sex because who needs praying.
 	//not sure if it works right but i dont need to test cuz its asked to be commented out anyway, ffs.

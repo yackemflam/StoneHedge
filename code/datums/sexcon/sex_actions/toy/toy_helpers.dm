@@ -68,12 +68,12 @@
 
 /proc/get_funobject_in_hand(mob/living/user)
 	var/obj/item/thing = user.get_active_held_item()
-	if(thing != null && thing.w_class < WEIGHT_CLASS_HUGE) //Anything smaller than this goes in the puss.
+	if(thing != null && thing.w_class < WEIGHT_CLASS_HUGE) //Anything smaller than this fucks the puss.
 		return thing
 	return null
 
 /proc/get_insertable_in_hand(mob/living/user)
 	var/obj/item/thing = user.get_active_held_item()
-	if(thing != null && thing.w_class < WEIGHT_CLASS_BULKY) //Anything smaller than this goes in the puss.
+	if(thing != null && thing.w_class < WEIGHT_CLASS_NORMAL) //Anything smaller than this goes in the puss.
 		return thing
 	return null
