@@ -250,6 +250,8 @@
 	if(locations & HEAD)
 		if(!coverhead)
 			add_stress(/datum/stressevent/coldhead)
+		else
+			add_stress(/datum/stressevent/raining)
 //	if(locations & FEET)
 //		if(!coverfeet)
 //			add_stress(/datum/stressevent/coldfeet)
