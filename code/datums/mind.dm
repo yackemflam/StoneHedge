@@ -1011,3 +1011,5 @@
 /datum/mind/proc/add_sleep_experience(skill, amt, silent = FALSE)
 	sleep_adv.add_sleep_experience(skill, amt, silent)
 
+/datum/mind/proc/get_learning_boon(skill)
+	return 1 + (get_skill_level(skill) / 10)

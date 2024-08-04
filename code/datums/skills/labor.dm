@@ -20,3 +20,6 @@
 	dreams = list(
 		"...splinters fly off as a tree falls down on the ground, sending a thundering boom throughout the forest..."
 	)
+
+/datum/skill/labor/mathematics
+	name = "Mathematics"

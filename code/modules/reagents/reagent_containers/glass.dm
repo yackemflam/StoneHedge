@@ -37,7 +37,7 @@
 	testing("a1")
 	if(istype(M))
 		if(user.used_intent.type == INTENT_GENERIC)
-			return ..(
+			return ..()
 		else
 			if(!spillable)
 				return

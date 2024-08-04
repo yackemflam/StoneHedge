@@ -515,13 +515,6 @@
 	for(var/line in lines)
 		. += span_info(line)
 
-	if(!obscure_name && nsfwheadshot_link && user.client.prefs.horniboi)
-		. += "<a href='?src=[REF(src)];task=view_nsfwheadshot;'>View NSFW headshot</a>"
-
-	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
-	for(var/line in lines)
-		. += span_info(line)
-
 	//unnecessary
 	//	. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
 

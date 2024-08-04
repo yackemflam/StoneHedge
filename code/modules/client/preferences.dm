@@ -136,8 +136,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/datum/migrant_pref/migrant
 
-	var/datum/migrant_pref/migrant
-
 	var/action_buttons_screen_locs = list()
 
 	var/domhand = 2
@@ -152,12 +150,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/update_mutant_colors = TRUE
 
 	var/headshot_link
-	var/nsfwheadshot_link
+	var/nudeshot_link
 	var/list/violated = list()
 	var/list/descriptor_entries = list()
 	var/list/custom_descriptors = list()
 	var/defiant = TRUE
-	var/horniboi = FALSE
 
 	var/datum/char_accent/char_accent = "No accent"
 
@@ -408,11 +405,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
 			dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
 
-			dat += "<br><b>Headshot(1:1):</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
+			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
 				dat += "<a href='?_src_=prefs;preference=view_headshot;task=input'>View</a>"
 
-			dat += "<br><b>Nudeshot(3:4):</b> <a href='?_src_=prefs;preference=nudeshot;task=input'>Change</a>"
+			dat += "<br><b>Nudeshot:</b> <a href='?_src_=prefs;preference=nudeshot;task=input'>Change</a>"
 			if(nudeshot_link != null)
 				dat += "<a href='?_src_=prefs;preference=view_nudeshot;task=input'>View</a>"
 			dat += "</td>"
@@ -1522,8 +1519,8 @@ Slots: [job.spawn_positions]</span>
 						voice_color = sanitize_hexcolor(new_voice)
 
 				if("view_headshot")
-					var/list/dat = list("<img src='[headshot_link]' width='250px' height='250px'>")
-					var/datum/browser/popup = new(user, "headshot", "<div align='center'>Headshot</div>", 310, 320)
+					var/list/dat = list("<img src='[headshot_link]' width='360px' height='480px'>")
+					var/datum/browser/popup = new(user, "headshot", "<div align='center'>Headshot</div>", 400, 525)
 					popup.set_content(dat.Join())
 					popup.open(FALSE)
 					return
@@ -1979,13 +1976,6 @@ Slots: [job.spawn_positions]</span>
 						to_chat(user, span_notice("You will now have resistance from people violating you, but be punished for trying to violate others. This is not full protection."))
 					else
 						to_chat(user, span_boldwarning("You fully immerse yourself in the grim experience, waiving your resistance from people violating you, but letting you do the same unto other non-defiants"))
-
-				if("be_horniboi")
-					horniboi = !horniboi
-					if(horniboi)
-						to_chat(user, span_notice("You will now not see people's NSFW reference pics."))
-					else
-						to_chat(user, span_boldwarning("You will now see people's NSFW reference pics."))
 
 				if("schizo_voice")
 					toggles ^= SCHIZO_VOICE

@@ -201,7 +201,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["defiant"]			>> defiant
 
 	S["defiant"]			>> defiant
-	S["horniboi"] >> horniboi
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)

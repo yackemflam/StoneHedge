@@ -12,6 +12,9 @@
 /datum/skill/misc/climbing
 	name = "Climbing"
 
+/datum/skill/misc/lockpicking
+	name = "Lockpicking"
+
 /datum/skill/misc/reading
 	name = "Reading"
 	randomable_dream_xp = FALSE
