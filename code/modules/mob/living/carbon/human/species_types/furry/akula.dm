@@ -154,5 +154,7 @@
 	. = ..()
 	UnregisterSignal(C, COMSIG_MOB_SAY)
 
+/*
 /datum/species/akula/get_accent(mob/living/carbon/human/H)
 	return strings("pirate_replacement.json", "full")
+*/

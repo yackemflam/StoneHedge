@@ -904,6 +904,7 @@
 							amt2raise = 0
 						if(amt2raise > 0)
 							user.mind.add_sleep_experience(W.associated_skill, amt2raise, FALSE)
+							user.mind.adjust_experience(W.associated_skill, amt2raise, FALSE)
 						playsound(loc,pick('sound/combat/hits/onwood/education1.ogg','sound/combat/hits/onwood/education2.ogg','sound/combat/hits/onwood/education3.ogg'), rand(50,100), FALSE)
 					else
 						user.visible_message(span_danger("[user] trains on [src], but [src] ripostes!"))

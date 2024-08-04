@@ -25,6 +25,8 @@
 			return strings("spanish_replacement.json", "spanish")
 		if("Half Orc accent")
 			return strings("middlespeak.json", "middle")
+		if("Axian Accent")
+			return strings("pirate_replacement.json", "full")
 
 /datum/species/proc/get_accent_start(mob/living/carbon/human)
 	return
