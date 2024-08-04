@@ -54,25 +54,31 @@
 	else
 		on_examine_face(user)
 		var/used_name = name
-		var/datum/job/J = SSjob.GetJob(job)
-		var/used_title = J.title
+		var/used_title = get_role_title()
+		var/display_as_wanderer = FALSE
+		var/is_returning = FALSE
 		if(observer_privilege)
 			used_name = real_name
-		if(job)
-		// Use the possibly modified title in the output
-			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [used_title].")
-		else
-			if(J.f_title && (t_He == "She"))
-				used_title = J.f_title
+		if(migrant_type)
+			var/datum/migrant_role/migrant = MIGRANT_ROLE(migrant_type)
+			if(migrant.show_wanderer_examine)
+				display_as_wanderer = TRUE
+		else if(job)
+			var/datum/job/J = SSjob.GetJob(job)
 			if(J.wanderer_examine)
-				. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name].")
-			else
-				if(J.advjob_examine)
-					used_title = advjob
-				. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [islatejoin ? "returning " : ""][race_name] [used_title].")
+				display_as_wanderer = TRUE
+			if(islatejoin)
+				is_returning = TRUE
+		if(display_as_wanderer)
+			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name].")
+		else if(used_title)
+			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][race_name] [used_title].")
+		else
+			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
 
 		if(GLOB.lord_titles[name])
 			. += span_notice("[m3] been granted the title of \"[GLOB.lord_titles[name]]\".")
+
 		if(dna.species.use_skintones)
 			var/skin_tone_wording = dna.species.skin_tone_wording ? lowertext(dna.species.skin_tone_wording) : "skin tone"
 			var/list/skin_tones = dna.species.get_skin_list()
@@ -403,6 +409,7 @@
 					msg += "[m1] a shitfaced, slobbering wreck."
 
 			//Stress
+			var/stress = get_stress_amount()
 			if(HAS_TRAIT(user, TRAIT_EMPATH))
 				switch(stress)
 					if(20 to INFINITY)
@@ -500,10 +507,9 @@
 				. += "<a href='?src=[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
 
 	if(!obscure_name && headshot_link)
-		. += "<a href='?src=[REF(src)];task=view_headshot;'>View headshot</a>"
-
-	if(!obscure_name && nsfwheadshot_link && user.client.prefs.horniboi)
-		. += "<a href='?src=[REF(src)];task=view_nsfwheadshot;'>View NSFW headshot</a>"
+		. += "<a href='?src=[REF(src)];task=view_headshot;'>View face closely</a>"
+	if(nudeshot_link && get_location_accessible(src, BODY_ZONE_CHEST) && get_location_accessible(src, BODY_ZONE_PRECISE_GROIN))
+		. += "<a href='?src=[REF(src)];task=view_nudeshot;'>View body closely</a>"
 
 	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
 	for(var/line in lines)

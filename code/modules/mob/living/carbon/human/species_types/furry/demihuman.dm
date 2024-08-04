@@ -54,7 +54,7 @@
 		/datum/customizer/organ/horns/demihuman,
 		/datum/customizer/organ/tail/demihuman,
 		/datum/customizer/organ/testicles/human,
-		/datum/customizer/organ/penis/knotted,
+		/datum/customizer/organ/penis/canine,
 		/datum/customizer/organ/breasts/animal,
 		/datum/customizer/organ/belly/animal,
 		/datum/customizer/organ/vagina/animal,
@@ -67,6 +67,19 @@
 		/datum/body_marking/tonage,
 		/datum/body_marking/socklonger,
 		/datum/body_marking/tips,
+	)
+	descriptor_choices = list(
+		/datum/descriptor_choice/height,
+		/datum/descriptor_choice/body,
+		/datum/descriptor_choice/stature,
+		/datum/descriptor_choice/face,
+		/datum/descriptor_choice/face_exp,
+		/datum/descriptor_choice/skin,
+		/datum/descriptor_choice/voice,
+		/datum/descriptor_choice/prominent_one_wild,
+		/datum/descriptor_choice/prominent_two_wild,
+		/datum/descriptor_choice/prominent_three_wild,
+		/datum/descriptor_choice/prominent_four_wild,
 	)
 
 /datum/species/demihuman/check_roundstart_eligible()
@@ -124,3 +137,11 @@
 		"Lalvestine" = SKIN_COLOR_LALVESTINE,
 		"Ebon" = SKIN_COLOR_EBON,
 	)
+
+/datum/species/demihuman/get_accent(mob/living/carbon/human/H)
+    switch(H.skin_tone)
+        if(SKIN_COLOR_GRENZELHOFT) //Grenzelhoft
+            return strings("german_replacement.json", "german")
+        if(SKIN_COLOR_HAMMERHOLD) //Hammerhold
+            return strings("Anglish.json", "Anglish")
+    return null

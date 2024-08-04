@@ -79,7 +79,7 @@
 	icon_state = "chainkini"
 	item_state = "chainkini"
 	allowed_sex = list(FEMALE)
-	allowed_race = CLOTHED_RACES_TYPES	
+	allowed_race = CLOTHED_RACES_TYPES
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini/bra
 	name = "chainmail bra"
@@ -374,7 +374,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	name = "arming jacket"
-	desc = "Similar to a gambeson, it is meant to be used under armor."
+	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
 	icon_state = "dgamb"
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = NON_DWARVEN_RACE_TYPES

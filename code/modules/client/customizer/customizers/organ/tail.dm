@@ -59,6 +59,17 @@
 		/datum/sprite_accessory/tail/lizard/spikes,
 		)
 
+/datum/customizer/organ/tail/axian
+	customizer_choices = list(/datum/customizer_choice/organ/tail/axian)
+
+/datum/customizer_choice/organ/tail/axian
+	name = "Axian Tail"
+	organ_type = /obj/item/organ/tail/akula
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/shark,
+		/datum/sprite_accessory/tail/sharknofin,
+		)
+
 /datum/customizer/organ/tail/demihuman
 	customizer_choices = list(/datum/customizer_choice/organ/tail/demihuman)
 	allows_disabling = TRUE
@@ -115,6 +126,7 @@
 		/datum/sprite_accessory/tail/leopard,
 		/datum/sprite_accessory/tail/deer,
 		/datum/sprite_accessory/tail/raccoon,
+		/datum/sprite_accessory/tail/data_shark,
 		/datum/sprite_accessory/tail/sabresune,
 		/datum/sprite_accessory/tail/lizard/smooth,
 		/datum/sprite_accessory/tail/lizard/dtiger,
@@ -179,6 +191,7 @@
 		/datum/sprite_accessory/tail/deer,
 		/datum/sprite_accessory/tail/raccoon,
 		/datum/sprite_accessory/tail/sabresune,
+		/datum/sprite_accessory/tail/data_shark,
 		/datum/sprite_accessory/tail/lizard/smooth,
 		/datum/sprite_accessory/tail/lizard/dtiger,
 		/datum/sprite_accessory/tail/lizard/ltiger,

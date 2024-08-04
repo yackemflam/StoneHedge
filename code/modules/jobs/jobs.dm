@@ -75,7 +75,7 @@ GLOBAL_LIST_INIT(courtier_positions, list(
 	"Magician",
 	"Physician",
 	"Jester",
-	"Butler",
+	"Head Butler",
 ))
 
 GLOBAL_LIST_INIT(garrison_positions, list(

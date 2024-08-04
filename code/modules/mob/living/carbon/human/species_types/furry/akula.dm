@@ -9,7 +9,8 @@
 	Many Akula who had come to these colonies during the empire's height simply stayed, due to marrying into certain families, or to keep their livelihoods. It is not rare to find one of my kind in nobility, or townhood, or as a wanderer. \
 	Though a strong naval tradition has left us sharp-witted and strong, we are poorly-adapted to see well in such a boggy, rocky locale."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_WATERBREATHING)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/mob/species/male.dmi'
@@ -30,6 +31,8 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
+	specstats = list("strength" = 0, "perception" = 0, "intelligence" = -1, "constitution" = 1, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = -1, "constitution" = 1, "endurance" = 1, "speed" = 0, "fortune" = 0)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -58,11 +61,13 @@
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/organ/snout/akula,
+		/datum/customizer/organ/tail/axian,
+		/datum/customizer/organ/ears/axian,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/lizard,
 		/datum/customizer/organ/breasts/human,
 		/datum/customizer/organ/belly/human,
-		/datum/customizer/organ/vagina/human,
+		/datum/customizer/organ/vagina/human_anthro,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
@@ -76,6 +81,7 @@
 		/datum/body_marking/tiger/dark,
 	)
 	descriptor_choices = list(
+		/datum/descriptor_choice/height,
 		/datum/descriptor_choice/body,
 		/datum/descriptor_choice/stature,
 		/datum/descriptor_choice/face,
@@ -84,6 +90,8 @@
 		/datum/descriptor_choice/voice,
 		/datum/descriptor_choice/prominent_one,
 		/datum/descriptor_choice/prominent_two,
+		/datum/descriptor_choice/prominent_three,
+		/datum/descriptor_choice/prominent_four,
 	)
 
 /datum/species/akula/check_roundstart_eligible()
@@ -121,3 +129,30 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = second_color
 	return returned
+
+/datum/species/akula/random_name(gender,unique,lastname)
+	var/randname
+	if(gender == MALE)
+		randname = pick(world.file2list("strings/names/roguetown/axianmale.txt"))
+	if(gender == FEMALE)
+		randname = pick(world.file2list("strings/names/roguetown/axianfemale.txt"))
+	if(prob(33))
+		//Prefix
+		var/prefix = pick(world.file2list("strings/names/roguetown/axianprefix.txt"))
+		randname = "[prefix] [randname]"
+	else
+		//Suffix
+		var/suffix = pick(world.file2list("strings/names/roguetown/axiansuffix.txt"))
+		randname = "[randname] [suffix]"
+	return randname
+
+/datum/species/akula/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	..()
+	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+
+/datum/species/akula/on_species_loss(mob/living/carbon/C)
+	. = ..()
+	UnregisterSignal(C, COMSIG_MOB_SAY)
+
+/datum/species/akula/get_accent(mob/living/carbon/human/H)
+	return strings("pirate_replacement.json", "full")

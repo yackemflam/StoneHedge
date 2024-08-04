@@ -86,7 +86,7 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/goblin
 	craftdiff = 2
 	i_type = "Armor"
-	
+
 /datum/anvil_recipe/armor/plategoblin
 	name = "Goblin Mail (+1 Iron)"
 	req_bar = /obj/item/ingot/iron
@@ -234,12 +234,12 @@
 
 /datum/anvil_recipe/armor/plateskirt
 	name = "Plated Skirt (+1 Steel)"
-	req_bar = /obj/item/ingot/steel 
+	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/under/roguetown/platelegs/skirt
 	craftdiff = 2
 	i_type = "Armor"
-	
+
 /datum/anvil_recipe/armor/brayette
 	name = "Brayette"
 	req_bar = /obj/item/ingot/steel
@@ -248,7 +248,7 @@
 
 /datum/anvil_recipe/armor/platelegs
 	name = "Plated Chausses (+1 Steel)"
-	req_bar = /obj/item/ingot/steel 
+	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/under/roguetown/platelegs
 	craftdiff = 2
@@ -284,6 +284,24 @@
 	name = "Bervor"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/neck/roguetown/bervor
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/kettle
+	name = "Kettle"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/kettle
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/winged
+	name = "Winged cap"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/winged
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/horned
+	name = "Horned cap"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/horned
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/helmetsall

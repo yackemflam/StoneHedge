@@ -52,7 +52,7 @@
 		cloak = /obj/item/clothing/cloak/cape/knight
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/roguekey/dungeon
+		beltl = /obj/item/roguekey/keep_dungeon
 		r_hand = /obj/item/roguekey/manor
 		beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 		backr = /obj/item/storage/backpack/rogue/satchel

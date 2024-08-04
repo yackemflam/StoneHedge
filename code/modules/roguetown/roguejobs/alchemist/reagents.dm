@@ -9,19 +9,22 @@
 	alpha = 173
 
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
+	var/list/wCount = M.get_wounds()
 	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
 		M.blood_volume = min(M.blood_volume+50, BLOOD_VOLUME_MAXIMUM)
 	else
 		//can overfill you with blood, but at a slower rate
 		M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_MAXIMUM)
+	if(wCount.len > 0)
+		//some peeps dislike the church, this allows an alternative thats not a doctor or sleep.
+		M.heal_wounds(2) //at a motabalism of .5 U a tick this translates to 80WHP healing with 20 U Most wounds are unsewn 15-100. This is powerful on single wounds but rapidly weakens at multi wounds.
+		M.update_damage_overlays()
+		to_chat(M, span_nicegreen("I feel one of my wounds mend."))
 	M.adjustBruteLoss(-1.5*REM, 0)
 	M.adjustFireLoss(-1.5*REM, 0)
 	M.adjustOxyLoss(-1.5, 0)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2*REM)
 	M.adjustCloneLoss(-1*REM, 0)
-	if(prob(25)) //25% chance per mob life to heal a wound.
-		to_chat(M, span_nicegreen("I feel one of my wounds mend."))
-		M.heal_wounds(1)
 	..()
 	. = 1
 

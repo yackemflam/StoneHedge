@@ -199,7 +199,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["key_bindings"]		>> key_bindings
 
 	S["defiant"]			>> defiant
-	S["horniboi"] >> horniboi
+
+	S["defiant"]			>> defiant
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -236,7 +237,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
 	key_bindings 	= sanitize_islist(key_bindings, list())
 	defiant	= sanitize_integer(defiant, FALSE, TRUE, TRUE)
-	horniboi = sanitize_integer(horniboi, FALSE, TRUE, TRUE)
 
 	//DREAM KEEP
 	parallax = PARALLAX_INSANE
@@ -300,7 +300,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["pda_color"], pda_color)
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["defiant"], defiant)
-	WRITE_FILE(S["horniboi"], horniboi)
 	return TRUE
 
 
@@ -432,9 +431,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!valid_headshot_link(null, headshot_link, TRUE))
 		headshot_link = null
 
-	S["nsfwheadshot_link"]			>> nsfwheadshot_link
-	if(!valid_headshot_link(null, nsfwheadshot_link, TRUE))
-		nsfwheadshot_link = null
+	S["nudeshot_link"]			>> nudeshot_link
+	if(!valid_headshot_link(null, nudeshot_link, TRUE))
+		nudeshot_link = null
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -485,6 +484,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["descriptor_entries"] >> descriptor_entries
 	descriptor_entries = SANITIZE_LIST(descriptor_entries)
+	S["custom_descriptors"] >> custom_descriptors
+	custom_descriptors = SANITIZE_LIST(custom_descriptors)
 	validate_descriptors()
 
 	var/list/valid_skin_tones = pref_species.get_skin_list()
@@ -575,10 +576,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["body_markings"] , body_markings)
 	// Descriptor entries
 	WRITE_FILE(S["descriptor_entries"] , descriptor_entries)
+	WRITE_FILE(S["custom_descriptors"] , custom_descriptors)
 
 	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
 	WRITE_FILE(S["headshot_link"] , headshot_link)
-	WRITE_FILE(S["nsfwheadshot_link"] , nsfwheadshot_link)
+	WRITE_FILE(S["nudeshot_link"] , nudeshot_link)
 
 	WRITE_FILE(S["is_updated_for_genitalia"], TRUE)
 

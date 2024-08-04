@@ -7,20 +7,20 @@
 		if(!valid_headshot_link(null, headshot_link, TRUE))
 			return
 		var/mob/user = usr
-		var/list/dat = list("<img src='[headshot_link]' width='525px' height='575px'>")
-		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]'s Headshot</div>", 550, 625)
+		var/list/dat = list("<table width='100%' height='100%'><td align='center' valign='middle'><img src='[headshot_link]' width='560px' height='680px'></td></table>")
+		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]</div>", 610, 730)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return
 
-	if(href_list["task"] == "view_nsfwheadshot")
+	if(href_list["task"] == "view_nudeshot")
 		if(!ismob(usr))
 			return
-		if(!valid_headshot_link(null, nsfwheadshot_link, TRUE))
+		if(!valid_headshot_link(null, nudeshot_link, TRUE))
 			return
 		var/mob/user = usr
-		var/list/dat = list("<img src='[nsfwheadshot_link]' width='525px' height='575px'>")
-		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]'s NSFW Headshot</div>", 550, 625)
+		var/list/dat = list("<table width='100%' height='100%'><td align='center' valign='middle'><img src='[nudeshot_link]' width='560px' height='680px'></td></table>")
+		var/datum/browser/popup = new(user, "nudeshot", "<div align='center'>[src]</div>", 610, 730)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return

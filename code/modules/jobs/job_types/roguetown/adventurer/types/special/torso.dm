@@ -1,4 +1,3 @@
-//challenge class, spawns with no limbs
 /datum/advclass/torso
 	name = "Torso"
 	tutorial = "Some horrible accident in the forest away all of your limbs!\nSurvival will be a true TRIUMPH."
@@ -10,24 +9,30 @@
 
 /datum/outfit/job/roguetown/adventurer/torso/pre_equip(mob/living/carbon/human/H)
 	..()
-	//insane stats, not like they benefit you until you get limbs
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3 ,TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-	H.change_stat("strength", 5)
-	H.change_stat("endurance", 6)
-	H.change_stat("constitution", 6)
-	H.change_stat("perception", 4)
-	H.change_stat("speed", 4)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4 ,TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
+	H.change_stat("strength", 3)
+	H.change_stat("endurance", 3)
+	H.change_stat("constitution", 3)
+	H.change_stat("perception", 2)
+	H.change_stat("speed", 2)
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	belt = /obj/item/storage/belt/rogue/leather

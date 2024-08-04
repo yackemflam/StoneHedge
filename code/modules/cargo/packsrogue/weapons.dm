@@ -69,9 +69,8 @@
 
 /datum/supply_pack/rogue/weapons/stunmace
 	name = "Stunmaces"
-	cost = 300
+	cost = 450
 	contains = list(
-					/obj/item/rogueweapon/mace/stunmace,
 					/obj/item/rogueweapon/mace/stunmace,
 					/obj/item/rogueweapon/mace/stunmace,
 				)
@@ -116,26 +115,26 @@
 	name = "Arrows"
 	cost = 15
 	contains = list(
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
-					/obj/item/ammo_casing/caseless/rogue/arrow,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
+					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
 				)
 
 /datum/supply_pack/rogue/weapons/quivers/arrows
@@ -215,4 +214,3 @@
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison)
 */
-

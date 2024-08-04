@@ -150,11 +150,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/update_mutant_colors = TRUE
 
 	var/headshot_link
-	var/nsfwheadshot_link
+	var/nudeshot_link
 	var/list/violated = list()
 	var/list/descriptor_entries = list()
+	var/list/custom_descriptors = list()
 	var/defiant = TRUE
-	var/horniboi = FALSE
 
 	var/datum/char_accent/char_accent = "No accent"
 
@@ -207,6 +207,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	accessory = "Nothing"
 
 	headshot_link = null
+	nudeshot_link = null
+
 	customizer_entries = list()
 	validate_customizer_entries()
 	reset_all_customizer_accessory_colors()
@@ -245,27 +247,10 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			// Top-level menu table
 			dat += "<table style='width: 100%; line-height: 20px;'>"
-			// FIRST ROW
-			dat += "<tr>"
-			dat += "<td style='width:33%;text-align:left'>"
-			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Change Character</a>"
-			dat += "</td>"
-
-
-			dat += "<td style='width:33%;text-align:center'>"
-			if(SStriumphs.triumph_buys_enabled)
-				dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=triumph_buy_menu'>Triumph Buy</a>"
-			dat += "</td>"
-
-			dat += "<td style='width:33%;text-align:right'>"
-			dat += "<a href='?_src_=prefs;preference=keybinds;task=menu'>Keybinds</a>"
-			dat += "</td>"
-			dat += "</tr>"
-
-
 			// NEXT ROW
 			dat += "<tr>"
 			dat += "<td style='width:33%;text-align:left'>"
+			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Change Character</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:center'>"
@@ -273,6 +258,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:right'>"
+			dat += "<a href='?_src_=prefs;preference=keybinds;task=menu'>Keybinds</a>"
 			dat += "</td>"
 			dat += "</tr>"
 
@@ -297,6 +283,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<td style='width:33%;text-align:center'>"
 			dat += "<a href='?_src_=prefs;preference=triumphs;task=menu'><b>TRIUMPHS:</b></a> [user.get_triumphs() ? "\Roman [user.get_triumphs()]" : "None"]"
+			if(SStriumphs.triumph_buys_enabled)
+				dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=triumph_buy_menu'>Triumph Buy</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:right'>"
@@ -410,7 +398,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<b>Mutant Color #3:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
 
 
-			dat += "<br>"
 			dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 
 			dat += "<br><b>Accent:</b> <a href='?_src_=prefs;preference=char_accent;task=input'>[char_accent]</a>"
@@ -420,10 +407,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
-				dat += "<br><img src='[headshot_link]' width='225px' height='275x'>"
-			dat += "<br><b>NSFW Headshot:</b> <a href='?_src_=prefs;preference=nsfwheadshot;task=input'>Change</a>"
-			if(nsfwheadshot_link != null)
-				dat += "<br><img src='[nsfwheadshot_link]' width='225px' height='275px'>"
+				dat += "<a href='?_src_=prefs;preference=view_headshot;task=input'>View</a>"
+
+			dat += "<br><b>Nudeshot:</b> <a href='?_src_=prefs;preference=nudeshot;task=input'>Change</a>"
+			if(nudeshot_link != null)
+				dat += "<a href='?_src_=prefs;preference=view_nudeshot;task=input'>View</a>"
 			dat += "</td>"
 
 			dat += "</tr></table>"
@@ -692,7 +680,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
 	dat += "<b>Be defiant:</b> <a href='?_src_=prefs;preference=be_defiant'>[(defiant) ? "Yes":"No"]</a><br>"
-	dat += "<b>Be snowflake:</b> <a href='?_src_=prefs;preference=be_horniboi'>[(horniboi) ? "Yes":"No"]</a><br>"
 	dat += "<b>Be voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a>"
 	dat += "</td>"
 	dat += "</tr>"
@@ -1530,10 +1517,25 @@ Slots: [job.spawn_positions]</span>
 							to_chat(user, "<font color='red'>This voice color is too dark for mortals.</font>")
 							return
 						voice_color = sanitize_hexcolor(new_voice)
+
+				if("view_headshot")
+					var/list/dat = list("<img src='[headshot_link]' width='360px' height='480px'>")
+					var/datum/browser/popup = new(user, "headshot", "<div align='center'>Headshot</div>", 390, 540)
+					popup.set_content(dat.Join())
+					popup.open(FALSE)
+					return
+
+				if("view_nudeshot")
+					var/list/dat = list("<img src='[nudeshot_link]' width='360px' height='480px'>")
+					var/datum/browser/popup = new(user, "nudeshot", "<div align='center'>Nudeshot</div>", 390, 540)
+					popup.set_content(dat.Join())
+					popup.open(FALSE)
+					return
+
 				if("headshot")
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
-					to_chat(user, "<span class='notice'>Keep in mind that the photo will be sized to 525x575 pixels, so the more square the photo, the better it will look.</span>")
+					to_chat(user, "<span class='notice'>Resolution: 525x575 pixels.</span>")
 					var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", headshot_link) as text|null
 					if(new_headshot_link == null)
 						return
@@ -1549,22 +1551,24 @@ Slots: [job.spawn_positions]</span>
 					to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
 					log_game("[user] has set their Headshot image to '[headshot_link]'.")
 
-				if("nsfwheadshot")
-					to_chat(user, "<span class='notice'>Finally a place to show it all.</span>")
-					var/new_nsfwheadshot_link = input(user, "Input the nsfw headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "NSFW Headshot", nsfwheadshot_link) as text|null
-					if(new_nsfwheadshot_link == null)
+				if("nudeshot")
+					to_chat(user, "<span class='notice'>["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
+					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
+					to_chat(user, "<span class='notice'>Resolution: 560x680 pixels.</span>")
+					var/new_nudeshot_link = input(user, "Input the nudeshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Nudeshot", nudeshot_link) as text|null
+					if(new_nudeshot_link == null)
 						return
-					if(new_nsfwheadshot_link == "")
-						nsfwheadshot_link = null
+					if(new_nudeshot_link == "")
+						nudeshot_link = null
 						ShowChoices(user)
 						return
-					if(!valid_headshot_link(user, new_nsfwheadshot_link))
-						nsfwheadshot_link = null
+					if(!valid_headshot_link(user, new_nudeshot_link))
+						nudeshot_link = null
 						ShowChoices(user)
 						return
-					nsfwheadshot_link = new_nsfwheadshot_link
-					to_chat(user, "<span class='notice'>Successfully updated nsfwheadshot picture</span>")
-					log_game("[user] has set their Nsfwheadshot image to '[nsfwheadshot_link]'.")
+					nudeshot_link = new_nudeshot_link
+					to_chat(user, "<span class='notice'>Successfully updated nudeshot picture</span>")
+					log_game("[user] has set their Nudeshot image to '[nudeshot_link]'.")
 
 				if("species")
 
@@ -1966,12 +1970,12 @@ Slots: [job.spawn_positions]</span>
 					else
 						to_chat(user, span_boldwarning("You fully immerse yourself in the grim experience, waiving your resistance from people violating you, but letting you do the same unto other non-defiants"))
 
-				if("be_horniboi")
-					horniboi = !horniboi
-					if(horniboi)
-						to_chat(user, span_notice("You will now not see people's NSFW reference pics."))
+				if("be_defiant")
+					defiant = !defiant
+					if(defiant)
+						to_chat(user, span_notice("You will now have resistance from people violating you, but be punished for trying to violate others. This is not full protection."))
 					else
-						to_chat(user, span_boldwarning("You will now see people's NSFW reference pics."))
+						to_chat(user, span_boldwarning("You fully immerse yourself in the grim experience, waiving your resistance from people violating you, but letting you do the same unto other non-defiants"))
 
 				if("schizo_voice")
 					toggles ^= SCHIZO_VOICE
@@ -1981,6 +1985,10 @@ Slots: [job.spawn_positions]</span>
 										Good voices will be rewarded with PQ for answering meditations, while bad ones are punished at the discretion of jannies.</span>")
 					else
 						to_chat(user, span_warning("You are no longer a voice."))
+
+				if("migrants")
+					migrant.show_ui()
+					return
 
 				if("migrants")
 					migrant.show_ui()
@@ -2099,7 +2107,6 @@ Slots: [job.spawn_positions]</span>
 	character.set_patron(selected_patron)
 	character.backpack = backpack
 	character.defiant = defiant
-	character.horniboi = horniboi
 
 	character.jumpsuit_style = jumpsuit_style
 
@@ -2110,7 +2117,7 @@ Slots: [job.spawn_positions]</span>
 	character.dna.real_name = character.real_name
 
 	character.headshot_link = headshot_link
-	character.nsfwheadshot_link = nsfwheadshot_link
+	character.nudeshot_link = nudeshot_link
 
 	if(parent)
 		var/list/L = get_player_curses(parent.ckey)
