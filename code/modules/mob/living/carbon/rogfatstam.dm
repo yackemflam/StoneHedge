@@ -31,7 +31,8 @@
 	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
 		return TRUE
 	if(m_intent == MOVE_INTENT_RUN)
-		mind.add_sleep_experience(/datum/skill/misc/athletics, (STAINT*0.02))
+		mind.add_sleep_experience(/datum/skill/misc/athletics, (STAINT*0.08))
+		mind.adjust_experience(/datum/skill/misc/athletics, (STAINT*0.08))
 	rogstam += added
 	if(rogstam > maxrogstam)
 		rogstam = maxrogstam

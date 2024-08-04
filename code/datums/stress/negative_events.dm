@@ -189,7 +189,7 @@
 /datum/stressevent/coldhead
 	timer = 60 SECONDS
 	stressadd = 1
-	desc = span_red("My head is cold and ugly.")
+	desc = span_red("My head is soaked and cold.")
 
 /datum/stressevent/sleepytime
 	timer = 40 MINUTES

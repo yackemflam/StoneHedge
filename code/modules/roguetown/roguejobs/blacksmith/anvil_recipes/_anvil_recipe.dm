@@ -54,6 +54,7 @@
 				//i feel like leveling up takes forever regardless, this would just make it faster
 				if(amt2raise > 0)
 					user.mind.add_sleep_experience(appro_skill, amt2raise, FALSE)
+					user.mind.adjust_experience(appro_skill, amt2raise, FALSE)
 		if(breakthrough)
 			user.visible_message(span_warning("[user] strikes the bar!"))
 		else

@@ -156,7 +156,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/custom_descriptors = list()
 	var/defiant = TRUE
 
-	var/datum/char_accent/char_accent = "No accent"
+	var/datum/char_accent/char_accent
 
 
 /datum/preferences/New(client/C)

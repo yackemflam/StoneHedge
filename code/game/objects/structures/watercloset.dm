@@ -398,6 +398,14 @@
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR
 	buildstacktype = null
 
+/obj/structure/sink/copper
+	name = "dwarven sink"
+	desc = "mechanical sink used to access underwater reserves with pipes."
+	icon_state = "sink_copper"
+
+/obj/structure/sink/copper/crafted
+	icon_state = "sink_crafted_copper"
+
 //Shower Curtains//
 //Defines used are pre-existing in layers.dm//
 

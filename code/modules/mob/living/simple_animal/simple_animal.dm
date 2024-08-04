@@ -422,6 +422,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 					gib()
 					if(user.mind)
 						user.mind.add_sleep_experience(/datum/skill/labor/butchering, user.STAINT * 4)
+						user.mind.adjust_experience(/datum/skill/labor/butchering, user.STAINT * 4)
 	..()
 
 /mob/living/simple_animal/gib()

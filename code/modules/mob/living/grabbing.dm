@@ -218,8 +218,10 @@
 		if(prob(fixchance))
 			for(var/datum/wound/dislocation/d in sublimb_grabbed)
 				d.relocate_bone()
+				to_chat(user, span_green("I manage to set the bone in [C]'s [parse_zone(sublimb_grabbed)]. [fixchance]%"))
 		else
-			to_chat(user, span_warning("I fail to set the bone in [C]'s [parse_zone(sublimb_grabbed)]."))
+			to_chat(user, span_warning("I fail to set the bone in [C]'s [parse_zone(sublimb_grabbed)]. [fixchance]%"))
+		
 	C.visible_message(span_danger("[user] twists [C]'s [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]"), \
 					span_userdanger("[user] twists my [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]"), span_hear("I hear a sickening sound of pugilism!"), COMBAT_MESSAGE_RANGE, user)
 	to_chat(user, span_warning("I twist [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]"))

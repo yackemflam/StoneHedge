@@ -530,6 +530,23 @@
 		return FALSE
 	return ..()
 
+/datum/crafting_recipe/roguetown/structure/sink
+	name = "sink"
+	result = /obj/structure/sink/copper
+	reqs = list(/obj/item/ingot/copper = 1,
+					/obj/item/roguegear = 1)
+	verbage_simple = "engineer"
+	verbage = "engineers"
+	skillcraft = /datum/skill/craft/engineering
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/sink/TurfCheck(mob/user, turf/T)
+	if(istype(T,/turf/open/transparent/openspace))
+		return FALSE
+	if(istype(T,/turf/open/lava))
+		return FALSE
+	return ..()
+
 /datum/crafting_recipe/roguetown/structure/wallladder
 	name = "wall ladder"
 	result = /obj/structure/wallladder
