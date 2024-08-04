@@ -362,11 +362,12 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
 "anK" = (
-/obj/structure/fluff/railing/border{
-	dir = 8
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/indoors/town/church)
+/obj/structure/chair/stool/rogue,
+/obj/machinery/light/rogue/wallfire/candle/l,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
 "anO" = (
 /obj/structure/flora/roguetree{
 	icon_state = "t6";
@@ -1931,6 +1932,14 @@
 /area/rogue/outdoors/bog/dense{
 	first_time_text = "THE SHROUDHEDGE"
 	})
+"bmV" = (
+/obj/structure/closet/crate/roguecloset/crafted,
+/obj/item/clothing/cloak/tabard/crusader/dendor,
+/obj/item/clothing/neck/roguetown/psicross/dendor,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/town/church)
 "bmX" = (
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors)
@@ -2615,9 +2624,10 @@
 /obj/structure/fluff/railing/border{
 	dir = 8
 	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
+/obj/structure/bars/pipe{
+	dir = 8
 	},
+/turf/open/transparent/openspace,
 /area/rogue/indoors/town/church)
 "bGM" = (
 /obj/structure/flora/roguegrass/bush/wall,
@@ -4154,9 +4164,8 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "czI" = (
-/obj/structure/closet/crate/roguecloset/dark,
-/obj/item/clothing/cloak/tabard/crusader/noc,
-/obj/item/clothing/neck/roguetown/psicross/noc,
+/obj/structure/fluff/psycross/copper,
+/obj/structure/fluff/statue/knightalt/r,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/church/chapel)
 "czR" = (
@@ -7034,6 +7043,9 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
+"evY" = (
+/turf/open/transparent/glass,
+/area/rogue/indoors/town/garrison)
 "ewf" = (
 /obj/structure/flora/newleaf,
 /obj/structure/flora/newbranch{
@@ -7746,6 +7758,14 @@
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/basement)
+"eSk" = (
+/obj/structure/stairs{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
 "eSt" = (
 /turf/open/floor/rogue/blocks/bluestone,
 /area/rogue/indoors/town/warehouse)
@@ -7860,6 +7880,7 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/storage/roguebag,
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -8973,6 +8994,12 @@
 	name = "Schoolgrounds";
 	first_time_text = "Ravenloft Academy"
 	})
+"fML" = (
+/obj/structure/mineral_door/wood/window,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
 "fMP" = (
 /obj/effect/landmark/start/vagrantlate{
 	dir = 8
@@ -9826,10 +9853,8 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/town)
 "gqr" = (
-/obj/structure/stairs{
-	dir = 1
-	},
-/turf/closed/mineral/rogue,
+/obj/machinery/light/rogue/wallfire/candle/r,
+/turf/open/water/bath,
 /area/rogue/outdoors/town{
 	first_time_text = "The Town of Stone Hedge"
 	})
@@ -11803,6 +11828,15 @@
 /area/rogue/outdoors/town{
 	first_time_text = "The Town of Stone Hedge"
 	})
+"hJo" = (
+/obj/machinery/light/rogue/hearth,
+/obj/structure/fluff/walldeco/church/line{
+	dir = 4
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
 "hKf" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/glowshroom{
@@ -11837,6 +11871,13 @@
 	dir = 1
 	},
 /area/rogue/indoors/town/church)
+"hKL" = (
+/obj/structure/flora/roguegrass,
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
 "hKU" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
@@ -11909,6 +11950,13 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"hOk" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
 "hOo" = (
 /obj/effect/landmark/underworldcoin,
 /turf/open/floor/rogue/dirt,
@@ -12221,6 +12269,12 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
 	first_time_text = null
+	})
+"hYt" = (
+/obj/machinery/light/rogue/wallfire/candle/l,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
 	})
 "hYT" = (
 /obj/structure/flora/grass/jungle/b,
@@ -13045,6 +13099,7 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -13263,11 +13318,13 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/dwarfin)
 "iHm" = (
-/obj/structure/closet/crate/roguecloset/crafted,
-/obj/item/clothing/cloak/tabard/crusader/dendor,
-/obj/item/clothing/neck/roguetown/psicross/dendor,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/town/church/chapel)
+/obj/structure/closet/crate/roguecloset/dark,
+/obj/item/clothing/cloak/tabard/crusader/noc,
+/obj/item/clothing/neck/roguetown/psicross/noc,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/town/church)
 "iHw" = (
 /obj/structure/mineral_door/wood/window{
 	lockid = "velder"
@@ -13957,6 +14014,7 @@
 /obj/structure/table/wood,
 /obj/item/soap/homemade,
 /obj/item/soap/homemade,
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/town{
 	first_time_text = "The Town of Stone Hedge"
@@ -14000,6 +14058,15 @@
 /obj/item/natural/rock,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/manor)
+"jgO" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/stairs{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
 "jhb" = (
 /obj/structure/fermenting_barrel/random/beer,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -15081,6 +15148,16 @@
 /obj/structure/ladder,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town/roofs)
+"jWW" = (
+/obj/machinery/light/rogue/chand,
+/obj/structure/fluff/railing/border{
+	dir = 8
+	},
+/obj/structure/bars/pipe{
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/rogue/indoors/town/church)
 "jXe" = (
 /obj/structure/stairs{
 	dir = 1
@@ -24383,6 +24460,7 @@
 	icon_state = "barsbent";
 	layer = 2.81
 	},
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/church)
 "pTX" = (
@@ -26307,6 +26385,17 @@
 	icon_state = "greenstone"
 	},
 /area/rogue/indoors/town/garrison)
+"rkf" = (
+/obj/structure/fluff/railing/wood{
+	dir = 4;
+	layer = 2.8;
+	pixel_x = 8
+	},
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
 "rkj" = (
 /obj/structure/closet/crate/chest,
 /obj/item/rope/chain,
@@ -27455,6 +27544,10 @@
 	dir = 4;
 	lockid = "courtesan"
 	},
+/obj/structure/mineral_door/wood/deadbolt{
+	dir = 8;
+	lockid = "townroom2"
+	},
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/tavern)
 "rYa" = (
@@ -27592,7 +27685,9 @@
 /obj/structure/rack/rogue,
 /obj/item/natural/cloth,
 /obj/item/natural/cloth,
-/turf/open/floor/rogue/cobblerock,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
 /area/rogue/indoors/town/church)
 "scR" = (
 /obj/structure/roguewindow/openclose{
@@ -27685,6 +27780,13 @@
 /obj/structure/roguewindow/openclose,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
+"sfv" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
 "sfR" = (
 /obj/structure/flora/grass/jungle,
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -29375,7 +29477,6 @@
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
-/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -30692,6 +30793,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+"ugN" = (
+/obj/structure/stairs,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
 "uhd" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
 /turf/open/floor/rogue/tile/masonic/inverted,
@@ -30887,9 +30994,8 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/under/town/basement)
 "uql" = (
-/obj/structure/closet/crate/roguecloset/dark,
-/obj/item/clothing/cloak/tabard/crusader/astrata,
-/obj/item/clothing/neck/roguetown/psicross/astrata,
+/obj/structure/fluff/psycross/copper,
+/obj/structure/fluff/statue/knightalt,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/church/chapel)
 "uqn" = (
@@ -31574,6 +31680,14 @@
 	dir = 1
 	},
 /area/rogue/outdoors/caves)
+"uNY" = (
+/obj/structure/closet/crate/roguecloset/dark,
+/obj/item/clothing/cloak/tabard/crusader/astrata,
+/obj/item/clothing/neck/roguetown/psicross/astrata,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/town/church)
 "uOh" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/grass,
@@ -32589,7 +32703,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 8
 	},
-/turf/open/floor/rogue/twig,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/town/church)
 "vvm" = (
 /obj/structure/flora/grass/jungle/b,
@@ -34448,6 +34562,10 @@
 	dir = 4;
 	lockid = "courtesan"
 	},
+/obj/structure/mineral_door/wood/deadbolt{
+	dir = 8;
+	lockid = "townroom2"
+	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
 "wIa" = (
@@ -34555,6 +34673,13 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
+"wLU" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town{
 	first_time_text = "The Town of Stone Hedge"
 	})
@@ -36594,6 +36719,12 @@
 "ydy" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town{
+	first_time_text = "The Town of Stone Hedge"
+	})
+"ydz" = (
+/obj/structure/stairs,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/town{
 	first_time_text = "The Town of Stone Hedge"
 	})
@@ -123874,11 +124005,11 @@ tnK
 bup
 gEt
 bup
-gqr
+gEz
 seO
 seO
 seO
-tnK
+ydz
 bup
 bup
 gEQ
@@ -124159,11 +124290,11 @@ bup
 bup
 gEt
 bup
-gqr
+gEz
 seO
 seO
 seO
-tnK
+ydz
 bup
 bup
 gEQ
@@ -163165,7 +163296,7 @@ wPR
 kyX
 gEQ
 jKW
-xdZ
+sfv
 xdZ
 kLI
 kLI
@@ -164877,11 +165008,11 @@ hfk
 fPl
 fPl
 fPl
-iLY
+rkf
 kLI
 kLI
 kLI
-iLY
+rkf
 iLY
 oxQ
 nCF
@@ -166945,8 +167076,8 @@ gEQ
 fPl
 fPl
 fPl
-sKm
-crW
+hJo
+hJo
 gEQ
 fPl
 fPl
@@ -167182,7 +167313,7 @@ dXa
 gEQ
 gEQ
 gEQ
-kmZ
+gub
 fPl
 iRX
 dXa
@@ -167229,7 +167360,7 @@ iZH
 gEQ
 gEQ
 fPl
-crW
+anK
 nfI
 nfI
 jEE
@@ -167460,7 +167591,7 @@ kLI
 kmZ
 gub
 gub
-wPR
+wLU
 dXa
 dXa
 dXa
@@ -167468,7 +167599,7 @@ dXa
 gEQ
 iRX
 wev
-gub
+kmZ
 oyk
 dXa
 dXa
@@ -167719,7 +167850,7 @@ gEQ
 fPl
 wPR
 pZH
-pZH
+hKL
 gub
 gub
 gub
@@ -167745,11 +167876,11 @@ xdZ
 bDD
 kLI
 kLI
-nyK
+jgO
 jXe
 dXa
 box
-bDD
+iyJ
 kLI
 kLI
 bDD
@@ -167795,9 +167926,9 @@ bDD
 kLI
 kLI
 wPR
-jJE
-hUh
-sKm
+hOk
+fML
+hYt
 nfI
 nfI
 nfI
@@ -168030,11 +168161,11 @@ xdZ
 nyK
 bDD
 bDD
-kLI
+eSk
 jXe
 dXa
 box
-kLI
+ugN
 bDD
 bDD
 kLI
@@ -168320,7 +168451,7 @@ dXa
 dXa
 dXa
 dXa
-gub
+kmZ
 gub
 wPR
 oyk
@@ -168371,7 +168502,7 @@ crW
 nfI
 nfI
 nfI
-nfI
+gqr
 jEE
 oyk
 oyk
@@ -168654,7 +168785,7 @@ jKW
 rwU
 jeT
 nfI
-nfI
+gqr
 nfI
 dKU
 fPl
@@ -168863,7 +168994,7 @@ wev
 wPR
 gub
 gub
-gub
+kmZ
 gub
 fPl
 gub
@@ -204904,7 +205035,7 @@ blk
 nhh
 nhh
 xwl
-czX
+uNY
 kLe
 cgi
 aiZ
@@ -205189,7 +205320,7 @@ blk
 nhh
 nhh
 xwl
-czX
+bmV
 kLe
 kch
 aiZ
@@ -205474,7 +205605,7 @@ blk
 nhh
 nhh
 sXi
-gGI
+iHm
 czX
 czX
 aiZ
@@ -207184,7 +207315,7 @@ blk
 nhh
 nhh
 qmf
-iHm
+ieq
 ieq
 gVt
 lzh
@@ -210762,7 +210893,7 @@ dXa
 dXa
 dXa
 qEF
-jXe
+gEz
 dXa
 dXa
 dXa
@@ -211047,7 +211178,7 @@ dXa
 dXa
 dXa
 qEF
-jXe
+gEz
 dXa
 dXa
 lzI
@@ -211755,8 +211886,8 @@ aqu
 fpE
 lHt
 fpE
-fYd
-fpE
+qmf
+qmf
 fpE
 lHt
 cjd
@@ -240540,8 +240671,8 @@ xzT
 xzT
 bPy
 tmq
-muz
-jwe
+evY
+evY
 muz
 krg
 xzT
@@ -240825,8 +240956,8 @@ xzT
 xzT
 bPy
 muz
-jwe
-muz
+evY
+evY
 jCJ
 krg
 xzT
@@ -249084,12 +249215,12 @@ wNo
 wNo
 wNo
 tQe
-opy
-opy
-opy
-opy
-opy
-opy
+bGJ
+bGJ
+bGJ
+bGJ
+bGJ
+bGJ
 pzE
 czX
 czX
@@ -249369,12 +249500,12 @@ wNo
 wNo
 wNo
 tQe
-opy
-anK
 bGJ
-vvc
-anK
-anK
+bGJ
+bGJ
+jWW
+bGJ
+bGJ
 pzE
 czX
 lHt
@@ -249654,12 +249785,12 @@ wNo
 wNo
 wNo
 tQe
-opy
-opy
-opy
-opy
-opy
-opy
+bGJ
+bGJ
+bGJ
+bGJ
+bGJ
+bGJ
 pzE
 czX
 sXi
@@ -249939,12 +250070,12 @@ wNo
 wNo
 wNo
 tQe
-opy
-opy
-opy
-opy
-opy
-opy
+bGJ
+bGJ
+bGJ
+bGJ
+bGJ
+bGJ
 pzE
 czX
 sXi
@@ -250224,12 +250355,12 @@ wNo
 wNo
 wNo
 tQe
-opy
-opy
-opy
-opy
-opy
-opy
+bGJ
+bGJ
+bGJ
+bGJ
+bGJ
+bGJ
 pzE
 czX
 lTt
@@ -250510,11 +250641,11 @@ qWN
 qWN
 opy
 opy
-anK
-bGJ
+opy
+opy
 vvc
-anK
-anK
+opy
+opy
 pzE
 czX
 sXi
@@ -251650,11 +251781,11 @@ qWN
 qWN
 opy
 opy
-anK
-bGJ
+opy
+opy
 vvc
-anK
-anK
+opy
+opy
 pzE
 czX
 sXi
