@@ -187,7 +187,7 @@
 				/obj/item/natural/fur = 1)
 	sellprice = 26
 
-/datum/crafting_recipe/roguetown/leather/hide/bra
+/datum/crafting_recipe/roguetown/leather/hidebra
 	name = "hide bra armor"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini/bra
 	reqs = list(/obj/item/natural/hide = 2,
