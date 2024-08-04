@@ -4,8 +4,8 @@
 	antagpanel_category = "Werewolf"
 	job_rank = ROLE_WEREWOLF
 	confess_lines = list(
-		"THE BEAST INSIDE ME!", 
-		"BEWARE THE BEAST!", 
+		"THE BEAST INSIDE ME!",
+		"BEWARE THE BEAST!",
 		"MY LUPINE MARK!",
 	)
 	var/special_role = ROLE_WEREWOLF
@@ -23,7 +23,7 @@
 
 /datum/antagonist/werewolf/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/werewolf/lesser))
-		return span_boldnotice("A lupine kin.")
+		return span_boldnotice("A young lupine kin.")
 	if(istype(examined_datum, /datum/antagonist/werewolf))
 		return span_boldnotice("An elder lupine kin.")
 	if(examiner.Adjacent(examined))
@@ -99,7 +99,7 @@
 	return wolfy
 
 /mob/living/carbon/human/proc/werewolf_feed(mob/living/carbon/human/target)
-	if(!istype(target)) 
+	if(!istype(target))
 		return
 	if(target.mind)
 		if(target.mind.has_antag_datum(/datum/antagonist/zombie))

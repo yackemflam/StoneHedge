@@ -263,6 +263,13 @@
 	color_key_names = list("Tail", "Neons")
 	can_wag = TRUE
 
+/datum/sprite_accessory/tail/data_shark
+	name = "Data Shark"
+	icon_state = "datashark"
+	color_keys = 2
+	color_key_names = list("Tail", "Neons")
+	can_wag = TRUE
+
 /datum/sprite_accessory/tail/lizard
 	abstract_type = /datum/sprite_accessory/tail/lizard
 	icon = 'icons/mob/sprite_accessory/tails/lizard.dmi'

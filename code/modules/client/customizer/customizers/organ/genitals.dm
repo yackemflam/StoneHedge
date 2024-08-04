@@ -106,6 +106,8 @@
 	name = "Knotted Penis"
 	organ_type = /obj/item/organ/penis/knotted
 	sprite_accessories = list(
+		/datum/sprite_accessory/penis/human,
+		/datum/sprite_accessory/penis/thick,
 		/datum/sprite_accessory/penis/knotted,
 		/datum/sprite_accessory/penis/knotted2,
 		)
@@ -115,6 +117,7 @@
 	organ_type = /obj/item/organ/penis/equine
 	sprite_accessories = list(
 		/datum/sprite_accessory/penis/flared,
+		/datum/sprite_accessory/penis/barbknot,
 		)
 
 /datum/customizer_choice/organ/penis/tapered_mammal
@@ -136,6 +139,8 @@
 	organ_type = /obj/item/organ/penis/tapered
 	sprite_accessories = list(
 		/datum/sprite_accessory/penis/hemi,
+		/datum/sprite_accessory/penis/hemiknot,
+		/datum/sprite_accessory/penis/tentacle,
 		)
 
 /datum/customizer_choice/organ/penis/tapered_double_knot
@@ -143,6 +148,45 @@
 	organ_type = /obj/item/organ/penis/tapered
 	sprite_accessories = list(
 		/datum/sprite_accessory/penis/hemiknot,
+		)
+
+/datum/customizer_choice/organ/penis/barbed
+	name = "Barbed Penis"
+	organ_type = /obj/item/organ/penis/barbed
+	sprite_accessories = list(
+		/datum/sprite_accessory/penis/human,
+		/datum/sprite_accessory/penis/knotted,
+		/datum/sprite_accessory/penis/knotted2,
+		/datum/sprite_accessory/penis/barbknot,
+		)
+
+/datum/customizer_choice/organ/penis/barbed_knotted
+	name = "Barbed Knotted Penis"
+	organ_type = /obj/item/organ/penis/barbed_knotted
+	sprite_accessories = list(
+		/datum/sprite_accessory/penis/barbknot,
+		)
+
+/datum/customizer_choice/organ/penis/tentacle
+	name = "Tentacle Penis"
+	organ_type = /obj/item/organ/penis/tentacle
+	sprite_accessories = list(
+		/datum/sprite_accessory/penis/tapered,
+		)
+
+/datum/customizer_choice/organ/penis/tapered_double
+	name = "Hemi Tapered Penis"
+	organ_type = /obj/item/organ/penis/tapered
+	sprite_accessories = list(
+		/datum/sprite_accessory/penis/hemi,
+		)
+
+/datum/customizer_choice/organ/penis/tapered_double_knot
+	name = "Knotted Hemi Tapered Penis"
+	organ_type = /obj/item/organ/penis/tapered
+	sprite_accessories = list(
+		/datum/sprite_accessory/penis/hemiknot,
+		/datum/sprite_accessory/penis/tentacle,
 		)
 
 /datum/customizer_choice/organ/penis/barbed

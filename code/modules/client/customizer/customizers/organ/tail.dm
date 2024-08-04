@@ -179,6 +179,7 @@
 		/datum/sprite_accessory/tail/leopard,
 		/datum/sprite_accessory/tail/deer,
 		/datum/sprite_accessory/tail/raccoon,
+		/datum/sprite_accessory/tail/sabresune,
 		/datum/sprite_accessory/tail/data_shark,
 		/datum/sprite_accessory/tail/lizard/smooth,
 		/datum/sprite_accessory/tail/lizard/dtiger,
