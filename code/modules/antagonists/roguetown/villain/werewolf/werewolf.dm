@@ -2,8 +2,6 @@
 	name = "Verewolf"
 	roundend_category = "Werewolves"
 	antagpanel_category = "Werewolf"
-	job_rank = ROLE_WEREWOLF
-	antag_hud_type = ANTAG_HUD_WEREWOLF
 	antag_hud_name = "Werewolf"
 	confess_lines = list(
 		"THE BEAST INSIDE ME!", 
@@ -16,14 +14,6 @@
 	var/untransforming
 	var/wolfname = "Verewolf"
 
-/datum/antagonist/werewolf/apply_innate_effects(mob/living/mob_override)
-	var/mob/living/M = mob_override || owner.current
-	add_antag_hud(antag_hud_type, antag_hud_name, M)
-
-/datum/antagonist/werewolf/remove_innate_effects(mob/living/mob_override)
-	var/mob/living/M = mob_override || owner.current
-	remove_antag_hud(antag_hud_type, M)
-
 /datum/antagonist/werewolf/lesser
 	name = "Lesser Verewolf"
 	increase_votepwr = FALSE
@@ -33,7 +23,7 @@
 
 /datum/antagonist/werewolf/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/werewolf/lesser))
-		return span_boldnotice("A lupine kin.")
+		return span_boldnotice("A young lupine kin.")
 	if(istype(examined_datum, /datum/antagonist/werewolf))
 		return span_boldnotice("An elder lupine kin.")
 	if(examiner.Adjacent(examined))

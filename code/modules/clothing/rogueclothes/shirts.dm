@@ -38,6 +38,9 @@
 /obj/item/clothing/suit/roguetown/shirt/undershirt/purple
 	color = CLOTHING_PURPLE
 
+/obj/item/clothing/suit/roguetown/shirt/undershirt/brown
+	color = "#6b5445"
+
 /obj/item/clothing/suit/roguetown/shirt/undershirt/lord
 	desc = ""
 	color = "#616898"
@@ -310,6 +313,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	var/picked = FALSE
+	colorgrenz = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/grenzelhoft/attack_right(mob/user)
 	..()

@@ -38,6 +38,40 @@
 	if(istype(M))
 		if(user.used_intent.type == INTENT_GENERIC)
 			return ..()
+		else
+			if(!spillable)
+				return
+
+			if(!reagents || !reagents.total_volume)
+				to_chat(user, span_warning("[src] is empty!"))
+				return
+			if(user.used_intent.type == INTENT_SPLASH)
+				var/R
+				M.visible_message(span_danger("[user] splashes the contents of [src] onto [M]!"), \
+								span_danger("[user] splashes the contents of [src] onto you!"))
+				if(reagents)
+					for(var/datum/reagent/A in reagents.reagent_list)
+						R += "[A] ([num2text(A.volume)]),"
+
+				if(isturf(target) && reagents.reagent_list.len && thrownby)
+					log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
+				reagents.reaction(M, TOUCH)
+				log_combat(user, M, "splashed", R)
+				reagents.clear_reagents()
+				return
+			else if(user.used_intent.type == INTENT_POUR)
+				if(!canconsume(M, user))
+					return
+				if(M != user)
+					M.visible_message(span_danger("[user] attempts to feed [M] something."), \
+								span_danger("[user] attempts to feed you something."))
+					if(!do_mob(user, M))
+						return
+					if(!reagents || !reagents.total_volume)
+						return // The drink might be empty after the delay, such as by spam-feeding
+					M.visible_message(span_danger("[user] feeds [M] something."), \
+								span_danger("[user] feeds you something."))
+					log_combat(user, M, "fed", reagents.log_list())
 		if(user.used_intent.type == /datum/intent/fill)
 			if(ishuman(M))
 				var/mob/living/carbon/human/humanized = M

@@ -97,7 +97,6 @@
 
 //	var/alignment = ALIGNMENT_TN
 
-	var/advjob = null
 	var/canseebandits = FALSE
 
 	var/marriedto
@@ -112,7 +111,9 @@
 	var/datum/devotion/devotion = null // Used for cleric_holder for priests
 
 	var/headshot_link = null
-	var/nsfwheadshot_link = null
+	var/nudeshot_link = null
+
+	var/received_resident_key = FALSE
 
 	var/datum/charflaw/charflaw
 	///used for in-round gained roles for examine.

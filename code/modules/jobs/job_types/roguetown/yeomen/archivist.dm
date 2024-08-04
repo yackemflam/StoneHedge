@@ -51,5 +51,3 @@
 		H.change_stat("intelligence", 8)
 		H.change_stat("constitution", -2)
 		H.change_stat("speed", -2)
-
-

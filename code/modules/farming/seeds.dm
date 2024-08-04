@@ -8,6 +8,18 @@
 	var/plant_def_type
 	var/seed_identity = "some seed"
 
+/obj/item/seeds/Initialize()
+	. = ..()
+	if(plant_def_type)
+		var/datum/plant_def/def = GLOB.plant_defs[plant_def_type]
+		color = def.seed_color
+
+/obj/item/seeds/Crossed(mob/living/L)
+	. = ..()
+	// Chance to destroy the seed as it's being stepped on
+	if(prob(35) && istype(L))
+		qdel(src)
+
 /obj/item/seeds/examine(mob/user)
 	. = ..()
 	var/show_real_identity = FALSE
@@ -29,7 +41,7 @@
 	if(soil)
 		try_plant_seed(user, soil)
 		return
-	else if(istype(T, /turf/open/floor/rogue/dirt))
+	else if(istype(T, /turf/open/floor/rogue/dirt)||istype(T, /turf/open/floor/rogue/grass))
 		to_chat(user, span_notice("I begin making a mound for the seeds..."))
 		if(do_after(user, get_farming_do_time(user, 10 SECONDS), target = src))
 			apply_farming_fatigue(user, 30)

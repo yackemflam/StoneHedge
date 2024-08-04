@@ -362,7 +362,7 @@
 
 /obj/item/clothing/cloak/stabard/bog
 	name = "bogman tabard"
-	desc = "A tabard worn by those that protect the citizenry from the horrors of the Terrorbog." // THE BOG DESERVES A BETTER DESCRIPTION!
+	desc = "A tabard worn by those that protect the citizenry from the horrors of the Terrorbog" // THE BOG DESERVES A BETTER DESCRIPTION!
 	color = CLOTHING_GREEN
 	detail_color = CLOTHING_DARK_GREEN
 
@@ -611,7 +611,7 @@
 	color = null
 	icon_state = "aproncook"
 	item_state = "aproncook"
-	body_parts_covered = GROIN
+	body_parts_covered = CHEST|GROIN
 	boobed = FALSE
 
 /*
@@ -678,6 +678,7 @@
 
 /obj/item/clothing/cloak/raincloak/brown
 	color = CLOTHING_BROWN
+	sellprice = 25
 
 /obj/item/clothing/cloak/raincloak/green
 	color = CLOTHING_GREEN
@@ -807,7 +808,7 @@
 
 /obj/item/clothing/cloak/stole
 	name = "stole"
-	desc = "Garments of a priest, usually worn when giving religious speeches to the people."
+	desc = "Garments of a priest, usually worn when giving mass to the people."
 	icon_state = "stole_gold"
 	sleeved = null
 	sleevetype = null

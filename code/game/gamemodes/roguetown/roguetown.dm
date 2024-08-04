@@ -63,7 +63,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 
 	if(ttime >= GLOB.round_timer)
 		if(roundvoteend)
-			if(ttime >= (GLOB.round_timer + 15 MINUTES) )
+			if(ttime >= (GLOB.round_timer + ROUND_END_TIME) )
 				for(var/mob/living/carbon/human/H in GLOB.human_list)
 					if(H.stat != DEAD)
 						if(H.allmig_reward)
@@ -133,11 +133,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 		return TRUE
 	if(SSticker.manualmodes)
 		forcedmodes |= SSticker.manualmodes
-	var/list/major_modes = list(1, 2, 3)
-	var/list/minor_modes = list(1,2,3)
-	if(prob(25))
-		minor_modes += 4 //maniac
-	var/majorpicked = pick(major_modes)
+
 	if(forcedmodes.len)
 		message_admins("Manual gamemodes selected.")
 		for(var/G in forcedmodes)
@@ -161,33 +157,31 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 				if("Extended")
 					log_game("Major Antagonist: Extended")
 		return TRUE
-	switch(majorpicked)
-		if(1)
+
+	var/major_roll = rand(1,100)
+	switch(major_roll)
+		if(1 to 35)
 			pick_rebels()
 			log_game("Major Antagonist: Rebellion")
-		if(2)
-			log_game("Major Antagonist: Extended") //gotta put something here.
-		if(3) //WWs and Vamps now normally roll together
+		if(36 to 80)
+			//WWs and Vamps now normally roll together
 			pick_vampires()
 			pick_werewolves()
 			log_game("Major Antagonist: Vampires and Werewolves")
-	minor_modes = shuffle(minor_modes)
-	for(var/m in minor_modes)
-		switch(m)
-			if(1)
-				pick_bandits()
-				log_game("Minor Antagonist: Bandit")
-			if(2)
-				pick_aspirants()
-				log_game("Minor Antagonist: Aspirant")
-			if(3)
-				log_game("Minor Antagonist: Extended") // placeholder.
-			if(4)
-				pick_maniac()
-				log_game("Minor Antagonist: Maniac")
-		if(prob(30))
-			continue
-		return TRUE
+		if(81 to 100)
+			log_game("Major Antagonist: Extended") //gotta put something here.
+
+	if(prob(45))
+		pick_bandits()
+		log_game("Minor Antagonist: Bandit")
+	if(prob(45))
+		pick_aspirants()
+		log_game("Minor Antagonist: Aspirant")
+	if(prob(10))
+		pick_maniac()
+		log_game("Minor Antagonist: Maniac")
+
+	return TRUE
 
 /datum/game_mode/chaosmode/proc/pick_bandits()
 	//BANDITS
@@ -199,7 +193,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Knight")
 	var/num_bandits = 0
 	if(num_players() >= 10)
-		num_bandits = CLAMP(round(num_players() / 2), 15, 20)
+		num_bandits = CLAMP(round(num_players() / 2), 25, 30)
 		banditgoal += (num_bandits * rand(200,400))
 
 	if(num_bandits)
@@ -335,11 +329,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 		var/blockme = FALSE
 		if(!(villain in allantags))
 			blockme = TRUE
-		if(villain.assigned_role in GLOB.apprentices_positions)
-			blockme = TRUE
-		if(villain.current)
-			if(villain.current.gender == FEMALE)
-				blockme = TRUE
 		if(blockme)
 			return
 		allantags -= villain

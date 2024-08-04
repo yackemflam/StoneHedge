@@ -29,15 +29,6 @@
 	min_pq = 0
 	max_pq = null
 
-/datum/job/roguetown/puritan/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
-	..()
-	if(!L.mind)
-		return
-	if(L.mind.has_antag_datum(/datum/antagonist))
-		return
-	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
-	L.mind.add_antag_datum(new_antag)
-
 /datum/outfit/job/roguetown/puritan
 	name = "Witcher"
 	jobtype = /datum/job/roguetown/puritan

@@ -129,6 +129,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	/// List of descriptor choices this species gets in preferences customization
 	var/list/descriptor_choices = list(
+		/datum/descriptor_choice/height,
 		/datum/descriptor_choice/body,
 		/datum/descriptor_choice/stature,
 		/datum/descriptor_choice/face,
@@ -137,6 +138,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		/datum/descriptor_choice/voice,
 		/datum/descriptor_choice/prominent_one,
 		/datum/descriptor_choice/prominent_two,
+		/datum/descriptor_choice/prominent_three,
+		/datum/descriptor_choice/prominent_four,
 	)
 
 	var/obj/item/mutanthands
@@ -151,7 +154,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/list/body_markings
 	var/list/languages = list(/datum/language/common)
 	/// Some species have less than standard gender locks
-	var/gender_swapping = FALSE 
+	var/gender_swapping = FALSE
+	var/stress_examine = FALSE
+	var/stress_desc = null
 
 ///////////
 // PROCS //
@@ -450,7 +455,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(pref_load)
 		pref_load.apply_customizers_to_character(C)
 		pref_load.apply_descriptors(C)
-	
+
 	for(var/language_type in languages)
 		C.grant_language(language_type)
 
@@ -487,7 +492,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	for(var/language_type in languages)
 		C.remove_language(language_type)
-	
+
 	// Clear organ DNA since it wont match as we're changing the species
 	C.dna.organ_dna = list()
 
@@ -546,6 +551,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return "FRONT"
 		if(BODY_FRONT_FRONT_LAYER)
 			return "FFRONT"
+		if(BODY_FRONT_FRONT_FRONT_LAYER)
+			return "FFFRONT"
 		if(BODY_UNDER_LAYER)
 			return "UNDER"
 
@@ -944,7 +951,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				var/milk_to_make = min(hunger_rate, H.getorganslot(ORGAN_SLOT_BREASTS).milk_max - H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored)
 				H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored += milk_to_make
 				H.adjust_nutrition(-milk_to_make)
-			
+
 			else if(H.nutrition < NUTRITION_LEVEL_STARVING && H.getorganslot(ORGAN_SLOT_BREASTS).lactating) //Vrell - If starving, your milk drains automatically to slow your starvation.
 				var/milk_to_take = min(hunger_rate, H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored)
 				H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored -= milk_to_take
@@ -999,20 +1006,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //				H.apply_status_effect(/datum/status_effect/debuff/fat)
 		if(NUTRITION_LEVEL_FAT to INFINITY)
 			H.add_stress(/datum/stressevent/stuffed)
-			H.remove_stress(list(/datum/stressevent/peckish,/datum/stressevent/hungry,/datum/stressevent/starving))
+			H.remove_stress_list(list(/datum/stressevent/peckish,/datum/stressevent/hungry,/datum/stressevent/starving))
 		if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_FAT)
-			H.remove_stress(list(/datum/stressevent/peckish,/datum/stressevent/hungry,/datum/stressevent/starving))
+			H.remove_stress_list(list(/datum/stressevent/peckish,/datum/stressevent/hungry,/datum/stressevent/starving))
 		if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
 			H.add_stress(/datum/stressevent/peckish)
-			H.remove_stress(list(/datum/stressevent/stuffed,/datum/stressevent/hungry,/datum/stressevent/starving))
+			H.remove_stress_list(list(/datum/stressevent/stuffed,/datum/stressevent/hungry,/datum/stressevent/starving))
 			H.apply_status_effect(/datum/status_effect/debuff/hungryt1)
 		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
 			H.add_stress(/datum/stressevent/hungry)
-			H.remove_stress(list(/datum/stressevent/stuffed,/datum/stressevent/peckish,/datum/stressevent/starving))
+			H.remove_stress_list(list(/datum/stressevent/stuffed,/datum/stressevent/peckish,/datum/stressevent/starving))
 			H.apply_status_effect(/datum/status_effect/debuff/hungryt2)
 		if(0 to NUTRITION_LEVEL_STARVING)
 			H.add_stress(/datum/stressevent/starving)
-			H.remove_stress(list(/datum/stressevent/stuffed,/datum/stressevent/peckish,/datum/stressevent/hungry))
+			H.remove_stress_list(list(/datum/stressevent/stuffed,/datum/stressevent/peckish,/datum/stressevent/hungry))
 			H.apply_status_effect(/datum/status_effect/debuff/hungryt3)
 			if(prob(3))
 				playsound(get_turf(H), pick('sound/vo/hungry1.ogg','sound/vo/hungry2.ogg','sound/vo/hungry3.ogg'), 100, TRUE, -1)
@@ -1021,18 +1028,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //		if(HYDRATION_LEVEL_WATERLOGGED to INFINITY)
 //			H.apply_status_effect(/datum/status_effect/debuff/waterlogged)
 		if(HYDRATION_LEVEL_SMALLTHIRST to HYDRATION_LEVEL_FULL)
-			H.remove_stress(list(/datum/stressevent/drym,/datum/stressevent/thirst,/datum/stressevent/parched))
+			H.remove_stress_list(list(/datum/stressevent/drym,/datum/stressevent/thirst,/datum/stressevent/parched))
 		if(HYDRATION_LEVEL_THIRSTY to HYDRATION_LEVEL_SMALLTHIRST)
 			H.add_stress(/datum/stressevent/drym)
-			H.remove_stress(list(/datum/stressevent/parched,/datum/stressevent/thirst))
+			H.remove_stress_list(list(/datum/stressevent/parched,/datum/stressevent/thirst))
 			H.apply_status_effect(/datum/status_effect/debuff/thirstyt1)
 		if(HYDRATION_LEVEL_DEHYDRATED to HYDRATION_LEVEL_THIRSTY)
 			H.add_stress(/datum/stressevent/thirst)
-			H.remove_stress(list(/datum/stressevent/parched,/datum/stressevent/drym))
+			H.remove_stress_list(list(/datum/stressevent/parched,/datum/stressevent/drym))
 			H.apply_status_effect(/datum/status_effect/debuff/thirstyt2)
 		if(0 to HYDRATION_LEVEL_DEHYDRATED)
 			H.add_stress(/datum/stressevent/parched)
-			H.remove_stress(list(/datum/stressevent/thirst,/datum/stressevent/drym))
+			H.remove_stress_list(list(/datum/stressevent/thirst,/datum/stressevent/drym))
 			H.apply_status_effect(/datum/status_effect/debuff/thirstyt3)
 
 
