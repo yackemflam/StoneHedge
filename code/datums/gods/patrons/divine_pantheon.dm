@@ -4,108 +4,108 @@
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 
 /datum/patron/divine/astrata
-	name = "Astrata"
-	domain = "Goddess of the Sun, Day, and Order"
-	desc = "The Firstborn of Psydon, twin of Noc, gifted man the Sun as her divine gift."
-	worshippers = "The Noble Hearted, Zealots and Farmers"
+	name = "Elysius"
+	domain = "Beginnings, Hope, Dawn. Setting the path. Flames, Sunlight, Illumination. (Active Energies)"
+	desc = "Elysius, The Golden Dragon."
+	worshippers = "The Noble Hearted, Zealots, Warriors and Healers."
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	t2 = /obj/effect/proc_holder/spell/invoked/heal
 	t3 = /obj/effect/proc_holder/spell/invoked/revive
 	confess_lines = list(
-		"ASTRATA IS MY LIGHT!",
-		"ASTRATA BRINGS LAW!",
+		"Elysius is my Gilded Armor!",
+		"GREAT-WYRM BRINGS LAW!",
 		"I SERVE THE GLORY OF THE SUN!",
 	)
 
 /datum/patron/divine/noc
-	name = "Noc"
-	domain = "God of the Moon, Night, and Knowledge"
-	desc = "The Firstborn of Psydon, twin of Astrata, gifted man divine knowledge."
-	worshippers = "Wizards and Scholars"
+	name = "Lune"
+	domain = "Intellect, Study, Divination, Introspection. Rivers, Moons, Reflections. (Passive Energies)"
+	desc = "Lune, the Silver Dragon. Twin of Elysius, symbolized by the moon. She is Patron of wisdom."
+	worshippers = "Wizards, Scholars, Wisened Folk,"
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness
 	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
 	confess_lines = list(
-		"NOC IS NIGHT!",
-		"NOC SEES ALL!",
+		"LUNE IS WISDOM!",
+		"LUNE'S PALE GLOWING EYES SEE ALL!",
 		"I SEEK THE MYSTERIES OF THE MOON!",
 	)
 
 /datum/patron/divine/dendor
-	name = "Dendor"
-	domain = "God of the Earth and Nature"
-	desc = "The Primordial Son of Psydon, patron of beasts and the wood. Gone mad with time."
-	worshippers = "Druids, Beasts, Madmen"
+	name = "Sylvarn"
+	domain = "Life, Balance, Harmony, Wilderness, Wisdom.Wildlife, Animals, Plants."
+	desc = "Sylvarn is the god of nature and to many, wisdom. He is the cradle of life as much as the brutal and primal truth. Sylvarn is said  to be a mighty goatman, who’s realm is a verdant forestrealm full of the fairyfolk and nature spirits."
+	worshippers = "Druids, Beasts, Wisemen, Fey, Elves, Supernatural Beings."
 	mob_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
 	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
 	t3 = /obj/effect/proc_holder/spell/targeted/conjure_glowshroom
 	t4 = /obj/effect/proc_holder/spell/invoked/cure_rot
 	confess_lines = list(
-		"DENDOR PROVIDES!",
+		"SYLVARN GUIDES!!",
 		"THE TREEFATHER BRINGS BOUNTY!",
 		"I ANSWER THE CALL OF THE WILD!",
 	)
 
 /datum/patron/divine/abyssor
-	name = "Abyssor"
+	name = "Abyssia"
 	domain = "God of the Ocean, Storms and the Tide"
-	desc = "The Beloved Son, gifted primordial men food and water."
-	worshippers = "Men of the Sea, Primitive Aquatics"
+	desc = "The Beloved Daughter of the Sea, gifted primordial kin food and water. She is said to be both cruel and calm, if her icey waters and wailing winds are heeded ahead of time. She is the warning and the Omen."
+	worshippers = "Men and Women of the Sea, Primitive Aquatics, Merfolk, Druids."
 	confess_lines = list(
-		"ABYSSOR COMMANDS THE WAVES!",
+		"ABYSSIA COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",
-		"I AM DRAWN BY THE PULL OF THE TIDE!",
+		"I AM DRAWN BY THE PULL OF HER TIDES!",
 	)
 
 /datum/patron/divine/ravox
-	name = "Ravox"
-	domain = "God of War, Justice and Strength"
-	desc = "The strongest of Psydon's children, he watches man from afar."
-	worshippers = "Warriors, Sellswords & those who seek Justice"
+	name = "Minhur"
+	domain = "War, Dance, Tactic, Rejoice, Celebration."
+	desc = "The dervish of Blades, Minhur teaches that battle is like a dance; the duality between life/death and revelry. Minhur's followers prefer dexterity and tactful dancelike movements; encouraging mortals to act with decorum, etiquette and poise whenever possible."
+	worshippers = "Warriors, Sellswords & Fencers."
 	confess_lines = list(
-		"RAVOX IS JUSTICE!",
+		"MINHUR'S WHIRLWIND!",
 		"THROUGH STRIFE, GRACE!",
-		"THE DRUMS OF WAR BEAT IN MY CHEST!",
+		"THE RHYTHYM OF THE CELESTIAN BATTLE BECKONS ME HOME!",
 	)
 
 /datum/patron/divine/necra
-	name = "Necra"
-	domain = "Goddess of Death and the Afterlife"
-	desc = "The Veiled Lady, a feared but respected God who leads the dead."
+	name = "Yamais"
+	domain = "Death, Judgement, Soul, Reincarnation."
+	desc = "Yamais is the guardian, the crypt-scribe, and the great remembrance. She who watches makes certain each soul reaches its owed afterlife. It is Yamais who remembers peoples actions and worth. Yamais does not take kindly to necromancy which goes against the natural cycle. Though she permits willing undead to return, and has even turned her gaze from liches such as the baelnornes of the elven kingdoms."
 	worshippers = "The Dead, Mourners, Gravekeepers"
 	mob_traits = list(TRAIT_SOUL_EXAMINE)
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
 	t3 = /obj/effect/proc_holder/spell/targeted/soulspeak
 	confess_lines = list(
-		"ALL SOULS FIND THEIR WAY TO NECRA!",
-		"THE UNDERMAIDEN IS OUR FINAL REPOSE!",
-		"I FEAR NOT DEATH, MY LADY AWAITS ME!",
+		"ALL SOULS FIND THEIR WAY TO YAMAIS!",
+		"THE TOLLKEEPER IS OUR FINAL JUDGE!",
+		"I FEAR NOT DEATH, MY SOUL IS LIGHT AS A FEATHER!",
 	)
 
 /datum/patron/divine/xylix
-	name = "Xylix"
-	domain = "God of Trickery, Freedom and Inspiration"
-	desc = "The Mad-God, gifted man wanderlust and a thousand tricks."
-	worshippers = "Cheats, Frauds, Silver-Tongued devils and Roguish Types"
+	name = "Onder"
+	domain = "Art, Beauty, Artisanry, Vanity, Poetry, Freedom and Luck."
+	desc = "Onder is said to be inspiration itself. The god of Stories, Music and Memory. Onder is worshipped by bards and rogues alike. Onder’s story of being a changeling bard who walked amidst many cultures, gathering their tales and impressive many beings alike made them the god of charisma and luck."
+	worshippers = "Bards, Gamblers, Poets, Musicians, Diplomats and Artists."
 	confess_lines = list(
-		"ASTRATA IS MY LIGHT!",
-		"NOC IS NIGHT!",
-		"DENDOR PROVIDES!",
-		"ABYSSOR COMMANDS THE WAVES!",
-		"RAVOX IS JUSTICE!",
-		"ALL SOULS FIND THEIR WAY TO NECRA!",
-		"HAHAHAHA! AHAHAHA! HAHAHAHA!",
+		"Elysius, cut us a path!",
+		"Lune guide me gentle!",
+		"Sylvarn guide our souls wisened!",
+		"Beware the daughter of the sea!",
+		"The pale dancer comes for the wicked!",
+		"All souls find the same stream!",
+		"Such Beauty, Such bliss, Even in this pain I find Art!",
 		"PESTRA SOOTHES ALL ILLS!",
-		"MALUM IS MY MUSE!",
-		"EORA BRINGS US TOGETHER!",
+		"Temperance my blade, my path forged ahead, strucken like blade!",
+		"Love in my heart,I create art!~",
 	)
 
 /datum/patron/divine/pestra
-	name = "Pestra"
-	domain = "Goddess of Decay, Disease and Medicine"
-	desc = "The Loving Daughter of Psydon, gifted man medicine."
-	worshippers = "The Sick, Phyicians, Apothecaries"
+	name = "Hermeir"
+	domain = "Medicine, Progress, Advancement, Healing."
+	desc = "Hermeir is known as the Messenger; said to have a staff of entwined serpents, one white, the other black. Which their magick staff they were able to discern all things and know the truth with time in their knowledgeable gaze. The followers of Hermeir are able to utilize magic as much as the mundane to assist the wounded, dieng and at times, departed. Hermeir believes whatever the means - we must swear an oath to living and healing."
+	worshippers = "The Sick, Phyicians, Apothecaries, Healers, Scientists, Alchemists."
 	mob_traits = list(TRAIT_EMPATH, TRAIT_ROT_EATER)
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/invoked/lesser_heal
@@ -113,19 +113,19 @@
 	t3 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
 	t4 = /obj/effect/proc_holder/spell/invoked/cure_rot
 	confess_lines = list(
-		"PESTRA SOOTHES ALL ILLS!",
-		"DECAY IS A CONTINUATION OF LIFE!",
-		"MY AFFLICTION IS MY TESTAMENT!",
+		"Hermeir will guide all formula!",
+		"The Wheel turns, I am but a part of it all!",
+		"Hermeir, guide my healths!",
 	)
 
 /datum/patron/divine/malum
-	name = "Malum"
-	domain = "God of Fire, Destruction and Rebirth"
-	desc = "The Opinionless God, his children hold no malice in their actions."
-	worshippers = "Smiths, Miners, Artists"
+	name = "Svaeryog"
+	domain = "Fire, Metalwork, Temperance,  Craft."
+	desc = "Svaeryog blessed  the lands with metal and the lessons of temperance. Iron of heart and mind through perseverance. He was said to be a mortal who turned himself with magick and metals to the form of a mighty divine golem. "
+	worshippers = "Smiths, Crafters, Masochists, Miners, Artisans."
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	confess_lines = list(
-		"MALUM IS MY MUSE!",
+		"Blessed forgefires be my guidance!",
 		"TRUE VALUE IS IN THE TOIL!",
 		"I AM AN INSTRUMENT OF CREATION!",
 	)
@@ -133,17 +133,17 @@
 //Eora content from Stonekeep
 
 /datum/patron/divine/eora
-	name = "Eora"
-	domain = "Saint of the Love, Life and Beauty"
-	desc = "Blind love for all, without a shred of hate in her heart"
-	worshippers = "Lovers, Harlots, Doting Grandparents"
+	name = "Viiritri"
+	domain = "Feeling, Empathy, Passion.Hearts, Desires, Connection."
+	desc = "Viiritri is the god of emotions, the soul and the heart. Viiritri teaches the art of feeling, and their devoted are often spiritual healers and lovers of all walks. Viiritri is said to take the shape of songbirds and other mystical acts  of inspiration. Their realm known as Halceon is rumored to be full of song, dance and bliss to those who loved truly, purely and freely in her service."
+	worshippers = "Lovers, Healers, Adventurers, Poets, Families and Warriors."
 	mob_traits = list(TRAIT_SEXDEVO)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/bud
 	t2 = /obj/effect/proc_holder/spell/invoked/eoracurse
 	t3 = null
 	confess_lines = list(
-		"EORA BRINGS US TOGETHER!",
+		"VIIRITRI BRINGS US TOGETHER!",
 		"HER BEAUTY IS EVEN IN THIS TORMENT!",
-		"I LOVE YOU, EVEN AS YOU TRESPASS AGAINST ME!",
+		"I LOVE YOU, E-EVEN AS Y-YOU HURT ME!",
 	)
