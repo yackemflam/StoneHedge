@@ -4,7 +4,10 @@
 /datum/species/demihuman
 	name = "Half-Kin"
 	id = "demihuman"
-	desc = "In time you will learn the history of this race"
+	desc = "Half-Kin, earth-borne, magyck-touched. Many names exist for my race, characterized by our varied appearance. \
+	Wild-Kin are by far the most numerous people due to the fact we are, usually, compatible with almost all other races. \
+	Due to the fact we are so numerous, we are welcome almost anywhere, along with our Wild-Kin sister race \
+	We are average of constitution, strength, and intellegence."
 	skin_tone_wording = "Ancestry"
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS_PARTSONLY)
@@ -53,6 +56,7 @@
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/canine,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
 		/datum/customizer/organ/vagina/animal,
 		)
 	body_marking_sets = list(
@@ -124,7 +128,7 @@
 		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
 		"Hammerhold" = SKIN_COLOR_HAMMERHOLD,
 		"Avar" = SKIN_COLOR_AVAR,
-		"Rockhill" = SKIN_COLOR_ROCKHILL,
+		"StoneHedge" = SKIN_COLOR_STONEHEDGE,
 		"Otava" = SKIN_COLOR_OTAVA,
 		"Etrusca" = SKIN_COLOR_ETRUSCA,
 		"Gronn" = SKIN_COLOR_GRONN,

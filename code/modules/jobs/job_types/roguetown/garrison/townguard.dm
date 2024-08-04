@@ -7,15 +7,15 @@
 	spawn_positions = 11
 	selection_color = JCOLOR_SOLDIER
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	tutorial = "Responsible for the safety of the town and the enforcement of the King's law, you are the vanguard of the city faced with punishing those who defy his Royal Majesty. Though you've many lords to obey, as both the Church and the Bailiff have great sway over your life."
+	tutorial = "Responsible for the safety of the town and the enforcement of the Monarchies law, you are the vanguard of the city faced with punishing those who defy our Royal Line. Though you've many lords to obey, as both the Church and the Bailiff have great sway over your life - and Stone Hedge is far from normal to guard; given the dungeon labyrinth beneath it that makes it famous.."
 	display_order = JDO_TOWNGUARD
 	whitelist_req = TRUE
 
 	outfit = /datum/outfit/job/roguetown/guardsman
 	give_bank_account = 16
-	min_pq = 1
+	min_pq = 0
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard.ogg'
@@ -47,7 +47,7 @@
 			if(!index)
 				index = H.real_name
 			S.name = "watchman tabard ([index])"
-			
+
 /datum/outfit/job/roguetown/guardsman
 	name = "Watchman"
 	/// Whether or not we are a bowman
@@ -67,7 +67,7 @@
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	backr = /obj/item/storage/backpack/rogue/satchel/black
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/signal_horn = 1)
 	if(is_bowman)
 		backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 		beltr = /obj/item/quiver/arrows //replaces mace
@@ -83,7 +83,7 @@
 /datum/outfit/job/roguetown/guardsman/proc/assign_skills(mob/living/carbon/human/guard)
 	guard.mind.adjust_skillrank(/datum/skill/combat/maces, pick(3,4), TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-	guard.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE) 
+	guard.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
@@ -92,13 +92,12 @@
 	guard.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	guard.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE) 
+	guard.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-	guard.change_stat("strength", 1)
-	guard.change_stat("perception", 2) 
+	guard.change_stat("strength", 2)
 	guard.change_stat("constitution", 1)
 	guard.change_stat("endurance", 1)
 	guard.change_stat("speed", 1)
@@ -117,7 +116,7 @@
 	guard.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	guard.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE) 
+	guard.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	guard.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)

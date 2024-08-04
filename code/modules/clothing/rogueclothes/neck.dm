@@ -43,7 +43,7 @@
 
 
 /obj/item/clothing/neck/roguetown/chaincoif
-	name = "chain coif"
+	name = "steel chain coif"
 	icon_state = "chaincoif"
 	item_state = "chaincoif"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -83,6 +83,7 @@
 
 
 /obj/item/clothing/neck/roguetown/chaincoif/iron
+	name = "iron chain coif"
 	icon_state = "ichaincoif"
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
@@ -158,6 +159,17 @@
 	name = "amulet of Necra"
 	desc = ""
 	icon_state = "necra"
+
+/obj/item/clothing/neck/roguetown/psicross/ravox
+	name = "amulet of Ravox"
+	desc = ""
+	icon_state = "ravox"
+
+/obj/item/clothing/neck/roguetown/psicross/eora
+	name = "amulet of Eora"
+	desc = ""
+	icon_state = "eora"
+
 
 /obj/item/clothing/neck/roguetown/psicross/pestra
 	name = "amulet of Pestra"

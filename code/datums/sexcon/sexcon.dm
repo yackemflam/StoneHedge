@@ -1,8 +1,8 @@
 /datum/sex_controller
 	/// The user and the owner of the controller
-	var/mob/living/carbon/human/user
+	var/mob/living/user
 	/// Target of our actions, can be ourself
-	var/mob/living/carbon/human/target
+	var/mob/living/target
 	/// Whether the user desires to stop his current action
 	var/desire_stop = FALSE
 	/// What is the current performed action
@@ -23,8 +23,9 @@
 	var/last_ejaculation_time = 0
 	var/last_moan = 0
 	var/last_pain = 0
+	var/ejacmessaged = 0
 
-/datum/sex_controller/New(mob/living/carbon/human/owner)
+/datum/sex_controller/New(mob/living/owner)
 	user = owner
 
 /datum/sex_controller/Destroy()
@@ -44,7 +45,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_controller/proc/can_violate_victim(mob/living/carbon/human/victim)
+/datum/sex_controller/proc/can_violate_victim(mob/living/victim)
 	if(!victim.mind)
 		return FALSE
 	if(!victim.mind.key)
@@ -55,7 +56,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_controller/proc/need_to_be_violated(mob/living/carbon/human/victim)
+/datum/sex_controller/proc/need_to_be_violated(mob/living/victim)
 	// Dont need to violate self
 	if(user == victim)
 		return FALSE
@@ -70,7 +71,7 @@
 		return TRUE
 	return FALSE
 
-/datum/sex_controller/proc/violate_victim(mob/living/carbon/human/victim)
+/datum/sex_controller/proc/violate_victim(mob/living/victim)
 	if(!user.client)
 		return
 	if(!victim.mind)
@@ -140,9 +141,7 @@
 	else
 		user.clear_fullscreen("horny")
 
-/datum/sex_controller/proc/start(mob/living/carbon/human/new_target)
-	if(!ishuman(new_target))
-		return
+/datum/sex_controller/proc/start(mob/living/new_target)
 	set_target(new_target)
 	show_ui()
 
@@ -153,9 +152,13 @@
 	after_ejaculation()
 
 /datum/sex_controller/proc/cum_into(oral = FALSE)
-	log_combat(user, target, "Came inside the target")
+	log_combat(user, target, "Came inside [target]")
 	if(oral)
 		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
+		if(ejacmessaged != 1)
+			target.visible_message(span_info("With every load I swallow, with Eora's blessing I feel more satiated so I may go longer."))
+			ejacmessaged = 1
+		target.adjust_nutrition(200)
 	else
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	after_ejaculation()
@@ -165,13 +168,32 @@
 /datum/sex_controller/proc/ejaculate()
 	log_combat(user, user, "Ejaculated")
 	user.visible_message(span_love("[user] makes a mess!"))
+	//small heal burst, this should not happen often due the delay on how often one can cum.
+	var/sexhealrand = rand(5, 15)
+	if(HAS_TRAIT(user, TRAIT_SEXDEVO))
+		var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
+		if(sexhealmult < 2) //so its never below 2 for ones with trait.
+			sexhealmult = 2
+		sexhealrand *= sexhealmult
+		to_chat(user, span_green("I feel Eora's blessing."))
+	user.adjustBruteLoss(-sexhealrand)
+	sexhealrand *= 0.5
+	user.adjustFireLoss(-sexhealrand)
+
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(user))
 	after_ejaculation()
 
 /datum/sex_controller/proc/after_ejaculation()
+	//give some nutrition
+	if(ejacmessaged != 1)
+		user.visible_message(span_info("With every ejaculation I feel Eora's blessing satiate me so I may go longer."))
+		ejacmessaged = 1
+	user.adjust_nutrition(100)
 	set_arousal(40)
 	adjust_charge(-CHARGE_FOR_CLIMAX)
+	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
+		user.sate_addiction()
 	user.emote("sexmoanhvy", forced = TRUE)
 	user.playsound_local(user, 'sound/misc/mat/end.ogg', 100)
 	last_ejaculation_time = world.time
@@ -184,12 +206,12 @@
 		if(!user.mob_timers["cumtri"])
 			user.mob_timers["cumtri"] = world.time
 			user.adjust_triumphs(1)
-			to_chat(user, span_love("Our loving is a true TRIUMPH!"))
+			to_chat(user, span_love("Our sex was a true TRIUMPH!"))
 	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
 		if(!target.mob_timers["cumtri"])
 			target.mob_timers["cumtri"] = world.time
 			target.adjust_triumphs(1)
-			to_chat(target, span_love("Our loving is a true TRIUMPH!"))
+			to_chat(target, span_love("Our sex was a true TRIUMPH!"))
 
 /datum/sex_controller/proc/just_ejaculated()
 	return (last_ejaculation_time + 2 SECONDS >= world.time)
@@ -230,7 +252,7 @@
 /datum/sex_controller/proc/adjust_arousal(amount)
 	set_arousal(arousal + amount)
 
-/datum/sex_controller/proc/perform_deepthroat_oxyloss(mob/living/carbon/human/action_target, oxyloss_amt)
+/datum/sex_controller/proc/perform_deepthroat_oxyloss(mob/living/action_target, oxyloss_amt)
 	var/oxyloss_multiplier = 0
 	switch(force)
 		if(SEX_FORCE_LOW)
@@ -246,7 +268,18 @@
 		return
 	action_target.adjustOxyLoss(oxyloss_amt)
 
-/datum/sex_controller/proc/perform_sex_action(mob/living/carbon/human/action_target, arousal_amt, pain_amt, giving)
+//To show that they are choking
+	var/choke_message = pick("gasps for air!", "chokes!")
+	if(prob(33) && oxyloss_amt >= 1)
+		action_target.visible_message(span_warning("[action_target] [choke_message]"))
+		action_target.emote("gasp", forced = TRUE)
+
+/datum/sex_controller/proc/perform_sex_action(mob/living/action_target, arousal_amt, pain_amt, giving)
+	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+		arousal_amt *= 2
+		if(prob(10)) //10 perc chance each action to emit the message so they know who the fuckin' with.
+			var/lovermessage = pick("This feels so good!","I am in heaven!","This is too good to be possible!","By the ten!","I can't stop, too good!")
+			to_chat(action_target, span_love(lovermessage))
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed)
@@ -258,8 +291,34 @@
 		arousal_amt = 0
 		pain_amt = 0
 
-	adjust_arousal(arousal_amt)
 
+	//go go gadget sex healing.. magic?
+	//if(user.buckled?.sleepy)
+	var/sexhealrand = rand(0.1, 0.3)
+	if(HAS_TRAIT(user, TRAIT_SEXDEVO))
+		var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
+		if(sexhealmult < 2) //so its never below 2 for ones with trait.
+			sexhealmult = 2
+		sexhealrand *= sexhealmult
+		if(prob(2))
+			to_chat(user, span_green("I feel Eora smile upon on me."))
+			sexhealrand += 1
+	user.adjustBruteLoss(-sexhealrand)
+	sexhealrand *= 0.5
+	user.adjustFireLoss(-sexhealrand)
+
+	//grant devotion through sex because who needs praying.
+	//not sure if it works right but i dont need to test cuz its asked to be commented out anyway, ffs.
+	if(user.patron && user.mind.get_skill_level(/datum/skill/magic/holy))
+		var/mob/living/carbon/human/devouser = user
+		var/datum/devotion/C = devouser.devotion
+		if(C.devotion < C.max_devotion)
+			C.update_devotion(rand(1,2))
+			if(HAS_TRAIT(devouser, TRAIT_SEXDEVO))
+				C.update_devotion(rand(4,8))
+				if(prob(3))
+					to_chat(devouser, span_info("I feel Eora guide me."))
+	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
 	try_do_pain_effect(pain_amt, giving)
@@ -510,6 +569,9 @@
 	var/datum/sex_action/action = SEX_ACTION(current_action)
 	action.on_start(user, target)
 	while(TRUE)
+		if(!target.bypasssexable)
+			if(!isnull(target.client) && target.client.prefs.sexable == FALSE) //Vrell - Needs changed to let me test sex mechanics solo
+				break
 		if(!user.rogfat_add(action.stamina_cost * get_stamina_cost_multiplier()))
 			break
 		if(!do_after(user, (action.do_time / get_speed_multiplier()), target = target))
@@ -552,18 +614,19 @@
 		return FALSE
 	if(action.check_incapacitated && user.incapacitated())
 		return FALSE
+	var/mob/living/carbon/human/userino = user
 	if(action.check_same_tile)
 		var/same_tile = (get_turf(user) == get_turf(target))
-		var/grab_bypass = (action.aggro_grab_instead_same_tile && user.get_highest_grab_state_on(target) == GRAB_AGGRESSIVE)
+		var/grab_bypass = (action.aggro_grab_instead_same_tile && userino.get_highest_grab_state_on(target) == GRAB_AGGRESSIVE)
 		if(!same_tile && !grab_bypass)
 			return FALSE
 	if(action.require_grab)
-		var/grabstate = user.get_highest_grab_state_on(target)
+		var/grabstate = userino.get_highest_grab_state_on(target)
 		if(grabstate == null || grabstate < action.required_grab_state)
 			return FALSE
 	return TRUE
 
-/datum/sex_controller/proc/set_target(mob/living/carbon/human/new_target)
+/datum/sex_controller/proc/set_target(mob/living/new_target)
 	target = new_target
 
 /datum/sex_controller/proc/get_speed_multiplier()

@@ -17,7 +17,7 @@
 	aggro_vision_range = 9
 	base_intents = list(/datum/intent/simple/bite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
-					/obj/item/natural/hide = 1)
+					/obj/item/natural/hide = 1, /obj/item/natural/bone = 2)
 	faction = list("rats")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'
@@ -62,12 +62,6 @@
 		icon_living = "Frat"
 		icon_dead = "Frat1"
 	update_icon()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/bigrat/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
-
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/death(gibbed)
 	..()

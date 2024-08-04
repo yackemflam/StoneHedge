@@ -14,7 +14,8 @@
 	base_intents = list(/datum/intent/simple/claw)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 7,
 						/obj/item/natural/hide = 2,
-						/obj/item/natural/fur = 1)
+						/obj/item/natural/fur = 1,
+						/obj/item/natural/bone = 3)
 	faction = list("wolfs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 340
@@ -86,11 +87,6 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
-
-/mob/living/simple_animal/hostile/retaliate/rogue/mole/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mole/simple_limb_hit(zone)
 	if(!zone)

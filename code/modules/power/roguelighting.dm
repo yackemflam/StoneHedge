@@ -300,7 +300,7 @@
 		else
 			if(!on)
 				return
-		if (alert(usr, "Feed [W] to the fire?", "ROGUETOWN", "Yes", "No") != "Yes")
+		if (alert(usr, "Feed [W] to the fire?", "DREAM KEEP", "Yes", "No") != "Yes")
 			return
 		qdel(W)
 		user.visible_message(span_warning("[user] feeds [W] to [src]."))
@@ -687,6 +687,7 @@
 				if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks))
 					var/obj/item/reagent_containers/food/snacks/snack = W
 					if(snack.type in subtypesof(/obj/item/reagent_containers/food/snacks/grown) || snack.eat_effect == /datum/status_effect/debuff/uncookedfood)
+						nutrimentamount += 5 //fuck it extra yield so soups are worth a shit.
 						nutrimentamount *= 1.25 //Boiling food makes more nutrients digestable.
 				if(istype(W, /obj/item/reagent_containers/food/snacks/grown/wheat) || istype(W, /obj/item/reagent_containers/food/snacks/grown/oat) || istype(W, /obj/item/reagent_containers/powder/flour))
 					nutrimentamount += 2 //Boiling is a way of cooking grain without baking

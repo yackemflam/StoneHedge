@@ -685,7 +685,7 @@
 	if(!user.is_literate())
 		. += "I have no idea what it says."
 	else
-		. += "It says \"TOWN ON ROCKHILL\""
+		. += "It says \"TOWN ON STONEHEDGE\""
 
 /obj/structure/fluff/buysign
 	icon_state = "signwrote"
@@ -936,7 +936,7 @@
 
 /obj/structure/fluff/statue/evil
 	name = "idol"
-	desc = "A statue built to the robber-god, Matthios, who stole the gift of fire from the underworld. It is said that he grants the wishes of those pagan bandits (free folk) who feed him money and valuable metals."
+	desc = "A statue built to the Giver, Matthios, who stole the gift of fire from Astrata. It is said that he grants the wishes of those pagan bandits (free folk) who feed him money and valuable metals."
 	icon_state = "evilidol"
 	icon = 'icons/roguetown/misc/structure.dmi'
 
@@ -1046,7 +1046,7 @@
 
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/user, params)
 	if(user.mind)
-		if(user.mind.assigned_role == "Priest")
+		if(user.mind.assigned_role == "Prophet")
 			if(istype(W, /obj/item/reagent_containers/food/snacks/grown/apple))
 				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))
 					to_chat(user, span_warning("I need to do this in the chapel."))

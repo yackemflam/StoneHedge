@@ -168,7 +168,7 @@
 	restricted_jobs = list("King",
 	"Queen",
 	"Merchant",
-	"Priest")
+	"Prophet")
 	var/num_bandits = 0
 	if(num_players() >= 10)
 		num_bandits = CLAMP(round(num_players() / 2), 1, 5)
@@ -216,7 +216,7 @@
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.noble_positions)
 					blockme = TRUE
-				if(rebelguy.assigned_role in GLOB.youngfolk_positions)
+				if(rebelguy.assigned_role in GLOB.apprentices_positions)
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.church_positions)
 					blockme = TRUE
@@ -237,22 +237,22 @@
 	restricted_jobs = list("King",
 	"Queen",
 	"Prisoner",
-	"Dungeoneer",
-	"Inquisitor",
+	"Beastmaster",
+	"Witcher",
 	"Confessor",
 	"Watchman",
 	"Man at Arms",
 	"Veteran",
-	"Acolyte",
-	"Cleric",
-	"Guard Captain")
+	"Priest",
+	"Priest",
+	"Watchmen Captain")
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
 	var/datum/mind/villain = pick_n_take(antag_candidates)
 	if(villain)
 		var/blockme = FALSE
 		if(!(villain in allantags))
 			blockme = TRUE
-		if(villain.assigned_role in GLOB.youngfolk_positions)
+		if(villain.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE
 		if(villain.current)
 			if(villain.current.gender == FEMALE)
@@ -270,7 +270,7 @@
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_vampires()
-	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Watchman","Veteran","Man at Arms","Guard Captain")
+	restricted_jobs = list("Priest","Prophet","Adventurer","Confessor","Watchman","Veteran","Man at Arms","Watchmen Captain")
 /*	var/num_vampires = rand(1,3)
 #ifdef TESTSERVER
 	num_vampires = 100
@@ -281,7 +281,7 @@
 		var/blockme = FALSE
 		if(!(vampire in allantags))
 			blockme = TRUE
-		if(vampire.assigned_role in GLOB.youngfolk_positions)
+		if(vampire.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE
 		if(blockme)
 			return
@@ -297,7 +297,7 @@
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_werewolves()
-	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Watchman","Veteran","Man at Arms","Guard Captain")
+	restricted_jobs = list("Priest","Prophet","Adventurer","Confessor","Watchman","Veteran","Man at Arms","Watchmen Captain")
 /*	var/num_werewolves = rand(1,3)
 #ifdef TESTSERVER
 	num_werewolves = 100
@@ -308,7 +308,7 @@
 		var/blockme = FALSE
 		if(!(werewolf in allantags))
 			blockme = TRUE
-		if(werewolf.assigned_role in GLOB.youngfolk_positions)
+		if(werewolf.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE
 		if(blockme)
 			return

@@ -41,7 +41,7 @@
 /datum/stressevent/dismembered
 	timer = 40 MINUTES
 	stressadd = 5
-	desc = span_boldred("I've lost a limb.")
+	desc = span_boldred("MY LIMB IS GONE!!!")
 
 /datum/stressevent/dwarfshaved
 	timer = 40 MINUTES
@@ -52,8 +52,8 @@
 	timer = 15 MINUTES
 	max_stacks = 5
 	stressadd = 2
-	stressadd_per_extra_stack = 2
-	desc = span_red("Butchery.")
+	desc = span_red("I've seen men lose their limbs.")
+
 
 /datum/stressevent/fviewdismember
 	timer = 1 MINUTES
@@ -164,17 +164,27 @@
 /datum/stressevent/parablood
 	timer = 15 SECONDS
 	stressadd = 3
-	desc = span_red("There is so much blood here.. it's like a battlefield!")
+	desc = span_red("There is so much blood here... it's like a battlefield!")
 
 /datum/stressevent/parastr
 	timer = 2 MINUTES
 	stressadd = 2
-	desc = span_red("That beast is stronger.. and might easily kill me!")
+	desc = span_red("That beast is stronger... and might easily kill me!")
 
 /datum/stressevent/paratalk
 	timer = 2 MINUTES
 	stressadd = 2
-	desc = span_red("They are plotting against me in evil tongues..")
+	desc = span_red("They are plotting against me in evil tongues...")
+
+/datum/stressevent/crowd
+	timer = 2 MINUTES
+	stressadd = 2
+	desc = "<span class='red'>Why is everyone here...? Are they trying to kill me?!</span>"
+
+/datum/stressevent/nopeople
+	timer = 2 MINUTES
+	stressadd = 2
+	desc = "<span class='red'>Where did everyone go? Did something happen?!</span>"
 
 /datum/stressevent/coldhead
 	timer = 60 SECONDS

@@ -1,6 +1,6 @@
 /datum/job/roguetown/nightmaiden
-	title = "Bath Swain"
-	f_title = "Bath Wench"
+	title = "Nightswain"
+	f_title = "Nightmaiden"
 	flag = WENCH
 	department_flag = PEASANTS
 	faction = "Station"
@@ -22,17 +22,24 @@
 
 /datum/outfit/job/roguetown/nightmaiden/pre_equip(mob/living/carbon/human/H)
 	..()
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	r_hand = /obj/item/bath/soap
+	switch(H.patron?.type)
+		if(/datum/patron/divine/eora) //Eoran loadouts
+			shoes = /obj/item/clothing/shoes/roguetown/sandals
+			armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/random
+			pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
+			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
+			head  = /obj/item/clothing/head/peaceflower
+		else
+			shoes = /obj/item/clothing/shoes/roguetown/shortboots
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+			armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy
+			pants = /obj/item/clothing/under/roguetown/tights/stockings/fishnet/random //Added fishnet stockings to the wenches
+
+	neck = /obj/item/storage/belt/rogue/pouch
+	r_hand = /obj/item/roguekey/nightmaiden
 	l_hand = /obj/item/rogue/instrument/harp
-	mouth = /obj/item/roguekey/nightmaiden
-	if(H.gender == MALE)
-		pants =	/obj/item/clothing/under/roguetown/loincloth
-		belt =	/obj/item/storage/belt/rogue/leather/cloth
-	else
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy
+	pants = /obj/item/clothing/under/roguetown/tights/stockings/fishnet/random //Added fishnet stockings to the wenches
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
@@ -42,6 +49,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.change_stat("constitution", 1)
 		H.change_stat("endurance", 2)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)

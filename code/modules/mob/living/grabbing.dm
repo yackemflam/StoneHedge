@@ -213,6 +213,13 @@
 	C.next_attack_msg.Cut()
 	C.apply_damage(damage, BRUTE, limb_grabbed, armor_block)
 	limb_grabbed.bodypart_attacked_by(BCLASS_TWIST, damage, user, sublimb_grabbed, crit_message = TRUE)
+	if(!user.cmode)
+		var/fixchance = user.mind.get_skill_level(/datum/skill/misc/medicine)*20
+		if(prob(fixchance))
+			for(var/datum/wound/dislocation/d in sublimb_grabbed)
+				d.relocate_bone()
+		else
+			to_chat(user, span_warning("I fail to set the bone in [C]'s [parse_zone(sublimb_grabbed)]."))
 	C.visible_message(span_danger("[user] twists [C]'s [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]"), \
 					span_userdanger("[user] twists my [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]"), span_hear("I hear a sickening sound of pugilism!"), COMBAT_MESSAGE_RANGE, user)
 	to_chat(user, span_warning("I twist [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]"))

@@ -503,7 +503,7 @@
 
 
 /datum/admins/proc/Game()
-	if(!check_rights(0))
+	if(!check_rights(R_SPAWN))
 		return
 
 	var/dat = {"
@@ -674,6 +674,13 @@
 		to_chat(usr, "<font color='red'>Error: Start Now: Game has already started.</font>")
 
 	return 0
+
+/datum/admins/proc/reload_whitelist()
+	set category = "Reload Whitelist"
+	set desc="Load the whitelist again"
+	load_whitelist()
+	message_admins("<font color='blue'>\
+		[usr.key] has reloaded the whitelist.</font>")
 
 /datum/admins/proc/forcemode()
 	set category = "Server"
@@ -1076,7 +1083,7 @@
 
 
 /client/proc/returntolobby()
-	set category = "Debug"
+	set category = "Special Verbs"
 	set name = "Return to Lobby"
 
 	var/mob/living/carbon/human/H = mob

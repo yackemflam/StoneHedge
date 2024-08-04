@@ -79,6 +79,12 @@
 	created_item = /obj/item/flashlight/flare/torch/lantern
 	i_type = "General"
 
+/datum/anvil_recipe/tools/chains
+	name = "Chains"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rope/chain
+	i_type = "General"
+
 /datum/anvil_recipe/tools/cups
 	name = "Cups 3x"
 	req_bar = /obj/item/ingot/iron
@@ -113,7 +119,7 @@
 /datum/anvil_recipe/tools/pot
 	name = "Pot"
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/reagent_containers/glass/pot //weird how it's a child of glass but whatevs
+	created_item = /obj/item/reagent_containers/glass/pot/iron //weird how it's a child of glass but whatevs
 	i_type = "Tools"
 
 // --------- Steel -----------
@@ -125,6 +131,21 @@
 	created_item = /obj/item/rogueweapon/pick/steel
 	i_type = "Tools"
 
+/datum/anvil_recipe/tools/surgery/surgerytools
+	name = "Surgery tools set (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
+	created_item = list(/obj/item/rogueweapon/surgery/scalpel, /obj/item/rogueweapon/surgery/saw, /obj/item/rogueweapon/surgery/hemostat, /obj/item/rogueweapon/surgery/retractor, /obj/item/rogueweapon/surgery/bonesetter, /obj/item/rogueweapon/surgery/cautery, /obj/item/reagent_containers/syringe)
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/surgery/syringes
+	name = "Syringes x5"
+	req_bar = /obj/item/ingot/steel
+	created_item = list(/obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe)
+	i_type = "Tools"
+
+/*
+//those shit were so expensive one by one nobody ever used them unless they spawn with them.
 /datum/anvil_recipe/tools/surgery/scalpel
 	name = "Scalpel"
 	req_bar = /obj/item/ingot/steel
@@ -160,6 +181,7 @@
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/surgery/cautery
 	i_type = "Tools"
+*/
 
 /datum/anvil_recipe/tools/cupssteel
 	name = "Goblets 3x"
@@ -187,4 +209,12 @@
 	name = "Goblets 3x"
 	req_bar = /obj/item/ingot/gold
 	created_item = list(/obj/item/reagent_containers/glass/cup/golden, /obj/item/reagent_containers/glass/cup/golden, /obj/item/reagent_containers/glass/cup/golden)
+	i_type = "General"
+
+// --------- GLASS -----------
+
+/datum/anvil_recipe/tools/glassbottle
+	name = "Glass bottle"
+	req_bar = /obj/item/ingot/glass
+	created_item = /obj/item/reagent_containers/glass/bottle
 	i_type = "General"

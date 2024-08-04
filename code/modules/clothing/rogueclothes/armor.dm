@@ -69,17 +69,62 @@
 	smeltresult = /obj/item/ingot/steel
 	do_sound = TRUE
 	armor_class = ARMOR_CLASS_MEDIUM
+	max_integrity = 300
 
-/obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
+/obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 	name = "chainmail bikini"
-	desc = "Not very comfortable against the skin."
+	desc = "Try not to get your nipple caught between the chains, and other bits."
+	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "chainkini"
 	item_state = "chainkini"
 	allowed_sex = list(FEMALE)
 	allowed_race = CLOTHED_RACES_TYPES
-	body_parts_covered = CHEST|GROIN
-	anvilrepair = /datum/skill/craft/armorsmithing
-	armor_class = ARMOR_CLASS_LIGHT
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/bikini/bra
+	name = "chainmail bra"
+	icon_state = "chainbra"
+	item_state = "chainbra"
+	desc = "Try not to get your nipple caught between the chains."
+	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/carapace
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "carapace armor"
+	desc = "Full carapace plate. Leg protecting tassets, groin cup, armored vambraces."
+	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
+	icon_state = "carapace"
+	item_state = "carapace"
+	blocksound = PLATEHIT
+	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	armor = list("blunt" = 60, "slash" = 100, "stab" = 0, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	max_integrity = 175
+	allowed_sex = list(MALE, FEMALE)
+	var/do_sound = TRUE
+	sewrepair = TRUE
+	smeltresult = /obj/item/ash
+	equip_delay_self = 60
+	nodismemsleeves = TRUE
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/carapace/Initialize()
+	. = ..()
+	if(do_sound)
+		AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/chain (1).ogg',\
+													'sound/foley/footsteps/armor/chain (2).ogg',\
+													'sound/foley/footsteps/armor/chain (3).ogg'), 70)
+
+/obj/item/clothing/suit/roguetown/armor/carapace/cuirass
+	name = "carapace cuirass"
+	desc = "vest styled watery shell chest armor sown in layers."
+	body_parts_covered = CHEST|GROIN|VITALS
+	icon_state = "carapacecuirass"
+	item_state = "carapacecuirass"
+	max_integrity = 150
+	equip_delay_self = 30
+
 
 /obj/item/clothing/suit/roguetown/armor/plate
 	slot_flags = ITEM_SLOT_ARMOR
@@ -123,12 +168,49 @@
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
+/obj/item/clothing/suit/roguetown/armor/plate/bikini
+	name = "plate bikini"
+	desc = "Half plate in bikini form, still just as protective somehow."
+	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	icon_state = "halfplatekini"
+	item_state = "halfplatekini"
+	allowed_sex = list(FEMALE)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/bikini/bra
+	name = "plate bra"
+	icon_state = "halfplatebra"
+	item_state = "halfplatebra"
+	desc = "Half plate that's even half-er, still just as protective somehow."
+	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/plate/full
 	name = "plate armor"
 	desc = "Full plate. Leg protecting tassets, groin cup, armored vambraces."
 	icon_state = "plate"
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	equip_delay_self = 80
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/bikini
+	name = "fullplate bikini"
+	desc = "Full plate in bikini form, full package and full exposure."
+	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	icon_state = "platekini"
+	allowed_sex = list(FEMALE)
+	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
+	equip_delay_self = 80
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/bikini/bra
+	name = "fullplate bra"
+	icon_state = "platebra"
+	item_state = "platebra"
+	desc = "The black and white line between absolute protection and none."
+	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	name = "iron breastplate"
@@ -335,6 +417,60 @@
 	max_integrity = 300
 	sellprice = 25
 	armor_class = ARMOR_CLASS_LIGHT
+
+/obj/item/clothing/suit/roguetown/armor/leather/bikini
+	name = "leather bikini"
+	desc = "Flexible cowhide armor. Lightweight, better than nothing. Now in tasteful bikini shape."
+	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	icon_state = "leatherkini"
+	item_state = "leatherkini"
+	allowed_sex = list(FEMALE)
+	allowed_race = CLOTHED_RACES_TYPES
+
+/obj/item/clothing/suit/roguetown/armor/leather/bikini/bra
+	name = "Leather armor bra"
+	icon_state = "leatherbra"
+	item_state = "leatherbra"
+	desc = "Flexible cowhide armor. Lightweight, better than nothing, Although the bottom half is literally covered by nothing, it somehow still protects the full torso!"
+	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/leather/studded/bikini
+	name = "studded leather bikini"
+	desc = "Studded leather is the most durable of all hides and leathers and about as light. This one is in bikini form."
+	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	icon_state = "studleatherkini"
+	item_state = "studleatherkini"
+	allowed_sex = list(FEMALE)
+	allowed_race = CLOTHED_RACES_TYPES
+
+/obj/item/clothing/suit/roguetown/armor/leather/studded/bikini/bra
+	name = "Leather armor bra"
+	icon_state = "studleatherbra"
+	item_state = "studleatherbra"
+	desc = "Studded leather is the most durable of all hides and leathers and about as light. Although the bottom half is literally covered by nothing, it somehow still protects the full torso!"
+	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
+	name = "hide bikini"
+	desc = "A light armor of wildbeast hide. Far more durable than leather. This will not keep a person warm though..."
+	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	icon_state = "hidearmorkini"
+	item_state = "hidearmorkini"
+	allowed_sex = list(FEMALE)
+	allowed_race = CLOTHED_RACES_TYPES
+
+/obj/item/clothing/suit/roguetown/armor/leather/hide/bikini/bra
+	name = "hide bra"
+	icon_state = "hidearmorbra"
+	item_state = "hidearmorbra"
+	desc = "A light armor of wildbeast hide. Far more durable than leather. This will not keep a person warm though... The bottom half is literally covered by nothing, it somehow still protects the full torso!"
+	flags_inv = HIDEBOOB
+	genitalaccess = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest
 	name = "leather vest"

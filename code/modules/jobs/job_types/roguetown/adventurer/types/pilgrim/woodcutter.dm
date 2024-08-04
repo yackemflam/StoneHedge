@@ -9,16 +9,17 @@
 
 /datum/outfit/job/roguetown/adventurer/woodcutter/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/axes, 3, TRUE) // AXE MEN! GIVE ME SPLINTERS!
+	H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE) // AXE MEN! GIVE ME SPLINTERS!
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE) 
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE) 
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/masonry, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)

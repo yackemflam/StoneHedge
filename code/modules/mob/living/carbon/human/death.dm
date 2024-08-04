@@ -97,18 +97,27 @@
 				for(var/mob/living/carbon/human/HU in GLOB.player_list)
 					if(!HU.stat && is_in_roguetown(HU))
 						HU.playsound_local(get_turf(HU), 'sound/music/lorddeath.ogg', 80, FALSE, pressure_affected = FALSE)
-			if("Priest")
+			if("Prophet")
 				addomen(OMEN_NOPRIEST)
 //		if(yeae)
 //			if(mind)
-//				if((mind.assigned_role == "Lord") || (mind.assigned_role == "Priest") || (mind.assigned_role == "Guard Captain") || (mind.assigned_role == "Merchant"))
+//				if((mind.assigned_role == "Lord") || (mind.assigned_role == "Prophet") || (mind.assigned_role == "Watchmen Captain") || (mind.assigned_role == "Merchant"))
 //					addomen(OMEN_NOBLEDEATH)
 
 		if(!gibbed && yeae)
 			for(var/mob/living/carbon/human/HU in viewers(7, src))
 				if(HU.marriedto == src)
 					HU.adjust_triumphs(-1)
-
+				if(HU != src && !HAS_TRAIT(HU, TRAIT_BLIND))
+					if(HU.dna?.species && dna?.species)
+						if(HU.dna.species.id == dna.species.id)
+							var/mob/living/carbon/D = HU
+							//D.add_stress(/datum/stressevent/viewdeath)
+							if(D.has_flaw(/datum/charflaw/addiction/maniac))
+								D.add_stress(/datum/stressevent/viewdeathmaniac)
+								D.sate_addiction()
+							else
+								//D.add_stress(/datum/stressevent/viewdeath)
 	. = ..()
 
 	dizziness = 0
@@ -134,7 +143,7 @@
 	switch(job)
 		if("King")
 			removeomen(OMEN_NOLORD)
-		if("Priest")
+		if("Prophet")
 			removeomen(OMEN_NOPRIEST)
 
 /mob/living/carbon/human/gib(no_brain, no_organs, no_bodyparts, safe_gib = FALSE)
@@ -144,6 +153,11 @@
 				continue
 			if(CA.marriedto == src)
 				CA.adjust_triumphs(-1)
+			var/mob/living/carbon/V = CA
+			if(V.has_flaw(/datum/charflaw/addiction/maniac))
+				V.add_stress(/datum/stressevent/viewgibmaniac)
+				V.sate_addiction()
+				continue
 			CA.add_stress(/datum/stressevent/viewgib)
 	return ..()
 

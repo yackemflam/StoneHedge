@@ -1,13 +1,14 @@
 /mob/living/carbon/human/proc/on_examine_face(mob/living/carbon/human/user)
-	if(!istype(user))
-		return
 	if(user.mind)
 		user.mind.i_know_person(src)
-	var/datum/species/self_species = dna.species
-	var/datum/species/examiner_species = user.dna.species
-	if(self_species.stress_examine && self_species.type != examiner_species.type)
-		var/datum/stressevent/shunned_race/event = user.add_stress(/datum/stressevent/shunned_race)
-		event.desc = self_species.stress_desc
+	/*
+	if(!isdarkelf(user) && isdarkelf(src))
+		user.add_stress(/datum/stressevent/delf)
+	if(!istiefling(user) && istiefling(src))
+		user.add_stress(/datum/stressevent/tieb)
+	if(!isargonian(user) && isargonian(src))
+		user.add_stress(/datum/stressevent/brazillian)
+	*/
 	if(user.has_flaw(/datum/charflaw/paranoid) && (STASTR - user.STASTR) > 1)
 		user.add_stress(/datum/stressevent/parastr)
 
@@ -102,6 +103,11 @@
 					slop_lore_string = ", <span class='danger'>A TRAITOR!</span>"
 			. += span_info("[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]")
 
+		var/usedrole = funnyrole
+		if(usedrole)
+			. += span_notice("[used_name] is a [usedrole].")
+		if(HAS_TRAIT(src, TRAIT_NOBLE))
+			. += span_notice("[used_name] is a <EM>NOBLE</EM>.")
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			if(H.marriedto == name)
@@ -121,7 +127,7 @@
 					commie_text = span_notice("Free man!")
 				else
 					commie_text = span_userdanger("BANDIT!")
-			if(mind.special_role == "Vampire Lord")
+			if(mind.special_role == "Vampire Lord" && !mind.has_antag_datum(/datum/antagonist/vampirelord/).disguised)
 				. += span_userdanger("A MONSTER!")
 			if(mind.assigned_role == "Lunatic")
 				. += span_userdanger("LUNATIC!")
@@ -132,7 +138,7 @@
 		if(commie_text)
 			. += commie_text
 		else if(HAS_TRAIT(src, TRAIT_COMMIE) && HAS_TRAIT(user, TRAIT_COMMIE))
-			. += span_notice("Comrade!")
+			. += span_notice("Fellow Giver!")
 
 	if(leprosy == 1)
 		. += span_necrosis("A LEPER...")
@@ -508,6 +514,16 @@
 	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
 	for(var/line in lines)
 		. += span_info(line)
+
+	if(!obscure_name && nsfwheadshot_link && user.client.prefs.horniboi)
+		. += "<a href='?src=[REF(src)];task=view_nsfwheadshot;'>View NSFW headshot</a>"
+
+	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
+	for(var/line in lines)
+		. += span_info(line)
+
+	//unnecessary
+	//	. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
 
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))

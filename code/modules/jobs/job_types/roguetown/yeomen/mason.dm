@@ -6,7 +6,7 @@
 	total_positions = 3
 	spawn_positions = 2
 
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
 
 	tutorial = "There are ancient secrets within stone, something your creed has known since man built upon dirt. You've pride in your work, youre the only reason this place doesnt fall apart. The King could replace you in a heartbeat, prove to them why youre the Master Mason."
@@ -22,13 +22,14 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/lumberjacking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)

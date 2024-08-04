@@ -1,12 +1,15 @@
 /datum/mob_descriptor/body
 	abstract_type = /datum/mob_descriptor/body
 	slot = MOB_DESCRIPTOR_SLOT_BODY
+	prefix = "a"
 
 /datum/mob_descriptor/body/average
 	name = "Average"
+	prefix = "an"
 
 /datum/mob_descriptor/body/athletic
 	name = "Athletic"
+	prefix = "an"
 
 /datum/mob_descriptor/body/muscular
 	name = "Muscular"
@@ -52,6 +55,12 @@
 
 /datum/mob_descriptor/body/bulky
 	name = "Bulky"
+
+/datum/mob_descriptor/body/tall
+	name = "Tall"
+
+/datum/mob_descriptor/body/short
+	name = "Short"
 
 /datum/mob_descriptor/body/slender
 	name = "Slender"

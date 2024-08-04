@@ -15,14 +15,15 @@
 	else
 		//can overfill you with blood, but at a slower rate
 		M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_MAXIMUM)
-	if(wCount.len > 0)	
-		//some peeps dislike the church, this allows an alternative thats not a doctor or sleep. 
+	if(wCount.len > 0)
+		//some peeps dislike the church, this allows an alternative thats not a doctor or sleep.
 		M.heal_wounds(2) //at a motabalism of .5 U a tick this translates to 80WHP healing with 20 U Most wounds are unsewn 15-100. This is powerful on single wounds but rapidly weakens at multi wounds.
 		M.update_damage_overlays()
-	M.adjustBruteLoss(-0.5*REM, 0)
-	M.adjustFireLoss(-0.5*REM, 0)
-	M.adjustOxyLoss(-1, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1*REM)
+		to_chat(M, span_nicegreen("I feel one of my wounds mend."))
+	M.adjustBruteLoss(-1.5*REM, 0)
+	M.adjustFireLoss(-1.5*REM, 0)
+	M.adjustOxyLoss(-1.5, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2*REM)
 	M.adjustCloneLoss(-1*REM, 0)
 	..()
 	. = 1
@@ -41,6 +42,49 @@
 	M.rogstam_add(100)
 	..()
 	. = 1
+
+/datum/reagent/medicine/antipregnancy
+	name = "Pregnancy Removal Potion"
+	description = "Fixes mistakes."
+	reagent_state = LIQUID
+	color = "#a9323c"
+	taste_description = "worries"
+	overdose_threshold = 60
+	metabolization_rate = REAGENTS_METABOLISM
+	alpha = 200
+
+/datum/reagent/medicine/antipregnancy/on_mob_life(mob/living/carbon/M)
+	var/obj/item/organ/vagina/puss = M.getorganslot(ORGAN_SLOT_VAGINA)
+	if(puss.pregnant)
+		puss.undo_preggoness()
+	..()
+	. = 1
+
+/datum/reagent/medicine/antipregnancy/overdose_process(mob/living/carbon/M)
+	M.add_nausea(9)
+	M.adjustToxLoss(3, 0)
+
+/datum/reagent/medicine/antipoisonpot
+	name = "Anti Poison Potion"
+	description = "Quickly nullifies toxins."
+	reagent_state = LIQUID
+	color = "#64bf49"
+	taste_description = "ashes"
+	overdose_threshold = 60
+	metabolization_rate = REAGENTS_METABOLISM
+	alpha = 200
+
+/datum/reagent/medicine/antipoisonpot/on_mob_life(mob/living/carbon/M)
+	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
+		if(R != src)
+			M.reagents.remove_reagent(R.type,0.5)
+	M.adjustToxLoss(-0.5*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/medicine/antipoisonpot/overdose_process(mob/living/carbon/M)
+	M.add_nausea(9)
+	M.adjustToxLoss(3, 0)
 
 /datum/reagent/berrypoison
 	name = "Berry Poison"

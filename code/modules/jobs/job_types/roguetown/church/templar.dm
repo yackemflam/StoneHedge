@@ -6,13 +6,13 @@
 	faction = "Station"
 	tutorial = "Templars are warriors who have forsaken wealth and title in lieu of service to the church, due to either zealotry or a past shame. They guard the church and its priest, while keeping a watchful eye against heresy and nite-creechers. Within troubled dreams, they wonder if the blood they shed makes them holy or stained."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_CLERIC_PATRONS
 	outfit = /datum/outfit/job/roguetown/templar
-	min_pq = 2
+	min_pq = 0
 	max_pq = null
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 5
+	spawn_positions = 5
 	display_order = JDO_TEMPLAR
 	give_bank_account = TRUE
 
@@ -45,6 +45,9 @@
 			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 			cloak = /obj/item/clothing/cloak/tabard/crusader/noc
+		if("Eora") //Eora content from Stonekeep
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
+			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/chainlegs
@@ -65,6 +68,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)	//May tone down to 2; seems OK.
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
@@ -76,6 +80,7 @@
 		H.change_stat("constitution", 2)
 		H.change_stat("endurance", 3)
 		H.change_stat("speed", -1)
+		H.cmode_music = 'sound/music/combat_clergy.ogg'
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)

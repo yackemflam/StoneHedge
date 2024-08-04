@@ -84,6 +84,8 @@
 		/datum/mob_descriptor/body/decrepit,
 		/datum/mob_descriptor/body/thin,
 		/datum/mob_descriptor/body/bulky,
+		/datum/mob_descriptor/body/tall,
+		/datum/mob_descriptor/body/short,
 		/datum/mob_descriptor/body/slender,
 		/datum/mob_descriptor/body/lissome,
 		/datum/mob_descriptor/body/lanky,

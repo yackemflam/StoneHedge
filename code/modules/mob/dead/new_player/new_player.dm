@@ -189,6 +189,10 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 			to_chat(usr, span_boldwarning("You are in the migrant queue."))
 			return
 
+		if(client && client.prefs.is_active_migrant())
+			to_chat(usr, span_boldwarning("You are in the migrant queue."))
+			return
+
 		if(href_list["late_join"] == "override")
 			LateChoices()
 			return
@@ -287,7 +291,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	var/list/dat = list()
 	dat += GLOB.roleplay_readme
 	if(dat)
-		var/datum/browser/popup = new(src, "Primer", "RATWOOD", 460, 550)
+		var/datum/browser/popup = new(src, "Primer", "DREAM KEEP", 460, 550)
 		popup.set_content(dat.Join())
 		popup.open()
 
@@ -590,7 +594,8 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	omegalist += list(GLOB.yeoman_positions)
 	omegalist += list(GLOB.peasant_positions)
 	omegalist += list(GLOB.mercenary_positions)
-	omegalist += list(GLOB.youngfolk_positions)
+	omegalist += list(GLOB.apprentices_positions)
+	omegalist += list(GLOB.goblin_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
@@ -632,12 +637,12 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 					cat_name = "Yeomen"
 				if (PEASANTS)
 					cat_name = "Peasants"
-				if (YOUNGFOLK)
-					cat_name = "Sidefolk"
+				if (APPRENTICES)
+					cat_name = "Apprentices"
 				if (MERCENARIES)
 					cat_name = "Mercenaries"
-				if (GOBLIN)
-					cat_name = "Goblins"
+				if (TRIBAL)
+					cat_name = "Tribe"
 
 			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
 			dat += "<legend align='center' style='font-weight: bold; color: [cat_color]'>[cat_name]</legend>"

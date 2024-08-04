@@ -269,7 +269,7 @@
 	if(M.pixel_y <= 16 && M.pixelshift_y <= 16 && M.wallpressed == FALSE)
 		M.pixelshifted = TRUE
 		M.pixelshift_y = M.pixelshift_y + 1
-		M.set_mob_offsets("pixel_shift", _x = M.pixelshift_x, _y = M.pixelshift_y)	
+		M.set_mob_offsets("pixel_shift", _x = M.pixelshift_x, _y = M.pixelshift_y)
 	return TRUE
 
 /datum/keybinding/living/pixel_shift_east
@@ -284,7 +284,7 @@
 	if(M.pixel_x <= 16 && M.pixelshift_x <= 16 && M.wallpressed == FALSE)
 		M.pixelshifted = TRUE
 		M.pixelshift_x = M.pixelshift_x + 1
-		M.set_mob_offsets("pixel_shift", _x = M.pixelshift_x, _y = M.pixelshift_y)	
+		M.set_mob_offsets("pixel_shift", _x = M.pixelshift_x, _y = M.pixelshift_y)
 	return TRUE
 
 /datum/keybinding/living/pixel_shift_south
@@ -299,7 +299,7 @@
 	if(M.pixel_y >= -16 && M.pixelshift_y >= -16 && M.wallpressed == FALSE)
 		M.pixelshifted = TRUE
 		M.pixelshift_y = M.pixelshift_y - 1
-		M.set_mob_offsets("pixel_shift", _x = M.pixelshift_x, _y = M.pixelshift_y)		
+		M.set_mob_offsets("pixel_shift", _x = M.pixelshift_x, _y = M.pixelshift_y)
 	return TRUE
 
 /datum/keybinding/living/pixel_shift_west
@@ -314,7 +314,5 @@
 	if(M.pixel_x >= -16 && M.pixelshift_x >= -16 && M.wallpressed == FALSE)
 		M.pixelshifted = TRUE
 		M.pixelshift_x = M.pixelshift_x - 1
-		M.set_mob_offsets("pixel_shift", _x = M.pixelshift_x, _y = M.pixelshift_y)	
+		M.set_mob_offsets("pixel_shift", _x = M.pixelshift_x, _y = M.pixelshift_y)
 	return TRUE
-
-

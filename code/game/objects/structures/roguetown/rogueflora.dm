@@ -273,6 +273,15 @@
 	pixel_x += rand(-3,3)
 	return ..()
 
+/obj/structure/flora/roguegrass/bush/Initialize(mapload)
+	GLOB.busheslist += src
+	. = ..()
+	return INITIALIZE_HINT_QDEL
+
+/obj/structure/flora/roguegrass/bush/Destroy()
+	GLOB.busheslist -= src
+	return ..()
+
 /obj/structure/flora/roguegrass/bush/proc/loot_replenish()
 	if(bushtype)
 		looty += bushtype

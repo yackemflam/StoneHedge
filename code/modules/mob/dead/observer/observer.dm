@@ -552,7 +552,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 
 	M.key = key
-	client.verbs -= GLOB.ghost_verbs
+	if(client) //Vrell - we need a non-null check to fix a runtime error.
+		client.verbs -= GLOB.ghost_verbs
 //	M.Login()	//wat
 	return
 
@@ -885,7 +886,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	var/bt = world.time
 	SEND_SOUND(src, sound('sound/misc/notice (2).ogg'))
-	if(alert(src, "A lich has summoned you to destroy ROGUETOWN!", "Join the Horde", "Yes", "No") == "Yes")
+	if(alert(src, "A lich has summoned you to destroy DREAM KEEP!", "Join the Horde", "Yes", "No") == "Yes")
 		if(world.time > bt + 5 MINUTES)
 			to_chat(src, span_warning("Too late."))
 			return FALSE

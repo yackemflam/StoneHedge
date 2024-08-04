@@ -1,14 +1,13 @@
-
 /datum/job/roguetown/priest
-	title = "Priest"
+	title = "Prophet"
 	flag = PRIEST
 	department_flag = CHURCHMEN
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 5
+	spawn_positions = 5
 	selection_color = JCOLOR_CHURCH
-	f_title = "Priestess"
-	allowed_races = RACES_TOLERATED_UP
+	f_title = "Prophetess"
+	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_DIVINE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
 	tutorial = "The Divine is all that matters in a world of the immoral. The Weeping God left his children to rule over us mortals and you will preach their wisdom to any who still heed their will. The faithless are growing in number, it is up to you to shepard them to a Gods-fearing future."
@@ -19,16 +18,16 @@
 
 	display_order = JDO_PRIEST
 	give_bank_account = 115
-	min_pq = 8
+	min_pq = 0
 	max_pq = null
 
 /datum/outfit/job/roguetown/priest
-	allowed_patrons = list(/datum/patron/divine/astrata)
+	allowed_patrons = ALL_ACOLYTE_PATRONS
 
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
-	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+	neck = /obj/item/clothing/neck/roguetown/psicross/silver
 	head = /obj/item/clothing/head/roguetown/priestmask
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	pants = /obj/item/clothing/under/roguetown/tights/black
@@ -59,6 +58,7 @@
 		H.change_stat("constitution", -1)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
+		H.cmode_music = 'sound/music/combat_clergy.ogg'
 	var/datum/devotion/C = new /datum/devotion(H, H.patron) // This creates the cleric holder used for devotion spells
 	C.grant_spells_priest(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
@@ -73,7 +73,7 @@
 
 /mob/living/carbon/human/proc/coronate_lord()
 	set name = "Coronate"
-	set category = "Priest"
+	set category = "Prophet"
 	if(!mind)
 		return
 	if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
@@ -114,12 +114,12 @@
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		removeomen(OMEN_NOLORD)
-		say("By the authority of the gods, I pronounce you Ruler of all Rockhill!")
-		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of ROCKHILL!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
+		say("By the authority of the gods, I pronounce you Ruler of all StoneHedge!")
+		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of STONEHEDGE!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
 
 /mob/living/carbon/human/proc/churchexcommunicate()
 	set name = "Curse"
-	set category = "Priest"
+	set category = "Prophet"
 	if(stat)
 		return
 	var/inputty = input("Curse someone... (curse them again to remove it)", "Sinner Name") as text|null
@@ -151,7 +151,7 @@
 
 /mob/living/carbon/human/proc/churchannouncement()
 	set name = "Announcement"
-	set category = "Priest"
+	set category = "Prophet"
 
 	if(!COOLDOWN_FINISHED(src, church_announcement))
 		to_chat(src, span_warning("I should wait..."))
@@ -168,7 +168,7 @@
 		to_chat(src, span_warning("I need to do this from the chapel."))
 		return FALSE
 
-	priority_announce("[inputty]", title = "The Priest Speaks", sound = 'sound/misc/bell.ogg')
+	priority_announce("[inputty]", title = "The Prophet Speaks", sound = 'sound/misc/bell.ogg')
 	COOLDOWN_START(src, church_announcement, 30 SECONDS)
 
 /obj/effect/proc_holder/spell/self/convertrole/templar
@@ -181,7 +181,7 @@
 
 /obj/effect/proc_holder/spell/self/convertrole/monk
 	name = "Recruit Acolyte"
-	new_role = "Acolyte"
+	new_role = "Priest"
 	recruitment_faction = "Church"
 	recruitment_message = "Serve the ten, %RECRUIT!"
 	accept_message = "FOR THE TEN!"

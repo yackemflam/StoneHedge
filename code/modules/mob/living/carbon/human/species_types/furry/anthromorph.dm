@@ -2,9 +2,12 @@
 	race = /datum/species/anthromorph
 
 /datum/species/anthromorph
-	name = "Wild-Kin" 
+	name = "Wild-Kin"
 	id = "anthromorph"
-	desc = "In time you will learn the history of this race"
+	desc = "Wild-Kin; a name for a furred creacher that does not fall under any particular race. \
+	It is sometimes difficult to tell one of us from another race at a glance; one of Wild-Kin ancestry may look very similar to a Tabaxi or Vulpkanin. \
+	Due to the fact we are so numerous, we are welcome almost anywhere, along with our Half-Kin sister-race \
+	We are average of constitution, strength, and intellegence."
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -48,10 +51,6 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
-		ORGAN_SLOT_PENIS = /obj/item/organ/penis/knotted,
-		ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
-		ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
 		)
 	bodypart_features = list(
 		/datum/bodypart_feature/hair/head,
@@ -74,6 +73,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
 		/datum/customizer/organ/vagina/anthro,
 		)
 	body_marking_sets = list(
@@ -169,4 +169,3 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = third_color
 	return returned
-

@@ -68,6 +68,7 @@
 	clickcd = 14
 	swingdelay = 12
 	damfactor = 1.1
+	blade_class = BCLASS_PICK
 
 /obj/item/rogueweapon/huntingknife/getonmobprop(tag)
 	. = ..()
@@ -172,6 +173,12 @@
 	max_integrity = 150
 	smeltresult = /obj/item/ingot/steel
 
+/obj/item/rogueweapon/huntingknife/idagger/steel/parrying
+	name = "steel parrying dagger"
+	desc = "This is a parrying dagger made of solid steel, used to catch opponent's weapons in the handguard."
+	icon_state = "spdagger"
+	wdefense = 6
+
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	icon_state = "sdaggeralt"
 
@@ -190,7 +197,7 @@
 	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 	var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
 	if(ishuman(H))
-		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampire))
 			to_chat(H, span_userdanger("I can't pick up the silver, it is my BANE!"))
 			H.Knockdown(20)
 			H.adjustFireLoss(60)
@@ -205,7 +212,6 @@
 			to_chat(H, span_userdanger("I can't pick up the silver, it is my BANE!"))
 			H.Knockdown(20)
 			H.Paralyze(20)
-			
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()
@@ -229,10 +235,9 @@
 			H.Knockdown(20)
 			H.Paralyze(20)
 
-
 /obj/item/rogueweapon/huntingknife/idagger/silver/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
 	if(world.time < src.last_used + 100)
-		to_chat(user, span_notice("The silver effect is on cooldown."))
+		to_chat(user, span_notice("The silver needs more time to purify again."))
 		return
 
 	. = ..()
@@ -240,13 +245,22 @@
 		var/mob/living/carbon/human/s_user = user
 		var/mob/living/carbon/human/H = target
 		var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
+		var/datum/antagonist/vampirelord/lesser/Vp = H.mind.has_antag_datum(/datum/antagonist/vampire)
 		var/datum/antagonist/vampirelord/lesser/V = H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
 		var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(Vp)
+			H.Stun(20)
+			to_chat(H, span_userdanger("The silver burns me!"))
+			H.adjustFireLoss(30)
+			H.Paralyze(20)
+			H.fire_act(1,4)
+			H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+			src.last_used = world.time
 		if(V)
 			if(V.disguised)
 				H.Stun(20)
 				H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
-				to_chat(H, span_userdanger("I'm hit by my BANE!"))
+				to_chat(H, span_userdanger("The silver burns me!"))
 				H.adjustFireLoss(30)
 				H.Paralyze(20)
 				H.fire_act(1,4)
@@ -254,7 +268,7 @@
 				src.last_used = world.time
 			else
 				H.Stun(20)
-				to_chat(H, span_userdanger("I'm hit by my BANE!"))
+				to_chat(H, span_userdanger("The silver burns me!"))
 				H.adjustFireLoss(30)
 				H.Paralyze(20)
 				H.fire_act(1,4)
@@ -262,8 +276,10 @@
 				src.last_used = world.time
 		if(V_lord)
 			if(V_lord.vamplevel < 4 && !V)
+				if(V_lord.disguised)
+					H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
 				H.Stun(10)
-				to_chat(H, span_userdanger("I'm hit by my BANE!"))
+				to_chat(H, span_userdanger("The silver burns me!"))
 				H.adjustFireLoss(25)
 				H.Paralyze(10)
 				H.fire_act(1,4)
@@ -276,9 +292,8 @@
 		if(W && W.transformed == TRUE)
 			H.Stun(40)
 			H.Paralyze(40)
-			to_chat(H, span_userdanger("I'm hit by my BANE!"))
+			to_chat(H, span_userdanger("The silver burns me!"))
 			src.last_used = world.time
-
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
@@ -290,7 +305,7 @@
 	max_blade_int = 50
 	wdefense = 1
 
-/obj/item/rogueweapon/huntingknife/elvish
+/obj/item/rogueweapon/huntingknife/idagger/silver/elvish
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
 	name = "elvish dagger"
 	desc = "This beautiful dagger is of intricate, elvish design. Sharper, too."
@@ -298,7 +313,7 @@
 	icon_state = "elfdagger"
 	item_state = "elfdag"
 
-/obj/item/rogueweapon/huntingknife/elvish/drow
+/obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
 	name = "nite elf dagger"
 	desc = "This ominous, dark handled dagger was crafted by the assassin race of nite elves."
 	force = 25

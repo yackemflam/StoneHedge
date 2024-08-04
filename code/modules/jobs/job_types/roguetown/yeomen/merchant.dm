@@ -1,13 +1,13 @@
 /datum/job/roguetown/merchant
-	title = "Merchant"
+	title = "Merchant Prince"
 	flag = MERCHANT
 	department_flag = YEOMEN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = JCOLOR_YEOMAN
-	allowed_races = RACES_TOLERATED_UP
-	tutorial = "You were born into wealth, learning from before you could talk about the basics of mathematics. Counting coins is a simple pleasure for any person, but you've made it an artform. These people are addicted to your wares and you are the literal beating heart of this economy: Dont let these filthy-covered troglodytes ever forget that."
+	allowed_races = RACES_ALL_KINDS
+	tutorial = "You serve the Magi's Trading Union. Your role is that of a Master Coinsman as much as a Transmutation Mage. Of course, that made you a Noble as much as a valuable political power in the city of dreams. Adventurers respect you, and hound you all the same. Always after some new gear, or a potion - no doubt."
 
 	display_order = JDO_MERCHANT
 
@@ -29,18 +29,27 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
+		H.mind.AddSpell(new /obj/projectile/magic/spell/magic_missile)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
+
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
-	//50% chance to be raceswapped to Giza because slop lore
-	if(ishumannorthern(H) && prob(50))
-		H.skin_tone = SKIN_COLOR_GIZA
-		H.update_body()
 	head = /obj/item/clothing/head/roguetown/chaperon
 	neck = /obj/item/clothing/neck/roguetown/horus
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/merchant
@@ -58,4 +67,3 @@
 	H.change_stat("intelligence", 2)
 	H.change_stat("perception", 3)
 	H.change_stat("strength", -1)
-

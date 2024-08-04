@@ -45,7 +45,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	var/kingsubmit = FALSE
 	var/deathknightspawn = FALSE
 	var/ascended = FALSE
-	var/list/datum/mind/deathknights = list()
 
 /datum/game_mode/chaosmode/proc/reset_skeletons()
 	skeletons = FALSE
@@ -171,7 +170,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 			log_game("Major Antagonist: Vampires and Werewolves")
 		if(81 to 100)
 			log_game("Major Antagonist: Extended") //gotta put something here.
-	
+
 	if(prob(45))
 		pick_bandits()
 		log_game("Minor Antagonist: Bandit")
@@ -181,7 +180,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	if(prob(10))
 		pick_maniac()
 		log_game("Minor Antagonist: Maniac")
-	
+
 	return TRUE
 
 /datum/game_mode/chaosmode/proc/pick_bandits()
@@ -190,7 +189,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list("King",
 	"Queen Consort",
 	"Merchant",
-	"Priest",
+	"Prophet",
 	"Knight")
 	var/num_bandits = 0
 	if(num_players() >= 10)
@@ -249,8 +248,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 
 
 /datum/game_mode/chaosmode/proc/pick_aspirants()
-	var/list/possible_jobs_aspirants = list("Prince", "Princess", "Guard Captain", "Steward", "Hand", "Knight")
-	var/list/possible_jobs_helpers = list("Guard Captain", "Prince", "Princess", "Hand",  "Steward", "Knight")
+	var/list/possible_jobs_aspirants = list("Royal Heir", "Watchmen Captain", "Steward", "Hand", "Knight")
+	var/list/possible_jobs_helpers = list("Watchmen Captain", "Royal Heir", "Hand",  "Steward", "Knight")
 	var/list/rolesneeded = list("Aspirant","Loyalist","Supporter")
 
 	antag_candidates = get_players_for_role(ROLE_ASPIRANT)
@@ -305,7 +304,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.noble_positions)
 					blockme = TRUE
-				if(rebelguy.assigned_role in GLOB.youngfolk_positions)
+				if(rebelguy.assigned_role in GLOB.apprentices_positions)
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.church_positions)
 					blockme = TRUE
@@ -347,19 +346,19 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list(
 	"King",
 	"Queen Consort",
-	"Dungeoneer",
-	"Inquisitor",
+	"Beastmaster",
+	"Witcher",
 	"Confessor",
 	"Watchman",
 	"Man at Arms",
+	"Prophet",
 	"Priest",
-	"Acolyte",
-	"Cleric",
-	"Guard Captain",
-	"Court Magician",
+	"Priest",
+	"Watchmen Captain",
+	"Magician",
 	"Templar",
-	"Bog Guard",
-	"Bog Master",
+	"Hedge Knight",
+	"Hedgemaster",
 	"Knight"
 	)
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
@@ -372,7 +371,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 			blockme = TRUE
 		if(vampire.assigned_role in GLOB.noble_positions)
 			continue
-		if(vampire.assigned_role in GLOB.youngfolk_positions)
+		if(vampire.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE
 		if(blockme)
 			continue
@@ -394,21 +393,21 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list(
 	"King",
 	"Queen Consort",
-	"Dungeoneer",
-	"Inquisitor",
+	"Beastmaster",
+	"Witcher",
 	"Confessor",
 	"Watchman",
 	"Man at Arms",
+	"Prophet",
 	"Priest",
-	"Acolyte",
-	"Cleric",
-	"Guard Captain",
-	"Court Magician",
+	"Priest",
+	"Watchmen Captain",
+	"Magician",
 	"Templar",
-	"Bog Guard",
-	"Bog Master",
+	"Hedge Knight",
+	"Hedgemaster",
 	"Knight",
-	"Mortician",
+	"Gravesinger",
 	"Desert Rider",
 	"Desert Rider Mercenary",
 	"Grenzelhoft Mercenary"
@@ -426,7 +425,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 			blockme = TRUE
 		if(werewolf.assigned_role in GLOB.noble_positions)
 			continue
-		if(werewolf.assigned_role in GLOB.youngfolk_positions)
+		if(werewolf.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE
 		if(blockme)
 			return

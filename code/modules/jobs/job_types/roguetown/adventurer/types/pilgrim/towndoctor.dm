@@ -57,4 +57,3 @@
 		H.change_stat("intelligence", 1)
 		H.change_stat("fortune", 1)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
-

@@ -197,8 +197,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	// Custom hotkeys
 	S["key_bindings"]		>> key_bindings
-	
+
 	S["defiant"]			>> defiant
+
+	S["defiant"]			>> defiant
+	S["horniboi"] >> horniboi
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -236,7 +239,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	key_bindings 	= sanitize_islist(key_bindings, list())
 	defiant	= sanitize_integer(defiant, FALSE, TRUE, TRUE)
 
-	//ROGUETOWN
+	//DREAM KEEP
 	parallax = PARALLAX_INSANE
 
 	return TRUE
@@ -334,6 +337,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["real_name"]			>> real_name
 	S["gender"]				>> gender
 	S["domhand"]			>> domhand
+	S["sexable"]			>> sexable
 //	S["alignment"]			>> alignment
 	S["age"]				>> age
 	S["hair_color"]			>> hair_color
@@ -357,6 +361,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_mcolor2"]					>> features["mcolor2"]
 	S["feature_mcolor3"]					>> features["mcolor3"]
 	S["feature_ethcolor"]					>> features["ethcolor"]
+	S["char_accent"]						>> char_accent
 
 /datum/preferences/proc/load_character(slot)
 	if(!path)
@@ -500,6 +505,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["customizer_entries"] >> customizer_entries
 	validate_customizer_entries()
+	if(!S["is_updated_for_genitalia"]) //Vrell - should fix loading old characters giving all genitals.
+		genderize_customizer_entries()
 
 	return TRUE
 
@@ -517,6 +524,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["real_name"]			, real_name)
 	WRITE_FILE(S["gender"]				, gender)
 	WRITE_FILE(S["domhand"]				, domhand)
+	WRITE_FILE(S["sexable"]				, sexable)
 //	WRITE_FILE(S["alignment"]			, alignment)
 	WRITE_FILE(S["age"]					, age)
 	WRITE_FILE(S["hair_color"]			, hair_color)
@@ -542,6 +550,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_mcolor2"]					, features["mcolor2"])
 	WRITE_FILE(S["feature_mcolor3"]					, features["mcolor3"])
 	WRITE_FILE(S["feature_ethcolor"]					, features["ethcolor"])
+	WRITE_FILE(S["char_accent"]							, char_accent)
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -569,10 +578,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// Descriptor entries
 	WRITE_FILE(S["descriptor_entries"] , descriptor_entries)
 	WRITE_FILE(S["custom_descriptors"] , custom_descriptors)
-	
+
 	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
 	WRITE_FILE(S["headshot_link"] , headshot_link)
 	WRITE_FILE(S["nudeshot_link"] , nudeshot_link)
+
+	WRITE_FILE(S["is_updated_for_genitalia"], TRUE)
 
 	return TRUE
 

@@ -23,6 +23,7 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
@@ -71,11 +72,6 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/storage/belt/rogue/pouch/coins/rich=1)
 		H.change_stat("strength", 1)
-		var/acceptable = list("Tomboy", "Bob", "Curly Short")
-		if(!(H.hairstyle in acceptable))
-			H.hairstyle = pick(acceptable)
-			H.update_hair()
-
 
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells(H)

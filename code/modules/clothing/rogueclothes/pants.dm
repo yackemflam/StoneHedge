@@ -55,6 +55,9 @@
 /obj/item/clothing/under/roguetown/tights/black
 	color = CLOTHING_BLACK
 
+/obj/item/clothing/under/roguetown/tights/red
+	color = CLOTHING_RED
+
 /obj/item/clothing/under/roguetown/tights/purple
 	color = CLOTHING_PURPLE
 
@@ -111,6 +114,18 @@
 	desc = "Trousers made of fine leather."
 	icon_state = "leathertrou"
 
+/obj/item/clothing/under/roguetown/trou/skirt
+	name = "leather skirt"
+	desc = "Short skirt made of fine leather."
+	icon_state = "leatherskirt"
+	genitalaccess = TRUE
+
+/obj/item/clothing/under/roguetown/chainlegs/iron/studdedskirt
+	name = "studded skirt"
+	desc = "Short studded skirt made of fine leather and iron."
+	icon_state = "studdedskirt"
+	genitalaccess = TRUE
+
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
 	desc = "Dark trousers worn by morticians while performing burial rites."
@@ -118,7 +133,7 @@
 	color = "#151615"
 
 /obj/item/clothing/under/roguetown/chainlegs
-	name = "chain chausses"
+	name = "steel chain chausses"
 	desc = "Chain leggings composed of interlinked metal rings."
 	gender = PLURAL
 	icon_state = "chain_legs"
@@ -153,7 +168,10 @@
 	l_sleeve_status = SLEEVE_NOMOD
 
 /obj/item/clothing/under/roguetown/chainlegs/iron
+
+	name = "iron chain chausses"
 	icon_state = "ichain_legs"
+	armor = list("blunt" = 40, "slash" = 80, "stab" = 40, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
 
@@ -161,8 +179,8 @@
 	name = "plated chausses"
 	desc = "Plated armor to protect the legs."
 	gender = PLURAL
-	icon_state = "chain_legs"
-	item_state = "chain_legs"
+	icon_state = "plate_legs"
+	item_state = "plate_legs"
 //	adjustable = CAN_CADJUST
 	sewrepair = FALSE
 	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -174,6 +192,41 @@
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
 
+/obj/item/clothing/under/roguetown/carapacelegs
+	name = "carapace chausses"
+	desc = "aquatic plated armor to protect the legs."
+	gender = PLURAL
+	icon_state = "carapace_legs"
+	item_state = "carapace_legs"
+	smeltresult = /obj/item/ash
+	sewrepair = TRUE
+	anvilrepair = null
+	armor = list("blunt" = 60, "slash" = 100, "stab" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
+	blocksound = PLATEHIT
+	var/do_sound = FALSE
+	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+
+/obj/item/clothing/under/roguetown/chainlegs/skirt
+	name = "chain skirt"
+	icon_state = "chain_skirt"
+	item_state = "chain_skirt"
+	genitalaccess = TRUE
+
+/obj/item/clothing/under/roguetown/platelegs/skirt
+	name = "plated skirt"
+	icon_state = "plate_skirt"
+	item_state = "plate_skirt"
+	genitalaccess = TRUE
+
+/obj/item/clothing/under/roguetown/carapacelegs/skirt
+	name = "carapace plated skirt"
+	icon_state = "carapace_skirt"
+	item_state = "carapace_skirt"
+	genitalaccess = TRUE
+
 /obj/item/clothing/under/roguetown/loincloth
 	name = "loincloth"
 	desc = "Covers your dignity, but only just."
@@ -182,9 +235,11 @@
 //	adjustable = CAN_CADJUST
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
+	genitalaccess = TRUE
 
 /obj/item/clothing/under/roguetown/loincloth/brown
 	color = CLOTHING_BROWN
+
 
 /obj/item/clothing/under/roguetown/loincloth/pink
 	color = "#b98ae3"
@@ -198,7 +253,37 @@
 	detail_tag = "_detail"
 	armor = list("blunt" = 15, "slash" = 15, "stab" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_BLUNT)
-	colorgrenz = TRUE
+	var/picked = FALSE
+
+/obj/item/clothing/under/roguetown/grenzelpants/attack_right(mob/user)
+	..()
+	if(!picked)
+		var/list/colors = list(
+		"Swan White"="#ffffff",
+		"Lavender"="#865c9c",
+		"Royal Purple"="#5E4687",
+		"Wine Rouge"="#752B55",
+		"Sow's skin"="#CE929F",
+		"Knight's Red"="#933030",
+		"Madroot Red"="#AD4545",
+		"Marigold Orange"="#E2A844",
+		"Politely, Yuck"="#685542",
+		"Astrata's Yellow"="#FFFD8D",
+		"Bog Green"="#375B48",
+		"Seafoam Green"="#49938B",
+		"Woad Blue"="#395480",
+		"Cornflower Blue"="#749EE8",
+		"Blacksteel Grey"="#404040",)
+
+		var/choice = input(user, "Choose a color.", "Grenzelhoft colors") as anything in colors
+		var/playerchoice = colors[choice]
+		picked = TRUE
+		detail_color = playerchoice
+		detail_tag = "_detail"
+		update_icon()
+		if(loc == user && ishuman(user))
+			var/mob/living/carbon/H = user
+			H.update_inv_pants()
 
 /obj/item/clothing/under/roguetown/grenzelpants/update_icon()
 	cut_overlays()

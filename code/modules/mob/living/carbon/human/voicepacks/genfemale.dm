@@ -3,8 +3,6 @@
 	switch(modifiers)
 		if("old")
 			used = getfold(soundin)
-		if("young")
-			used = getfyoung(soundin)
 		if("silenced")
 			used = getfsilenced(soundin)
 	if(!used)
@@ -48,7 +46,9 @@
 			if("haltyell")
 				used = list('sound/vo/female/gen/haltyell (1).ogg','sound/vo/female/gen/haltyell (2).ogg')
 			if("hmm")
-				used = 'sound/vo/female/gen/hmm.ogg'
+				//this FUCKING SUCKS, replaced by below
+				//used = 'sound/vo/female/gen/hmm.ogg'
+				used = list('sound/vo/female/elf/hmm (1).ogg','sound/vo/female/elf/hmm (2).ogg')
 			if("huh")
 				used = list('sound/vo/female/gen/huh (1).ogg','sound/vo/female/gen/huh (2).ogg','sound/vo/female/gen/huh (3).ogg')
 			if("hum")
@@ -91,5 +91,7 @@
 				used = list('sound/vo/female/gen/se/sexlight (1).ogg','sound/vo/female/gen/se/sexlight (2).ogg','sound/vo/female/gen/se/sexlight (3).ogg','sound/vo/female/gen/se/sexlight (4).ogg','sound/vo/female/gen/se/sexlight (5).ogg','sound/vo/female/gen/se/sexlight (6).ogg','sound/vo/female/gen/se/sexlight (7).ogg')
 			if("sexmoanhvy")
 				used = list('sound/vo/female/gen/se/sex (1).ogg','sound/vo/female/gen/se/sex (2).ogg','sound/vo/female/gen/se/sex (3).ogg','sound/vo/female/gen/se/sex (4).ogg','sound/vo/female/gen/se/sex (5).ogg','sound/vo/female/gen/se/sex (6).ogg','sound/vo/female/gen/se/sex (7).ogg','sound/vo/female/gen/se/sex (8).ogg')
+			if("clap")
+				used = list('sound/vo/clap (1).ogg', 'sound/vo/clap (2).ogg', 'sound/vo/clap (3).ogg', 'sound/vo/clap (4).ogg')
 
 	return used

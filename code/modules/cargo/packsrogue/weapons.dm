@@ -214,4 +214,3 @@
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison)
 */
-

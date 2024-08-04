@@ -66,7 +66,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOSLEEP, "[type]")
-	ADD_TRAIT(owner.current, TRAIT_LIMPDICK, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VAMP_DREAMS, "[type]")
 	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
@@ -80,8 +79,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.current.verbs |= /mob/living/carbon/human/proc/vamp_regenerate
 	owner.current.verbs |= /mob/living/carbon/human/proc/vampire_telepathy
 	vamp_look()
+	owner.current.verbs |= /mob/living/carbon/human/proc/disguise_button
 	if(isspawn)
-		owner.current.verbs |= /mob/living/carbon/human/proc/disguise_button
 		add_objective(/datum/objective/vlordserve)
 		finalize_vampire_lesser()
 		for(var/obj/structure/vampire/bloodpool/mansion in GLOB.vampire_objects)
@@ -354,17 +353,18 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				var/turf/T = H.loc
 				if(T.can_see_sky())
 					if(T.get_lumcount() > 0.15)
-						if(!isspawn)
-							to_chat(H, span_warning("Astrata spurns me! I must get out of her rays!")) // VLord is more punished for daylight excursions.
-							var/turf/N = H.loc
-							if(N.can_see_sky())
-								if(N.get_lumcount() > 0.15)
-									H.fire_act(3)
-									handle_vitae(-500)
-							to_chat(H, span_warning("That was too close. I must avoid the sun."))
-						else if (isspawn && !disguised)
-							H.fire_act(1,5)
-							handle_vitae(-10)
+						if(!disguised)
+							if(!isspawn)
+								to_chat(H, span_warning("Astrata spurns me! I must get out of her rays!")) // VLord is more punished for daylight excursions.
+								var/turf/N = H.loc
+								if(N.can_see_sky())
+									if(N.get_lumcount() > 0.15)
+										H.fire_act(3)
+										handle_vitae(-500)
+								to_chat(H, span_warning("That was too close. I must avoid the sun."))
+							else
+								H.fire_act(1,5)
+								handle_vitae(-10)
 
 	if(H.on_fire)
 		if(disguised)
@@ -623,7 +623,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/datum/antagonist/vampirelord/lord = user.mind.has_antag_datum(/datum/antagonist/vampirelord)
 	if(user.mind.special_role != "Vampire Lord")
 		return
-	var/choice = input(user,"What to do?", "ROGUETOWN") as anything in useoptions|null
+	var/choice = input(user,"What to do?", "DREAM KEEP") as anything in useoptions|null
 	switch(choice)
 		if("Grow Power")
 			if(lord.vamplevel == 4)
@@ -644,7 +644,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 					return
 				if(do_after(user, 100))
 					lord.handle_vitae(-500)
-					var/naming = input(user, "Select a name for the amulet.", "ROGUETOWN") as text|null
+					var/naming = input(user, "Select a name for the amulet.", "DREAM KEEP") as text|null
 					var/obj/item/clothing/neck/roguetown/portalamulet/P = new(src.loc)
 					if(naming)
 						P.name = naming
@@ -774,7 +774,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(!unlocked)
 			to_chat(user, "I have yet to regain this aspect of my power!")
 			return
-		var/choice = input(user,"What to do?", "ROGUETOWN") as anything in useoptions|null
+		var/choice = input(user,"What to do?", "DREAM KEEP") as anything in useoptions|null
 		switch(choice)
 			if("Create Death Knight")
 				if(alert(user, "Create a Death Knight? Cost:5000","","Yes","No") == "Yes")
@@ -919,7 +919,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/one/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/churchjobs = list("Priest", "Priestess", "Cleric", "Acolyte", "Templar", "Churchling", "Crusader", "Inquisitor")
+	var/list/churchjobs = list("Prophet", "Priestess", "Priest", "Priest", "Templar", "Churchling", "Crusader", "Witcher")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in churchjobs)
 			return TRUE
@@ -931,7 +931,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/two/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/noblejobs = list("King", "Queen Consort", "Prince", "Princess", "Hand", "Steward")
+	var/list/noblejobs = list("King", "Queen Consort", "Royal Heir", "Hand", "Steward")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in noblejobs)
 			return TRUE
@@ -1157,7 +1157,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		var/area/A = V
 		if(!A.hidden)
 			filtered += A
-	var/area/thearea  = input("Area to jump to", "ROGUETOWN") as null|anything in filtered
+	var/area/thearea  = input("Area to jump to", "DREAM KEEP") as null|anything in filtered
 
 	if(!thearea)
 		return

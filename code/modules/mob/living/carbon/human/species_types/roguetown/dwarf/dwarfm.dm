@@ -41,7 +41,7 @@
 	soundpack_f = /datum/voicepack/female/dwarf
 	custom_clothes = TRUE
 	offset_features = list(
-		OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
+		OFFSET_ID = list(0,-3), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
 		OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,-4), OFFSET_HEAD = list(0,-4), \
 		OFFSET_FACE = list(0,-4), OFFSET_BELT = list(0,-5), OFFSET_BACK = list(0,-4), \
 		OFFSET_NECK = list(0,-4), OFFSET_MOUTH = list(0,-4), OFFSET_PANTS = list(0,0), \
@@ -64,6 +64,7 @@
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_markings = list(
@@ -144,5 +145,5 @@
 // oh yeah here we go again 85 to 23
 // changed my mind, if the accent were to return it should just be on a single subset of dwarves.
 /datum/species/dwarf/mountain/get_accent(mob/living/carbon/human/H)
-	return strings("dwarf_replacement.json", "dwarf")
+	return strings("dwarfcleaner_replacement.json", "dwarf")
 

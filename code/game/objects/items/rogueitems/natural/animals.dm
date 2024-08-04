@@ -24,6 +24,17 @@
 	color = "#5c5243"
 	sellprice = 40
 
+/obj/item/natural/carapace
+	name = "carapace"
+	icon_state = "carapace"
+	desc = "Carapace from one of Gott's watery creachers."
+	force = 0
+	throwforce = 0
+	w_class = WEIGHT_CLASS_SMALL
+	resistance_flags = FLAMMABLE
+	drop_sound = 'sound/foley/dropsound/food_drop.ogg'
+	sellprice = 20
+
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle
 	name = "saddle"
@@ -58,3 +69,44 @@
 	var/can_saddle = FALSE
 	var/obj/item/ssaddle
 
+/obj/item/natural/bone
+	name = "bone"
+	icon_state = "bone"
+	desc = "A bone from a dead animal or person."
+	blade_dulling = 0
+	max_integrity = 20
+	static_debris = null
+	obj_flags = null
+	firefuel = null
+	w_class = WEIGHT_CLASS_NORMAL
+	twohands_required = FALSE
+	gripped_intents = null
+	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
+	bundletype = /obj/item/natural/bundle/bone
+
+/obj/item/natural/volf_head
+	name = "volf head"
+	icon_state = "volf_head"
+	desc = "Dismembered head of a volf."
+	dropshrink = 0.90
+	force = 0
+	throwforce = 0
+	w_class = WEIGHT_CLASS_SMALL
+	resistance_flags = FLAMMABLE
+	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
+	sellprice = 20
+	dropshrink = 0.50
+
+
+/obj/item/natural/antler
+	name = "antler"
+	icon_state = "antler"
+	desc = "Antler of an animal"
+	dropshrink = null
+	force = 0
+	throwforce = 0
+	w_class = WEIGHT_CLASS_SMALL
+	resistance_flags = FLAMMABLE
+	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
+	sellprice = 20
+	dropshrink = 0.50

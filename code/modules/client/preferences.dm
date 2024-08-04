@@ -91,6 +91,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = FALSE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female")
 	var/phobia = "spiders"
+	var/shake = TRUE
+	var/sexable = FALSE
 
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
@@ -131,7 +133,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/list/exp = list()
 	var/list/menuoptions
-	
+
+	var/datum/migrant_pref/migrant
+
 	var/datum/migrant_pref/migrant
 
 	var/action_buttons_screen_locs = list()
@@ -148,12 +152,14 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/update_mutant_colors = TRUE
 
 	var/headshot_link
-	var/nudeshot_link
-
+	var/nsfwheadshot_link
 	var/list/violated = list()
 	var/list/descriptor_entries = list()
 	var/list/custom_descriptors = list()
 	var/defiant = TRUE
+	var/horniboi = FALSE
+
+	var/datum/char_accent/char_accent = "No accent"
 
 
 /datum/preferences/New(client/C)
@@ -347,6 +353,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>Unknown</a><BR>" // Disabling until its working
 			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
 
+			dat += "<b>ERP Panel:</b> <a href='?_src_=prefs;preference=sexable'>[sexable == TRUE ? "Yes" : "No"]</a><BR>"
+
 /*
 			dat += "<br><br><b>Special Names:</b><BR>"
 			var/old_group
@@ -395,7 +403,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 
-
+			dat += "<br><b>Accent:</b> <a href='?_src_=prefs;preference=char_accent;task=input'>[char_accent]</a>"
 			dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
 			dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
 			dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
@@ -671,7 +679,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 		else
 			dat += "<a class='linkOff' href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
 		dat += " - <a href='?_src_=prefs;preference=migrants'>MIGRATION</a>"
-		
+
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
 	dat += "<b>Be defiant:</b> <a href='?_src_=prefs;preference=be_defiant'>[(defiant) ? "Yes":"No"]</a><br>"
@@ -721,7 +729,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	popup.open(FALSE)
 	onclose(user, "capturekeypress", src)
 
-/datum/preferences/proc/SetChoices(mob/user, limit = 14, list/splitJobs = list("Court Magician", "Guard Captain", "Priest", "Merchant", "Archivist", "Towner", "Grenzelhoft Mercenary", "Beggar", "Prisoner", "Goblin King"), widthPerColumn = 295, height = 620) //295 620
+/datum/preferences/proc/SetChoices(mob/user, limit = 14, list/splitJobs = list("Watchmen Captain", "Prophet", "Merchant Prince", "Archivist", "Nightmaster", "Towner", "Grenzelhoft Mercenary", "Beggar", "Prisoner", "Chieftain"), widthPerColumn = 295, height = 620) //295 620
 	if(!SSjob)
 		return
 
@@ -1522,7 +1530,7 @@ Slots: [job.spawn_positions]</span>
 
 				if("view_nudeshot")
 					var/list/dat = list("<img src='[nudeshot_link]' width='360px' height='480px'>")
-					var/datum/browser/popup = new(user, "nudeshot", "<div align='center'>Nudeshot</div>", 400, 525)	
+					var/datum/browser/popup = new(user, "nudeshot", "<div align='center'>Nudeshot</div>", 400, 525)
 					popup.set_content(dat.Join())
 					popup.open(FALSE)
 					return
@@ -1530,7 +1538,7 @@ Slots: [job.spawn_positions]</span>
 				if("headshot")
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
-					to_chat(user, "<span class='notice'>Resolution: 250x250 pixels.</span>")
+					to_chat(user, "<span class='notice'>Resolution: 525x575 pixels.</span>")
 					var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", headshot_link) as text|null
 					if(new_headshot_link == null)
 						return
@@ -1549,7 +1557,7 @@ Slots: [job.spawn_positions]</span>
 				if("nudeshot")
 					to_chat(user, "<span class='notice'>["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
-					to_chat(user, "<span class='notice'>Resolution: 360x480 pixels.</span>")
+					to_chat(user, "<span class='notice'>Resolution: 560x680 pixels.</span>")
 					var/new_nudeshot_link = input(user, "Input the nudeshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Nudeshot", nudeshot_link) as text|null
 					if(new_nudeshot_link == null)
 						return
@@ -1596,7 +1604,13 @@ Slots: [job.spawn_positions]</span>
 						if(charflaw.desc)
 							to_chat(user, "<span class='info'>[charflaw.desc]</span>")
 
-
+				if("char_accent")
+					var/list/accent = GLOB.character_accents.Copy()
+					var/result = input(user, "Select an accent", "Roguetown") as null|anything in accent
+					if(result)
+						result = accent[result]
+						var/datum/char_accent/C = new result()
+						char_accent = C
 
 				if("mutant_color")
 					var/new_mutantcolor = color_pick_sanitized_lumi(user, "Choose your character's mutant #1 color:", "Character Preference","#"+features["mcolor"])
@@ -1644,6 +1658,13 @@ Slots: [job.spawn_positions]</span>
 						charflaw = new charflaw()
 						if(charflaw.desc)
 							to_chat(user, span_info("[charflaw.desc]"))
+
+				if("char_accent")
+					var/selectedaccent
+					selectedaccent = input(user, "Choose your character's accent:", "Character Preference") as null|anything in GLOB.character_accents
+					if(selectedaccent)
+						char_accent = GLOB.character_accents[selectedaccent]
+						char_accent = new char_accent()
 
 				if("ooccolor")
 					var/new_ooccolor = input(user, "Choose your OOC colour:", "Game Preference",ooccolor) as color|null
@@ -1742,11 +1763,17 @@ Slots: [job.spawn_positions]</span>
 						ResetJobs()
 						to_chat(user, "<font color='red'>Classes reset.</font>")
 						random_character(gender)
+					genderize_customizer_entries()
 				if("domhand")
 					if(domhand == 1)
 						domhand = 2
 					else
 						domhand = 1
+				if("sexable")
+					if(sexable == FALSE)
+						sexable = TRUE
+					else
+						sexable = FALSE
 				if("family")
 					var/list/loly = list("Not yet.","Work in progress.","Don't click me.","Stop clicking this.","Nope.","Be patient.","Sooner or later.")
 					to_chat(user, "<font color='red'>[pick(loly)]</font>")
@@ -1938,13 +1965,27 @@ Slots: [job.spawn_positions]</span>
 				if("widescreenpref")
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
-				
+
 				if("be_defiant")
 					defiant = !defiant
 					if(defiant)
 						to_chat(user, span_notice("You will now have resistance from people violating you, but be punished for trying to violate others. This is not full protection."))
 					else
 						to_chat(user, span_boldwarning("You fully immerse yourself in the grim experience, waiving your resistance from people violating you, but letting you do the same unto other non-defiants"))
+
+				if("be_defiant")
+					defiant = !defiant
+					if(defiant)
+						to_chat(user, span_notice("You will now have resistance from people violating you, but be punished for trying to violate others. This is not full protection."))
+					else
+						to_chat(user, span_boldwarning("You fully immerse yourself in the grim experience, waiving your resistance from people violating you, but letting you do the same unto other non-defiants"))
+
+				if("be_horniboi")
+					horniboi = !horniboi
+					if(horniboi)
+						to_chat(user, span_notice("You will now not see people's NSFW reference pics."))
+					else
+						to_chat(user, span_boldwarning("You will now see people's NSFW reference pics."))
 
 				if("schizo_voice")
 					toggles ^= SCHIZO_VOICE
@@ -1954,7 +1995,11 @@ Slots: [job.spawn_positions]</span>
 										Good voices will be rewarded with PQ for answering meditations, while bad ones are punished at the discretion of jannies.</span>")
 					else
 						to_chat(user, span_warning("You are no longer a voice."))
-				
+
+				if("migrants")
+					migrant.show_ui()
+					return
+
 				if("migrants")
 					migrant.show_ui()
 					return
@@ -1979,7 +2024,7 @@ Slots: [job.spawn_positions]</span>
 								if(!name)
 									name = "Slot[i]"
 								choices[name] = i
-					var/choice = input(user, "CHOOSE A HERO","ROGUETOWN") as null|anything in choices
+					var/choice = input(user, "CHOOSE A HERO","DREAM KEEP") as null|anything in choices
 					if(choice)
 						choice = choices[choice]
 						if(!load_character(choice))
@@ -2076,8 +2121,6 @@ Slots: [job.spawn_positions]</span>
 	character.jumpsuit_style = jumpsuit_style
 
 	if(charflaw)
-		if(istype(charflaw, /datum/charflaw/badsight))
-			charflaw = new /datum/charflaw/randflaw()
 		character.charflaw = new charflaw.type()
 		character.charflaw.on_mob_creation(character)
 
@@ -2096,6 +2139,8 @@ Slots: [job.spawn_positions]</span>
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts(redraw = TRUE)
+
+	character.char_accent = "[char_accent.name]"
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)

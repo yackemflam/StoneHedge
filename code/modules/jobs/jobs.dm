@@ -60,46 +60,47 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 	ROLE_PAI))
 
 GLOBAL_LIST_INIT(noble_positions, list(
-	"King",
+	"Monarch",
 	"Queen Consort",
-	"Prince",
-	"Guard Captain",
+	"Royal Heir",
+	"Watchmen Captain",
 	"Bailiff",
 	"Councillor",
 	"Steward",
 	"Knight",
+	"Noble Guest",
 ))
 
 GLOBAL_LIST_INIT(courtier_positions, list(
-	"Court Magician",
-	"Court Physician",
+	"Magician",
+	"Physician",
 	"Jester",
 	"Head Butler",
 ))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
 	"Watchman",
-	"Bog Guard",
-	"Bog Master",
-	"Man at Arms",
-	"Dungeoneer",
+	"Hedge Knight",
+	"Hedgemaster",
+	"Royal Guard",
+	"Beastmaster",
 	"Gatemaster",
 	"Town Sheriff",
 ))
 
 GLOBAL_LIST_INIT(church_positions, list(
-	"Priest",
-	"Inquisitor",
+	"Prophet",
+	"Witcher",
 	"Confessor",
-	"Acolyte",
-	"Mortician",
+	"Priest",
+	"Gravesinger",
 	"Templar",
 	"Druid",
 ))
 
 GLOBAL_LIST_INIT(yeoman_positions, list(
 	"Merchant",
-	"Barkeep",
+	"Innkeep",
 	"Archivist",
 	"Armorer",
 	"Weaponsmith",
@@ -122,7 +123,7 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Towner",
 	"Grabber",
 	"Nightmaster",
-	"Bath Swain",
+	"Nightswain",
 	"Docker",
 	"Prisoner",
 	"Beggar",
@@ -131,12 +132,13 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 ))
 
 GLOBAL_LIST_INIT(mercenary_positions, list(
+	"Mercenary",
 	"Grenzelhoft Mercenary",
 	"Desert Rider Mercenary",
-	"Veteran",
+	"Guild Captain",
 ))
 
-GLOBAL_LIST_INIT(youngfolk_positions, list(
+GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Squire",
 	"Clerk",
 	"Smithy Apprentice",
@@ -155,6 +157,18 @@ GLOBAL_LIST_INIT(allmig_positions, list(
 GLOBAL_LIST_INIT(roguewar_positions, list(
 	"Adventurer",
 ))
+
+
+GLOBAL_LIST_INIT(goblin_positions, list(
+	"Tribal Cook",
+	"Tribal Guard",
+	"Chieftain",
+	"Tribal Smith",
+	"Tribal Shaman",
+	"Tribal Villager",
+	/*"Tribal Slave",*/
+))
+
 
 GLOBAL_LIST_INIT(roguefight_positions, list(
 	"Red Captain",
@@ -181,7 +195,8 @@ GLOBAL_LIST_INIT(job_assignment_order, get_job_assignment_order())
 	sorting_order += GLOB.church_positions
 	sorting_order += GLOB.yeoman_positions
 	sorting_order += GLOB.peasant_positions
-	sorting_order += GLOB.youngfolk_positions
+	sorting_order += GLOB.apprentices_positions
+	sorting_order += GLOB.goblin_positions
 	return sorting_order
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(

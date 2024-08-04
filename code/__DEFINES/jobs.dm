@@ -104,11 +104,12 @@
 #define GUARD_CAPTAIN		(1<<5)
 #define BAILIFF		(1<<6)
 #define HOSTAGE		(1<<7)
+#define NOBLE		(1<<8)
 
 #define GARRISON		(1<<1)
 
 #define GUARDSMAN	(1<<0)
-#define MANATARMS	(1<<1)
+#define ROYALGUARD	(1<<1)
 #define DUNGEONEER	(1<<2)
 #define GATEMASTER	(1<<3)
 #define BOGGUARD	(1<<4)
@@ -158,39 +159,41 @@
 #define GRABBER		(1<<7)
 #define NIGHTMASTER	(1<<8)
 #define BEGGAR		(1<<9)
-#define WENCH		(1<<10)
-#define ADVENTURER	(1<<11)
-#define PILGRIM		(1<<12)
-#define VILLAGER	(1<<13)
-#define PRISONERR	(1<<14)
-#define PRISONERB	(1<<15)
-#define LUNATIC		(1<<16)
-#define MIGRANT		(1<<17)
+#define VAGABOND		(1<<10)
+#define WENCH		(1<<11)
+#define ADVENTURER	(1<<12)
+#define PILGRIM		(1<<13)
+#define VILLAGER	(1<<14)
+#define PRISONERR	(1<<15)
+#define PRISONERB	(1<<16)
+#define PRISONERC	(1<<17)
+#define LUNATIC		(1<<18)
+#define MIGRANT (1<<19)
 
-#define YOUNGFOLK	(1<<6)
+#define APPRENTICES	(1<<6)
 
 #define APPRENTICE	(1<<0)
 #define CHURCHLING	(1<<1)
 #define SQUIRE		(1<<2)
 #define SERVANT		(1<<3)
-#define ORPHAN		(1<<4)
-#define PRINCE		(1<<5)
-#define SHOPHAND	(1<<6)
-#define CLERK 		(1<<7)
-#define MAGEAPPRENTICE	(1<<8)
+#define PRINCE		(1<<4)
+#define SHOPHAND	(1<<5)
+#define CLERK 		(1<<6)
+#define MAGEAPPRENTICE	(1<<7)
 
-#define MERCENARIES		(1<<7)
+#define MERCENARIES		(1<<0)
+#define DESERT_RIDER	(1<<1)
+#define GRENZELHOFT		(1<<2)
+#define VETERAN		(1<<3)
 
-#define DESERT_RIDER	(1<<0)
-#define GRENZELHOFT		(1<<1)
-#define VETERAN		(1<<2)
+#define TRIBAL		(1<<8)
 
-#define GOBLIN		(1<<8)
-
-#define GOBLINKING	(1<<0)
-#define GOBLINCOOK	(1<<1)
-#define GOBLINGUARD	(1<<2)
-#define GOBLINSMITH	(1<<3)
+#define CHIEFTAIN	(1<<0)
+#define TRIBALCOOK	(1<<1)
+#define TRIBALGUARD	(1<<2)
+#define TRIBALSMITH	(1<<3)
+#define TRIBALSHAMAN	(1<<4)
+#define TRIBALVILLAGER	(1<<5)
 
 #define SLOP		(1<<9)
 
@@ -218,6 +221,7 @@
 #define JDO_CLERK 3.1
 #define JDO_BAILIFF 4
 #define JDO_COUNCILLOR 4.1
+#define JDO_NOBLE 5
 
 // Courtiers
 #define JDO_MAGICIAN 5
@@ -230,7 +234,7 @@
 #define JDO_GUARD_CAPTAIN 8
 #define JDO_KNIGHT 8.1
 #define JDO_SQUIRE 8.2
-#define JDO_CASTLEGUARD 8.3
+#define JDO_ROYALGUARD 8.3
 #define JDO_GATEMASTER 8.4
 #define JDO_SHERIFF 8.5
 #define JDO_TOWNGUARD 8.6
@@ -274,19 +278,23 @@
 #define JDO_PILGRIM 30.2
 #define JDO_MIGRANT 32.3
 
-#define JDO_GRENZELHOFT 31
-#define JDO_DESERT_RIDER 31.1
-#define JDO_VET 31.2
+#define JDO_MERCENARY 31
+#define JDO_GRENZELHOFT 31.1
+#define JDO_DESERT_RIDER 31.2
+#define JDO_VET 31.3
 
 #define JDO_VAGRANT 33
-#define JDO_ORPHAN 34
+#define JDO_VAGABOND 34
 
 #define JDO_PRISONERR 35
 #define JDO_PRISONERB 35.1
-#define JDO_HOSTAGE 35.2
-#define JDO_LUNATIC 35.3
+#define JDO_PRISONERC 35.2
+#define JDO_HOSTAGE 35.3
+#define JDO_LUNATIC 35.4
 
-#define JDO_GOBLINKING 36
-#define JDO_GOBLINCOOK 37
-#define JDO_GOBLINGUARD 38
-#define JDO_GOBLINSMITH 39
+#define JDO_CHIEFTAIN 36
+#define JDO_TRIBALCOOK 37
+#define JDO_TRIBALGUARD 38
+#define JDO_TRIBALSMITH 39
+#define JDO_TRIBALSHAMAN 40
+#define JDO_TRIBALVILLAGER 41

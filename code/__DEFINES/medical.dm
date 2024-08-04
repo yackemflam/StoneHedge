@@ -61,7 +61,9 @@
 #define ORGAN_SLOT_PENIS "penis"
 #define ORGAN_SLOT_TESTICLES "testicles"
 #define ORGAN_SLOT_BREASTS "breasts"
+#define ORGAN_SLOT_BELLY "belly"
 #define ORGAN_SLOT_VAGINA "vagina"
+#define ORGAN_SLOT_ANUS "anus" //only used to store things for now
 
 #define BODYPART_FEATURE_HAIR "hair"
 #define BODYPART_FEATURE_FACIAL_HAIR "facehair"

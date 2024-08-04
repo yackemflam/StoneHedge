@@ -85,6 +85,7 @@
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_markings = list(
@@ -148,5 +149,3 @@
 /datum/species/elf/dark/random_surname()
 	return " [pick(world.file2list("strings/rt/names/elf/elfsnf.txt"))]"
 
-/datum/species/elf/dark/get_accent(mob/living/carbon/human/H)
-	return strings("french_replacement.json", "french")

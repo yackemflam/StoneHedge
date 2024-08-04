@@ -6,9 +6,9 @@
 	total_positions = 0
 	spawn_positions = 0
 
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDS
 
-	tutorial = "You came to rockhill after hearing that there is a lack of potion-makers outside of the nobility. Stir up potions with your alchemy expertise, of health or death."
+	tutorial = "You came to stonehedge after hearing that there is a lack of potion-makers outside of the nobility. Stir up potions with your alchemy expertise, of health or death."
 
 	outfit = /datum/outfit/job/roguetown/alchemist
 	display_order = 6

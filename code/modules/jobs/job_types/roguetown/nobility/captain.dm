@@ -1,5 +1,5 @@
 /datum/job/roguetown/captain
-	title = "Guard Captain"
+	title = "Commander"
 	flag = GUARD_CAPTAIN
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -7,8 +7,8 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = RACES_TOLERATED_UP
-	allowed_sexes = list(MALE)
+	allowed_races = RACES_ALL_KINDS
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "Your lineage is noble, and generations of strong, loyal knights have come before you. You served your time gracefully as a knight of his royal majesty, and now you've grown into a role which many men dream to become. Lead your men to victory and keep them in line and you will see this kingdom prosper under a thousand suns."
 	display_order = JDO_GUARD_CAPTAIN
@@ -18,7 +18,7 @@
 	outfit = /datum/outfit/job/roguetown/captain
 
 	give_bank_account = 26
-	min_pq = 8
+	min_pq = 2
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard2.ogg'
@@ -42,7 +42,7 @@
 
 /datum/outfit/job/roguetown/captain/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/helmet/heavy/pigface
+	head = /obj/item/clothing/head/roguetown/helmet/heavy
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	armor = /obj/item/clothing/suit/roguetown/armor/plate
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
@@ -56,9 +56,10 @@
 	cloak = /obj/item/clothing/cloak/stabard/guardhood
 	backl = /obj/item/rogueweapon/shield/tower
 	backr = /obj/item/storage/backpack/rogue/satchel/black
-	backpack_contents = list(/obj/item/keyring/captain = 1, /obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
+	backpack_contents = list(/obj/item/keyring/sheriff = 1, /obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
@@ -77,18 +78,12 @@
 		H.change_stat("intelligence", 3)
 		H.change_stat("constitution", 2)
 		H.change_stat("endurance", 2)
-		H.change_stat("speed", 1)
 		H.change_stat("fortune", 2)
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
-	if(H.gender == FEMALE)
-		var/acceptable = list("Tomboy", "Bob", "Curly Short")
-		if(!(H.hairstyle in acceptable))
-			H.hairstyle = pick(acceptable)
-			H.update_hair()
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+
 	H.verbs |= /mob/proc/haltyell
 
 /obj/effect/proc_holder/spell/self/convertrole
@@ -162,7 +157,7 @@
 	if(accept_message)
 		recruit.say(accept_message, forced = "[name]")
 	if(new_role)
-		recruit.job = new_role
+		recruit.funnyrole = new_role
 	return TRUE
 
 /obj/effect/proc_holder/spell/self/convertrole/guard

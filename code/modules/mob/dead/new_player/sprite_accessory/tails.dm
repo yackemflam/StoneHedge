@@ -263,9 +263,15 @@
 	color_key_names = list("Tail", "Neons")
 	can_wag = TRUE
 
+/datum/sprite_accessory/tail/sabresune
+	name = "Sabresune"
+	icon_state = "sabresune"
+	color_keys = 2
+	color_key_names = list("Tails", "Tips")
+
 /datum/sprite_accessory/tail/lizard
 	abstract_type = /datum/sprite_accessory/tail/lizard
-	icon = 'icons/mob/sprite_accessory/tails/lizard.dmi'	
+	icon = 'icons/mob/sprite_accessory/tails/lizard.dmi'
 	can_wag = TRUE
 
 /datum/sprite_accessory/tail/lizard/smooth
@@ -283,7 +289,7 @@
 /datum/sprite_accessory/tail/lizard/spikes
 	name = "Spikes"
 	icon_state = "spikes"
-	
+
 /datum/sprite_accessory/tail/lizard/kobold
 	name = "Kobold"
 	icon_state = "kobold"

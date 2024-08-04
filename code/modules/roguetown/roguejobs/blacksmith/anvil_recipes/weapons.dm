@@ -34,6 +34,14 @@
 	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel
 	i_type = "Weapons"
 
+/datum/anvil_recipe/weapons/sdaggerparrying
+	name = "Parrying Dagger (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
+	i_type = "Weapons"
+	craftdiff = 2
+
 /datum/anvil_recipe/weapons/sidagger
 	name = "Dagger"
 	req_bar = /obj/item/ingot/silver
@@ -211,17 +219,17 @@
 
 // SILVER
 /datum/anvil_recipe/weapons/esaber
-	name = "Elvish Saber"
+	name = "Elvish Saber (+1 Silver)"
 	req_bar = /obj/item/ingot/silver
 	additional_items = list(/obj/item/ingot/silver)
-	created_item = /obj/item/rogueweapon/sword/sabre/elf
+	created_item = /obj/item/rogueweapon/sword/silver/sabre/elf
 	craftdiff = 3
 	i_type = "Weapons"
 
 /datum/anvil_recipe/weapons/edagger
 	name = "Elvish Dagger"
 	req_bar = /obj/item/ingot/silver
-	created_item = /obj/item/rogueweapon/huntingknife/elvish
+	created_item = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
 	craftdiff = 3
 	i_type = "Weapons"
 

@@ -26,18 +26,31 @@
 	icon_state = "pillory_reinforced"
 	base_icon = "pillory_reinforced"
 
+//TOWN SQUARE
+
 /obj/structure/pillory/town_square
-	lockid = list("keep_dungeon", "keep_barracks", "town_dungeon", "town_barracks", "bog_dungeon", "bog_barracks", "church")
+	lockid = list("garrison", "dungeon", "church")
 
-/obj/structure/pillory/reinforced/keep_dungeon
-	lockid = list("keep_dungeon")
+/obj/structure/pillory/town_square/double
+	icon_state = "pillory_double"
+	base_icon = "pillory_double"
 
-/obj/structure/pillory/reinforced/town_dungeon
-	lockid = list("town_dungeon")
+/obj/structure/pillory/town_square/reinforced
+	icon_state = "pillory_reinforced"
+	base_icon = "pillory_reinforced"
 
-/obj/structure/pillory/reinforced/bog_dungeon
-	lockid = list("bog_dungeon")
+//DUNGEON
 
+/obj/structure/pillory/dungeon
+	lockid = list("garrison", "dungeon")
+
+/obj/structure/pillory/dungeon/double
+	icon_state = "pillory_double"
+	base_icon = "pillory_double"
+
+/obj/structure/pillory/dungeon/reinforced
+	icon_state = "pillory_reinforced"
+	base_icon = "pillory_reinforced"
 
 /obj/structure/pillory/Initialize()
 	LAZYINITLIST(buckled_mobs)
@@ -61,7 +74,7 @@
 		to_chat(usr, span_warning("Unlock it first!"))
 		return
 	togglelatch(user)
-	
+
 /obj/structure/pillory/attackby(obj/item/P, mob/user, params)
 	if(user in buckled_mobs)
 		to_chat(user, span_warning("I can't reach the lock!"))
@@ -140,6 +153,7 @@
 			if (istype(S))
 				//H.cut_overlays()
 				H.update_body_parts_head_only()
+				density = FALSE
 				switch(H.dna.species.name)
 					if ("Dwarf", "Dwarf", "Kobold", "Goblin", "Verminvolk")
 						H.set_mob_offsets("bed_buckle", _x = 0, _y = PILLORY_HEAD_OFFSET)
@@ -174,7 +188,28 @@
 			return FALSE
 	else
 		..()
-
+		density = TRUE
 	..()
+	density = TRUE
+
+////TRIBAL STUFF////
+/obj/item/roguekey/tribal
+	name = "worn key"
+	desc = "This key should unlock the pillories of the tribe."
+	icon_state = "rustkey"
+	lockid = "tribal"
+
+/obj/structure/pillory/tribal
+	name = "Tribal-Made Pillory"
+	desc = "To keep the criminals locked! This one has more crude craftsmanship."
+	lockid = list("tribal")
+
+/obj/structure/pillory/tribal/double
+	icon_state = "pillory_double"
+	base_icon = "pillory_double"
+
+/obj/structure/pillory/tribal/reinforced
+	icon_state = "pillory_reinforced"
+	base_icon = "pillory_reinforced"
 
 #undef PILLORY_HEAD_OFFSET

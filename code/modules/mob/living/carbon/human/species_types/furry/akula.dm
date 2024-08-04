@@ -4,14 +4,10 @@
 /datum/species/akula
 	name = "Axian"
 	id = "akula"
-	desc = "<b>Axian</b><br>\
-	Axians are a proud, shark-like people that have a heritage founded in maritime trade, \
-	tax evasion, and piracy. They have a strong distaste for the nobility and taxation, \
-	making them a target of discrimination in Ratwood. They are oftentimes scapegoats for crime. \
-	Due to their penchant for trade and travel, they can be found all over the world, oftentimes \
-	seeing places many could not even dream of. They look down at those they considered the 'settled' \
-	and often uproot themselves quite often in their lifetimes. However, due to the isolation in Ratwood, many Axians \
-	find their sanity being clawed away as they find themselves stuck in one place."
+	desc = "An empre, now a diaspora. \
+	In old times, the empire of Ei'doan was a mighty mercantile and colonial force that ruled the seas. A century of steady decline saw them cede, lose. or abandon most of our overseas colonies. \
+	Many Akula who had come to these colonies during the empire's height simply stayed, due to marrying into certain families, or to keep their livelihoods. It is not rare to find one of my kind in nobility, or townhood, or as a wanderer. \
+	Though a strong naval tradition has left us sharp-witted and strong, we are poorly-adapted to see well in such a boggy, rocky locale."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_WATERBREATHING)
@@ -53,10 +49,6 @@
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 		ORGAN_SLOT_TAIL = /obj/item/organ/tail/akula,
 		ORGAN_SLOT_SNOUT = /obj/item/organ/snout/akula,
-		ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
-		ORGAN_SLOT_PENIS = /obj/item/organ/penis/tapered,
-		ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
-		ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
 		)
 	bodypart_features = list(
 		/datum/bodypart_feature/hair/head,
@@ -74,6 +66,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/lizard,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/vagina/human_anthro,
 		)
 	body_marking_sets = list(

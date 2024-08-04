@@ -99,7 +99,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/bogguardlate
 	name = "Bogguardlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Bog Master", "Bog Guard")
+	jobspawn_override = list("Hedgemaster", "Hedge Knight")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vagrantlate
@@ -108,10 +108,16 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Beggar")
 	delete_after_roundstart = FALSE
 
-/obj/effect/landmark/start/orphanlate
+/obj/effect/landmark/start/vagabondlate
 	name = "Vagabondlate"
 	icon_state = "arrow"
 	jobspawn_override = list("Vagabond")
+	delete_after_roundstart = FALSE
+
+/obj/effect/landmark/start/mercenarylate
+	name = "Mercenarylate"
+	icon_state = "arrow"
+	jobspawn_override = list("Mercenary")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/desertriderlate
@@ -145,11 +151,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/guard_captain
-	name = "Guard Captain"
+	name = "Commander"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/noble
+	name = "Noble Guest"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/barkeep
-	name = "Barkeep"
+	name = "Innkeep"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/cook
@@ -165,23 +175,27 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/magician
-	name = "Court Magician"
+	name = "Magician"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/physician
-	name = "Court Physician"
+	name = "Physician"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/manorguardsman
-	name = "Man at Arms"
+/obj/effect/landmark/start/guardsman
+	name = "Watchman"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/royalguard
+	name = "Royal Guard"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/bogmaster
-	name = "Bog Master"
+	name = "Hedgemaster"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/bogguardsman
-	name = "Bog Guard"
+	name = "Hedge Knight"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/bailiff
@@ -193,11 +207,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/veteran
-	name = "Veteran"
+	name = "Guild Captain"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/dungeoneer
-	name = "Dungeoneer"
+	name = "Beastmaster"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/gatemaster
@@ -217,15 +231,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/priest
-	name = "Priest"
+	name = "Prophet"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/cleric
-	name = "Cleric"
+	name = "Priest"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/monk
-	name = "Acolyte"
+	name = "Priest"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/druid
@@ -237,7 +251,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/puritan
-	name = "Inquisitor"
+	name = "Witcher"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/shepherd
@@ -249,11 +263,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightmaiden
-	name = "Bath Swain"
+	name = "Nightswain"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/merchant
-	name = "Merchant"
+	name = "Merchant Prince"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/shophand
@@ -310,7 +324,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/gravedigger
-	name = "Mortician"
+	name = "Gravesinger"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/mercenary
@@ -326,15 +340,19 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prince
-	name = "Prince"
+	name = "Royal Heir"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prisonerr
-	name = "Prisoner (Rockhill)"
+	name = "Prisoner (StoneHedge)"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prisonerb
 	name = "Prisoner (Bog)"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/prisonerc
+	name = "Tribal Slave"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/hostage
@@ -366,7 +384,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/barkeeper
-	name = "Barkeeper"
+	name = "Innkeeper"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/adventurer
@@ -391,7 +409,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Churchling"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/orphan
+/obj/effect/landmark/start/vagabond
 	name = "Vagabond"
 	icon_state = "arrow"
 
@@ -401,21 +419,47 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 //goblin
 
-/obj/effect/landmark/start/goblinking
-	name = "Goblin King"
+/obj/effect/landmark/start/chieftain
+	name = "Chieftain"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/goblincook
-	name = "Goblin Cook"
+/obj/effect/landmark/start/tribalcook
+	name = "Tribal Cook"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/goblinguard
-	name = "Goblin Guard"
+/obj/effect/landmark/start/tribalvillager
+	name = "Tribal Villager"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/goblinsmith
-	name = "Goblin Smith"
+/obj/effect/landmark/start/tribalshaman
+	name = "Tribal Shaman"
 	icon_state = "arrow"
+
+/obj/effect/landmark/start/tribalguard
+	name = "Tribal Guard"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/tribalsmith
+	name = "Tribal Smith"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/triballate
+	name = "triballate"
+	icon_state = "arrow"
+	jobspawn_override = list("Tribal Cook", "Tribal Guard", "Chieftain", "Tribal Smith", "Tribal Shaman", "Tribal Villager"/*, "Tribal Slave"*/)
+	delete_after_roundstart = FALSE
+
+/obj/effect/landmark/start/ladylate
+	name = "ladylate"
+	icon_state = "arrow"
+	jobspawn_override = list("Consort Candidate")
+	delete_after_roundstart = FALSE
+
+/obj/effect/landmark/start/noblelate
+	name = "noblelate"
+	icon_state = "arrow"
+	jobspawn_override = list("Noble Guest")
+	delete_after_roundstart = FALSE
 
 // START LANDMARKS FOLLOW. Don't change the names unless
 // you are refactoring shitty landmark code.

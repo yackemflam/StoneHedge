@@ -199,6 +199,15 @@
 	glass_name = "glass of milk"
 	glass_desc = ""
 
+/datum/reagent/consumable/mothersmilk
+	name = "Breast Milk"
+	description = "An opaque white liquid produced by the mammary glands of humanoids. In brief, breastmilk."
+	color = "#DFDFDF" // rgb: 223, 223, 223
+	taste_description = "cloyingly sweet milk"
+	glass_icon_state = "glass_white"
+	glass_name = "glass of mothers' milk"
+	glass_desc = "Milk derived from a humanoid source. Some Eorans might swear by its use in rituals of fertility or as a private indulgence between partners, but honest merchants refuse to deal in the substance or products made from it."
+
 /datum/reagent/consumable/milk/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)

@@ -7,20 +7,20 @@
 		if(!valid_headshot_link(null, headshot_link, TRUE))
 			return
 		var/mob/user = usr
-		var/list/dat = list("<table width='100%' height='100%'><td align='center' valign='middle'><img src='[headshot_link]' width='250px' height='250px'></td></table>")
-		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]</div>", 310, 330)
+		var/list/dat = list("<table width='100%' height='100%'><td align='center' valign='middle'><img src='[headshot_link]' width='560px' height='680px'></td></table>")
+		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]</div>", 610, 730)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return
-	
+
 	if(href_list["task"] == "view_nudeshot")
 		if(!ismob(usr))
 			return
 		if(!valid_headshot_link(null, nudeshot_link, TRUE))
 			return
 		var/mob/user = usr
-		var/list/dat = list("<table width='100%' height='100%'><td align='center' valign='middle'><img src='[nudeshot_link]' width='360px' height='480px'></td></table>")
-		var/datum/browser/popup = new(user, "nudeshot", "<div align='center'>[src]</div>", 400, 525)
+		var/list/dat = list("<table width='100%' height='100%'><td align='center' valign='middle'><img src='[nudeshot_link]' width='560px' height='680px'></td></table>")
+		var/datum/browser/popup = new(user, "nudeshot", "<div align='center'>[src]</div>", 610, 730)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return
@@ -140,6 +140,13 @@
 		else
 			// Display a warning if the user mocks up
 			to_chat(src, span_warning("I feel your [pocket_side] pocket being fumbled with!"))
+
+	if(href_list["task"] == "view_erp_preferences") //To know if they want to ERP
+		switch (client.prefs.sexable)
+			if(TRUE)
+				to_chat(usr, span_love("They allowed to use ERP Panel on them!"))
+			else
+				to_chat(usr, span_warning("They DID NOT ALLOW to use ERP Panel on them!"))
 
 ///////HUDs///////
 	if(href_list["hud"])

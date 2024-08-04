@@ -73,7 +73,7 @@
 		if(stringamt < 1)
 			to_chat(user, span_warning("The needle has no thread left!"))
 			return
-		if(I.sewrepair && I.max_integrity && !I.obj_broken)
+		if(I.sewrepair && I.max_integrity)
 			if(I.obj_integrity == I.max_integrity)
 				to_chat(user, span_warning("This is not broken."))
 				return
@@ -91,7 +91,10 @@
 			if(do_after(user, sewtime, target = I))
 				playsound(loc, 'sound/foley/sewflesh.ogg', 100, TRUE, -2)
 				user.visible_message(span_info("[user] repairs [I]!"))
+				if(I.obj_broken == TRUE)
+					I.obj_broken = FALSE
 				I.obj_integrity = I.max_integrity
+				I.update_overlays()
 				//Vrell - Part of storage item repair fix
 				if(target_storage)
 					target_storage.being_repaired = FALSE

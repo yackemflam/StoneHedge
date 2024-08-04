@@ -63,6 +63,13 @@
 	icon_state = "orecoal[rand(1,3)]"
 	..()
 
+/obj/item/rogueore/sand
+	name = "sand"
+	desc = "A pile of sand waiting to be glass."
+	icon_state = "oresand"
+	smeltresult = /obj/item/ingot/glass
+	sellprice = 4
+
 /obj/item/ingot
 	name = "ingot"
 	icon = 'icons/roguetown/items/ore.dmi'
@@ -70,6 +77,27 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = null
 	var/datum/anvil_recipe/currecipe
+	var/quality = SMELTERY_LEVEL_NORMAL
+	var/smelted = FALSE
+
+/obj/item/ingot/Initialize(mapload, smelt_quality)
+	. = ..()
+	if(smelt_quality)
+		quality = smelt_quality
+		smelted = TRUE
+		switch(quality)
+			if(SMELTERY_LEVEL_SPOIL)
+				name = "spoilt-quality [name]"
+			if(SMELTERY_LEVEL_POOR)
+				name = "poor-quality [name]"
+			if(SMELTERY_LEVEL_GOOD)
+				name = "good-quality [name]"
+			if(SMELTERY_LEVEL_EXPERT)         //This ores are getting the same quality as good. Can be expanded for better ones in the future
+				name = "good-quality [name]"
+			if(SMELTERY_LEVEL_MASTER)
+				name = "good-quality [name]"
+			if(SMELTERY_LEVEL_LEGENDARY)
+				name = "good-quality [name]"
 
 /obj/item/ingot/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/rogueweapon/tongs))
@@ -122,3 +150,10 @@
 	icon_state = "ingotsteel"
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 40
+
+/obj/item/ingot/glass
+	name = "glass sheet"
+	desc = "Glass, Essential for bottles and windows."
+	icon_state = "ingotglass"
+	smeltresult = /obj/item/ingot/glass
+	sellprice = 15

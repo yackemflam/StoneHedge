@@ -7,7 +7,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fetch)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDS
 	allowed_ages = ALL_AGES_LIST
 
 	outfit = /datum/outfit/job/roguetown/archivist
@@ -15,22 +15,27 @@
 	min_pq = 0
 	max_pq = null
 
-/datum/outfit/job/roguetown/archivist
-	allowed_patrons = list(/datum/patron/divine/noc)
-
 /datum/outfit/job/roguetown/archivist/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.gender == FEMALE)
-		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
-		pants = /obj/item/clothing/under/roguetown/tights/black
-		head  = /obj/item/clothing/head/roguetown/roguehood/black
+		switch(H.patron?.type)
+			if(/datum/patron/divine/eora) //Eoran loadouts
+				shoes = /obj/item/clothing/shoes/roguetown/sandals
+				shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/purple
+				pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/black
+				head  = /obj/item/clothing/head/peaceflower
+			else
+				shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
+				pants = /obj/item/clothing/under/roguetown/tights/stockings/black
+				head  = /obj/item/clothing/head/roguetown/roguehood/black
+				shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		head = /obj/item/clothing/head/roguetown/nightman
+		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	H.virginity = TRUE
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/keyring/archivist
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
@@ -46,5 +51,3 @@
 		H.change_stat("intelligence", 8)
 		H.change_stat("constitution", -2)
 		H.change_stat("speed", -2)
-
-

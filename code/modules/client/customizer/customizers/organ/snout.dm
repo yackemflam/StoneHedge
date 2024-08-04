@@ -159,6 +159,7 @@
 		/datum/sprite_accessory/snout/redpandaalt,
 		/datum/sprite_accessory/snout/sbeak,
 		/datum/sprite_accessory/snout/rat,
+		/datum/sprite_accessory/snout/bat,
 		/datum/sprite_accessory/snout/stubby,
 		/datum/sprite_accessory/snout/alienlizard,
 		/datum/sprite_accessory/snout/alienlizardteeth,

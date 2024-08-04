@@ -6,8 +6,8 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_sexes = list(FEMALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = RACES_ALL_KINDS
 	tutorial = "Picked out of your political value rather than likely any form of love, you have become the King's most trusted confidant and likely friend throughout your marriage. Your loyalty and, perhaps, love; will be tested this day. For the daggers that threaten your beloved are as equally pointed at your own throat."
 
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/servant)
@@ -15,7 +15,7 @@
 
 	display_order = JDO_LADY
 	give_bank_account = TRUE
-	min_pq = 2
+	min_pq = 5
 	max_pq = null
 
 /datum/job/roguetown/exlady //just used to change the ladys title
@@ -38,6 +38,7 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	beltl = /obj/item/keyring/royal
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
@@ -49,6 +50,7 @@
 		else
 			armor = /obj/item/clothing/suit/roguetown/armor/armordress
 	head = /obj/item/clothing/head/roguetown/hennin
+	pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random	//Added Silk Stockings for the female nobles
 //		SSticker.rulermob = H
 
 	id = /obj/item/clothing/ring/silver
@@ -57,6 +59,13 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)

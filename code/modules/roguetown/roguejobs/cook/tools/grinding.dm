@@ -27,7 +27,7 @@
 		if(do_after(user, 8, target = src))
 			reagents.add_reagent_list(itemtogrind.grind_results)
 			to_grind -= itemtogrind
-			apply_farming_fatigue(user, 5) //replace with herbalism/alchemy version if/when it's added
+			apply_farming_fatigue(user, 5) //replace with herbalism/alchemy version if/when it's added //
 			playsound(src, 'sound/items/wood_sharpen.ogg', 100, TRUE)
 		else
 			break

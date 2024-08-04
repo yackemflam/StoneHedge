@@ -60,7 +60,7 @@
 		var/amt = D.get_import_price()
 		SStreasury.treasury_value -= amt
 		SStreasury.log_to_steward("-[amt] imported [D.name]")
-		scom_announce("Rockhill imports [D.name] for [amt] mammon.", )
+		scom_announce("StoneHedge imports [D.name] for [amt] mammon.", )
 		D.raise_demand()
 		addtimer(CALLBACK(src, PROC_REF(do_import), D.type), 10 SECONDS)
 	if(href_list["export"])
@@ -82,7 +82,7 @@
 
 		SStreasury.treasury_value += amt
 		SStreasury.log_to_steward("+[amt] exported [D.name]")
-		scom_announce("Rockhill exports [D.name] for [amt] mammon.")
+		scom_announce("StoneHedge exports [D.name] for [amt] mammon.")
 		D.lower_demand()
 	if(href_list["togglewithdraw"])
 		var/datum/roguestock/D = locate(href_list["togglewithdraw"]) in SStreasury.stockpile_datums
@@ -165,7 +165,7 @@
 				SStreasury.give_money_account(-newtax, A)
 				break
 	if(href_list["payroll"])
-		var/list/L = list(GLOB.noble_positions) + list(GLOB.garrison_positions) + list(GLOB.courtier_positions) + list(GLOB.church_positions) + list(GLOB.yeoman_positions) + list(GLOB.peasant_positions) + list(GLOB.youngfolk_positions)
+		var/list/L = list(GLOB.noble_positions) + list(GLOB.garrison_positions) + list(GLOB.courtier_positions) + list(GLOB.church_positions) + list(GLOB.yeoman_positions) + list(GLOB.peasant_positions) + list(GLOB.apprentices_positions)
 		var/list/things = list()
 		for(var/list/category in L)
 			for(var/A in category)

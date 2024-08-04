@@ -266,7 +266,7 @@
 	name = "Repulse"
 	desc = ""
 	charge_max = 400
-	clothes_req = TRUE
+	clothes_req = FALSE
 	invocation = "GITTAH WEIGH"
 	invocation_type = "shout"
 	range = 5

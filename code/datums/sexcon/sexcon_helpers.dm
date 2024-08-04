@@ -38,8 +38,9 @@
 	var/can_do_sex = TRUE
 	var/virginity = FALSE
 	var/defiant = FALSE
+	var/horniboi = FALSE
 
-/mob/living/carbon/human/MiddleMouseDrop_T(mob/living/target, mob/living/user)
+/mob/living/MiddleMouseDrop_T(mob/living/target, mob/living/user)
 	if(user.mmb_intent)
 		return ..()
 	if(!istype(target))
@@ -49,18 +50,22 @@
 	if(!user.can_do_sex())
 		to_chat(user, "<span class='warning'>I can't do this.</span>")
 		return
+	if(!target.client || !target.client.prefs || (target.client.prefs.sexable == FALSE)) // Don't bang someone that dosn't want it.
+		to_chat(user, "<span class='warning'>[target] dosn't wish to be touched. (Thier ERP prefrence under options)</span>")
+		to_chat(target, "<span class='warning'>[user] failed to touch you. (Your ERP prefrence under options)</span>")
+		return
 	user.sexcon.start(src)
 
 /mob/living/proc/can_do_sex()
 	return TRUE
 
-/mob/living/carbon/human/proc/make_sucking_noise()
+/mob/living/proc/make_sucking_noise()
 	if(gender == FEMALE)
 		playsound(src, pick('sound/misc/mat/girlmouth (1).ogg','sound/misc/mat/girlmouth (2).ogg'), 25, TRUE, ignore_walls = FALSE)
 	else
 		playsound(src, pick('sound/misc/mat/guymouth (1).ogg','sound/misc/mat/guymouth (2).ogg','sound/misc/mat/guymouth (3).ogg','sound/misc/mat/guymouth (4).ogg','sound/misc/mat/guymouth (5).ogg'), 35, TRUE, ignore_walls = FALSE)
 
-/mob/living/carbon/human/proc/try_impregnate(mob/living/carbon/human/wife)
+/mob/living/proc/try_impregnate(mob/living/wife)
 	var/obj/item/organ/testicles/testes = getorganslot(ORGAN_SLOT_TESTICLES)
 	if(!testes)
 		return
@@ -70,7 +75,7 @@
 	if(prob(25))
 		vag.be_impregnated(src)
 
-/mob/living/carbon/human/proc/get_highest_grab_state_on(mob/living/carbon/human/victim)
+/mob/living/proc/get_highest_grab_state_on(mob/living/victim)
 	var/grabstate = null
 	if(r_grab && r_grab.grabbed == victim)
 		if(grabstate == null || r_grab.grab_state > grabstate)

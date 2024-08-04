@@ -80,7 +80,7 @@
 
 /mob/living/carbon/human/ZImpactDamage(turf/T, levels)
 	var/obj/item/bodypart/affecting
-	var/dam = levels * rand(10,50)
+	var/dam = levels * rand(10,25)
 	add_stress(/datum/stressevent/felldown)
 	var/chat_message
 	switch(rand(1,4))
@@ -94,15 +94,15 @@
 			affecting = get_bodypart(BODY_ZONE_CHEST)
 			chat_message = span_danger("I fall flat! I'm winded!")
 			emote("gasp")
-			adjustOxyLoss(50)
+			adjustOxyLoss(25)
 		if(4)
 			affecting = get_bodypart(BODY_ZONE_HEAD)
 			chat_message = span_danger("I fall on my head!")
 	if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "blunt", damage = dam)))
 		update_damage_overlays()
 		if(levels >= 1)
-			//absurd damage to guarantee a crit
-			affecting.try_crit(BCLASS_TWIST, 300)
+			//ouchie
+			affecting.try_crit(BCLASS_TWIST, 125*levels)
 
 	if(chat_message)
 		to_chat(src, chat_message)
@@ -145,7 +145,7 @@
 		if(VD)
 			if(statpanel("Stats"))
 				stat("Vitae:",VD.vitae)
-		if((mind.assigned_role == "Shepherd") || (mind.assigned_role == "Inquisitor"))
+		if((mind.assigned_role == "Shepherd") || (mind.assigned_role == "Witcher"))
 			if(statpanel("Status"))
 				stat("Confessions sent: [GLOB.confessors.len]")
 
@@ -1191,3 +1191,25 @@
 
 /mob/living/carbon/human/species/zombie/krokodil_addict
 	race = /datum/species/krokodil_addict
+
+//Vrell - Moving this here to fix load order bugs
+/mob/living/carbon/human/has_penis()
+	return getorganslot(ORGAN_SLOT_PENIS)
+
+/mob/living/carbon/human/has_testicles()
+	return getorganslot(ORGAN_SLOT_TESTICLES)
+
+/mob/living/carbon/human/has_vagina()
+	return getorganslot(ORGAN_SLOT_VAGINA)
+
+/mob/living/carbon/human/has_breasts()
+	return getorganslot(ORGAN_SLOT_BREASTS)
+
+/mob/living/carbon/human/proc/has_belly()
+	return getorganslot(ORGAN_SLOT_BELLY)
+
+/mob/living/carbon/human/proc/is_fertile()
+	return getorganslot(ORGAN_SLOT_VAGINA).fertility
+
+/mob/living/carbon/human/proc/is_virile()
+	return getorganslot(ORGAN_SLOT_TESTICLES).virility

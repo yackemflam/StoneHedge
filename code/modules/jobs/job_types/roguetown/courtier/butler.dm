@@ -7,8 +7,8 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = RACES_TOLERATED_UP
-	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+	allowed_races = RACES_ALL_KINDS
+	allowed_ages = ALL_AGES_LIST
 
 	tutorial = "Servitude unto death; That is your motto. Having nurtured royalty for years, you are nothing short of the King's majordomo, commanding over the rest of the house staff."
 
@@ -43,10 +43,21 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 		head = /obj/item/clothing/head/roguetown/fancyhat
 	else
-		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
+		switch(H.patron?.type)
+			if(/datum/patron/divine/eora) //Eoran loadouts
+				armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy/black
+				pants = pick(/obj/item/clothing/under/roguetown/tights/stockings/silk/black, /obj/item/clothing/under/roguetown/tights/stockings/fishnet/black)
+				head  = /obj/item/clothing/head/peaceflower
+			else
+				armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen
+				pants = pick(/obj/item/clothing/under/roguetown/tights/stockings/black, /obj/item/clothing/under/roguetown/tights/stockings/white) //Added stockings for the maids
+
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		cloak = /obj/item/clothing/cloak/apron/waist
 		belt = /obj/item/storage/belt/rogue/leather
 		beltr = /obj/item/keyring/servant
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-
+		pants = /obj/item/clothing/under/roguetown/tights/stockings/black //Added stockings for the maids
+		H.change_stat("strength", -1)
+		H.change_stat("intelligence", 1)
+		H.change_stat("perception", 1)

@@ -67,6 +67,12 @@
 	icon_state = "cheesekey"
 	lockid = "councillor"
 
+/obj/item/roguekey/bailiff
+	name = "bailiff's key"
+	desc = "This key belongs to the bailiff."
+	icon_state = "cheesekey"
+	lockid = "watchmen captain"
+
 /obj/item/roguekey/merchant
 	name = "merchant's key"
 	desc = "A merchant's key."
@@ -206,7 +212,7 @@
 	name = "priest's key"
 	desc = "This is the master key of the church."
 	icon_state = "cheesekey"
-	lockid = "priest"
+	lockid = "Prophet"
 
 /obj/item/roguekey/tower
 	name = "tower key"
@@ -297,19 +303,19 @@
 	desc = "This key opens the bog gatehouse."
 	icon_state = "spikekey"
 	lockid = "bog_gatehouse"
-	
+
 /obj/item/roguekey/bog_barracks
 	name = "bog barracks key"
 	desc = "This key opens the bog barracks."
 	icon_state = "spikekey"
 	lockid = "bog_barracks"
-	
+
 /obj/item/roguekey/bog_dungeon
 	name = "bog dungeon key"
 	desc = "This key opens the bog dungeon."
 	icon_state = "spikekey"
 	lockid = "bog_dungeon"
-	
+
 /obj/item/roguekey/bog_armory
 	name = "bog armory key"
 	desc = "This key opens the bog armory."
@@ -387,7 +393,7 @@
 
 /obj/item/roguekey/custom/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/rogueweapon/hammer))
-		var/input = (input(user, "What would you name this key?", "", "") as text) 
+		var/input = (input(user, "What would you name this key?", "", "") as text)
 		if(input)
 			name = input + " key"
 			to_chat(user, span_notice("You rename the key to [name]."))
@@ -423,7 +429,7 @@
 		F.lockhash = src.lockhash
 		to_chat(user, span_notice("You finish [F]."))
 		qdel(src)
-	
+
 
 //custom lock unfinished
 /obj/item/customlock
@@ -508,4 +514,3 @@
 				KE.name = src.holdname
 			to_chat(user, span_notice("You add [src] to [K]."))
 			qdel(src)
-			

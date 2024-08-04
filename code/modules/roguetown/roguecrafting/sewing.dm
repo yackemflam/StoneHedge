@@ -28,6 +28,19 @@
 	reqs = list(/obj/item/natural/cloth = 1)
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/sewing/brownloincloth
+	name = "brown loincloth"
+	result = list(/obj/item/clothing/under/roguetown/loincloth/brown)
+	reqs = list(/obj/item/natural/cloth = 1)
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/sewing/halfcloak
+	name = "halfcloak"
+	result = list(/obj/item/clothing/cloak/half)
+	reqs = list(/obj/item/natural/cloth = 1)
+	craftdiff = 0
+
+
 /* craftdif of 1 */
 
 /datum/crafting_recipe/roguetown/sewing/clothgloves

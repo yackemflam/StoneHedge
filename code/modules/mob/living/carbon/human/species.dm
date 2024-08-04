@@ -117,10 +117,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
-		ORGAN_SLOT_PENIS = /obj/item/organ/penis,
-		ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
-		ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
+		//ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
+		//ORGAN_SLOT_PENIS = /obj/item/organ/penis,
+		//ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
+		//ORGAN_SLOT_BELLY = /obj/item/organ/belly,
+		//ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
+		ORGAN_SLOT_ANUS = /obj/item/organ/anus,
 		)
 	/// List of bodypart features of this species
 	var/list/bodypart_features
@@ -152,7 +154,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/list/body_markings
 	var/list/languages = list(/datum/language/common)
 	/// Some species have less than standard gender locks
-	var/gender_swapping = FALSE 
+	var/gender_swapping = FALSE
 	var/stress_examine = FALSE
 	var/stress_desc = null
 
@@ -161,15 +163,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 ///////////
 
 /datum/species/proc/is_organ_slot_allowed(mob/living/carbon/human/human, organ_slot)
-	switch(organ_slot)
-		if(ORGAN_SLOT_VAGINA)
-			return (human.gender == FEMALE)
-		if(ORGAN_SLOT_BREASTS)
-			return (human.gender == FEMALE)
-		if(ORGAN_SLOT_PENIS)
-			return (human.gender == MALE)
-		if(ORGAN_SLOT_TESTICLES)
-			return (human.gender == MALE)
 	return TRUE
 
 /datum/species/proc/is_bodypart_feature_slot_allowed(mob/living/carbon/human/human, feature_slot)
@@ -462,7 +455,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(pref_load)
 		pref_load.apply_customizers_to_character(C)
 		pref_load.apply_descriptors(C)
-	
+
 	for(var/language_type in languages)
 		C.grant_language(language_type)
 
@@ -499,7 +492,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	for(var/language_type in languages)
 		C.remove_language(language_type)
-	
+
 	// Clear organ DNA since it wont match as we're changing the species
 	C.dna.organ_dna = list()
 
@@ -556,6 +549,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return "ADJ"
 		if(BODY_FRONT_LAYER)
 			return "FRONT"
+		if(BODY_FRONT_FRONT_LAYER)
+			return "FFRONT"
+		if(BODY_FRONT_FRONT_FRONT_LAYER)
+			return "FFFRONT"
 		if(BODY_UNDER_LAYER)
 			return "UNDER"
 
@@ -949,6 +946,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate)
 
+		if(H.getorganslot(ORGAN_SLOT_BREASTS))
+			if(H.nutrition > NUTRITION_LEVEL_HUNGRY && H.getorganslot(ORGAN_SLOT_BREASTS).lactating && H.getorganslot(ORGAN_SLOT_BREASTS).milk_max > H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored) //Vrell - numbers may need to be tweaked for balance but hey this works for now.
+				var/milk_to_make = min(hunger_rate, H.getorganslot(ORGAN_SLOT_BREASTS).milk_max - H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored)
+				H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored += milk_to_make
+				H.adjust_nutrition(-milk_to_make)
+
+			else if(H.nutrition < NUTRITION_LEVEL_STARVING && H.getorganslot(ORGAN_SLOT_BREASTS).lactating) //Vrell - If starving, your milk drains automatically to slow your starvation.
+				var/milk_to_take = min(hunger_rate, H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored)
+				H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored -= milk_to_take
+				H.adjust_nutrition(milk_to_take)
 
 	if (H.hydration > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))
 		// THEY HUNGER

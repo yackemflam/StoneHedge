@@ -75,6 +75,7 @@
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_markings = list(
@@ -108,6 +109,9 @@
 		"Mysterious" = SKIN_COLOR_MYSTERIOUS,
 		"Succubus" = SKIN_COLOR_SUCCUBUS,
 		"Incubus" = SKIN_COLOR_INCUBUS,
+		"Mephistopheles" = SKIN_COLOR_MEPHISTOPHELES,
+		"Zariel" = SKIN_COLOR_ZARIEL,
+		"Dispater" = SKIN_COLOR_DISPATER,
 	)
 
 /datum/species/tieberian/get_hairc_list()

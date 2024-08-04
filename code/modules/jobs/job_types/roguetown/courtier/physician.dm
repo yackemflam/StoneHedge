@@ -1,10 +1,10 @@
 /datum/job/roguetown/physician
-	title = "Court Physician"
+	title = "Physician"
 	flag = PHYSICIAN
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 
 	allowed_races = RACES_TOLERATED_UP
 	allowed_sexes = list(MALE, FEMALE)
@@ -12,13 +12,12 @@
 	tutorial = "You were a child born into good wealth - But poor health. \
 		Perhaps in another life, you would have turned out to be a powerful mage, wise archivist or a shrewd steward, \
 		but leprosy took away your younger years. \
-		Out of desperation, you followed the ways of Pestra and managed to be cured. \
-		Now you serve in the King's court ensuring the good health of those inhabiting the keep."
+		Out of desperation, you followed the ways of Pestra and managed to be cured."
 	outfit = /datum/outfit/job/roguetown/physician
 	whitelist_req = TRUE
 
 	give_bank_account = 25
-	min_pq = 2
+	min_pq = 0
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_physician.ogg'

@@ -25,7 +25,7 @@
 	disliked_food = NONE
 	liked_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
+	limbs_icon_m = 'icons/mob/species/male.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
@@ -55,6 +55,7 @@
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_markings = list(
@@ -69,7 +70,7 @@
 		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
 		"Hammerhold" = SKIN_COLOR_HAMMERHOLD,
 		"Avar" = SKIN_COLOR_AVAR,
-		"Rockhill" = SKIN_COLOR_ROCKHILL,
+		"StoneHedge" = SKIN_COLOR_STONEHEDGE,
 		"Otava" = SKIN_COLOR_OTAVA,
 		"Etrusca" = SKIN_COLOR_ETRUSCA,
 		"Gronn" = SKIN_COLOR_GRONN,
