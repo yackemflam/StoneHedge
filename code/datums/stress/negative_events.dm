@@ -95,7 +95,7 @@
 /datum/stressevent/felldown
 	timer = 1 MINUTES
 	stressadd = 1
-	desc = span_red("I fell. I'm a fool.")
+	desc = span_red("I fell, ouch.")
 
 /datum/stressevent/burntmeal
 	timer = 2 MINUTES
