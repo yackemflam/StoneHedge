@@ -675,6 +675,13 @@
 
 	return 0
 
+/datum/admins/proc/reload_whitelist()
+	set category = "Reload Whitelist"
+	set desc="Load the whitelist again"
+	load_whitelist()
+	message_admins("<font color='blue'>\
+		[usr.key] has reloaded the whitelist.</font>")
+
 /datum/admins/proc/forcemode()
 	set category = "Server"
 	set name = "Force Gamemode"

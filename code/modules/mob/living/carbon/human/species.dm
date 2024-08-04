@@ -122,6 +122,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		//ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
 		//ORGAN_SLOT_BELLY = /obj/item/organ/belly,
 		//ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
+		ORGAN_SLOT_ANUS = /obj/item/organ/anus,
 		)
 	/// List of bodypart features of this species
 	var/list/bodypart_features

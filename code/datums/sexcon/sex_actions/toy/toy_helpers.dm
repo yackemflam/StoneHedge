@@ -67,9 +67,13 @@
 				H.freak_out()
 
 /proc/get_funobject_in_hand(mob/living/user)
-	for(var/obj/item/thing in user.held_items)
-		if(thing == null)
-			continue
-		if(thing != null && thing.w_class < WEIGHT_CLASS_BULKY) //Anything smaller than bulky goes in the puss.
-			return thing
+	var/obj/item/thing = user.get_active_held_item()
+	if(thing != null && thing.w_class < WEIGHT_CLASS_HUGE) //Anything smaller than this goes in the puss.
+		return thing
+	return null
+
+/proc/get_insertable_in_hand(mob/living/user)
+	var/obj/item/thing = user.get_active_held_item()
+	if(thing != null && thing.w_class < WEIGHT_CLASS_BULKY) //Anything smaller than this goes in the puss.
+		return thing
 	return null

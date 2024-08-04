@@ -42,12 +42,17 @@
 		user.visible_message(span_love("[user] cums into [target]'s ear!"))
 		user.sexcon.cum_into()
 		user.virginity = FALSE
+	var/datum/sex_controller/sc = user.sexcon
 
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 3, FALSE)
 	else
 		user.sexcon.perform_sex_action(target, 2.4, 7, FALSE)
-		user.sexcon.perform_deepthroat_oxyloss(target, 2.6)
+		user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
+		if(sc.force > SEX_FORCE_MID)
+			if(prob(15))
+				to_chat(user, span_warning("I hear and feel something squish against my tip..."))
+			target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/ear_sex/on_finish(mob/living/user, mob/living/target)

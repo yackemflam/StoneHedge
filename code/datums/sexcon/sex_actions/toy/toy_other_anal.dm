@@ -81,6 +81,8 @@
 					return FALSE
 	if(!get_funobject_in_hand(user))
 		return FALSE
+	if(target.cmode)
+		return FALSE
 	return TRUE
 
 /datum/sex_action/other_toy_analtwo/on_start(mob/living/user, mob/living/target)
@@ -106,45 +108,53 @@
 
 	if(dildo.get_temperature() >= FIRE_MINIMUM_TEMPERATURE_TO_SPREAD)
 		ouchietext = pick("OUCH! \the [dildo] burns [target]'s ass!", "YOUCH! \the [dildo] burns [target]'s asshole!", "OW! \the [dildo] chars [target]'s guts!", "AGH! \the [dildo] burns [target]'s ass!")
-		user.visible_message(span_userdanger(ouchietext))
-		user.apply_damage(rand(4,6), BURN, BODY_ZONE_PRECISE_GROIN)
+		target.visible_message(span_userdanger(ouchietext))
+		target.apply_damage(rand(4,6), BURN, BODY_ZONE_PRECISE_GROIN)
 
 	var/datum/sex_controller/sc = user.sexcon
 	if(istype(user.get_active_held_item(), /obj/item/rogueweapon))
 		var/obj/item/rogueweapon/wdildo = dildo
-		var/cutchance = 10*sc.speed //multiplies with speed
+		var/cutchance = 15*sc.speed //multiplies with speed
 		if(wdildo.sharpness >= IS_SHARP && sc.speed > SEX_SPEED_LOW && prob(cutchance))
-			ouchietext = pick("OUCH! \the [wdildo] cuts [target]'s insides!", "ACK! \the [wdildo] poked [target]'s guts!", "OW! \the [wdildo] cut [target]'s lower lips!", "ACK! \the [wdildo] stabs [target]'s guts!")
-			user.visible_message(span_userdanger(ouchietext))
-			user.apply_damage(rand(10,20), BRUTE, BODY_ZONE_PRECISE_GROIN)
+			ouchietext = pick("OUCH! \the [wdildo] cuts [target]'s insides!", "ACK! \the [wdildo] poked [target]'s guts!", "OW! \the [wdildo] cut [target]'s asshole!", "ACK! \the [wdildo] stabs [target]'s guts!")
+			target.visible_message(span_userdanger(ouchietext))
+			target.apply_damage(rand(10,20), BRUTE, BODY_ZONE_PRECISE_GROIN)
 		if(wdildo.sharpness == IS_BLUNT && sc.speed > SEX_SPEED_MID && prob(cutchance))
 			ouchietext = pick("OUCH! \the [wdildo] scrapes [target]'s insides!", "GUH! \the [wdildo] bruises [target]'s guts!", "OW! \the [wdildo] is pulls [target]'s ass!", "AGH! \the [wdildo] smashes [target]'s guts!")
-			user.visible_message(span_userdanger(ouchietext))
-			user.apply_damage(rand(10,20), BRUTE, BODY_ZONE_PRECISE_GROIN)
-
-		var/mob/living/carbon/human/userussy = user
-		var/woundchance = 5*sc.speed //multiplies with speed
+			target.visible_message(span_userdanger(ouchietext))
+			target.apply_damage(rand(10,20), BRUTE, BODY_ZONE_PRECISE_GROIN)
+		var/mob/living/carbon/human/targetussy = target
+		var/woundchance = 3*sc.speed //multiplies with speed
 		if(prob(woundchance))
 			if(prob(90))
-				user.visible_message(span_userdanger("OUCH! \the [wdildo] bleeds [target]'s ass!!!"))
-				var/obj/item/bodypart/chest/gr = userussy.get_bodypart(BODY_ZONE_PRECISE_GROIN)
+				target.visible_message(span_userdanger("OUCH! \the [wdildo] bleeds [target]'s ass!!!"))
+				var/obj/item/bodypart/chest/gr = targetussy.get_bodypart(BODY_ZONE_PRECISE_GROIN)
 				gr.add_wound(/datum/wound/slash/small, TRUE, FALSE)
 			else
-				user.visible_message(span_userdanger("AHH!!! \the [wdildo] TEARS [target]'s ass!!!"))
-				var/obj/item/bodypart/chest/gr = userussy.get_bodypart(BODY_ZONE_PRECISE_GROIN)
+				target.visible_message(span_userdanger("AHH!!! \the [wdildo] TEARS [target]'s ass!!!"))
+				var/obj/item/bodypart/chest/gr = targetussy.get_bodypart(BODY_ZONE_PRECISE_GROIN)
 				gr.add_wound(/datum/wound/slash, TRUE, FALSE)
+
+	if(istype(user.get_active_held_item(), /obj/item/ammo_casing/caseless/rogue))
+		var/obj/item/ammo_casing/caseless/rogue/adildo = dildo
+		var/cutchance = 10*sc.speed //multiplies with speed
+		if(sc.speed > SEX_SPEED_LOW && prob(cutchance))
+			ouchietext = pick("OUCH! \the [adildo] cuts [target]'s insides!", "ACK! \the [adildo] poked [target]'s guts!", "OW! \the [adildo] cut [target]'s asshole!", "ACK! \the [adildo] stabs [target]'s guts!")
+			target.visible_message(span_userdanger(ouchietext))
+			target.apply_damage(rand(5,10), BRUTE, BODY_ZONE_PRECISE_GROIN)
+
 	if(istype(user.get_active_held_item(), /obj/item/reagent_containers/glass))
 		var/obj/item/reagent_containers/glass/contdildo = dildo
-		var/spillchance = 25*sc.speed //multiplies with speed
-		if(user.lying) //double spill odds if lying down due gravity and stuff.
+		var/spillchance = 10*sc.speed //multiplies with speed
+		if(target.lying) //double spill odds if lying down due gravity and stuff.
 			spillchance *= 2
 		if(contdildo.spillable && prob(spillchance) && contdildo.reagents.total_volume)
-			user.visible_message(span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill [target]'s ass.", "[user] feeds [target]'s ass with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into [target]'s ass.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into me.")))
+			target.visible_message(span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill [target]'s ass.", "[user] feeds [target]'s ass with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into [target]'s ass.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into me.")))
 			addtimer(CALLBACK(contdildo.reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, sc.speed, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
 			playsound(user.loc, 'sound/misc/mat/endin.ogg', 100, TRUE)
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/other_toy_analtwo/on_finish(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_funobject_in_hand(user)
