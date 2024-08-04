@@ -256,12 +256,12 @@
 	color_key_names = list("Tail", "Stripes")
 	can_wag = TRUE
 
-/datum/sprite_accessory/tail/data_shark
-	name = "Data Shark"
-	icon_state = "datashark"
+/datum/sprite_accessory/tail/sabresune
+	name = "Sabresune"
+	icon_state = "sabresune"
 	color_keys = 2
-	color_key_names = list("Tail", "Neons")
-	can_wag = TRUE
+	color_key_names = list("Tails", "Tips")
+
 
 /datum/sprite_accessory/tail/data_shark
 	name = "Data Shark"
