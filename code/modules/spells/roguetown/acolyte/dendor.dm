@@ -1,6 +1,6 @@
 // Druid
 /obj/effect/proc_holder/spell/targeted/blesscrop
-	name = "Bless Crops"
+	name = "Grow Plants"
 	range = 5
 	overlay_state = "blesscrop"
 	releasedrain = 30
@@ -10,8 +10,8 @@
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "The Treefather commands thee, be fruitful!"
-	invocation_type = "shout" //can be none, whisper, emote and shout
+	invocation = "Crescere!"
+	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = 10
 

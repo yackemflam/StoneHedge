@@ -10,7 +10,7 @@
 	chargedloop = null
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	sound = 'sound/magic/heal.ogg'
-	invocation = "Cleansing flames, kindle!"
+	invocation = "Ignis!"
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
@@ -95,7 +95,7 @@
 		target.emote("breathgasp")
 		target.Jitter(100)
 		target.update_body()
-		target.visible_message(span_notice("[target] is revived by holy light!"), span_green("I awake from the void."))
+		target.visible_message(span_notice("[target] is revived by radiant light!"), span_green("I awake from the realm before death."))
 		if(target.mind)
 			if(revive_pq && !HAS_TRAIT(target, TRAIT_IWASREVIVED) && user?.ckey)
 				adjust_playerquality(revive_pq, user.ckey)
@@ -111,6 +111,6 @@
 	for(var/obj/structure/fluff/psycross/S in oview(5, user))
 		found = S
 	if(!found)
-		to_chat(user, span_warning("I need a holy cross."))
+		to_chat(user, span_warning("I need a divine effigy."))
 		return FALSE
 	return TRUE

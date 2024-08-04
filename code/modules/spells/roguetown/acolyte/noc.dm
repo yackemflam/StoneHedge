@@ -10,8 +10,8 @@
     warnie = "sydwarning"
     movement_interrupt = FALSE
     sound = 'sound/magic/churn.ogg'
-    invocation = "Noc blinds thee of thy sins!"
-    invocation_type = "shout" //can be none, whisper, emote and shout
+    invocation = ""
+    invocation_type = "none" //can be none, whisper, emote and shout
     associated_skill = /datum/skill/magic/holy
     antimagic_allowed = TRUE
     charge_max = 15 SECONDS
@@ -22,7 +22,7 @@
 		var/mob/living/target = targets[1]
 		if(target.anti_magic_check(TRUE, TRUE))
 			return FALSE
-		target.visible_message(span_warning("[user] points at [target]'s eyes!"),span_warning("My eyes are covered in darkness!"))		
+		target.visible_message(span_warning("[user] points at [target]'s eyes!"),span_warning("My eyes are covered in darkness!"))
 		target.blind_eyes(2)
 	return TRUE
 
