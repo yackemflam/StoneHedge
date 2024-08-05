@@ -288,9 +288,10 @@
 		arousal_amt = 0
 		pain_amt = 0
 
-	var/sexhealrand = rand(0.1, 0.3)
+	var/sexhealrand = rand(0.2, 0.4)
 	//go go gadget sex healing.. magic?
-	//if(user.buckled?.sleepy)
+	if(user.buckled?.sleepy) //gooder healing in bed
+		sexhealrand *= 4 
 	if(!issimple(target))
 		if(user.health < user.maxHealth) //so its not spammy
 			if(HAS_TRAIT(user, TRAIT_SEXDEVO))

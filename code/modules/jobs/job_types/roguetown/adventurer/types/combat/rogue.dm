@@ -9,9 +9,6 @@
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_rogue.ogg'
 
-/datum/outfit/job/roguetown/adventurer/rogue
-	allowed_patrons = list(/datum/patron/divine/xylix, /datum/patron/inhumen/matthios)
-
 /datum/outfit/job/roguetown/adventurer/rogue/pre_equip(mob/living/carbon/human/H)
 	..()
 	// Contributor after choices, if not contributor defaults to el rogue.

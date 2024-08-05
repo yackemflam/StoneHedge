@@ -676,8 +676,8 @@
 	return 0
 
 /datum/admins/proc/reload_whitelist()
-	set category = "Reload Whitelist"
-	set desc="Load the whitelist again"
+	set name ="Reload Whitelist"
+	set category = "Admins"
 	load_whitelist()
 	message_admins("<font color='blue'>\
 		[usr.key] has reloaded the whitelist.</font>")

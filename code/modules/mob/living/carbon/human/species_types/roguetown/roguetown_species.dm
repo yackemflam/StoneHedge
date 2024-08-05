@@ -27,6 +27,8 @@
 			return strings("middlespeak.json", "middle")
 		if("Axian Accent")
 			return strings("pirate_replacement.json", "full")
+		if("Valley Girl accent")
+			return strings("valley_replacement.json", "valley")
 
 /datum/species/proc/get_accent_start(mob/living/carbon/human)
 	return

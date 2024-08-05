@@ -160,6 +160,8 @@
 	name = "brayette"
 	desc = ""
 	gender = PLURAL
+	icon = 'modular_stonehedge/icons/armor/pants.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
 	icon_state = "chain_bootyshorts"
 	item_state = "chain_bootyshorts"
 	sewrepair = FALSE
