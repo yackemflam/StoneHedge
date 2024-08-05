@@ -26,9 +26,7 @@
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_ANUS))
-		if(issimple(target) && target.sexcon)
-		else
-			return FALSE
+		return FALSE
 	var/obj/item/organ/anus/targetass = target.getorgan(/obj/item/organ/vagina)
 	if(targetass.contents.len)
 		return TRUE

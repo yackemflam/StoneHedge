@@ -22,9 +22,7 @@ SUBSYSTEM_DEF(nightshift)
 	var/high_security_mode = FALSE
 
 /datum/controller/subsystem/nightshift/Initialize()
-	if(!CONFIG_GET(flag/enable_night_shifts))
-		can_fire = FALSE
-	current_tod = settod()
+	current_tod = "night"
 	return ..()
 
 /datum/controller/subsystem/nightshift/fire(resumed = FALSE)

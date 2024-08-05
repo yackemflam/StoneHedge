@@ -170,7 +170,7 @@
 			playsound(user.loc, 'sound/misc/mat/endin.ogg', 100, TRUE)
 			pain_amt = -8 //liquid ease pain i guess
 
-	user.sexcon.perform_sex_action(user, 2, pain_amt, TRUE)
+	user.sexcon.perform_sex_action(target, 2, pain_amt, TRUE)
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/other_toy_analtwo/on_finish(mob/living/user, mob/living/target)

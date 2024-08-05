@@ -216,8 +216,10 @@
 	if(!user.cmode)
 		var/fixchance = user.mind.get_skill_level(/datum/skill/misc/medicine)*20
 		if(prob(fixchance))
-			for(var/datum/wound/dislocation/d in sublimb_grabbed)
-				d.relocate_bone()
+			var/obj/item/bodypart/bodypart = C.get_bodypart(check_zone(sublimb_grabbed))
+			if(bodypart)
+				for(var/datum/wound/dislocation/bone in bodypart.wounds)
+					bone.relocate_bone()
 				to_chat(user, span_green("I manage to set the bone in [C]'s [parse_zone(sublimb_grabbed)]. [fixchance]%"))
 		else
 			to_chat(user, span_warning("I fail to set the bone in [C]'s [parse_zone(sublimb_grabbed)]. [fixchance]%"))

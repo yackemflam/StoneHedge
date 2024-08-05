@@ -508,7 +508,7 @@
 
 	if(!obscure_name && headshot_link)
 		. += "<a href='?src=[REF(src)];task=view_headshot;'>View face closely</a>"
-	if(nudeshot_link && get_location_accessible(src, BODY_ZONE_CHEST) && get_location_accessible(src, BODY_ZONE_PRECISE_GROIN))
+	if(nudeshot_link && !wear_shirt)
 		. += "<a href='?src=[REF(src)];task=view_nudeshot;'>View body closely</a>"
 
 	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
