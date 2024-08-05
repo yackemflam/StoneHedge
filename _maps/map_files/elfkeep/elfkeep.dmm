@@ -9940,10 +9940,6 @@
 	icon_state = "greenstone"
 	},
 /area/rogue/under/town/basement)
-"gdy" = (
-/obj/structure/flora/newleaf,
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/tribalfort)
 "gdF" = (
 /obj/structure/fluff/walldeco/church/line,
 /obj/structure/fluff/railing/border{
@@ -14999,11 +14995,10 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "jxO" = (
-/obj/structure/flora/newleaf,
-/obj/structure/flora/newbranch/leafless{
+/obj/structure/flora/newbranch{
 	dir = 4
 	},
-/turf/open/floor/rogue/twig,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/tribalfort)
 "jyb" = (
 /obj/item/flashlight/flare/torch/lantern,
@@ -27737,7 +27732,6 @@
 	first_time_text = "THE SHROUDHEDGE"
 	})
 "rsj" = (
-/obj/structure/flora/newleaf,
 /obj/structure/flora/newleaf{
 	icon_state = "branch-end1";
 	dir = 8
@@ -29484,7 +29478,6 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "szj" = (
-/obj/structure/flora/newleaf,
 /obj/structure/flora/newleaf{
 	icon_state = "branch-extend";
 	dir = 8
@@ -30273,9 +30266,6 @@
 "sYB" = (
 /obj/structure/wallladder{
 	dir = 8
-	},
-/obj/structure/flora/newbranch{
-	dir = 4
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort)
@@ -37496,7 +37486,6 @@
 	first_time_text = null
 	})
 "xHC" = (
-/obj/structure/flora/newleaf,
 /obj/structure/flora/newleaf{
 	icon_state = "branch-end1"
 	},
@@ -185033,7 +185022,7 @@ enq
 enq
 enq
 enq
-gdy
+enq
 szj
 vtd
 igy
@@ -185604,7 +185593,7 @@ enq
 enq
 enq
 arL
-gdy
+enq
 enq
 rUk
 rUk
