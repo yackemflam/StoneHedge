@@ -53,8 +53,8 @@
 			if(IsSleeping())
 				if(health > 0)
 					if(has_status_effect(/datum/status_effect/debuff/sleepytime))
+						tiredness = 0
 						remove_status_effect(/datum/status_effect/debuff/sleepytime)
-						remove_stress(/datum/stressevent/sleepytime)
 						if(mind)
 							mind.sleep_adv.advance_cycle()
 						var/datum/game_mode/chaosmode/C = SSticker.mode
@@ -66,6 +66,8 @@
 									if(C.allmig)
 										if(allmig_reward > 3)
 											adjust_triumphs(1)
+					if(has_status_effect(/datum/status_effect/debuff/trainsleep))
+						remove_status_effect(/datum/status_effect/debuff/trainsleep)
 			if(leprosy == 1)
 				adjustToxLoss(2)
 			else if(leprosy == 2)
@@ -96,7 +98,7 @@
 			else
 				if(mob_timers["slo"])
 					mob_timers["slo"] = null
-
+					
 		if(dna?.species)
 			dna.species.spec_life(src) // for mutantraces
 
