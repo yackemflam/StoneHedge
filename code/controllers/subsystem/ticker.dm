@@ -289,7 +289,9 @@ SUBSYSTEM_DEF(ticker)
 		This prevents any gamemode from starting unless theres at least 2 players ready, but the comments say 20 or it defaults into a deathmatch mode.
 		It is commented out and just left here for posterity
 	*/
-	/*
+
+	//im da captain now, only 1 player ready to go -- vide
+
 	var/amt_ready = 0
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(!player)
@@ -297,8 +299,9 @@ SUBSYSTEM_DEF(ticker)
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			amt_ready++
 
-	if(amt_ready < 2)
-		to_chat(world, span_purple("[amt_ready]/20 players ready."))
+	if(amt_ready < 1)
+		to_chat(world, span_purple("[amt_ready]/1 players ready."))
+	/*
 		failedstarts++
 		if(failedstarts > 7)
 			to_chat(world, span_purple("[failedstarts]/13"))

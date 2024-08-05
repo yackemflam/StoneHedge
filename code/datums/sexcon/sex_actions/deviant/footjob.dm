@@ -3,10 +3,16 @@
 	check_same_tile = FALSE
 
 /datum/sex_action/footjob/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.bypasssexable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
-		return FALSE
+		if(issimple(target) && target.gender == MALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/footjob/can_perform(mob/living/user, mob/living/target)
@@ -25,7 +31,9 @@
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
-		return FALSE
+		if(issimple(target) && target.gender == MALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/footjob/on_start(mob/living/user, mob/living/target)

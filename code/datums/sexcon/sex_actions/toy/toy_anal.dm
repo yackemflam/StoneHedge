@@ -2,6 +2,10 @@
 	name = "Pleasure butt with toy"
 
 /datum/sex_action/toy_anal/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.bypasssexable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user != target)
 		return FALSE
 	if(!get_dildo_in_either_hand(user))
@@ -60,8 +64,13 @@
 /datum/sex_action/toy_analtwo
 	name = "Fuck ass with object"
 	var/ouchietext = "owie"
+	var/pain_amt = 3 //base pain amt to use
 
 /datum/sex_action/toy_analtwo/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.bypasssexable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user != target)
 		return FALSE
 	if(!get_funobject_in_hand(user))
@@ -107,6 +116,7 @@
 		ouchietext = pick("OUCH! \the [dildo] burns my ass!", "YOUCH! \the [dildo] burns my asshole!", "OW! \the [dildo] chars my guts!", "AGH! \the [dildo] burns my ass!")
 		to_chat(user, span_userdanger(ouchietext))
 		user.apply_damage(rand(4,6), BURN, BODY_ZONE_PRECISE_GROIN)
+		pain_amt *= 2
 
 	var/datum/sex_controller/sc = user.sexcon
 	if(istype(user.get_active_held_item(), /obj/item/rogueweapon))
@@ -116,10 +126,12 @@
 			ouchietext = pick("OUCH! \the [wdildo] cuts my insides!", "ACK! \the [wdildo] poked my guts!", "OW! \the [wdildo] cut my lower lips!", "ACK! \the [wdildo] stabs my guts!")
 			to_chat(user, span_userdanger(ouchietext))
 			user.apply_damage(rand(10,20), BRUTE, BODY_ZONE_PRECISE_GROIN)
+			pain_amt *= 2
 		if(wdildo.sharpness == IS_BLUNT && sc.speed > SEX_SPEED_MID && prob(cutchance))
 			ouchietext = pick("OUCH! \the [wdildo] scrapes my insides!", "GUH! \the [wdildo] bruises my guts!", "OW! \the [wdildo] is pulls my ass!", "AGH! \the [wdildo] smashes my guts!")
 			to_chat(user, span_userdanger(ouchietext))
 			user.apply_damage(rand(10,20), BRUTE, BODY_ZONE_PRECISE_GROIN)
+			pain_amt *= 2
 
 		var/mob/living/carbon/human/userussy = user
 		var/woundchance = 5*sc.speed //multiplies with speed
@@ -128,10 +140,12 @@
 				to_chat(user, span_userdanger("OUCH! \the [wdildo] bleeds my ass!!!"))
 				var/obj/item/bodypart/chest/gr = userussy.get_bodypart(BODY_ZONE_PRECISE_GROIN)
 				gr.add_wound(/datum/wound/slash/small, TRUE, FALSE)
+				pain_amt *= 3
 			else
 				to_chat(user, span_userdanger("AHH!!! \the [wdildo] TEARS my ass!!!"))
 				var/obj/item/bodypart/chest/gr = userussy.get_bodypart(BODY_ZONE_PRECISE_GROIN)
 				gr.add_wound(/datum/wound/slash, TRUE, FALSE)
+				pain_amt *= 6
 
 	if(istype(user.get_active_held_item(), /obj/item/ammo_casing/caseless/rogue))
 		var/obj/item/ammo_casing/caseless/rogue/adildo = dildo
@@ -140,6 +154,7 @@
 			ouchietext = pick("OUCH! \the [adildo] cuts my insides!", "ACK! \the [adildo] poked my guts!", "OW! \the [adildo] cut my asshole!", "ACK! \the [adildo] stabs my guts!")
 			to_chat(user, span_userdanger(span_userdanger(ouchietext)))
 			user.apply_damage(rand(5,10), BRUTE, BODY_ZONE_PRECISE_GROIN)
+			pain_amt *= 2
 
 	if(istype(user.get_active_held_item(), /obj/item/reagent_containers/glass))
 		var/obj/item/reagent_containers/glass/contdildo = dildo
@@ -150,8 +165,9 @@
 			to_chat(user, span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill my ass.", "I feed my ass with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into my ass.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into me.")))
 			addtimer(CALLBACK(contdildo.reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, sc.speed, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
 			playsound(user.loc, 'sound/misc/mat/endin.ogg', 100, TRUE)
+			pain_amt = -8 //liquid ease pain i guess
 
-	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
+	user.sexcon.perform_sex_action(user, 2, pain_amt, TRUE)
 	user.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/toy_analtwo/on_finish(mob/living/user, mob/living/target)

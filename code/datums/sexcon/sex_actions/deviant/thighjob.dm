@@ -2,6 +2,10 @@
 	name = "Use their thighs to get off"
 
 /datum/sex_action/thighjob/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.bypasssexable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))

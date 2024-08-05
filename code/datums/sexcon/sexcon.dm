@@ -189,6 +189,14 @@
 	if(ejacmessaged != 1)
 		user.visible_message(span_info("With every ejaculation I feel Eora's blessing satiate me so I may go longer."))
 		ejacmessaged = 1
+	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
+		if(!user.mob_timers["cumtri"])
+			user.mob_timers["cumtri"] = world.time
+			user.adjust_triumphs(1)
+			user.add_stress(/datum/stressevent/cummax)
+			to_chat(user, span_love("Our sex was a true TRIUMPH!"))
+	else
+		user.add_stress(/datum/stressevent/cumok)
 	user.adjust_nutrition(100)
 	set_arousal(40)
 	adjust_charge(-CHARGE_FOR_CLIMAX)
@@ -202,16 +210,6 @@
 /datum/sex_controller/proc/after_intimate_climax()
 	if(user == target)
 		return
-	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
-		if(!user.mob_timers["cumtri"])
-			user.mob_timers["cumtri"] = world.time
-			user.adjust_triumphs(1)
-			to_chat(user, span_love("Our sex was a true TRIUMPH!"))
-	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
-		if(!target.mob_timers["cumtri"])
-			target.mob_timers["cumtri"] = world.time
-			target.adjust_triumphs(1)
-			to_chat(target, span_love("Our sex was a true TRIUMPH!"))
 
 /datum/sex_controller/proc/just_ejaculated()
 	return (last_ejaculation_time + 2 SECONDS >= world.time)
@@ -277,7 +275,7 @@
 /datum/sex_controller/proc/perform_sex_action(mob/living/action_target, arousal_amt, pain_amt, giving)
 	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
 		arousal_amt *= 2
-		if(prob(10)) //10 perc chance each action to emit the message so they know who the fuckin' with.
+		if(prob(10)) //10 perc chance each action to emit the message so they know who the fuckin' wituser.
 			var/lovermessage = pick("This feels so good!","I am in heaven!","This is too good to be possible!","By the ten!","I can't stop, too good!")
 			to_chat(action_target, span_love(lovermessage))
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
@@ -291,25 +289,29 @@
 		arousal_amt = 0
 		pain_amt = 0
 
-
+	var/sexhealrand = rand(0.1, 0.3)
 	//go go gadget sex healing.. magic?
 	//if(user.buckled?.sleepy)
-	var/sexhealrand = rand(0.1, 0.3)
-	if(user.health < user.maxHealth) //so its not spammy
-		if(HAS_TRAIT(user, TRAIT_SEXDEVO))
-			var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
-			if(sexhealmult < 2) //so its never below 2 for ones with trait.
-				sexhealmult = 2
-			sexhealrand *= sexhealmult
-			//extra heals target
-			if(!target.cmode)
-				target.adjustBruteLoss(-sexhealrand)
-				target.adjustFireLoss(-sexhealrand/2)
-			if(prob(2))
-				to_chat(user, span_green("I feel Eora smile upon on me."))
-				sexhealrand *= 2
+	if(!issimple(target))
+		if(user.health < user.maxHealth) //so its not spammy
+			if(HAS_TRAIT(user, TRAIT_SEXDEVO))
+				var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
+				if(sexhealmult < 2) //so its never below 2 for ones with trait.
+					sexhealmult = 2
+				sexhealrand *= sexhealmult
+				//heals target unless user zaping.
+				if(!user.cmode)
+					if(!issimple(target))
+						target.adjustBruteLoss(-sexhealrand)
+						target.adjustFireLoss(-sexhealrand/2)
+				if(prob(4))
+					to_chat(user, span_green("I feel Eora's miracle upon me."))
+					sexhealrand *= 2
+	if(!user.cmode && prob(1)) //surprise heal burst at 1% chance
+		to_chat(user, span_greentextbig("I feel Eora smile at me."))
+		sexhealrand *= 5
 	user.adjustBruteLoss(-sexhealrand)
-	target.adjustFireLoss(-sexhealrand/2)
+	user.adjustFireLoss(-sexhealrand/2)
 
 	//grant devotion through sex because who needs praying.
 	//not sure if it works right but i dont need to test cuz its asked to be commented out anyway, ffs.
@@ -382,24 +384,48 @@
 	if(prob(50))
 		return
 	last_pain = world.time
-	if(pain_amt >= PAIN_HIGH_EFFECT)
-		var/pain_msg = pick(list("IT HURTS!!!", "IT NEEDS TO STOP!!!", "I CAN'T TAKE IT ANYMORE!!!"))
-		to_chat(user, span_boldwarning(pain_msg))
-		user.flash_fullscreen("redflash2")
-		if(prob(70) && user.stat == CONSCIOUS)
-			user.visible_message(span_warning("[user] shudders in pain!"))
-	else if(pain_amt >= PAIN_MED_EFFECT)
-		var/pain_msg = pick(list("It hurts!", "It pains me!"))
-		to_chat(user, span_boldwarning(pain_msg))
-		user.flash_fullscreen("redflash1")
-		if(prob(40) && user.stat == CONSCIOUS)
-			user.visible_message(span_warning("[user] shudders in pain!"))
+	if(!user.has_flaw(/datum/charflaw/addiction/masochist))
+		if(pain_amt >= PAIN_HIGH_EFFECT)
+			var/pain_msg = pick(list("IT HURTS!!!", "IT NEEDS TO STOP!!!", "I CAN'T TAKE IT ANYMORE!!!"))
+			to_chat(user, span_boldwarning(pain_msg))
+			user.flash_fullscreen("redflash2")
+			if(prob(70) && user.stat == CONSCIOUS)
+				user.visible_message(span_warning("[user] shudders in pain!"))
+		else if(pain_amt >= PAIN_MED_EFFECT)
+			var/pain_msg = pick(list("It hurts!", "It pains me!"))
+			to_chat(user, span_boldwarning(pain_msg))
+			user.flash_fullscreen("redflash1")
+			if(prob(40) && user.stat == CONSCIOUS)
+				user.visible_message(span_warning("[user] shudders in pain!"))
+		else
+			var/pain_msg = pick(list("It hurts a little...", "It stings...", "I'm aching..."))
+			to_chat(user, span_warning(pain_msg))
 	else
-		var/pain_msg = pick(list("It hurts a little...", "It stings...", "I'm aching..."))
-		to_chat(user, span_warning(pain_msg))
+		if(pain_amt >= PAIN_HIGH_EFFECT)
+			var/pain_msg = pick(list("IT HURTS, DON'T STOP!!!", "DON'T STOP!!!", "MORE, MORE!!!"))
+			to_chat(user, span_boldgreen(pain_msg))
+			user.flash_fullscreen("redflash2")
+			if(prob(70) && user.stat == CONSCIOUS)
+				user.visible_message(span_warning("[user] shudders in pain!"))
+		else if(pain_amt >= PAIN_MED_EFFECT)
+			var/pain_msg = pick(list("It hurts!", "It pains me!"))
+			to_chat(user, span_boldgreen(pain_msg))
+			user.flash_fullscreen("redflash1")
+			if(prob(40) && user.stat == CONSCIOUS)
+				user.visible_message(span_warning("[user] shudders in pain!"))
+		else
+			var/pain_msg = pick(list("It hurts a little...", "It stings...", "I'm aching..."))
+			to_chat(user, span_boldgreen(pain_msg))
 
 /datum/sex_controller/proc/update_blueballs()
 	if(arousal >= BLUEBALLS_GAIN_THRESHOLD)
+		if(user.has_flaw(/datum/charflaw/addiction/masochist))
+			user.sate_addiction()
+			user.add_stress(/datum/stressevent/bluebgood)
+			return
+		if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
+			user.add_stress(/datum/stressevent/bluebgood)
+			return
 		user.add_stress(/datum/stressevent/blueb)
 	else if (arousal <= BLUEBALLS_LOOSE_THRESHOLD)
 		user.remove_stress(/datum/stressevent/blueb)
@@ -460,6 +486,9 @@
 	adjust_arousal(-dt * rate)
 
 /datum/sex_controller/proc/show_ui()
+	if(!target.bypasssexable && issimple(target))
+		to_chat(src, span_info("I can't do anything to this creature."))
+		return
 	var/list/dat = list()
 	var/force_name = get_force_string()
 	var/speed_name = get_speed_string()

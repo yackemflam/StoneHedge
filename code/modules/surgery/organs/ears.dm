@@ -30,9 +30,6 @@
 	// Multiplier for both long term and short term ear damage
 	var/damage_multiplier = 1
 
-	///is it.. fuckable?
-	var/fuckable = FALSE
-
 /obj/item/organ/ears/Insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
 	for(var/datum/wound/facial/ears/ear_wound as anything in M.get_wounds())
@@ -151,11 +148,6 @@
 
 /obj/item/organ/ears/anthro
 	name = "wild-kin ears"
-	fuckable = TRUE
-
-/obj/item/organ/ears/lupian
-	name = "lupian ears"
-	fuckable = TRUE
 
 /obj/item/organ/ears/lupian
 	name = "lupian ears"
@@ -163,7 +155,6 @@
 /obj/item/organ/ears/vulpkanin
 	name = "vulpkian ears"
 	accessory_type = /datum/sprite_accessory/ears/fox
-	fuckable = TRUE
 
 /obj/item/organ/ears/tajaran
 	name = "tajaran ears"
@@ -171,17 +162,14 @@
 /obj/item/organ/ears/elf
 	name = "elf ears"
 	accessory_type = /datum/sprite_accessory/ears/elf
-	fuckable = TRUE //i guess
 
 /obj/item/organ/ears/elfw
 	name = "wood elf ears"
 	accessory_type = /datum/sprite_accessory/ears/elfw
-	fuckable = TRUE //i guess
 
 /obj/item/organ/ears/tiefling
 	name = "tiefling ears"
 	accessory_type = /datum/sprite_accessory/ears/elfw
-	fuckable = TRUE //i guess
 
 /obj/item/organ/ears/akula
 	name = "axian ears"

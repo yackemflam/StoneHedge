@@ -3,10 +3,16 @@
 	check_same_tile = FALSE
 
 /datum/sex_action/masturbate_other_vagina/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.bypasssexable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/masturbate_other_vagina/can_perform(mob/living/user, mob/living/target)
@@ -20,7 +26,9 @@
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/masturbate_other_vagina/on_start(mob/living/user, mob/living/target)
@@ -49,10 +57,16 @@
 	check_same_tile = FALSE
 
 /datum/sex_action/masturbate_other_vaginatwo/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.bypasssexable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/masturbate_other_vaginatwo/can_perform(mob/living/user, mob/living/target)
@@ -66,7 +80,9 @@
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/masturbate_other_vaginatwo/on_start(mob/living/user, mob/living/target)

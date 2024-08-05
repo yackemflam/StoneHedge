@@ -2,6 +2,10 @@
 	name = "Use candle wax on their breasts"
 
 /datum/sex_action/candle_breasts/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.bypasssexable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!get_candle_in_either_hand(user))
@@ -19,7 +23,9 @@
 				if(shirtsies.genitalaccess == FALSE)
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	if(!get_candle_in_either_hand(user))
 		return FALSE
 	var/obj/item/candle/C = get_candle_in_either_hand(user)

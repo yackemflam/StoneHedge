@@ -2,6 +2,8 @@
 	name = "search/insert in their cunt"
 
 /datum/sex_action/store_vagina_other/shows_on_menu(mob/living/user, mob/living/target)
+	if(!issimple(target)) //will not work on simple mobs
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
@@ -24,7 +26,9 @@
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	var/obj/item/organ/vagina/targetvag = target.getorgan(/obj/item/organ/vagina)
 	if(targetvag.contents.len)
 		return TRUE
@@ -48,7 +52,7 @@
 	var/mob/living/carbon/human/targetussy = user
 	var/stealskill = user.mind.get_skill_level(/datum/skill/misc/stealing)
 	var/medicineskill = user.mind.get_skill_level(/datum/skill/misc/medicine)
-	var/flubchance = 100
+	var/flubchance = 75
 	if(max(1,stealskill) > max(1,medicineskill)) //medicine or stealth, taken higher and used to divide the flubbing chance, if you got neither skill its 100 odds, go home bro.
 		flubchance = flubchance/stealskill
 	else

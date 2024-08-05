@@ -2,12 +2,18 @@
 	name = "Scissor them"
 
 /datum/sex_action/scissoring/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.bypasssexable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
 		return
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/scissoring/can_perform(mob/living/user, mob/living/target)
@@ -30,7 +36,9 @@
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/scissoring/on_start(mob/living/user, mob/living/target)

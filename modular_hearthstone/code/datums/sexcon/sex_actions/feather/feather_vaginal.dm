@@ -2,12 +2,18 @@
 	name = "Tickle their clit with feather"
 
 /datum/sex_action/feather_vaginal/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.bypasssexable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!get_feather_in_either_hand(user))
 		return FALSE
-	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/feather_vaginal/can_perform(mob/living/user, mob/living/target)
@@ -20,8 +26,10 @@
 			if(pantsies.flags_inv == HIDECROTCH) 
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
-	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	if(!get_feather_in_either_hand(user))
 		return FALSE
 	return TRUE

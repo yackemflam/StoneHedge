@@ -4,10 +4,16 @@
 	aggro_grab_instead_same_tile = FALSE
 
 /datum/sex_action/anal_ride_sex/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.bypasssexable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
-		return FALSE
+		if(issimple(target) && target.gender == MALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/anal_ride_sex/can_perform(mob/living/user, mob/living/target)
@@ -28,7 +34,9 @@
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
-		return FALSE
+		if(issimple(target) && target.gender == MALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/anal_ride_sex/on_start(mob/living/user, mob/living/target)

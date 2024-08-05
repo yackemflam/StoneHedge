@@ -1285,3 +1285,39 @@
 			return FALSE
 	if(istype(loc, /turf/open/water) && !(mobility_flags & MOBILITY_STAND))
 		return FALSE
+
+//maybe if we make some monsters that would be similiar to werewolves as is, unlike goblins these will take existing gender than assign one.
+//internal organs so sixtuplet or whatever the fuck breasts etc shouldnt matter probably, no graphic. Maybe can use for monstergirls or something too.
+//Call this proc to give genitals automatically where needed.
+/mob/living/proc/givegenitals()
+	defiant = 0
+	bypasssexable = TRUE
+	if(!sexcon)
+		sexcon = new /datum/sex_controller(src)
+	if(!issimple(src))
+		if(gender == MALE)
+			var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
+			testicles = new /obj/item/organ/testicles/internal
+			testicles.ball_size = rand(3)
+			testicles.Insert(src)
+			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
+			penis = new /obj/item/organ/penis/internal
+			penis.penis_size = rand(3)
+			penis.Insert(src)
+		if(gender == FEMALE)
+			var/obj/item/organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
+			breasts = new /obj/item/organ/breasts/internal
+			breasts.breast_size = rand(10)
+			breasts.Insert(src)
+			var/obj/item/organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
+			vagina = new /obj/item/organ/vagina/internal
+			vagina.Insert(src)
+			if(prob(3)) //3 chance to be dickgirl.
+				var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
+				testicles = new /obj/item/organ/testicles/internal
+				testicles.ball_size = rand(3)
+				testicles.Insert(src)
+				var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
+				penis = new /obj/item/organ/penis/internal
+				penis.penis_size = rand(3)
+				penis.Insert(src)

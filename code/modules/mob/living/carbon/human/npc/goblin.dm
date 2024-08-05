@@ -11,6 +11,7 @@
 	ambushable = FALSE
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
 	possible_rmb_intents = list()
+	bypasssexable = FALSE //incase since they get their own setup.
 
 /mob/living/carbon/human/species/goblin/npc
 	aggressive=1

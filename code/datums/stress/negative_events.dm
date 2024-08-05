@@ -149,7 +149,7 @@
 /datum/stressevent/blueb
 	timer = 1 MINUTES
 	stressadd = 2
-	desc = span_red("My loins ache!")
+	desc = list(span_green("My loins took a bad beating!"),span_green("My loins got slammed badly!"),span_green("My loins got beaten badly!"))
 
 /datum/stressevent/shunned_race
 	timer = 1 MINUTES

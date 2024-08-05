@@ -101,6 +101,8 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 #define isgoblinp(A) (is_species(A, /datum/species/goblinp))
 
 //more carbon mobs
+#define issimple(A) (istype(A, /mob/living/simple_animal))
+
 #define ismonkey(A) (istype(A, /mob/living/carbon/monkey))
 
 #define isalien(A) (istype(A, /mob/living/carbon/alien))
