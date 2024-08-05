@@ -96,7 +96,6 @@
 
 
 //	var/alignment = ALIGNMENT_TN
-
 	var/canseebandits = FALSE
 
 	var/marriedto

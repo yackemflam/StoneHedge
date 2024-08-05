@@ -69,6 +69,7 @@
 	name = "iron chain fishnet"
 	armor = list("blunt" = 40, "slash" = 80, "stab" = 40, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	color = "#9EA48E"
+	smeltreult = /obj/item/ingot/iron
 
 /obj/item/clothing/under/roguetown/tights/stockings/fishnet/chain
 	name = "steel chain fishnet"
@@ -85,6 +86,7 @@
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
 	color = "#9BADB7"
+	smeltreult = /obj/item/ingot/steel
 
 /obj/item/clothing/under/roguetown/tights/stockings/fishnet/white
 	color = "#e6e5e5"

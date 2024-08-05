@@ -1,11 +1,19 @@
 /datum/stressevent/vice
 	timer = 5 MINUTES
-	stressadd = 5
-	desc = list(span_boldred("I don't indulge my vice."),span_boldred("I need to sate my vice."))
+	stressadd = 3
+	desc = list(span_red("I don't indulge my vice."),span_red("I need to sate my vice."))
+
+/*
+/datum/stressevent/failcraft
+	timer = 15 SECONDS
+	stressadd = 1
+	max_stacks = 10
+	desc = span_red("I've failed to craft something.")
+*/
 
 /datum/stressevent/miasmagas
 	timer = 10 SECONDS
-	stressadd = 2
+	stressadd = 1
 	desc = span_red("Smells like death here.")
 
 /datum/stressevent/peckish
@@ -15,13 +23,13 @@
 
 /datum/stressevent/hungry
 	timer = 10 MINUTES
-	stressadd = 3
+	stressadd = 2
 	desc = span_red("I'm hungry.")
 
 /datum/stressevent/starving
 	timer = 10 MINUTES
-	stressadd = 5
-	desc = span_boldred("I'm starving.")
+	stressadd = 3
+	desc = span_red("I'm starving.")
 
 /datum/stressevent/drym
 	timer = 10 MINUTES
@@ -30,13 +38,13 @@
 
 /datum/stressevent/thirst
 	timer = 10 MINUTES
-	stressadd = 3
+	stressadd = 2
 	desc = span_red("I'm thirsty.")
 
 /datum/stressevent/parched
 	timer = 10 MINUTES
-	stressadd = 5
-	desc = span_boldred("I'm going to die of thirst.")
+	stressadd = 3
+	desc = span_red("I'm going to die of thirst.")
 
 /datum/stressevent/dismembered
 	timer = 40 MINUTES
@@ -46,7 +54,19 @@
 /datum/stressevent/dwarfshaved
 	timer = 40 MINUTES
 	stressadd = 6
-	desc = span_boldred("I'd rather cut my own throat than my beard.")
+	desc = span_red("I'd rather cut my own throat than my beard.")
+
+/datum/stressevent/viewdeath
+	timer = 1 MINUTES
+	stressadd = 1
+//	desc = span_red("Death...")
+
+/datum/stressevent/viewdeath/get_desc(mob/living/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna?.species)
+			return span_red("Another [H.dna.species.id] perished.")
+	return desc
 
 /datum/stressevent/viewdismember
 	timer = 15 MINUTES
@@ -69,7 +89,7 @@
 
 /datum/stressevent/bleeding
 	timer = 2 MINUTES
-	stressadd = 2
+	stressadd = 1
 	desc = list(span_red("I think I'm bleeding."),span_red("I'm bleeding."))
 
 /datum/stressevent/bleeding/can_apply(mob/living/user)
@@ -139,22 +159,17 @@
 /datum/stressevent/cumbad
 	timer = 5 MINUTES
 	stressadd = 5
-	desc = span_boldred("I was violated.")
+	desc = span_red("I was violated.")
 
 /datum/stressevent/cumcorpse
 	timer = 1 MINUTES
 	stressadd = 10
 	desc = span_boldred("What have I done?")
 
-/datum/stressevent/blueb
+/datum/stressevent/loinache
 	timer = 1 MINUTES
 	stressadd = 2
-	desc = list(span_green("My loins took a bad beating!"),span_green("My loins got slammed badly!"),span_green("My loins got beaten badly!"))
-
-/datum/stressevent/shunned_race
-	timer = 1 MINUTES
-	stressadd = 1
-	desc = span_red("Better stay away.")
+	desc = list(span_red("My loins took a bad beating!"),span_red("My loins got slammed badly!"),span_red("My loins got beaten badly!"))
 
 /datum/stressevent/paracrowd
 	timer = 15 SECONDS
@@ -189,12 +204,17 @@
 /datum/stressevent/coldhead
 	timer = 60 SECONDS
 	stressadd = 1
-	desc = span_red("My head is soaked and cold.")
+//	desc = span_red("My head is cold and ugly.")
 
-/datum/stressevent/sleepytime
-	timer = 40 MINUTES
-	stressadd = 2
+/datum/stressevent/sleeptime
+	timer = 0
+	stressadd = 1
 	desc = span_red("I'm tired.")
+
+/datum/stressevent/trainsleep
+	timer = 0
+	stressadd = 1
+	desc = span_red("My muscles ache.")
 
 /datum/stressevent/tortured
 	stressadd = 3
@@ -215,13 +235,12 @@
 
 /datum/stressevent/saw_wonder
 	stressadd = 4
-	desc = span_boldred("<B>I have seen something nightmarish, and I fear for my life!</B>")
-	timer = 999 MINUTES
+	desc = span_dead("<B>I have seen something nightmarish, and I fear for my life!</B>")
+	timer = null
 
 /datum/stressevent/maniac_woke_up
 	stressadd = 10
-	desc = span_boldred("No... I want to go back...")
-	timer = 999 MINUTES
+	desc = span_danger("No... I want to go back...")
 
 /datum/stressevent/drankrat
 	stressadd = 1
@@ -233,7 +252,7 @@
 	desc = span_red("I'm dead... what comes next?")
 
 /datum/stressevent/oziumoff
-	stressadd = 10
+	stressadd = 20
 	desc = span_blue("I need another hit.")
 	timer = 1 MINUTES
 

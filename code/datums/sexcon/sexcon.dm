@@ -239,7 +239,6 @@
 		last_arousal_increase_time = world.time
 	arousal = clamp(amount, 0, MAX_AROUSAL)
 	update_pink_screen()
-	update_blueballs()
 	update_erect_state()
 
 /datum/sex_controller/proc/update_erect_state()
@@ -337,6 +336,7 @@
 	if(!part)
 		return
 	user.apply_damage(damage, BRUTE, part)
+	update_aching(pain_amt)
 
 /datum/sex_controller/proc/try_do_moan(arousal_amt, pain_amt, applied_force, giving)
 	if(arousal_amt < 1.5)
@@ -417,18 +417,18 @@
 			var/pain_msg = pick(list("It hurts a little...", "It stings...", "I'm aching..."))
 			to_chat(user, span_boldgreen(pain_msg))
 
-/datum/sex_controller/proc/update_blueballs()
-	if(arousal >= BLUEBALLS_GAIN_THRESHOLD)
+/datum/sex_controller/proc/update_aching(pain_amt)
+	if(pain_amt >= LOINHURT_GAIN_THRESHOLD)
 		if(user.has_flaw(/datum/charflaw/addiction/masochist))
 			user.sate_addiction()
-			user.add_stress(/datum/stressevent/bluebgood)
+			user.add_stress(/datum/stressevent/loinachegood)
 			return
 		if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
-			user.add_stress(/datum/stressevent/bluebgood)
+			user.add_stress(/datum/stressevent/loinachegood)
 			return
-		user.add_stress(/datum/stressevent/blueb)
-	else if (arousal <= BLUEBALLS_LOOSE_THRESHOLD)
-		user.remove_stress(/datum/stressevent/blueb)
+		user.add_stress(/datum/stressevent/loinache)
+	else if (pain_amt <= LOINHURT_LOSE_THRESHOLD)
+		user.remove_stress(/datum/stressevent/loinache)
 
 /datum/sex_controller/proc/check_active_ejaculation()
 	if(arousal < ACTIVE_EJAC_THRESHOLD)
