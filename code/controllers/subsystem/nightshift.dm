@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(nightshift)
 /datum/controller/subsystem/nightshift/Initialize()
 	if(!CONFIG_GET(flag/enable_night_shifts))
 		can_fire = FALSE
-	current_tod = "night"
+	current_tod = settod()
 	return ..()
 
 /datum/controller/subsystem/nightshift/fire(resumed = FALSE)
