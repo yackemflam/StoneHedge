@@ -220,7 +220,7 @@
 	created_item = /obj/item/clothing/under/roguetown/chainlegs/skirt
 	i_type = "Armor"
 
-/datum/anvil_recipe/armor/chainskirt
+/datum/anvil_recipe/armor/chainfishnet
 	name = "Chain Fishnet"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/under/roguetown/tights/stockings/fishnet/chain
