@@ -124,7 +124,7 @@
 		/datum/reagent/water = 10,
 		/obj/item/reagent_containers/powder/flour= 2,
 		/datum/reagent/consumable/mothersmilk = 15,
-		/obj/item/reagent_containers/powder/flour/salt = 1,
+		/obj/item/reagent_containers/powder/salt = 1,
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/rogue/piedough/mothersmilk
