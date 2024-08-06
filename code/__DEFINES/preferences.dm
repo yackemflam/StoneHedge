@@ -111,4 +111,3 @@
 #define AGE_OLD				"Old"
 
 #define ALL_AGES_LIST list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-

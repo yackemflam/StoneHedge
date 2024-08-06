@@ -581,7 +581,7 @@ SUBSYSTEM_DEF(ticker)
 	for(var/mob/character as anything in valid_characters)
 		var/mob/new_player = valid_characters[character]
 		SSjob.EquipRank(new_player, character.mind.assigned_role, joined_late = FALSE)
-		if(CONFIG_GET(flag/roundstart_traits) && ishuman(character))
+		if(ishuman(character))
 			SSquirks.AssignQuirks(character, new_player.client, TRUE)
 		CHECK_TICK
 //	if(captainless)

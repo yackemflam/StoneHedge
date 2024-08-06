@@ -10,6 +10,7 @@
 	lose_text = span_danger("I don't feel as resistant to alcohol anymore. Somehow.")
 	medical_record_text = "Patient demonstrates a high tolerance for alcohol."
 
+/*
 /datum/quirk/apathetic
 	name = "Apathetic"
 	desc = ""
@@ -27,6 +28,7 @@
 		var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
 		if(mood)
 			mood.mood_modifier += 0.2
+*/
 
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"
@@ -59,6 +61,7 @@
 	lose_text = span_danger("I feel isolated from others.")
 	medical_record_text = "Patient is highly perceptive of and sensitive to social cues, or may possibly have ESP. Further testing needed."
 
+/* no clowns but jesters here
 datum/quirk/fan_clown
 	name = "Clown Fan"
 	desc = ""
@@ -94,6 +97,7 @@ datum/quirk/fan_mime
 		"hands" = SLOT_HANDS,
 	)
 	H.equip_in_one_of_slots(B, slots , qdel_on_fail = TRUE)
+*/
 
 /datum/quirk/freerunning
 	name = "Freerunning"
@@ -104,6 +108,7 @@ datum/quirk/fan_mime
 	lose_text = span_danger("I feel clumsy again.")
 	medical_record_text = "Patient scored highly on cardio tests."
 
+/*
 /datum/quirk/friendly
 	name = "Friendly"
 	desc = ""
@@ -124,7 +129,8 @@ datum/quirk/fan_mime
 
 /datum/quirk/jolly/on_process()
 	if(prob(0.05))
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "jolly", /datum/mood_event/jolly)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_STRESSEVENT, "jolly", /datum/stressevent/jolly)
+*/
 
 /datum/quirk/light_step
 	name = "Light Step"
@@ -169,6 +175,7 @@ datum/quirk/fan_mime
 		return
 	eyes.Insert(H) //refresh their eyesight and vision
 
+/*
 /datum/quirk/photographer
 	name = "Photographer"
 	desc = ""
@@ -199,6 +206,7 @@ datum/quirk/fan_mime
 	)
 	H.equip_in_one_of_slots(camera, camera_slots , qdel_on_fail = TRUE)
 	H.regenerate_icons()
+*/
 
 /datum/quirk/selfaware
 	name = "Self-Aware"
@@ -228,6 +236,7 @@ datum/quirk/fan_mime
 	H.equip_to_slot_or_del(new /obj/item/storage/fancy/candle_box(H), SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/matches(H), SLOT_IN_BACKPACK)
 
+/*
 /datum/quirk/tagger
 	name = "Tagger"
 	desc = ""
@@ -243,6 +252,7 @@ datum/quirk/fan_mime
 	H.put_in_hands(spraycan)
 	H.equip_to_slot(spraycan, SLOT_IN_BACKPACK)
 	H.regenerate_icons()
+*/
 
 /datum/quirk/voracious
 	name = "Voracious"
