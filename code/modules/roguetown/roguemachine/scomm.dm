@@ -58,7 +58,7 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/contents
-	if(SSticker.rulertype == "King")
+	if(SSticker.rulertype == "Monarch")
 		contents += "<center>KING'S DECREES<BR>"
 	else
 		contents += "<center>QUEEN'S DECREES<BR>"

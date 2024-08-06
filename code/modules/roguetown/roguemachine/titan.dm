@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(!istype(H.head, /obj/item/clothing/head/roguetown/crown/serpcrown))
 		nocrown = TRUE
 	var/notlord
-	if(SSticker.rulermob != H)
+	if(SSticker.rulermob != H || SSticker.rulermob2 != H)
 		notlord = TRUE
 	var/message2recognize = sanitize_hear_message(original_message)
 

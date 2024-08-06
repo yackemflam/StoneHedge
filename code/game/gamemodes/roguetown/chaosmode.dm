@@ -104,7 +104,7 @@
 	var/lord_dead = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		if(H.mind)
-			if((H.job == "King" || H.job == "Queen") && (SSticker.rulermob == H))
+			if((H.job == "Monarch" || H.job == "Queen") && (SSticker.rulermob == H))
 				lord_found = TRUE
 				if(H.stat == DEAD)
 					lord_dead = TRUE
@@ -165,7 +165,7 @@
 /datum/game_mode/chaosmode/proc/pick_bandits()
 	//BANDITS
 	banditgoal = rand(200,400)
-	restricted_jobs = list("King",
+	restricted_jobs = list("Monarch",
 	"Queen",
 	"Merchant",
 	"Prophet")
@@ -234,7 +234,7 @@
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_maniac()
-	restricted_jobs = list("King",
+	restricted_jobs = list("Monarch",
 	"Queen",
 	"Prisoner",
 	"Beastmaster",

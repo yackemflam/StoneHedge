@@ -1,5 +1,5 @@
 /datum/job/roguetown/lady
-	title = "Queen Consort"
+	title = "Consort"
 	flag = LADY
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -51,7 +51,7 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/armordress
 	head = /obj/item/clothing/head/roguetown/hennin
 	pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random	//Added Silk Stockings for the female nobles
-//		SSticker.rulermob = H
+	SSticker.rulermob2 = H
 
 	id = /obj/item/clothing/ring/silver
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots

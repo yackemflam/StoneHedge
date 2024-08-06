@@ -61,7 +61,7 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 
 GLOBAL_LIST_INIT(noble_positions, list(
 	"Monarch",
-	"Queen Consort",
+	"Consort",
 	"Royal Heir",
 	"Watchmen Captain",
 	"Bailiff",

@@ -67,8 +67,9 @@ SUBSYSTEM_DEF(ticker)
 	var/end_state = "undefined"
 	var/job_change_locked = FALSE
 	var/list/royals_readied = list()
-	var/rulertype = "King" // reports whether king or queen rules
+	var/rulertype = "Monarch" // reports whether king or queen rules
 	var/rulermob = null // reports what the ruling mob is.
+	var/rulermob2 = null // for queen
 	var/failedstarts = 0
 	var/list/manualmodes = list()
 
@@ -260,7 +261,7 @@ SUBSYSTEM_DEF(ticker)
 	var/list/readied_jobs = list()
 	var/list/required_jobs = list()
 
-	//var/list/required_jobs = list("Queen","King","Merchant") //JTGSZ - 4/11/2024 - This was the prev set of required jobs to go with the hardcoded checks commented out below
+	//var/list/required_jobs = list("Queen","Monarch","Merchant") //JTGSZ - 4/11/2024 - This was the prev set of required jobs to go with the hardcoded checks commented out below
 
 	for(var/V in required_jobs)
 		for(var/mob/dead/new_player/player in GLOB.player_list)
@@ -555,7 +556,7 @@ SUBSYSTEM_DEF(ticker)
 	for(var/mob/living/carbon/human/K in world)
 		if(istype(K, /mob/living/carbon/human/dummy))
 			continue
-		if(K.job == "King")
+		if(K.job == "Monarch")
 			rulermob = K
 			return
 
