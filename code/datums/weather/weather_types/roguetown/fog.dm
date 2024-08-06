@@ -1,4 +1,4 @@
- /datum/weather/fog
+/datum/weather/fog
 	name = "fog"
 	desc = ""
 
@@ -21,7 +21,6 @@
 	area_type = /area/rogue/outdoors
 	protected_areas = list(/area/rogue/indoors,/area/rogue/under)
 	impacted_z_levels = list()
-	var/lastlightning = 0
 
 	particles = list(/atom/movable/screen/weather/fog)
 
