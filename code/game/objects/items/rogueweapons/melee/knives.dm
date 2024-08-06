@@ -175,9 +175,11 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
 	name = "steel parrying dagger"
-	desc = "This is a parrying dagger made of solid steel, used to catch opponent's weapons in the handguard."
+	desc = "This is a parrying dagger made of solid steel, used to catch opponent's weapons in the handguard, even more durable."
 	icon_state = "spdagger"
-	wdefense = 6
+	max_integrity = 200
+	smeltresult = /obj/item/ingot/steel
+	wdefense = 6.5
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	icon_state = "sdaggeralt"
@@ -306,7 +308,6 @@
 	wdefense = 1
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
-	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
 	name = "elvish dagger"
 	desc = "This beautiful dagger is of intricate, elvish design. Sharper, too."
 	force = 19

@@ -11,6 +11,10 @@
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
+	if(!target.getorganslot(ORGAN_SLOT_ANUS))
+		if(issimple(target) && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/anal_sex/can_perform(mob/living/user, mob/living/target)
@@ -32,6 +36,10 @@
 					return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
+	if(!target.getorganslot(ORGAN_SLOT_ANUS))
+		if(issimple(target) && target.sexcon)
+		else
+			return FALSE
 	if(!user.sexcon.can_use_penis())
 		return
 	return TRUE
