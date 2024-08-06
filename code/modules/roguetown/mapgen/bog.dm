@@ -1,5 +1,5 @@
 //genstuff
-/obj/effect/landmark/mapGenerator/rogue/bog
+/obj/effect/landmark/mapGenerator/rogue/boga
 	mapGeneratorType = /datum/mapGenerator/bog
 	endTurfX = 255
 	endTurfY = 400
@@ -13,7 +13,7 @@
 
 /datum/mapGeneratorModule/bog
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
-	allowed_turfs = list(/turf/open/floor/rogue/dirt)
+	allowed_turfs = list(/turf/open/floor/rogue/dirt,/turf/open/floor/rogue/grass)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	spawnableAtoms = list(/obj/structure/flora/newtree = 30,
 							/obj/structure/flora/roguegrass/bush = 25,
