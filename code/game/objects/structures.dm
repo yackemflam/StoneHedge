@@ -157,9 +157,11 @@
 	if(max_integrity)
 		var/healthpercent = (obj_integrity/max_integrity) * 100
 		switch(healthpercent)
-			if(50 to 99)
-				return  "It looks slightly damaged."
+			if(75 to 99)
+				return span_info("It looks slightly damaged.")
+			if(50 to 75)
+				return span_info("It looks damaged.")
 			if(25 to 50)
-				return  "It appears heavily damaged."
+				return  span_warning("It appears heavily damaged.")
 			if(1 to 25)
 				return  span_warning("It's falling apart!")
