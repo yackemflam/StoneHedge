@@ -1,4 +1,4 @@
-/* /datum/weather/fog
+ /datum/weather/fog
 	name = "fog"
 	desc = ""
 

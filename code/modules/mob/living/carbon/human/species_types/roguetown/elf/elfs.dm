@@ -5,17 +5,17 @@
 	name = "Elf"
 	id = "elfw"
 	desc = "<b>Elf</b><br>\
-	Elves, or Wood-Elf by the Elder races, are a generic term for tall, pointy-eared \
-	humanoids that trace their original heritage to the ancient mysterious Snow Elves. \
+	Wood Elves are a nature-enhanced variant of the Elven Species. \
+	Humanoids that trace their original heritage to another dimension known as the faewild. \
 	Considering their diverse history, it is extremely difficult for other mortals \
-	to even concept the various intricacies found in elven society, and the hundreds \
-	if not thousands of tribes that exist within their culture! \
+	to even concept the various intricacies found in elven society which often reflects the seasons and emotions.\
+	Within the wood elves alone;thousands of tribes that exist within their various groves and foresst nations! \
 	Elves tend to be looked poorly upon by humans, as historically the two races have \
-	been rivals in various conflicts and territorial disputes. This however does not stop \
-	many humans and elves from forming relationships, which are capable of producing child.\
+	been rivals in various conflicts and territorial disputes since the dawn of time, given humanities learning pains.. This however does not stop \
+	many mortals and elves from forming relationships, which are capable of producing child.\
 	Elves are known for their intelligence and sharp eyes, but their graceful nature does \
 	not lend itself to the concepts of strength or durability... \
-	There are elves from a small smattering of tribes in these parts."
+	The monarchy here is elven, and various wild tribes can be found in the forest.."
 
 	skin_tone_wording = "Tribal Identity"
 

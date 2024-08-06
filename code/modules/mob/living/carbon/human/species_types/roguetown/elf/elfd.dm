@@ -6,10 +6,10 @@
 	id = "elfd"
 	desc = "<b>Dark Elf</b><br>\
 	Elves, are a generic term for tall, pointy-eared humanoids\
-    Of whom trace their original heritage to the ancient mysterious Snow Elves. \
-	These ones are of a dark complexion and originate mostly from the underdark. \
-    Their culture and entire lives normally involve serving the evil gods of the inhumen pantheon. \
-    Previously rare but in recent times, more and more dark elfs can be seen on the surface. \
+    Of whom trace their original heritage to the ancient mysterious Underdark. \
+	These ones are of a dark complexion and originate mostly from the great caverns and seas beneath. \
+    Their culture and entire lives are highly social and matriarchal. \
+    Of recent times their kin have come to the surface, though mainly nocturnal. \
     The ones who aren't overtly cruel and bloodthirsty, tend to flee to the surface lest they get culled by their own society, \
     while some more sinister ones abandon their cities in search of new and greater power."
 

@@ -1,13 +1,13 @@
 /datum/patron/godless
-	name = "Science"
-	domain = "Ontological Reality"
-	desc = "No gods or kings, only man! Gods exist but you give them the finger."
-	worshippers = "Madmen, beasts and some dwarves"
+	name = "Godwoken"
+	domain = "Self-Manifestation"
+	desc = "You have what it takes to be a god, someday. You might work with them or against them, following your own jurisdiction. But what might your domain be..?  "
+	worshippers = "???"
 	associated_faith = /datum/faith/godless
 	preference_accessible = FALSE
 	undead_hater = FALSE
 	confess_lines = list(
-		"Gods are WORTHLESS!",
+		"We are all gods of our own destiny!",
 		"I DON'T NEED GODS!",
 		"I AM MY OWN GOD!",
 		"NO GODS, NO MASTERS!",
