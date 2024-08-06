@@ -36,7 +36,7 @@ SUBSYSTEM_DEF(traumas)
 						"anime" = strings(PHOBIA_FILE, "anime")
 					   )
 
-	phobia_mobs = list("spiders"  = typecacheof(list(/mob/living/simple_animal/hostile/poison/giant_spider)),
+	phobia_mobs = list("spiders"  = typecacheof(list(/mob/living/simple_animal/hostile/retaliate/rogue/poison/giant_spider)),
 					   "security" = typecacheof(list(/mob/living/simple_animal/bot/secbot)),
 					   "lizards"  = typecacheof(list(/mob/living/simple_animal/hostile/lizard)),
 					   "skeletons" = typecacheof(list(/mob/living/simple_animal/hostile/skeleton)),
