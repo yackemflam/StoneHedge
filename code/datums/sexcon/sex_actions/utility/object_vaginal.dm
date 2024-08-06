@@ -132,7 +132,7 @@
 	//om nom nom
 	if(istype(user.get_active_held_item(), /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/fooddildo = dildo
-		var/stuffchance = 10*sc.force //multiplies with force
+		var/stuffchance = 15*sc.force //multiplies with force
 		pain_amt *= 0.25 //since it is based on force
 		if(user.lying) //nom nom easier while laying
 			stuffchance *= 2
