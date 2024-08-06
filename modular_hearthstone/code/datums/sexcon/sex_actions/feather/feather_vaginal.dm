@@ -11,9 +11,7 @@
 	if(!get_feather_in_either_hand(user))
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
-		if(issimple(target) && target.gender == FEMALE && target.sexcon)
-		else
-			return FALSE
+		return FALSE
 	return TRUE
 
 /datum/sex_action/feather_vaginal/can_perform(mob/living/user, mob/living/target)
@@ -27,9 +25,7 @@
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
-		if(issimple(target) && target.gender == FEMALE && target.sexcon)
-		else
-			return FALSE
+		return FALSE
 	if(!get_feather_in_either_hand(user))
 		return FALSE
 	return TRUE

@@ -12,6 +12,9 @@
 	if(!target.getorganslot(ORGAN_SLOT_EARS))
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
+		if(issimple(target) && target.sexcon)
+		else
+			return FALSE
 		return FALSE
 	return TRUE
 
@@ -26,6 +29,9 @@
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_PRECISE_EARS))
+		if(issimple(target) && target.sexcon)
+		else
+			return FALSE
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE

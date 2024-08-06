@@ -1,8 +1,8 @@
-/datum/sex_action/ear_sex
+/datum/sex_action/nipple_sex
 	name = "Fuck their Nipple"
 	stamina_cost = 1.0
 
-/datum/sex_action/ear_sex/shows_on_menu(mob/living/user, mob/living/target)
+/datum/sex_action/nipple_sex/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.bypasssexable && issimple(target))
 		return FALSE
 	if(user.client.prefs.defiant && issimple(target))
@@ -17,7 +17,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/ear_sex/can_perform(mob/living/user, mob/living/target)
+/datum/sex_action/nipple_sex/can_perform(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
 	if(ishuman(user))
@@ -40,11 +40,11 @@
 		return
 	return TRUE
 
-/datum/sex_action/ear_sex/on_start(mob/living/user, mob/living/target)
+/datum/sex_action/nipple_sex/on_start(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] slides their cock into [target]'s nipple!"))
 	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
-/datum/sex_action/ear_sex/on_perform(mob/living/user, mob/living/target)
+/datum/sex_action/nipple_sex/on_perform(mob/living/user, mob/living/target)
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s nipple."))
 	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 
@@ -60,10 +60,10 @@
 		user.sexcon.perform_sex_action(target, 2.4, 7, FALSE)
 	target.sexcon.handle_passive_ejaculation()
 
-/datum/sex_action/ear_sex/on_finish(mob/living/user, mob/living/target)
+/datum/sex_action/nipple_sex/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] pulls their cock out of [target]'s nipple."))
 
-/datum/sex_action/ear_sex/is_finished(mob/living/user, mob/living/target)
+/datum/sex_action/nipple_sex/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())
 		return TRUE
 	return FALSE

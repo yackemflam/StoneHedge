@@ -11,9 +11,7 @@
 	if(user == target)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
-		if(issimple(target) && target.gender == FEMALE && target.sexcon)
-		else
-			return FALSE
+		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
 		if(issimple(target) && target.gender == MALE && target.sexcon)
 		else
