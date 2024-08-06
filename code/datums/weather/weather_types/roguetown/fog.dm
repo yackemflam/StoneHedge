@@ -30,4 +30,4 @@
 	if(GLOB.forecast != "fog")
 		wind_down()
 		return
-#endif */
+#endif
