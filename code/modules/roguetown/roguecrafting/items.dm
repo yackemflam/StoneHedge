@@ -582,23 +582,11 @@
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/leather/studded/bikini = 1)
 	sellprice = 25
 
-/datum/crafting_recipe/roguetown/studdedconvone
-	name = "chainmail bikini to bra"
-	result = list(/obj/item/clothing/suit/roguetown/armor/chainmail/bikini/bra)
-	reqs = list(/obj/item/clothing/suit/roguetown/armor/chainmail/bikini = 1)
-	sellprice = 25
-
 /datum/crafting_recipe/roguetown/chainkiniconv
 	name = "chainmail bikini to bra"
 	result = list(/obj/item/clothing/suit/roguetown/armor/chainmail/bikini/bra)
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/chainmail/bikini = 1)
 	sellprice = 25
-
-
-/datum/crafting_recipe/roguetown/chainkiniconv
-	name = "chainmail bikini to bra"
-	result = list(/obj/item/clothing/suit/roguetown/armor/chainmail/bikini/bra)
-	reqs = list(/obj/item/clothing/suit/roguetown/armor/chainmail/bikini = 1)
 
 /datum/crafting_recipe/roguetown/halfplateconvone
 	name = "halfplate armor to bikini"
@@ -614,7 +602,6 @@
 	name = "fullplate armor to bikini"
 	result = list(/obj/item/clothing/suit/roguetown/armor/plate/full/bikini)
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/full = 1)
-
 
 /datum/crafting_recipe/roguetown/halfplateconvtwo
 	name = "fullplate bikini to bra"

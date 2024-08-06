@@ -10,6 +10,8 @@
 		return FALSE
 	if(user == target)
 		return FALSE
+	if(!user.getorganslot(ORGAN_SLOT_ANUS))
+		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
 		if(issimple(target) && target.gender == MALE && target.sexcon)
 		else
@@ -37,6 +39,8 @@
 		if(issimple(target) && target.gender == MALE && target.sexcon)
 		else
 			return FALSE
+	if(!user.getorganslot(ORGAN_SLOT_ANUS))
+		return FALSE
 	return TRUE
 
 /datum/sex_action/anal_ride_sex/on_start(mob/living/user, mob/living/target)

@@ -416,7 +416,7 @@
 		user.mind.teach_crafting_recipe(crafting_recipe_type)
 		to_chat(user,span_notice("I learned how to make [initial(R.name)]."))
 
-//! --BLACKSTONE SCROLLS-- !/
+//! --DREAM KEEP SCROLLS-- !/
 /obj/item/book/granter/spell/blackstone/
     desc = "A scroll of potential known only to those that can decipher its secrets."
     icon = 'icons/roguetown/items/misc.dmi'
