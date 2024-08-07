@@ -85,6 +85,7 @@
 	)
 	languages = list(
 		/datum/language/common,
+		/datum/language/beast,
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,

@@ -8,8 +8,7 @@
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/webspin.ogg'
-	associated_skill = /datum/skill/magic/holy
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
+	associated_skill = /datum/skill/magic/arcane
 	invocation = null
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	associated_skill = /datum/skill/magic/arcane

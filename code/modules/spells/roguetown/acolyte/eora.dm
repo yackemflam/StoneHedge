@@ -7,7 +7,6 @@
 	range = 7
 	overlay_state = "love"
 	sound = list('sound/magic/magnet.ogg')
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
 	releasedrain = 40
 	chargetime = 60
 	warnie = "spellwarning"
@@ -34,9 +33,8 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
 	sound = 'sound/magic/whiteflame.ogg'
-	associated_skill = /datum/skill/magic/holy
+	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = TRUE
 	charge_max = 10 SECONDS
 	miracle = FALSE
@@ -52,7 +50,7 @@
 	return FALSE
 
 /obj/effect/proc_holder/spell/invoked/enrapture
-	name = "Enrapture"
+	name = "Arouse"
 	desc = ""
 	overlay_state = "bliss"
 	releasedrain = 30
@@ -61,15 +59,14 @@
 	range = 5
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
 	sound = 'sound/magic/heal.ogg'
-	invocation = "Embrace Eora's love!"
+	invocation = "Enchanta Amoria!"
 	invocation_type = "shout"
-	associated_skill = /datum/skill/magic/holy
+	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = TRUE
 	charge_max = 10 SECONDS
-	miracle = TRUE
-	devotion_cost = 30
+	miracle = FALSE
+	devotion_cost = 0
 
 /obj/effect/proc_holder/spell/invoked/enrapture/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -105,4 +102,4 @@
 /datum/stressevent/enrapture
 	timer = 5 MINUTES
 	stressadd = -5
-	desc = "<span class='green'>I felt Eora's love.</span>"
+	desc = "<span class='green'>I feel.. h-hot..  g-getting hard to.. think..</span>"

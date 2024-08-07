@@ -13,7 +13,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	charge_max = 5 SECONDS //very stupidly simple spell
-	miracle = TRUE
+	miracle = FALSE
 	devotion_cost = 0 //come on, this is very basic
 
 /obj/effect/proc_holder/spell/invoked/diagnose/cast(list/targets, mob/living/user)
@@ -38,7 +38,6 @@
 	releasedrain = 30
 	chargedrain = 0
 	chargetime = 0
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	range = 2
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
@@ -142,7 +141,6 @@
 	no_early_release = TRUE
 	movement_interrupt = TRUE
 	chargedloop = /datum/looping_sound/invokeholy
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	sound = 'sound/magic/revive.ogg'
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE

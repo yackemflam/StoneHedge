@@ -26,7 +26,7 @@
 	hitscan = TRUE
 	movement_type = UNSTOPPABLE
 	light_color = LIGHT_COLOR_WHITE
-	damage = 15
+	damage = 25
 	damage_type = BURN
 	nodamage = FALSE
 	speed = 0.3
@@ -149,7 +149,7 @@
 					span_userdanger("My blood erupts from my body!"), \
 					span_hear("..."), COMBAT_MESSAGE_RANGE, target)
 			new /obj/effect/decal/cleanable/blood/puddle(H.loc)
-			VDrinker.handle_vitae(400)						
+			VDrinker.handle_vitae(400)
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/fireball

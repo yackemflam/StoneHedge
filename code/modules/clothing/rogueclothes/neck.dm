@@ -130,7 +130,7 @@
 	qdel(src)
 
 /obj/item/clothing/neck/roguetown/psicross
-	name = "psycross"
+	name = "Divine Symbol"
 	desc = ""
 	icon_state = "psicross"
 	//dropshrink = 0.75
@@ -141,47 +141,47 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/psicross/astrata
-	name = "amulet of Astrata"
+	name = "amulet of Sun"
 	desc = ""
 	icon_state = "astrata"
 
 /obj/item/clothing/neck/roguetown/psicross/noc
-	name = "amulet of Noc"
+	name = "amulet of Moon"
 	desc = ""
 	icon_state = "noc"
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
-	name = "amulet of Dendor"
+	name = "amulet of Nature"
 	desc = ""
 	icon_state = "dendor"
 
 /obj/item/clothing/neck/roguetown/psicross/necra
-	name = "amulet of Necra"
+	name = "amulet of Death"
 	desc = ""
 	icon_state = "necra"
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
-	name = "amulet of Ravox"
+	name = "amulet of Battle"
 	desc = ""
 	icon_state = "ravox"
 
 /obj/item/clothing/neck/roguetown/psicross/eora
-	name = "amulet of Eora"
+	name = "amulet of Love"
 	desc = ""
 	icon_state = "eora"
 
 
 /obj/item/clothing/neck/roguetown/psicross/pestra
-	name = "amulet of Pestra"
+	name = "amulet of Medicine"
 	desc = ""
 
 /obj/item/clothing/neck/roguetown/psicross/wood
-	name = "wooden psycross"
+	name = "wooden divine symbol"
 	icon_state = "psicrossw"
 	sellprice = 0
 
 /obj/item/clothing/neck/roguetown/psicross/silver
-	name = "silver psycross"
+	name = "silver divine symbol"
 	icon_state = "psicrossiron"
 	sellprice = 50
 
@@ -207,7 +207,7 @@
 		if(W && W.transformed == TRUE)
 			to_chat(H, span_userdanger("I can't equip the silver, it is my BANE!"))
 			H.Knockdown(20)
-			H.Paralyze(20)	
+			H.Paralyze(20)
 
 /obj/item/clothing/neck/roguetown/psicross/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()

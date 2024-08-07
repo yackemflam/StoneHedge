@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
-	name = "Sacred Flame"
+	name = "Ignite"
 	overlay_state = "sacredflame"
 	releasedrain = 30
 	chargedrain = 0
@@ -8,15 +8,14 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	sound = 'sound/magic/heal.ogg'
 	invocation = "Ignis!"
 	invocation_type = "shout"
-	associated_skill = /datum/skill/magic/holy
+	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = TRUE
 	charge_max = 5 SECONDS
-	miracle = TRUE
-	devotion_cost = 30
+	miracle = FALSE
+	devotion_cost = 0
 
 /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue/cast(list/targets, mob/user = usr)
 	. = ..()
@@ -42,7 +41,7 @@
 	return FALSE
 
 /obj/effect/proc_holder/spell/invoked/revive
-	name = "Anastasis"
+	name = "Ressurection"
 	overlay_state = "revive"
 	releasedrain = 90
 	chargedrain = 0
@@ -58,7 +57,7 @@
 	antimagic_allowed = TRUE
 	charge_max = 2 MINUTES
 	miracle = TRUE
-	devotion_cost = 80
+	devotion_cost = 100
 	/// Amount of PQ gained for reviving people
 	var/revive_pq = PQ_GAIN_REVIVE
 
@@ -111,6 +110,6 @@
 	for(var/obj/structure/fluff/psycross/S in oview(5, user))
 		found = S
 	if(!found)
-		to_chat(user, span_warning("I need a divine effigy."))
+		to_chat(user, span_warning("I need a divine effigy.."))
 		return FALSE
 	return TRUE

@@ -13,7 +13,7 @@
 	display_order = JDO_MAGICIAN
 	tutorial = "Your creed is one dedicated to the conquering of the arcane arts and the constant thrill of knowledge. \
 		You are one of the Arch-Magicians of Dreamkeeps Magick Academy. You help teach and manage the students of this Academy.\
-		It took you years to become sp esteemed that you could teach at Ravenloft Academy of Magickal Arts."
+		It took you years to become so esteemed that you could teach at Ravenloft Academy of Magickal Arts."
 	outfit = /datum/outfit/job/roguetown/magician
 	whitelist_req = TRUE
 	give_bank_account = 47

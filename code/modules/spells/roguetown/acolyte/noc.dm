@@ -1,4 +1,4 @@
-// Noc Spells
+// Noc/ Moon / Trickery / Illusion Spells
 /obj/effect/proc_holder/spell/invoked/blindness
     name = "Blindness"
     overlay_state = "blindness"
@@ -12,10 +12,11 @@
     sound = 'sound/magic/churn.ogg'
     invocation = ""
     invocation_type = "none" //can be none, whisper, emote and shout
-    associated_skill = /datum/skill/magic/holy
+    associated_skill = /datum/skill/magic/arcane
     antimagic_allowed = TRUE
+    miracle = FALSE
     charge_max = 15 SECONDS
-    devotion_cost = 15
+    devotion_cost = 0
 
 /obj/effect/proc_holder/spell/invoked/blindness/cast(list/targets, mob/user = usr)
 	if(isliving(targets[1]))
@@ -32,17 +33,16 @@
 	releasedrain = 30
 	chargedrain = 0
 	chargetime = 0
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	charge_max = 30 SECONDS
 	range = 3
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	invocation_type = "none"
 	sound = 'sound/misc/area.ogg' //This sound doesnt play for some reason. Fix me.
-	associated_skill = /datum/skill/magic/holy
+	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = TRUE
-	miracle = TRUE
-	devotion_cost = 25
+	miracle = FALSE
+	devotion_cost = 0
 
 /obj/effect/proc_holder/spell/invoked/invisibility/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))

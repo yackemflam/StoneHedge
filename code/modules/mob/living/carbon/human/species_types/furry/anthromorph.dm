@@ -119,6 +119,10 @@
 		/datum/descriptor_choice/prominent_three_wild,
 		/datum/descriptor_choice/prominent_four_wild,
 	)
+	languages = list(
+		/datum/language/common,
+		/datum/language/beast
+	)
 
 /datum/species/anthromorph/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()

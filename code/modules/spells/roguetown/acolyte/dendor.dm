@@ -27,7 +27,7 @@
 		if(amount_blessed >= 5)
 			break
 	if(growed)
-		visible_message(span_green("[usr] blesses the nearby crops with Dendor's Favour!"))
+		visible_message(span_green("[usr] blesses the nearby crops with swirling nature energy!"))
 	return growed
 
 //At some point, this spell should Awaken beasts, allowing a ghost to possess them. Not for this PR though.
@@ -45,11 +45,11 @@
 	invocation = "Be still and calm, brotherbeast."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = 20
+	devotion_cost = 10
 
 /obj/effect/proc_holder/spell/targeted/beasttame/cast(list/targets,mob/user = usr)
 	. = ..()
-	visible_message(span_green("[usr] soothes the beastblood with Dendor's whisper."))
+	visible_message(span_green("[usr] soothes the beastblood with nature's whispers.."))
 	var/tamed = FALSE
 	for(var/mob/living/simple_animal/hostile/retaliate/B in oview(2))
 		if(B.aggressive)
@@ -68,7 +68,7 @@
 	cast_without_targets = TRUE
 	sound = 'sound/items/dig_shovel.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "Treefather light the way."
+	invocation = "Nature spirits, come to me.."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	devotion_cost = 30
 

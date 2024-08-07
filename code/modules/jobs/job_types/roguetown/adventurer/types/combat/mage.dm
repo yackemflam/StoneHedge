@@ -41,6 +41,7 @@
 			H.change_stat("perception", 1)
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 2)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
@@ -97,7 +98,9 @@
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
-
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/invisibility)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/eoracurse)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/enrapture)
 
 		if("Spellblade")
 			H.set_blindness(0)
@@ -122,9 +125,11 @@
 			H.change_stat("speed", 2)
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 2)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
+
 
 
 	head = /obj/item/clothing/head/roguetown/roguehood/mage
