@@ -3,7 +3,7 @@
 
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"
-	desc = ""
+	desc = "Has no effect but breaks the game if we remove it."
 	value = 0
 	gain_text = span_notice("I feel an intense craving for pineapple.")
 	lose_text = span_notice("My feelings towards pineapples seem to return to a lukewarm state.")
@@ -22,7 +22,7 @@
 
 /datum/quirk/pineapple_hater
 	name = "Ananas Aversion"
-	desc = ""
+	desc = "Has no effect but breaks the game if we remove it."
 	value = 0
 	gain_text = span_notice("I find myself pondering what kind of idiot actually enjoys pineapples...")
 	lose_text = span_notice("My feelings towards pineapples seem to return to a lukewarm state.")
@@ -41,7 +41,7 @@
 
 /datum/quirk/deviant_tastes
 	name = "Deviant Tastes"
-	desc = ""
+	desc = "Stuff you like is now the stuff you hate, and other way around. (probably) Has no effect."
 	value = 0
 	gain_text = span_notice("I start craving something that tastes strange.")
 	lose_text = span_notice("I feel like eating normal food again.")
@@ -60,3 +60,10 @@
 		var/datum/species/species = H.dna.species
 		species.liked_food = initial(species.liked_food)
 		species.disliked_food = initial(species.disliked_food)
+
+/datum/quirk/monsterhunter
+	name = "Monster hunter"
+	desc = "Allows targeting by specific monsters for something else than just killing."
+	value = 0
+	gain_text = span_notice("I want to feel a monster inside.. or inside a monster.")
+	lose_text = span_notice("I no longer am a degenerate.")

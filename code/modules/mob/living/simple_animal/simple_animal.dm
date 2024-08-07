@@ -167,6 +167,13 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 	var/swinging = FALSE
 
+	//stuff related to auto sex stuff
+	var/isfucking = FALSE
+	var/fuckcd = 0
+	var/seeksfuck = FALSE
+	var/chasesfuck = FALSE
+	var/seekboredom = 0
+
 	buckle_lying = FALSE
 	cmode = 1
 
@@ -182,6 +189,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	if(!loc)
 		stack_trace("Simple animal being instantiated in nullspace")
 	update_simplemob_varspeed()
+	if(seeksfuck)
+		fuckcd = rand(0,300)
+
 //	if(dextrous)
 //		AddComponent(/datum/component/personal_crafting)
 
@@ -232,10 +242,16 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	stop_automated_movement_when_pulled = TRUE
 	return
 
-//mob/living/simple_animal/examine(mob/user)
-//	. = ..()
-//	if(stat == DEAD)
-//		. += span_deadsay("Upon closer examination, [p_they()] appear[p_s()] to be dead.")
+/mob/living/simple_animal/examine(mob/user)
+	. = ..()
+/*
+	if(stat == DEAD)
+		. += span_deadsay("[p_they()] appear[p_s()] to be dead.")
+*/
+	if(gender == MALE)
+		. += span_info("It's a Male.")
+	else
+		. += span_info("It's a Female.")
 
 /mob/living/simple_animal/updatehealth()
 	..()

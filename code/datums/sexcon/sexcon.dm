@@ -24,6 +24,7 @@
 	var/last_moan = 0
 	var/last_pain = 0
 	var/ejacmessaged = 0
+	var/beingfucked = FALSE //for npc stuff
 
 /datum/sex_controller/New(mob/living/owner)
 	user = owner
@@ -39,6 +40,8 @@
 	return FALSE
 
 /datum/sex_controller/proc/finished_check()
+	if(arousal > 100 && issimple(user))
+		return TRUE
 	if(!do_until_finished)
 		return FALSE
 	if(!just_ejaculated())
@@ -147,18 +150,35 @@
 
 /datum/sex_controller/proc/cum_onto()
 	log_combat(user, target, "Came onto the target")
+	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
+		if(!user.mob_timers["cumtri"])
+			user.mob_timers["cumtri"] = world.time
+			user.adjust_triumphs(1)
+			user.add_stress(/datum/stressevent/cummax)
+			to_chat(user, span_love("Our sex was a true TRIUMPH!"))
+	else
+		user.add_stress(/datum/stressevent/cumok)
 	playsound(target, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(target))
 	after_ejaculation()
 
 /datum/sex_controller/proc/cum_into(oral = FALSE)
 	log_combat(user, target, "Came inside [target]")
+	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
+		if(!user.mob_timers["cumtri"])
+			user.mob_timers["cumtri"] = world.time
+			user.adjust_triumphs(1)
+			user.add_stress(/datum/stressevent/cummax)
+			to_chat(user, span_love("Our sex was a true TRIUMPH!"))
+	else
+		user.add_stress(/datum/stressevent/cumok)
 	if(oral)
 		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
 		if(ejacmessaged != 1)
 			target.visible_message(span_info("With every load I swallow, with Eora's blessing I feel more satiated so I may go longer."))
 			ejacmessaged = 1
 		target.adjust_nutrition(200)
+		target.adjust_hydration(200)
 	else
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	after_ejaculation()
@@ -170,7 +190,7 @@
 	user.visible_message(span_love("[user] makes a mess!"))
 	//small heal burst, this should not happen often due the delay on how often one can cum.
 	var/sexhealrand = rand(5, 15)
-	if(HAS_TRAIT(user, TRAIT_SEXDEVO))
+	if(HAS_TRAIT(user, TRAIT_SEXDEVO) && !issimple(user))
 		var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
 		if(sexhealmult < 2) //so its never below 2 for ones with trait.
 			sexhealmult = 2
@@ -189,15 +209,8 @@
 	if(ejacmessaged != 1)
 		user.visible_message(span_info("With every ejaculation I feel Eora's blessing satiate me so I may go longer."))
 		ejacmessaged = 1
-	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
-		if(!user.mob_timers["cumtri"])
-			user.mob_timers["cumtri"] = world.time
-			user.adjust_triumphs(1)
-			user.add_stress(/datum/stressevent/cummax)
-			to_chat(user, span_love("Our sex was a true TRIUMPH!"))
-	else
-		user.add_stress(/datum/stressevent/cumok)
 	user.adjust_nutrition(100)
+	user.adjust_hydration(100)
 	set_arousal(40)
 	adjust_charge(-CHARGE_FOR_CLIMAX)
 	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
@@ -292,7 +305,7 @@
 	//go go gadget sex healing.. magic?
 	if(user.buckled?.sleepy) //gooder healing in bed
 		sexhealrand *= 4 
-	if(!issimple(target))
+	if(!issimple(user)||!issimple(target))
 		if(user.health < user.maxHealth) //so its not spammy
 			if(HAS_TRAIT(user, TRAIT_SEXDEVO))
 				var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
@@ -315,15 +328,17 @@
 
 	//grant devotion through sex because who needs praying.
 	//not sure if it works right but i dont need to test cuz its asked to be commented out anyway, ffs.
-	if(user.patron && user.mind.get_skill_level(/datum/skill/magic/holy))
-		var/mob/living/carbon/human/devouser = user
-		var/datum/devotion/C = devouser.devotion
-		if(C.devotion < C.max_devotion)
-			C.update_devotion(rand(1,2))
-			if(HAS_TRAIT(devouser, TRAIT_SEXDEVO))
-				C.update_devotion(rand(4,8))
-				if(prob(3))
-					to_chat(devouser, span_info("I feel Eora guide me."))
+	if(!issimple(user))
+		if(user.patron && user.mind.get_skill_level(/datum/skill/magic/holy))
+			var/mob/living/carbon/human/devouser = user
+			var/datum/devotion/C = devouser.devotion
+			if(C.devotion < C.max_devotion)
+				C.update_devotion(rand(1,2))
+				if(HAS_TRAIT(devouser, TRAIT_SEXDEVO))
+					C.update_devotion(rand(4,8))
+					if(prob(3))
+						to_chat(devouser, span_info("I feel Eora guide me."))
+
 	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
@@ -441,6 +456,8 @@
 	return TRUE
 
 /datum/sex_controller/proc/can_ejaculate()
+	if(issimple(user))
+		return TRUE
 	if(!user.getorganslot(ORGAN_SLOT_TESTICLES) && !user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))

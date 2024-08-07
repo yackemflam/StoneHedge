@@ -167,6 +167,7 @@
 //grass
 /obj/structure/flora/grass
 	name = "grass"
+	max_integrity = 5
 	desc = ""
 	icon = 'icons/obj/flora/snowflora.dmi'
 	gender = PLURAL	//"this is grass" not "this is a grass"

@@ -1,4 +1,5 @@
 
+/* useless
 /mob/living/simple_animal/hostile/rogue/werewolf
 	name = "WEREWOLF"
 	desc = ""
@@ -30,3 +31,4 @@
 	..()
 	regenerate_icons()
 	ADD_TRAIT(src, TRAIT_SIMPLE_WOUNDS, TRAIT_GENERIC)
+	*/
