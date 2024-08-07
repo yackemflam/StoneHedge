@@ -75,23 +75,42 @@
 		if(user.used_intent.type == /datum/intent/fill)
 			if(ishuman(M))
 				var/mob/living/carbon/human/humanized = M
-				if(get_location_accessible(humanized, BODY_ZONE_CHEST))
-					if(humanized.has_breasts() && humanized.getorganslot(ORGAN_SLOT_BREASTS).lactating)
-						if(humanized.getorganslot(ORGAN_SLOT_BREASTS).milk_stored > 0)
-							if(reagents.total_volume < volume)
-								var/milk_to_take = min(humanized.getorganslot(ORGAN_SLOT_BREASTS).milk_stored, max(humanized.getorganslot(ORGAN_SLOT_BREASTS).breast_size, 1), volume - reagents.total_volume)
-								if(do_after(user, 20, target = M))
-									reagents.add_reagent(/datum/reagent/consumable/mothersmilk, milk_to_take)
-									humanized.getorganslot(ORGAN_SLOT_BREASTS).milk_stored -= milk_to_take
-									user.visible_message(span_notice("[user] milks [M] using \the [src]."), span_notice("I milk [M] using \the [src]."))
+				var/obj/item/organ/filling_organ/breasts/tiddies = humanized.getorganslot(ORGAN_SLOT_BREASTS) // tiddy hehe
+				if(humanized.zone_selected == BODY_ZONE_CHEST)
+					if(!humanized.wear_shirt || (humanized.wear_shirt.flags_inv & HIDEBOOB || humanized.wear_shirt.genitalaccess == FALSE))
+						if(humanized.has_breasts())
+							if(tiddies.reagents.total_volume > 0)
+								if(reagents.total_volume < volume)
+									var/milk_to_take = min(tiddies.reagents.total_volume, max(tiddies.organ_size, 1), volume - reagents.total_volume)
+									if(do_after(user, 20, target = humanized))
+										tiddies.reagents.trans_to(src, milk_to_take, transfered_by = user)
+										user.visible_message(span_notice("[user] milks [humanized] into \the [src]."), span_notice("I milk [humanized] into \the [src]."))
+								else
+									to_chat(user, span_warning("[src] is full."))
 							else
-								to_chat(user, span_warning("[src] is full."))
+								to_chat(user, span_warning("[humanized] is out of milk!"))
 						else
-							to_chat(user, span_warning("[M] is out of milk!"))
+							to_chat(user, span_warning("[humanized] cannot be milked!"))
 					else
-						to_chat(user, span_warning("[M] cannot be milked!"))
-				else
-					to_chat(user, span_warning("[M]'s chest must be exposed before I can milk them!"))
+						to_chat(user, span_warning("[humanized]'s chest must be exposed before I can milk them!"))
+				if(humanized.zone_selected == BODY_ZONE_PRECISE_GROIN)
+					if(!humanized.wear_pants || (humanized.wear_pants.flags_inv & HIDECROTCH || humanized.wear_pants.genitalaccess == FALSE))
+						var/obj/item/organ/filling_organ/testicles/testes = humanized.getorganslot(ORGAN_SLOT_TESTICLES)
+						if(testes)
+							if(testes.reagents.total_volume > 0)
+								if(reagents.total_volume < volume)
+									if(do_after(user, 40, target = humanized))
+										var/cum_to_take = min(testes.reagents.total_volume, max(testes.organ_size, 1), volume - reagents.total_volume)
+										testes.reagents.trans_to(src, cum_to_take, transfered_by = user)
+										user.visible_message(span_notice("[user] milks [humanized]'s cock into \the [src]."), span_notice("I milk [humanized]'s cock into \the [src]."))
+								else
+									to_chat(user, span_warning("[src] is full."))
+							else
+								to_chat(user, span_warning("[humanized] is out of milk!"))
+						else
+							to_chat(user, span_warning("[humanized] cannot be milked!"))
+					else
+						to_chat(user, span_warning("[humanized]'s chest must be exposed before I can milk them!"))
 				return 1
 		if(!spillable)
 			return

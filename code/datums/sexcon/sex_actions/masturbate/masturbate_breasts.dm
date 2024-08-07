@@ -19,7 +19,7 @@
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_shirt)
 			var/obj/item/clothing/suit/roguetown/shirtsies = userhuman.wear_shirt
-			if(shirtsies.flags_inv == HIDEBOOB)
+			if(shirtsies.flags_inv & HIDEBOOB)
 				if(shirtsies.genitalaccess == FALSE)
 					return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_BREASTS))

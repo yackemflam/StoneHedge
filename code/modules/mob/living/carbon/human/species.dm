@@ -117,9 +117,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		//ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
+		//ORGAN_SLOT_TESTICLES = /obj/item/organ/filling_organ/testicles,
 		//ORGAN_SLOT_PENIS = /obj/item/organ/penis,
-		//ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
+		//ORGAN_SLOT_BREASTS = /obj/item/organ/filling_organ/breasts,
 		//ORGAN_SLOT_BELLY = /obj/item/organ/belly,
 		//ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
 		ORGAN_SLOT_ANUS = /obj/item/organ/anus,
@@ -946,23 +946,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate)
 
-		if(H.getorganslot(ORGAN_SLOT_BREASTS))
-			if(H.nutrition > NUTRITION_LEVEL_HUNGRY && H.getorganslot(ORGAN_SLOT_BREASTS).lactating && H.getorganslot(ORGAN_SLOT_BREASTS).milk_max > H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored) //Vrell - numbers may need to be tweaked for balance but hey this works for now.
-				var/milk_to_make = min(hunger_rate, H.getorganslot(ORGAN_SLOT_BREASTS).milk_max - H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored)
-				H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored += milk_to_make
-				H.adjust_nutrition(-milk_to_make)
-
-			else if(H.nutrition < NUTRITION_LEVEL_STARVING && H.getorganslot(ORGAN_SLOT_BREASTS).lactating) //Vrell - If starving, your milk drains automatically to slow your starvation.
-				var/milk_to_take = min(hunger_rate, H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored)
-				H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored -= milk_to_take
-				H.adjust_nutrition(milk_to_take)
-
 	if (H.hydration > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))
 		// THEY HUNGER
 		var/hunger_rate = HUNGER_FACTOR
 //		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_hydration(-hunger_rate)
-
 
 	if (H.nutrition > NUTRITION_LEVEL_FULL)
 		if(H.overeatduration < 600) //capped so people don't take forever to unfat

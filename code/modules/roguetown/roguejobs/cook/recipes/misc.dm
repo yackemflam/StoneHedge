@@ -35,7 +35,7 @@
 /datum/crafting_recipe/roguetown/cooking/cheese/mothersmilk
 	name = "fresh mothers' cheese"
 	reqs = list(
-		/datum/reagent/consumable/mothersmilk = 5,
+		/datum/reagent/consumable/breastmilk = 5,
 		/obj/item/reagent_containers/powder/salt = 1)
 	result = list(/obj/item/reagent_containers/food/snacks/rogue/mothercheese,
 				/obj/item/reagent_containers/food/snacks/rogue/mothercheese,

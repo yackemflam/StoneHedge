@@ -46,7 +46,7 @@
 				to_chat(user, span_warning("[M] doesn't seem to have a [eatloc]!"))
 				return
 
-		if(reagents)								//Handle ingestion of the reagent.
+		if(reagents)								//Send the reagents to the organ storage for slower processing
 			if(M.satiety > -200)
 				M.satiety -= junkiness
 			if(reagents.total_volume)
@@ -55,7 +55,12 @@
 				var/amt2take = reagents.total_volume / (bitesize - bitecount)
 				if((bitecount >= bitesize) || (bitesize == 1))
 					amt2take = reagents.total_volume
-				reagents.trans_to(M, amt2take, transfered_by = user, method = INJECT)
+				if(!pussy)
+					var/obj/item/organ/userass = user.getorganslot(ORGAN_SLOT_ANUS)
+					reagents.trans_to(userass, amt2take, TRUE, TRUE, FALSE, M, FALSE, INJECT)
+				else
+					var/obj/item/organ/userpussy = user.getorganslot(ORGAN_SLOT_VAGINA)
+					reagents.trans_to(userpussy, amt2take, TRUE, TRUE, FALSE, M, FALSE, INJECT)
 				bitecount++
 				On_Consumealt(M)
 				checkLiked(fraction, M)

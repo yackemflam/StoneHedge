@@ -352,6 +352,7 @@
 						if(T.landsound)
 							playsound(T, T.landsound, 100, FALSE)
 						T.Entered(src)
+					SEND_SIGNAL(src, COMSIG_MOB_JUMP) //lil bro jumped
 					if(istype(src.loc, /turf/open/transparent/glass)) //glass floors may break if you jump on them.
 						var/turf/open/transparent/glass/T = src.loc
 						if(prob(40))

@@ -65,7 +65,7 @@
 		playsound(src, pick('sound/misc/mat/guymouth (1).ogg','sound/misc/mat/guymouth (2).ogg','sound/misc/mat/guymouth (3).ogg','sound/misc/mat/guymouth (4).ogg','sound/misc/mat/guymouth (5).ogg'), 35, TRUE, ignore_walls = FALSE)
 
 /mob/living/proc/try_impregnate(mob/living/wife)
-	var/obj/item/organ/testicles/testes = getorganslot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/filling_organ/testicles/testes = getorganslot(ORGAN_SLOT_TESTICLES)
 	if(!testes)
 		return
 	var/obj/item/organ/vagina/vag = wife.getorganslot(ORGAN_SLOT_VAGINA)
