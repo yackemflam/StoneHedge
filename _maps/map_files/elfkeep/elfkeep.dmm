@@ -10051,13 +10051,6 @@
 /obj/structure/fluff/statue/gargoyle/moss,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
-"fQo" = (
-/obj/structure/fluff/traveltile/bandit{
-	aportalid = "banditexit";
-	aportalgoesto = "banditin"
-	},
-/turf/open/floor/rogue/grass,
-/area/rogue/under/cave)
 "fQv" = (
 /obj/structure/bars/grille,
 /turf/open/transparent/openspace,
@@ -18009,11 +18002,6 @@
 /obj/effect/landmark/start/scribe,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
-"kGi" = (
-/turf/closed/wall/shroud{
-	opacity = 0
-	},
-/area/rogue/under/cave)
 "kGo" = (
 /turf/open/transparent/glass,
 /area/rogue/indoors/town/garrison)
@@ -23440,10 +23428,6 @@
 /obj/item/natural/rock/gem,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/bog/dense)
-"nPV" = (
-/obj/structure/flora/newtree,
-/turf/open/floor/rogue/grass,
-/area/rogue/under/cave)
 "nQf" = (
 /obj/effect/landmark/start/villager,
 /turf/open/floor/rogue/cobble/mossy,
@@ -85640,7 +85624,7 @@ idm
 idm
 "}
 (3,1,2) = {"
-kGi
+idm
 idm
 idm
 idm
@@ -86210,7 +86194,7 @@ idm
 idm
 "}
 (5,1,2) = {"
-kGi
+idm
 idm
 idm
 rkE
@@ -86780,7 +86764,7 @@ idm
 idm
 "}
 (7,1,2) = {"
-kGi
+idm
 idm
 idm
 rkE
@@ -87350,7 +87334,7 @@ idm
 idm
 "}
 (9,1,2) = {"
-pgh
+idm
 idm
 idm
 rkE
@@ -87635,7 +87619,7 @@ idm
 idm
 "}
 (10,1,2) = {"
-mxF
+idm
 idm
 idm
 rkE
@@ -87920,7 +87904,7 @@ idm
 idm
 "}
 (11,1,2) = {"
-mxF
+idm
 idm
 idm
 rkE
@@ -88205,7 +88189,7 @@ idm
 idm
 "}
 (12,1,2) = {"
-mxF
+idm
 idm
 idm
 rkE
@@ -88490,7 +88474,7 @@ idm
 idm
 "}
 (13,1,2) = {"
-mxF
+idm
 idm
 idm
 rkE
@@ -89060,7 +89044,7 @@ idm
 idm
 "}
 (15,1,2) = {"
-nbs
+idm
 idm
 idm
 rkE
@@ -89345,7 +89329,7 @@ idm
 idm
 "}
 (16,1,2) = {"
-tsY
+idm
 idm
 idm
 rkE
@@ -89630,7 +89614,7 @@ idm
 idm
 "}
 (17,1,2) = {"
-tsY
+idm
 idm
 idm
 rkE
@@ -89915,7 +89899,7 @@ idm
 idm
 "}
 (18,1,2) = {"
-kGi
+idm
 idm
 idm
 rkE
@@ -90200,7 +90184,7 @@ idm
 idm
 "}
 (19,1,2) = {"
-kGi
+idm
 idm
 idm
 rkE
@@ -90485,7 +90469,7 @@ idm
 idm
 "}
 (20,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -90770,7 +90754,7 @@ idm
 idm
 "}
 (21,1,2) = {"
-irX
+cEo
 idm
 idm
 rkE
@@ -91055,7 +91039,7 @@ idm
 idm
 "}
 (22,1,2) = {"
-irX
+cEo
 idm
 idm
 rkE
@@ -91340,7 +91324,7 @@ idm
 idm
 "}
 (23,1,2) = {"
-irX
+cEo
 idm
 idm
 rkE
@@ -93620,7 +93604,7 @@ idm
 idm
 "}
 (31,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -93905,7 +93889,7 @@ idm
 idm
 "}
 (32,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -94190,7 +94174,7 @@ idm
 idm
 "}
 (33,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -94475,7 +94459,7 @@ idm
 idm
 "}
 (34,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -94760,7 +94744,7 @@ idm
 idm
 "}
 (35,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -95045,7 +95029,7 @@ idm
 idm
 "}
 (36,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -95330,7 +95314,7 @@ idm
 idm
 "}
 (37,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -95615,7 +95599,7 @@ idm
 idm
 "}
 (38,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -95900,7 +95884,7 @@ idm
 idm
 "}
 (39,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -96185,7 +96169,7 @@ idm
 idm
 "}
 (40,1,2) = {"
-tsY
+idm
 idm
 idm
 rkE
@@ -96470,7 +96454,7 @@ idm
 idm
 "}
 (41,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -96755,7 +96739,7 @@ idm
 idm
 "}
 (42,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -97040,7 +97024,7 @@ idm
 idm
 "}
 (43,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -97325,7 +97309,7 @@ idm
 idm
 "}
 (44,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -97610,7 +97594,7 @@ tfW
 idm
 "}
 (45,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -97895,7 +97879,7 @@ dOQ
 idm
 "}
 (46,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -98180,7 +98164,7 @@ tgs
 idm
 "}
 (47,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -98465,7 +98449,7 @@ idm
 idm
 "}
 (48,1,2) = {"
-kGi
+idm
 idm
 idm
 rkE
@@ -98750,7 +98734,7 @@ idm
 idm
 "}
 (49,1,2) = {"
-kGi
+idm
 idm
 idm
 rkE
@@ -99035,7 +99019,7 @@ idm
 idm
 "}
 (50,1,2) = {"
-tsY
+idm
 idm
 idm
 rkE
@@ -99320,7 +99304,7 @@ idm
 idm
 "}
 (51,1,2) = {"
-tsY
+idm
 idm
 idm
 rkE
@@ -99605,7 +99589,7 @@ idm
 idm
 "}
 (52,1,2) = {"
-tsY
+idm
 idm
 idm
 rkE
@@ -99890,7 +99874,7 @@ idm
 idm
 "}
 (53,1,2) = {"
-fQo
+idm
 idm
 idm
 rkE
@@ -100175,7 +100159,7 @@ idm
 idm
 "}
 (54,1,2) = {"
-fQo
+idm
 idm
 idm
 rkE
@@ -100460,7 +100444,7 @@ idm
 idm
 "}
 (55,1,2) = {"
-fQo
+idm
 idm
 idm
 rkE
@@ -100745,7 +100729,7 @@ idm
 idm
 "}
 (56,1,2) = {"
-tsY
+idm
 idm
 idm
 rkE
@@ -101030,7 +101014,7 @@ idm
 idm
 "}
 (57,1,2) = {"
-tsY
+idm
 idm
 idm
 rkE
@@ -101315,7 +101299,7 @@ idm
 idm
 "}
 (58,1,2) = {"
-tsY
+idm
 idm
 idm
 rkE
@@ -101600,7 +101584,7 @@ idm
 idm
 "}
 (59,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -101885,7 +101869,7 @@ idm
 idm
 "}
 (60,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -102170,7 +102154,7 @@ idm
 idm
 "}
 (61,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -102455,7 +102439,7 @@ idm
 idm
 "}
 (62,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -102740,7 +102724,7 @@ idm
 idm
 "}
 (63,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -103025,7 +103009,7 @@ idm
 idm
 "}
 (64,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -103310,7 +103294,7 @@ idm
 idm
 "}
 (65,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -103595,7 +103579,7 @@ idm
 idm
 "}
 (66,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -103880,7 +103864,7 @@ idm
 idm
 "}
 (67,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -104165,7 +104149,7 @@ idm
 idm
 "}
 (68,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -104450,7 +104434,7 @@ idm
 idm
 "}
 (69,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -104735,7 +104719,7 @@ idm
 idm
 "}
 (70,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -105020,7 +105004,7 @@ idm
 idm
 "}
 (71,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -105305,7 +105289,7 @@ idm
 idm
 "}
 (72,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -105590,7 +105574,7 @@ idm
 idm
 "}
 (73,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -105875,7 +105859,7 @@ idm
 idm
 "}
 (74,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -106160,7 +106144,7 @@ idm
 idm
 "}
 (75,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -106445,7 +106429,7 @@ idm
 idm
 "}
 (76,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -106730,7 +106714,7 @@ idm
 idm
 "}
 (77,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -107015,7 +106999,7 @@ idm
 idm
 "}
 (78,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -107300,7 +107284,7 @@ idm
 idm
 "}
 (79,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -107585,7 +107569,7 @@ idm
 idm
 "}
 (80,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -107870,7 +107854,7 @@ idm
 idm
 "}
 (81,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -108155,7 +108139,7 @@ uzp
 idm
 "}
 (82,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -108440,7 +108424,7 @@ uzp
 idm
 "}
 (83,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -108725,7 +108709,7 @@ uzp
 idm
 "}
 (84,1,2) = {"
-nPV
+cEo
 idm
 idm
 rkE
@@ -109010,7 +108994,7 @@ uzp
 idm
 "}
 (85,1,2) = {"
-tsY
+idm
 idm
 idm
 rkE
@@ -109295,7 +109279,7 @@ xTE
 idm
 "}
 (86,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -109580,7 +109564,7 @@ xMy
 idm
 "}
 (87,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -109865,7 +109849,7 @@ wxU
 idm
 "}
 (88,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -110150,7 +110134,7 @@ pSs
 idm
 "}
 (89,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -110435,7 +110419,7 @@ lnR
 idm
 "}
 (90,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -110720,7 +110704,7 @@ lnR
 idm
 "}
 (91,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -111005,7 +110989,7 @@ lnR
 idm
 "}
 (92,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -111290,7 +111274,7 @@ lnR
 idm
 "}
 (93,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -111575,7 +111559,7 @@ lnR
 idm
 "}
 (94,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -111860,7 +111844,7 @@ lnR
 idm
 "}
 (95,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -112145,7 +112129,7 @@ lnR
 idm
 "}
 (96,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -112430,7 +112414,7 @@ lnR
 idm
 "}
 (97,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -112715,7 +112699,7 @@ lnR
 idm
 "}
 (98,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -113000,7 +112984,7 @@ idm
 idm
 "}
 (99,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -113285,7 +113269,7 @@ idm
 idm
 "}
 (100,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -113570,7 +113554,7 @@ dzj
 idm
 "}
 (101,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -113855,7 +113839,7 @@ idm
 idm
 "}
 (102,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -114140,7 +114124,7 @@ idm
 idm
 "}
 (103,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -114425,7 +114409,7 @@ idm
 idm
 "}
 (104,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -114710,7 +114694,7 @@ dzj
 idm
 "}
 (105,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -114995,7 +114979,7 @@ dzj
 idm
 "}
 (106,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -115280,7 +115264,7 @@ dzj
 idm
 "}
 (107,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -115565,7 +115549,7 @@ idm
 idm
 "}
 (108,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -115850,7 +115834,7 @@ dzj
 idm
 "}
 (109,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -116135,7 +116119,7 @@ vbn
 idm
 "}
 (110,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -116420,7 +116404,7 @@ idm
 idm
 "}
 (111,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -116705,7 +116689,7 @@ vbn
 idm
 "}
 (112,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -116990,7 +116974,7 @@ dzj
 idm
 "}
 (113,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -117275,7 +117259,7 @@ idm
 idm
 "}
 (114,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -117560,7 +117544,7 @@ dzj
 idm
 "}
 (115,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -117845,7 +117829,7 @@ dzj
 idm
 "}
 (116,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
@@ -118130,7 +118114,7 @@ dzj
 idm
 "}
 (117,1,2) = {"
-ofZ
+idm
 idm
 idm
 rkE
