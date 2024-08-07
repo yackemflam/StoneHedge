@@ -15673,7 +15673,9 @@
 	dir = 1
 	},
 /obj/structure/table/church/m,
-/obj/item/clothing/neck/roguetown/psicross/noc,
+/obj/item/clothing/neck/roguetown/psicross/noc{
+	name = "Amulet  of Lune"
+	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church/chapel)
 "jpb" = (
@@ -19746,7 +19748,6 @@
 /area/rogue/outdoors)
 "lIR" = (
 /obj/structure/vampire/portalmaker,
-/obj/item/clothing/neck/roguetown/psicross/noc,
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/church)
@@ -27603,7 +27604,6 @@
 "qmY" = (
 /obj/item/clothing/neck/roguetown/psicross/dendor,
 /obj/item/clothing/cloak/tabard/crusader/dendor,
-/obj/item/clothing/neck/roguetown/psicross/noc,
 /obj/item/clothing/cloak/tabard/crusader/noc,
 /obj/item/clothing/neck/roguetown/psicross/astrata,
 /obj/item/clothing/cloak/tabard/crusader/astrata,
@@ -29456,7 +29456,6 @@
 "rrK" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/cloak/tabard/crusader/noc,
-/obj/item/clothing/neck/roguetown/psicross/noc,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
