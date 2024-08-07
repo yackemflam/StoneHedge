@@ -3,7 +3,7 @@
 
 /datum/quirk/alcohol_tolerance
 	name = "Alcohol Tolerance"
-	desc = ""
+	desc = "Alcohol doesn't affect me much."
 	value = 1
 	mob_trait = TRAIT_ALCOHOL_TOLERANCE
 	gain_text = span_notice("I feel like you could drink a whole keg!")
@@ -32,7 +32,7 @@
 
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"
-	desc = ""
+	desc = "Alcohol helps me fight my injuries."
 	value = 2
 	mob_trait = TRAIT_DRUNK_HEALING
 	gain_text = span_notice("I feel like a drink would do you good.")
@@ -54,7 +54,7 @@
 
 /datum/quirk/empath
 	name = "Empath"
-	desc = ""
+	desc = "I can better tell the mood of those around me."
 	value = 2
 	mob_trait = TRAIT_EMPATH
 	gain_text = span_notice("I feel in tune with those around you.")
@@ -101,7 +101,7 @@ datum/quirk/fan_mime
 
 /datum/quirk/freerunning
 	name = "Freerunning"
-	desc = ""
+	desc = "I can climb things pretty quickly."
 	value = 2
 	mob_trait = TRAIT_FREERUNNING
 	gain_text = span_notice("I feel lithe on your feet!")
@@ -134,7 +134,7 @@ datum/quirk/fan_mime
 
 /datum/quirk/light_step
 	name = "Light Step"
-	desc = ""
+	desc = "I walk with a light step, making less noise."
 	value = 1
 	mob_trait = TRAIT_LIGHT_STEP
 	gain_text = span_notice("I walk with a little more litheness.")
@@ -143,7 +143,7 @@ datum/quirk/fan_mime
 
 /datum/quirk/musician
 	name = "Musician"
-	desc = ""
+	desc = "I am good at playing music."
 	value = 1
 	mob_trait = TRAIT_MUSICIAN
 	gain_text = span_notice("I know everything about musical instruments.")
@@ -161,7 +161,7 @@ datum/quirk/fan_mime
 
 /datum/quirk/night_vision
 	name = "Night Vision"
-	desc = ""
+	desc = "I see a little better in the dark."
 	value = 1
 	mob_trait = TRAIT_NIGHT_VISION
 	gain_text = span_notice("The shadows seem a little less dark.")
@@ -210,21 +210,21 @@ datum/quirk/fan_mime
 
 /datum/quirk/selfaware
 	name = "Self-Aware"
-	desc = ""
+	desc = "I know the extent of my wounds to a terrifying scale."
 	value = 2
 	mob_trait = TRAIT_SELF_AWARE
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
 
 /datum/quirk/skittish
 	name = "Skittish"
-	desc = ""
+	desc = "I can leap into things to hide."
 	value = 2
 	mob_trait = TRAIT_SKITTISH
 	medical_record_text = "Patient demonstrates a high aversion to danger and has described hiding in containers out of fear."
 
 /datum/quirk/spiritual
 	name = "Spiritual"
-	desc = ""
+	desc = "I have extraordinary faith in the gods."
 	value = 1
 	mob_trait = TRAIT_SPIRITUAL
 	gain_text = span_notice("I have faith in a higher power.")
@@ -256,7 +256,7 @@ datum/quirk/fan_mime
 
 /datum/quirk/voracious
 	name = "Voracious"
-	desc = ""
+	desc = "I feel hungrier than most."
 	value = 1
 	mob_trait = TRAIT_VORACIOUS
 	gain_text = span_notice("I feel HONGRY.")

@@ -3,12 +3,12 @@
 
 /datum/quirk/myvice
 	name = "MY VICE (Free points)"
-	desc = ""
+	desc = "Free points for I carry my vice with me."
 	value = -2
 
 /datum/quirk/monochromatic
 	name = "Monochromacy"
-	desc = ""
+	desc = "I see things all gray."
 	value = -2
 	medical_record_text = "Patient is afflicted with almost complete color blindness."
 
@@ -26,7 +26,7 @@
 
 /datum/quirk/phobia
 	name = "Phobia"
-	desc = ""
+	desc = "I am afraid of something."
 	value = -2
 	medical_record_text = "Patient has an irrational fear of something."
 
@@ -42,7 +42,7 @@
 
 /datum/quirk/no_taste
 	name = "Ageusia"
-	desc = ""
+	desc = "I can't taste a thing."
 	value = -1
 	mob_trait = TRAIT_AGEUSIA
 	gain_text = span_notice("I can't taste anything!")
@@ -51,7 +51,7 @@
 
 /datum/quirk/vegetarian
 	name = "Vegetarian"
-	desc = ""
+	desc = "I can't eat meat."
 	value = -1
 	gain_text = span_notice("I feel repulsion at the idea of eating meat.")
 	lose_text = span_notice("I feel like eating meat isn't that bad.")
@@ -74,7 +74,7 @@
 
 /datum/quirk/snob
 	name = "Snob"
-	desc = ""
+	desc = "I like to be in decorated spaces."
 	value = -1
 	gain_text = span_notice("I feel like you understand what things should look like.")
 	lose_text = span_notice("Well who cares about deco anyways?")
@@ -83,7 +83,7 @@
 
 /datum/quirk/blooddeficiency
 	name = "Blood Deficiency"
-	desc = ""
+	desc = "My blood is not enough for me, I need to keep it in me."
 	value = -2
 	gain_text = span_danger("I feel my vigor slowly fading away.")
 	lose_text = span_notice("I feel vigorous again.")
@@ -289,7 +289,7 @@
 */
 /datum/quirk/frail
 	name = "Frail"
-	desc = ""
+	desc = "My bones are like sticks."
 	value = -2
 	mob_trait = TRAIT_EASYLIMBDISABLE
 	gain_text = span_danger("I feel frail.")
@@ -298,7 +298,7 @@
 
 /datum/quirk/heavy_sleeper
 	name = "Heavy Sleeper"
-	desc = ""
+	desc = "I sleep like a rock."
 	value = -1
 	mob_trait = TRAIT_HEAVY_SLEEPER
 	gain_text = span_danger("I feel sleepy.")

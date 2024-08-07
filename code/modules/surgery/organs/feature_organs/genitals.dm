@@ -101,6 +101,11 @@
 	var/fertility = TRUE
 	var/initialbellysize = 0
 	var/preggotimer
+	var/womb = /obj/item/reagent_containers/organ/womb
+
+/obj/item/reagent_containers/organ/womb
+	//may use this container for something someday, definitely for not it's intended purpose though.
+	name = "Womb"
 
 /obj/item/organ/vagina/proc/be_impregnated(mob/living/father)
 	if(pregnant)
