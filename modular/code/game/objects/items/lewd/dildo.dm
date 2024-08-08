@@ -185,6 +185,7 @@
 	alpha = 123
 	desc = "Don't break. Don't break. Don't break. Don't break."
 
+//plug
 /obj/item/dildo/plug
 	name = "unfinished plug"
 	desc = "You have to finish it first."

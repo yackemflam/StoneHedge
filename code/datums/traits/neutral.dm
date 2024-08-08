@@ -63,7 +63,7 @@
 
 /datum/quirk/monsterhunter
 	name = "Monster hunter"
-	desc = "Allows targeting by specific monsters for something else than just killing. Currently has no use beyond admin spawned mobs like werewolves."
+	desc = "Allows targeting by specific monsters for something else than just killing. May be unfair to you in combat."
 	value = 0
 	gain_text = span_notice("I want to feel a monster inside.. or inside a monster.")
 	lose_text = span_notice("I no longer am a degenerate.")

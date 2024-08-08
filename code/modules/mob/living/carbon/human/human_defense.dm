@@ -826,10 +826,24 @@
 
 	var/mob/living/userino = user
 	var/obj/item/organ/uservagina = user.getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/userbreasts = user.getorganslot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/userballs = user.getorganslot(ORGAN_SLOT_TESTICLES)
 	var/obj/item/organ/userass = user.getorganslot(ORGAN_SLOT_ANUS)
 
 	if(uservagina.reagents.total_volume || userass.reagents.total_volume || !uservagina.contents.len || !userass.contents.len)
 		examination += "ø ------------ ø</span>"
+	if(userbreasts)
+		if(userbreasts.reagents.total_volume)
+			if(userino.has_quirk(/datum/quirk/selfaware))
+				examination += span_info("My breasts are <bold>[userbreasts.reagents.total_volume]/[userbreasts.reagents.maximum_volume]</bold> full.")
+			else
+				examination += span_info("My breasts are about <bold>[round(userbreasts.reagents.total_volume / 3, 0.1)]/[round(userbreasts.reagents.maximum_volume / 3, 0.1)]</bold> oz full.")
+	if(userballs)
+		if(userballs.reagents.total_volume)
+			if(userino.has_quirk(/datum/quirk/selfaware))
+				examination += span_info("My balls are <bold>[userballs.reagents.total_volume]/[userballs.reagents.maximum_volume]</bold> full.")
+			else
+				examination += span_info("My balls are about <bold>[round(userballs.reagents.total_volume / 3, 0.1)]/[round(userballs.reagents.maximum_volume / 3, 0.1)]</bold> oz full.")
 	if(uservagina)
 		if(uservagina.reagents.total_volume)
 			if(userino.has_quirk(/datum/quirk/selfaware))

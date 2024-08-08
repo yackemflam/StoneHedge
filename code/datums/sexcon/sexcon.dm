@@ -162,8 +162,9 @@
 	add_cum_floor(get_turf(target))
 	after_ejaculation()
 
-/datum/sex_controller/proc/cum_into(oral = FALSE)
+/datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE)
 	log_combat(user, target, "Came inside [target]")
+	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
 	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
 		if(!user.mob_timers["cumtri"])
 			user.mob_timers["cumtri"] = world.time
@@ -177,9 +178,21 @@
 		if(ejacmessaged != 1)
 			target.visible_message(span_info("With every load I swallow, with Eora's blessing I feel more satiated so I may go longer."))
 			ejacmessaged = 1
-		target.adjust_nutrition(200)
-		target.adjust_hydration(200)
+		if(testes)
+			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
+			testes.reagents.trans_to(target, cum_to_take, transfered_by = user)
+		target.adjust_nutrition(150)
+		target.adjust_hydration(150)
 	else
+		if(testes) //todo make proper transfers, categorize sexactions
+			var/cameloc = user.sexcon.came_into_loc(oral, vaginal, anal, nipple, target)
+			if(istype(cameloc, /obj/item/organ))
+				var/obj/item/organ/cameorgan = cameloc
+				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, min(testes.reagents.total_volume, cameorgan.reagents.maximum_volume - cameorgan.reagents.total_volume))
+				testes.reagents.trans_to(cameorgan, cum_to_take, transfered_by = user)
+			else
+				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
+				testes.reagents.trans_to(target,  cum_to_take, transfered_by = user)
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	after_ejaculation()
 	if(!oral)

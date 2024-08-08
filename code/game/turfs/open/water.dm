@@ -133,7 +133,7 @@
 						water_overlay.plane = GAME_PLANE_UPPER
 
 /turf/open/water/attackby(obj/item/C, mob/user, params)
-	if(user.used_intent.type == /datum/intent/fill)
+	if(user.used_intent.type == INTENT_FILL)
 		if(C.reagents)
 			if(C.reagents.holder_full())
 				to_chat(user, span_warning("[C] is full."))

@@ -71,8 +71,21 @@
 	var/obj/item/organ/vagina/vag = wife.getorganslot(ORGAN_SLOT_VAGINA)
 	if(!vag)
 		return
-	if(prob(25))
+	if(vag.pregnant)
+		return
+	var/wiferoll = rand(20)+wife.STACON
+	var/husbroll = rand(20)+STACON
+	if(wiferoll < husbroll) //shitty d20 roll with +1 point per const, wife tries to roll more to not get pregnant.
 		vag.be_impregnated(src)
+		if(client?.prefs.showrolls)
+			to_chat(src, span_info("My odds to impregnate... [husbroll] vs [wife]'s [wiferoll]."))
+		if(wife.client?.prefs.showrolls)
+			to_chat(wife, span_info("My odds to not be pregnant... [wiferoll] vs [src]'s [husbroll]."))
+	else
+		if(client?.prefs.showrolls)
+			to_chat(src, span_info("My odds to impregnate... [husbroll] vs [wife]'s [wiferoll]."))
+		if(wife.client?.prefs.showrolls)
+			to_chat(wife, span_info("My odds to not be pregnant... [wiferoll] vs [src]'s [husbroll]."))
 
 /mob/living/proc/get_highest_grab_state_on(mob/living/victim)
 	var/grabstate = null
@@ -88,3 +101,13 @@
 	if(!turfu || !isturf(turfu))
 		return
 	new /obj/effect/decal/cleanable/coom(turfu)
+
+
+/datum/sex_controller/proc/came_into_loc(vaginal = FALSE, anal = FALSE, nipple = FALSE, mob/living/target)
+	if(vaginal)
+		return target.getorganslot(ORGAN_SLOT_VAGINA)
+	if(anal)
+		return target.getorganslot(ORGAN_SLOT_ANUS)
+	if(nipple)
+		return target.getorganslot(ORGAN_SLOT_BREASTS)
+	return target

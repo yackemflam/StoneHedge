@@ -97,16 +97,11 @@
 /obj/item/organ/anus/Insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
 	if(!issimple(M))
-		RegisterSignal(M, list(COMSIG_MOB_JUMP, COMSIG_LIVING_STATUS_KNOCKDOWN), PROC_REF(organ_jumped))
 		if(M.mind)
 			var/athletics = M.mind.get_skill_level(/datum/skill/misc/athletics)
 			var/captarget = initialreagentcap+(athletics*4)
-			if(captarget < reagents.maximum_volume)
+			if(captarget != reagents.maximum_volume)
 				reagents.maximum_volume = captarget
-
-/obj/item/organ/anus/Remove(mob/living/carbon/M, special, drop_if_replaced)
-	. = ..()
-	UnregisterSignal(M, list(COMSIG_MOB_JUMP, COMSIG_LIVING_STATUS_KNOCKDOWN))
 
 /obj/item/organ/anus/on_life()
 	var/mob/living/carbon/human/H = owner
@@ -148,28 +143,38 @@
 			to_chat(H, span_warning("My asshole strains and spills it's contents as I am incapable of holding in all that stuff!"))
 
 /obj/item/organ/anus/proc/organ_jumped()
-	SIGNAL_HANDLER
 	var/mob/living/carbon/human/H = owner
 	var/obj/item/organ/userass = H.getorganslot(ORGAN_SLOT_ANUS)
 	//content object handlers
 	if(!issimple(H) && H.mind)
 		if(contents.len)
 			var/stealth = H.mind.get_skill_level(/datum/skill/misc/sneaking)
-			var/keepinsidechance = 75 - (stealth * 10) //basically cant lose your item if you have 5 stealth.
+			var/keepinsidechance = CLAMP((rand(25,100) - (stealth * 20)),0,100) //basically cant lose your item if you have 5 stealth.
 			for(var/obj/item/asscontents as anything in userass.contents)
-				if(!istype(asscontents, /obj/item/dildo/plug) || (H.wear_pants && (H.wear_pants.flags_inv & HIDECROTCH || !H.wear_pants.genitalaccess))) //plug stays in place.
-					if(prob(keepinsidechance))
-						to_chat(H, span_alert("Damn! I lose my ass's grip on [english_list(contents)]! [keepinsidechance]%"))
-						asscontents.doMove(get_turf(H))
-						userass.contents -= asscontents
-						var/turf/selectedturf = pick(orange(H, rand(2,4))) //object flies off the hole with pressure at a random turf, funny.
-						asscontents.throw_at(selectedturf, 4, 2)
-					else
-						if(keepinsidechance < 10)
-							to_chat(H, span_blue("Gah, I easily maintain my ass's grip on [english_list(contents)]. [keepinsidechance]%"))
+				if(!istype(asscontents, /obj/item/dildo))
+					if(!H.wear_pants || H.wear_pants && (!H.wear_pants.flags_inv & HIDECROTCH || H.wear_pants.genitalaccess))
+						if(prob(keepinsidechance))
+							if(H.client?.prefs.showrolls)
+								to_chat(H, span_alert("Damn! I lose my ass's grip on [english_list(contents)]! [keepinsidechance]%"))
+							else
+								to_chat(H, span_alert("Damn! I lose my ass's grip on [english_list(contents)]!"))
+							asscontents.doMove(get_turf(H))
+							userass.contents -= asscontents
+							var/yeet = rand(4)
+							var/turf/selectedturf = pick(orange(H, yeet)) //object flies off the hole with pressure at a random turf, funny.
+							asscontents.throw_at(selectedturf, yeet, 2)
 						else
-							to_chat(H, span_smallnotice("Phew, I maintain my ass's grip on [english_list(contents)]. [keepinsidechance]%"))
-				break
+							if(H.client?.prefs.showrolls)
+								if(keepinsidechance < 10)
+									to_chat(H, span_blue("Gah, I easily maintain my ass's grip on [english_list(contents)]. [keepinsidechance]%"))
+								else
+									to_chat(H, span_smallnotice("Phew, I maintain my ass's grip on [english_list(contents)]. [keepinsidechance]%"))
+							else
+								if(keepinsidechance < 10)
+									to_chat(H, span_blue("Gah, I easily maintain my ass's grip on [english_list(contents)]."))
+								else
+									to_chat(H, span_smallnotice("Phew, I maintain my ass's grip on [english_list(contents)]."))
+				break	
 
 
 /obj/item/organ/vagina
@@ -194,17 +199,11 @@
 /obj/item/organ/vagina/Insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
 	if(!issimple(M))
-		RegisterSignal(M, list(COMSIG_MOB_JUMP, COMSIG_LIVING_STATUS_KNOCKDOWN), PROC_REF(organ_jumped))
 		if(M.mind)
 			var/athletics = M.mind.get_skill_level(/datum/skill/misc/athletics)
 			var/captarget = initialreagentcap+(athletics*4)
-			if(captarget < reagents.maximum_volume)
+			if(captarget != reagents.maximum_volume)
 				reagents.maximum_volume = captarget
-
-
-/obj/item/organ/vagina/Remove(mob/living/carbon/M, special, drop_if_replaced)
-	. = ..()
-	UnregisterSignal(M, list(COMSIG_MOB_JUMP, COMSIG_LIVING_STATUS_KNOCKDOWN))
 
 /obj/item/organ/vagina/on_life()
 	var/mob/living/carbon/human/H = owner
@@ -251,28 +250,39 @@
 			to_chat(H, span_warning("My womb tenses and spills it's contents as I am incapable of holding in all that stuff!"))
 
 /obj/item/organ/vagina/proc/organ_jumped()
-	SIGNAL_HANDLER
 	var/mob/living/carbon/human/H = owner
 	var/obj/item/organ/uservag = H.getorganslot(ORGAN_SLOT_VAGINA)
 	//content object handlers
 	if(!issimple(H) && H.mind)
 		if(contents.len)
 			var/stealth = H.mind.get_skill_level(/datum/skill/misc/sneaking)
-			var/keepinsidechance = 75 - (stealth * 15) //basically cant lose your item if you have 5 stealth.
+			var/keepinsidechance = CLAMP((rand(25,100) - (stealth * 20)),0,100) //basically cant lose your item if you have 5 stealth.
 			for(var/obj/item/pusscontents as anything in uservag.contents)
-				if(!istype(pusscontents, /obj/item/dildo/plug) || (H.wear_pants && (H.wear_pants.flags_inv & HIDECROTCH || !H.wear_pants.genitalaccess)))  //plug stays in place.
-					if(prob(keepinsidechance))
-						to_chat(H, span_alert("Damn! I lose my cunt's grip on [english_list(contents)]! [keepinsidechance]%"))
-						pusscontents.doMove(get_turf(H))
-						uservag.contents -= pusscontents
-						var/turf/selectedturf = pick(orange(H, rand(2,4))) //object flies off the hole with pressure at a random turf, funny.
-						pusscontents.throw_at(selectedturf, 4, 2)
-					else
-						if(keepinsidechance < 10)
-							to_chat(H, span_blue("Gah, I easily maintain my cunt's grip on [english_list(contents)]. [keepinsidechance]%"))
+				if(!istype(pusscontents, /obj/item/dildo))
+					if(!H.wear_pants || H.wear_pants && (!H.wear_pants.flags_inv & HIDECROTCH || H.wear_pants.genitalaccess)) //dildo stays in place.
+						if(prob(keepinsidechance))
+							if(H.client?.prefs.showrolls)
+								to_chat(H, span_alert("Damn! I lose my cunt's grip on [english_list(contents)]! [keepinsidechance]%"))
+							else
+								to_chat(H, span_alert("Damn! I lose my cunt's grip on [english_list(contents)]!"))
+							playsound(H, 'sound/misc/mat/insert (1).ogg', 20, TRUE, -2, ignore_walls = FALSE)
+							pusscontents.doMove(get_turf(H))
+							uservag.contents -= pusscontents
+							var/yeet = rand(4)
+							var/turf/selectedturf = pick(orange(H, yeet)) //object flies off the hole with pressure at a random turf, funny.
+							pusscontents.throw_at(selectedturf, yeet, 2)
 						else
-							to_chat(H, span_smallnotice("Phew, I maintain my cunt's grip on [english_list(contents)]. [keepinsidechance]%"))
-				break
+							if(H.client?.prefs.showrolls)
+								if(keepinsidechance < 10)
+									to_chat(H, span_blue("I easily maintain my cunt's grip on [english_list(contents)]. [keepinsidechance]%"))
+								else
+									to_chat(H, span_smallnotice("Phew, I maintain my cunt's grip on [english_list(contents)]. [keepinsidechance]%"))
+							else
+								if(keepinsidechance < 10)
+									to_chat(H, span_blue("I easily maintain my cunt's grip on [english_list(contents)]."))
+								else
+									to_chat(H, span_smallnotice("Phew, I maintain my cunt's grip on [english_list(contents)]."))
+				break		
 
 /obj/item/organ/vagina/proc/be_impregnated(mob/living/father)
 	if(pregnant)
@@ -322,22 +332,18 @@
 #define STORAGE_PER_SIZE 10
 /obj/item/organ/filling_organ
 	name = "self filling organ"
-	var/reagent_generate_rate = 0.1
+	var/reagent_generate_rate = HUNGER_FACTOR
 	var/max_reagent = 0 //do we even need this set on organs if it is set by the natural limit of storage define and size
 	var/datum/reagent/reagent_to_make =  /datum/reagent/consumable/nutriment
 	var/refilling = TRUE
 	var/uses_nutrient = TRUE //incase someone for some reason wanna make an OP paradox i guess.
 
-/obj/item/organ/filling_organ/Initialize(mapload)
+/obj/item/organ/filling_organ/Insert(mob/living/carbon/M, special, drop_if_replaced) //update size cap n shit on insert
 	. = ..()
 	max_reagent = STORAGE_PER_SIZE + STORAGE_PER_SIZE * organ_size
 	create_reagents(max_reagent)
-
-/obj/item/organ/filling_organ/Insert(mob/living/carbon/M, special, drop_if_replaced) //update size cap n shit on insert
-	. = ..()
 	if(special) // won't fill the organ if you insert this organ via surgery
 		reagents.add_reagent(reagent_to_make, max_reagent)
-	max_reagent = STORAGE_PER_SIZE + STORAGE_PER_SIZE * organ_size
 
 #undef STORAGE_PER_SIZE
 // press dat button? still cant
@@ -345,14 +351,14 @@
 	..()
 	// modify nutrition to generate reagents
 	if(refilling && owner.nutrition < NUTRITION_LEVEL_HUNGRY || owner.nutrition < NUTRITION_LEVEL_STARVING)
-		var/remove_amount = min(HUNGER_FACTOR, reagents.total_volume)
+		var/remove_amount = min(reagent_generate_rate, reagents.total_volume)
 		if(uses_nutrient)
 			owner.adjust_nutrition(remove_amount)
 		reagents.remove_reagent(reagent_to_make, remove_amount)
 		return
 	if(reagents.total_volume >= max_reagent || !refilling) //youch.
 		return
-	var/max_restore = owner.nutrition > NUTRITION_LEVEL_FED ? HUNGER_FACTOR * 2 : HUNGER_FACTOR
+	var/max_restore = owner.nutrition > NUTRITION_LEVEL_FED ? reagent_generate_rate * 2 : reagent_generate_rate
 	// amount restored, capped by max_reagent
 	var/restore_amount = min(max_restore, max_reagent - reagents.total_volume)
 	if(uses_nutrient)
@@ -369,7 +375,7 @@
 	organ_dna_type = /datum/organ_dna/breasts
 	accessory_type = /datum/sprite_accessory/breasts/pair
 	organ_size = DEFAULT_BREASTS_SIZE
-	max_reagent = 75
+	reagent_to_make = /datum/reagent/consumable/breastmilk
 
 /obj/item/organ/belly
 	name = "belly"
@@ -391,7 +397,7 @@
 	organ_dna_type = /datum/organ_dna/testicles
 	accessory_type = /datum/sprite_accessory/testicles/pair
 	organ_size = DEFAULT_TESTICLES_SIZE
-	max_reagent = 37.5
+	reagent_to_make = /datum/reagent/consumable/cum
 	var/virility = TRUE
 
 /obj/item/organ/filling_organ/testicles/internal

@@ -42,6 +42,6 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
-		H.mind.AddSpell(new /obj/projectile/magic/spell/magic_missile)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)

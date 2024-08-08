@@ -87,3 +87,15 @@
 			location.put_in_hands(trash_item)
 
 //weird lewd magic eating end.
+
+/mob/living/proc/check_funny_knockdown(mob/living/user)
+	if(issimple(user))
+		return
+	if(!getorganslot(ORGAN_SLOT_VAGINA) || !getorganslot(ORGAN_SLOT_ANUS))
+		return
+	var/obj/item/organ/vagina/vaggie = getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/anus/assie = getorganslot(ORGAN_SLOT_ANUS)
+	if(vaggie.contents.len)
+		vaggie.organ_jumped()
+	if(assie.contents.len)
+		assie.organ_jumped()
