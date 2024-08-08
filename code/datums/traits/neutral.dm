@@ -67,3 +67,10 @@
 	value = 0
 	gain_text = span_notice("I want to feel a monster inside.. or inside a monster.")
 	lose_text = span_notice("I no longer am a degenerate.")
+
+/datum/quirk/selfawaregeni
+	name = "Sensitiveness"
+	desc = "I feel more about my lewd bits (you will receive too much messages about those likely.)"
+	value = 0
+	mob_trait = TRAIT_SELF_AWARE
+	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."

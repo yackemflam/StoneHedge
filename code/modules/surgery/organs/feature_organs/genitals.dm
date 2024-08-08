@@ -124,14 +124,15 @@
 		if(liquid.volume > reagents.maximum_volume)
 			H.adjust_nutrition(-damage)
 			H.emote("grunts as their ass spills its contents.")
-			to_chat(H, span_warning("My asshole strains and spills it's contents as I am incapable of holding in all that stuff!"))
+			to_chat(H, span_warning("My ass strains and spills it's contents as I am incapable of holding in all that stuff!"))
 
 	if(!issimple(H) && H.mind)
 		var/athletics = H.mind.get_skill_level(/datum/skill/misc/athletics)
 		var/captarget = initialreagentcap+(athletics*4)
 		if(captarget != reagents.maximum_volume)
 			reagents.maximum_volume = captarget
-			to_chat(H, span_blue("My ass may be able to hold a different amount now."))
+			if(H.has_quirk(/datum/quirk/selfawaregeni))
+				to_chat(H, span_blue("My ass may be able to hold a different amount now."))
 
 	if(damage < low_threshold)
 		return
@@ -140,7 +141,7 @@
 		if(liquid.volume > (reagents.maximum_volume - damage))
 			H.adjust_nutrition(-damage)
 			H.emote("grunts as their ass spills its contents.")
-			to_chat(H, span_warning("My asshole strains and spills it's contents as I am incapable of holding in all that stuff!"))
+			to_chat(H, span_warning("My ass strains and spills it's contents as I am incapable of holding in all that stuff!"))
 
 /obj/item/organ/anus/proc/organ_jumped()
 	var/mob/living/carbon/human/H = owner
@@ -238,7 +239,8 @@
 			if(pregnant)
 				captarget *= 0.5
 			reagents.maximum_volume = captarget
-			to_chat(H, span_blue("My womb may be able to hold a different amount now."))
+			if(H.has_quirk(/datum/quirk/selfawaregeni))
+				to_chat(H, span_blue("My womb may be able to hold a different amount now."))
 
 	if(damage < low_threshold)
 		return

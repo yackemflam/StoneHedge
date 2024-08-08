@@ -1,4 +1,5 @@
-GLOBAL_LIST_INIT(character_accents, list("No accent"=/datum/char_accent/none,
+GLOBAL_LIST_INIT(character_accents, list(
+	"No accent"=/datum/char_accent/none,
 	"Dwarf accent"=/datum/char_accent/dwarf,
 	"Dwarf Gibberish accent"=/datum/char_accent/dwarf_gibberish,
 	"Dark Elf accent"=/datum/char_accent/dark_elf,
