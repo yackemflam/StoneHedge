@@ -144,7 +144,7 @@
 
 /obj/item/organ/anus/proc/organ_jumped()
 	var/mob/living/carbon/human/H = owner
-	var/obj/item/organ/userass = H.getorganslot(ORGAN_SLOT_ANUS)
+	var/obj/item/organ/anus/userass = H.getorganslot(ORGAN_SLOT_ANUS)
 	//content object handlers
 	if(!issimple(H) && H.mind)
 		if(contents.len)
@@ -251,7 +251,7 @@
 
 /obj/item/organ/vagina/proc/organ_jumped()
 	var/mob/living/carbon/human/H = owner
-	var/obj/item/organ/uservag = H.getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/vagina/uservag = H.getorganslot(ORGAN_SLOT_VAGINA)
 	//content object handlers
 	if(!issimple(H) && H.mind)
 		if(contents.len)

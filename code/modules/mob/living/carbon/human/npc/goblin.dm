@@ -114,6 +114,7 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		ORGAN_SLOT_ANUS = /obj/item/organ/anus,
 		)
 	offset_features = list(
 		OFFSET_ID = list(0,-4), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\

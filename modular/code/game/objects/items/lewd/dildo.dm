@@ -56,7 +56,7 @@
 	icon_state = "dildo_[dildo_type]_[dildo_size]"
 	name = "[dildo_size] [dildo_type] [dildo_material] dildo"
 	if(!istype(src, /obj/item/dildo/gold) && !istype(src, /obj/item/dildo/silver) && !istype(src, /obj/item/dildo/stone) && !istype(src, /obj/item/dildo/wood) && !istype(src, /obj/item/dildo/glass)) //those will maintain desc, rest are randomized below.
-		desc = pick("To quench the woman's thirst.","To kiss the lower lips.","Bane of men.","Suitable chair replacement for women.","Don't sit and spin, don't sit and spin, don't sit and spin...","Woman's best friend.")
+		desc = pick("To quench the woman's thirst.","To kiss the lower lips.","Bane of men.","Suitable chair replacement.","Don't sit and spin, don't sit and spin, don't sit and spin...","Woman's best friend.")
 	if(istype(src, /obj/item/dildo/gold))
 		desc = pick("Fitting for the most royal of holes.","9 out of 10 princesses suggest this.","Kingcucker9000","Best investment ever.")
 	can_custom = FALSE
@@ -225,13 +225,13 @@
 	update_appearance()
 	return TRUE
 
-/obj/item/dildo/plug/wood/update_appearance()
+/obj/item/dildo/plug/update_appearance()
 	icon_state = "plug_[dildo_size]"
 	name = "[dildo_size] [dildo_material] plug"
 	if(!istype(src, /obj/item/dildo/plug/gold) && !istype(src, /obj/item/dildo/plug/silver) && !istype(src, /obj/item/dildo/plug/stone) && !istype(src, /obj/item/dildo/plug/wood) && !istype(src, /obj/item/dildo/plug/glass)) //those will maintain desc, rest are randomized below.
-		desc = pick("To quench the woman's thirst.","To kiss the lower lips.","Bane of men.","Suitable chair replacement for women.","Don't sit and spin, don't sit and spin, don't sit and spin...","Woman's best friend.")
+		desc = pick("To keep a woman's contents within.","To shut a hole.","Redirector.","Suitable chair replacement.","Redirect to the correct path.","Keeps what's needed, within.")
 	if(istype(src, /obj/item/dildo/plug/gold))
-		desc = pick("Fitting for the most royal of holes.","9 out of 10 princesses suggest this.","Kingcucker9000","Best investment ever.")
+		desc = pick("Prevents royal accidents.","Royal hole preserver.","Shuts the wrong hole of royalty.","Best investment ever.")
 	can_custom = FALSE
 
 /obj/item/dildo/plug/wood
@@ -245,7 +245,7 @@
 	color = "#3f3f3f"
 	dildo_material = "stone"
 	sellprice = 3
-	desc = "Feel the earth... It's rough around the edges."
+	desc = "Same as putting a regular stone up a place, probably. Now comes in convenient shape?"
 
 /obj/item/dildo/plug/iron
 	color = "#909090"
@@ -356,4 +356,4 @@
 	dildo_material = "glass"
 	sellprice = 5
 	alpha = 123
-	desc = "Don't break. Don't break. Don't break. Don't break."
+	desc = "Similiar to putting a jar up where?"
