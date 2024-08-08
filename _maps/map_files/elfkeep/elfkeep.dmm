@@ -1758,7 +1758,7 @@
 /area/rogue/indoors/town/church)
 "bbt" = (
 /obj/effect/landmark/mapGenerator/rogue/cave{
-	endTurfX = 155;
+	endTurfX = 300;
 	endTurfY = 283
 	},
 /turf/closed/mineral/rogue/bedrock,
@@ -14738,7 +14738,7 @@
 /area/rogue/indoors/town/manor)
 "izS" = (
 /obj/effect/landmark/mapGenerator/rogue/mountain{
-	endTurfX = 155;
+	endTurfX = 300;
 	endTurfY = 283
 	},
 /turf/closed/mineral/rogue/bedrock,
@@ -34255,12 +34255,12 @@
 /area/rogue/outdoors/woods)
 "tQS" = (
 /obj/effect/landmark/mapGenerator/rogue/mountain{
-	endTurfX = 155;
+	endTurfX = 300;
 	endTurfY = 283
 	},
 /obj/effect/landmark/mapGenerator/sunlights{
 	endTurfY = 283;
-	endTurfX = 155
+	endTurfX = 300
 	},
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/mountains)
