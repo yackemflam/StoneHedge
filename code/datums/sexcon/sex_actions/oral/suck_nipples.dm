@@ -22,7 +22,7 @@
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_shirt)
 			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
-			if(shirtsies.flags_inv == HIDEBOOB)
+			if(shirtsies.flags_inv & HIDEBOOB)
 				if(shirtsies.genitalaccess == FALSE)
 					return FALSE
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_MOUTH))
@@ -43,11 +43,10 @@
 	user.sexcon.perform_sex_action(target, 1, 3, TRUE)
 	target.sexcon.handle_passive_ejaculation()
 
-	var/milk_to_add = min(max(target.getorganslot(ORGAN_SLOT_BREASTS).breast_size, 1), target.getorganslot(ORGAN_SLOT_BREASTS).milk_stored)
-	if(target.getorganslot(ORGAN_SLOT_BREASTS).lactating && milk_to_add > 0 && prob(25))
-		user.reagents.add_reagent(/datum/reagent/consumable/mothersmilk, milk_to_add)
-		target.getorganslot(ORGAN_SLOT_BREASTS).milk_stored -= milk_to_add
-		to_chat(user, span_notice("I can taste cloyingly sweet milk."))
+	var/obj/item/organ/filling_organ/breasts/tiddies = target.getorganslot(ORGAN_SLOT_BREASTS)
+	var/milk_to_add = min(max(tiddies.organ_size, 1), tiddies.reagents.total_volume)
+	if(milk_to_add > 0 && prob(25))
+		tiddies.reagents.trans_to(user, milk_to_add, TRUE, TRUE, FALSE, target, FALSE, INGEST)
 		to_chat(target, span_notice("I can feel milk leak from my buds."))
 
 /datum/sex_action/suck_nipples/on_finish(mob/living/user, mob/living/target)

@@ -199,7 +199,37 @@
 	glass_name = "glass of milk"
 	glass_desc = ""
 
-/datum/reagent/consumable/mothersmilk
+/datum/reagent/consumable/cum
+	name = "Semen"
+	description = "An opaque white liquid produced by testicles of males..."
+	color = "#DFDFDF" // rgb: 223, 223, 223
+	taste_description = "salty slime"
+	glass_icon_state = "glass_white"
+	glass_name = "glass of semen"
+	glass_desc = ""
+	var/nearegg = FALSE
+
+/datum/reagent/consumable/cum/on_transfer(atom/A, method, trans_volume)
+	. = ..()
+	if(istype(holder, /obj/item/organ/vagina))
+		nearegg = TRUE //bomb ready.
+
+/datum/reagent/consumable/cum/on_mob_life(mob/living/carbon/M)
+	if(M.getBruteLoss() && prob(20))
+		M.heal_bodypart_damage(1,0, 0)
+		. = 1
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(prob(5) && H.getorganslot(ORGAN_SLOT_VAGINA) && nearegg) //bomb has been planted
+			var/obj/item/organ/vagina/vag =  H.getorganslot(ORGAN_SLOT_VAGINA)
+			vag.be_impregnated(H) //boom
+		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
+			H.adjust_hydration(10)
+		if(H.blood_volume < BLOOD_VOLUME_NORMAL)
+			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
+	..()
+
+/datum/reagent/consumable/breastmilk
 	name = "Breast Milk"
 	description = "An opaque white liquid produced by the mammary glands of humanoids. In brief, breastmilk."
 	color = "#DFDFDF" // rgb: 223, 223, 223
@@ -207,6 +237,20 @@
 	glass_icon_state = "glass_white"
 	glass_name = "glass of mothers' milk"
 	glass_desc = "Milk derived from a humanoid source. Some Eorans might swear by its use in rituals of fertility or as a private indulgence between partners, but honest merchants refuse to deal in the substance or products made from it."
+
+/datum/reagent/consumable/breastmilk/on_mob_life(mob/living/carbon/M)
+	if(M.getBruteLoss() && prob(20))
+		M.heal_bodypart_damage(1,0, 0)
+		. = 1
+	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
+		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
+			H.adjust_hydration(10)
+		if(H.blood_volume < BLOOD_VOLUME_NORMAL)
+			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
+	..()
 
 /datum/reagent/consumable/milk/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(20))

@@ -23,7 +23,7 @@
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
-			if(pantsies.flags_inv == HIDECROTCH) 
+			if(pantsies.flags_inv & HIDECROTCH) 
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
@@ -123,9 +123,15 @@
 		if(target.lying) //double spill odds if lying down due gravity and stuff.
 			spillchance *= 2
 		if(contdildo.spillable && prob(spillchance) && contdildo.reagents.total_volume)
-			target.visible_message(span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill [target]'s cunt.", "[user] feeds [target]'s cunt with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into [target]'s cunt.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into [target]'s cunt.")))
-			addtimer(CALLBACK(contdildo.reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, sc.speed, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
-			playsound(user.loc, 'sound/misc/mat/endin.ogg', 100, TRUE)
+			var/obj/item/organ/targetvagina = target.getorganslot(ORGAN_SLOT_VAGINA)
+			if(targetvagina.reagents.total_volume >= (targetvagina.reagents.maximum_volume -0.5))
+				target.visible_message(span_notice("[contdildo] splashes it's contents around [target]'s hole as it is packed full!"))
+				contdildo.reagents.reaction(target, TOUCH, sc.speed, FALSE)
+				contdildo.reagents.remove_all(sc.speed)
+			else
+				target.visible_message(span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill [target]'s cunt.", "[user] feeds [target]'s cunt with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into [target]'s cunt.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into [target]'s cunt.")))
+				contdildo.reagents.trans_to(targetvagina, sc.speed, 1, TRUE, FALSE, targetvagina, FALSE, INJECT, FALSE, TRUE)
+			playsound(target, 'sound/misc/mat/endin.ogg', 100, TRUE)
 			pain_amt = -8 //liquid ease pain i guess
 			user.adjustFireLoss(-0.1) //water on burn i guess.
 
@@ -138,7 +144,7 @@
 			stuffchance *= 2
 		if(prob(stuffchance) && sc.force > SEX_FORCE_LOW && fooddildo.canconsume(target, user))
 			fooddildo.sussyeat(target, user, BODY_ZONE_PRECISE_GROIN, TRUE)
-			user.visible_message(span_tinynotice(pick("Chunks of \the [fooddildo] fill [user]'s cunt.", "[user] feeds [user]'s cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s cunt.", "Chunks of \the [fooddildo] gets packed into [user]'s pussy.")), span_tinynotice(pick("Chunks of \the [fooddildo] fill my cunt.", "I feed my cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my cunt.", "Chunks of \the [fooddildo] gets packed into my pussy.")))
+			user.visible_message(span_info(pick("Chunks of \the [fooddildo] fill [user]'s cunt.", "[user] feeds [user]'s cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s cunt.", "Chunks of \the [fooddildo] gets packed into [user]'s pussy.")), span_info(pick("Chunks of \the [fooddildo] fill my cunt.", "I feed my cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my cunt.", "Chunks of \the [fooddildo] gets packed into my pussy.")))
 			playsound(target.loc, 'sound/misc/mat/insert (2).ogg', 100, TRUE)
 			target.adjustBruteLoss(-0.1) //mm nutritions.
 

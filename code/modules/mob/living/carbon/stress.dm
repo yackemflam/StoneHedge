@@ -75,9 +75,9 @@
 		var/diff_abs = abs(new_stress - oldstress)
 		if(diff_abs > 1)
 			if(ascending)
-				to_chat(src, span_smallred("I gain stress."))
+				to_chat(src, span_smallred("I feel less at peace."))
 			else
-				to_chat(src, span_smallgreen("I gain peace."))
+				to_chat(src, span_smallgreen("I feel more at peace."))
 
 	var/old_threshold = get_stress_threshold(oldstress)
 	var/new_threshold = get_stress_threshold(new_stress)

@@ -24,7 +24,7 @@
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
-			if(pantsies.flags_inv == HIDECROTCH) 
+			if(pantsies.flags_inv & HIDECROTCH) 
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
@@ -123,9 +123,15 @@
 		if(user.lying) //double spill odds if lying down due gravity and stuff.
 			spillchance *= 2
 		if(contdildo.spillable && prob(spillchance) && contdildo.reagents.total_volume)
-			user.visible_message(span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill [user]'s cunt.", "[user] feeds [user]'s cunt with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into [user]'s cunt.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into [user]'s cunt.")), span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill my cunt.", "I feed my cunt with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into my cunt.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into my pussy.")))
-			addtimer(CALLBACK(contdildo.reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, sc.speed, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
-			playsound(user.loc, 'sound/misc/mat/endin.ogg', 100, TRUE)
+			var/obj/item/organ/uservagina = user.getorganslot(ORGAN_SLOT_VAGINA)
+			if(uservagina.reagents.total_volume >= (uservagina.reagents.maximum_volume -0.5))
+				user.visible_message(span_notice("[contdildo] splashes it's contents around [user]'s hole as it is packed full!"))
+				contdildo.reagents.reaction(user, TOUCH, sc.speed, FALSE)
+				contdildo.reagents.remove_all(sc.speed)
+			else
+				user.visible_message(span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill [user]'s cunt.", "[user] feeds [user]'s cunt with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into [user]'s cunt.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into [user]'s cunt.")), span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill my cunt.", "I feed my cunt with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into my cunt.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into my pussy.")))
+				contdildo.reagents.trans_to(uservagina, sc.speed, 1, TRUE, FALSE, uservagina, FALSE, INJECT, FALSE, TRUE)
+			playsound(user, 'sound/misc/mat/endin.ogg', 100, TRUE)
 			pain_amt = -8 //liquid ease pain i guess
 			user.adjustFireLoss(-0.1) //water on burn i guess.
 
@@ -136,10 +142,8 @@
 		pain_amt *= 0.25 //since it is based on force
 		if(user.lying) //nom nom easier while laying
 			stuffchance *= 2
-		if(prob(stuffchance) && sc.force > SEX_FORCE_LOW && fooddildo.canconsume(user, user)) //allows low to not get 'eaten' so people can use their raw weiners in peace without getting poisoned lmao.
-			// in reality its unnecessary since eating stuff has its own text but why not.
-			// I am the reason why people should not be granted the power to create. --vide noir
-			user.visible_message(span_tinynotice(pick("Chunks of \the [fooddildo] fill [user]'s cunt.", "[user] feeds [user]'s cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s cunt.", "Chunks of \the [fooddildo] gets packed into [user]'s pussy.")), span_tinynotice(pick("Chunks of \the [fooddildo] fill my cunt.", "I feed my cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my cunt.", "Chunks of \the [fooddildo] gets packed into my pussy.")))
+		if(prob(stuffchance) && sc.force > SEX_FORCE_LOW && fooddildo.canconsume(user, user))
+			user.visible_message(span_info(pick("Chunks of \the [fooddildo] fill [user]'s cunt.", "[user] feeds [user]'s cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s cunt.", "Chunks of \the [fooddildo] gets packed into [user]'s pussy.")), span_info(pick("Chunks of \the [fooddildo] fill my cunt.", "I feed my cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my cunt.", "Chunks of \the [fooddildo] gets packed into my pussy.")))
 			fooddildo.sussyeat(user, user, BODY_ZONE_PRECISE_GROIN, TRUE)
 			playsound(user.loc, 'sound/misc/mat/insert (2).ogg', 100, TRUE)
 			user.adjustBruteLoss(-0.5) //mm nutritions, food have less bites than liquids by far.

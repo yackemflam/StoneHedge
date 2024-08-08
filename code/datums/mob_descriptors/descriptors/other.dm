@@ -97,7 +97,7 @@
 	if(!ishuman(described))
 		return FALSE
 	var/mob/living/carbon/human/human = described
-	var/obj/item/organ/testicles/testes = human.getorganslot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/filling_organ/testicles/testes = human.getorganslot(ORGAN_SLOT_TESTICLES)
 	if(!testes)
 		return FALSE
 	if(!get_location_accessible(human, BODY_ZONE_PRECISE_GROIN))
@@ -109,9 +109,9 @@
 
 /datum/mob_descriptor/testicles/get_description(mob/living/described)
 	var/mob/living/carbon/human/human = described
-	var/obj/item/organ/testicles/testes = human.getorganslot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/filling_organ/testicles/testes = human.getorganslot(ORGAN_SLOT_TESTICLES)
 	var/adjective
-	switch(testes.ball_size)
+	switch(testes.organ_size)
 		if(1)
 			adjective = "a small"
 		if(2)
@@ -150,7 +150,7 @@
 	if(!ishuman(described))
 		return FALSE
 	var/mob/living/carbon/human/human = described
-	var/obj/item/organ/breasts/breasts = human.getorganslot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/filling_organ/breasts/breasts = human.getorganslot(ORGAN_SLOT_BREASTS)
 	if(!breasts)
 		return FALSE
 	if(!get_location_accessible(human, BODY_ZONE_CHEST))
@@ -159,9 +159,9 @@
 
 /datum/mob_descriptor/breasts/get_description(mob/living/described)
 	var/mob/living/carbon/human/human = described
-	var/obj/item/organ/breasts/breasts = human.getorganslot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/filling_organ/breasts/breasts = human.getorganslot(ORGAN_SLOT_BREASTS)
 	var/adjective
-	switch(breasts.breast_size)
+	switch(breasts.organ_size)
 		if(0)
 			adjective = "a flat"
 		if(1)

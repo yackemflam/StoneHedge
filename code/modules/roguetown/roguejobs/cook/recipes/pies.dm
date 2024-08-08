@@ -123,7 +123,7 @@
 	reqs = list(
 		/datum/reagent/water = 10,
 		/obj/item/reagent_containers/powder/flour= 2,
-		/datum/reagent/consumable/mothersmilk = 15,
+		/datum/reagent/consumable/breastmilk = 15,
 		/obj/item/reagent_containers/powder/salt = 1,
 
 	)
@@ -316,3 +316,95 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	eat_effect = /datum/status_effect/buff/foodbuff
 	tastes = list("apples" = 1)
+
+// cum stuff
+/obj/item/reagent_containers/food/snacks/rogue/pie/cum/cooked
+	icon_state = "pie"
+	desc = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/pieslice/cum
+	slices_num = 6
+	slice_batch = TRUE
+	warming = 10 MINUTES
+	eat_effect = null
+
+/obj/item/reagent_containers/food/snacks/rogue/pieslice/cum
+	icon = 'icons/roguetown/items/food.dmi'
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	tastes = list("pie" = 1)
+	name = "Slimy eoran pie slice"
+	desc = ""
+	icon_state = "slice"
+	filling_color = "#FFFFFF"
+	foodtype = GRAIN | DAIRY | SUGAR
+	warming = 10 MINUTES
+	bitesize = 3
+	eat_effect = /datum/status_effect/buff/foodbuff
+
+/datum/crafting_recipe/roguetown/cooking/berrypie/cum
+	name = "Slimy eoran berry pie"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 3,
+		/obj/item/reagent_containers/food/snacks/rogue/piedough/cum = 1)
+	parts = list(
+		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 3)
+	result = /obj/item/reagent_containers/food/snacks/rogue/pie/cum/berry
+
+
+/datum/crafting_recipe/roguetown/cooking/applepie/cum
+	name = "Slimy eoran apple pie"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/apple = 3,
+		/obj/item/reagent_containers/food/snacks/rogue/piedough/cum = 1)
+	parts = list(
+		/obj/item/reagent_containers/food/snacks/grown/apple = 3)
+	result = /obj/item/reagent_containers/food/snacks/rogue/pie/cum/apple
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/cum/berry
+	name = "Slimy eoran berry pie"
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cum/cooked/berry
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/cum/cooked/berry
+	name = "Slimy eoran berry pie"
+	desc = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
+	eat_effect = /datum/status_effect/buff/foodbuff
+	tastes = list("berries" = 1)
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/cum/apple
+	name = "Slimy eoran apple pie"
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cum/cooked/apple
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/cum/cooked/apple
+	name = "Slimy eoran apple pie"
+	desc = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
+	eat_effect = /datum/status_effect/buff/foodbuff
+	tastes = list("apples" = 1)
+
+/datum/crafting_recipe/roguetown/cooking/piedough/cum
+	name = "Slimy eoran pie dough"
+	reqs = list(
+		/datum/reagent/water = 10,
+		/obj/item/reagent_containers/powder/flour= 2,
+		/datum/reagent/consumable/cum = 15,
+		/obj/item/reagent_containers/powder/salt = 1,
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/rogue/piedough/cum
+
+/obj/item/reagent_containers/food/snacks/rogue/piedough/cum
+	name = "Slimy eoran pie dough"
+	desc = "Pie dough produced with mothers' milk and salt instead of butter, used to make meals that are intended as an indulgence between loving couples."
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "piedough"
+	slices_num = 0
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cum/cooked
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("sweet dough" = 1)
+	foodtype = GRAIN
+	eat_effect = /datum/status_effect/debuff/uncookedfood

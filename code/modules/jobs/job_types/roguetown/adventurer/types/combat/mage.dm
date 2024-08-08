@@ -68,7 +68,7 @@
 			H.change_stat("endurance", 1)
 			H.change_stat("speed", 1)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
-			H.mind.AddSpell(new /obj/projectile/magic/spell/magic_missile)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
 		if("Enchanter")

@@ -70,7 +70,7 @@
 				else
 					break
 			return
-		if(is_drainable() && (user.used_intent.type == /datum/intent/fill)) //A dispenser. Transfer FROM it TO us.
+		if(is_drainable() && (user.used_intent.type == INTENT_FILL)) //A dispenser. Transfer FROM it TO us.
 			testing("attackobj3")
 			if(!reagents.total_volume)
 				to_chat(user, span_warning("[src] is empty!"))

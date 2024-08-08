@@ -98,8 +98,8 @@
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
 
 /datum/sprite_accessory/testicles/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	var/obj/item/organ/testicles/testes = organ
-	return "[icon_state]_[testes.ball_size]"
+	var/obj/item/organ/filling_organ/testicles/testes = organ
+	return "[icon_state]_[testes.organ_size]"
 
 /datum/sprite_accessory/testicles/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/penis/pp = owner.getorganslot(ORGAN_SLOT_PENIS)
@@ -118,8 +118,8 @@
 	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FFFFFRONT_LAYER)
 
 /datum/sprite_accessory/breasts/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	var/obj/item/organ/breasts/badonkers = organ
-	return "[icon_state]_[badonkers.breast_size]"
+	var/obj/item/organ/filling_organ/breasts/badonkers = organ
+	return "[icon_state]_[badonkers.organ_size]"
 
 /datum/sprite_accessory/breasts/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_ID, OFFSET_ID_F)
@@ -195,7 +195,7 @@
 
 /datum/sprite_accessory/belly/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/belly/belleh = organ
-	return "belly_[icon_state]_[belleh.belly_size]"
+	return "belly_[icon_state]_[belleh.organ_size]"
 
 /datum/sprite_accessory/belly/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)

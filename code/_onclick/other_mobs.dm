@@ -352,6 +352,7 @@
 						if(T.landsound)
 							playsound(T, T.landsound, 100, FALSE)
 						T.Entered(src)
+						check_funny_knockdown(src)
 					if(istype(src.loc, /turf/open/transparent/glass)) //glass floors may break if you jump on them.
 						var/turf/open/transparent/glass/T = src.loc
 						if(prob(40))

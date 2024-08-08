@@ -1295,27 +1295,31 @@
 	if(!sexcon)
 		sexcon = new /datum/sex_controller(src)
 	if(!issimple(src))
+		if(!src.getorganslot(ORGAN_SLOT_ANUS))
+			var/obj/item/organ/anus/ass = src.getorganslot(ORGAN_SLOT_ANUS)
+			ass = new /obj/item/organ/anus
+			ass.Insert(src)
 		if(gender == MALE)
-			var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
-			testicles = new /obj/item/organ/testicles/internal
-			testicles.ball_size = rand(3)
+			var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
+			testicles = new /obj/item/organ/filling_organ/testicles/internal
+			testicles.organ_size = rand(3)
 			testicles.Insert(src)
 			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
 			penis = new /obj/item/organ/penis/internal
 			penis.penis_size = rand(3)
 			penis.Insert(src)
 		if(gender == FEMALE)
-			var/obj/item/organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
-			breasts = new /obj/item/organ/breasts/internal
-			breasts.breast_size = rand(10)
+			var/obj/item/organ/filling_organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
+			breasts = new /obj/item/organ/filling_organ/breasts/internal
+			breasts.organ_size = rand(10)
 			breasts.Insert(src)
 			var/obj/item/organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
 			vagina = new /obj/item/organ/vagina/internal
 			vagina.Insert(src)
 			if(prob(3)) //3 chance to be dickgirl.
-				var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
-				testicles = new /obj/item/organ/testicles/internal
-				testicles.ball_size = rand(3)
+				var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
+				testicles = new /obj/item/organ/filling_organ/testicles/internal
+				testicles.organ_size = rand(3)
 				testicles.Insert(src)
 				var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
 				penis = new /obj/item/organ/penis/internal

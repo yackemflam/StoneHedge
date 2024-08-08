@@ -16,7 +16,7 @@
 	volume = 99
 	reagent_flags = OPENCONTAINER|REFILLABLE
 	spillable = TRUE
-	possible_item_intents = list(INTENT_GENERIC, /datum/intent/fill, INTENT_POUR, INTENT_SPLASH)
+	possible_item_intents = list(INTENT_GENERIC, INTENT_FILL, INTENT_POUR, INTENT_SPLASH)
 	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
 	slot_flags = null
 

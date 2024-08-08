@@ -23,7 +23,7 @@
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
-			if(pantsies.flags_inv == HIDECROTCH) 
+			if(pantsies.flags_inv & HIDECROTCH) 
 				if(pantsies.genitalaccess == FALSE) 
 					return FALSE
 	if(!get_funobject_in_hand(user))
@@ -122,8 +122,14 @@
 		if(target.lying) //double spill odds if lying down due gravity and stuff.
 			spillchance *= 2
 		if(contdildo.spillable && prob(spillchance) && contdildo.reagents.total_volume)
-			target.visible_message(span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill [target]'s ass.", "[user] feeds [target]'s ass with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into [target]'s ass.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into [target]'s ass.")), span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill my ass.", "I feed my ass with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into my ass.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into me.")))
-			addtimer(CALLBACK(contdildo.reagents, TYPE_PROC_REF(/datum/reagents, trans_to), user, sc.speed, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
+			var/obj/item/organ/targetass = target.getorganslot(ORGAN_SLOT_ANUS)
+			if(targetass.reagents.total_volume >= (targetass.reagents.maximum_volume -0.5))
+				target.visible_message(span_notice("[contdildo] splashes it's contents around [target]'s hole as it is packed full!"))
+				contdildo.reagents.reaction(target, TOUCH, sc.speed, FALSE)
+				contdildo.reagents.remove_all(sc.speed)
+			else
+				target.visible_message(span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill [target]'s ass.", "[user] feeds [target]'s ass with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into [target]'s ass.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into [target]'s ass.")), span_notice(pick("[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] fill my ass.", "I feed my ass with [english_list(contdildo.reagents.reagent_list)] from \The [contdildo]", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] splash into my ass.", "[english_list(contdildo.reagents.reagent_list)] from \the [contdildo] flood into me.")))
+				contdildo.reagents.trans_to(targetass, sc.speed, 1, TRUE, FALSE, targetass, FALSE, INJECT, FALSE, TRUE)
 			playsound(user.loc, 'sound/misc/mat/endin.ogg', 100, TRUE)
 			pain_amt = -8 //liquid ease pain i guess
 			user.adjustFireLoss(-0.1) //water on burn i guess.
@@ -136,7 +142,7 @@
 		if(user.lying) //nom nom easier while laying
 			stuffchance *= 2
 		if(prob(stuffchance) && sc.force > SEX_FORCE_LOW && fooddildo.canconsume(target, user))
-			user.visible_message(span_tinynotice(pick("Chunks of \the [fooddildo] fill [user]'s ass.", "[user] feeds [user]'s ass with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s ass.", "Chunks of \the [fooddildo] gets packed into [user]'s asshole.")), span_tinynotice(pick("Chunks of \the [fooddildo] fill my ass.", "I feed my ass with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my ass.", "Chunks of \the [fooddildo] gets packed into my asshole.")))
+			user.visible_message(span_info(pick("Chunks of \the [fooddildo] fill [user]'s ass.", "[user] feeds [user]'s ass with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s ass.", "Chunks of \the [fooddildo] gets packed into [user]'s asshole.")), span_info(pick("Chunks of \the [fooddildo] fill my ass.", "I feed my ass with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my ass.", "Chunks of \the [fooddildo] gets packed into my asshole.")))
 			fooddildo.sussyeat(target, user, BODY_ZONE_PRECISE_GROIN, FALSE)
 			playsound(target.loc, 'sound/misc/mat/insert (2).ogg', 100, TRUE)
 			target.adjustBruteLoss(-0.1) //mm nutritions.
