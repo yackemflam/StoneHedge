@@ -9,8 +9,8 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 6,
 						/obj/item/natural/hide = 6,
 						/obj/item/natural/fur = 4, /obj/item/natural/bone = 8, /obj/item/natural/volf_head = 1)
-	maxHealth = 300
-	health = 300
+	maxHealth = 450
+	health = 450
 	melee_damage_lower = 22
 	melee_damage_upper = 29
 	STASTR = 20
