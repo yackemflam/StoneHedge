@@ -110,4 +110,4 @@
 		return target.getorganslot(ORGAN_SLOT_ANUS)
 	if(nipple)
 		return target.getorganslot(ORGAN_SLOT_BREASTS)
-	return target
+	return target //oral just goes in digestion

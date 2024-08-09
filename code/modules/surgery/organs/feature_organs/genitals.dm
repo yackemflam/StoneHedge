@@ -94,15 +94,6 @@
 	. = ..()
 	create_reagents(initialreagentcap)
 
-/obj/item/organ/anus/Insert(mob/living/carbon/M, special, drop_if_replaced)
-	. = ..()
-	if(!issimple(M))
-		if(M.mind)
-			var/athletics = M.mind.get_skill_level(/datum/skill/misc/athletics)
-			var/captarget = initialreagentcap+(athletics*4)
-			if(captarget != reagents.maximum_volume)
-				reagents.maximum_volume = captarget
-
 /obj/item/organ/anus/on_life()
 	var/mob/living/carbon/human/H = owner
 	var/datum/reagent/liquid
@@ -120,26 +111,33 @@
 				span_info("Some [english_list(reagents.reagent_list)] drips from my ass.")))
 			reagents.remove_all(0.2)
 
-	if(liquid)
-		if(liquid.volume > reagents.maximum_volume)
-			H.adjust_nutrition(-damage)
-			H.emote("grunts as their ass spills its contents.")
-			to_chat(H, span_warning("My ass strains and spills it's contents as I am incapable of holding in all that stuff!"))
-
 	if(!issimple(H) && H.mind)
 		var/athletics = H.mind.get_skill_level(/datum/skill/misc/athletics)
 		var/captarget = initialreagentcap+(athletics*4)
+		if(damage)
+			captarget -= damage
+		if(contents.len)
+			for(var/obj/item/thing as anything in contents)
+				captarget -= thing.w_class*10
 		if(captarget != reagents.maximum_volume)
 			reagents.maximum_volume = captarget
 			if(H.has_quirk(/datum/quirk/selfawaregeni))
 				to_chat(H, span_blue("My ass may be able to hold a different amount now."))
 
+	if(liquid)
+		if(liquid.volume > reagents.maximum_volume)
+			reagents.remove_all(liquid.volume - reagents.maximum_volume)
+			H.emote("grunts as their ass spills its contents.")
+			to_chat(H, span_warning("My ass strains and spills it's contents with the pressure built up within it, as I am incapable of holding in all that stuff!"))
+
 	if(damage < low_threshold)
+	else
+		to_chat(H, span_warning("My anus ache..."))
 		return
 
 	if(liquid)
 		if(liquid.volume > (reagents.maximum_volume - damage))
-			H.adjust_nutrition(-damage)
+			reagents.remove_all(liquid.volume - reagents.maximum_volume)
 			H.emote("grunts as their ass spills its contents.")
 			to_chat(H, span_warning("My ass strains and spills it's contents as I am incapable of holding in all that stuff!"))
 
@@ -197,15 +195,6 @@
 	//absorbs slower than ass, more capacity.
 	create_reagents(initialreagentcap)
 
-/obj/item/organ/vagina/Insert(mob/living/carbon/M, special, drop_if_replaced)
-	. = ..()
-	if(!issimple(M))
-		if(M.mind)
-			var/athletics = M.mind.get_skill_level(/datum/skill/misc/athletics)
-			var/captarget = initialreagentcap+(athletics*4)
-			if(captarget != reagents.maximum_volume)
-				reagents.maximum_volume = captarget
-
 /obj/item/organ/vagina/on_life()
 	var/mob/living/carbon/human/H = owner
 	var/datum/reagent/liquid
@@ -225,16 +214,14 @@
 				span_info("Some [english_list(reagents.reagent_list)] drips from my slit.")))
 			reagents.remove_all(0.1)
 
-	if(liquid)
-		if(liquid.volume > reagents.maximum_volume)
-			H.adjust_nutrition(-damage)
-			H.emote("grunts as their womb spills its contents.")
-			to_chat(H, span_warning("My womb tenses and spills it's contents as I am incapable of holding in all that stuff!"))
-			reagents.remove_all(reagents.maximum_volume - liquid.volume)
-
 	if(!issimple(H) && H.mind)
 		var/athletics = H.mind.get_skill_level(/datum/skill/misc/athletics)
 		var/captarget = initialreagentcap+(athletics*4)
+		if(damage)
+			captarget -= damage
+		if(contents.len)
+			for(var/obj/item/thing as anything in contents)
+				captarget -= thing.w_class*10
 		if(captarget != reagents.maximum_volume)
 			if(pregnant)
 				captarget *= 0.5
@@ -242,12 +229,22 @@
 			if(H.has_quirk(/datum/quirk/selfawaregeni))
 				to_chat(H, span_blue("My womb may be able to hold a different amount now."))
 
+	if(liquid)
+		if(liquid.volume > reagents.maximum_volume)
+			reagents.remove_all(liquid.volume - reagents.maximum_volume)
+			H.emote("grunts as their womb spills its contents.")
+			to_chat(H, span_warning("My womb spills it's contents with the pressure built up within it, as I am incapable of holding in all that stuff!"))
+			reagents.remove_all(reagents.maximum_volume - liquid.volume)
+
 	if(damage < low_threshold)
+	else
+		if(prob(5))
+			to_chat(H, span_warning("My womb aches..."))
 		return
 
 	if(liquid)
 		if(liquid.volume > (reagents.maximum_volume - damage))
-			H.adjust_nutrition(-damage)
+			reagents.remove_all(liquid.volume - reagents.maximum_volume)
 			H.emote("grunts as their womb spills its contents.")
 			to_chat(H, span_warning("My womb tenses and spills it's contents as I am incapable of holding in all that stuff!"))
 
@@ -330,25 +327,21 @@
 		bellyacc.get_icon_state()
 	owner.update_body_parts(TRUE)
 
-
-#define STORAGE_PER_SIZE 10
 /obj/item/organ/filling_organ
 	name = "self filling organ"
+	var/storage_per_size = 10
 	var/reagent_generate_rate = HUNGER_FACTOR
-	var/max_reagent = 0 //do we even need this set on organs if it is set by the natural limit of storage define and size
 	var/datum/reagent/reagent_to_make =  /datum/reagent/consumable/nutriment
 	var/refilling = TRUE
 	var/uses_nutrient = TRUE //incase someone for some reason wanna make an OP paradox i guess.
 
 /obj/item/organ/filling_organ/Insert(mob/living/carbon/M, special, drop_if_replaced) //update size cap n shit on insert
 	. = ..()
-	max_reagent = STORAGE_PER_SIZE + STORAGE_PER_SIZE * organ_size
-	create_reagents(max_reagent)
+	var/max_reagents = storage_per_size + storage_per_size * organ_size
+	create_reagents(max_reagents)
 	if(special) // won't fill the organ if you insert this organ via surgery
-		reagents.add_reagent(reagent_to_make, max_reagent)
+		reagents.add_reagent(reagent_to_make, reagents.maximum_volume)
 
-#undef STORAGE_PER_SIZE
-// press dat button? still cant
 /obj/item/organ/filling_organ/on_life()
 	..()
 	// modify nutrition to generate reagents
@@ -358,11 +351,11 @@
 			owner.adjust_nutrition(remove_amount)
 		reagents.remove_reagent(reagent_to_make, remove_amount)
 		return
-	if(reagents.total_volume >= max_reagent || !refilling) //youch.
+	if(reagents.total_volume >= reagents.maximum_volume || !refilling) //youch.
 		return
 	var/max_restore = owner.nutrition > NUTRITION_LEVEL_FED ? reagent_generate_rate * 2 : reagent_generate_rate
-	// amount restored, capped by max_reagent
-	var/restore_amount = min(max_restore, max_reagent - reagents.total_volume)
+	// amount restored, capped by reagents.maximum_volume
+	var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume)
 	if(uses_nutrient)
 		owner.adjust_nutrition(-restore_amount)
 	reagents.add_reagent(reagent_to_make, restore_amount)
@@ -378,6 +371,43 @@
 	accessory_type = /datum/sprite_accessory/breasts/pair
 	organ_size = DEFAULT_BREASTS_SIZE
 	reagent_to_make = /datum/reagent/consumable/breastmilk
+
+/obj/item/organ/filling_organ/breasts/on_life()
+	var/mob/living/carbon/human/H = owner
+	var/datum/reagent/liquid
+
+	..()
+
+	if(!issimple(H) && H.mind)
+		var/initialreagentcap = storage_per_size + storage_per_size * organ_size
+		var/athletics = H.mind.get_skill_level(/datum/skill/misc/athletics)
+		var/captarget = initialreagentcap+(athletics*4)
+		if(damage)
+			captarget -= damage
+		if(contents.len)
+			for(var/obj/item/thing as anything in contents)
+				captarget -= thing.w_class*10
+		if(captarget != reagents.maximum_volume)
+			reagents.maximum_volume = captarget
+			if(H.has_quirk(/datum/quirk/selfawaregeni))
+				to_chat(H, span_blue("My breasts may be able to hold a different amount now."))
+
+	if(liquid)
+		if(liquid.volume > reagents.maximum_volume)
+			reagents.remove_all(liquid.volume - reagents.maximum_volume)
+			H.emote("grunts as their breasts spill its contents.")
+			to_chat(H, span_warning("My breasts strain and spill it's contents with the pressure built up within it, as I am incapable of holding in all that stuff!"))
+
+	if(damage < low_threshold)
+	else
+		to_chat(H, span_warning("My breasts ache..."))
+		return
+
+	if(liquid)
+		if(liquid.volume > (reagents.maximum_volume - damage))
+			reagents.remove_all(liquid.volume - reagents.maximum_volume)
+			H.emote("grunts as their breasts spill its contents.")
+			to_chat(H, span_warning("My breasts strain and spill it's contents as I am incapable of holding in all that stuff!"))
 
 /obj/item/organ/belly
 	name = "belly"

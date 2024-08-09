@@ -53,7 +53,7 @@
 	var/stealskill = user.mind.get_skill_level(/datum/skill/misc/stealing)
 	var/medicineskill = user.mind.get_skill_level(/datum/skill/misc/medicine)
 	var/flubchance = 75
-	if(max(1,stealskill) > max(1,medicineskill)) //medicine or stealth, taken higher and used to divide the flubbing chance, if you got neither skill its 100 odds, go home bro.
+	if(stealskill > medicineskill) //medicine or stealth, taken higher and used to divide the flubbing chance, if you got neither skill its 100 odds, go home bro.
 		flubchance = flubchance/stealskill
 	else
 		flubchance = flubchance/medicineskill

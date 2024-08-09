@@ -66,14 +66,22 @@
 				H.fire_act(1,2)
 				H.freak_out()
 
+#define MAX_TOY_SIZE WEIGHT_CLASS_HUGE
+#define MAX_INSERT_SIZE WEIGHT_CLASS_BULKY
+
 /proc/get_funobject_in_hand(mob/living/user)
 	var/obj/item/thing = user.get_active_held_item()
-	if(thing != null && thing.w_class < WEIGHT_CLASS_HUGE) //Anything smaller than this fucks the puss.
+	if(thing != null && thing.w_class < MAX_TOY_SIZE) //Anything smaller than this fucks the puss.
 		return thing
 	return null
 
 /proc/get_insertable_in_hand(mob/living/user)
 	var/obj/item/thing = user.get_active_held_item()
-	if(thing != null && thing.w_class < WEIGHT_CLASS_NORMAL) //Anything smaller than this goes in the puss.
+	if(thing != null && thing.w_class < MAX_INSERT_SIZE) //Anything smaller than this goes in the puss.
+		if(thing.w_class == (MAX_INSERT_SIZE-1) && thing.type == /obj/item/rogueweapon) //no weapons that size
+			return null
 		return thing
 	return null
+
+#undef MAX_TOY_SIZE
+#undef MAX_INSERT_SIZE
