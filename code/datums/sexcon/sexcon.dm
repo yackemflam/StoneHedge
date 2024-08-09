@@ -311,8 +311,8 @@
 	pain_amt *= get_speed_pain_multiplier(applied_speed)
 
 	if(user.stat == DEAD)
-		arousal_amt = 0
-		pain_amt = 0
+		if(prob(10)) //since there is no proper diseases....
+			user.adjustToxLoss(1)
 
 	var/sexhealrand = rand(0.2, 0.4)
 	//go go gadget sex healing.. magic?

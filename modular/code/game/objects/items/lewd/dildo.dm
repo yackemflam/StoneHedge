@@ -199,32 +199,6 @@
 	. = ..()
 	name = "unfinished [dildo_material] plug"
 
-/obj/item/dildo/plug/attack_self(mob/living/user)
-	. = ..()
-	if(!istype(user))
-		return
-	if(can_custom)
-		customize(user)
-
-/obj/item/dildo/plug/customize(mob/living/user)
-	if(!can_custom)
-		return FALSE
-	if(src && !user.incapacitated() && in_range(user,src))
-		var/size_choice = input(user, "Choose a size for your dildo.","Dildo Size") as null|anything in list("small", "medium", "big", "huge")
-		if(src && size_choice && !user.incapacitated() && in_range(user,src))
-			dildo_size = size_choice
-			switch(dildo_size)
-				if("small")
-					pleasure = 4
-				if("medium")
-					pleasure = 6
-				if("big")
-					pleasure = 8
-				if("huge")
-					pleasure = 10
-	update_appearance()
-	return TRUE
-
 /obj/item/dildo/plug/update_appearance()
 	icon_state = "plug_[dildo_size]"
 	name = "[dildo_size] [dildo_material] plug"
