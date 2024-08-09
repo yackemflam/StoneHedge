@@ -50,19 +50,23 @@
 	var/obj/item/heldstuff = user.get_active_held_item()
 	if(userbreasts.organ_size < 4)
 		to_chat(user, span_info("Unfortunately, my breasts are not big enough to fit anything in them."))
-		return FALSE
+		user.dropItemToGround(heldstuff)
+		return
 	else 
 		if(userbreasts.organ_size < 6 && heldstuff.w_class > WEIGHT_CLASS_TINY)
 			to_chat(user, span_info("Unfortunately, my breasts are only big enough to fit tiny things."))
-			return FALSE
+			user.dropItemToGround(heldstuff)
+			return
 		else 
 			if(userbreasts.organ_size < 8 && heldstuff.w_class > WEIGHT_CLASS_SMALL)
 				to_chat(user, span_info("Unfortunately, my breasts are only big enough to fit small things."))
-				return FALSE
+				user.dropItemToGround(heldstuff)
+				return
 			else 
 				if(userbreasts.organ_size < 10 && heldstuff.w_class > WEIGHT_CLASS_NORMAL)
 					to_chat(user, span_info("Unfortunately, my breasts are only big enough to fit medium sized things."))
-					return FALSE
+					user.dropItemToGround(heldstuff)
+					return
 
 	if(istype(heldstuff, /obj/item/rogueweapon))
 		to_chat(user, span_userdanger("[heldstuff] may cut me while i put it in, depending on my precision of hand."))
