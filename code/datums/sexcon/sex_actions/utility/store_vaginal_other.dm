@@ -1,7 +1,7 @@
-/datum/sex_action/store_vagina_other
+/datum/sex_action/utiliy/store_vagina_other
 	name = "search/insert in their cunt"
 
-/datum/sex_action/store_vagina_other/shows_on_menu(mob/living/user, mob/living/target)
+/datum/sex_action/utiliy/store_vagina_other/shows_on_menu(mob/living/user, mob/living/target)
 	if(!issimple(target)) //will not work on simple mobs
 		return FALSE
 	if(user == target)
@@ -15,7 +15,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/store_vagina_other/can_perform(mob/living/user, mob/living/target)
+/datum/sex_action/utiliy/store_vagina_other/can_perform(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
 	if(ishuman(target))
@@ -36,7 +36,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/store_vagina_other/on_start(mob/living/user, mob/living/target)
+/datum/sex_action/utiliy/store_vagina_other/on_start(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/vagina/targetvag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(istype(useditem, /obj/item/rogueweapon))
@@ -46,7 +46,7 @@
 	if(user.m_intent != MOVE_INTENT_SNEAK && targetvag.contents.len)
 		user.visible_message(span_warning("[user] starts to pull \the [english_list(targetvag.contents)] from [target]'s cunt..."))
 
-/datum/sex_action/store_vagina_other/is_finished(mob/living/user, mob/living/target)
+/datum/sex_action/utiliy/store_vagina_other/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/vagina/targetvag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	var/mob/living/carbon/human/targetussy = user
@@ -70,7 +70,7 @@
 			gr.add_wound(/datum/wound/slash, TRUE, FALSE)
 	if(!targetvag.contents.len)
 		if(user.m_intent != MOVE_INTENT_SNEAK)
-			user.visible_message(span_warning("[user] manages to stuff \the [useditem] in my cunt."))
+			user.visible_message(span_warning("[user] manages to stuff \the [useditem] in [target]'s cunt."))
 			playsound(user, 'sound/misc/mat/girlmouth (1).ogg', 15, TRUE, -2, ignore_walls = FALSE)
 			useditem.extinguish()
 			useditem.forceMove(targetvag)
@@ -81,7 +81,7 @@
 			useditem.extinguish()
 			useditem.forceMove(targetvag)
 			targetvag.contents += useditem
-			to_chat(user, span_info("There is now [english_list(targetvag.contents)] in my pussy."))
+			to_chat(user, span_info("There is now [english_list(targetvag.contents)] in [target]'s pussy."))
 	else
 		if(user.m_intent != MOVE_INTENT_SNEAK)
 			user.visible_message(span_warning("[user] manages to pull [english_list(targetvag.contents)] out of [target]'s cunt."))
@@ -90,12 +90,12 @@
 				pusscontents.doMove(get_turf(user))
 				targetvag.contents -= pusscontents
 				user.put_in_active_hand(pusscontents)
-			to_chat(user, span_info("There is now nothing in my pussy."))
+			to_chat(user, span_info("There is now nothing in [target]'s pussy."))
 		else
 			playsound(user, 'sound/misc/mat/insert (1).ogg', 8, TRUE, -2, ignore_walls = FALSE)
 			for(var/obj/item/pusscontents as anything in targetvag.contents)
 				pusscontents.doMove(get_turf(user))
 				targetvag.contents -= pusscontents
 				user.put_in_active_hand(pusscontents)
-			to_chat(user, span_info("There is now nothing in my pussy."))
+			to_chat(user, span_info("There is now nothing in [target]'s pussy."))
 	return TRUE

@@ -17,6 +17,8 @@
 	var/require_grab = FALSE
 	/// If a grab is required, this is the required state of it
 	var/required_grab_state = GRAB_AGGRESSIVE
+	///divides the fucking things
+	var/utility = FALSE
 
 /datum/sex_action/proc/can_perform(mob/living/user, mob/living/target)
 	return TRUE

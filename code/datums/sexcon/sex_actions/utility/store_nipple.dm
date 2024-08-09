@@ -1,7 +1,7 @@
-/datum/sex_action/store_nipples
+/datum/sex_action/utiliy/store_nipple
 	name = "Store/remove object in breasts"
 
-/datum/sex_action/store_nipples/shows_on_menu(mob/living/user, mob/living/target)
+/datum/sex_action/utiliy/store_nipple/shows_on_menu(mob/living/user, mob/living/target)
 	if(user != target)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_BREASTS))
@@ -15,7 +15,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/store_nipples/can_perform(mob/living/user, mob/living/target)
+/datum/sex_action/utiliy/store_nipple/can_perform(mob/living/user, mob/living/target)
 	if(user != target)
 		return FALSE
 	if(ishuman(user))
@@ -30,18 +30,6 @@
 	var/obj/item/organ/filling_organ/breasts/userbreasts = user.getorgan(/obj/item/organ/filling_organ/breasts)
 	var/obj/item/heldstuff = user.get_active_held_item()
 
-	if(userbreasts.organ_size < 4)
-		to_chat(user, span_userdanger("Unfortunately, my breasts are not big enough to fit anything in them."))
-		return FALSE
-	else if(userbreasts.organ_size < 6 && heldstuff.w_class > WEIGHT_CLASS_TINY)
-			to_chat(user, span_userdanger("Unfortunately, my breasts are only big enough to fit tiny things."))
-			return FALSE
-		else if(userbreasts.organ_size < 8 && heldstuff.w_class > WEIGHT_CLASS_SMALL)
-				to_chat(user, span_userdanger("Unfortunately, my breasts are only big enough to fit small things."))
-				return FALSE
-			else if(userbreasts.organ_size < 10 && heldstuff.w_class > WEIGHT_CLASS_NORMAL)
-					to_chat(user, span_userdanger("Unfortunately, my breasts are only big enough to fit medium sized things."))
-					return FALSE
 	if(userbreasts.contents.len == 0 && heldstuff == null)
 		return TRUE
 	if((userbreasts.contents.len <= 2 && heldstuff == null) || (userbreasts.contents.len < 2 && heldstuff != null))
@@ -50,17 +38,33 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/store_nipples/on_start(mob/living/user, mob/living/target)
-	var/obj/item/useditem = user.get_active_held_item()
+/datum/sex_action/utiliy/store_nipple/on_start(mob/living/user, mob/living/target)
 	var/obj/item/organ/filling_organ/breasts/userbreasts = user.getorgan(/obj/item/organ/filling_organ/breasts)
-	if(istype(useditem, /obj/item/rogueweapon))
-		to_chat(user, span_userdanger("[useditem] may cut me while i put it in, depending on my precision of hand."))
+	var/obj/item/heldstuff = user.get_active_held_item()
+	if(userbreasts.organ_size < 4)
+		to_chat(user, span_info("Unfortunately, my breasts are not big enough to fit anything in them."))
+		return FALSE
+	else 
+		if(userbreasts.organ_size < 6 && heldstuff.w_class > WEIGHT_CLASS_TINY)
+			to_chat(user, span_info("Unfortunately, my breasts are only big enough to fit tiny things."))
+			return FALSE
+		else 
+			if(userbreasts.organ_size < 8 && heldstuff.w_class > WEIGHT_CLASS_SMALL)
+				to_chat(user, span_info("Unfortunately, my breasts are only big enough to fit small things."))
+				return FALSE
+			else 
+				if(userbreasts.organ_size < 10 && heldstuff.w_class > WEIGHT_CLASS_NORMAL)
+					to_chat(user, span_info("Unfortunately, my breasts are only big enough to fit medium sized things."))
+					return FALSE
+
+	if(istype(heldstuff, /obj/item/rogueweapon))
+		to_chat(user, span_userdanger("[heldstuff] may cut me while i put it in, depending on my precision of hand."))
 	if(user.m_intent != MOVE_INTENT_SNEAK && userbreasts.contents.len < 2 && user.get_active_held_item() != null)
-		user.visible_message(span_warning("[user] starts to stuff \the [useditem] in their nipple..."))
+		user.visible_message(span_warning("[user] starts to stuff \the [heldstuff] in their nipple..."))
 	if(user.m_intent != MOVE_INTENT_SNEAK && userbreasts.contents.len == 2 && user.get_active_held_item() == null)
 		user.visible_message(span_warning("[user] starts to pull \the [english_list(userbreasts.contents)] from their nipple..."))
 
-/datum/sex_action/store_nipples/is_finished(mob/living/user, mob/living/target)
+/datum/sex_action/utiliy/store_nipple/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/breasts/userbreasts = user.getorgan(/obj/item/organ/filling_organ/breasts)
 	var/mob/living/carbon/human/userussy = user
@@ -100,16 +104,16 @@
 		if(user.m_intent != MOVE_INTENT_SNEAK)
 			user.visible_message(span_warning("[user] manages to pull [english_list(userbreasts.contents)] out of their nipple."))
 			playsound(user, 'sound/misc/mat/insert (1).ogg', 15, TRUE, -2, ignore_walls = FALSE)
-			for(var/obj/item/pusscontents as anything in userbreasts.contents)
-				pusscontents.doMove(get_turf(user))
-				userbreasts.contents -= pusscontents
-				user.put_in_active_hand(pusscontents)
+			for(var/obj/item/nipplecontents as anything in userbreasts.contents)
+				nipplecontents.doMove(get_turf(user))
+				userbreasts.contents -= nipplecontents
+				user.put_in_active_hand(nipplecontents)
 			to_chat(user, span_info("There is now nothing in my nipples."))			
 		else
 			playsound(user, 'sound/misc/mat/insert (1).ogg', 8, TRUE, -2, ignore_walls = FALSE)
-			for(var/obj/item/pusscontents as anything in userbreasts.contents)
-				pusscontents.doMove(get_turf(user))
-				userbreasts.contents -= pusscontents
-				user.put_in_active_hand(pusscontents)
+			for(var/obj/item/nipplecontents as anything in userbreasts.contents)
+				nipplecontents.doMove(get_turf(user))
+				userbreasts.contents -= nipplecontents
+				user.put_in_active_hand(nipplecontents)
 			to_chat(user, span_info("There is now nothing in my nipples."))
 	return TRUE
