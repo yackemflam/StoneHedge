@@ -11,7 +11,7 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = " You decided to protect the Dream Dales oneday, and you joined the Hedgecademy. Learning from the best you can muster, you're a certified monster hunter as much as you are a ranger and guard. Stone Hedge is your Duty."
 	display_order = JDO_TOWNGUARD
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/bogguardsman
 	give_bank_account = 16
 	min_pq = -2

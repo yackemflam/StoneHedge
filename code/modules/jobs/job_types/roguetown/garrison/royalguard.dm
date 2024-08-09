@@ -11,7 +11,7 @@
 	tutorial = "Having proven yourself loyal and capable, you have been knighted to serve the realm as the monarch's personal guard. You listen to your Lord and the Captain of the Guard, defending your Lord and realm."
 	display_order = JDO_ROYALGUARD
 	allowed_patrons = ALL_DIVINE_PATRONS
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 
 	outfit = /datum/outfit/job/roguetown/royalguard
 	advclass_cat_rolls = list(CTAG_ROYALGUARD = 20)

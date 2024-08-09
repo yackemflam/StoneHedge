@@ -15,7 +15,7 @@
 		You are one of the Arch-Magicians of Dreamkeeps Magick Academy. You help teach and manage the students of this Academy.\
 		It took you years to become so esteemed that you could teach at Ravenloft Academy of Magickal Arts."
 	outfit = /datum/outfit/job/roguetown/magician
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 	give_bank_account = 47
 	min_pq = 0
 	max_pq = null

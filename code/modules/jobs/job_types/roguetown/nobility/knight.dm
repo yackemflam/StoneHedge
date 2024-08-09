@@ -11,7 +11,7 @@
 	allowed_patrons = ALL_DIVINE_PATRONS
 	tutorial = "A knight with expert training; Born in a far away land and raised as a squire from a young age, now you make StoneHedge your home. It is up to you to decide what path you will take, and who you may call your Lord."
 	display_order = JDO_KNIGHT
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/knight
 	give_bank_account = 22
 	min_pq = 0

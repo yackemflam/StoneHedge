@@ -11,7 +11,7 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	tutorial = "Responsible for the safety of the town and the enforcement of the Monarchies law, you are the vanguard of the city faced with punishing those who defy our Royal Line. Though you've many lords to obey, as both the Church and the Bailiff have great sway over your life - and Stone Hedge is far from normal to guard; given the dungeon labyrinth beneath it that makes it famous.."
 	display_order = JDO_TOWNGUARD
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 
 	outfit = /datum/outfit/job/roguetown/guardsman
 	give_bank_account = 16

@@ -14,7 +14,7 @@
 		but leprosy took away your younger years. \
 		Out of desperation, you followed the ways of Pestra and managed to be cured."
 	outfit = /datum/outfit/job/roguetown/physician
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 
 	give_bank_account = 25
 	min_pq = 0

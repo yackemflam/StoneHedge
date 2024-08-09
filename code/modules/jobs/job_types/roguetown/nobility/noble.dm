@@ -11,7 +11,7 @@
 	allowed_patrons = ALL_DIVINE_PATRONS
 	tutorial = "A person of noble blood but with no inherit responsibility or authority in the current hold but demands the same respect as any other nobles in the court."
 	display_order = JDO_NOBLE
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/noble
 	give_bank_account = 22
 	min_pq = 0

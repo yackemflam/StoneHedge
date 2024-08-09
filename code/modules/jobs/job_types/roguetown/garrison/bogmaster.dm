@@ -11,7 +11,7 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = " You are one of the most experienced members of the Elven Guard. You have the experience of a Ranger and the Strategum of a Wizard - the Respect of the Kingdom and Keep to boot. Your purpose is to protect the borders of the realm and handle the threats within it, with your trusty Hedge Knights."
 	display_order = JDO_BOGMASTER
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/bog)
 	outfit = /datum/outfit/job/roguetown/bogmaster

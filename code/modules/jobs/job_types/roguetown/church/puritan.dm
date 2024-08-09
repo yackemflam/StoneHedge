@@ -21,7 +21,7 @@
 		/datum/patron/divine/malum,
 	) //gets set to old god anyways
 	tutorial = "As an Witcher, you have been tasked with hunting the various monsters that haunt the dream dales. Using Magick, Faith and your Arsenal of Tools; you are the stuff of legends which must fight the forces of darkness."
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 
 	outfit = /datum/outfit/job/roguetown/puritan
 	display_order = JDO_PURITAN
