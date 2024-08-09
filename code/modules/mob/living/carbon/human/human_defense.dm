@@ -830,6 +830,7 @@
 	var/obj/item/organ/userballs = user.getorganslot(ORGAN_SLOT_TESTICLES)
 	var/obj/item/organ/userass = user.getorganslot(ORGAN_SLOT_ANUS)
 
+#ifdef MATURESERVER
 	if(userino.has_quirk(/datum/quirk/selfawaregeni))
 		if(uservagina.reagents.total_volume || userass.reagents.total_volume || !uservagina.contents.len || !userass.contents.len)
 			examination += "ø ------------ ø</span>"
@@ -865,6 +866,7 @@
 	if(!silent)
 		to_chat(user, examination.Join("\n"))
 	return examination
+#endif
 
 /mob/living/carbon/human/proc/check_limb_for_injuries(mob/user = src, choice = BODY_ZONE_CHEST, advanced = FALSE, silent = FALSE)
 	choice = check_zone(choice)

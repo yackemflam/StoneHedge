@@ -138,7 +138,7 @@ Difficulty: Medium
 		return
 	target.visible_message(span_boldwarning("Fire rains from the sky!"))
 	for(var/turf/turf in range(9,get_turf(target)))
-		if(prob(11))
+		if(prob(5))
 			new /obj/effect/temp_visual/target(turf)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/lava_pools(amount, delay = 0.8)
@@ -194,7 +194,9 @@ Difficulty: Medium
 		if(istype(T, /turf/open/indestructible))
 			continue
 		if(!istype(T, /turf/closed/indestructible))
+			var/reset_turf = T.type
 			T.ChangeTurf(/turf/open/floor/plating/asteroid/basalt/lava_land_surface, flags = CHANGETURF_INHERIT_AIR)
+			addtimer(CALLBACK(T, TYPE_PROC_REF(/turf, ChangeTurf), reset_turf, null, CHANGETURF_INHERIT_AIR), 30 SECONDS, TIMER_OVERRIDE|TIMER_UNIQUE)
 		else
 			indestructible_turfs += T
 	SLEEP_CHECK_DEATH(10) // give them a bit of time to realize what attack is actually happening

@@ -140,8 +140,6 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 	client.screen += D
 	animate(D, alpha = 255, time = 20, easing = EASE_IN)
 	addtimer(CALLBACK(src, PROC_REF(clear_time_icon), D), 30)
-	for(var/obj/structure/flora/roguegrass/bush/B in GLOB.busheslist)
-		B.loot_replenish()
 
 /proc/station_time_debug(force_set)
 	if(isnum(force_set))
