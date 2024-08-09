@@ -52,16 +52,18 @@
 	name = "Pregnancy Removal Potion"
 	description = "Fixes mistakes."
 	reagent_state = LIQUID
-	color = "#a9323c"
+	color = "#a9326a"
 	taste_description = "worries"
 	overdose_threshold = 60
 	metabolization_rate = REAGENTS_METABOLISM
 	alpha = 200
 
 /datum/reagent/medicine/antipregnancy/on_mob_life(mob/living/carbon/M)
-	var/obj/item/organ/vagina/puss = M.getorganslot(ORGAN_SLOT_VAGINA)
-	if(puss.pregnant)
-		puss.undo_preggoness()
+	if(istype(holder, /obj/item/organ/filling_organ))
+		var/obj/item/organ/filling_organ/forgan = holder
+		if(forgan.pregnant)
+			forgan.undo_preggoness()
+	M.add_nausea(0.2)
 	..()
 	. = 1
 

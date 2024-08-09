@@ -64,15 +64,8 @@
 	else
 		playsound(src, pick('sound/misc/mat/guymouth (1).ogg','sound/misc/mat/guymouth (2).ogg','sound/misc/mat/guymouth (3).ogg','sound/misc/mat/guymouth (4).ogg','sound/misc/mat/guymouth (5).ogg'), 35, TRUE, ignore_walls = FALSE)
 
+/* Obsolete now, cum liquid handles pregnancy.
 /mob/living/proc/try_impregnate(mob/living/wife)
-	var/obj/item/organ/filling_organ/testicles/testes = getorganslot(ORGAN_SLOT_TESTICLES)
-	if(!testes)
-		return
-	var/obj/item/organ/vagina/vag = wife.getorganslot(ORGAN_SLOT_VAGINA)
-	if(!vag)
-		return
-	if(vag.pregnant)
-		return
 	var/wiferoll = rand(20)+wife.STACON
 	var/husbroll = rand(20)+STACON
 	if(wiferoll < husbroll) //shitty d20 roll with +1 point per const, wife tries to roll more to not get pregnant.
@@ -86,6 +79,7 @@
 			to_chat(src, span_info("My odds to impregnate... [husbroll] vs [wife]'s [wiferoll]."))
 		if(wife.client?.prefs.showrolls)
 			to_chat(wife, span_info("My odds to not be pregnant... [wiferoll] vs [src]'s [husbroll]."))
+*/
 
 /mob/living/proc/get_highest_grab_state_on(mob/living/victim)
 	var/grabstate = null

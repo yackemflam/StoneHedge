@@ -77,5 +77,5 @@
 
 /datum/organ_dna/vagina/imprint_organ(obj/item/organ/organ)
 	..()
-	var/obj/item/organ/vagina/vagina_organ = organ
+	var/obj/item/organ/filling_organ/vagina/vagina_organ = organ
 	vagina_organ.fertility = fertility

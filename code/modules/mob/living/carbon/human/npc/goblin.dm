@@ -114,7 +114,7 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_ANUS = /obj/item/organ/anus,
+		ORGAN_SLOT_ANUS = /obj/item/organ/filling_organ/anus,
 		)
 	offset_features = list(
 		OFFSET_ID = list(0,-4), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
@@ -455,8 +455,8 @@
 		breasts = new /obj/item/organ/filling_organ/breasts/internal
 		breasts.organ_size = rand(10)
 		breasts.Insert(src)
-		var/obj/item/organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
-		vagina = new /obj/item/organ/vagina/internal
+		var/obj/item/organ/filling_organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
+		vagina = new /obj/item/organ/filling_organ/vagina/internal
 		vagina.Insert(src)
 		if(prob(5)) //5 chance to be dickgirl
 			name = "futa goblin"

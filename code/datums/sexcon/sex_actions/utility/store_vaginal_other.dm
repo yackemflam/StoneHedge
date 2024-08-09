@@ -8,7 +8,7 @@
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
-	var/obj/item/organ/vagina/targetvag = target.getorgan(/obj/item/organ/vagina)
+	var/obj/item/organ/filling_organ/vagina/targetvag = target.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(targetvag.contents.len)
 		return TRUE
 	if(!get_insertable_in_hand(user))
@@ -29,7 +29,7 @@
 		if(issimple(target) && target.gender == FEMALE && target.sexcon)
 		else
 			return FALSE
-	var/obj/item/organ/vagina/targetvag = target.getorgan(/obj/item/organ/vagina)
+	var/obj/item/organ/filling_organ/vagina/targetvag = target.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(targetvag.contents.len)
 		return TRUE
 	if(!get_insertable_in_hand(user))
@@ -38,7 +38,7 @@
 
 /datum/sex_action/store_vagina_other/on_start(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
-	var/obj/item/organ/vagina/targetvag = user.getorgan(/obj/item/organ/vagina)
+	var/obj/item/organ/filling_organ/vagina/targetvag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(istype(useditem, /obj/item/rogueweapon))
 		to_chat(user, span_userdanger("[useditem] may cut [target] while i put it in, depending on my precision of hand."))
 	if(user.m_intent != MOVE_INTENT_SNEAK && !targetvag.contents.len)
@@ -48,11 +48,11 @@
 
 /datum/sex_action/store_vagina_other/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
-	var/obj/item/organ/vagina/targetvag = user.getorgan(/obj/item/organ/vagina)
+	var/obj/item/organ/filling_organ/vagina/targetvag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	var/mob/living/carbon/human/targetussy = user
-	var/stealskill = user.mind.get_skill_level(/datum/skill/misc/stealing)
-	var/medicineskill = user.mind.get_skill_level(/datum/skill/misc/medicine)
-	var/flubchance = 75
+	var/stealskill =  min(1,user.mind.get_skill_level(/datum/skill/misc/stealing))
+	var/medicineskill =  min(1,user.mind.get_skill_level(/datum/skill/misc/medicine))
+	var/flubchance = 100
 	if(stealskill > medicineskill) //medicine or stealth, taken higher and used to divide the flubbing chance, if you got neither skill its 100 odds, go home bro.
 		flubchance = flubchance/stealskill
 	else

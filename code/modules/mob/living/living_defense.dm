@@ -522,6 +522,7 @@
 		span_danger("I feel a powerful shock coursing through my body!"), \
 		span_hear("I hear a heavy electrical crack.") \
 	)
+	check_funny_knockdown(src)
 	playsound(get_turf(src), pick('sound/misc/elec (1).ogg', 'sound/misc/elec (2).ogg', 'sound/misc/elec (3).ogg'), 100, FALSE)
 	return shock_damage
 

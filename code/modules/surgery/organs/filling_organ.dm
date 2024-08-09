@@ -1,0 +1,195 @@
+/obj/item/organ/filling_organ
+	name = "self filling organ"
+
+	//self generating liquid stuff
+	var/storage_per_size = 10 //added per organ size
+	var/datum/reagent/reagent_to_make =  /datum/reagent/consumable/nutriment //naturally generated reagent
+	var/refilling = FALSE //slowly refills when not hungry
+	var/reagent_generate_rate = HUNGER_FACTOR //with refilling
+	var/hungerhelp = FALSE //if refilling, absorbs reagent_to_make as nutrients if hungry. Conversion is to nutrients direct even if you brew poison in there.
+	var/uses_nutrient = TRUE //incase someone for some reason wanna make an OP paradox i guess.
+	var/organ_sizeable = FALSE //if organ can be resized in prefs etc, SET THIS RIGHT, IT'S IMPORTANT.
+	var/max_reagents = 30 //use if organ not sizeable, it auto calculates with sizeable organs and uses it as a base.
+	var/startsfilled = FALSE
+
+	//content liquid stuff, non self generated.
+	var/absorbing = FALSE //absorbs liquids within slowly. Wont absorb reagent_to_make type, refilling and hungerhelp are irrelevant to this.
+	var/absorbrate = 0.20 //refilling and hungerhelp are irrelevant to this, each life tick.
+	var/driprate = 0.1
+	var/spiller = FALSE //toggles if it will spill its contents when not plugged.
+
+	//pregnancy vars
+	var/fertility = FALSE //can it be impregnated
+	var/pregnant = FALSE // is it pregnant
+	var/preggotimer //dumbass timer
+	var/pre_pregnancy_size = 0
+	var/obj/item/organ/pregnantaltorgan = null //change to switch which organ grows from pregnancy of this one. 
+
+	//misc
+	var/list/altnames = list("bugged place", "bugged organ") //used in thought messages.
+
+/obj/item/organ/filling_organ/Insert(mob/living/carbon/M, special, drop_if_replaced) //update size cap n shit on insert
+	. = ..()
+	if(organ_sizeable)
+		max_reagents = rand(1,5) + storage_per_size + storage_per_size * organ_size
+	create_reagents(max_reagents)
+	if(special && startsfilled) // won't fill the organ if you insert this organ via surgery
+		reagents.add_reagent(reagent_to_make, reagents.maximum_volume)
+
+/obj/item/organ/filling_organ/on_life()
+	var/mob/living/carbon/human/H = owner
+
+	..()
+
+	// modify nutrition to generate reagents
+	if(refilling) //self-consuming liquids for refilling organs.
+		if(owner.nutrition < NUTRITION_LEVEL_HUNGRY) //consumes if hungry
+			var/remove_amount = min(reagent_generate_rate, reagents.total_volume)
+			if(uses_nutrient)
+				owner.adjust_nutrition(remove_amount)
+			reagents.remove_reagent(reagent_to_make, remove_amount)
+		if((reagents.total_volume < reagents.maximum_volume) && hungerhelp) //if organ is not full
+			var/max_restore = owner.nutrition > NUTRITION_LEVEL_FED ? reagent_generate_rate * 2 : reagent_generate_rate
+			var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume) // amount restored if fed, capped by reagents.maximum_volume
+			if(uses_nutrient)
+				owner.adjust_nutrition(-restore_amount)
+			reagents.add_reagent(reagent_to_make, restore_amount)
+
+	if(reagents.total_volume && absorbing) //slowly inject to your blood if they have reagents.
+		var/tempabsorbrate = absorbrate/reagents.reagent_list.len //hopefully will properly divide the absorbrate with the number of different reagents it has and absorb the set amount.
+		for(var/datum/reagent/liquid in reagents.reagent_list)
+			if(liquid.type != reagent_to_make) //we dont wanna absorb the reagent we made here.
+				reagents.trans_id_to(owner, liquid, tempabsorbrate, TRUE)
+		if(!contents.len && !HAS_TRAIT(H, TRAIT_GOODLOVER)) //if nothing is plugging the hole, stuff will drip out. Good lovers have steel grip so they dont drip.
+			var/obj/item/clothing/equipped_item = get_organ_blocker(H, zone)
+			if(spiller || reagents.total_volume > reagents.maximum_volume) //spiller or above it's capacity to leak.
+				if(equipped_item && equipped_item.genitalaccess) //if worn slot cover it, reduce drip by half
+					driprate *= 0.5
+					if(H.has_quirk(/datum/quirk/selfawaregeni))
+						if(prob(5))
+							to_chat(H, pick(span_info("A little bit of [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [equipped_item]..."),
+							span_info("Some liquid drips from my [pick(altnames)] to my [equipped_item]."),
+							span_info("My [pick(altnames)] spills some liquid to my [equipped_item]."),
+							span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [equipped_item].")))
+				else
+					if(H.has_quirk(/datum/quirk/selfawaregeni))
+						if(prob(5))
+							to_chat(H, pick(span_info("A little bit of [english_list(reagents.reagent_list)] drips from my [pick(altnames)]..."),
+							span_info("Some liquid drips from my [pick(altnames)]."),
+							span_info("My [pick(altnames)] spills some liquid."),
+							span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)].")))
+				var/tempdriprate = driprate/reagents.reagent_list.len
+				for(var/datum/reagent/dripliquid in reagents.reagent_list)
+					if(dripliquid.type != reagent_to_make) //we dont wanna drip the reagent we made here.
+						reagents.remove_all_type(dripliquid.type, tempdriprate)
+
+	if(!issimple(H) && H.mind)
+		var/athletics = H.mind.get_skill_level(/datum/skill/misc/athletics)
+		var/captarget = max_reagents+(athletics*4)
+		if(damage)
+			captarget -= damage
+		if(contents.len)
+			for(var/obj/item/thing as anything in contents)
+				captarget -= thing.w_class*10
+		if(captarget != reagents.maximum_volume)
+			if(fertility && pregnant)
+				captarget *= 0.5
+			reagents.maximum_volume = captarget
+			if(H.has_quirk(/datum/quirk/selfawaregeni))
+				to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
+
+	if(reagents.reagent_list)
+		if(reagents.total_volume > reagents.maximum_volume + 5)
+			reagents.remove_all(reagents.total_volume - reagents.maximum_volume)
+			H.emote("grunts as their [pick(altnames)] spill its contents.")
+			to_chat(H, span_warning("My [pick(altnames)] spill it's contents with the pressure built up within it, as I am incapable of holding in all that stuff!"))
+			reagents.remove_all(reagents.maximum_volume - reagents.total_volume)
+
+	if(damage > low_threshold)
+		if(prob(5))
+			to_chat(H, span_warning("My [pick(altnames)] aches..."))
+
+/obj/item/organ/filling_organ/proc/organ_jumped()
+	var/mob/living/carbon/human/H = owner
+	var/obj/item/organ/filling_organ/forgan = src
+
+	if(!issimple(H) && H.mind)
+		if(contents.len)
+			var/stealth = H.mind.get_skill_level(/datum/skill/misc/sneaking)
+			var/keepinsidechance = CLAMP((rand(25,100) - (stealth * 20)),0,100) //basically cant lose your item if you have 5 stealth.
+			for(var/obj/item/forgancontents as anything in forgan.contents)
+				if(!istype(forgancontents, /obj/item/dildo)) //dildo keeps stuff in even if you have no pants ig
+					var/obj/item/clothing/equipped_item = get_organ_blocker(H, zone)
+					if(!equipped_item || equipped_item.genitalaccess) //checks if the item has genitalaccess, like skirts, if not, it blocks the thing from flying off.
+						if(prob(keepinsidechance))
+							if(H.client?.prefs.showrolls)
+								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(contents)]! [keepinsidechance]%"))
+							else
+								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(contents)]!"))
+							playsound(H, 'sound/misc/mat/insert (1).ogg', 20, TRUE, -2, ignore_walls = FALSE)
+							forgancontents.doMove(get_turf(H))
+							forgan.contents -= forgancontents
+							var/yeet = rand(4)
+							var/turf/selectedturf = pick(orange(H, yeet)) //object flies off the hole with pressure at a random turf, funny.
+							forgancontents.throw_at(selectedturf, yeet, 2)
+						else
+							if(H.client?.prefs.showrolls)
+								if(keepinsidechance < 10)
+									to_chat(H, span_blue("I easily maintain my [pick(altnames)]'s grip on [english_list(contents)]. [keepinsidechance]%"))
+								else
+									to_chat(H, span_smallnotice("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]. [keepinsidechance]%"))
+							else
+								if(keepinsidechance < 10)
+									to_chat(H, span_blue("I easily maintain my [pick(altnames)]'s grip on [english_list(contents)]."))
+								else
+									to_chat(H, span_smallnotice("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]."))
+				break		
+
+/obj/item/organ/filling_organ/proc/be_impregnated(mob/living/father)
+	if(pregnant)
+		return
+	if(!owner)
+		return
+	if(owner.stat == DEAD)
+		return
+	if(owner.has_quirk(/datum/quirk/selfawaregeni))
+		to_chat(owner, span_love("I feel a surge of warmth in my [src], I’m definitely pregnant!"))
+	reagents.maximum_volume *= 0.5 //ick ock, should make the thing recalculate on next life tick.
+	pregnant = TRUE
+	if(owner.getorganslot(ORGAN_SLOT_BREASTS)) //shitty default behavior i guess, i aint gonna customiza-ble this fuck that.
+		var/obj/item/organ/filling_organ/breasts/breasties = owner.getorganslot(ORGAN_SLOT_BREASTS)
+		if(breasties.refilling == FALSE)
+			breasties.refilling = TRUE
+			if(owner.has_quirk(/datum/quirk/selfawaregeni))
+				to_chat(owner, span_love("My breasts should start lactating soon..."))
+		if(pregnantaltorgan) //there is no birthing so hopefully 2 hours for one stage is enough to last till round end, there is 0 to 3 belly sizes.
+			pre_pregnancy_size = pregnantaltorgan.organ_size
+			addtimer(CALLBACK(pregnantaltorgan, PROC_REF(handle_preggoness)), 2 HOURS, TIMER_STOPPABLE)
+		else
+			pre_pregnancy_size = organ_size
+			addtimer(CALLBACK(src, PROC_REF(handle_preggoness)), 2 HOURS, TIMER_STOPPABLE)
+
+/obj/item/organ/filling_organ/proc/handle_preggoness()
+	var/datum/sprite_accessory/acc = accessory_type
+	to_chat(owner, span_love("I notice my [src] has grown...")) //dont need to repeat this probably if size cant grow anyway.
+	if(organ_sizeable)
+		if(organ_size < 3)
+			organ_size += 1
+			acc.get_icon_state()
+			owner.update_body_parts(TRUE)
+			preggotimer = addtimer(CALLBACK(src, PROC_REF(handle_preggoness)), 2 HOURS, TIMER_STOPPABLE)
+		else
+			deltimer(preggotimer)
+
+/obj/item/organ/filling_organ/proc/undo_preggoness()
+	if(!pregnant)
+		return
+	deltimer(preggotimer)
+	pregnant = FALSE
+	to_chat(owner, span_love("I feel my [src] shrink to how it was before. Pregnancy is no more."))
+	if(owner.getorganslot(ORGAN_SLOT_BELLY))
+		var/obj/item/organ/belly/bellyussy = owner.getorganslot(ORGAN_SLOT_BELLY)
+		var/datum/sprite_accessory/belly/bellyacc = bellyussy.accessory_type
+		bellyussy.organ_size = pre_pregnancy_size
+		bellyacc.get_icon_state()
+	owner.update_body_parts(TRUE)

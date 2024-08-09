@@ -159,9 +159,9 @@
 //SCOMSTONE                 SCOMSTONE
 
 /obj/item/scomstone
-	name = "emerald ring"
+	name = "scomstone ring"
 	icon_state = "ring_emerald"
-	desc = "A golden ring with an emerald gem."
+	desc = "A golden ring with a SCOM gem."
 	gripped_intents = null
 	dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)

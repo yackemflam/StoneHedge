@@ -6,7 +6,7 @@
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
-	var/obj/item/organ/vagina/uservag = user.getorgan(/obj/item/organ/vagina)
+	var/obj/item/organ/filling_organ/vagina/uservag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(uservag.contents.len)
 		return TRUE
 	if(!get_insertable_in_hand(user))
@@ -25,7 +25,7 @@
 					return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
-	var/obj/item/organ/vagina/uservag = user.getorgan(/obj/item/organ/vagina)
+	var/obj/item/organ/filling_organ/vagina/uservag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(uservag.contents.len)
 		return TRUE
 	if(!get_insertable_in_hand(user))
@@ -34,7 +34,7 @@
 
 /datum/sex_action/store_vagina/on_start(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
-	var/obj/item/organ/vagina/uservag = user.getorgan(/obj/item/organ/vagina)
+	var/obj/item/organ/filling_organ/vagina/uservag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(istype(useditem, /obj/item/rogueweapon))
 		to_chat(user, span_userdanger("[useditem] may cut me while i put it in, depending on my precision of hand."))
 	if(user.m_intent != MOVE_INTENT_SNEAK && !uservag.contents.len)
@@ -44,7 +44,7 @@
 
 /datum/sex_action/store_vagina/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
-	var/obj/item/organ/vagina/uservag = user.getorgan(/obj/item/organ/vagina)
+	var/obj/item/organ/filling_organ/vagina/uservag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	var/mob/living/carbon/human/userussy = user
 	var/stealskill =  user.mind.get_skill_level(/datum/skill/misc/stealing)
 	var/medicineskill =  user.mind.get_skill_level(/datum/skill/misc/medicine)

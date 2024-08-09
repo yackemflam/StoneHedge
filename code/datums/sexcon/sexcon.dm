@@ -175,9 +175,6 @@
 		user.add_stress(/datum/stressevent/cumok)
 	if(oral)
 		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
-		if(ejacmessaged != 1)
-			target.visible_message(span_info("With every load I swallow, with Eora's blessing I feel more satiated so I may go longer."))
-			ejacmessaged = 1
 		if(testes)
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
 			testes.reagents.trans_to(target, cum_to_take, transfered_by = user)
@@ -311,8 +308,8 @@
 	pain_amt *= get_speed_pain_multiplier(applied_speed)
 
 	if(user.stat == DEAD)
-		if(prob(10)) //since there is no proper diseases....
-			user.adjustToxLoss(1)
+		if(prob(2)) //since there is no proper diseases....
+			target.reagents.add_reagent(/datum/reagent/organpoison, 1)
 
 	var/sexhealrand = rand(0.2, 0.4)
 	//go go gadget sex healing.. magic?

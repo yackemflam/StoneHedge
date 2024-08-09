@@ -130,7 +130,7 @@
 	if(!ishuman(described))
 		return FALSE
 	var/mob/living/carbon/human/human = described
-	var/obj/item/organ/vagina/vagina = human.getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/filling_organ/vagina/vagina = human.getorganslot(ORGAN_SLOT_VAGINA)
 	if(!vagina)
 		return FALSE
 	if(!get_location_accessible(human, BODY_ZONE_PRECISE_GROIN))

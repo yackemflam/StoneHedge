@@ -113,7 +113,7 @@
 
 /datum/supply_pack/rogue/weapons/arrow
 	name = "Arrows"
-	cost = 15
+	cost = 30
 	contains = list(
 					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
 					/obj/item/ammo_casing/caseless/rogue/arrow/iron,
@@ -148,17 +148,17 @@
 
 /datum/supply_pack/rogue/weapons/quivers/bolts
 	name = "Quiver of Bolts"
-	cost = 50
+	cost = 100
 	contains = list(
 					/obj/item/quiver/bolts,
 					/obj/item/quiver/bolts,
 					/obj/item/quiver/bolts,
 				)
 
-/*
+
 /datum/supply_pack/rogue/weapons/Parrows
 	name = "Poisoned Arrows"
-	cost = 20
+	cost = 60
 	contains = list(/obj/item/ammo_casing/caseless/rogue/arrow/poison,
 					/obj/item/ammo_casing/caseless/rogue/arrow/poison,
 					/obj/item/ammo_casing/caseless/rogue/arrow/poison,
@@ -176,11 +176,11 @@
 					/obj/item/ammo_casing/caseless/rogue/arrow/poison,
 					/obj/item/ammo_casing/caseless/rogue/arrow/poison,
 					/obj/item/ammo_casing/caseless/rogue/arrow/poison)
-*/
+
 
 /datum/supply_pack/rogue/weapons/bolt
 	name = "Bolts"
-	cost = 15
+	cost = 30
 	contains = list(
 					/obj/item/ammo_casing/caseless/rogue/bolt,
 					/obj/item/ammo_casing/caseless/rogue/bolt,
@@ -203,14 +203,29 @@
 					/obj/item/ammo_casing/caseless/rogue/bolt,
 					/obj/item/ammo_casing/caseless/rogue/bolt,
 				)
-/*
+
+
 /datum/supply_pack/rogue/weapons/Pbolts
 	name = "Poisoned Bolts"
-	cost = 30
+	cost = 80
 	contains = list(/obj/item/ammo_casing/caseless/rogue/bolt/poison,
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
+					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison)
-*/
+

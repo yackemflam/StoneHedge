@@ -190,3 +190,10 @@
 				return TRUE
 
 	return FALSE
+
+/proc/get_organ_blocker(mob/victim, location = BODY_ZONE_CHEST)
+	if(iscarbon(victim))
+		var/mob/living/carbon/carbon_victim = victim
+		for(var/obj/item/clothing/equipped_item in carbon_victim.get_equipped_items(include_pockets = FALSE))
+			if(zone2covered(location, equipped_item.body_parts_covered))
+				return equipped_item

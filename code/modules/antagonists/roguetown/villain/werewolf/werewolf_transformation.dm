@@ -155,9 +155,9 @@
 	if(getorganslot(ORGAN_SLOT_BELLY))
 		W.internal_organs_slot[ORGAN_SLOT_BELLY] = /obj/item/organ/belly/internal
 	if(getorganslot(ORGAN_SLOT_VAGINA))
-		W.internal_organs_slot[ORGAN_SLOT_VAGINA] = /obj/item/organ/vagina/internal
+		W.internal_organs_slot[ORGAN_SLOT_VAGINA] = /obj/item/organ/filling_organ/vagina/internal
 	if(getorganslot(ORGAN_SLOT_ANUS))
-		W.internal_organs_slot[ORGAN_SLOT_ANUS] = /obj/item/organ/anus
+		W.internal_organs_slot[ORGAN_SLOT_ANUS] = /obj/item/organ/filling_organ/anus
 
 	W.client.prefs.sexable = client.prefs.sexable
 

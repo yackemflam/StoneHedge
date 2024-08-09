@@ -92,7 +92,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female")
 	var/phobia = "spiders"
 	var/shake = TRUE
-	var/sexable = FALSE
+	var/sexable = TRUE
 
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
@@ -156,7 +156,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/custom_descriptors = list()
 	var/defiant = TRUE
 
-	var/datum/char_accent/char_accent
+	var/datum/char_accent/char_accent = "No accent"
 
 
 /datum/preferences/New(client/C)
@@ -349,7 +349,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>Unknown</a><BR>" // Disabling until its working
 			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
 
-			dat += "<b>ERP Panel:</b> <a href='?_src_=prefs;preference=sexable'>[sexable == TRUE ? "Yes" : "No"]</a><BR>"
+//			dat += "<b>ERP Panel:</b> <a href='?_src_=prefs;preference=sexable'>[sexable == TRUE ? "Yes" : "No"]</a><BR>"
 
 /*
 			dat += "<br><br><b>Special Names:</b><BR>"

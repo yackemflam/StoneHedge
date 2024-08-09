@@ -208,11 +208,14 @@
 	glass_name = "glass of semen"
 	glass_desc = ""
 	var/nearegg = FALSE
+	var/virile = TRUE
 
 /datum/reagent/consumable/cum/on_transfer(atom/A, method, trans_volume)
 	. = ..()
-	if(istype(holder, /obj/item/organ/vagina))
-		nearegg = TRUE //bomb ready.
+	if(istype(holder, /obj/item/organ/filling_organ) && virile)
+		var/obj/item/organ/filling_organ/forgan = holder
+		if(forgan.fertility && !forgan.pregnant)
+			nearegg = TRUE //bomb ready.
 
 /datum/reagent/consumable/cum/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(20))
@@ -220,14 +223,17 @@
 		. = 1
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(prob(5) && H.getorganslot(ORGAN_SLOT_VAGINA) && nearegg) //bomb has been planted
-			var/obj/item/organ/vagina/vag =  H.getorganslot(ORGAN_SLOT_VAGINA)
-			vag.be_impregnated(H) //boom
+		var/obj/item/organ/filling_organ/forgan = holder
+		if(prob(1) && nearegg && virile) //bomb has been planted
+			forgan.be_impregnated(H) //boom
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
 			H.adjust_hydration(10)
 		if(H.blood_volume < BLOOD_VOLUME_NORMAL)
 			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
 	..()
+
+/datum/reagent/consumable/cum/sterile
+	virile = FALSE
 
 /datum/reagent/consumable/breastmilk
 	name = "Breast Milk"

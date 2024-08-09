@@ -206,12 +206,12 @@
 				START_PROCESSING(SSweather,T)
 
 /datum/weather/proc/get_used_state()
-	switch(stage)
+/*	switch(stage)
 		if(STARTUP_STAGE)
 			return telegraph_overlay
 		if(MAIN_STAGE)
 			return weather_overlay
 		if(WIND_DOWN_STAGE)
 			return end_overlay
-	return "" //thsi bugs out when rain falls then u set off a bomb
-	return weather_overlay //when do we ever set off a bomb --vide
+	return "" */ //thsi bugs out when rain falls then u set off a bomb
+	return weather_overlay

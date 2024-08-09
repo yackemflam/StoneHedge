@@ -6,7 +6,7 @@
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_ANUS))
 		return FALSE
-	var/obj/item/organ/anus/userass = user.getorgan(/obj/item/organ/anus)
+	var/obj/item/organ/filling_organ/anus/userass = user.getorgan(/obj/item/organ/filling_organ/anus)
 	if(userass.contents.len)
 		return TRUE
 	if(!get_insertable_in_hand(user))
@@ -25,7 +25,7 @@
 					return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_ANUS))
 		return FALSE
-	var/obj/item/organ/anus/userass = user.getorgan(/obj/item/organ/anus)
+	var/obj/item/organ/filling_organ/anus/userass = user.getorgan(/obj/item/organ/filling_organ/anus)
 	if(userass.contents.len)
 		return TRUE
 	if(!get_insertable_in_hand(user))
@@ -34,7 +34,7 @@
 
 /datum/sex_action/store_anal/on_start(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
-	var/obj/item/organ/anus/userass = user.getorgan(/obj/item/organ/anus)
+	var/obj/item/organ/filling_organ/anus/userass = user.getorgan(/obj/item/organ/filling_organ/anus)
 	if(istype(useditem, /obj/item/rogueweapon))
 		to_chat(user, span_userdanger("[useditem] may cut me while i put it in, depending on my precision of hand."))
 	if(user.m_intent != MOVE_INTENT_SNEAK && !userass.contents.len)
@@ -44,10 +44,10 @@
 
 /datum/sex_action/store_anal/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
-	var/obj/item/organ/anus/userass = user.getorgan(/obj/item/organ/anus)
+	var/obj/item/organ/filling_organ/anus/userass = user.getorgan(/obj/item/organ/filling_organ/anus)
 	var/mob/living/carbon/human/userussy = user
-	var/stealskill = user.mind.get_skill_level(/datum/skill/misc/stealing)
-	var/medicineskill = user.mind.get_skill_level(/datum/skill/misc/medicine)
+	var/stealskill =  min(1,user.mind.get_skill_level(/datum/skill/misc/stealing))
+	var/medicineskill =  min(1,user.mind.get_skill_level(/datum/skill/misc/medicine))
 	var/flubchance = 100
 	if(stealskill > medicineskill) //medicine or stealth, taken higher and used to divide the flubbing chance, if you got neither skill its 100 odds, go home bro.
 		flubchance = flubchance/stealskill

@@ -449,7 +449,7 @@
 	abstract_type = /datum/customizer_choice/organ/vagina
 	name = "Vagina"
 	customizer_entry_type = /datum/customizer_entry/organ/vagina
-	organ_type = /obj/item/organ/vagina
+	organ_type = /obj/item/organ/filling_organ/vagina
 	organ_slot = ORGAN_SLOT_VAGINA
 	organ_dna_type = /datum/organ_dna/vagina
 
