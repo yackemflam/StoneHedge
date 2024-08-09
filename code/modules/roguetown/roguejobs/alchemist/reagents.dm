@@ -22,8 +22,13 @@
 		to_chat(M, span_nicegreen("I feel one of my wounds mend."))
 	M.adjustBruteLoss(-1.5*REM, 0)
 	M.adjustFireLoss(-1.5*REM, 0)
-	M.adjustOxyLoss(-1.5, 0)
+	M.adjustOxyLoss(-1.5*REM, 0)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2*REM)
+	M.adjustEarDamage(-2*REM)
+	M.adjustOrganLoss(ORGAN_SLOT_VAGINA, -2*REM) //all the reagent holders
+	M.adjustOrganLoss(ORGAN_SLOT_BREASTS, -2*REM)
+	M.adjustOrganLoss(ORGAN_SLOT_ANUS, -2*REM)
+	M.adjustOrganLoss(ORGAN_SLOT_TESTICLES, -2*REM)
 	M.adjustCloneLoss(-1*REM, 0)
 	..()
 	. = 1

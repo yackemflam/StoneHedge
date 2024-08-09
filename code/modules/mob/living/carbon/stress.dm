@@ -87,7 +87,7 @@
 				to_chat(src, span_green("I feel good"))
 			if(STRESS_THRESHOLD_NEUTRAL)
 				if(ascending)
-					to_chat(src, span_info("I no longer feel good"))
+					to_chat(src, span_info("I no longer feel that good"))
 				else
 					to_chat(src, span_info("I no longer feel stressed"))
 			if(STRESS_THRESHOLD_STRESSED)

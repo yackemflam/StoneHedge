@@ -60,7 +60,7 @@
 	user.sexcon.perform_sex_action(target, 2, 4, FALSE)
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] cums into [user]'s butt!"))
-		target.sexcon.cum_into()
+		target.sexcon.cum_into(anal = TRUE)
 		target.virginity = FALSE
 
 /datum/sex_action/anal_ride_sex/on_finish(mob/living/user, mob/living/target)
