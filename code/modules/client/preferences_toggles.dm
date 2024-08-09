@@ -37,7 +37,6 @@
 		to_chat(src, "Screen shake toggled")
 
 //defiant makes this unnecessary.
-/*
 /client/verb/toggle_ERP() // Alters if other people can use the ERP panel ON you.
 	set category = "Options"
 	set name = "Toggle ERP Panel"
@@ -47,7 +46,6 @@
 		if(prefs.sexable)
 			to_chat(src, "Others can play with you.")
 		else to_chat(src, "Others can't touch you.")
-*/
 
 /client/verb/stop_sounds_rogue()
 	set name = "StopSounds"

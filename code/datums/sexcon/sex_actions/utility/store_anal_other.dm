@@ -1,7 +1,7 @@
-/datum/sex_action/utiliy/store_ass_other
+/datum/sex_action/store_ass_other
 	name = "search/insert in their ass"
 
-/datum/sex_action/utiliy/store_ass_other/shows_on_menu(mob/living/user, mob/living/target)
+/datum/sex_action/store_ass_other/shows_on_menu(mob/living/user, mob/living/target)
 	if(!issimple(target)) //will not work on simple mobs
 		return FALSE
 	if(user == target)
@@ -15,7 +15,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/utiliy/store_ass_other/can_perform(mob/living/user, mob/living/target)
+/datum/sex_action/store_ass_other/can_perform(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
 	if(ishuman(target))
@@ -34,7 +34,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/utiliy/store_ass_other/on_start(mob/living/user, mob/living/target)
+/datum/sex_action/store_ass_other/on_start(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/anus/targetass = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(istype(useditem, /obj/item/rogueweapon))
@@ -44,7 +44,7 @@
 	if(user.m_intent != MOVE_INTENT_SNEAK && targetass.contents.len)
 		user.visible_message(span_warning("[user] starts to pull \the [english_list(targetass.contents)] from [target]'s ass..."))
 
-/datum/sex_action/utiliy/store_ass_other/is_finished(mob/living/user, mob/living/target)
+/datum/sex_action/store_ass_other/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/anus/targetass = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	var/mob/living/carbon/human/targetussy = user

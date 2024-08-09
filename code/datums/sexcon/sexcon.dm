@@ -540,28 +540,7 @@
 		var/datum/sex_action/action = SEX_ACTION(action_type)
 		if(!action.shows_on_menu(user, target))
 			continue
-		if(action.utility)
-			continue
 		dat += "<td>"
-		var/link = ""
-		if(!can_perform_action(action_type))
-			link = "linkOff"
-		if(current_action == action_type)
-			link = "linkOn"
-		dat += "<center><a class='[link]' href='?src=[REF(src)];task=action;action_type=[action_type]'>[action.name]</a></center>"
-		dat += "</td>"
-		i++
-		if(i >= 2)
-			i = 0
-			dat += "</tr><tr>"
-	dat += "<td><center>-------- OTHER -------</center>"
-	//utility stuff
-	for(var/action_type in GLOB.sex_actions)
-		var/datum/sex_action/action = SEX_ACTION(action_type)
-		if(!action.shows_on_menu(user, target))
-			continue
-		if(!action.utility)
-			continue
 		var/link = ""
 		if(!can_perform_action(action_type))
 			link = "linkOff"

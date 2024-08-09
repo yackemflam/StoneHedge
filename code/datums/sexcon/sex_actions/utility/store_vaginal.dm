@@ -1,7 +1,7 @@
-/datum/sex_action/utiliy/store_vagina
+/datum/sex_action/store_vagina
 	name = "Store/remove object in cunt"
 
-/datum/sex_action/utiliy/store_vagina/shows_on_menu(mob/living/user, mob/living/target)
+/datum/sex_action/store_vagina/shows_on_menu(mob/living/user, mob/living/target)
 	if(user != target)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
@@ -13,7 +13,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/utiliy/store_vagina/can_perform(mob/living/user, mob/living/target)
+/datum/sex_action/store_vagina/can_perform(mob/living/user, mob/living/target)
 	if(user != target)
 		return FALSE
 	if(ishuman(user))
@@ -32,7 +32,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/utiliy/store_vagina/on_start(mob/living/user, mob/living/target)
+/datum/sex_action/store_vagina/on_start(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/vagina/uservag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(istype(useditem, /obj/item/rogueweapon))
@@ -42,7 +42,7 @@
 	if(user.m_intent != MOVE_INTENT_SNEAK && uservag.contents.len)
 		user.visible_message(span_warning("[user] starts to pull \the [english_list(uservag.contents)] from their cunt..."))
 
-/datum/sex_action/utiliy/store_vagina/is_finished(mob/living/user, mob/living/target)
+/datum/sex_action/store_vagina/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/vagina/uservag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	var/mob/living/carbon/human/userussy = user

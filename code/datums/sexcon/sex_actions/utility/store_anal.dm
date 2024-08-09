@@ -1,7 +1,7 @@
-/datum/sex_action/utiliy/store_anal
+/datum/sex_action/store_anal
 	name = "Store/remove object in ass"
 
-/datum/sex_action/utiliy/store_anal/shows_on_menu(mob/living/user, mob/living/target)
+/datum/sex_action/store_anal/shows_on_menu(mob/living/user, mob/living/target)
 	if(user != target)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_ANUS))
@@ -13,7 +13,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/utiliy/store_anal/can_perform(mob/living/user, mob/living/target)
+/datum/sex_action/store_anal/can_perform(mob/living/user, mob/living/target)
 	if(user != target)
 		return FALSE
 	if(ishuman(user))
@@ -32,7 +32,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/utiliy/store_anal/on_start(mob/living/user, mob/living/target)
+/datum/sex_action/store_anal/on_start(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/anus/userass = user.getorgan(/obj/item/organ/filling_organ/anus)
 	if(istype(useditem, /obj/item/rogueweapon))
@@ -42,7 +42,7 @@
 	if(user.m_intent != MOVE_INTENT_SNEAK && userass.contents.len)
 		user.visible_message(span_warning("[user] starts to pull \the [english_list(userass.contents)] from their ass..."))
 
-/datum/sex_action/utiliy/store_anal/is_finished(mob/living/user, mob/living/target)
+/datum/sex_action/store_anal/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/anus/userass = user.getorgan(/obj/item/organ/filling_organ/anus)
 	var/mob/living/carbon/human/userussy = user

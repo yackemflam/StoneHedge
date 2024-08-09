@@ -1,7 +1,7 @@
-/datum/sex_action/utiliy/store_nipple_other
+/datum/sex_action/store_nipple_other
 	name = "Store/remove object in their breasts"
 
-/datum/sex_action/utiliy/store_nipple_other/shows_on_menu(mob/living/user, mob/living/target)
+/datum/sex_action/store_nipple_other/shows_on_menu(mob/living/user, mob/living/target)
 	if(target == user)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_BREASTS))
@@ -15,7 +15,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/utiliy/store_nipple_other/can_perform(mob/living/user, mob/living/target)
+/datum/sex_action/store_nipple_other/can_perform(mob/living/user, mob/living/target)
 	if(target == user)
 		return FALSE
 	if(ishuman(target))
@@ -38,7 +38,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/utiliy/store_nipple_other/on_start(mob/living/user, mob/living/target)
+/datum/sex_action/store_nipple_other/on_start(mob/living/user, mob/living/target)
 	var/obj/item/organ/filling_organ/breasts/targetbreasts = target.getorgan(/obj/item/organ/filling_organ/breasts)
 	var/obj/item/heldstuff = user.get_active_held_item()
 	if(targetbreasts.organ_size < 4)
@@ -64,7 +64,7 @@
 	if(user.m_intent != MOVE_INTENT_SNEAK && targetbreasts.contents.len == 2 && target.get_active_held_item() == null)
 		target.visible_message(span_warning("[target] starts to pull \the [english_list(targetbreasts.contents)] from [target]'s nipple..."))
 
-/datum/sex_action/utiliy/store_nipple_other/is_finished(mob/living/user, mob/living/target)
+/datum/sex_action/store_nipple_other/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = target.get_active_held_item()
 	var/obj/item/organ/filling_organ/breasts/targetbreasts = target.getorgan(/obj/item/organ/filling_organ/breasts)
 	var/mob/living/carbon/human/targetussy = target
