@@ -6,6 +6,13 @@
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/targethuman = target
+		if(targethuman.wear_shirt)
+			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
+			if(shirtsies.flags_inv & HIDEBOOB)
+				if(shirtsies.genitalaccess == FALSE)
+					return FALSE
 	var/obj/item/organ/filling_organ/breasts/targetbreasts = target.getorgan(/obj/item/organ/filling_organ/breasts)
 	if(targetbreasts.contents.len == 0 && target.get_active_held_item() == null)
 		return TRUE
@@ -20,10 +27,10 @@
 		return FALSE
 	if(ishuman(target))
 		var/mob/living/carbon/human/targethuman = target
-		if(targethuman.wear_pants)
-			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
-			if(pantsies.flags_inv & HIDECROTCH) 
-				if(pantsies.genitalaccess == FALSE) 
+		if(targethuman.wear_shirt)
+			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
+			if(shirtsies.flags_inv & HIDEBOOB)
+				if(shirtsies.genitalaccess == FALSE)
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE
