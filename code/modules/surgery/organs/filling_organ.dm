@@ -1,9 +1,9 @@
 /obj/item/organ/filling_organ
 	name = "self filling organ"
 
-	//self generating liquid stuff
+	//self generating liquid stuff, dont use with absorbing stuff
 	var/storage_per_size = 10 //added per organ size
-	var/datum/reagent/reagent_to_make =  /datum/reagent/consumable/nutriment //naturally generated reagent
+	var/datum/reagent/reagent_to_make = /datum/reagent/consumable/nutriment //naturally generated reagent
 	var/refilling = FALSE //slowly refills when not hungry
 	var/reagent_generate_rate = HUNGER_FACTOR //with refilling
 	var/hungerhelp = FALSE //if refilling, absorbs reagent_to_make as nutrients if hungry. Conversion is to nutrients direct even if you brew poison in there.
@@ -12,11 +12,13 @@
 	var/max_reagents = 30 //use if organ not sizeable, it auto calculates with sizeable organs and uses it as a base.
 	var/startsfilled = FALSE
 
-	//content liquid stuff, non self generated.
+	//absorbing etc content liquid stuff, non self generated.
 	var/absorbing = FALSE //absorbs liquids within slowly. Wont absorb reagent_to_make type, refilling and hungerhelp are irrelevant to this.
-	var/absorbrate = 0.20 //refilling and hungerhelp are irrelevant to this, each life tick.
+	var/absorbrate = 0.1 //refilling and hungerhelp are irrelevant to this, each life tick. NO LESS THAN 1 DIGESTS
+	var/absorbmult = 1.25 //for a long absorbtion time it's probably fine to have more.
 	var/driprate = 0.1
 	var/spiller = FALSE //toggles if it will spill its contents when not plugged.
+	var/blocker = ITEM_SLOT_SHIRT //pick an item slot
 
 	//pregnancy vars
 	var/fertility = FALSE //can it be impregnated
@@ -55,33 +57,28 @@
 				owner.adjust_nutrition(-restore_amount)
 			reagents.add_reagent(reagent_to_make, restore_amount)
 
-	if(reagents.total_volume && absorbing) //slowly inject to your blood if they have reagents.
-		var/tempabsorbrate = absorbrate/reagents.reagent_list.len //hopefully will properly divide the absorbrate with the number of different reagents it has and absorb the set amount.
-		for(var/datum/reagent/liquid in reagents.reagent_list)
-			if(liquid.type != reagent_to_make) //we dont wanna absorb the reagent we made here.
-				reagents.trans_id_to(owner, liquid, tempabsorbrate, TRUE)
-		if(!contents.len && !HAS_TRAIT(H, TRAIT_GOODLOVER)) //if nothing is plugging the hole, stuff will drip out. Good lovers have steel grip so they dont drip.
-			var/obj/item/clothing/equipped_item = get_organ_blocker(H, zone)
-			if(spiller || reagents.total_volume > reagents.maximum_volume) //spiller or above it's capacity to leak.
-				if(equipped_item && equipped_item.genitalaccess) //if worn slot cover it, reduce drip by half
-					driprate *= 0.5
-					if(H.has_quirk(/datum/quirk/selfawaregeni))
-						if(prob(5))
-							to_chat(H, pick(span_info("A little bit of [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [equipped_item]..."),
-							span_info("Some liquid drips from my [pick(altnames)] to my [equipped_item]."),
-							span_info("My [pick(altnames)] spills some liquid to my [equipped_item]."),
-							span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [equipped_item].")))
-				else
-					if(H.has_quirk(/datum/quirk/selfawaregeni))
-						if(prob(5))
-							to_chat(H, pick(span_info("A little bit of [english_list(reagents.reagent_list)] drips from my [pick(altnames)]..."),
-							span_info("Some liquid drips from my [pick(altnames)]."),
-							span_info("My [pick(altnames)] spills some liquid."),
-							span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)].")))
-				var/tempdriprate = driprate/reagents.reagent_list.len
-				for(var/datum/reagent/dripliquid in reagents.reagent_list)
-					if(dripliquid.type != reagent_to_make) //we dont wanna drip the reagent we made here.
-						reagents.remove_all_type(dripliquid.type, tempdriprate)
+	if(reagents.total_volume && absorbing) //slowly inject to your blood if they have reagents. Will not work if refilling because i cant properly seperate the reagents for which to keep which to dump.
+		reagents.trans_to(owner, max(1, absorbrate), absorbmult, TRUE, FALSE, round_robin = TRUE)
+	if(!contents.len) //if nothing is plugging the hole, stuff will drip out.
+		var/tempdriprate = driprate
+		if(spiller || reagents.total_volume > reagents.maximum_volume) //spiller or above it's capacity to leak.
+			var/obj/item/clothing/blockingitem = H.mob_slot_wearing(blocker)
+			if(blockingitem && !blockingitem.genitalaccess) //if worn slot cover it, drip less.
+				tempdriprate *= 0.5
+				if(H.has_quirk(/datum/quirk/selfawaregeni))
+					if(prob(5))
+						to_chat(H, pick(span_info("A little bit of [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [blockingitem.name]..."),
+						span_info("Some liquid drips from my [pick(altnames)] to my [blockingitem.name]."),
+						span_info("My [pick(altnames)] spills some liquid to my [blockingitem.name]."),
+						span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [blockingitem.name].")))
+			else
+				if(H.has_quirk(/datum/quirk/selfawaregeni))
+					if(prob(5))
+						to_chat(H, pick(span_info("A little bit of [english_list(reagents.reagent_list)] drips from my [pick(altnames)]..."),
+						span_info("Some liquid drips from my [pick(altnames)]."),
+						span_info("My [pick(altnames)] spills some liquid."),
+						span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)].")))
+			reagents.remove_all(tempdriprate)
 
 	if(!issimple(H) && H.mind)
 		var/athletics = H.mind.get_skill_level(/datum/skill/misc/athletics)
@@ -119,13 +116,19 @@
 			var/keepinsidechance = CLAMP((rand(25,100) - (stealth * 20)),0,100) //basically cant lose your item if you have 5 stealth.
 			for(var/obj/item/forgancontents as anything in forgan.contents)
 				if(!istype(forgancontents, /obj/item/dildo)) //dildo keeps stuff in even if you have no pants ig
-					var/obj/item/clothing/equipped_item = get_organ_blocker(H, zone)
-					if(!equipped_item || equipped_item.genitalaccess) //checks if the item has genitalaccess, like skirts, if not, it blocks the thing from flying off.
+					var/obj/item/clothing/blockingitem = get_organ_blocker(H, zone)
+					if(!blockingitem || blockingitem.genitalaccess) //checks if the item has genitalaccess, like skirts, if not, it blocks the thing from flying off.
 						if(prob(keepinsidechance))
 							if(H.client?.prefs.showrolls)
 								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(contents)]! [keepinsidechance]%"))
 							else
 								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(contents)]!"))
+							if(reagents.reagent_list)
+								if(reagents.total_volume > reagents.maximum_volume - keepinsidechance)
+									reagents.remove_all(reagents.total_volume - reagents.maximum_volume)
+									H.emote("grunts as their [pick(altnames)] spill some of its contents!")
+									to_chat(H, span_warning("My [pick(altnames)] spill some of it's contents with the pressure on it!"))
+									reagents.remove_all(reagents.maximum_volume - reagents.total_volume)
 							playsound(H, 'sound/misc/mat/insert (1).ogg', 20, TRUE, -2, ignore_walls = FALSE)
 							forgancontents.doMove(get_turf(H))
 							forgan.contents -= forgancontents
@@ -137,12 +140,12 @@
 								if(keepinsidechance < 10)
 									to_chat(H, span_blue("I easily maintain my [pick(altnames)]'s grip on [english_list(contents)]. [keepinsidechance]%"))
 								else
-									to_chat(H, span_smallnotice("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]. [keepinsidechance]%"))
+									to_chat(H, span_info("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]. [keepinsidechance]%"))
 							else
 								if(keepinsidechance < 10)
 									to_chat(H, span_blue("I easily maintain my [pick(altnames)]'s grip on [english_list(contents)]."))
 								else
-									to_chat(H, span_smallnotice("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]."))
+									to_chat(H, span_info("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]."))
 				break		
 
 /obj/item/organ/filling_organ/proc/be_impregnated(mob/living/father)

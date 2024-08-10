@@ -15,7 +15,7 @@
 					return FALSE
 	var/obj/item/organ/filling_organ/breasts/targetbreasts = target.getorgan(/obj/item/organ/filling_organ/breasts)
 	if(targetbreasts.contents.len == 0 && target.get_active_held_item() == null)
-		return TRUE
+		return FALSE
 	if((targetbreasts.contents.len <= 2 && target.get_active_held_item() == null) || (targetbreasts.contents.len < 2 && target.get_active_held_item() != null))
 		return TRUE
 	if(!get_insertable_in_hand(target))

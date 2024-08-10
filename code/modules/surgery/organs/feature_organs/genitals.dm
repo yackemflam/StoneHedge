@@ -88,11 +88,12 @@
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_ANUS
 	accessory_type = /datum/sprite_accessory/none
-	max_reagents = 15 //use if organ not sizeable
-	absorbing = TRUE //absorbs liquids within slowly. Wont absorb reagent_to_make type, refilling and hungerhelp are irrelevant to this.
-	absorbrate = 2 //refilling and hungerhelp are irrelevant to this.
+	max_reagents = 20 //less size than vagene in turn for more effective absorbtion
+	absorbing = TRUE
+	absorbmult = 1.5 //more effective absorb than others i guess.
 	altnames = list("ass", "asshole", "butt", "butthole", "guts") //used in thought messages.
 	spiller = TRUE
+	blocker = ITEM_SLOT_PANTS
 
 /obj/item/organ/filling_organ/vagina
 	name = "vagina"
@@ -102,12 +103,13 @@
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_VAGINA
 	accessory_type = /datum/sprite_accessory/vagina/human
-	max_reagents = 30
+	max_reagents = 40 //big cap, ordinary absorbtion.
 	absorbing = TRUE
 	fertility = TRUE
 	pregnantaltorgan = /obj/item/organ/belly
 	altnames = list("vagina", "cunt", "womb", "pussy", "slit", "kitty", "snatch") //used in thought messages.
 	spiller = TRUE
+	blocker = ITEM_SLOT_PANTS
 
 /obj/item/organ/filling_organ/breasts
 	name = "breasts"
@@ -151,10 +153,10 @@
 	refilling = TRUE
 	hungerhelp = TRUE //balls be dry if you starve
 	organ_sizeable = TRUE
-	absorbing = TRUE //if you somehow put another liquid here it should probably get replaced..
 	storage_per_size = 5
 	altnames = list("balls", "testicles", "testes", "orbs", "cum tanks", "seed tanks") //used in thought messages.
 	startsfilled = TRUE
+	blocker = ITEM_SLOT_PANTS
 	var/virility = TRUE
 
 /obj/item/organ/filling_organ/testicles/Insert(mob/living/carbon/M, special, drop_if_replaced)

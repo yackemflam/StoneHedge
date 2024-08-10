@@ -824,44 +824,19 @@
 			continue
 		examination += bodypart.check_for_injuries(user, deep_examination)
 
-	var/mob/living/userino = user
-	var/obj/item/organ/uservagina = user.getorganslot(ORGAN_SLOT_VAGINA)
-	var/obj/item/organ/userbreasts = user.getorganslot(ORGAN_SLOT_BREASTS)
-	var/obj/item/organ/userballs = user.getorganslot(ORGAN_SLOT_TESTICLES)
-	var/obj/item/organ/userass = user.getorganslot(ORGAN_SLOT_ANUS)
-
 #ifdef MATURESERVER
-	if(userino.has_quirk(/datum/quirk/selfawaregeni))
-		if(uservagina.reagents.total_volume || userass.reagents.total_volume || !uservagina.contents.len || !userass.contents.len)
-			examination += "ø ------------ ø</span>"
-		if(userbreasts)
-			if(userbreasts.reagents.total_volume)
-				if(userino.has_quirk(/datum/quirk/selfaware))
-					examination += span_info("My breasts are <bold>[userbreasts.reagents.total_volume]/[userbreasts.reagents.maximum_volume]</bold> full.")
-				else
-					examination += span_info("My breasts are about <bold>[round(userbreasts.reagents.total_volume / 3, 0.1)]/[round(userbreasts.reagents.maximum_volume / 3, 0.1)]</bold> oz full.")
-		if(userballs)
-			if(userballs.reagents.total_volume)
-				if(userino.has_quirk(/datum/quirk/selfaware))
-					examination += span_info("My balls are <bold>[userballs.reagents.total_volume]/[userballs.reagents.maximum_volume]</bold> full.")
-				else
-					examination += span_info("My balls are about <bold>[round(userballs.reagents.total_volume / 3, 0.1)]/[round(userballs.reagents.maximum_volume / 3, 0.1)]</bold> oz full.")
-		if(uservagina)
-			if(uservagina.reagents.total_volume)
-				if(userino.has_quirk(/datum/quirk/selfaware))
-					examination += span_info("My womb is <bold>[uservagina.reagents.total_volume]/[uservagina.reagents.maximum_volume]</bold> full.")
-				else
-					examination += span_info("My womb is about <bold>[round(uservagina.reagents.total_volume / 3, 0.1)]/[round(uservagina.reagents.maximum_volume / 3, 0.1)]</bold> oz full.")
-			if(uservagina.contents.len)
-				examination += span_info("There is <bold>[english_list(uservagina.contents)]</bold> in my pussy.")
-		if(userass)
-			if(userass.reagents.total_volume)
-				if(userino.has_quirk(/datum/quirk/selfaware))
-					examination += span_info("My ass is <bold>[userass.reagents.total_volume]/[userass.reagents.maximum_volume]</bold> full.")
-				else
-					examination += span_info("My ass is about <bold>[round(userass.reagents.total_volume / 3, 0.1)]/[round(userass.reagents.maximum_volume / 3, 0.1)]</bold> oz full.")
-			if(userass.contents.len)
-				examination += span_info("There is <bold>[english_list(userass.contents)]</bold> in my ass.")
+
+	var/mob/living/carbon/userino = user
+	examination += "ø ------------ ø</span>" //automatically lists internal organs that have those functions
+	for(var/obj/item/organ/filling_organ/forgan in userino.internal_organs)
+		if(forgan.reagents.total_volume)
+			if(userino.has_quirk(/datum/quirk/selfawaregeni))
+				examination += span_info("My [pick(forgan.altnames)] are <bold>[forgan.reagents.total_volume]/[forgan.reagents.maximum_volume]</bold> full.")
+			else
+				examination += span_info("My [pick(forgan.altnames)] are about <bold>[round(forgan.reagents.total_volume / 3, 0.1)]/[round(forgan.reagents.maximum_volume / 3, 0.1)]</bold> oz full.")
+		if(forgan.contents.len)
+			examination += span_info("There is <bold>[english_list(forgan.contents)]</bold> in my [pick(forgan.altnames)].")
+		continue
 	examination += "ø ------------ ø</span>"
 	if(!silent)
 		to_chat(user, examination.Join("\n"))
