@@ -6,7 +6,7 @@
 	telegraph_message = span_warning("The fog is coming.")
 	telegraph_sound = 'sound/blank.ogg'
 	weather_message = ""
-	weather_overlay = "rain1"
+	weather_overlay = "rain"
 	weather_duration_lower = 5 MINUTES
 	weather_duration_upper = 15 MINUTES
 	weather_sound = 'sound/blank.ogg'
