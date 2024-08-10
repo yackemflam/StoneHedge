@@ -2,6 +2,8 @@
 	name = "Store/remove object in their breasts"
 
 /datum/sex_action/store_nipple_other/shows_on_menu(mob/living/user, mob/living/target)
+	if(issimple(target)) //will not work on simple mobs
+		return FALSE
 	if(target == user)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_BREASTS))
@@ -14,6 +16,8 @@
 				if(shirtsies.genitalaccess == FALSE)
 					return FALSE
 	var/obj/item/organ/filling_organ/breasts/targetbreasts = target.getorgan(/obj/item/organ/filling_organ/breasts)
+	if(targetbreasts.organ_size < 4)
+		return FALSE
 	if(targetbreasts.contents.len == 0 && target.get_active_held_item() == null)
 		return FALSE
 	if((targetbreasts.contents.len <= 2 && target.get_active_held_item() == null) || (targetbreasts.contents.len < 2 && target.get_active_held_item() != null))

@@ -2,7 +2,7 @@
 	name = "search/insert in their ass"
 
 /datum/sex_action/store_ass_other/shows_on_menu(mob/living/user, mob/living/target)
-	if(!issimple(target)) //will not work on simple mobs
+	if(issimple(target)) //will not work on simple mobs
 		return FALSE
 	if(user == target)
 		return FALSE

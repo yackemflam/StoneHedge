@@ -14,6 +14,8 @@
 				if(shirtsies.genitalaccess == FALSE)
 					return FALSE
 	var/obj/item/organ/filling_organ/breasts/userbreasts = user.getorgan(/obj/item/organ/filling_organ/breasts)
+	if(userbreasts.organ_size < 4)
+		return FALSE
 	if(userbreasts.contents.len == 0 && user.get_active_held_item() == null)
 		return FALSE
 	if((userbreasts.contents.len <= 2 && user.get_active_held_item() == null) || (userbreasts.contents.len < 2 && user.get_active_held_item() != null))

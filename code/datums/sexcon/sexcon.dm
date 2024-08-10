@@ -632,6 +632,7 @@
 	while(TRUE)
 		if(!target.bypasssexable)
 			if(!isnull(target.client) && target.client.prefs.sexable == FALSE) //Vrell - Needs changed to let me test sex mechanics solo
+				to_chat(src, span_info("Their ERP panel is disabled."))
 				break
 		if(!user.rogfat_add(action.stamina_cost * get_stamina_cost_multiplier()))
 			break
