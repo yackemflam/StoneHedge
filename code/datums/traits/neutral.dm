@@ -72,5 +72,4 @@
 	name = "Sensitiveness"
 	desc = "I feel more about my lewd bits (you will receive too much messages about those likely.)"
 	value = 0
-	mob_trait = TRAIT_SELF_AWARE
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
