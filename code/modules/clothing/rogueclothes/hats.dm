@@ -1152,6 +1152,7 @@
 	desc = ""
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	icon = 'modular_stonehedge/icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/roguetown/clothing/onmob/head.dmi'
 	icon_state = "tricorn"
 	armor = list("blunt" = 47, "slash" = 27, "stab" = 37, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
@@ -1174,6 +1175,7 @@
 	name = "bandana"
 	desc = ""
 	icon = 'modular_stonehedge/icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/roguetown/clothing/onmob/head.dmi'
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	icon_state = "bandana"
 	armor = list("blunt" = 47, "slash" = 27, "stab" = 37, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
