@@ -90,6 +90,8 @@
 	var/list/aux_markings
 	/// Visual features of the bodypart, such as hair and accessories
 	var/list/bodypart_features
+	var/draw_organ_features = TRUE
+	var/draw_bodypart_features = TRUE
 
 	resistance_flags = FLAMMABLE
 
@@ -592,8 +594,6 @@
 			if(aux_zone && !hideaux)
 				aux.color = "#[draw_color]"
 
-	var/draw_organ_features = TRUE
-	var/draw_bodypart_features = TRUE
 	if(owner && owner.dna)
 		var/datum/species/owner_species = owner.dna.species
 		if(NO_ORGAN_FEATURES in owner_species.species_traits)

@@ -337,6 +337,9 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 /obj/item/natural/rock/silver
 	mineralType = /obj/item/rogueore/silver
 
+/obj/item/natural/rock/copper
+	mineralType = /obj/item/rogueore/copper
+
 /obj/item/natural/rock/iron
 	mineralType = /obj/item/rogueore/iron
 
