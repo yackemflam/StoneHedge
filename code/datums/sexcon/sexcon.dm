@@ -339,15 +339,16 @@
 	//grant devotion through sex because who needs praying.
 	//not sure if it works right but i dont need to test cuz its asked to be commented out anyway, ffs.
 	if(!issimple(user))
-		if(user.patron && user.mind.get_skill_level(/datum/skill/magic/holy))
-			var/mob/living/carbon/human/devouser = user
-			var/datum/devotion/C = devouser.devotion
-			if(C.devotion < C.max_devotion)
-				C.update_devotion(rand(1,2))
-				if(HAS_TRAIT(devouser, TRAIT_SEXDEVO))
-					C.update_devotion(rand(4,8))
-					if(prob(3))
-						to_chat(devouser, span_info("I feel Eora guide me."))
+		var/mob/living/carbon/human/devouser = user
+		var/datum/devotion/C = devouser.devotion
+		if(devouser && C.devotion)
+			if(devouser.mind?.get_skill_level(/datum/skill/magic/holy))
+				if(C.devotion < C.max_devotion)
+					C.update_devotion(rand(1,2))
+					if(HAS_TRAIT(devouser, TRAIT_SEXDEVO))
+						C.update_devotion(rand(4,8))
+						if(prob(3))
+							to_chat(devouser, span_info("I feel Eora guide me."))
 
 	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)

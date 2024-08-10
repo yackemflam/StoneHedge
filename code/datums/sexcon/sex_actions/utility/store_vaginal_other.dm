@@ -9,6 +9,8 @@
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
 	var/obj/item/organ/filling_organ/vagina/targetvag = target.getorgan(/obj/item/organ/filling_organ/vagina)
+	if(!targetvag)
+		return FALSE
 	if(targetvag.contents.len)
 		return TRUE
 	if(!get_insertable_in_hand(user))

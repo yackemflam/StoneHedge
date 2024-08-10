@@ -49,7 +49,7 @@
 
 	//updates size caps
 	if(!issimple(H) && H.mind)
-		var/athletics = H.mind.get_skill_level(/datum/skill/misc/athletics)
+		var/athletics = H.mind?.get_skill_level(/datum/skill/misc/athletics)
 		var/captarget = max_reagents+(athletics*4)
 		if(damage)
 			captarget -= damage
@@ -118,7 +118,7 @@
 	var/mob/living/carbon/human/H = owner
 	var/obj/item/organ/filling_organ/forgan = src
 
-	var/stealth = H.mind.get_skill_level(/datum/skill/misc/sneaking)
+	var/stealth = H.mind?.get_skill_level(/datum/skill/misc/sneaking)
 	var/keepinsidechance = CLAMP((rand(25,100) - (stealth * 20)),0,100) //basically cant lose your item if you have 5 stealth.
 	if(reagents.total_volume > reagents.maximum_volume / 2 && spiller && prob(keepinsidechance)) //if you have more than half full spiller organ.
 		visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents with the pressure on it!"),span_info("My [pick(altnames)] spill some of it's contents with the pressure on it! [keepinsidechance]%"),span_unconscious("I hear a splash."))

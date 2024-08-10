@@ -121,7 +121,7 @@
 	if(!ishuman(user))
 		adjusted_climb_time = 0 //simple mobs instantly climb
 	if(HAS_TRAIT(user, TRAIT_FREERUNNING)) //do you have any idea how fast I am???
-		adjusted_climb_time *= 0.8
+		adjusted_climb_time *= 0.5
 	adjusted_climb_time -= user.STASPD * 2
 	adjusted_climb_time = max(adjusted_climb_time, 0)
 //	if(adjusted_climb_time)

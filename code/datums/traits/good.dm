@@ -252,8 +252,8 @@ datum/quirk/fan_mime
 	H.put_in_hands(spraycan)
 	H.equip_to_slot(spraycan, SLOT_IN_BACKPACK)
 	H.regenerate_icons()
-*/
 
+//useless
 /datum/quirk/voracious
 	name = "Voracious"
 	desc = "I feel hungrier than most."
@@ -261,3 +261,4 @@ datum/quirk/fan_mime
 	mob_trait = TRAIT_VORACIOUS
 	gain_text = span_notice("I feel HONGRY.")
 	lose_text = span_danger("I no longer feel HONGRY.")
+*/
