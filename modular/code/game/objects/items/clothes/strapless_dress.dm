@@ -9,6 +9,7 @@
 	icon_state = "strapless"
 	sleevetype = null
 	sleeved = null
+	genitalaccess = TRUE
 
 //COLORS
 

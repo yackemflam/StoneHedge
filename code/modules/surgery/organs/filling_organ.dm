@@ -14,11 +14,12 @@
 
 	//absorbing etc content liquid stuff, non self generated.
 	var/absorbing = FALSE //absorbs liquids within slowly. Wont absorb reagent_to_make type, refilling and hungerhelp are irrelevant to this.
-	var/absorbrate = 0.1 //refilling and hungerhelp are irrelevant to this, each life tick. NO LESS THAN 1 DIGESTS
-	var/absorbmult = 1.25 //for a long absorbtion time it's probably fine to have more.
+	var/absorbrate = 1 //refilling and hungerhelp are irrelevant to this, each life tick. NO LESS THAN 1 DIGESTS RIGHT.
+	var/absorbmult = 1.25 //for a longer absorbtion time it's probably fine to have more.
 	var/driprate = 0.1
 	var/spiller = FALSE //toggles if it will spill its contents when not plugged.
 	var/blocker = ITEM_SLOT_SHIRT //pick an item slot
+	var/processspeed = 3 SECONDS//will apply the said seconds cooldown each time before any spill or absorb happens.
 
 	//pregnancy vars
 	var/fertility = FALSE //can it be impregnated
@@ -29,6 +30,7 @@
 
 	//misc
 	var/list/altnames = list("bugged place", "bugged organ") //used in thought messages.
+	COOLDOWN_DECLARE(liquidcd)
 
 /obj/item/organ/filling_organ/Insert(mob/living/carbon/M, special, drop_if_replaced) //update size cap n shit on insert
 	. = ..()
@@ -42,6 +44,33 @@
 	var/mob/living/carbon/human/H = owner
 
 	..()
+
+	//updates size caps
+	if(!issimple(H) && H.mind)
+		var/athletics = H.mind.get_skill_level(/datum/skill/misc/athletics)
+		var/captarget = max_reagents+(athletics*4)
+		if(damage)
+			captarget -= damage
+		if(contents.len)
+			for(var/obj/item/thing as anything in contents)
+				if(thing.type != /obj/item/dildo/plug) //plugs wont take space as they are especially for this.
+					captarget -= thing.w_class*10
+		if(captarget != reagents.maximum_volume)
+			if(fertility && pregnant)
+				captarget *= 0.5
+			reagents.maximum_volume = captarget
+			if(H.has_quirk(/datum/quirk/selfawaregeni))
+				to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
+
+	if(reagents.reagent_list)
+		if(reagents.total_volume > reagents.maximum_volume + 10)
+			visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents with the pressure on it!"),span_info("My [pick(altnames)] spill it's excesss contents with the pressure built up on it!"),span_unconscious("I hear a splash."))
+			reagents.remove_all(reagents.total_volume - reagents.maximum_volume)
+			playsound(owner, 'sound/foley/waterenter.ogg', 15)
+
+	if(damage > low_threshold)
+		if(prob(5))
+			to_chat(H, span_warning("My [pick(altnames)] aches..."))
 
 	// modify nutrition to generate reagents
 	if(refilling) //self-consuming liquids for refilling organs.
@@ -57,11 +86,13 @@
 				owner.adjust_nutrition(-restore_amount)
 			reagents.add_reagent(reagent_to_make, restore_amount)
 
+	if(!COOLDOWN_FINISHED(src, liquidcd))
+		return
 	if(reagents.total_volume && absorbing) //slowly inject to your blood if they have reagents. Will not work if refilling because i cant properly seperate the reagents for which to keep which to dump.
-		reagents.trans_to(owner, max(1, absorbrate), absorbmult, TRUE, FALSE, round_robin = TRUE)
+		reagents.trans_to(owner, absorbrate, absorbmult, TRUE, FALSE)
 	if(!contents.len) //if nothing is plugging the hole, stuff will drip out.
 		var/tempdriprate = driprate
-		if(spiller || reagents.total_volume > reagents.maximum_volume) //spiller or above it's capacity to leak.
+		if((reagents.total_volume && spiller) || (reagents.total_volume > reagents.maximum_volume)) //spiller or above it's capacity to leak.
 			var/obj/item/clothing/blockingitem = H.mob_slot_wearing(blocker)
 			if(blockingitem && !blockingitem.genitalaccess) //if worn slot cover it, drip less.
 				tempdriprate *= 0.5
@@ -79,40 +110,21 @@
 						span_info("My [pick(altnames)] spills some liquid."),
 						span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)].")))
 			reagents.remove_all(tempdriprate)
-
-	if(!issimple(H) && H.mind)
-		var/athletics = H.mind.get_skill_level(/datum/skill/misc/athletics)
-		var/captarget = max_reagents+(athletics*4)
-		if(damage)
-			captarget -= damage
-		if(contents.len)
-			for(var/obj/item/thing as anything in contents)
-				captarget -= thing.w_class*10
-		if(captarget != reagents.maximum_volume)
-			if(fertility && pregnant)
-				captarget *= 0.5
-			reagents.maximum_volume = captarget
-			if(H.has_quirk(/datum/quirk/selfawaregeni))
-				to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
-
-	if(reagents.reagent_list)
-		if(reagents.total_volume > reagents.maximum_volume + 10)
-			H.emote("grunts as their [pick(altnames)] spill its excess contents.")
-			to_chat(H, span_warning("My [pick(altnames)] spill it's excess contents with the pressure built up within it, as I am incapable of holding in all that stuff!"))
-			reagents.remove_all(reagents.total_volume - reagents.maximum_volume)
-
-	if(damage > low_threshold)
-		if(prob(5))
-			to_chat(H, span_warning("My [pick(altnames)] aches..."))
+	COOLDOWN_START(src, liquidcd, processspeed)
 
 /obj/item/organ/filling_organ/proc/organ_jumped()
 	var/mob/living/carbon/human/H = owner
 	var/obj/item/organ/filling_organ/forgan = src
 
+	var/stealth = H.mind.get_skill_level(/datum/skill/misc/sneaking)
+	var/keepinsidechance = CLAMP((rand(25,100) - (stealth * 20)),0,100) //basically cant lose your item if you have 5 stealth.
+	if(reagents.total_volume > reagents.maximum_volume / 2 && spiller && prob(keepinsidechance)) //if you have more than half full spiller organ.
+		visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents with the pressure on it!"),span_info("My [pick(altnames)] spill some of it's contents with the pressure on it! [keepinsidechance]%"),span_unconscious("I hear a splash."))
+		reagents.remove_all(keepinsidechance)
+		playsound(owner, 'sound/foley/waterenter.ogg', 15)
+
 	if(!issimple(H) && H.mind)
 		if(contents.len)
-			var/stealth = H.mind.get_skill_level(/datum/skill/misc/sneaking)
-			var/keepinsidechance = CLAMP((rand(25,100) - (stealth * 20)),0,100) //basically cant lose your item if you have 5 stealth.
 			for(var/obj/item/forgancontents as anything in forgan.contents)
 				if(!istype(forgancontents, /obj/item/dildo)) //dildo keeps stuff in even if you have no pants ig
 					var/obj/item/clothing/blockingitem = get_organ_blocker(H, zone)
@@ -122,10 +134,6 @@
 								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(contents)]! [keepinsidechance]%"))
 							else
 								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(contents)]!"))
-							if(reagents.reagent_list)
-								H.emote("grunts as their [pick(altnames)] spill some of its contents!")
-								to_chat(H, span_warning("My [pick(altnames)] spill some of it's contents with the pressure on it!"))
-								reagents.remove_all(keepinsidechance))
 							playsound(H, 'sound/misc/mat/insert (1).ogg', 20, TRUE, -2, ignore_walls = FALSE)
 							forgancontents.doMove(get_turf(H))
 							forgan.contents -= forgancontents

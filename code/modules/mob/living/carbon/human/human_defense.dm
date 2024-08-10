@@ -833,7 +833,7 @@
 			if(userino.has_quirk(/datum/quirk/selfawaregeni))
 				examination += span_info("My [pick(forgan.altnames)] are <bold>[forgan.reagents.total_volume]/[forgan.reagents.maximum_volume]</bold> full.")
 			else
-				examination += span_info("My [pick(forgan.altnames)] are about <bold>[round(forgan.reagents.total_volume / 3, 0.1)]/[round(forgan.reagents.maximum_volume / 3, 0.1)]</bold> oz full.")
+				examination += span_info("My [pick(forgan.altnames)] - about <bold>[round(forgan.reagents.total_volume / 3)]/[round(forgan.reagents.maximum_volume / 3)]</bold> oz full.")
 		if(forgan.contents.len)
 			examination += span_info("There is <bold>[english_list(forgan.contents)]</bold> in my [pick(forgan.altnames)].")
 		continue
