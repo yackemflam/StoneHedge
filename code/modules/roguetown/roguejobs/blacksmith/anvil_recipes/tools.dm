@@ -79,11 +79,23 @@
 	created_item = /obj/item/flashlight/flare/torch/lantern
 	i_type = "General"
 
+/datum/anvil_recipe/tools/steelbelt
+	name = "Steel Belt"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/storage/belt/rogue/leather/hand
+	i_type = "General"
+
 /datum/anvil_recipe/tools/chains
 	name = "Chains"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rope/chain
 	i_type = "General"
+
+/datum/anvil_recipe/tools/mantrap
+	name = "Mantraps 2x"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/fibers, /obj/item/natural/fibers, /obj/item/grown/log/tree/small)
+	created_item = list(/obj/item/restraints/legcuffs/beartrap/crafted, /obj/item/restraints/legcuffs/beartrap/crafted)
 
 /datum/anvil_recipe/tools/cups
 	name = "Cups 3x"

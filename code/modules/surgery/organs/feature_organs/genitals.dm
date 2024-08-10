@@ -123,7 +123,7 @@
 	organ_size = DEFAULT_BREASTS_SIZE
 	reagent_to_make = /datum/reagent/consumable/breastmilk
 	refilling = TRUE
-	hungerhelp = TRUE 
+	hungerhelp = TRUE
 	organ_sizeable = TRUE
 	absorbing = FALSE //funny liquid tanks
 	altnames = list("breasts", "tits", "milkers", "tiddies", "badonkas", "boobas") //used in thought messages.

@@ -164,7 +164,6 @@
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel
 	icon_state = "saxe"
-	force = 22
 	force_wielded = 28
 	desc = "A steel woodcutting axe. Performs much better than its iron counterpart."
 	force = 26

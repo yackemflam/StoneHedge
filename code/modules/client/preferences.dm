@@ -156,7 +156,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/custom_descriptors = list()
 	var/defiant = TRUE
 
-	var/datum/char_accent/char_accent = "No accent"
+	var/datum/char_accent = new /datum/char_accent/none()
 
 
 /datum/preferences/New(client/C)
@@ -1969,13 +1969,6 @@ Slots: [job.spawn_positions]</span>
 					else
 						to_chat(user, span_boldwarning("You fully immerse yourself in the grim experience, waiving your resistance from people violating you, but letting you do the same unto other non-defiants"))
 
-				if("be_defiant")
-					defiant = !defiant
-					if(defiant)
-						to_chat(user, span_notice("You will now have resistance from people violating you, but be punished for trying to violate others. This is not full protection."))
-					else
-						to_chat(user, span_boldwarning("You fully immerse yourself in the grim experience, waiving your resistance from people violating you, but letting you do the same unto other non-defiants"))
-
 				if("schizo_voice")
 					toggles ^= SCHIZO_VOICE
 					if(toggles & SCHIZO_VOICE)
@@ -2078,11 +2071,12 @@ Slots: [job.spawn_positions]</span>
 			else if(firstspace == name_length)
 				real_name += "[pick(GLOB.last_names)]"
 
+/*
 	if(real_name in GLOB.chosen_names)
 		character.real_name = pref_species.random_name(gender)
 	else
 		character.real_name = real_name
-	character.name = character.real_name
+	character.name = character.real_name*/
 
 	character.domhand = domhand
 
@@ -2129,7 +2123,7 @@ Slots: [job.spawn_positions]</span>
 		character.update_hair()
 		character.update_body_parts(redraw = TRUE)
 
-	character.char_accent = "[char_accent.name]"
+	character.char_accent = char_accent
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)

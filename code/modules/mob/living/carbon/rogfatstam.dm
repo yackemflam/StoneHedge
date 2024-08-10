@@ -28,7 +28,7 @@
 	return
 
 /mob/living/rogstam_add(added as num)
-	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
+	if(HAS_TRAIT(src, TRAIT_NOROGSTAM) || HAS_TRAIT(src, TRAIT_ZOMBIE_SPEECH))
 		return TRUE
 	if(m_intent == MOVE_INTENT_RUN)
 		mind.add_sleep_experience(/datum/skill/misc/athletics, (STAINT*0.08))
@@ -99,7 +99,7 @@
 	var/heart_attacking = FALSE
 
 /mob/living/carbon/proc/heart_attack()
-	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
+	if(HAS_TRAIT(src, TRAIT_NOROGSTAM) || HAS_TRAIT(src, TRAIT_ZOMBIE_SPEECH))
 		return
 	if(!heart_attacking)
 		heart_attacking = TRUE

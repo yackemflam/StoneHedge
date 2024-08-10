@@ -18,34 +18,40 @@
 	var/list/ore = list()
 	var/maxore = 1
 	var/cooking = 0
+	var/actively_smelting = FALSE // Are we currently smelting?
 	fueluse = 5 MINUTES
 	crossfire = FALSE
 
 /obj/machinery/light/rogue/smelter/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/rogueweapon/tongs))
-		var/obj/item/rogueweapon/tongs/T = W
-		if(ore.len && !T.hingot)
-			var/obj/item/I = ore[ore.len]
-			ore -= I
-			I.forceMove(T)
-			T.hingot =  I //VRELL - THIS IS AN UNSAFE CONVERSION!!!!
-			if(istype(I, /obj/item/ingot))
-				if(user.mind && isliving(user) && T.hingot.smelted)
-					var/mob/living/L = user
-					var/boon = user.mind.get_learning_boon(/datum/skill/craft/smelting)
-					var/amt2raise = L.STAINT*2 // (L.STAINT+L.STASTR)/4 optional: add another stat that isn't int
-					//i feel like leveling up takes forever regardless, this would just make it faster
-					if(amt2raise > 0)
-						user.mind.adjust_experience(/datum/skill/craft/smelting, amt2raise * boon, FALSE)
-			user.visible_message(span_info("[user] retrieves [I] from [src]."))
+		if(!actively_smelting) // Prevents an exp gain exploit. - Stonekeep exploit fix by Foxtrot
+			var/obj/item/rogueweapon/tongs/T = W
+			if(ore.len && !T.hingot)
+				var/obj/item/I = ore[ore.len]
+				ore -= I
+				I.forceMove(T)
+				T.hingot = I
+				if(user.mind && isliving(user) && T.hingot?.smeltresult) // Prevents an exploit with coal and runtimes with everything else
+					if(!istype(T.hingot, /obj/item/rogueore) && T.hingot?.smelted) // Burning items to ash won't level smelting.
+						var/mob/living/L = user
+						var/boon = user.mind.get_learning_boon(/datum/skill/craft/smelting)
+						var/amt2raise = L.STAINT*2 // Smelting is already a timesink, this is justified to accelerate levelling
+						if(amt2raise > 0)
+							user.mind.adjust_experience(/datum/skill/craft/smelting, amt2raise * boon, FALSE)
+				user.visible_message("<span class='info'>[user] retrieves [I] from [src].</span>")
+				if(on)
+					var/tyme = world.time
+					T.hott = tyme
+					addtimer(CALLBACK(T, TYPE_PROC_REF(/obj/item/rogueweapon/tongs, make_unhot), tyme), 50)
+				T.update_icon()
+				return
 			if(on)
-				var/tyme = world.time
-				T.hott = tyme
-				addtimer(CALLBACK(T, TYPE_PROC_REF(/obj/item/rogueweapon/tongs, make_unhot), tyme), 50)
-			T.update_icon()
-			return
-		if(on)
-			return
+				to_chat(user, "<span class='info'>Nothing to retrieve from inside.</span>")
+				return // Safety for not smelting our tongs
+			else
+				to_chat(user, "<span class='warning'>\The [src] is currently smelting. Wait for it to finish, or douse it with water to retrieve items from it.</span>")
+				return
+	
 	if(istype(W, /obj/item/rogueore/coal) && fueluse <= 0)
 		return ..()
 	if(W.smeltresult)
@@ -70,14 +76,14 @@
 
 /obj/machinery/light/rogue/smelter/attack_hand(mob/user, params)
 	if(on)
-		to_chat(user, span_warning("It's too hot."))
+		to_chat(user, "<span class='warning'>It's too hot to retrieve bars with your hands.</span>")
 		return
 	if(ore.len)
 		var/obj/item/I = ore[ore.len]
 		ore -= I
 		I.loc = user.loc
 		user.put_in_active_hand(I)
-		user.visible_message(span_info("[user] retrieves [I] from [src]."))
+		user.visible_message("<span class='info'>[user] retrieves \the [I] from \the [src].</span>")
 	else
 		return ..()
 
@@ -91,6 +97,7 @@
 			if(cooking < 20)
 				cooking++
 				playsound(src.loc,'sound/misc/smelter_sound.ogg', 50, FALSE)
+				actively_smelting = TRUE
 			else
 				if(cooking == 20)
 					for(var/obj/item/I in ore)
@@ -101,14 +108,17 @@
 							qdel(I)
 					playsound(src,'sound/misc/smelter_fin.ogg', 100, FALSE)
 					cooking = 21
+					actively_smelting = FALSE
 
 /obj/machinery/light/rogue/smelter/burn_out()
 	cooking = 0
+	actively_smelting = FALSE
 	..()
 
 /obj/machinery/light/rogue/smelter/great
 	icon = 'icons/roguetown/misc/forge.dmi'
 	name = "great furnace"
+	desc = "The pinnacle of dwarven engineering and the miracle of Malum's blessed fire crystal, allowing for greater alloys to be made."
 	icon_state = "smelter0"
 	base_state = "smelter"
 	anchored = TRUE
@@ -124,6 +134,7 @@
 			if(cooking < 30)
 				cooking++
 				playsound(src.loc,'sound/misc/smelter_sound.ogg', 50, FALSE)
+				actively_smelting = TRUE
 			else
 				if(cooking == 30)
 					var/alloy
@@ -157,5 +168,6 @@
 								ore += R
 								qdel(I)
 					playsound(src,'sound/misc/smelter_fin.ogg', 100, FALSE)
-					visible_message(span_notice("[src] is finished."))
+					visible_message("<span class='notice'>\The [src] finished smelting.</span>")
 					cooking = 31
+					actively_smelting = FALSE

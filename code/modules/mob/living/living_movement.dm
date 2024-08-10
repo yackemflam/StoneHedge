@@ -52,7 +52,6 @@
 			mod = CONFIG_GET(number/movedelay/run_delay)
 		if(MOVE_INTENT_SNEAK)
 			mod = 6
-
 	var/spdchange = (10-STASPD)*0.1
 	spdchange = clamp(spdchange, -0.5, 1)  //if this is not clamped, maniacs will run at unfathomable speed
 	mod = mod+spdchange

@@ -46,6 +46,7 @@
 #define TRAIT_COMMIE "Blessing of Matthios" //recognized by bandits as an ally
 #define TRAIT_CHOSEN "Astrata's Chosen"
 #define TRAIT_SEXDEVO "Blessing of Eora" //sex devotion gain and extra healing.
+#define TRAIT_FAITHLESS "Ignorant" //being faithless means gods won't really help you, will they
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -108,7 +109,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_GOODLOVER = span_love("It's a lucky thing to share my bed."),
 	TRAIT_SEEDKNOW = span_info("I know which seeds grow which crops."),
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
-	TRAIT_SEXDEVO = span_info("Sex is more benefical to me.")
+	TRAIT_SEXDEVO = span_info("Sex is more benefical to me."),
+	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
 ))
 
 // trait accessor defines
