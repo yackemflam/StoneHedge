@@ -2077,6 +2077,8 @@ Slots: [job.spawn_positions]</span>
 	else
 		character.real_name = real_name
 	character.name = character.real_name*/
+	character.real_name = real_name
+	character.name = character.real_name
 
 	character.domhand = domhand
 
