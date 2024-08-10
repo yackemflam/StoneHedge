@@ -96,11 +96,10 @@
 				to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
 
 	if(reagents.reagent_list)
-		if(reagents.total_volume > reagents.maximum_volume + 5)
+		if(reagents.total_volume > reagents.maximum_volume + 10)
+			H.emote("grunts as their [pick(altnames)] spill its excess contents.")
+			to_chat(H, span_warning("My [pick(altnames)] spill it's excess contents with the pressure built up within it, as I am incapable of holding in all that stuff!"))
 			reagents.remove_all(reagents.total_volume - reagents.maximum_volume)
-			H.emote("grunts as their [pick(altnames)] spill its contents.")
-			to_chat(H, span_warning("My [pick(altnames)] spill it's contents with the pressure built up within it, as I am incapable of holding in all that stuff!"))
-			reagents.remove_all(reagents.maximum_volume - reagents.total_volume)
 
 	if(damage > low_threshold)
 		if(prob(5))
@@ -124,11 +123,9 @@
 							else
 								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(contents)]!"))
 							if(reagents.reagent_list)
-								if(reagents.total_volume > reagents.maximum_volume - keepinsidechance)
-									reagents.remove_all(reagents.total_volume - reagents.maximum_volume)
-									H.emote("grunts as their [pick(altnames)] spill some of its contents!")
-									to_chat(H, span_warning("My [pick(altnames)] spill some of it's contents with the pressure on it!"))
-									reagents.remove_all(reagents.maximum_volume - reagents.total_volume)
+								H.emote("grunts as their [pick(altnames)] spill some of its contents!")
+								to_chat(H, span_warning("My [pick(altnames)] spill some of it's contents with the pressure on it!"))
+								reagents.remove_all(keepinsidechance))
 							playsound(H, 'sound/misc/mat/insert (1).ogg', 20, TRUE, -2, ignore_walls = FALSE)
 							forgancontents.doMove(get_turf(H))
 							forgan.contents -= forgancontents
