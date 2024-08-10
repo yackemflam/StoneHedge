@@ -64,11 +64,10 @@
 			if(H.has_quirk(/datum/quirk/selfawaregeni))
 				to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
 
-	if(reagents.reagent_list)
-		if(reagents.total_volume > reagents.maximum_volume + 10)
-			visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents with the pressure on it!"),span_info("My [pick(altnames)] spill it's excesss contents with the pressure built up on it!"),span_unconscious("I hear a splash."))
-			reagents.remove_all(reagents.total_volume - reagents.maximum_volume)
-			playsound(owner, 'sound/foley/waterenter.ogg', 15)
+	if(reagents.total_volume > reagents.maximum_volume + 5) //lil allowance
+		visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents with the pressure on it!"),span_info("My [pick(altnames)] spill it's excesss contents with the pressure built up on it!"),span_unconscious("I hear a splash."))
+		reagents.remove_all(reagents.total_volume - reagents.maximum_volume)
+		playsound(owner, 'sound/foley/waterenter.ogg', 15)
 
 	if(damage > low_threshold)
 		if(prob(5))
