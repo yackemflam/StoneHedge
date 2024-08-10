@@ -187,7 +187,7 @@
 	verbage = "builds"
 	craftsound = null
 
-/datum/crafting_recipe/roguetown/structure/greatsmelter
+/datum/crafting_recipe/roguetown/structure/greatlavasmelter
 	name = "great lava furnace"
 	result = /obj/machinery/light/rogue/smelter/great
 	reqs = list(/obj/item/ingot/iron = 2,)
@@ -196,7 +196,7 @@
 	craftsound = null
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/structure/greatsmelter/TurfCheck(mob/user, turf/T)
+/datum/crafting_recipe/roguetown/structure/greatlavasmelter/TurfCheck(mob/user, turf/T)
 	if(istype(T,/turf/open/lava))
 		return TRUE
 	return FALSE
