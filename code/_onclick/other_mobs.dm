@@ -359,12 +359,14 @@
 							playsound(T, pick('sound/combat/hits/onglass/glassbreak (1).ogg','sound/combat/hits/onglass/glassbreak (2).ogg','sound/combat/hits/onglass/glassbreak (3).ogg'), 50, FALSE)
 							T.ChangeTurf(/turf/open/transparent/openspace, flags = CHANGETURF_INHERIT_AIR)
 							visible_message(span_danger("\the [T] shatters under [src]'s landing!"))
+							T.cut_overlay("damage25")
 							for(var/turf/open/transparent/glass/turfie in range(1,T)) //turns surrounding glass to shit also at a chance
 								if(prob(25))
 									turfie.ChangeTurf(/turf/open/transparent/openspace, flags = CHANGETURF_INHERIT_AIR)
 							T.Entered(src)
 						else
 							visible_message(span_danger("\the [T] cracks under [src]'s weight, but holds up."))
+							T.add_overlay("damage25")
 							playsound(T, 'sound/combat/hits/onglass/glasshit.ogg', 50, FALSE)
 				else
 					throw_at(A, 1, 1, src, spin = FALSE)

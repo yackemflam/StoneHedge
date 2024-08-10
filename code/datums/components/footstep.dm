@@ -17,6 +17,8 @@
 		return COMPONENT_INCOMPATIBLE
 	volume = volume_
 	e_range = e_range_
+	if(HAS_TRAIT(parent, TRAIT_LIGHT_STEP))
+		volume *= 0.5
 	footstep_type = footstep_type_
 	switch(footstep_type)
 		if(FOOTSTEP_MOB_HUMAN)
