@@ -90,11 +90,11 @@
 	return TRUE
 
 /datum/sex_action/facesittingtwo/on_start(mob/living/user, mob/living/target)
-	user.visible_message(span_warning("[user] sits their butt on [target]'s face!"))
+	user.visible_message(span_warning("[user] sits their cunt on [target]'s face!"))
 
 /datum/sex_action/facesittingtwo/on_perform(mob/living/user, mob/living/target)
 	var/verbstring = pick(list("rubs", "smushes", "forces"))
-	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] [verbstring] their butt against [target] face."))
+	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] [verbstring] their cunt against [target] face."))
 	target.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(user, 1, 3, TRUE)
