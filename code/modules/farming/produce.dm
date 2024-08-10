@@ -230,3 +230,14 @@
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 
+/obj/item/reagent_containers/food/snacks/grown/rogue/nettle //TO-DO - Implement the remaining medicinal herbs, their farmable versions, and the recipes tied to them.
+	seed = null
+	name = "stinging nettle"
+	desc = "A toxic leaf, useful in the creation of a paultice for treating painful bruising."
+	icon_state = "nettle"
+	filling_color = "#008000"
+	bitesize_mod = 1
+	foodtype = VEGETABLES
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin/acid = 5)
+	tastes = list("stinging pain" = 1,"bitterness" = 1)
+	eat_effect = /datum/status_effect/debuff/badmeal
