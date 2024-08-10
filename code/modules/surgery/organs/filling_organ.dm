@@ -37,6 +37,8 @@
 	if(organ_sizeable)
 		max_reagents = rand(1,5) + storage_per_size + storage_per_size * organ_size
 	create_reagents(max_reagents)
+	if(!refilling)
+		startsfilled = FALSE
 	if(special && startsfilled) // won't fill the organ if you insert this organ via surgery
 		reagents.add_reagent(reagent_to_make, reagents.maximum_volume)
 
