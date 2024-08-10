@@ -1325,6 +1325,7 @@
 				penis = new /obj/item/organ/penis/internal
 				penis.penis_size = rand(3)
 				penis.Insert(src)
+	src.sexcon.manual_arousal = 4
 
 //fucks sake --vide noir
 /mob/living/carbon/proc/mob_slot_wearing(zone)
