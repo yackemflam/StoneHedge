@@ -25,7 +25,7 @@
 		if(targethuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
 			if(pantsies.flags_inv & HIDECROTCH) 
-				if(pantsies.genitalaccess == FALSE) 
+				if(!pantsies.genitalaccess) 
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_ANUS))
 		return FALSE
@@ -38,7 +38,7 @@
 
 /datum/sex_action/store_ass_other/on_start(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
-	var/obj/item/organ/filling_organ/anus/targetass = user.getorgan(/obj/item/organ/filling_organ/vagina)
+	var/obj/item/organ/filling_organ/anus/targetass = target.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(istype(useditem, /obj/item/rogueweapon))
 		to_chat(user, span_userdanger("[useditem] may cut [target] while i put it in, depending on my precision of hand."))
 	if(user.m_intent != MOVE_INTENT_SNEAK && !targetass.contents.len)
@@ -48,7 +48,7 @@
 
 /datum/sex_action/store_ass_other/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
-	var/obj/item/organ/filling_organ/anus/targetass = user.getorgan(/obj/item/organ/filling_organ/vagina)
+	var/obj/item/organ/filling_organ/anus/targetass = target.getorgan(/obj/item/organ/filling_organ/vagina)
 	var/mob/living/carbon/human/targetussy = user
 	var/stealskill =  min(1,user.mind.get_skill_level(/datum/skill/misc/stealing))
 	var/medicineskill =  min(1,user.mind.get_skill_level(/datum/skill/misc/medicine))

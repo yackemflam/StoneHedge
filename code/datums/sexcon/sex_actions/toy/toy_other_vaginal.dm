@@ -24,7 +24,7 @@
 		if(targethuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
 			if(pantsies.flags_inv & HIDECROTCH) 
-				if(pantsies.genitalaccess == FALSE) 
+				if(!pantsies.genitalaccess) 
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
 		if(issimple(target) && target.gender == FEMALE && target.sexcon)
@@ -51,7 +51,7 @@
 	user.visible_message(span_warning("[user] shoves \the [dildo] in [target]'s cunt..."))
 
 /datum/sex_action/toy_other_vagina/on_perform(mob/living/user, mob/living/target)
-	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] pleasures [target]'s cunt..."))
+	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s cunt with \the [dildo]..."))
 	playsound(user, 'sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(target, 2, 4, TRUE)
