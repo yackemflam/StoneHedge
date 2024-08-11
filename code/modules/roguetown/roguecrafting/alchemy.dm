@@ -60,8 +60,21 @@
 /datum/crafting_recipe/roguetown/alchemy/health_pot_3x
 	name = "3x Health Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
-	reqs = list(/obj/item/reagent_containers/glass/bottle = 3, /obj/item/ash = 3, /obj/item/reagent_containers/food/snacks/grown/berries/rogue = 4, /obj/item/reagent_containers/food/snacks/fish/clownfish = 1)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 3, /obj/item/ash = 3, /obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2, /obj/item/reagent_containers/food/snacks/fish/clownfish = 1)
 	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/alchemy/health_pottwo
+	name = "Health Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/ash = 1, /obj/item/reagent_containers/food/snacks/grown/berries/rogue = 1, /obj/item/reagent_containers/food/snacks/rogue/honey = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/alchemy/health_pot_3xtwo
+	name = "3x Health Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 3, /obj/item/ash = 3, /obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2, /obj/item/reagent_containers/food/snacks/rogue/honey = 1)
+	craftdiff = 2
+
 
 /datum/crafting_recipe/roguetown/alchemy/antipoison_pot
 	name = "Anti Poison Potion"

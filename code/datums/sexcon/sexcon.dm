@@ -178,8 +178,8 @@
 		if(testes)
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
 			testes.reagents.trans_to(target, cum_to_take, transfered_by = user)
-		target.adjust_nutrition(150)
-		target.adjust_hydration(150)
+		target.adjust_nutrition(50)
+		target.adjust_hydration(50)
 	else
 		if(testes) //todo make proper transfers, categorize sexactions
 			var/cameloc = user.sexcon.came_into_loc(oral, vaginal, anal, nipple, target)
@@ -205,7 +205,7 @@
 		if(sexhealmult < 2) //so its never below 2 for ones with trait.
 			sexhealmult = 2
 		sexhealrand *= sexhealmult
-		to_chat(user, span_green("I feel Eora's blessing."))
+		to_chat(user, span_green("I feel Viiritri's blessing."))
 	user.adjustBruteLoss(-sexhealrand)
 	sexhealrand *= 0.5
 	user.adjustFireLoss(-sexhealrand)
@@ -217,10 +217,10 @@
 /datum/sex_controller/proc/after_ejaculation()
 	//give some nutrition
 	if(ejacmessaged != 1)
-		user.visible_message(span_info("With every ejaculation I feel Eora's blessing satiate me so I may go longer."))
+		user.visible_message(span_info("With every ejaculation I feel Viiritri's blessing satiate me so I may go longer."))
 		ejacmessaged = 1
-	user.adjust_nutrition(100)
-	user.adjust_hydration(100)
+	user.adjust_nutrition(50)
+	user.adjust_hydration(50)
 	set_arousal(40)
 	adjust_charge(-CHARGE_FOR_CLIMAX)
 	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
@@ -328,10 +328,10 @@
 						target.adjustBruteLoss(-sexhealrand)
 						target.adjustFireLoss(-sexhealrand/2)
 				if(prob(4))
-					to_chat(user, span_green("I feel Eora's miracle upon me."))
+					to_chat(user, span_green("I feel Viiritri's miracle upon me."))
 					sexhealrand *= 2
 	if(!user.cmode && prob(1)) //surprise heal burst at 1% chance
-		to_chat(user, span_greentextbig("I feel Eora smile at me."))
+		to_chat(user, span_greentextbig("I feel Viiritri smile at me."))
 		sexhealrand *= 5
 	user.adjustBruteLoss(-sexhealrand)
 	user.adjustFireLoss(-sexhealrand/2)
@@ -348,7 +348,7 @@
 					if(HAS_TRAIT(devouser, TRAIT_SEXDEVO))
 						C.update_devotion(rand(4,8))
 						if(prob(3))
-							to_chat(devouser, span_info("I feel Eora guide me."))
+							to_chat(devouser, span_info("I feel Viiritri guide me."))
 
 	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
