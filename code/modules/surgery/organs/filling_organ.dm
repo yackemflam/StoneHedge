@@ -80,12 +80,13 @@
 			if(uses_nutrient)
 				owner.adjust_nutrition(remove_amount)
 			reagents.remove_reagent(reagent_to_make, remove_amount)
-		if((reagents.total_volume < reagents.maximum_volume) && hungerhelp) //if organ is not full
-			var/max_restore = owner.nutrition > NUTRITION_LEVEL_FED ? reagent_generate_rate * 2 : reagent_generate_rate
-			var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume) // amount restored if fed, capped by reagents.maximum_volume
-			if(uses_nutrient)
-				owner.adjust_nutrition(-restore_amount)
-			reagents.add_reagent(reagent_to_make, restore_amount)
+		else
+			if((reagents.total_volume < reagents.maximum_volume) && hungerhelp) //if organ is not full
+				var/max_restore = owner.nutrition > NUTRITION_LEVEL_FED ? reagent_generate_rate * 2 : reagent_generate_rate
+				var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume) // amount restored if fed, capped by reagents.maximum_volume
+				if(uses_nutrient)
+					owner.adjust_nutrition(-restore_amount)
+				reagents.add_reagent(reagent_to_make, restore_amount)
 
 	if(!COOLDOWN_FINISHED(src, liquidcd))
 		return
