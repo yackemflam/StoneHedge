@@ -171,6 +171,12 @@
 	desc = ""
 	icon = 'icons/obj/flora/snowflora.dmi'
 	gender = PLURAL	//"this is grass" not "this is a grass"
+	attacked_sound = "plantcross"
+	destroy_sound = "plantcross"
+	max_integrity = 5
+	blade_dulling = DULLING_CUT
+	debris = list(/obj/item/natural/fibers = 1)
+
 
 /obj/structure/flora/grass/brown
 	icon_state = "snowgrass1bb"

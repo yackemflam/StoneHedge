@@ -1291,7 +1291,7 @@
 //Call this proc to give genitals automatically where needed.
 /mob/living/proc/givegenitals()
 	defiant = 0
-	bypasssexable = TRUE
+	erpable = TRUE
 	if(!sexcon)
 		sexcon = new /datum/sex_controller(src)
 	if(!issimple(src))
@@ -1300,6 +1300,8 @@
 			ass = new /obj/item/organ/filling_organ/anus
 			ass.Insert(src)
 		if(gender == MALE)
+			name = "male [name]"
+			real_name = name
 			var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
 			testicles = new /obj/item/organ/filling_organ/testicles/internal
 			testicles.organ_size = rand(3)
@@ -1309,6 +1311,8 @@
 			penis.penis_size = rand(3)
 			penis.Insert(src)
 		if(gender == FEMALE)
+			name = "female [name]"
+			real_name = name
 			var/obj/item/organ/filling_organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
 			breasts = new /obj/item/organ/filling_organ/breasts/internal
 			breasts.organ_size = rand(10)
@@ -1317,6 +1321,8 @@
 			vagina = new /obj/item/organ/filling_organ/vagina/internal
 			vagina.Insert(src)
 			if(prob(3)) //3 chance to be dickgirl.
+				name = "futa [initial(name)]"
+				real_name = name
 				var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
 				testicles = new /obj/item/organ/filling_organ/testicles/internal
 				testicles.organ_size = rand(3)

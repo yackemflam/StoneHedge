@@ -11,7 +11,8 @@
 	ambushable = FALSE
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
 	possible_rmb_intents = list()
-	bypasssexable = FALSE //incase since they get their own setup.
+	erpable = TRUE
+	//skin color is "e8b59b"
 
 /mob/living/carbon/human/species/goblin/npc
 	aggressive=1
@@ -216,8 +217,6 @@
 
 /mob/living/carbon/human/species/goblin/after_creation()
 	..()
-	//gives gender and genitals
-	makesexy()
 	if(src.dna && src.dna.species)
 		src.dna.species.soundpack_m = new /datum/voicepack/male/goblin()
 		src.dna.species.soundpack_f = new /datum/voicepack/male/goblin()
@@ -429,44 +428,3 @@
 /obj/structure/gob_portal/Destroy()
 	soundloop.stop()
 	. = ..()
-
-/mob/living/carbon/human/species/goblin/proc/makesexy()
-	defiant = 0
-	bypasssexable = TRUE
-	//cant find a way to recolor the sprite accessories for genitals, fml -vide
-	//Someone has to set those genitals all to "e8b59b" color, someone who knows.
-	if(prob(50)) //50% chance to be male or female
-		gender = MALE
-		name = "male goblin"
-		real_name = "male goblin"
-		var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
-		testicles = new /obj/item/organ/filling_organ/testicles/internal
-		testicles.organ_size = rand(3)
-		testicles.Insert(src)
-		var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
-		penis = new /obj/item/organ/penis/internal
-		penis.penis_size = rand(3)
-		penis.Insert(src)
-	else
-		gender = FEMALE
-		name = "female goblin"
-		real_name = "female goblin"
-		var/obj/item/organ/filling_organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
-		breasts = new /obj/item/organ/filling_organ/breasts/internal
-		breasts.organ_size = rand(10)
-		breasts.Insert(src)
-		var/obj/item/organ/filling_organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
-		vagina = new /obj/item/organ/filling_organ/vagina/internal
-		vagina.Insert(src)
-		if(prob(5)) //5 chance to be dickgirl
-			name = "futa goblin"
-			real_name = "futa goblin"
-			var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
-			testicles = new /obj/item/organ/filling_organ/testicles/internal
-			testicles.organ_size = rand(3)
-			testicles.Insert(src)
-			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
-			penis = new /obj/item/organ/penis/internal
-			penis.penis_size = rand(3)
-			penis.Insert(src)
-	update_body_parts()

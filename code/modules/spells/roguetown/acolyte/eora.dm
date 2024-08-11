@@ -83,18 +83,16 @@
 		if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
 			target.sate_addiction()
 			//ONLY IF YOU HAVE ERP PANEL ON - YOU HAVE TWO OPTIONS
-			if(target.client.prefs.sexable == TRUE)
-				var/choice = alert(target, "Do you wish to give into bliss?", "", "Yes", "No")
-				switch(choice)
-					//IF YOU CHOOSE YES - YOU RECIEVE SOME PLEASURE
-					if("Yes")
-						target.sexcon.perform_sex_action(target, 5, 0, TRUE)
-						target.visible_message(span_warning("[target] gives in to their desires!"), span_warning("I am overwhelmed by my desires!"))
-						return TRUE
-					if("No")
-						target.visible_message(span_warning("[target] doesn't give in to their desires!"), span_warning("I won't give in!"))
-						return TRUE
-				return TRUE
+			var/choice = alert(target, "Do you wish to give into bliss?", "", "Yes", "No")
+			switch(choice)
+				//IF YOU CHOOSE YES - YOU RECIEVE SOME PLEASURE
+				if("Yes")
+					target.sexcon.perform_sex_action(target, 5, 0, TRUE)
+					target.visible_message(span_warning("[target] gives in to their desires!"), span_warning("I am overwhelmed by my desires!"))
+					return TRUE
+				if("No")
+					target.visible_message(span_warning("[target] doesn't give in to their desires!"), span_warning("I won't give in!"))
+					return TRUE
 			return TRUE
 		return TRUE
 	return FALSE

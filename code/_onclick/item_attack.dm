@@ -64,11 +64,11 @@
 
 /mob/living
 	var/tempatarget = null
-	var/bypasssexable = FALSE
+	var/erpable = FALSE
 
 /mob/living/Initialize()
 	. = ..()
-	if(bypasssexable == TRUE)
+	if(erpable)
 		givegenitals()
 
 /obj/item/proc/attack(mob/living/M, mob/living/user)

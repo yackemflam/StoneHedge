@@ -2,7 +2,7 @@
 	name = "Use toy on their cunt"
 
 /datum/sex_action/toy_other_vagina/shows_on_menu(mob/living/user, mob/living/target)
-	if(!target.bypasssexable && issimple(target))
+	if(!target.erpable && issimple(target))
 		return FALSE
 	if(user.client.prefs.defiant && issimple(target))
 		return FALSE

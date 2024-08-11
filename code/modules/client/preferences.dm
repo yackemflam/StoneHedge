@@ -92,7 +92,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female")
 	var/phobia = "spiders"
 	var/shake = TRUE
-	var/sexable = TRUE
+//	var/sexable = TRUE
 
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
@@ -1765,11 +1765,13 @@ Slots: [job.spawn_positions]</span>
 						domhand = 2
 					else
 						domhand = 1
+				/*
 				if("sexable")
 					if(sexable == FALSE)
 						sexable = TRUE
 					else
 						sexable = FALSE
+				*/
 				if("family")
 					var/list/loly = list("Not yet.","Work in progress.","Don't click me.","Stop clicking this.","Nope.","Be patient.","Sooner or later.")
 					to_chat(user, "<font color='red'>[pick(loly)]</font>")

@@ -515,7 +515,7 @@
 	adjust_arousal(-dt * rate)
 
 /datum/sex_controller/proc/show_ui()
-	if(!target.bypasssexable && issimple(target))
+	if(!target.erpable && issimple(target))
 		to_chat(src, span_info("I can't do anything to this creature."))
 		return
 	var/list/dat = list()
@@ -631,10 +631,6 @@
 	var/datum/sex_action/action = SEX_ACTION(current_action)
 	action.on_start(user, target)
 	while(TRUE)
-		if(!target.bypasssexable)
-			if(!isnull(target.client) && target.client.prefs.sexable == FALSE) //Vrell - Needs changed to let me test sex mechanics solo
-				to_chat(src, span_info("Their ERP panel is disabled."))
-				break
 		if(!user.rogfat_add(action.stamina_cost * get_stamina_cost_multiplier()))
 			break
 		if(!do_after(user, (action.do_time / get_speed_multiplier()), target = target))

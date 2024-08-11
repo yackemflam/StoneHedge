@@ -2,7 +2,7 @@
 	name = "Bathe with tongue"
 
 /datum/sex_action/tonguebath/shows_on_menu(mob/living/user, mob/living/target)
-	if(!target.bypasssexable && issimple(target))
+	if(!target.erpable && issimple(target))
 		return FALSE
 	if(user.client.prefs.defiant && issimple(target))
 		return FALSE
