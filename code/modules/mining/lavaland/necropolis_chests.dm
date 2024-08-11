@@ -295,7 +295,7 @@
 	return ..()
 
 /obj/effect/wisp
-	name = "benevolent spirit"
+	name = "friendly wisp"
 	desc = "My companion in these dark times."
 	icon = 'icons/roguetown/items/lighting.dmi'
 	icon_state = "wisp"
@@ -309,11 +309,11 @@
 
 /obj/effect/wisp/orbit(atom/thing)
 	. = ..()
-//	if(ismob(thing))
-//		RegisterSignal(thing, COMSIG_MOB_UPDATE_SIGHT, PROC_REF(update_user_sight))
-//		var/mob/being = thing
-//		being.update_sight()
-//		to_chat(thing, span_notice("The wisp enhances my vision."))
+	if(ismob(thing))
+		RegisterSignal(thing, COMSIG_MOB_UPDATE_SIGHT, PROC_REF(update_user_sight))
+		var/mob/being = thing
+		being.update_sight()
+		to_chat(thing, span_notice("The wisp enhances my vision."))
 
 /obj/effect/wisp/stop_orbit(datum/component/orbiter/orbits)
 	. = ..()
