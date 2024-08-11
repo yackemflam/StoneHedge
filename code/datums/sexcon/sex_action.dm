@@ -8,7 +8,7 @@
 	/// Stamina cost per action, modified by up to 2.5x cost by the force toggle
 	var/stamina_cost = 0.5
 	/// Whether the action requires both participants to be on the same tile
-	var/check_same_tile = TRUE
+	var/check_same_tile = FALSE //changing this to false by request, just use it if it really needs to be in same tile -- vide
 	/// Whether the same tile check can be bypassed by an aggro grab on the person
 	var/aggro_grab_instead_same_tile = TRUE
 	/// Whether the action is forbidden from being done while incapacitated (stun, handcuffed)
