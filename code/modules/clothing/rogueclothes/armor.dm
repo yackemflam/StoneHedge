@@ -482,7 +482,7 @@
 	allowed_race = CLOTHED_RACES_TYPES
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini/bra
-	name = "Leather armor bra"
+	name = "studded Leather bra"
 	icon_state = "studleatherbra"
 	item_state = "studleatherbra"
 	desc = "Studded leather is the most durable of all hides and leathers and about as light. Although the bottom half is literally covered by nothing, it somehow still protects the full torso!"
