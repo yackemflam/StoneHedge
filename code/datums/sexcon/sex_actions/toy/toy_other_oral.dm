@@ -38,7 +38,8 @@
 	user.visible_message(span_warning("[user] forces [target]'s to gobble on \the [dildo]..."))
 
 /datum/sex_action/toy_other_oral/on_perform(mob/living/user, mob/living/target)
-	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] forces [target] to suck on the dildo..."))
+	var/obj/item/dildo = get_dildo_in_either_hand(user)
+	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] forces [target] to suck on \the [dildo]..."))
 	if(check_dildo_silver(user))
 		other_dildoburn(user, target)
 	target.make_sucking_noise()

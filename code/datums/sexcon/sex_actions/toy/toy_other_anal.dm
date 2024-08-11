@@ -43,6 +43,7 @@
 	user.visible_message(span_warning("[user] shoves \the [dildo] in [target]'s butt..."))
 
 /datum/sex_action/toy_other_anal/on_perform(mob/living/user, mob/living/target)
+	var/obj/item/dildo = get_dildo_in_either_hand(user)
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s butt with \the [dildo]..."))
 	playsound(user, 'sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 
