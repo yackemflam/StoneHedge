@@ -341,7 +341,7 @@
 	if(!issimple(user))
 		var/mob/living/carbon/human/devouser = user
 		var/datum/devotion/C = devouser.devotion
-		if(devouser && C.devotion)
+		if(devouser && C?.devotion)
 			if(devouser.mind?.get_skill_level(/datum/skill/magic/holy))
 				if(C.devotion < C.max_devotion)
 					C.update_devotion(rand(1,2))
