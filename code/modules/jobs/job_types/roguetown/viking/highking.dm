@@ -5,8 +5,8 @@
 	flag = HIGHKING
 	department_flag = VIKING
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/spitfire)
