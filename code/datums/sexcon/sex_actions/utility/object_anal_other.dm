@@ -142,7 +142,7 @@
 		if(user.lying) //nom nom easier while laying
 			stuffchance *= 2
 		if(prob(stuffchance) && sc.force > SEX_FORCE_LOW && fooddildo.canconsume(target, user))
-			user.visible_message(span_info(pick("Chunks of \the [fooddildo] fill [user]'s ass.", "[user] feeds [user]'s ass with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s ass.", "Chunks of \the [fooddildo] gets packed into [user]'s asshole.")), span_info(pick("Chunks of \the [fooddildo] fill my ass.", "I feed my ass with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my ass.", "Chunks of \the [fooddildo] gets packed into my asshole.")))
+			target.visible_message(span_info(pick("Chunks of \the [fooddildo] fill [user]'s ass.", "[user] feeds [user]'s ass with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s ass.", "Chunks of \the [fooddildo] gets packed into [user]'s asshole.")), span_info(pick("Chunks of \the [fooddildo] fill my ass.", "I feed my ass with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my ass.", "Chunks of \the [fooddildo] gets packed into my asshole.")))
 			fooddildo.sussyeat(target, user, BODY_ZONE_PRECISE_GROIN, FALSE)
 			playsound(target.loc, 'sound/misc/mat/insert (2).ogg', 100, TRUE)
 			target.adjustBruteLoss(-0.1) //mm nutritions.
