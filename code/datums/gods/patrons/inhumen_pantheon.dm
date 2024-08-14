@@ -13,6 +13,7 @@
 	domain = "God of Chaos and Lies; the great manipulator. He who covets power for the sake of power and nothing else."
 	desc = "Discovered long ago, Levisth gives power to the weak who do his bidding,elevating them in time. There are many tales of those who serve the greatsnake, all which eventuate with tales of how it yearns to gain power over all things, jealous of it's 'rivals' the other gods."
 	worshippers = "Power-Hungry, Powerful, Charismatic, Liers."
+	mob_traits = list(TRAIT_WILD_EATER)
 	confess_lines = list(
 		"Praisseethe Greatssnake!!",
 		"LONG LIVE HISSSS FORME!!",
@@ -22,9 +23,9 @@
 /datum/patron/inhumen/graggar
 	name = "Jayx"
 	domain = "God of Twilight and Change. Magic. Transformation. Dusk/Dawn. Crisis/Resolution."
-	desc = "Jayx is known as the Herald of change, often depicted as a two-trailed comet. The Divine phoenix represents the immortal cycle of growth and advancement, often a god of both magic and art; they are known more than anything as the passage of time itself and bright blue magical fire. (Mana)"
+	desc = "Jayx is known as the Herald of change, often depicted as a two-tailed comet or Phoenix. The Divine Phoenix represents the immortal cycle of growth and advancement, often a god of both magic and art; they are known more than anything as the passage of time itself and bright blue magical fire. (Mana)"
 	worshippers = "Mages, Alchemists, Soul-Searchers, Fateweavers, Supernatural Creatures, Soothsayers."
-	mob_traits = list(TRAIT_ORGAN_EATER)
+	mob_traits = list(TRAIT_ZJUMP)
 	confess_lines = list(
 		"THE PHOENIX BURNS BRIGHT AND PURE!",
 		"IN HIS FLAMES I AM REBORN!",
@@ -47,7 +48,7 @@
     name = "The Sacrifice"
     domain = "Void, Loss, Absence, Nihility."
     desc = "The Sacrifice wishes to take from you, and for you to give it willingly. You will never get it back if you go too far. But you will always have the sacrifice."
-    worshippers = "Perverts, Gamblers, Drunkards, and Bards"
+    worshippers = "Nihilists, Gamblers, Warlocks, and Villains."
     mob_traits = list(TRAIT_CRACKHEAD)
     confess_lines = list(
         "I do not yearn for anything!!",
@@ -55,6 +56,8 @@
         "THERE IS NO LOSS, THERE IS NO LIE! THERE IS ONLY SACRIFICE!",
         "IT'S ALL OBLIVION IN THE END FOR ME!",
 )
+
+
 
 
 /* RATWOOD EDIT - Back to the main pantheon

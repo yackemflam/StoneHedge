@@ -8,6 +8,7 @@
 	domain = "Beginnings, Hope, Dawn. Setting the path. Flames, Sunlight, Illumination. (Active Energies)"
 	desc = "Elysius, The Golden Dragon."
 	worshippers = "The Noble Hearted, Zealots, Warriors and Healers."
+	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	t2 = /obj/effect/proc_holder/spell/invoked/heal
 	t3 = /obj/effect/proc_holder/spell/invoked/revive
@@ -50,7 +51,8 @@
 	name = "Abyssia"
 	domain = "God of the Ocean, Storms and the Tide"
 	desc = "The Beloved Daughter of the Sea, gifted primordial kin food and water. She is said to be both cruel and calm, if her icey waters and wailing winds are heeded ahead of time. She is the warning and the Omen."
-	worshippers = "Men and Women of the Sea, Primitive Aquatics, Merfolk, Druids."
+	worshippers = "Men and Women of the Sea, Primitive Aquatics, Merfolk, Druids, Creatures of the Deep."
+	mob_traits = list (TRAIT_WATERBREATHING)
 	confess_lines = list(
 		"ABYSSIA COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",
@@ -62,6 +64,7 @@
 	domain = "War, Dance, Tactic, Rejoice, Celebration."
 	desc = "The dervish of Blades, Minhur teaches that battle is like a dance; the duality between life/death and revelry. Minhur's followers prefer dexterity and tactful dancelike movements; encouraging mortals to act with decorum, etiquette and poise whenever possible."
 	worshippers = "Warriors, Sellswords & Fencers."
+	mob_traits = list (TRAIT_BREADY)
 	confess_lines = list(
 		"MINHUR'S WHIRLWIND!",
 		"THROUGH STRIFE, GRACE!",
@@ -74,6 +77,7 @@
 	desc = "Yamais is the guardian, the crypt-scribe, and the great remembrance. She who watches makes certain each soul reaches its owed afterlife. It is Yamais who remembers peoples actions and worth. Yamais does not take kindly to necromancy which goes against the natural cycle. Though she permits willing undead to return, and has even turned her gaze from liches such as the baelnornes of the elven kingdoms."
 	worshippers = "The Dead, Mourners, Gravekeepers"
 	mob_traits = list(TRAIT_SOUL_EXAMINE)
+	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
 	t3 = /obj/effect/proc_holder/spell/targeted/soulspeak
@@ -88,6 +92,9 @@
 	domain = "Art, Beauty, Artisanry, Vanity, Poetry, Freedom and Luck."
 	desc = "Onder is said to be inspiration itself. The god of Stories, Music and Memory. Onder is worshipped by bards and rogues alike. Onder’s story of being a changeling bard who walked amidst many cultures, gathering their tales and impressive many beings alike made them the god of charisma and luck."
 	worshippers = "Bards, Gamblers, Poets, Musicians, Diplomats and Artists."
+	mob_traits = list(TRAIT_SOUL_EXAMINE)
+	t1 = /obj/effect/proc_holder/spell/invoked/blindness
+	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
 	confess_lines = list(
 		"Elysius, cut us a path!",
 		"Lune guide me gentle!",
@@ -103,8 +110,8 @@
 
 /datum/patron/divine/pestra
 	name = "Hermeir"
-	domain = "Medicine, Progress, Advancement, Healing."
-	desc = "Hermeir is known as the Messenger; said to have a staff of entwined serpents, one white, the other black. Which their magick staff they were able to discern all things and know the truth with time in their knowledgeable gaze. The followers of Hermeir are able to utilize magic as much as the mundane to assist the wounded, dieng and at times, departed. Hermeir believes whatever the means - we must swear an oath to living and healing."
+	domain = "Medicine, Progress, Advancement, Healing, Exploration."
+	desc = "Hermeir is known as the Messenger; said to have a staff of entwined serpents, one white, the other black. Which their magick staff they are able to discern all things. To know all truths and observations with time in their immortal knowledgeable gaze. The followers of Hermeir are able to utilize magic as much as the mundane to assist the wounded,or departed. Hermeir believes whatever the means - we must swear an oath to perpetual foward progress and divine good.."
 	worshippers = "The Sick, Phyicians, Apothecaries, Healers, Scientists, Alchemists."
 	mob_traits = list(TRAIT_EMPATH, TRAIT_ROT_EATER)
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
@@ -120,9 +127,10 @@
 
 /datum/patron/divine/malum
 	name = "Svaeryog"
-	domain = "Fire, Metalwork, Temperance,  Craft."
+	domain = "Fire, Metalwork, Temperance, Defence, Craft, Cunning, Artisanry."
 	desc = "Svaeryog blessed  the lands with metal and the lessons of temperance. Iron of heart and mind through perseverance. He was said to be a mortal who turned himself with magick and metals to the form of a mighty divine golem. "
 	worshippers = "Smiths, Crafters, Masochists, Miners, Artisans."
+	mob_traits = list(TRAIT_BREADY)
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	confess_lines = list(
 		"Blessed forgefires be my guidance!",

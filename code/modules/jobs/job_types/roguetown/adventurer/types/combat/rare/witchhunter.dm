@@ -1,7 +1,7 @@
 
 /datum/advclass/puritan
-	name = "Hierophant"
-	tutorial = "Hierophants Hunt the various supernatural threats to the continent if Grimoiria and it's denizens. They find frequent work in Stone Hedge, given it's closeness to magickal phenomena."
+	name = "Wytcher"
+	tutorial = "Wytchers hunt the various supernatural threats to the continent if Grimoiria and it's denizens. They find frequent work in Stone Hedge, given it's closeness to magickal phenomena."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_TOLERATED_UP
 	outfit = /datum/outfit/job/roguetown/adventurer/puritan
@@ -16,6 +16,7 @@
 /datum/outfit/job/roguetown/adventurer/puritan/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	belt = /obj/item/storage/belt/rogue/leather
 	neck = /obj/item/clothing/neck/roguetown/psicross/silver
 	shoes = /obj/item/clothing/shoes/roguetown/boots
@@ -25,8 +26,8 @@
 	head = /obj/item/clothing/head/roguetown/puritan
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	beltl = /obj/item/rogueweapon/sword/rapier
-	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1)
+	belt2 = /obj/item/rogueweapon/huntingknife/idagger/silver
+	backl = /obj/item/rogueweapon/sword/long
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, rand(4,5), TRUE)
@@ -55,6 +56,7 @@
 		H.change_stat("perception", 2)
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue)
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
