@@ -25,8 +25,8 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	head = /obj/item/clothing/head/roguetown/puritan
 	gloves = /obj/item/clothing/gloves/roguetown/leather
-	beltl = /obj/item/rogueweapon/sword/rapier
-	belt2 = /obj/item/rogueweapon/huntingknife/idagger/silver
+	beltr = /obj/item/rogueweapon/sword/rapier
+	beltl = /obj/item/rogueweapon/huntingknife/idagger/silver
 	backl = /obj/item/rogueweapon/sword/long
 
 	if(H.mind)

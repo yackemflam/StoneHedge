@@ -23,7 +23,6 @@
 	var/last_ejaculation_time = 0
 	var/last_moan = 0
 	var/last_pain = 0
-	var/ejacmessaged = 0
 	var/beingfucked = FALSE //for npc stuff
 
 /datum/sex_controller/New(mob/living/owner)
@@ -178,8 +177,6 @@
 		if(testes)
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
 			testes.reagents.trans_to(target, cum_to_take, transfered_by = user)
-		target.adjust_nutrition(50)
-		target.adjust_hydration(50)
 	else
 		if(testes) //todo make proper transfers, categorize sexactions
 			var/cameloc = user.sexcon.came_into_loc(oral, vaginal, anal, nipple, target)
@@ -215,12 +212,6 @@
 	after_ejaculation()
 
 /datum/sex_controller/proc/after_ejaculation()
-	//give some nutrition
-	if(ejacmessaged != 1)
-		user.visible_message(span_info("With every ejaculation I feel Viiritri's blessing satiate me so I may go longer."))
-		ejacmessaged = 1
-	user.adjust_nutrition(50)
-	user.adjust_hydration(50)
 	set_arousal(40)
 	adjust_charge(-CHARGE_FOR_CLIMAX)
 	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
