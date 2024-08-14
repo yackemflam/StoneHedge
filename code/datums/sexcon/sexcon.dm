@@ -15,8 +15,6 @@
 	var/manual_arousal = SEX_MANUAL_AROUSAL_DEFAULT
 	/// Our arousal
 	var/arousal = 0
-	/// Our charge gauge
-	var/charge = SEX_MAX_CHARGE
 	/// Whether we want to screw until finished, or non stop
 	var/do_until_finished = TRUE
 	var/last_arousal_increase_time = 0
@@ -32,11 +30,6 @@
 	user = null
 	target = null
 	. = ..()
-
-/datum/sex_controller/proc/is_spent()
-	if(charge < CHARGE_FOR_CLIMAX)
-		return TRUE
-	return FALSE
 
 /datum/sex_controller/proc/finished_check()
 	if(arousal > 100 && issimple(user))
@@ -164,15 +157,16 @@
 /datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE)
 	log_combat(user, target, "Came inside [target]")
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
-	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
-		if(!user.mob_timers["cumtri"])
-			user.mob_timers["cumtri"] = world.time
-			user.adjust_triumphs(1)
-			user.add_stress(/datum/stressevent/cummax)
-			to_chat(user, span_love("Our sex was a true TRIUMPH!"))
+	if(!issimple(target))
+		if(HAS_TRAIT(target, TRAIT_GOODLOVER))
+			if(!user.mob_timers["cumtri"])
+				user.mob_timers["cumtri"] = world.time
+				user.adjust_triumphs(1)
+				user.add_stress(/datum/stressevent/cummax)
+				to_chat(user, span_love("Our sex was a true TRIUMPH!"))
 	else
 		user.add_stress(/datum/stressevent/cumok)
-	if(oral)
+	if(!issimple(target) && oral)
 		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
 		if(testes)
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
@@ -187,7 +181,15 @@
 			else
 				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
 				testes.reagents.trans_to(target,  cum_to_take, transfered_by = user)
+	if(issimple(target))
+		if(testes) //todo make proper transfers, categorize sexactions
+			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
+			testes.reagents.remove_reagent(testes.reagent_to_make, cum_to_take)
+			user.add_stress(/datum/stressevent/cumok)
+
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+	if(testes && testes.reagents.total_volume <= testes.reagents.maximum_volume / 4)
+		to_chat(user, span_info("Damn, my [pick(testes.altnames)] are pretty dry now."))
 	after_ejaculation()
 	if(!oral)
 		after_intimate_climax()
@@ -213,7 +215,6 @@
 
 /datum/sex_controller/proc/after_ejaculation()
 	set_arousal(40)
-	adjust_charge(-CHARGE_FOR_CLIMAX)
 	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
 		user.sate_addiction()
 	user.emote("sexmoanhvy", forced = TRUE)
@@ -228,25 +229,6 @@
 /datum/sex_controller/proc/just_ejaculated()
 	return (last_ejaculation_time + 2 SECONDS >= world.time)
 
-/datum/sex_controller/proc/set_charge(amount)
-	var/empty = (charge < CHARGE_FOR_CLIMAX)
-	charge = clamp(amount, 0, SEX_MAX_CHARGE)
-	var/after_empty = (charge < CHARGE_FOR_CLIMAX)
-	if(empty && !after_empty)
-		to_chat(user, span_notice("I feel like I'm not so spent anymore"))
-	if(!empty && after_empty)
-		to_chat(user, span_notice("I'm spent!"))
-
-/datum/sex_controller/proc/adjust_charge(amount)
-	set_charge(charge + amount)
-
-/datum/sex_controller/proc/handle_charge(dt)
-	adjust_charge(dt * CHARGE_RECHARGE_RATE)
-	if(is_spent())
-		if(arousal > 60)
-			to_chat(user, span_warning("I'm too spent!"))
-			adjust_arousal(-20)
-		adjust_arousal(-dt * SPENT_AROUSAL_RATE)
 
 /datum/sex_controller/proc/set_arousal(amount)
 	if(amount > arousal)
@@ -451,8 +433,6 @@
 /datum/sex_controller/proc/check_active_ejaculation()
 	if(arousal < ACTIVE_EJAC_THRESHOLD)
 		return FALSE
-	if(is_spent())
-		return FALSE
 	if(!can_ejaculate())
 		return FALSE
 	return TRUE
@@ -468,8 +448,6 @@
 
 /datum/sex_controller/proc/handle_passive_ejaculation()
 	if(arousal < PASSIVE_EJAC_THRESHOLD)
-		return
-	if(is_spent())
 		return
 	if(!can_ejaculate())
 		return FALSE
@@ -487,7 +465,6 @@
 
 /datum/sex_controller/proc/process_sexcon(dt)
 	handle_arousal_unhorny(dt)
-	handle_charge(dt)
 	handle_passive_ejaculation()
 
 /datum/sex_controller/proc/handle_arousal_unhorny(dt)

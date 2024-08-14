@@ -335,7 +335,6 @@
 					toggle_ai(AI_OFF)
 					if(aggressive)
 						sc.force = SEX_FORCE_MAX
-						aggressive = FALSE
 					else
 						sc.force = SEX_FORCE_MID
 					src.throw_at(get_turf(L.loc), 3, 3, spin = FALSE)
@@ -351,7 +350,7 @@
 					if(gender == MALE)
 						sc.manual_arousal = SEX_MANUAL_AROUSAL_MAX
 					log_admin("[src] is trying to init sex on [L]")
-					var/current_action = /datum/sex_action/npc_vaginal_sex
+					var/current_action = /datum/sex_action/npc_rimming
 					if(src.gender == FEMALE && L.gender == MALE)
 						switch(rand(3))
 							if(1) //oral
@@ -405,10 +404,9 @@
 		fuckcd = rand(50,350)
 	else
 		fuckcd = rand(20,80)
-		if(initial(aggressive)) //if its in combat and unsatisfied by prey slipping off, it will wanna try again. But with some delay to actually fight.
+		if(aggressive) //if its in combat and unsatisfied by prey slipping off, it will wanna try again. But with some delay to actually fight.
 			fuckcd = rand(3,8)
 	stop_automated_movement = 0
-	aggressive = initial(aggressive)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()
 	. = ..()
