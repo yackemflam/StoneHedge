@@ -133,7 +133,7 @@
 				contdildo.reagents.trans_to(uservagina, sc.speed, 1, TRUE, FALSE, uservagina, FALSE, INJECT, FALSE, TRUE)
 			playsound(user, 'sound/misc/mat/endin.ogg', 100, TRUE)
 			pain_amt = -8 //liquid ease pain i guess
-			user.adjustFireLoss(-0.1) //water on burn i guess.
+			user.heal_bodypart_damage(0,1,0,TRUE) //water on burn i guess.
 
 	//om nom nom
 	if(istype(user.get_active_held_item(), /obj/item/reagent_containers/food/snacks))
@@ -146,7 +146,7 @@
 			user.visible_message(span_info(pick("Chunks of \the [fooddildo] fill [user]'s cunt.", "[user] feeds [user]'s cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s cunt.", "Chunks of \the [fooddildo] gets packed into [user]'s pussy.")), span_info(pick("Chunks of \the [fooddildo] fill my cunt.", "I feed my cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my cunt.", "Chunks of \the [fooddildo] gets packed into my pussy.")))
 			fooddildo.sussyeat(user, user, BODY_ZONE_PRECISE_GROIN, TRUE)
 			playsound(user.loc, 'sound/misc/mat/insert (2).ogg', 100, TRUE)
-			user.adjustBruteLoss(-0.5) //mm nutritions, food have less bites than liquids by far.
+			user.heal_bodypart_damage(1,0,0,TRUE) //mm nutritions, food have less bites than liquids by far.
 
 	user.sexcon.perform_sex_action(user, 2, pain_amt, TRUE)
 	user.sexcon.handle_passive_ejaculation()

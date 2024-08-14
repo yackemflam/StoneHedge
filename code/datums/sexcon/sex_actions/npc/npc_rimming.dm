@@ -12,7 +12,7 @@
 	return FALSE
 
 /datum/sex_action/npc_rimming/on_start(mob/living/user, mob/living/target)
-	user.visible_message(span_warning("[user] starts npc_rimming [target]'s butt..."))
+	user.visible_message(span_warning("[user] starts rimming [target]'s butt..."))
 	var/datum/sex_controller/sc = target.sexcon
 	sc.beingfucked = TRUE
 
@@ -20,14 +20,12 @@
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] rims [target]'s butt..."))
 	user.make_sucking_noise()
 
-	target.adjustBruteLoss(-0.2)
-	target.adjustFireLoss(-0.2)
-	target.adjustOxyLoss(-0.2)
+	target.heal_bodypart_damage(1,1,0.5,TRUE)
 	user.sexcon.perform_sex_action(target, 2, 0, TRUE)
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/npc_rimming/on_finish(mob/living/user, mob/living/target)
-	user.visible_message(span_warning("[user] stops npc_rimming [target]'s butt ..."))
+	user.visible_message(span_warning("[user] stops rimming [target]'s butt ..."))
 	var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
 	usermob.stoppedfucking()
 	var/datum/sex_controller/sc = target.sexcon

@@ -25,9 +25,7 @@
 	user.sexcon.perform_sex_action(user, 1, 3, TRUE)
 	user.sexcon.handle_passive_ejaculation()
 
-	target.adjustBruteLoss(-0.2)
-	target.adjustFireLoss(-0.2)
-	target.adjustOxyLoss(-0.2)
+	target.heal_bodypart_damage(1,1,0.5,TRUE)
 	user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
 	user.sexcon.perform_sex_action(target, 0, 2, FALSE)
 	target.sexcon.handle_passive_ejaculation()

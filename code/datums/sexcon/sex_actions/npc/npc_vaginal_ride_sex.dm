@@ -21,9 +21,7 @@
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] rides [target]."))
 	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 
-	target.adjustBruteLoss(-0.2)
-	target.adjustFireLoss(-0.2)
-	target.adjustOxyLoss(-0.2)
+	target.heal_bodypart_damage(1,1,0.5,TRUE)
 	if(target.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 3, TRUE)
 	else

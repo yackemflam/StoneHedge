@@ -227,7 +227,8 @@
 		if(prob(1) && nearegg && virile) //bomb has been planted
 			forgan.be_impregnated(H) //boom
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
-			H.adjust_hydration(10)
+			H.adjust_hydration(5)
+			H.adjust_nutrition(5)
 		if(H.blood_volume < BLOOD_VOLUME_NORMAL)
 			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
 	..()

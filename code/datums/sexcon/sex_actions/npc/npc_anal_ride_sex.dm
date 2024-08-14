@@ -28,9 +28,8 @@
 		user.sexcon.perform_sex_action(target, 2.4, 9, TRUE)
 	user.sexcon.handle_passive_ejaculation()
 
-	target.adjustBruteLoss(-0.2)
-	target.adjustFireLoss(-0.2)
-	target.adjustOxyLoss(-0.2)
+	target.heal_bodypart_damage(1,1,0.5,TRUE)
+
 	user.sexcon.perform_sex_action(target, 2, 4, FALSE)
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] cums into [user]'s butt!"))

@@ -133,7 +133,7 @@
 				contdildo.reagents.trans_to(targetvagina, sc.speed, 1, TRUE, FALSE, targetvagina, FALSE, INJECT, FALSE, TRUE)
 			playsound(target, 'sound/misc/mat/endin.ogg', 100, TRUE)
 			pain_amt = -8 //liquid ease pain i guess
-			user.adjustFireLoss(-0.1) //water on burn i guess.
+			target.heal_bodypart_damage(0,1,0,TRUE) //water on burn i guess.
 
 	//om nom nom
 	if(istype(user.get_active_held_item(), /obj/item/reagent_containers/food/snacks))
@@ -146,7 +146,7 @@
 			fooddildo.sussyeat(target, user, BODY_ZONE_PRECISE_GROIN, TRUE)
 			target.visible_message(span_info(pick("Chunks of \the [fooddildo] fill [user]'s cunt.", "[user] feeds [user]'s cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s cunt.", "Chunks of \the [fooddildo] gets packed into [user]'s pussy.")), span_info(pick("Chunks of \the [fooddildo] fill my cunt.", "I feed my cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my cunt.", "Chunks of \the [fooddildo] gets packed into my pussy.")))
 			playsound(target.loc, 'sound/misc/mat/insert (2).ogg', 100, TRUE)
-			target.adjustBruteLoss(-0.1) //mm nutritions.
+			target.heal_bodypart_damage(1,0,0,TRUE) //mm nutritions.
 
 	user.sexcon.perform_sex_action(target, 2, pain_amt, TRUE)
 	target.sexcon.handle_passive_ejaculation()
