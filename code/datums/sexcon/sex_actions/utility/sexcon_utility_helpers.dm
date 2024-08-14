@@ -57,10 +57,10 @@
 					amt2take = reagents.total_volume
 				if(!pussy)
 					var/obj/item/organ/userass = user.getorganslot(ORGAN_SLOT_ANUS)
-					reagents.trans_to(userass, amt2take, TRUE, TRUE, FALSE, M, FALSE, INJECT)
+					reagents.trans_to(userass, amt2take, TRUE, 4, FALSE, M, FALSE, INJECT)
 				else
 					var/obj/item/organ/userpussy = user.getorganslot(ORGAN_SLOT_VAGINA)
-					reagents.trans_to(userpussy, amt2take, TRUE, TRUE, FALSE, M, FALSE, INJECT)
+					reagents.trans_to(userpussy, amt2take, TRUE, 4, FALSE, M, FALSE, INJECT)
 				bitecount++
 				On_Consumealt(M)
 				checkLiked(fraction, M)

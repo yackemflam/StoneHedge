@@ -146,7 +146,7 @@
 /datum/anvil_recipe/tools/surgery/surgerytools
 	name = "Surgery tools set (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
+	additional_items = list(/obj/item/ingot/steel)
 	created_item = list(/obj/item/rogueweapon/surgery/scalpel, /obj/item/rogueweapon/surgery/saw, /obj/item/rogueweapon/surgery/hemostat, /obj/item/rogueweapon/surgery/retractor, /obj/item/rogueweapon/surgery/bonesetter, /obj/item/rogueweapon/surgery/cautery, /obj/item/reagent_containers/syringe)
 	i_type = "Tools"
 

@@ -75,17 +75,17 @@
 
 	// modify nutrition to generate reagents
 	if(refilling) //self-consuming liquids for refilling organs.
-		if(owner.nutrition < NUTRITION_LEVEL_HUNGRY) //consumes if hungry
+		if(owner.nutrition < NUTRITION_LEVEL_FED) //consumes if hungry
 			var/remove_amount = min(reagent_generate_rate, reagents.total_volume)
 			if(uses_nutrient)
-				owner.adjust_nutrition(remove_amount)
+				owner.adjust_nutrition(remove_amount*20) //since hunger factor is so tiny compared to the nutrition levels it has to fill
 			reagents.remove_reagent(reagent_to_make, remove_amount)
 		else
 			if((reagents.total_volume < reagents.maximum_volume) && hungerhelp) //if organ is not full
-				var/max_restore = owner.nutrition > NUTRITION_LEVEL_FED ? reagent_generate_rate * 2 : reagent_generate_rate
+				var/max_restore = owner.nutrition > NUTRITION_LEVEL_WELL_FED ? reagent_generate_rate * 2 : reagent_generate_rate
 				var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume) // amount restored if fed, capped by reagents.maximum_volume
 				if(uses_nutrient)
-					owner.adjust_nutrition(-restore_amount)
+					owner.adjust_nutrition(-restore_amount*20)
 				reagents.add_reagent(reagent_to_make, restore_amount)
 
 	if(!COOLDOWN_FINISHED(src, liquidcd))
