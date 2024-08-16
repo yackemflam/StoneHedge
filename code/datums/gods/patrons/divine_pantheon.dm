@@ -100,12 +100,12 @@
 		"Lune guide me gentle!",
 		"Sylvarn guide our souls wisened!",
 		"Beware the daughter of the sea!",
-		"The pale dancer comes for the wicked!",
+		"The Red dancer comes for the wicked!",
 		"All souls find the same stream!",
 		"Such Beauty, Such bliss, Even in this pain I find Art!",
 		"PESTRA SOOTHES ALL ILLS!",
 		"Temperance my blade, my path forged ahead, strucken like blade!",
-		"Love in my heart,I create art!~",
+		"Love in my heart,I create art! I was a wonder of Onder from the start!~",
 	)
 
 /datum/patron/divine/pestra
