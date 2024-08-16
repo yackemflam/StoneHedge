@@ -45,7 +45,7 @@
 	overlay_state = "revive"
 	releasedrain = 90
 	chargedrain = 0
-	chargetime = 50
+	chargetime = 30
 	range = 1
 	warnie = "sydwarning"
 	no_early_release = TRUE
@@ -67,7 +67,7 @@
 		testing("revived1")
 		var/mob/living/target = targets[1]
 		if(HAS_TRAIT(target, TRAIT_FAITHLESS))
-			to_chat(user, span_warning("Astrata's light has no effect! She denies aiding a non-believer!"))
+			to_chat(user, span_warning("Elysius light has no effect! He denies aiding a non-believer!"))
 			return FALSE
 		if(target == user)
 			return FALSE
