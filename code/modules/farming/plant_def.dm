@@ -66,7 +66,7 @@
 
 /datum/plant_def/apple
 	name = "apple tree"
-	icon = 'icons/roguetown/misc/crops.dmi'
+	icon = 'modular_stonehedge/icons/roguetown/misc/crops.dmi'
 	icon_state = "apple"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/apple
 	uproot_loot = list(/obj/item/grown/log/tree/small)
@@ -80,19 +80,19 @@
 
 /datum/plant_def/pipeweed
 	name = "westleach leaf"
-	icon = 'icons/roguetown/misc/crops.dmi'
+	icon = 'modular_stonehedge/icons/roguetown/misc/crops.dmi'
 	icon_state = "tobacco"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
 
 /datum/plant_def/sweetleaf
 	name = "swampweed"
-	icon = 'icons/roguetown/misc/crops.dmi'
+	icon = 'modular_stonehedge/icons/roguetown/misc/crops.dmi'
 	icon_state = "weed"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleaf
 
 /datum/plant_def/berry
 	name = "berry bush"
-	icon = 'icons/roguetown/misc/crops.dmi'
+	icon = 'modular_stonehedge/icons/roguetown/misc/crops.dmi'
 	icon_state = "berry"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/berries/rogue
 	uproot_loot = list(/obj/item/grown/log/tree/small)
@@ -106,7 +106,7 @@
 
 /datum/plant_def/berry_poison
 	name = "berry bush"
-	icon = 'icons/roguetown/misc/crops.dmi'
+	icon = 'modular_stonehedge/icons/roguetown/misc/crops.dmi'
 	icon_state = "berry"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
 	uproot_loot = list(/obj/item/grown/log/tree/small)
