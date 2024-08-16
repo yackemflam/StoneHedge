@@ -5,13 +5,13 @@
 	name = "Half Orc"
 	id = "halforc"
 	desc = "<b>Half Orcs</b><br>\
-	With the Ironmask clan on a centuries-long warpath to consolidate all orcs within their banner, \
+	With the various clans across the realms on a centuries-long warpath, \
 	crushed orc tribes have lost their menfolk and war-widows have been scattered to the hinterlands. \
 	Between human civilization and orc savagery, orc-women opting for exile over dishonor have become \
 	more common visitors to fur trading posts and prospecting camps, eventually leading to half-orcs \
-	being born in these rough places otherwise devoid of a fairer sex. Your mother-clan is in thrall \
-	to the Ironmask, true orcs would kill you as a mongrel dog and your father’s people cannot decide \
-	between mere distrust and disgust. Yet somehow your wandering feet came to StoneHedge, where \
+	being born in these rough places otherwise devoid of a fairer sex. Your mother-clan is irrelevent within modern society. \
+	True orcs would kill you as a mongrel dog and your people cannot decide constantly  how to become one, if not for the wisdom of your tribal leaders in decades past. \
+	between mere distrust and disgust. Yet somehow your wandering feet came to this place, where \
 	half-orcs ply muscle and their hardiness in the rough underbelly or outer reaches of society."
 
 	skin_tone_wording = "Clan"

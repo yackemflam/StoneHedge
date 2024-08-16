@@ -5,7 +5,7 @@
 	name = "Goblin"
 	id = "goblinp"
 	desc = "<b>Goblin</b><br>\
-	A vile, cursed race of green skinned fiends with brains as small as their hearts. Be not fooled by their appearance - What they lack in stature, they possess in sheer malice."
+	Small chaotic creatures, hailing from the Fairy dimension. They are vicious and vile, cunning and brutal. Many of the outer realms hold contempt for their kin from past ambushes and assaults."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = ALL_AGES_LIST

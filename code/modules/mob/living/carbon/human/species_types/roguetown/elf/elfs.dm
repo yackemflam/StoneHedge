@@ -5,17 +5,14 @@
 	name = "Elf"
 	id = "elfw"
 	desc = "<b>Elf</b><br>\
-	Wood Elves are a nature-enhanced variant of the Elven Species. \
-	Humanoids that trace their original heritage to another dimension known as the faewild. \
-	Considering their diverse history, it is extremely difficult for other mortals \
-	to even concept the various intricacies found in elven society which often reflects the seasons and emotions.\
-	Within the wood elves alone;thousands of tribes that exist within their various groves and foresst nations! \
-	Elves tend to be looked poorly upon by humans, as historically the two races have \
-	been rivals in various conflicts and territorial disputes since the dawn of time, given humanities learning pains.. This however does not stop \
-	many mortals and elves from forming relationships, which are capable of producing child.\
-	Elves are known for their intelligence and sharp eyes, but their graceful nature does \
-	not lend itself to the concepts of strength or durability... \
-	The monarchy here is elven, and various wild tribes can be found in the forest.."
+	The Elves are marked apart from other races by their ethereal grace and long lives. \
+	Like Humens, they live throughout the lands of Grimoria. \
+	Yet, unlike other races, they prefer to dwell in lands untouched by civilization - such as Avalonth and their Lush Forests of Magick.<br>\
+	Elves can be difficult to distinguish from Humens at a glance until one is better acquainted with them. \
+	They are lighter and often more slender than men and bear fairy-like features upon their faces and ears.<br>\
+	The Elves commonly worship the Nature Deities in much the same way that Fae Folk or Sylvans do, though they tend towards older practices others may no longer recall.<br>\
+	<br>\
+	Magic comes easily to us, and we are swifter than other races. However, our bodies are weak and fragile."
 
 	skin_tone_wording = "Tribal Identity"
 
@@ -93,14 +90,14 @@
 
 /datum/species/elf/wood/get_skin_list()
 	return list(
-		"Dandelion Creek" = SKIN_COLOR_DANDELION_CREEK,
-		"Roseveil" = SKIN_COLOR_ROSEVEIL,
-		"Azuregrove" = SKIN_COLOR_AZUREGROVE,
-		"Arborshome" = SKIN_COLOR_ARBORSHOME,
-		"Almondvalle" = SKIN_COLOR_ALMONDVALLE,
-		"Walnut Woods" = SKIN_COLOR_WALNUT_WOODS,
-		"Timberborn" = SKIN_COLOR_TIMBERBORN,
-		"Ashen" 	= SKIN_COLOR_ASHEN,
+		"Snow Scion" = SKIN_COLOR_DANDELION_CREEK,
+		"Shadewood" = SKIN_COLOR_ROSEVEIL,
+		"Emberfall" = SKIN_COLOR_AZUREGROVE,
+		"Vandendor" = SKIN_COLOR_ARBORSHOME,
+		"Fablefield" = SKIN_COLOR_ALMONDVALLE,
+		"Nevor" = SKIN_COLOR_WALNUT_WOODS,
+		"Merkite" = SKIN_COLOR_TIMBERBORN,
+		"Weso" 	= SKIN_COLOR_ASHEN,
 	)
 
 /datum/species/elf/wood/get_hairc_list()

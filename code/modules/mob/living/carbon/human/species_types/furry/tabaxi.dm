@@ -12,7 +12,7 @@
 		Though we are rather quick, we lack strength and constitution."
 	skin_tone_wording = "Fur Colors"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE, MUTCOLORS)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	inherent_traits = list(TRAIT_NOMOBSWAP,TRAIT_NOFALLDAMAGE1, TRAIT_NIGHT_VISION, TRAIT_WILD_EATER)
 	possible_ages = ALL_AGES_LIST
 	limbs_icon_m = 'icons/mob/species/male.dmi'
 	limbs_icon_f = 'icons/mob/species/female.dmi'

@@ -2,7 +2,7 @@
 	race = /datum/species/anthromorphsmall
 
 /datum/species/anthromorphsmall
-	name = "Verminvolk"
+	name = "Hedgebeast"
 	id = "anthromorphsmall"
 	desc = "A race akin to wild-kin, except afflicted with significantly smaller stature. I'm a bit less respected than my kin due to their closer resemblance to vermin, like the dichotomy between Kobold and Sissean. \
 	We're far weaker of constitution and strength than other races, but make up for it in our agility...and oddly uncanny luck."
@@ -13,7 +13,7 @@
 		LIPS,
 		HAIR,
 	)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_WILD_EATER, TRAIT_DECEIVING_MEEKNESS)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	attack_verb = "slash"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
@@ -39,8 +39,9 @@
 		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,-4), OFFSET_UNDIES_F = list(0,-4), \
 		)
-	specstats = list("strength" = -2, "perception" = 1, "intelligence" = 0, "constitution" = -1, "endurance" = 0, "speed" = 2, "fortune" = 1)
-	specstats_f = list("strength" = -3, "perception" = 1, "intelligence" = 2, "constitution" = -1, "endurance" = -1, "speed" = 2, "fortune" = 1)
+	specstats = list("strength" = -2, "perception" = 1, "intelligence" = 0, "constitution" = -1, "endurance" = 0, "speed" = 2, "fortune" = 2)
+	specstats_f = list("strength" = -3, "perception" = 1, "intelligence" = 2, "constitution" = -1, "endurance" = -1, "speed" = 2, "fortune" = 2)
+	race_bonus = list(STAT_SPEED = 1, STAT_INTELLIGENCE = -1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
@@ -111,6 +112,8 @@
 	languages = list(
 		/datum/language/common,
 		/datum/language/beast
+		/datum/descriptor_choice/prominent_one,
+		/datum/descriptor_choice/prominent_two,
 	)
 
 /datum/species/anthromorphsmall/on_species_gain(mob/living/carbon/C, datum/species/old_species)
@@ -162,3 +165,4 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = third_color
 	return returned
+

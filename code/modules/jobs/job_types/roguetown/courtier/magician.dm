@@ -9,7 +9,7 @@
 
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
-	spells = list(/obj/effect/proc_holder/spell/targeted/ethereal_jaunt, /obj/effect/proc_holder/spell/invoked/projectile/fireball, /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt, /obj/effect/proc_holder/spell/invoked/projectile/fetch,/obj/effect/proc_holder/spell/aoe_turf/repulse,/obj/effect/proc_holder/spell/aoe_turf/knock)
+	spells = list(/obj/effect/proc_holder/spell/targeted/ethereal_jaunt, /obj/effect/proc_holder/spell/invoked/invisibility, /obj/effect/proc_holder/spell/invoked/projectile/fireball, /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt, /obj/effect/proc_holder/spell/invoked/projectile/fetch,/obj/effect/proc_holder/spell/aoe_turf/repulse,/obj/effect/proc_holder/spell/aoe_turf/knock, /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 	display_order = JDO_MAGICIAN
 	tutorial = "Your creed is one dedicated to the conquering of the arcane arts and the constant thrill of knowledge. \
 		You are one of the Arch-Magicians of Dreamkeeps Magick Academy. You help teach and manage the students of this Academy.\

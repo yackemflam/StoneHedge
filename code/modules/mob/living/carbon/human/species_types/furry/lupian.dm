@@ -18,7 +18,7 @@
 		LIPS,
 		HAIR,
 	)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_WILD_EATER, TRAIT_STRONGBITE, TRAIT_NIGHT_VISION)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	use_skintones = 1
 	attack_verb = "slash"

@@ -5,13 +5,13 @@
 	name = "Dark Elf"
 	id = "elfd"
 	desc = "<b>Dark Elf</b><br>\
-	Elves, are a generic term for tall, pointy-eared humanoids\
+	Dark Elves, are a generic term for tall, pointy-eared humanoids\
     Of whom trace their original heritage to the ancient mysterious Underdark. \
-	These ones are of a dark complexion and originate mostly from the great caverns and seas beneath. \
-    Their culture and entire lives are highly social and matriarchal. \
-    Of recent times their kin have come to the surface, though mainly nocturnal. \
+	These ones are of a dark complexion and originate mostly from the Subterranean world full of volcanic and fungal forests.. \
+    Their culture and entire lives normally involve serving their unique patrons, though widely worshipping Minhur or The Sacrfice. \
+    Previously rare but in recent times, more and more dark elfs can be seen on the surface, re acclimating with Above ground Cultures. \
     The ones who aren't overtly cruel and bloodthirsty, tend to flee to the surface lest they get culled by their own society, \
-    while some more sinister ones abandon their cities in search of new and greater power."
+    while some more sinister ones abandon their cities in search of new and greater power, remaining the same as their ancestors domineering ways."
 
 /*
 	Former RT Desc: These guys were undead which doesn't really fit considering now you have a ton of them walking around.

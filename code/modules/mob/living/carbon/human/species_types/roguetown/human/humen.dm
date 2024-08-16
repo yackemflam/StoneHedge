@@ -5,7 +5,12 @@
 	name = "Humen"
 	id = "humen"
 	desc = "<b>Humen</b><br>\
-	Humen (or Human) are the most ambitious and versatile of the mortal races. Humans are widespread and reliable.."
+	The most widespread race in Grimoria, Humens are found in nearly every civilized place on land. \
+	This extensive distribution of their kind has led to variations between Humens in custom and appearance. \
+	However, despite differences in appearance and geographical origin, all Humens have the same capabilities.<br>\
+	Humens hold dear the belief that they are the firstborn children of Psydon, \
+	Knowledge of good and evil is his divine gift bestowed upon them. \
+	The Divine Pantheon is the predominant religion of their kind."
 
 	skin_tone_wording = "Ancestry"
 
@@ -61,17 +66,17 @@
 
 /datum/species/human/northern/get_skin_list()
 	return list(
-		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
-		"Hammerhold" = SKIN_COLOR_HAMMERHOLD,
-		"Avar" = SKIN_COLOR_AVAR,
-		"StoneHedge" = SKIN_COLOR_STONEHEDGE,
-		"Otava" = SKIN_COLOR_OTAVA,
-		"Etrusca" = SKIN_COLOR_ETRUSCA,
-		"Gronn" = SKIN_COLOR_GRONN,
-		"Giza" = SKIN_COLOR_GIZA,
-		"Shalvistine" = SKIN_COLOR_SHALVISTINE,
-		"Lalvestine" = SKIN_COLOR_LALVESTINE,
-		"Ebon" = SKIN_COLOR_EBON,
+		"Frostlander" = SKIN_COLOR_GRENZELHOFT,
+		"Umberite" = SKIN_COLOR_HAMMERHOLD,
+		"Grenzelhoft" = SKIN_COLOR_AVAR,
+		"Rockhill" = SKIN_COLOR_ROCKHILL,
+		"Heartfell" = SKIN_COLOR_OTAVA,
+		"Highlander" = SKIN_COLOR_ETRUSCA,
+		"Moravian" = SKIN_COLOR_GRONN,
+		"Forester" = SKIN_COLOR_GIZA,
+		"Zybantine" = SKIN_COLOR_SHALVISTINE,
+		"Merkite" = SKIN_COLOR_LALVESTINE,
+		"Valorian" = SKIN_COLOR_EBON,
 	)
 
 /datum/species/human/northern/get_hairc_list()
@@ -97,3 +102,4 @@
 	"red - blood" = "822b2b"
 
 	))
+

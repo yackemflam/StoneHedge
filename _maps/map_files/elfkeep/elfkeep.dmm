@@ -20740,6 +20740,7 @@
 	name = "Statue of Goddess Lune";
 	desc = "This statue shows a humanoid form of the Goddess Lune, the Silver Dragon. She is resplendant, her form seeming to smile at you from the waters reflections."
 	},
+/obj/effect/wisp,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church/chapel)
 "lAn" = (
@@ -31554,9 +31555,10 @@
 	first_time_text = "Palace Courtyard"
 	})
 "rup" = (
-/obj/effect/wisp,
-/turf/open/water/cleanshallow,
-/area/rogue/indoors/town/church/chapel)
+/obj/machinery/light/rogue/torchholder,
+/obj/item/clothing/head/roguetown/helmet/foresterhelmet,
+/turf/closed/wall/mineral/rogue/wooddark,
+/area/rogue/under/cave)
 "ruV" = (
 /obj/structure/closet/crate/coffin,
 /obj/item/coin/antagtoken,
@@ -38924,6 +38926,10 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/tavern)
+"vCl" = (
+/obj/item/clothing/head/roguetown/helmet/foresterhelmet,
+/turf/open/floor/rogue/wood,
+/area/rogue/under/cave)
 "vCo" = (
 /obj/structure/roguemachine/atm,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -41745,6 +41751,9 @@
 	},
 /obj/item/clothing/head/peaceflower{
 	name = "Flower of Eora"
+	},
+/obj/item/clothing/neck/roguetown/psicross/eora{
+	name = "Amulet of Viiritri"
 	},
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church/chapel)
@@ -137754,7 +137763,7 @@ tgg
 ktF
 lno
 dPj
-oex
+rup
 dzj
 dzj
 cAG
@@ -138322,7 +138331,7 @@ rkE
 lfd
 rkE
 lfd
-dPj
+vCl
 dPj
 dPj
 cAG
@@ -138607,7 +138616,7 @@ rkE
 rkE
 dzj
 oex
-dPj
+vCl
 dPj
 oex
 dzj
@@ -340952,7 +340961,7 @@ nhh
 nhh
 xll
 lAk
-rup
+iqv
 joT
 ieq
 ieq

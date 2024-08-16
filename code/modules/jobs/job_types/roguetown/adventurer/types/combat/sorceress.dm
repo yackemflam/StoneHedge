@@ -41,7 +41,11 @@
 		H.change_stat("speed", 1)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/invisibility)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/eoracurse)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/enrapture)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+

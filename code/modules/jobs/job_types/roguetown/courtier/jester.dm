@@ -1,20 +1,23 @@
 /datum/job/roguetown/jester
-	title = "Jester"
+	title = "Harlequin"
 	flag = JESTER
 	department_flag = PEASANTS
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = list(
+		/datum/species/elf/dark,
+		/datum/species/elf/wood,
+	)
 
-	tutorial = "The Grenzelhofts were known for their Jesters, wisemen with a tongue just as sharp as their wit. \
-		You command a position of a fool, envious of the position your superiors have upon you. \
-		Your cheap tricks and illusions of intelligence will only work for so long, \
-		and someday you'll find yourself at the end of something sharper than you."
+	tutorial = "The Wood Elves were known for their Blade dancing Harlequins, wisemen with a tongue just as sharp and quick as their blades.. \
+		You command a position of a fool, Hierophant and wild voice. \
+		Your tricks and illusions are innately magickal, too. \
+		Keep your with and heritage of the woods intact, and you shall surely prosper."
 
 	allowed_ages = ALL_AGES_LIST
-	spells = list(/obj/effect/proc_holder/spell/self/telljoke,/obj/effect/proc_holder/spell/self/telltragedy)
+	spells = list(/obj/effect/proc_holder/spell/self/telljoke,/obj/effect/proc_holder/spell/self/telltragedy, /obj/effect/proc_holder/spell/targeted/ethereal_jaunt, /obj/effect/proc_holder/spell/invoked/invisibility, /obj/effect/proc_holder/spell/invoked/projectile/fetch, /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 	outfit = /datum/outfit/job/roguetown/jester
 	display_order = JDO_JESTER
 	give_bank_account = TRUE
@@ -47,8 +50,8 @@
 	ADD_TRAIT(H, TRAIT_ZJUMP, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_LEAPER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
-	if(prob(50))	
+	if(prob(50))
 		ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC) // Jester :3
-	else	
+	else
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Joker >:(
 

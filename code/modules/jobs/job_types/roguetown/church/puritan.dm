@@ -1,5 +1,5 @@
 /datum/job/roguetown/puritan
-	title = "Witcher"
+	title = "Wytcher Captain"
 	flag = PURITAN
 	department_flag = CHURCHMEN
 	faction = "Station"
@@ -118,10 +118,10 @@
 	if(H.add_stress(/datum/stressevent/tortured))
 		if(!H.stat)
 			var/static/list/faith_lines = list(
-				"DO YOU DENY THE TEN?",
+				"DO YOU DENY THE GOODLY ORDER?",
 				"WHO IS YOUR GOD?",
-				"ARE YOU FAITHFUL?",
-				"WHO IS YOUR SHEPHERD?",
+				"ARE YOU EVIL?",
+				"WHO IS YOUR PATRON?",
 			)
 			say(pick(faith_lines), spans = list("torture"))
 			if(painpercent >= 100)

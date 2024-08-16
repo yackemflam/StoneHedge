@@ -5,15 +5,15 @@
 	name = "Half-Elf"
 	id = "helf"
 	desc = "<b>Half Elf</b><br>\
-	The child of an Elf and Humen, Half-Elves are generally frowned \
-	upon by more conservative peoples, although as racial tensions lower, \
-	more and more half-elves are being born. To the point that some scholars \
-	worry that someday, it may be impossible to distinguish the two species. \
-	Half-Elves are extremely diverse, as they bring in human and elvish culture\
-	and it is widely considered that Half-Elf culture is simply a melting pot of \
-	various other cultures condensing into one vibrant entity. \
-	Due to their heritage, Half-Elves tend to gain racial traits depending on how strong their fathers, or mothers, genes were. \
-	Half-Elves also typically try to find identity in one of two regions they have similarities towards."
+	Any Elf with a portion of different elven blood is considered a Half-Elf, the other parent being of differing and unique blood.. \
+	They inherit the grace and fairy features of elven-kind yet often bear a taller and thicker body more akin to a Humen.<br>\
+	Whether a Half-Elf resides with Humens or Elves affects how they age. \
+	Half-Elves living in the home of the Elves are said to be nearly indistinguishable from their Elven kin and enjoy the eternal youth of a full-blooded Elf. \
+	Yet most Half-Elves reside in Humen cities and age as Men do.<br>\
+	Half-Elves often follow gods noteing their upbringing by either parent or Elven tradition.<br>\
+	<br>\
+	Our bodies bear the flaws and benefits of both Humens and Elves, to a lesser degree. \
+	We quickly learn new skills and run for long distances, but our bodies are frail."
 
 	skin_tone_wording = "Identity"
 	default_color = "FFFFFF"
@@ -77,11 +77,11 @@
 
 /datum/species/human/halfelf/get_skin_list()
 	return list(
-		"Timber-Gronn" = SKIN_COLOR_TIMBER_GRONN,
-		"Giza-Azure" = SKIN_COLOR_GIZA_AZURE,
-		"Walnut-Stine" = SKIN_COLOR_WALNUT_STINE,
-		"Etrustcan-Dandelion" = SKIN_COLOR_ETRUSTCAN_DANDELION,
-		"Ebon-Born" = SKIN_COLOR_EBON_BORN,
+		"Frost-Scion" = SKIN_COLOR_TIMBER_GRONN,
+		"Shade-Forester" = SKIN_COLOR_GIZA_AZURE,
+		"Fable-Hoft" = SKIN_COLOR_WALNUT_STINE,
+		"Zybantine-Nevor" = SKIN_COLOR_ETRUSTCAN_DANDELION,
+		"Valorian-Born" = SKIN_COLOR_EBON_BORN,
 	)
 
 /datum/species/human/halfelf/get_hairc_list()

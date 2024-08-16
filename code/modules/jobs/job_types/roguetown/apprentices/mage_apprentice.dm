@@ -9,9 +9,9 @@
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT)
 
-	tutorial = "Your master once saw potential in you, something you are uncertain if they still do with your recent studies. The path to using magic is something treacherous and untamed, and you are still decades away from calling yourself even a journeyman in the field. Listen and serve, and someday you will earn your hat."
+	tutorial = "Your Teacher still see's much potential in you, something you are uncertain they always do with your recent studies. The path to using magic is something treacherous and untamed, and you are still decades away from calling yourself even a journeyman in the field. Listen and serve, and someday you will earn your hat."
 
-	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fetch,/obj/effect/proc_holder/spell/targeted/projectile/magic_missile)
+	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fetch, /obj/effect/proc_holder/spell/invoked/projectile/spitfire, /obj/effect/proc_holder/spell/targeted/forcewall, /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 	outfit = /datum/outfit/job/roguetown/wapprentice
 
 	display_order = JDO_MAGEAPPRENTICE
@@ -23,7 +23,7 @@
 /datum/outfit/job/roguetown/wapprentice/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	pants = /obj/item/clothing/under/roguetown/tights/random	
+	pants = /obj/item/clothing/under/roguetown/tights/random
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/keyring/mage
 	r_hand = /obj/item/rogueweapon/woodstaff
