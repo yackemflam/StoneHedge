@@ -700,10 +700,10 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/foresterarmor
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "forester chestplate"
-	desc = "A basic iron cuirass worn by soldiers in Grenzelhoft."
+	name = "Wood Elf Armor"
+	desc = "Wooden armor worn by Syvlan folk of the forests, made from ironbark."
 	icon_state = "foresterchestplate"
 	item_state = "foresterchestplate"
-	max_integrity = 100
+	max_integrity = 300
 	smeltresult = /obj/item/ash
 	armor_class = ARMOR_CLASS_MEDIUM

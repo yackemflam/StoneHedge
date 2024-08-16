@@ -5,45 +5,31 @@
 	switch(H.char_accent)
 		if("No accent")
 			return
-		if("Dwarf accent")
+		if("Stonespirit accent")
 			return strings("dwarfcleaner_replacement.json", "dwarf")
 		if("Dwarf Gibberish accent")
 			return strings("dwarf_replacement.json", "dwarf_gibberish")
-		if("Dark Elf accent")
+		if("Roseveilian accent")
 			return strings("french_replacement.json", "french")
-		if("Gloomharrow accent")
+		if("Timberwolf accent")
 			return strings("russian_replacement.json", "russian")
-		if("Wood Elf accent")
+		if("Greenlyre accent")
 			return strings("german_replacement.json", "german")
-		if("Northlyr accent")
+		if("Northerner accent")
 			return strings("Anglish.json", "Anglish")
-		if("Celestial accent")
+		if("Celestian accent")
 			return strings("proper_replacement.json", "proper")
-		if("Draconic accent")
+		if("Lizard accent")
 			return strings("brazillian_replacement.json", "brazillian")
 		if("Infernal accent")
 			return strings("spanish_replacement.json", "spanish")
-		if("Orcish accent")
+		if("Greenskin accent")
 			return strings("middlespeak.json", "middle")
-		if("Seafolk Accent")
-			return strings("pirate_replacement.json", "full")
-		if("White Woman accent")
+		if("Valley Girl accent")
 			return strings("valley_replacement.json", "valley")
-
-/datum/species/proc/get_accent_start(mob/living/carbon/human)
-	return
-
-/datum/species/proc/get_accent_any(mob/living/carbon/human)
-	return
-
-#define REGEX_STARTWORD 1
-#define REGEX_FULLWORD 2
-#define REGEX_ANY 3
 
 /datum/species/proc/handle_speech(datum/source, mob/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
-
-	message = treat_message_accent(message, strings("accent_universal.json", "universal"), REGEX_FULLWORD)
 
 	if(message)
 		if(message[1])
@@ -82,40 +68,3 @@
 					message = replacetextEx(message, " [key]", " [value]")
 
 	speech_args[SPEECH_MESSAGE] = trim(message)
-
-
-/proc/treat_message_accent(message, list/accent_list, chosen_regex)
-	if(!message)
-		return
-	if(!accent_list)
-		return message
-	if(message[1] == "*")
-		return message
-	message = "[message]"
-	for(var/key in accent_list)
-		var/value = accent_list[key]
-		if(islist(value))
-			value = pick(value)
-
-		switch(chosen_regex)
-			if(REGEX_STARTWORD)
-				// Start word regex (Some words that get different endings)
-				message = replacetextEx(message, regex("\\b[uppertext(key)]", "(\[\\w'-\]+)"), uppertext(value))
-				message = replacetextEx(message, regex("\\b[capitalize(key)]", "(\[\\w'-\]+)"), capitalize(value))
-				message = replacetextEx(message, regex("\\b[key]", "(\[\\w'-\]+)"), value)
-			if(REGEX_FULLWORD)
-				// Full word regex (full world replacements)
-				message = replacetextEx(message, regex("\\b[uppertext(key)]\\b", "(\[\\w'-\]+)"), uppertext(value))
-				message = replacetextEx(message, regex("\\b[capitalize(key)]\\b", "(\[\\w'-\]+)"), capitalize(value))
-				message = replacetextEx(message, regex("\\b[key]\\b", "(\[\\w'-\]+)"), value)
-			if(REGEX_ANY)
-				// Any regex (syllables)
-				message = replacetextEx(message, uppertext(key), uppertext(value))
-				message = replacetextEx(message, capitalize(key), capitalize(value))
-				message = replacetextEx(message, key, value)
-
-	return message
-
-#undef REGEX_STARTWORD
-#undef REGEX_FULLWORD
-#undef REGEX_ANY

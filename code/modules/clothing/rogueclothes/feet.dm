@@ -241,8 +241,9 @@
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/shoes/roguetown/boots/forestershoes
-	name = "forester shoes"
-	desc = "A pair of greaves worn by Grenzelhoftian soldiery."
+	name = "Wood Elf Sabatons"
+	desc = "Ironwood Sabatons worn by those children of the forests."
 	icon_state = "forestershoes"
 	item_state = "forestershoes"
+	max_integrity = 300
 	smeltresult = /obj/item/ash

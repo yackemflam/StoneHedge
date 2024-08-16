@@ -1289,10 +1289,11 @@
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/head/roguetown/helmet/foresterhelmet
-	name = "forester helmet"
-	desc = "A helmet worn in Grenzelhoft by rank and file soldiery."
+	name = "Wood Elf Helmet"
+	desc = "A helmet worn by the woodland sentinels of the forest, made of Ironbark."
 	icon_state = "foresterhelmet"
 	item_state = "foresterhelmet"
+	max_integrity = 300
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_x_dimension = 64
 	worn_y_dimension = 64

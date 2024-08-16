@@ -161,8 +161,9 @@
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/gloves/roguetown/forestergauntlets
-	name = "forester gauntlets"
-	desc = "Gauntlets worn by Grenzelhoft footmen."
+	name = "Wood Elf gauntlets"
+	desc = "IronWood gauntlets which provide a greatly magicked amount of protection."
 	icon_state = "forestergauntlets"
 	item_state = "forestergauntlets"
+	max_integrity = 300
 	smeltresult = /obj/item/ash
