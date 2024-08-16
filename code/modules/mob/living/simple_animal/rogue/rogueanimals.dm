@@ -228,14 +228,16 @@
 			var/list/around = view(aggro_vision_range, src)
 			for(var/mob/living/carbon/human/fucktarg in around)
 				var/datum/sex_controller/sc = fucktarg.sexcon
+				if(!src.aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
+					continue
 				if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && !sc.beingfucked)
 					chasesfuck = TRUE
 					if(src.gender == MALE)
 						src.visible_message(span_boldwarning("[src] has his eyes on [fucktarg], cock throbbing!"))
-						src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get in you, prey!",  "You will breed with me!"), language = /datum/language/common)
+						src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get in you!",  "You will breed with me!"), language = /datum/language/common)
 					else
 						src.visible_message(span_boldwarning("[src] has her eyes on [fucktarg], cunt dripping!"))
-						src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get you in me, prey!", "You will breed with me!"), language = /datum/language/common)
+						src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
 					break
 				else
 					continue
@@ -248,10 +250,10 @@
 			if(prob(10))
 				if(src.gender == MALE)
 					src.visible_message(span_warning("[src] seeks his mate, cock throbbing!"))
-					src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get in you, prey!",  "You will breed with me!"), language = /datum/language/common)
+					src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get in you!",  "You will breed with me!"), language = /datum/language/common)
 				else
 					src.visible_message(span_warning("[src] seeks her mate, cunt dripping!"))
-					src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get you in me, prey!", "You will breed with me!"), language = /datum/language/common)
+					src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
 			seeklewd()
 		if(seekboredom > 25) //give up after a while and go dormant again, this should also help them get unstuck.
 			stoppedfucking(src, TRUE)
@@ -320,13 +322,19 @@
 					if(attack_sound)
 						playsound(src, pick(attack_sound), 100, TRUE, -1)
 					stop_automated_movement = TRUE
+					if(L.cmode)
+						L.SetImmobilized(20)
+						L.SetKnockdown(20)
+					else
+						L.SetImmobilized(50)
+						L.SetKnockdown(50)
 					if(!L.lying)
 						L.emote("gasp")
-					if(L.wear_pants)
-						L.wear_pants.doMove(get_turf(L))
-						L.wear_pants = null
-					L.SetKnockdown(60)
-					L.SetImmobilized(60)
+					if(!L.cmode && L.wear_pants) //pants off if not in cmode
+						L.dropItemToGround(L.wear_pants)
+						L.wear_pants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
+					else if(L.cmode && L.wear_pants)
+						src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
 					enemies = list()
 					target = null
 					approaching_target = FALSE
@@ -343,7 +351,6 @@
 					src.visible_message(span_danger("[src] starts to breed [L]!"))
 					if(sc.force == SEX_FORCE_MAX)
 						src.visible_message(span_danger("[src] pins [L] down for a savage fucking!"))
-						L.SetImmobilized(100)
 					else
 						src.visible_message(span_info("[src] climbs on [L] to breed."))
 					sc.speed = SEX_SPEED_MAX
@@ -404,8 +411,10 @@
 		fuckcd = rand(50,350)
 	else
 		fuckcd = rand(20,80)
-		if(aggressive) //if its in combat and unsatisfied by prey slipping off, it will wanna try again. But with some delay to actually fight.
-			fuckcd = rand(3,8)
+		if(aggressive)
+			//if its in combat and unsatisfied by prey slipping off, it will wanna try again. But with some delay so the person can actually get up
+			// and if they are taking turns with multiple seeksfuck mobs around this may help a bit.
+			fuckcd = rand(10,20)
 	stop_automated_movement = 0
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()

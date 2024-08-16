@@ -659,24 +659,24 @@
 /datum/sex_controller/proc/get_speed_multiplier()
 	switch(speed)
 		if(SEX_SPEED_LOW)
-			return 1.0
+			return 1
 		if(SEX_SPEED_MID)
-			return 1.5
+			return 2
 		if(SEX_SPEED_HIGH)
-			return 2.0
-		if(SEX_SPEED_EXTREME)
 			return 2.5
+		if(SEX_SPEED_EXTREME)
+			return 3
 
 /datum/sex_controller/proc/get_stamina_cost_multiplier()
 	switch(force)
 		if(SEX_FORCE_LOW)
-			return 1.0
+			return 1
 		if(SEX_FORCE_MID)
-			return 1.5
+			return 2
 		if(SEX_FORCE_HIGH)
-			return 2.0
-		if(SEX_SPEED_EXTREME)
 			return 2.5
+		if(SEX_SPEED_EXTREME)
+			return 3
 
 /datum/sex_controller/proc/get_force_pleasure_multiplier(passed_force, giving)
 	switch(passed_force)

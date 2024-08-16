@@ -138,3 +138,13 @@
 		if(BODY_ZONE_L_ARM)
 			return "foreleg"
 	return ..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf/horny
+	seeksfuck = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf/safe
+	aggressive = FALSE
+	tame = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf/safe/horny
+	seeksfuck = TRUE

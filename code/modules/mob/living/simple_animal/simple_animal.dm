@@ -190,7 +190,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		stack_trace("Simple animal being instantiated in nullspace")
 	update_simplemob_varspeed()
 	if(seeksfuck)
-		fuckcd = rand(0,300)
+		fuckcd = rand(0,20)
 
 //	if(dextrous)
 //		AddComponent(/datum/component/personal_crafting)

@@ -248,6 +248,8 @@
 					return FALSE
 				if(ishuman(L))
 					var/mob/living/carbon/human/lh = L
+					if(lh.sexcon.beingfucked) //dont touch the battlefucked
+						return FALSE
 					if(lh.lying && !lh.get_active_held_item()) //if is laying and holding nothing, ignore.
 						return FALSE
 				if(L.stat > stat_attack)
