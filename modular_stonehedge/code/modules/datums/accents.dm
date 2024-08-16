@@ -1,16 +1,16 @@
 GLOBAL_LIST_INIT(character_accents, list(
 	"No accent"=/datum/char_accent/none,
-	"Dwarf accent"=/datum/char_accent/dwarf,
+	"Stonespirit accent"=/datum/char_accent/dwarf,
 	"Dwarf Gibberish accent"=/datum/char_accent/dwarf_gibberish,
-	"Dark Elf accent"=/datum/char_accent/dark_elf,
-	"Elf accent"=/datum/char_accent/elf,
-	"Grenzelhoft accent"=/datum/char_accent/grenzelhoft,
-	"Hammerhold accent"=/datum/char_accent/hammerhold,
-	"Assimar accent"=/datum/char_accent/assimar,
+	"Roseveilian accent"=/datum/char_accent/dark_elf,
+	"Timberwolf accent"=/datum/char_accent/elf,
+	"Greenlyre accent"=/datum/char_accent/grenzelhoft,
+	"Northerner accent"=/datum/char_accent/hammerhold,
+	"Celestian accent"=/datum/char_accent/assimar,
 	"Lizard accent"=/datum/char_accent/lizard,
-	"Tiefling accent"=/datum/char_accent/tiefling,
-	"Half Orc accent"=/datum/char_accent/half_orc,
-	"Axian Accent"=/datum/char_accent/axian,
+	"Infernal accent"=/datum/char_accent/tiefling,
+	"Greenskin accent"=/datum/char_accent/half_orc,
+	"Pirate Accent"=/datum/char_accent/axian,
 	"Valley Girl accent"=/datum/char_accent/valley))
 
 /datum/char_accent
@@ -23,37 +23,37 @@ GLOBAL_LIST_INIT(character_accents, list(
 	name = "No accent"
 
 /datum/char_accent/dwarf
-	name = "Dwarf accent"
+	name = "Stonespirit accent"
 
 /datum/char_accent/dwarf_gibberish
 	name = "Dwarf Gibberish accent"
 
 /datum/char_accent/dark_elf
-	name = "Dark Elf accent"
+	name = "Roseveilian accent"
 
 /datum/char_accent/elf
-	name = "Elf accent"
+	name = "Timberwolf accent"
 
 /datum/char_accent/grenzelhoft
-	name = "Grenzelhoft accent"
+	name = "Greenlyre accent"
 
 /datum/char_accent/hammerhold
-	name = "Hammerhold accent"
+	name = "Northerner accent"
 
 /datum/char_accent/assimar
-	name = "Assimar accent"
+	name = "Celestian accent"
 
 /datum/char_accent/lizard
 	name = "Lizard accent"
 
 /datum/char_accent/tiefling
-	name = "Tiefling accent"
+	name = "Infernal accent"
 
 /datum/char_accent/half_orc
-	name = "Half Orc accent"
+	name = "Greenskin accent"
 
 /datum/char_accent/axian
-	name = "Axian accent"
+	name = "Pirate accent"
 
 /datum/char_accent/valley
 	name = "Valley Girl accent"

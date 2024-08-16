@@ -1644,7 +1644,7 @@ Slots: [job.spawn_positions]</span>
 							continue
 						crap += bla
 
-					var/result = input(user, "Select a race", "Roguetown") as null|anything in crap
+					var/result = input(user, "Select a race", "Stonehedge") as null|anything in crap
 
 					if(result)
 						set_new_race(result, user)
@@ -1654,7 +1654,7 @@ Slots: [job.spawn_positions]</span>
 
 				if("charflaw")
 					var/list/coom = GLOB.character_flaws.Copy()
-					var/result = input(user, "Select a flaw", "Roguetown") as null|anything in coom
+					var/result = input(user, "Select a flaw", "Stonehedge") as null|anything in coom
 					if(result)
 						result = coom[result]
 						var/datum/charflaw/C = new result()
@@ -1664,7 +1664,7 @@ Slots: [job.spawn_positions]</span>
 
 				if("char_accent")
 					var/list/accent = GLOB.character_accents.Copy()
-					var/result = input(user, "Select an accent", "Roguetown") as null|anything in accent
+					var/result = input(user, "Select an accent", "Stonehedge") as null|anything in accent
 					if(result)
 						result = accent[result]
 						var/datum/char_accent/C = new result()

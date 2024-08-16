@@ -160,7 +160,7 @@
 	if(stat)
 		return FALSE
 
-	var/inputty = input("Make an announcement", "ROGUETOWN") as text|null
+	var/inputty = input("Make an announcement", "STONEHEDGE") as text|null
 	if(!inputty)
 		return FALSE
 

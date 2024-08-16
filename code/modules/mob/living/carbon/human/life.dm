@@ -412,7 +412,7 @@
 		return
 	if(!mind)
 		return
-	if(!has_status_effect(/datum/status_effect/debuff/vamp_dreams))
+	if(!has_status_effect(/datum/status_effect/debuff/devitalised))
 		return
 	if(!eyesclosed)
 		return
@@ -423,7 +423,7 @@
 	var/obj/structure/closet/crate/coffin/coffin = loc
 	if(coffin.opened)
 		return
-	remove_status_effect(/datum/status_effect/debuff/vamp_dreams)
+	remove_status_effect(/datum/status_effect/debuff/devitalised)
 	mind.sleep_adv.advance_cycle()
 
 #undef THERMAL_PROTECTION_HEAD
