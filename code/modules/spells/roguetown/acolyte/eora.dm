@@ -55,13 +55,13 @@
 	overlay_state = "bliss"
 	releasedrain = 30
 	chargedrain = 0
-	chargetime = 0
+	chargetime = 15
 	range = 5
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	sound = 'sound/magic/heal.ogg'
 	invocation = "Enchanta Amoria!"
-	invocation_type = "shout"
+	invocation_type = "whisper"
 	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = TRUE
 	charge_max = 10 SECONDS

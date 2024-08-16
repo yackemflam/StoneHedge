@@ -14,9 +14,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	antag_hud_type = ANTAG_HUD_VAMPIRE
 	antag_hud_name = "Vlord"
 	confess_lines = list(
-		"I AM ANCIENT", 
-		"I AM THE LAND", 
-		"CHILD OF KAIN!",
+		"I AM A CHILD OF NIGHT!",
+		"I AM THE LAND!",
+		"CHILD OF BLOOD!",
 	)
 	var/isspawn = FALSE
 	var/disguised = FALSE
@@ -311,13 +311,13 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /datum/antagonist/vampirelord/proc/finalize_vampire()
 	owner.current.forceMove(pick(GLOB.vlord_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
-	
+
 
 /datum/antagonist/vampirelord/proc/finalize_vampire_lesser()
 	if(!sired)
 		owner.current.forceMove(pick(GLOB.vspawn_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
-	
+
 
 /datum/antagonist/vampirelord/proc/vamp_look()
 	var/mob/living/carbon/human/V = owner.current
@@ -474,8 +474,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	name = "Vampire Spawn"
 	antag_hud_name = "Vspawn"
 	confess_lines = list(
-		"THE CRIMSON CALLS!", 
-		"MY MASTER COMMANDS", 
+		"THE CRIMSON CALLS!",
+		"MY MASTER COMMANDS",
 		"THE SUN IS ENEMY!",
 	)
 	isspawn = TRUE
@@ -799,7 +799,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				if(GLOB.tod == "night")
 					to_chat(user, "It's already night!")
 					return
-				if(alert(user, "Force Enigma into Night? Cost:5000","","Yes","No") == "Yes")
+				if(alert(user, "Force Day into Night? Cost:5000","","Yes","No") == "Yes")
 					if(!lord.mypool.check_withdraw(-2500))
 						to_chat(user, "I don't have enough vitae!")
 						return
@@ -891,7 +891,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/conquer
 	name = "conquer"
-	explanation_text = "Make the Ruler of Enigma bow to my will."
+	explanation_text = "Make the Ruler of this land respect my power and wisdom."
 	team_explanation_text = ""
 	triumph_count = 5
 
@@ -903,7 +903,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/ascend
 	name = "sun"
-	explanation_text = "Astrata has spurned me long enough. I must conquer the Sun."
+	explanation_text = "The Day Realm has spurned me long enough. I must conquer the Sun."
 	team_explanation_text = ""
 	triumph_count = 5
 
@@ -1021,7 +1021,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /obj/item/clothing/neck/roguetown/portalamulet/Initialize()
 	GLOB.vampire_objects |= src
 	. = ..()
-	
+
 /obj/item/clothing/neck/roguetown/portalamulet/Destroy()
 	GLOB.vampire_objects -= src
 	return ..()
@@ -1034,7 +1034,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /obj/structure/vampire/Initialize()
 	GLOB.vampire_objects |= src
 	. = ..()
-	
+
 /obj/structure/vampire/Destroy()
 	GLOB.vampire_objects -= src
 	return ..()
@@ -1271,7 +1271,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 // Spells
 /obj/effect/proc_holder/spell/targeted/transfix
-	name = "Transfix"
+	name = "Hypnosis"
 	overlay_state = "transfix"
 	releasedrain = 100
 	chargedrain = 0
@@ -1281,7 +1281,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	movement_interrupt = FALSE
 	chargedloop = null
 	invocation_type = "shout"
-	associated_skill = /datum/skill/magic/blood
+	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = TRUE
 	charge_max = 10 SECONDS
 	include_user = 0
@@ -1302,33 +1302,33 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		for(var/obj/item/clothing/neck/roguetown/psicross/silver/I in L.contents) //Subpath fix.
 			found_psycross = TRUE
 			break
-			
+
 		if(bloodroll >= willroll)
 			if(found_psycross == TRUE)
-				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+				to_chat(L, "<font color='white'>The silver symbol shines and protect me from the enchantment magic.</font>")
 				to_chat(user, span_userdanger("[L] has my BANE!It causes me to fail to ensnare their mind!"))
 			else
 				to_chat(L, "You feel like a curtain is coming over your mind.")
 				to_chat(user, "Their mind gives way, they will soon be asleep.")
 				sleep(50)
 				L.Sleeping(300)
-				
+
 		if(willroll >= bloodroll)
 			if(found_psycross == TRUE)
-				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+				to_chat(L, "<font color='white'>The silver symbol shines and protect me from the enchantment magic.</font>")
 				to_chat(user, span_userdanger("[L] has my BANE!It causes me to fail to ensnare their mind!"))
 			else
 				to_chat(user, "I fail to ensnare their mind.")
 			if(willroll - bloodroll >= 3)
 				if(found_psycross == TRUE)
-					to_chat(L, "<font color='white'> The silver psycross shines and protect me from the blood magic, the one who used blood magic was [user]!</font>")
+					to_chat(L, "<font color='white'> The silver symbol shines and protect me from the enchantment magick, the one who used the enchantment magic was nearby!</font>")
 				else
 					to_chat(user, "I fail to ensnare their mind.")
-					to_chat(L, "I feel like someone or something unholy is messing with my head. I should get out of here!")
+					to_chat(L, "I feel like someone or something is messing with my head. I should get out of here!")
 					var/holyskill = L.mind.get_skill_level(/datum/skill/magic/holy)
 					var/arcaneskill = L.mind.get_skill_level(/datum/skill/magic/arcane)
 					if(holyskill + arcaneskill >= 1)
-						to_chat(L, "I feel like the unholy magic came from [user]. I should use my magic or miracles on them.")
+						to_chat(L, "I feel like the enchantment magic came from [user]. I should investigate further..")
 
 /obj/effect/proc_holder/spell/targeted/transfix/master
 	name = "Subjugate"

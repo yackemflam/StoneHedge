@@ -168,9 +168,9 @@
 	name = "Stop Time"
 	desc = ""
 	charge_max = 500
-	clothes_req = TRUE
-	invocation = "TOKI YO TOMARE"
-	invocation_type = "shout"
+	clothes_req = FALSE
+	invocation = ""
+	invocation_type = "whisper"
 	range = 0
 	cooldown_min = 100
 	action_icon_state = "time"
@@ -269,11 +269,11 @@
 	clothes_req = FALSE
 	invocation = "GITTAH WEIGH"
 	invocation_type = "shout"
-	range = 5
+	range = 1
 	cooldown_min = 150
 	selection_type = "view"
 	sound = 'sound/blank.ogg'
-	var/maxthrow = 5
+	var/maxthrow = 2
 	var/sparkle_path = /obj/effect/temp_visual/gravpush
 	var/anti_magic_check = TRUE
 	var/repulse_force = MOVE_FORCE_EXTREMELY_STRONG

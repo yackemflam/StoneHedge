@@ -12,6 +12,7 @@
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	t2 = /obj/effect/proc_holder/spell/invoked/heal
 	t3 = /obj/effect/proc_holder/spell/invoked/revive
+	t4 = /obj/effect/proc_holder/spell/invoked/projectile/spitfire
 	confess_lines = list(
 		"Elysius is my Gilded Armor!",
 		"GREAT-WYRM BRINGS LAW!",
@@ -52,7 +53,7 @@
 	domain = "God of the Ocean, Storms and the Tide"
 	desc = "The Beloved Daughter of the Sea, gifted primordial kin food and water. She is said to be both cruel and calm, if her icey waters and wailing winds are heeded ahead of time. She is the warning and the Omen."
 	worshippers = "Men and Women of the Sea, Primitive Aquatics, Merfolk, Druids, Creatures of the Deep."
-	mob_traits = list (TRAIT_WATERBREATHING)
+	mob_traits = list (TRAIT_WATERBREATHING, TRAIT_SHOCKIMMUNE,)
 	confess_lines = list(
 		"ABYSSIA COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",
@@ -64,7 +65,7 @@
 	domain = "War, Dance, Tactic, Rejoice, Celebration."
 	desc = "The dervish of Blades, Minhur teaches that battle is like a dance; the duality between life/death and revelry. Minhur's followers prefer dexterity and tactful dancelike movements; encouraging mortals to act with decorum, etiquette and poise whenever possible."
 	worshippers = "Warriors, Sellswords & Fencers."
-	mob_traits = list (TRAIT_BREADY)
+	mob_traits = list (TRAIT_SHOCKIMMUNE, TRAIT_DODGEEXPERT,)
 	confess_lines = list(
 		"MINHUR'S WHIRLWIND!",
 		"THROUGH STRIFE, GRACE!",
@@ -81,6 +82,7 @@
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
 	t3 = /obj/effect/proc_holder/spell/targeted/soulspeak
+	t4 = /obj/effect/proc_holder/spell/invoked/revive
 	confess_lines = list(
 		"ALL SOULS FIND THEIR WAY TO YAMAIS!",
 		"THE TOLLKEEPER IS OUR FINAL JUDGE!",
@@ -111,7 +113,7 @@
 /datum/patron/divine/pestra
 	name = "Hermeir"
 	domain = "Medicine, Progress, Advancement, Healing, Exploration."
-	desc = "Hermeir is known as the Messenger; said to have a staff of entwined serpents, one white, the other black. Which their magick staff they are able to discern all things. To know all truths and observations with time in their immortal knowledgeable gaze. The followers of Hermeir are able to utilize magic as much as the mundane to assist the wounded,or departed. Hermeir believes whatever the means - we must swear an oath to perpetual foward progress and divine good.."
+	desc = "Hermeir is known as the Messenger; said to have a staff of entwined serpents in a figure eight, one white, the other black. Which their magick staff they are able to discern all things. To know all truths and observations with time in their immortal knowledgeable gaze. The followers of Hermeir are able to utilize magic as much as the mundane to assist the wounded,or departed. Hermeir believes whatever the means - we must swear an oath to perpetual foward progress and divine good.."
 	worshippers = "The Sick, Phyicians, Apothecaries, Healers, Scientists, Alchemists."
 	mob_traits = list(TRAIT_EMPATH, TRAIT_ROT_EATER)
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
@@ -145,7 +147,7 @@
 	domain = "Feeling, Empathy, Passion.Hearts, Desires, Connection."
 	desc = "Viiritri is the god of emotions, the soul and the heart. Viiritri teaches the art of feeling, and their devoted are often spiritual healers and lovers of all walks. Viiritri is said to take the shape of songbirds and other mystical acts  of inspiration. Their realm known as Halceon is rumored to be full of song, dance and bliss to those who loved truly, purely and freely in her service."
 	worshippers = "Lovers, Healers, Adventurers, Poets, Families and Warriors."
-	mob_traits = list(TRAIT_SEXDEVO)
+	mob_traits = list(TRAIT_SEXDEVO, TRAIT_SEEDKNOW,TRAIT_GOODLOVER,)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/bud
 	t2 = /obj/effect/proc_holder/spell/invoked/eoracurse

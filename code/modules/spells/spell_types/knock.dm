@@ -8,9 +8,9 @@
 	charge_max = 100
 	clothes_req = FALSE
 	invocation = "AULIE OXIN FIERA"
-	invocation_type = "whisper"
-	range = 2
-	cooldown_min = 300 //20 deciseconds reduction per rank
+	invocation_type = "shout"
+	range = 1
+	cooldown_min = 500 //20 deciseconds reduction per rank
 
 /obj/effect/proc_holder/spell/aoe_turf/knock/cast(list/targets,mob/user = usr)
 //	SEND_SOUND(user, sound('sound/blank.ogg'))

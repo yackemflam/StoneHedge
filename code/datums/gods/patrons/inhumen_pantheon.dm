@@ -37,7 +37,7 @@
 	domain = "Thievery. Cunning. "
 	desc = "Man turned God, the 'Giver' 'The Thief' stole fire from 'Elysius' and gave it to primitive Mortal Kin huddled in darkness and demands the riches flame creates in sacrifice."
 	worshippers = "Free-Men, Outlaws and Frontiersmen"
-	mob_traits = list(TRAIT_COMMIE)
+	mob_traits = list(TRAIT_COMMIE, TRAIT_ZJUMP)
 	confess_lines = list(
 		"I TAKE WITH SKILLED AND NIMBLE HANDS!",
 		"THIEFLORD'S GIFT CONSUME YOU!",

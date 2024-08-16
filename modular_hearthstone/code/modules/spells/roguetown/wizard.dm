@@ -75,7 +75,7 @@
 			extra_fatigue = 5 // just a bit of extra fatigue on this one
 		if (PRESTI_MOTE)
 			extra_fatigue = 15 // same deal here
-		
+
 	user.rogfat_add(fatigue_used + extra_fatigue)
 
 	var/skill_level = user.mind?.get_skill_level(attached_spell.associated_skill)
@@ -117,7 +117,7 @@
 		return TRUE
 
 /obj/item/melee/touch_attack/prestidigitation/proc/create_spark(mob/living/carbon/human/user)
-	// adjusted from /obj/item/flint 
+	// adjusted from /obj/item/flint
 	if (world.time < spark_cd + sparkspeed)
 		return
 	spark_cd = world.time
@@ -168,7 +168,7 @@
 
 /obj/effect/wisp/prestidigitation
 	name = "minor magelight mote"
-	desc = "A tiny display of arcyne power used to illuminate."
+	desc = "A tiny display of arcayne power used to illuminate."
 	pixel_x = 20
 	light_range = 4
 	light_flags = NONE

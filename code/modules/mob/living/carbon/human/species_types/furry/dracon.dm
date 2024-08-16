@@ -9,7 +9,7 @@
 	warriors, raised from birth to be immaculately powerful and hardy. Mages are rare amongst us, and very little crafts and writing exists in our empire beyond the practical. \
 	Though we are incredibly powerful and sturdy, the rest of our aspects are...lacking. Members of my race are undefeated in strength, but lack in the dexterity for lucky, decisive blows."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_WILD_EATER, TRAIT_STRONGBITE, TRAIT_NOFALLDAMAGE1,)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/mob/species/male.dmi'
