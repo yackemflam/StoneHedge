@@ -46,7 +46,6 @@
 		)
 	specstats = list("strength" = 0, "perception" = 1, "intelligence" = -1, "constitution" = 0, "endurance" = 1, "speed" = -1, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
-	race_bonus = list(STAT_PERCEPTION = 1)
 	enflamed_icon = "widefire"
 	bodypart_features = list(
 		/datum/bodypart_feature/hair/head,
@@ -136,7 +135,6 @@
 		"Frostlander" = SKIN_COLOR_GRENZELHOFT,
 		"Umberite" = SKIN_COLOR_HAMMERHOLD,
 		"Grenzelhoft" = SKIN_COLOR_AVAR,
-		"Rockhill" = SKIN_COLOR_ROCKHILL,
 		"Heartfell" = SKIN_COLOR_OTAVA,
 		"Highlander" = SKIN_COLOR_ETRUSCA,
 		"Moravian" = SKIN_COLOR_GRONN,

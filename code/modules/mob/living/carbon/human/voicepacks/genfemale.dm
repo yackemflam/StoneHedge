@@ -96,9 +96,9 @@
 			if("yip")
 				used = list('sound/vo/yip.ogg')
 			if("yap")
-				used = list('sound/vo/yap.ogg')	
+				used = list('sound/vo/yap.ogg')
 			if("howl")
-				used = list('sound/vo/coyhowl.ogg')	
+				used = list('sound/vo/coyhowl.ogg')
 			if("snap")
 				used = list('sound/vo/snap.ogg')
 			if("catrage")
@@ -115,6 +115,4 @@
 				used = list('sound/vo/cat_meow.ogg')
 			if("hiss")
 				used = list('sound/vo/hiss.ogg')
-			if ("warcry")
-				used = list('sound/vo/female/gen/warcry_female1.ogg','sound/vo/female/gen/warcry_female2.ogg','sound/vo/female/gen/warcry_female3.ogg')
 	return used

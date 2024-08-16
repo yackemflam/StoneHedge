@@ -69,7 +69,6 @@
 		"Frostlander" = SKIN_COLOR_GRENZELHOFT,
 		"Umberite" = SKIN_COLOR_HAMMERHOLD,
 		"Grenzelhoft" = SKIN_COLOR_AVAR,
-		"Rockhill" = SKIN_COLOR_ROCKHILL,
 		"Heartfell" = SKIN_COLOR_OTAVA,
 		"Highlander" = SKIN_COLOR_ETRUSCA,
 		"Moravian" = SKIN_COLOR_GRONN,
