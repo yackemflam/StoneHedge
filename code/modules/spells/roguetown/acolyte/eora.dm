@@ -55,18 +55,19 @@
 	overlay_state = "bliss"
 	releasedrain = 30
 	chargedrain = 0
-	chargetime = 15
+	chargetime = 0
 	range = 5
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	sound = 'sound/magic/heal.ogg'
 	invocation = "Enchanta Amoria!"
 	invocation_type = "whisper"
-	associated_skill = /datum/skill/magic/arcane
+	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
+	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	charge_max = 10 SECONDS
 	miracle = FALSE
-	devotion_cost = 0
+	devotion_cost = 10
 
 /obj/effect/proc_holder/spell/invoked/enrapture/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))

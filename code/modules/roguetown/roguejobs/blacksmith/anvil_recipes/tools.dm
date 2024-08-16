@@ -1,5 +1,12 @@
 
 // --------- IRON -----------
+/datum/anvil_recipe/tools/surgery/surgerytools
+	name = "Surgery Kit (+1 iron +1 hide)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/ingot/iron, /obj/item/natural/hide)
+	created_item = /obj/item/storage/backpack/rogue/skit
+	i_type = "Tools"
+
 /datum/anvil_recipe/tools/torch
 	name = "Torches 5x (+1 Coal)"
 	req_bar = /obj/item/ingot/iron

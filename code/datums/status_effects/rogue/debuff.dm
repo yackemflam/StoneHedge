@@ -58,7 +58,7 @@
 /atom/movable/screen/alert/status_effect/debuff/silver_curse
 	name = "Silver Curse"
 	desc = "My BANE!"
-	icon_state = "hunger3"	
+	icon_state = "hunger3"
 
 ////////////////////
 
@@ -201,11 +201,12 @@
 	desc = "My muscles need some sleep to recover."
 	icon_state = "muscles"
 
-/datum/status_effect/debuff/vamp_dreams
-	id = "sleepytime"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/vamp_dreams
+/datum/status_effect/debuff/devitalised
+	id = "devitalised"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/devitalised
+	effectedstats = list("fortune" = -3)
+	duration = 20 MINUTES
 
-/atom/movable/screen/alert/status_effect/debuff/vamp_dreams
-	name = "Insight"
-	desc = "With some sleep in a coffin I feel like I could become better."
-	icon_state = "sleepy"
+/atom/movable/screen/alert/status_effect/debuff/devitalised
+	name = "Devitalised"
+	desc = "Something has been taken from me, and it will take time to recover."

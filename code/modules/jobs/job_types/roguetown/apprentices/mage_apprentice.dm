@@ -32,6 +32,7 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/workervest
 		backr = /obj/item/storage/backpack/rogue/satchel
 	else
+		pants = /obj/item/clothing/under/roguetown/tights/random
 		shoes = /obj/item/clothing/shoes/roguetown/sandals
 		armor = /obj/item/clothing/suit/roguetown/armor/workervest
 		backr = /obj/item/storage/backpack/rogue/satchel
@@ -45,4 +46,3 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
 	H.change_stat("intelligence", 2)
 	H.change_stat("speed", -1)
-

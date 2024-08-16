@@ -130,6 +130,18 @@
 	icon_state = "studdedskirt"
 	genitalaccess = TRUE
 
+/obj/item/clothing/under/roguetown/trou/plainpants
+	name = "plain pants"
+	desc = "Some plain pants, not much else to them."
+	icon_state = "plainpants"
+	item_state = "plainpants"
+
+/obj/item/clothing/under/roguetown/trou/stripedpants
+	name = "striped pants"
+	desc = "Some blue pants with white stripes."
+	icon_state = "stripedpants"
+	item_state = "stripedpants"
+
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
 	desc = "Dark trousers worn by morticians while performing burial rites."

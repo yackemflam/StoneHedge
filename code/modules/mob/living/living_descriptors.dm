@@ -80,6 +80,14 @@
 	var/third_line = build_coalesce_description(desc_copy, described, list(MOB_DESCRIPTOR_SLOT_PROMINENT, MOB_DESCRIPTOR_SLOT_PROMINENT), "%THEY% %DESC1% and %DESC2%")
 	if(third_line)
 		lines += third_line
+	
+	var/fourth_line = build_coalesce_description(desc_copy, described, list(MOB_DESCRIPTOR_SLOT_PENIS, MOB_DESCRIPTOR_SLOT_TESTICLES), "%THEY% %DESC1% and %DESC2%")
+	if(fourth_line)
+		lines += fourth_line
+	
+	var/fifth_line = build_coalesce_description(desc_copy, described, list(MOB_DESCRIPTOR_SLOT_BREASTS, MOB_DESCRIPTOR_SLOT_VAGINA), "%THEY% %DESC1% and %DESC2%")
+	if(fifth_line)
+		lines += fifth_line
 
 	var/fourth_line = build_coalesce_description(desc_copy, described, list(MOB_DESCRIPTOR_SLOT_PROMINENT, MOB_DESCRIPTOR_SLOT_PROMINENT), "%THEY% %DESC1% and %DESC2%")
 	if(fourth_line)
@@ -132,6 +140,22 @@
 		him_replace = "him"
 	else
 		him_replace = "her"
+	// LETHALSTONE EDIT: pronoun support
+	if (described.pronouns)
+		switch (described.pronouns)
+			if (HE_HIM)
+				they_replace = "he"
+				man_replace = "man"
+				him_replace = "him"
+			if (SHE_HER)
+				they_replace = "she"
+				man_replace = "woman"
+				him_replace = "her"
+			if (THEY_THEM)
+				they_replace = "they"
+				man_replace = "person"
+				him_replace = "them"
+	// LETHALSTONE EDIT END
 	string = replacetext(string, "%THEY%", they_replace)
 	string = replacetext(string, "%HAVE%", "has")
 	string = replacetext(string, "%MAN%", man_replace)

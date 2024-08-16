@@ -287,7 +287,7 @@
 	var/sexhealrand = rand(0.2, 0.4)
 	//go go gadget sex healing.. magic?
 	if(user.buckled?.sleepy) //gooder healing in bed
-		sexhealrand *= 4 
+		sexhealrand *= 4
 	if(!issimple(user)||!issimple(target))
 		if(user.health < user.maxHealth) //so its not spammy
 			if(HAS_TRAIT(user, TRAIT_SEXDEVO))

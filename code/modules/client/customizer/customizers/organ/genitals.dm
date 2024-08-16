@@ -216,6 +216,27 @@
 		/datum/sprite_accessory/penis/tentacle,
 		)
 
+/datum/customizer_choice/organ/penis/barbed
+	name = "Barbed Penis"
+	organ_type = /obj/item/organ/penis/barbed
+	sprite_accessories = list(
+		/datum/sprite_accessory/penis/barbknot,
+		)
+
+/datum/customizer_choice/organ/penis/barbed_knotted
+	name = "Barbed Knotted Penis"
+	organ_type = /obj/item/organ/penis/barbed_knotted
+	sprite_accessories = list(
+		/datum/sprite_accessory/penis/barbknot,
+		)
+
+/datum/customizer_choice/organ/penis/tentacle
+	name = "Tentacle Penis"
+	organ_type = /obj/item/organ/penis/tentacle
+	sprite_accessories = list(
+		/datum/sprite_accessory/penis/tentacle,
+		)
+
 /datum/customizer/organ/testicles
 	abstract_type = /datum/customizer/organ/testicles
 	name = "Testicles"

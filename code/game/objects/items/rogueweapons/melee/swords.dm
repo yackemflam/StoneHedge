@@ -667,3 +667,31 @@
 
 /datum/intent/sword/thrust/zwei
 	reach = 2
+
+/obj/item/rogueweapon/sword/cursedsword
+	force = 25
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	icon_state = "graggarsword"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	item_state = "graggarsword"
+	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	name = "graggar's sword"
+	desc = "A twisted sword cursed by Graggar, the tendrils running along its blade squirm in anticipation of bloodshed."
+	parrysound = "bladedmedium"
+	swingsound = BLADEWOOSH_LARGE
+	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
+	bigboy = 1
+	wlength = WLENGTH_LONG
+	gripsprite = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	associated_skill = /datum/skill/combat/swords
+	throwforce = 15
+	thrown_bclass = BCLASS_CUT
+	dropshrink = 0.75
+	smeltresult = /obj/item/ash

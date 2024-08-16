@@ -49,7 +49,6 @@
 	name = "penis"
 	slot = MOB_DESCRIPTOR_SLOT_PENIS
 	verbage = "has"
-	show_obscured = TRUE
 
 /datum/mob_descriptor/penis/can_describe(mob/living/described)
 	if(!ishuman(described))
@@ -91,7 +90,6 @@
 	name = "balls"
 	slot = MOB_DESCRIPTOR_SLOT_TESTICLES
 	verbage = "has"
-	show_obscured = TRUE
 
 /datum/mob_descriptor/testicles/can_describe(mob/living/described)
 	if(!ishuman(described))
@@ -124,7 +122,6 @@
 	name = "vagina"
 	slot = MOB_DESCRIPTOR_SLOT_VAGINA
 	verbage = "has"
-	show_obscured = TRUE
 
 /datum/mob_descriptor/vagina/can_describe(mob/living/described)
 	if(!ishuman(described))
@@ -144,7 +141,6 @@
 	name = "breasts"
 	slot = MOB_DESCRIPTOR_SLOT_BREASTS
 	verbage = "has"
-	show_obscured = TRUE
 
 /datum/mob_descriptor/breasts/can_describe(mob/living/described)
 	if(!ishuman(described))

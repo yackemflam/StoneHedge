@@ -10,10 +10,10 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 
-	tutorial = "You have likely seen the brutality of the Northmen firsthand. You have come to terms that rescue will not come, unless the Northerners decide to ransom you. You serve as a farmer."
+	tutorial = "You have likely seen the brutality of the Northmen firsthand. Put aside any notion of rescue, and serve the warband well. You know they sacrifice slaves to their twisted god, Graggar, so try and at least appear somewhat useful for the cruel pillagers, tend the farm, and try not to draw too much attention."
 	whitelist_req = FALSE
 
-	
+
 	outfit = /datum/outfit/job/roguetown/farmer
 	display_order = JDO_VIKINGFARMER
 	min_pq = -10
@@ -55,5 +55,3 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather/rope
-
-

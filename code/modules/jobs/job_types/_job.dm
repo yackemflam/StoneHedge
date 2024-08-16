@@ -123,7 +123,7 @@
 	var/immune_to_genderswap = FALSE
 
 /*
-	How this works, its CTAG_DEFINE = amount_to_attempt_to_role 
+	How this works, its CTAG_DEFINE = amount_to_attempt_to_role
 	EX: advclass_cat_rolls = list(CTAG_PILGRIM = 5, CTAG_ADVENTURER = 5)
 	You will still need to contact the subsystem though
 */
@@ -191,19 +191,19 @@
 
 	if(show_in_credits)
 		SScrediticons.processing += H
-	
+
 	if(cmode_music)
 		H.cmode_music = cmode_music
 
 /datum/job/proc/add_spells(mob/living/H)
-	if(spells && H.mind)	
+	if(spells && H.mind)
 		for(var/S in spells)
 			if(H.mind.has_spell(S))
 				continue
 			H.mind.AddSpell(new S)
 
 /datum/job/proc/remove_spells(mob/living/H)
-	if(spells && H.mind)	
+	if(spells && H.mind)
 		for(var/S in spells)
 			if(!H.mind.has_spell(S))
 				continue
@@ -421,4 +421,3 @@
 	if(CONFIG_GET(flag/security_has_maint_access))
 		return list(ACCESS_MAINT_TUNNELS)
 	return list()
-

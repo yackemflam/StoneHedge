@@ -10,7 +10,7 @@
 	Whether a Half-Elf resides with Humens or Elves affects how they age. \
 	Half-Elves living in the home of the Elves are said to be nearly indistinguishable from their Elven kin and enjoy the eternal youth of a full-blooded Elf. \
 	Yet most Half-Elves reside in Humen cities and age as Men do.<br>\
-	Half-Elves often follow gods noteing their upbringing by either parent or Elven tradition.<br>\
+	Half-Elves often follow gods noting their upbringing by either parent or Elven tradition.<br>\
 	<br>\
 	Our bodies bear the flaws and benefits of both Humens and Elves, to a lesser degree. \
 	We quickly learn new skills and run for long distances, but our bodies are frail."
@@ -46,13 +46,14 @@
 		)
 	specstats = list("strength" = 0, "perception" = 1, "intelligence" = 1, "constitution" = -1, "endurance" = -1, "speed" = 1, "fortune" = -1)
 	specstats_f = list("strength" = -1, "perception" = 1, "intelligence" = 1, "constitution" = -2, "endurance" = 0, "speed" = 2, "fortune" = -1)
+	race_bonus = list(STAT_PERCEPTION = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
 		ORGAN_SLOT_EYES = /obj/item/organ/eyes/halfelf,
-		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/elfw,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,

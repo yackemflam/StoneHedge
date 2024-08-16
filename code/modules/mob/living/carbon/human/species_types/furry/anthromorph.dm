@@ -25,6 +25,7 @@
 	)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	use_skintones = 1
 	attack_verb = "slash"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	possible_ages = ALL_AGES_LIST
@@ -48,6 +49,7 @@
 		)
 	specstats = list("strength" = 0, "perception" = 1, "intelligence" = -1, "constitution" = 0, "endurance" = 1, "speed" = -1, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
+	race_bonus = list(STAT_PERCEPTION = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
@@ -192,4 +194,3 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = third_color
 	return returned
-

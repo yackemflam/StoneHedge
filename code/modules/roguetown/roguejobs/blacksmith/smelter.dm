@@ -63,6 +63,7 @@
 			else
 				var/datum/mind/smelter_mind = user.mind
 				var/smelter_exp = smelter_mind.get_skill_level(/datum/skill/craft/smelting)
+				//Fine to Legendary removed; caused issues of exploits. But you still gain EXP to stop making sub-par quality armor.
 				ore[W] = floor(rand(smelter_exp*15, max(63, smelter_exp*25))/25) // (0-25 spoil, 25-50 poor, 50-75, normal, 75-onwards good) no skill = 0, 63, novice = 15, 63, apprentice = 30, 63, skilled = 45, 75, expert = 60, 100, master = 75, 125, legendary = 100, 150, (may want to add a tier above good)
 			user.visible_message(span_warning("[user] puts something in the smelter."))
 			cooking = 0
