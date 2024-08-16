@@ -11,13 +11,24 @@
 
 /datum/outfit/job/roguetown/adventurer/rogue/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.adjust_blindness(-3)
-	var/classes = list("Rogue","Duelist",)
-	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
+	// Contributor after choices, if not contributor defaults to el rogue.
+	var/classchoice
+	if(check_contributor(H.ckey))
+		H.adjust_blindness(-3)
+		H.visible_message(span_info("I contributed into this world, I have been around..."))
+		var/classes = list("Rogue","Assassin","Duelist")
+		classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
+	else //not contributor
+		H.adjust_blindness(-3)
+		var/classes = list("Rogue","Duelist",)
+		classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 	switch(classchoice)
 		if("Rogue")
 			H.set_blindness(0)
 			roguearch(H)
+		if("Assassin")
+			H.set_blindness(0)
+			assassinarch(H)
 		if("Duelist")
 			H.set_blindness(0)
 			duelistarch(H)
@@ -25,19 +36,22 @@
 /datum/outfit/job/roguetown/adventurer/rogue/proc/roguearch(mob/living/carbon/human/H)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(3,3,4), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(5,6), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 6, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, pick(0,1), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	gloves = /obj/item/clothing/gloves/roguetown/leather
@@ -57,19 +71,17 @@
 	H.change_stat("speed", pick(3,4))
 	H.change_stat("intelligence", 2)
 
-
 /datum/outfit/job/roguetown/adventurer/rogue/proc/assassinarch(mob/living/carbon/human/H)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 6, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
@@ -101,6 +113,7 @@
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel)
 
 /datum/outfit/job/roguetown/adventurer/rogue/proc/duelistarch(mob/living/carbon/human/H)
+	//less of other skills, more sword and knife combat skills.
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
@@ -127,6 +140,8 @@
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
+	if(H.gender == FEMALE && prob(25)) //funny
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
 	cloak = /obj/item/clothing/cloak/half
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/sword/rapier
