@@ -43,7 +43,8 @@
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "shroom"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/shroom
-	produce_amount = 3
+	produce_amount_min = 2
+	produce_amount_max = 3
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_nutrition = 30
 	produce_nutrition = 20
