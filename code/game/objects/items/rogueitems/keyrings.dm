@@ -127,11 +127,14 @@
 	else
 		desc = ""
 
+/obj/item/keyring/butcher	// Just incase, butcher can at least see to getting farmers incase there are none given he sucks at farming.
+	keys = list(/obj/item/roguekey/farm, /obj/item/roguekey/butcher)
+
 /obj/item/keyring/sheriff
 	keys = list(/obj/item/roguekey/town_dungeon, /obj/item/roguekey/town_barracks, /obj/item/roguekey/town_armory)
 
 /obj/item/keyring/bailiff
-	keys = list(/obj/item/roguekey/town_dungeon, /obj/item/roguekey/town_barracks, /obj/item/roguekey/councillor_rooms, /obj/item/roguekey/keep_barracks, /obj/item/roguekey/keep_dungeon, /obj/item/roguekey/manor)
+	keys = list(/obj/item/roguekey/town_dungeon, /obj/item/roguekey/town_barracks, /obj/item/roguekey/councillor_rooms, /obj/item/roguekey/keep_barracks, /obj/item/roguekey/keep_dungeon, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)
 
 /obj/item/keyring/councillor
 	keys = list(/obj/item/roguekey/councillor_rooms, /obj/item/roguekey/keep_barracks, /obj/item/roguekey/keep_dungeon,  /obj/item/roguekey/manor)
