@@ -38,6 +38,20 @@
 	var/static/list/random_colors = list("#fffbf7", "#f3c877", "#5e533e", "#db7f62", "#f39945")
 	seed_color = pick(random_colors)
 
+/datum/plant_def/shroom
+	name = "shroom spores"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "shroom"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/shroom
+	produce_amount_min = 2
+	produce_amount_max = 3
+	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 5 MINUTES
+	produce_time = 2 MINUTES
+
+
 /datum/plant_def/wheat
 	name = "wheat stalks"
 	icon = 'icons/roguetown/misc/crops.dmi'

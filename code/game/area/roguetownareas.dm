@@ -24,9 +24,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_INGEN
 	spookysounds = SPOOKY_GEN
 	spookynight = SPOOKY_GEN
-	droning_sound = 'sound/music/area/towngen.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/acm.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 	soundenv = 2
 	plane = INDOOR_PLANE
 	converted_type = /area/rogue/outdoors
@@ -55,16 +55,16 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	spookysounds = SPOOKY_CROWS
 	spookynight = SPOOKY_GEN
 	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 	converted_type = /area/rogue/indoors/shelter
 	soundenv = 16
 
 /area/rogue/indoors/shelter
 	icon_state = "shelter"
 	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 
 /area/rogue/outdoors/mountains
 	name = "mountains"
@@ -74,15 +74,16 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	spookysounds = SPOOKY_GEN
 	spookynight = SPOOKY_GEN
 	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 	soundenv = 17
 	converted_type = /area/rogue/indoors/shelter/mountains
+
 /area/rogue/indoors/shelter/mountains
 	icon_state = "mountains"
 	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 
 /area/rogue/outdoors/mountains/deception
 	name = "deception"
@@ -122,15 +123,16 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 30,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 50)
 	first_time_text = "STONEHEDGE BASIN"
-	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/newtownambience.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 	converted_type = /area/rogue/indoors/shelter/rtfield
+
 /area/rogue/indoors/shelter/rtfield
 	icon_state = "rtfield"
-	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/newtownambience.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 
 
 /area/rogue/outdoors/woods
@@ -141,8 +143,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	spookysounds = SPOOKY_CROWS
 	spookynight = SPOOKY_FOREST
 	droning_sound = 'sound/music/area/forest.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 	soundenv = 15
 	ambush_times = list("night","dawn","dusk","day")
 	ambush_types = list(
@@ -161,8 +163,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/shelter/woods
 	icon_state = "woods"
 	droning_sound = 'sound/music/area/forest.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 
 
 /area/rogue/outdoors/river
@@ -173,8 +175,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	spookysounds = SPOOKY_FROG
 	spookynight = SPOOKY_FOREST
 	droning_sound = 'sound/music/area/forest.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 	converted_type = /area/rogue/indoors/shelter/woods
 
 /area/rogue/outdoors/bog
@@ -184,7 +186,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_BOGNIGHT
 	spookysounds = SPOOKY_FROG
 	spookynight = SPOOKY_GEN
-	droning_sound = 'sound/music/area/bog.ogg'
+	droning_sound = 'sound/music/area/terrorbog.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	ambush_times = list("night","dawn","dusk","day")
@@ -211,7 +213,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_BOGNIGHT
 	spookysounds = SPOOKY_FROG
 	spookynight = SPOOKY_GEN
-	droning_sound = 'sound/music/area/bog.ogg'
+	droning_sound = 'sound/music/area/terrorbog.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	ambush_times = list("night","dawn","dusk","day")
@@ -230,7 +232,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_BOGNIGHT
 	spookysounds = SPOOKY_FROG
 	spookynight = SPOOKY_GEN
-	droning_sound = 'sound/music/area/bog.ogg'
+	droning_sound = 'sound/music/area/terrorbog.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	ambush_times = list("night","dawn","dusk","day")
@@ -247,7 +249,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 /area/rogue/indoors/shelter/bog
 	icon_state = "bog"
-	droning_sound = 'sound/music/area/bog.ogg'
+	droning_sound = 'sound/music/area/terrorbog.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -260,8 +262,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
 	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 
 
 //// UNDER AREAS (no indoor rain sound usually)
@@ -270,17 +272,17 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under
 	name = "basement"
 	icon_state = "under"
-	droning_sound = 'sound/music/area/towngen.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/townstreets.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 	soundenv = 8
 	plane = INDOOR_PLANE
 	converted_type = /area/rogue/outdoors/exposed
 /area/rogue/outdoors/exposed
 	icon_state = "exposed"
-	droning_sound = 'sound/music/area/towngen.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/townstreets.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 
 /area/rogue/under/cave
 	name = "cave"
@@ -434,15 +436,15 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town
 	name = "indoors"
 	icon_state = "town"
-	droning_sound = 'sound/music/area/towngen.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/townstreets.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 	converted_type = /area/rogue/outdoors/exposed/town
 /area/rogue/outdoors/exposed/town
 	icon_state = "town"
-	droning_sound = 'sound/music/area/towngen.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/townstreets.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 
 /area/rogue/indoors/town/manor
 	name = "Manor"
@@ -600,15 +602,15 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "town"
 	soundenv = 16
 	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 	converted_type = /area/rogue/indoors/shelter/town
 	first_time_text = "THE TOWN OF STONEHEDGE"
 /area/rogue/indoors/shelter/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 
 /area/rogue/outdoors/town/sargoth
 	name = "outdoors"
@@ -633,16 +635,16 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_MOUNTAIN
 	spookysounds = SPOOKY_GEN
 	spookynight = SPOOKY_GEN
-	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/townstreets.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 	soundenv = 17
 	converted_type = /area/rogue/indoors/shelter/town/roofs
 /area/rogue/indoors/shelter/town/roofs
 	icon_state = "roofs"
-	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/music/area/townstreets.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 
 /area/rogue/outdoors/town/dwarf
 	name = "dwarven quarter"

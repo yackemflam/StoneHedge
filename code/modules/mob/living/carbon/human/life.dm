@@ -408,8 +408,6 @@
 	adjustBruteLoss(2)
 
 /mob/living/carbon/human/proc/handle_vamp_dreams()
-	if(!HAS_TRAIT(src, TRAIT_VAMP_DREAMS))
-		return
 	if(!mind)
 		return
 	if(!has_status_effect(/datum/status_effect/debuff/devitalised))
