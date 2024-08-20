@@ -4655,7 +4655,7 @@
 /obj/structure/glowshroom{
 	icon_state = "glowshroom2"
 	},
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "cwg" = (
 /obj/structure/flora/roguegrass/bush{
@@ -5542,10 +5542,6 @@
 /obj/effect/landmark/events/haunts,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet/bogcaves)
-"cVk" = (
-/turf/closed/wall/mineral/rogue/stone/moss,
-/turf/closed/wall/mineral/rogue/stone/moss,
-/area/rogue/indoors/town/bath)
 "cVl" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/carpet/purple,
@@ -9217,7 +9213,7 @@
 /area/rogue/under/cavewet)
 "eRy" = (
 /obj/item/natural/stone,
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "eRA" = (
 /turf/open/floor/rogue/cobble,
@@ -14101,7 +14097,7 @@
 /obj/structure/glowshroom{
 	icon_state = "glowshroom2"
 	},
-/turf/open/water/swamp,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "hKn" = (
 /obj/structure/glowshroom{
@@ -15426,7 +15422,7 @@
 /area/rogue/outdoors/mountains)
 "iwQ" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "iwT" = (
 /obj/structure/flora/grass/jungle/b,
@@ -16127,10 +16123,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/grass,
 /area/rogue/under/cave)
-"iQM" = (
-/obj/structure/flora/ausbushes/stalkybush,
-/turf/open/water/swamp/deep,
-/area/rogue/under/town/sewer)
 "iQR" = (
 /mob/living/simple_animal/hostile/rogue/dragger,
 /turf/open/floor/rogue/cobblerock,
@@ -17825,7 +17817,7 @@
 	icon_state = "barsbent";
 	layer = 2.81
 	},
-/turf/closed,
+/turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/dwarfin)
 "jUb" = (
 /obj/machinery/light/rogue/wallfire/candle{
@@ -18850,7 +18842,7 @@
 "ksI" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/roguegrass/maneater/real,
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "ksN" = (
 /turf/open/floor/rogue/dirt/road,
@@ -22372,7 +22364,7 @@
 /area/rogue/outdoors/woods)
 "mub" = (
 /obj/structure/flora/roguegrass/maneater/real,
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "mui" = (
 /obj/structure/glowshroom{
@@ -25190,7 +25182,7 @@
 	})
 "nUl" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "nUt" = (
 /obj/structure/flora/grass/jungle,
@@ -25302,7 +25294,7 @@
 "nWj" = (
 /obj/structure/glowshroom,
 /obj/structure/flora/roguegrass/maneater/real,
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "nWm" = (
 /obj/structure/fluff/statue/gargoyle/moss/candles,
@@ -26449,7 +26441,7 @@
 	})
 "oAL" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "oBb" = (
 /obj/structure/chair/stool/rogue,
@@ -34135,7 +34127,7 @@
 "sRe" = (
 /obj/structure/flora/roguegrass/water/reeds,
 /obj/structure/flora/roguegrass/water/reeds,
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "sRf" = (
 /obj/structure/bookcase/random/archive,
@@ -35646,12 +35638,6 @@
 	icon_state = "rockwd"
 	},
 /area/rogue/outdoors/bog/dense)
-"tJh" = (
-/turf/closed/wall/mineral/rogue/stone/moss,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "horzw"
-	},
-/area/rogue/indoors/town/bath)
 "tJs" = (
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/carpet/purple,
@@ -39548,10 +39534,6 @@
 /area/rogue/outdoors/bog{
 	first_time_text = "Swampwyld"
 	})
-"vVC" = (
-/obj/structure/glowshroom,
-/turf/open/water/swamp/deep,
-/area/rogue/under/town/sewer)
 "vVW" = (
 /obj/structure/flora/roguegrass/bush,
 /turf/open/floor/rogue/grass,
@@ -39896,12 +39878,6 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/church)
-"wfB" = (
-/obj/structure/glowshroom{
-	icon_state = "glowshroom2"
-	},
-/turf/open/water/swamp/deep,
-/area/rogue/under/town/sewer)
 "wfG" = (
 /obj/structure/closet/crate/chest,
 /obj/item/roguekey/tavern,
@@ -41502,7 +41478,7 @@
 "wYN" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/roguegrass/water/reeds,
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "wYX" = (
 /obj/structure/flora/roguetree{
@@ -148868,7 +148844,7 @@ hfc
 hfc
 hfc
 hfc
-xtC
+qSi
 tfW
 tfW
 tfW
@@ -149152,9 +149128,9 @@ hfc
 hfc
 hfc
 hfc
-jxz
-xtC
-xtC
+pLO
+qSi
+qSi
 tfW
 tfW
 oDE
@@ -149437,9 +149413,9 @@ hfc
 hfc
 tfW
 tfW
-jxz
-xtC
-xtC
+pLO
+qSi
+qSi
 tfW
 tfW
 oDE
@@ -149722,9 +149698,9 @@ rrc
 hfc
 tfW
 tfW
-wfB
+rNN
 eRy
-jxz
+pLO
 tfW
 tfW
 oDE
@@ -150003,14 +149979,14 @@ lOQ
 rBJ
 rBJ
 rkB
-xtC
-xtC
+qSi
+qSi
 tfW
 tfW
-iQM
-xtC
-xtC
-jxz
+dOQ
+qSi
+qSi
+pLO
 tfW
 oDE
 oDE
@@ -150289,13 +150265,13 @@ bnK
 rBJ
 vYu
 mub
-vVC
+kOv
 hKf
 tfW
-xtC
-xtC
-xtC
-jxz
+qSi
+qSi
+qSi
+pLO
 tfW
 fqi
 fqi
@@ -150574,13 +150550,13 @@ rkB
 tBw
 vYu
 oAL
-xtC
-vVC
+qSi
+kOv
 tfW
-iQM
-iQM
-xtC
-jxz
+dOQ
+dOQ
+qSi
+pLO
 tfW
 uRx
 fqi
@@ -150858,14 +150834,14 @@ dUZ
 bnK
 fOl
 rkB
-vVC
+kOv
 eRy
 ksI
 tfW
 wYN
-xtC
-xtC
-xtC
+qSi
+qSi
+qSi
 tfW
 uRx
 fqi
@@ -151143,14 +151119,14 @@ lOQ
 rkB
 rkB
 vYu
-xtC
+qSi
 nUl
-vVC
+kOv
 tfW
-jxz
-xtC
-xtC
-xtC
+pLO
+qSi
+qSi
+qSi
 tfW
 fqi
 fqi
@@ -151429,13 +151405,13 @@ rkB
 rkB
 vYu
 nWj
-xtC
+qSi
 cwd
 tfW
-xtC
-xtC
+qSi
+qSi
 eRy
-xtC
+qSi
 tfW
 fqi
 fqi
@@ -151457,7 +151433,7 @@ blx
 oVn
 ozT
 ozT
-kOv
+wSV
 oVn
 mwk
 aES
@@ -151713,14 +151689,14 @@ dUZ
 rkB
 vYu
 rkB
-xtC
-xtC
+qSi
+qSi
 tfW
 tfW
-xtC
-xtC
-xtC
-jxz
+qSi
+qSi
+qSi
+pLO
 tfW
 byt
 fqi
@@ -151998,13 +151974,13 @@ ild
 rkB
 vYu
 rkB
-xtC
+qSi
 oAL
 tfW
 tfW
-xtC
-xtC
-jxz
+qSi
+qSi
+pLO
 tfW
 tfW
 fqi
@@ -152284,11 +152260,11 @@ rkB
 vYu
 vYu
 oAL
-xtC
+qSi
 tfW
 tfW
-xtC
-xtC
+qSi
+qSi
 sRe
 tfW
 tfW
@@ -152568,13 +152544,13 @@ ild
 bnK
 vYu
 vYu
-jxz
-xtC
-xtC
-jxz
-xtC
-xtC
-jxz
+pLO
+qSi
+qSi
+pLO
+qSi
+qSi
+pLO
 tfW
 tfW
 hfc
@@ -152854,11 +152830,11 @@ vYu
 vYu
 vYu
 iwQ
-xtC
+qSi
 eRy
-jxz
-xtC
-jxz
+pLO
+qSi
+pLO
 tfW
 tfW
 hfy
@@ -153138,10 +153114,10 @@ ild
 vYu
 vYu
 vYu
-xtC
-xtC
-xtC
-xtC
+qSi
+qSi
+qSi
+qSi
 jxz
 tfW
 tfW
@@ -153424,10 +153400,10 @@ vYu
 vYu
 rkB
 oAL
-xtC
-xtC
-xtC
-xtC
+qSi
+qSi
+qSi
+qSi
 fqi
 fqi
 bDv
@@ -153710,7 +153686,7 @@ vYu
 rkB
 rkB
 oAL
-xtC
+qSi
 eRy
 dXv
 dXv
@@ -234953,8 +234929,8 @@ uYG
 pVy
 uYG
 uYG
-cVk
-tJh
+uYG
+uYG
 uYG
 uYG
 ild
@@ -253703,7 +253679,7 @@ auj
 pyw
 pyw
 auj
-bup
+apV
 cuh
 ssz
 ozh
@@ -254558,7 +254534,7 @@ yez
 hLi
 pyw
 yez
-bup
+apV
 cuh
 naw
 fxX
@@ -256268,7 +256244,7 @@ bDD
 jlL
 bDD
 apV
-bup
+apV
 cuh
 bkE
 bkE
