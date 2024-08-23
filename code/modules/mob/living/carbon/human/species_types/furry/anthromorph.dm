@@ -93,6 +93,7 @@
 		/datum/body_marking_set/bellysocks,
 		/datum/body_marking_set/tiger,
 		/datum/body_marking_set/tiger_dark,
+		/datum/body_marking_set/splotches,
 	)
 	body_markings = list(
 		/datum/body_marking/plain,
@@ -115,6 +116,8 @@
 		/datum/body_marking/front,
 		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
+		/datum/body_marking/splotches,
+		/datum/body_marking/splotcheswap,
 		/datum/body_marking/spotted,
 	)
 	descriptor_choices = list(
