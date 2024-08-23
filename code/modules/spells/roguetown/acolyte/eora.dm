@@ -28,7 +28,7 @@
 	name = "Charm"
 	overlay_state = "curse2"
 	releasedrain = 50
-	chargetime = 30
+	chargetime = 15
 	range = 7
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
@@ -36,7 +36,7 @@
 	sound = 'sound/magic/whiteflame.ogg'
 	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = TRUE
-	charge_max = 10 SECONDS
+	charge_max = 5 SECONDS
 	miracle = FALSE
 
 /obj/effect/proc_holder/spell/invoked/eoracurse/cast(list/targets, mob/living/user)
@@ -50,7 +50,7 @@
 	return FALSE
 
 /obj/effect/proc_holder/spell/invoked/enrapture
-	name = "Arouse"
+	name = "Enrapture"
 	desc = ""
 	overlay_state = "bliss"
 	releasedrain = 30
@@ -67,7 +67,7 @@
 	antimagic_allowed = TRUE
 	charge_max = 10 SECONDS
 	miracle = FALSE
-	devotion_cost = 10
+	devotion_cost = 0
 
 //Sex-pest spell; if you have ERP verbs on it lets you treat it as sexual stuff if opt in, otherwise spell of serenity/peace.
 /obj/effect/proc_holder/spell/invoked/enrapture/cast(list/targets, mob/living/user)
