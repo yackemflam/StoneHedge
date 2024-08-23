@@ -7,8 +7,6 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/mage
 	category_tags = list(CTAG_ADVENTURER)
 
-/datum/outfit/job/roguetown/adventurer/mage
-	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
 
 /datum/outfit/job/roguetown/adventurer/mage/pre_equip(mob/living/carbon/human/H)
 
@@ -160,4 +158,3 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/robe/merchant
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		shoes = /obj/item/clothing/shoes/roguetown/shalal
-

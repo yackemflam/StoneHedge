@@ -37,6 +37,10 @@
 #define TRAIT_SEEDKNOW "Seed Knower"
 #define TRAIT_WATERBREATHING "Water Breathing"
 
+//Hearthstone change (Tracking)
+#define TRAIT_PERFECT_TRACKER "Perfect Tracker" //! Will always find any tracks and analyzes them perfectly.
+//Hearthstone end.
+
 // PATRON GOD TRAITS
 #define TRAIT_ROT_EATER "Blessing of Pestra" //can eat rotten food
 #define TRAIT_ORGAN_EATER "Blessing of Graggar" //can eat organs
@@ -111,6 +115,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_SEXDEVO = span_info("Sex is more benefical to me."),
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
+	TRAIT_PERFECT_TRACKER = span_info("I am the perfect tracker. No tracks will deceive my eyes, nor will they hide their secrets from me."),//Hearthstone change.
 ))
 
 // trait accessor defines
