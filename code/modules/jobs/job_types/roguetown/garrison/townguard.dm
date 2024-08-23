@@ -103,7 +103,7 @@
 	guard.change_stat("speed", 1)
 
 /datum/outfit/job/roguetown/guardsman/bowman
-	name = "Town Bowman Guard"
+	name = "Watchman Archer"
 	is_bowman = TRUE
 
 /datum/outfit/job/roguetown/guardsman/bowman/assign_skills(mob/living/carbon/human/guard)

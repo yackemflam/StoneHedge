@@ -105,12 +105,12 @@
 	bogger.change_stat("speed", 1)
 
 /datum/outfit/job/roguetown/bogguardsman/crossbowman
-	name = "Bog Crossbow Guard"
+	name = "Hedge Archer"
 	is_crossbowman = TRUE
 
 /datum/outfit/job/roguetown/bogguardsman/crossbowman/assign_skills(mob/living/carbon/human/bogger)
-	bogger.mind.adjust_skillrank(/datum/skill/combat/crossbows, 5, TRUE)
-	bogger.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+	bogger.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
+	bogger.mind.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)
 	bogger.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	bogger.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	bogger.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
