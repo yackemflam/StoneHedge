@@ -507,7 +507,7 @@
 	sellprice = 1
 	verbage_simple = "craft"
 	verbage = "crafted"
-	craftdiff = 0	
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/antlerhood
 	name = "antlerhood"
@@ -520,15 +520,6 @@
 	verbage_simple = "sew"
 	verbage = "sews"
 	craftdiff = 0
-
-/datum/crafting_recipe/roguetown/bonespear
-	name = "bone spear"
-	result = /obj/item/rogueweapon/spear/bonespear
-	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
-				/obj/item/natural/bone = 2,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 3
-
 
 /datum/crafting_recipe/roguetown/boneaxe
 	name = "bone axe"
@@ -614,3 +605,11 @@
 	name = "fullplate bikini to bra"
 	result = list(/obj/item/clothing/suit/roguetown/armor/plate/full/bikini/bra)
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/full/bikini = 1)
+
+/datum/crafting_recipe/roguetown/bonespear
+	name = "bone spear"
+	result = /obj/item/rogueweapon/spear/bonespear
+	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
+				/obj/item/natural/bone = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
