@@ -9,6 +9,18 @@
 	max_integrity = 400
 	var/list/obj/item/to_grind = list()
 
+/obj/structure/fluff/millstone/attackby(obj/item/W, mob/living/user, params)
+	if(istype(W, /obj/item/reagent_containers/food/snacks))
+		var/obj/item/reagent_containers/food/snacks/S = W
+		if(S.mill_result)
+			playsound(get_turf(user), 'modular/Neu_Food/sound/milling.ogg', 100, TRUE, -1)
+			if(do_after(user, 30, target = src))
+				new S.mill_result(get_turf(loc))
+				qdel(S)
+			return
+	..()
+
+/*
 /obj/structure/fluff/millstone/Initialize()
 	create_reagents(900, DRAINABLE | AMOUNT_VISIBLE | REFILLABLE)
 	. = ..()
@@ -70,7 +82,7 @@
 				else
 					break
 			return
-		if(is_drainable() && (user.used_intent.type == INTENT_FILL)) //A dispenser. Transfer FROM it TO us.
+		if(is_drainable() && (user.used_intent.type == /datum/intent/fill)) //A dispenser. Transfer FROM it TO us.
 			testing("attackobj3")
 			if(!reagents.total_volume)
 				to_chat(user, span_warning("[src] is empty!"))
@@ -100,4 +112,4 @@
 		to_chat(user, span_info("I place [I] into [src]."))
 		to_grind += grindable
 		return TRUE
-	..()
+*/

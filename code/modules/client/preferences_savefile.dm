@@ -167,7 +167,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["triumphs"]			>> triumphs
 	S["musicvol"]			>> musicvol
 	S["anonymize"]			>> anonymize
-	S["crt"]			>> crt
+	S["crt"]				>> crt
+	S["shake"]				>> shake
 	S["mastervol"]			>> mastervol
 	S["lastclass"]			>> lastclass
 
@@ -197,8 +198,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	// Custom hotkeys
 	S["key_bindings"]		>> key_bindings
-
-	S["defiant"]			>> defiant
 
 	S["defiant"]			>> defiant
 
@@ -261,6 +260,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["musicvol"], musicvol)
 	WRITE_FILE(S["anonymize"], anonymize)
 	WRITE_FILE(S["crt"], crt)
+	WRITE_FILE(S["shake"], shake)
 	WRITE_FILE(S["lastclass"], lastclass)
 	WRITE_FILE(S["mastervol"], mastervol)
 	WRITE_FILE(S["ooccolor"], ooccolor)
@@ -357,12 +357,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["skin_tone"]			>> skin_tone
 	S["hairstyle_name"]		>> hairstyle
 	S["facial_style_name"]	>> facial_hairstyle
-	S["underwear"]			>> underwear
-	S["underwear_color"]	>> underwear_color
-	S["undershirt"]			>> undershirt
 	S["accessory"]			>> accessory
 	S["detail"]				>> detail
-	S["socks"]				>> socks
 	S["backpack"]			>> backpack
 	S["jumpsuit_style"]		>> jumpsuit_style
 	S["uplink_loc"]			>> uplink_spawn_loc
@@ -450,6 +446,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["nudeshot_link"]			>> nudeshot_link
 	if(!valid_headshot_link(null, nudeshot_link, TRUE))
 		nudeshot_link = null
+	S["char_accent"]		>> char_accent
+	if (!char_accent)
+		char_accent = "No accent"
 
 	S["pronouns"] >> pronouns
 	S["voice_type"] >> voice_type
@@ -483,9 +482,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	randomise = SANITIZE_LIST(randomise)
 
-	socks			= sanitize_inlist(socks, GLOB.socks_list)
 	age				= sanitize_inlist(age, pref_species.possible_ages)
-	underwear_color			= sanitize_hexcolor(underwear_color, 3, 0)
 	eye_color		= sanitize_hexcolor(eye_color, 3, 0)
 	voice_color		= voice_color
 	voice_pitch		= voice_pitch
@@ -556,12 +553,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["skin_tone"]			, skin_tone)
 	WRITE_FILE(S["hairstyle_name"]		, hairstyle)
 	WRITE_FILE(S["facial_style_name"]	, facial_hairstyle)
-	WRITE_FILE(S["underwear"]			, underwear)
-	WRITE_FILE(S["underwear_color"]		, underwear_color)
-	WRITE_FILE(S["undershirt"]			, undershirt)
 	WRITE_FILE(S["accessory"]			, accessory)
 	WRITE_FILE(S["detail"]				, detail)
-	WRITE_FILE(S["socks"]				, socks)
 	WRITE_FILE(S["backpack"]			, backpack)
 	WRITE_FILE(S["jumpsuit_style"]		, jumpsuit_style)
 	WRITE_FILE(S["uplink_loc"]			, uplink_spawn_loc)
@@ -606,6 +599,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	WRITE_FILE(S["nudeshot_link"] , nudeshot_link)
 
+
+	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
+	WRITE_FILE(S["char_accent"] , char_accent)
 	WRITE_FILE(S["statpack"] , statpack.type)
 	WRITE_FILE(S["voice_type"] , voice_type)
 	WRITE_FILE(S["pronouns"] , pronouns)

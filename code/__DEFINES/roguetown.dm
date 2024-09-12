@@ -19,6 +19,7 @@
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
 	/datum/species/kobold,\
+	/datum/species/anthromorphbig,\
 	/datum/species/goblinp,\
 )
 
@@ -30,6 +31,7 @@
 	/datum/species/aasimar,\
 	/datum/species/lupian,\
 	/datum/species/vulpkanin,\
+	/datum/species/anthromorphbig,\
 	/datum/species/moth,\
 	/datum/species/dracon,
 
@@ -73,6 +75,7 @@
 	/datum/species/dracon,\
 	/datum/species/anthromorph,\
 	/datum/species/anthromorphsmall,\
+	/datum/species/anthromorphbig,\
 	/datum/species/demihuman,\
 	/datum/species/kobold,\
 	/datum/species/goblinp,\
@@ -95,6 +98,7 @@
 	/datum/species/dracon,\
 	/datum/species/anthromorph,\
 	/datum/species/anthromorphsmall,\
+	/datum/species/anthromorphbig,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
 	/datum/species/kobold,\
@@ -116,6 +120,7 @@
 	/datum/species/moth,\
 	/datum/species/dracon,\
 	/datum/species/anthromorph,\
+	/datum/species/anthromorphbig,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
 )
@@ -132,9 +137,10 @@
 	/datum/species/moth,\
 	/datum/species/dracon,\
 	/datum/species/anthromorph,\
+	/datum/species/anthromorphbig,\
 	/datum/species/demihuman,\
 )
-#define ALL_CLERIC_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/eora, /datum/patron/divine/xylix)
+#define ALL_CLERIC_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/eora, /datum/patron/divine/xylix, /datum/patron/divine/ravox, /datum/patron/divine/malum, /datum/patron/divine/abyssor)
 
 #define ALL_ACOLYTE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/pestra, /datum/patron/divine/eora) // Currently unused.
 
@@ -213,3 +219,31 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define TRIUMPH_CAT_CHARACTER "CHARACTER"
 #define TRIUMPH_CAT_MISC "MISC!"
 #define TRIUMPH_CAT_ACTIVE_DATUMS "ACTIVE"
+
+/*	........   Nutrition defines   ................ */
+#define MEAL_FILLING 30
+#define MEAL_GOOD 24
+#define MEAL_AVERAGE 18
+#define MEAL_MEAGRE 15
+#define SNACK_CHUNKY 12
+#define SNACK_NUTRITIOUS 9
+#define SNACK_DECENT 6
+#define SNACK_POOR 3
+
+#define DOUGH_NUTRITION MEAL_MEAGRE
+#define SMALLDOUGH_NUTRITION MEAL_MEAGRE/2
+#define BUTTERDOUGH_NUTRITION DOUGH_NUTRITION+BUTTERSLICE_NUTRITION
+#define BUTTERDOUGHSLICE_NUTRITION BUTTERDOUGH_NUTRITION/2
+#define BUTTER_NUTRITION SNACK_CHUNKY
+#define BUTTERSLICE_NUTRITION BUTTER_NUTRITION/6
+#define MEATSLAB_NUTRITION SNACK_NUTRITIOUS
+#define SAUSAGE_NUTRITION SNACK_NUTRITIOUS
+#define MINCE_NUTRITION MEATSLAB_NUTRITION/2
+#define FRESHCHEESE_NUTRITION SNACK_DECENT
+
+/*	........   Rotting defines   ................ */
+#define SHELFLIFE_EXTREME 270 MINUTES
+#define SHELFLIFE_LONG 135 MINUTES
+#define SHELFLIFE_DECENT 75 MINUTES
+#define SHELFLIFE_SHORT 45 MINUTES
+#define SHELFLIFE_TINY 30 MINUTES

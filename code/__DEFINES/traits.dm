@@ -5,8 +5,8 @@
 #define TRAIT_LEAPER "Leaper"
 #define TRAIT_NOSEGRAB "Nosey"
 #define TRAIT_NUTCRACKER "Nutcracker"
-#define TRAIT_SEEPRICES "Skilled Appraiser"
-#define TRAIT_SEEPRICES_SHITTY "Appraiser"
+#define TRAIT_SEEPRICES "Uncanny Evaluation"
+#define TRAIT_SEEPRICES_SHITTY "Uncertain Evaluation"
 #define TRAIT_STRONGBITE "Strong Bite"
 #define TRAIT_NOBLE "Noble Blooded"
 #define TRAIT_EMPATH "Empath"
@@ -39,6 +39,7 @@
 
 //Hearthstone change (Tracking)
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker" //! Will always find any tracks and analyzes them perfectly.
+#define TRAIT_NOCSIGHT "Blessing of Noc" // I can see just a bit more clearly in darkness.
 //Hearthstone end.
 
 // PATRON GOD TRAITS
@@ -50,6 +51,7 @@
 #define TRAIT_COMMIE "Blessing of Matthios" //recognized by bandits as an ally
 #define TRAIT_CHOSEN "Astrata's Chosen"
 #define TRAIT_SEXDEVO "Blessing of Eora" //sex devotion gain and extra healing.
+#define TRAIT_ABYSSOR_SWIM "Blessing of Abyssor" //less base fatigue drain when swimming
 #define TRAIT_FAITHLESS "Ignorant" //being faithless means gods won't really help you, will they
 
 #define TRAIT_BASHDOORS "bashdoors"
@@ -61,14 +63,17 @@
 #define TRAIT_LIMPDICK "limp_dick"
 #define TRAIT_SEXPASS "sexpass"
 #define TRAIT_STEELHEARTED "steelhearted" //no bad mood from dismembering or seeing this
-#define TRAIT_IWASREVIVED "iwasrevived" //prevents PQ gain from reviving the same person twice
-#define TRAIT_IWASUNZOMBIFIED "iwasunzombified" //prevents PQ gain from curing a zombie twice
-#define TRAIT_IWASHAUNTED "iwashaunted" //prevents spawning a haunt from a decapitated body twice
+#define TRAIT_IWASREVIVED "iwasrevived" //prevents PQ gain from reviving the same person twice (Apple:This isnt added to globalvars)
+#define TRAIT_IWASUNZOMBIFIED "iwasunzombified" //prevents PQ gain from curing a zombie twice (Apple:This isnt added to globalvars)
+#define TRAIT_IWASHAUNTED "iwashaunted" //prevents spawning a haunt from a decapitated body twice (Apple:This isnt added to globalvars)
 #define TRAIT_SCHIZO_AMBIENCE "schizo_ambience" //replaces all ambience with creepy shit
 #define TRAIT_SCREENSHAKE "screenshake" //screen will always be shaking, you cannot stop it
 #define TRAIT_NORUN "Decayed Flesh"
+#define TRAIT_PUNISHMENT_CURSE "PunishmentCurse"
+#define TRAIT_LEPROSY "Leprosy"
 
 GLOBAL_LIST_INIT(roguetraits, list(
+	TRAIT_LEPROSY = span_necrosis("I'm a disgusting leper..."),
 	TRAIT_CHOSEN = "Astrata choose you to represent her glory.",
 	TRAIT_WEBWALK = "I can move freely between webs.",
 	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay."),
@@ -114,8 +119,11 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SEEDKNOW = span_info("I know which seeds grow which crops."),
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_SEXDEVO = span_info("Sex is more benefical to me."),
+	TRAIT_ABYSSOR_SWIM = "The Abyssor protects me when I am at sea.",
+	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
 	TRAIT_PERFECT_TRACKER = span_info("I am the perfect tracker. No tracks will deceive my eyes, nor will they hide their secrets from me."),//Hearthstone change.
+	TRAIT_NOCSIGHT = "Noc blesses my eyes to be unburdened by the night." //Hearthstone change.
 ))
 
 // trait accessor defines

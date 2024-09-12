@@ -21,10 +21,6 @@
 
 /datum/job/roguetown/prince/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
-	if(GLOB.lordsurname && H)
-		if(input("Take the surname of the current ruler and be a Prince/Princess?"))
-			give_lord_surname(H)
-	..()
 	if(ishuman(H))
 		var/mob/living/carbon/human/Q = H
 		Q.advsetup = 1
@@ -120,24 +116,33 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
-		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random	//Added Silk Stockings for the female nobles
-		if(H.mind)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-			H.change_stat("perception", 2)
-			H.change_stat("endurance", -2)
-			H.change_stat("strength", -1)
-			H.change_stat("constitution", 1)
-			H.change_stat("speed", 2)
-			H.change_stat("intelligence", 2)
+		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(0,1), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(0,0,1), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(0,1), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+		H.change_stat("perception", -1)
+		H.change_stat("strength", -2)
+		H.change_stat("constitution", 1)
+		H.change_stat("fortune", 1)
+
+/datum/advclass/heir/inbred
+	name = "Inbred wastrel"
+	tutorial = "Your bloodline ensures Psydon smiles upon you by divine right, the blessing of nobility... until you were born, anyway. You are a child forsaken, and even though your body boils as you go about your day, your spine creaks, and your drooling form needs to be waited on tirelessly you are still considered more important then the peasant that keeps the town fed and warm. Remind them of that fact when your lungs are particularly pus free."
+	outfit = /datum/outfit/job/roguetown/heir/inbred
+	category_tags = list(CTAG_HEIR)
+
+/datum/outfit/job/roguetown/heir/inbred/pre_equip(mob/living/carbon/human/H)
+	..()
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NORUN, TRAIT_GENERIC)
@@ -169,7 +174,6 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/weaving, 1, TRUE)
 		H.change_stat("strength", -2)
 		H.change_stat("perception", -2)
 		H.change_stat("intelligence", -2)

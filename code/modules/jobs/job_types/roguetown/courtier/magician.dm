@@ -17,8 +17,11 @@
 	outfit = /datum/outfit/job/roguetown/magician
 	whitelist_req = FALSE
 	give_bank_account = 47
-	min_pq = 0
+	min_pq = 2
 	max_pq = null
+
+/datum/outfit/job/roguetown/magician
+	allowed_patrons = list(/datum/patron/divine/noc)
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -54,17 +57,19 @@
 		H.change_stat("strength", -1)
 		H.change_stat("constitution", -1)
 		H.change_stat("intelligence", 4)
-		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+		H.mind.adjust_spellpoints(3)
+	if(H.age == AGE_OLD)
+		if(H.mind)
 			H.change_stat("speed", -1)
 			H.change_stat("intelligence", 1)
 			H.change_stat("perception", 1)
-			if(ishumannorthern(H))
-				belt = /obj/item/storage/belt/rogue/leather/plaquegold
-				cloak = null
-				head = /obj/item/clothing/head/roguetown/wizhat
-				armor = /obj/item/clothing/suit/roguetown/shirt/robe/wizard
-				H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
+			H.mind.adjust_spellpoints(1)
+		belt = /obj/item/storage/belt/rogue/leather/plaquegold
+		cloak = null
+		head = /obj/item/clothing/head/roguetown/wizhat
+		armor = /obj/item/clothing/suit/roguetown/shirt/robe/wizard
+		if(ishumannorthern(H))
+			H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
 	switch(H.patron?.type)
 		if(/datum/patron/divine/pestra)
 			if(H.mind)

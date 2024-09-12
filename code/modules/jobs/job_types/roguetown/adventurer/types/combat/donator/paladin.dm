@@ -64,6 +64,8 @@
 			beltr = /obj/item/rogueweapon/huntingknife
 			id = /obj/item/clothing/ring/silver
 			cloak = /obj/item/clothing/cloak/tabard/crusader
+			backr = /obj/item/rogueweapon/sword/long
+			backl = /obj/item/storage/backpack/rogue/satchel
 			switch(H.patron.name)
 				if("Astrata")
 					cloak = /obj/item/clothing/cloak/tabard/crusader/astrata
@@ -75,11 +77,6 @@
 					cloak = /obj/item/clothing/cloak/tabard/crusader/pestra
 				if("Noc")
 					cloak = /obj/item/clothing/cloak/tabard/crusader/noc
-			if(prob(70))
-				backr = /obj/item/rogueweapon/sword
-			else
-				backr = /obj/item/rogueweapon/sword/long
-			backl = /obj/item/storage/backpack/rogue/satchel
 		if("Battle Master")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a battle-master."))

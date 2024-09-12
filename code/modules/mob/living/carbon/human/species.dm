@@ -446,6 +446,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	C.add_movespeed_modifier(MOVESPEED_ID_SPECIES, TRUE, 100, override=TRUE, multiplicative_slowdown=speedmod, movetypes=(~FLYING))
 
+	if(C.underwear)
+		qdel(C.underwear)
+		C.underwear = null
+
 	C.remove_all_bodypart_features()
 	for(var/bodypart_feature_type in bodypart_features)
 		var/datum/bodypart_feature/feature = new bodypart_feature_type()
@@ -946,6 +950,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate)
 
+/* deprecated shitty ass old milk stuff from hearthstone -vide
+		if(H.getorganslot(ORGAN_SLOT_BREASTS))
+			if(H.nutrition > NUTRITION_LEVEL_HUNGRY && H.getorganslot(ORGAN_SLOT_BREASTS).lactating && H.getorganslot(ORGAN_SLOT_BREASTS).milk_max > H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored) //Vrell - numbers may need to be tweaked for balance but hey this works for now.
+				var/milk_to_make = min(hunger_rate, H.getorganslot(ORGAN_SLOT_BREASTS).milk_max - H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored)
+				H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored += milk_to_make
+				H.adjust_nutrition(-milk_to_make)
+
+			else if(H.nutrition < NUTRITION_LEVEL_STARVING && H.getorganslot(ORGAN_SLOT_BREASTS).lactating) //Vrell - If starving, your milk drains automatically to slow your starvation.
+				var/milk_to_take = min(hunger_rate, H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored)
+				H.getorganslot(ORGAN_SLOT_BREASTS).milk_stored -= milk_to_take
+				H.adjust_nutrition(milk_to_take)
+*/
 	if (H.hydration > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))
 		// THEY HUNGER
 		var/hunger_rate = HUNGER_FACTOR

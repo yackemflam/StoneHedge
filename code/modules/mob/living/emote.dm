@@ -867,6 +867,12 @@
 	only_forced_audio = TRUE
 	show_runechat = FALSE
 
+/datum/emote/living/conqrah
+	key = "conqrah"
+	message = "shouts triumphally!"
+	emote_type = EMOTE_AUDIBLE
+	only_forced_audio = TRUE 
+
 /datum/emote/living/rage
 	key = "rage"
 	message = "screams in rage!"
@@ -1221,9 +1227,6 @@
 
 /datum/emote/living/custom/run_emote(mob/user, params, type_override = null, intentional = FALSE)
 	if(!can_run_emote(user, TRUE, intentional))
-		return FALSE
-	if(is_banned_from(user.ckey, "Emote"))
-		to_chat(user, span_boldwarning("I cannot send custom emotes (banned)."))
 		return FALSE
 	else if(QDELETED(user))
 		return FALSE

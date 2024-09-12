@@ -70,12 +70,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/voice_type = VOICE_TYPE_MASC	// LETHALSTONE EDIT: the type of soundpack the mob should use
 	var/age = AGE_ADULT						//age of character
 	var/origin = "Default"
-	var/underwear = "Nude"				//underwear type
-	var/underwear_color = null			//underwear color
-	var/undershirt = "Nude"				//undershirt type
 	var/accessory = "Nothing"
 	var/detail = "Nothing"
-	var/socks = "Nude"					//socks type
 	var/backpack = DBACKPACK				//backpack type
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
 	var/hairstyle = "Bald"				//Hair type
@@ -159,8 +155,10 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/descriptor_entries = list()
 	var/list/custom_descriptors = list()
 	var/defiant = TRUE
+	/// Tracker to whether the person has ever spawned into the round, for purposes of applying the respawn ban
+	var/has_spawned = FALSE
 
-	var/datum/char_accent = new /datum/char_accent/none()
+	var/char_accent = "No accent"
 
 
 /datum/preferences/New(client/C)
@@ -180,7 +178,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
-			if(check_nameban(C.ckey) || (C.blacklisted() == 1))
+			if(check_nameban(C.ckey))
 				real_name = pref_species.random_name(gender,1)
 			return
 	//Set the race to properly run race setter logic
@@ -224,9 +222,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 /datum/preferences/proc/ShowChoices(mob/user, tabchoice)
 	if(!user || !user.client)
-		return
-	var/mob/dead/new_player/N = user
-	if(!istype(N))
 		return
 	if(slot_randomized)
 		load_character(default_slot) // Reloads the character slot. Prevents random features from overwriting the slot if saved.
@@ -310,8 +305,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 // 			-----------START OF IDENT TABLE-----------
 			dat += "<h2>Identity</h2>"
 			dat += "<table width='100%'><tr><td width='75%' valign='top'>"
-			if(is_banned_from(user.ckey, "Appearance"))
-				dat += "<b>Thou are banned from using custom names and appearances. Thou can continue to adjust thy characters, but thee will be randomised once thee joins the game.</b><br>"
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME]'>Always Random Name: [(randomise[RANDOM_NAME]) ? "Yes" : "No"]</a>"
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME_ANTAG]'>When Antagonist: [(randomise[RANDOM_NAME_ANTAG]) ? "Yes" : "No"]</a>"
 			dat += "<b>Name:</b> "
@@ -534,13 +527,13 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<h2>Special Role Settings</h2>"
 
-			if(is_banned_from(user.ckey, ROLE_SYNDICATE))
+			if(is_total_antag_banned(user.ckey))
 				dat += "<font color=red><b>I am banned from antagonist roles.</b></font><br>"
 				src.be_special = list()
 
 
 			for (var/i in GLOB.special_roles_rogue)
-				if(is_banned_from(user.ckey, i))
+				if(is_antag_banned(user.ckey, i))
 					dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;bancheck=[i]'>BANNED</a><br>"
 				else
 					var/days_remaining = null
@@ -679,18 +672,22 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	dat += "<tr>"
 	dat += "<td width='33%' align='left'></td>"
 	dat += "<td width='33%' align='center'>"
-	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		switch(N.ready)
-			if(PLAYER_NOT_READY)
-				dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
-			if(PLAYER_READY_TO_PLAY)
-				dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
-	else
-		if(!is_active_migrant())
-			dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
+	var/mob/dead/new_player/N = user
+	if(istype(N))
+		if(SSticker.current_state <= GAME_STATE_PREGAME)
+			switch(N.ready)
+				if(PLAYER_NOT_READY)
+					dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
+				if(PLAYER_READY_TO_PLAY)
+					dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
 		else
-			dat += "<a class='linkOff' href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
-		dat += " - <a href='?_src_=prefs;preference=migrants'>MIGRATION</a>"
+			if(!is_active_migrant())
+				dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
+			else
+				dat += "<a class='linkOff' href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
+			dat += " - <a href='?_src_=prefs;preference=migrants'>MIGRATION</a>"
+	else
+		dat += "<a href='?_src_=prefs;preference=finished'>DONE</a>"
 
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
@@ -706,7 +703,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 		dat = list("<center>REGISTER!</center>")
 
 	winshow(user, "preferencess_window", TRUE)
-	var/datum/browser/popup = new(user, "preferences_browser", "<div align='center'>[used_title]</div>")
+	var/datum/browser/noclose/popup = new(user, "preferences_browser", "<div align='center'>[used_title]</div>")
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -736,7 +733,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	</script>
 	"}
 	winshow(user, "capturekeypress", TRUE)
-	var/datum/browser/popup = new(user, "capturekeypress", "<div align='center'>Keybindings</div>", 350, 300)
+	var/datum/browser/noclose/popup = new(user, "capturekeypress", "<div align='center'>Keybindings</div>", 350, 300)
 	popup.set_content(HTML)
 	popup.open(FALSE)
 	onclose(user, "capturekeypress", src)
@@ -796,7 +793,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			if(gender == FEMALE && job.f_title)
 				used_name = "[job.f_title]"
 			lastJob = job
-			if(is_banned_from(user.ckey, rank))
+			if(is_role_banned(user.ckey, job.title))
 				HTML += "[used_name]</td> <td><a href='?_src_=prefs;bancheck=[rank]'> BANNED</a></td></tr>"
 				continue
 			var/required_playtime_remaining = job.required_playtime_remaining(user.client)
@@ -810,7 +807,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			if(!job.required && !isnull(job.min_pq) && (get_playerquality(user.ckey) < job.min_pq))
 				HTML += "<font color=#a59461>[used_name] (Min PQ: [job.min_pq])</font></td> <td> </td></tr>"
 				continue
-			if(!job.required && !isnull(job.max_pq) && (get_playerquality(user.ckey) > job.max_pq))
+			if(!job.required && !isnull(job.max_pq) && (get_playerquality(user.ckey) > job.max_pq) && !is_misc_banned(parent.ckey, BAN_MISC_LUNATIC))
 				HTML += "<font color=#a59461>[used_name] (Max PQ: [job.max_pq])</font></td> <td> </td></tr>"
 				continue
 			var/job_unavailable = JOB_AVAILABLE
@@ -936,7 +933,7 @@ Slots: [job.spawn_positions]</span>
 			HTML += "<br>"
 		HTML += "<center><a href='?_src_=prefs;preference=job;task=reset'>Reset</a></center>"
 
-	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>Class Selection</div>", width, height)
+	var/datum/browser/noclose/popup = new(user, "mob_occupation", "<div align='center'>Class Selection</div>", width, height)
 	popup.set_window_options("can_close=0")
 	popup.set_content(HTML)
 	popup.open(FALSE)
@@ -1070,7 +1067,7 @@ Slots: [job.spawn_positions]</span>
 					<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)]<br>"
 		dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
 
-	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>Quirk Preferences</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/noclose/popup = new(user, "mob_occupation", "<div align='center'>Quirk Preferences</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -1128,7 +1125,7 @@ Slots: [job.spawn_positions]</span>
 	dat += "<a href ='?_src_=prefs;preference=keybinds;task=keybindings_reset'>\[Reset to default\]</a>"
 	dat += "</body>"
 
-	var/datum/browser/popup = new(user, "keybind_setup", "<div align='center'>Keybinds</div>", 600, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/noclose/popup = new(user, "keybind_setup", "<div align='center'>Keybinds</div>", 600, 600) //no reason not to reuse the occupation window, as it's cleaner that way
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -1141,13 +1138,13 @@ Slots: [job.spawn_positions]</span>
 	dat += "<center><a href='?_src_=prefs;preference=antag;task=close'>Done</a></center><br>"
 
 
-	if(is_banned_from(user.ckey, ROLE_SYNDICATE))
+	if(is_total_antag_banned(user.ckey))
 		dat += "<font color=red><b>I am banned from antagonist roles.</b></font><br>"
 		src.be_special = list()
 
 
 	for (var/i in GLOB.special_roles_rogue)
-		if(is_banned_from(user.ckey, i))
+		if(is_antag_banned(user.ckey, i))
 			dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;bancheck=[i]'>BANNED</a><br>"
 		else
 			var/days_remaining = null
@@ -1164,7 +1161,7 @@ Slots: [job.spawn_positions]</span>
 
 	dat += "</body>"
 
-	var/datum/browser/popup = new(user, "antag_setup", "<div align='center'>Special Role</div>", 250, 300) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/noclose/popup = new(user, "antag_setup", "<div align='center'>Special Role</div>", 250, 300) //no reason not to reuse the occupation window, as it's cleaner that way
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -1220,10 +1217,7 @@ Slots: [job.spawn_positions]</span>
 			if("random")
 				switch(joblessrole)
 					if(RETURNTOLOBBY)
-						if(is_banned_from(user.ckey, SSjob.overflow_role))
-							joblessrole = BERANDOMJOB
-						else
-							joblessrole = BERANDOMJOB
+						joblessrole = BERANDOMJOB
 					if(BEOVERFLOW)
 						joblessrole = BERANDOMJOB
 					if(BERANDOMJOB)
@@ -1718,11 +1712,9 @@ Slots: [job.spawn_positions]</span>
 							to_chat(user, span_info("[charflaw.desc]"))
 
 				if("char_accent")
-					var/selectedaccent
-					selectedaccent = input(user, "Choose your character's accent:", "Character Preference") as null|anything in GLOB.character_accents
+					var/selectedaccent = input(user, "Choose your character's accent:", "Character Preference") as null|anything in GLOB.character_accents
 					if(selectedaccent)
-						char_accent = GLOB.character_accents[selectedaccent]
-						char_accent = new char_accent()
+						char_accent = selectedaccent
 
 				if("ooccolor")
 					var/new_ooccolor = input(user, "Choose your OOC colour:", "Game Preference",ooccolor) as color|null
@@ -2047,9 +2039,21 @@ Slots: [job.spawn_positions]</span>
 					migrant.show_ui()
 					return
 
-				if("migrants")
-					migrant.show_ui()
+				if("finished")
+					user << browse(null, "window=latechoices") //closes late choices window
+					user << browse(null, "window=playersetup") //closes the player setup window
+					user << browse(null, "window=preferences") //closes job selection
+					user << browse(null, "window=mob_occupation")
+					user << browse(null, "window=latechoices") //closes late job selection
+					user << browse(null, "window=migration") // Closes migrant menu
+
+					SStriumphs.remove_triumph_buy_menu(user.client)
+
+					winshow(user, "preferencess_window", FALSE)
+					user << browse(null, "window=preferences_browser")
+					user << browse(null, "window=lobby_window")
 					return
+
 
 				if("save")
 					save_preferences()
@@ -2159,12 +2163,7 @@ Slots: [job.spawn_positions]</span>
 	character.skin_tone = skin_tone
 	character.hairstyle = hairstyle
 	character.facial_hairstyle = facial_hairstyle
-	//character.underwear = underwear
-//	character.underwear_color = underwear_color
-	character.undershirt = undershirt
-//	character.accessory = accessory
 	character.detail = detail
-	character.socks = socks
 	character.set_patron(selected_patron)
 	character.backpack = backpack
 	character.defiant = defiant
@@ -2179,7 +2178,7 @@ Slots: [job.spawn_positions]</span>
 
 	character.headshot_link = headshot_link
 	character.nudeshot_link = nudeshot_link
-	
+
 	// LETHALSTONE ADDITION BEGIN: additional customizations
 
 	character.statpack = statpack
@@ -2194,6 +2193,13 @@ Slots: [job.spawn_positions]</span>
 		if(L)
 			for(var/X in L)
 				ADD_TRAIT(character, curse2trait(X), TRAIT_GENERIC)
+
+	apply_trait_bans(character, parent.ckey)
+
+	if(is_misc_banned(parent.ckey, BAN_MISC_LEPROSY))
+		ADD_TRAIT(character, TRAIT_LEPROSY, TRAIT_BAN_PUNISHMENT)
+	if(is_misc_banned(parent.ckey, BAN_MISC_PUNISHMENT_CURSE))
+		ADD_TRAIT(character, TRAIT_PUNISHMENT_CURSE, TRAIT_BAN_PUNISHMENT)
 
 	if(icon_updates)
 		character.update_body()
@@ -2281,5 +2287,12 @@ Slots: [job.spawn_positions]</span>
 	if(!migrant)
 		return FALSE
 	if(!migrant.active)
+		return FALSE
+	return TRUE
+
+/datum/preferences/proc/allowed_respawn()
+	if(!has_spawned)
+		return TRUE
+	if(is_misc_banned(parent.ckey, BAN_MISC_RESPAWN))
 		return FALSE
 	return TRUE

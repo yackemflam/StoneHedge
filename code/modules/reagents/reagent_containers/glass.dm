@@ -272,10 +272,13 @@
 	return reagents.maximum_volume
 
 /obj/item/reagent_containers/glass/beaker/jar
-	name = "honey jar"
+	name = "Jar"
 	desc = ""
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "vapour"
+	icon = 'icons/roguetown/items/cooking.dmi'
+	icon_state = "jar"
+	dropshrink = 0.50
+	//icon = 'icons/obj/chemical.dmi' Changing the icon to a cooking icon, blame Antarion if this causes problems in the future.
+	//icon_state = "vapour"
 
 /obj/item/reagent_containers/glass/beaker/large
 	name = "large beaker"
@@ -362,18 +365,20 @@
 /obj/item/reagent_containers/glass/bucket
 	name = "bucket"
 	desc = ""
-	icon = 'icons/obj/janitor.dmi'
-	icon_state = "bucket"
-	item_state = "bucket"
-	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
+	icon = 'icons/roguetown/items/misc.dmi'
+	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
+	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
+	icon_state = "woodbucket"
+	item_state = "woodbucket"
 	custom_materials = list(/datum/material/iron=200)
 	w_class = WEIGHT_CLASS_BULKY
 	amount_per_transfer_from_this = 9
 	possible_transfer_amounts = list(9)
 	volume = 70
 	flags_inv = HIDEHAIR
-//	slot_flags = ITEM_SLOT_HEAD
+	reagent_flags = OPENCONTAINER
+	obj_flags = CAN_BE_HIT
+	gripped_intents = list(INTENT_POUR)
 	resistance_flags = NONE
 	armor = list("blunt" = 25, "slash" = 20, "stab" = 15, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50) //Weak melee protection, because you can wear it on your head
 	slot_equipment_priority = list( \
@@ -403,6 +408,11 @@
 	dropshrink = 0.8
 	slot_flags = null
 
+/obj/item/reagent_containers/glass/bucket/wooden/alter
+	icon = 'modular/Neu_Food/icons/cooking.dmi'
+
+/* using the version in Neu_Food instead
+
 /obj/item/reagent_containers/glass/bucket/wooden/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/natural/cloth))
 		var/obj/item/natural/cloth/T = I
@@ -420,7 +430,7 @@
 		user.visible_message(span_info("[user] soaks [T] in [src]."))
 		return
 	..()
-
+*/
 /obj/item/reagent_containers/glass/bucket/wooden/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -435,12 +445,18 @@
 
 	cut_overlays()
 
-	if(reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/roguetown/items/misc.dmi', "woodbucketfilling")
+	if(reagents.total_volume > 0) 
+		if(reagents.total_volume <= 50) 
+			var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bucket_half")
+			filling.color = mix_color_from_reagents(reagents.reagent_list)
+			filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+			add_overlay(filling)
 
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
-		filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
-		add_overlay(filling)
+		if(reagents.total_volume > 50) 
+			var/mutable_appearance/filling = mutable_appearance('modular/Neu_Food/icons/cooking.dmi', "bucket_full")
+			filling.color = mix_color_from_reagents(reagents.reagent_list)
+			filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+			add_overlay(filling)
 
 
 /obj/item/reagent_containers/glass/bucket/equipped(mob/user, slot)

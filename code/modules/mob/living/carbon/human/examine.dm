@@ -75,10 +75,6 @@
 			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][race_name] [used_title].")
 		else
 			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
-
-		if(GLOB.lord_titles[name])
-			. += span_notice("[m3] been granted the title of \"[GLOB.lord_titles[name]]\".")
-
 		if(dna.species.use_skintones)
 			var/skin_tone_wording = dna.species.skin_tone_wording ? lowertext(dna.species.skin_tone_wording) : "skin tone"
 			var/list/skin_tones = dna.species.get_skin_list()
@@ -131,6 +127,8 @@
 				. += span_userdanger("A MONSTER!")
 			if(mind.assigned_role == "Lunatic")
 				. += span_userdanger("LUNATIC!")
+			if(HAS_TRAIT(src, TRAIT_PUNISHMENT_CURSE))
+				. += span_userdanger("CURSED!")
 
 		if(HAS_TRAIT(src, TRAIT_MANIAC_AWOKEN))
 			. += span_userdanger("MANIAC!")
@@ -140,7 +138,7 @@
 		else if(HAS_TRAIT(src, TRAIT_COMMIE) && HAS_TRAIT(user, TRAIT_COMMIE))
 			. += span_notice("Fellow Giver!")
 
-	if(leprosy == 1)
+	if(HAS_TRAIT(src, TRAIT_LEPROSY))
 		. += span_necrosis("A LEPER...")
 
 	if(user != src)
@@ -320,7 +318,7 @@
 		)
 		for(var/bleed_zone in bleed_zones)
 			var/obj/item/bodypart/bleeder = get_bodypart(bleed_zone)
-			if(!bleeder?.get_bleed_rate() || (!observer_privilege && !get_location_accessible(src, bleeder.body_zone)))
+			if(!bleeder?.get_bleed_rate() || (!observer_privilege && !get_location_accessible(src, bleeder.body_zone, skip_undies = TRUE)))
 				continue
 			bleeding_limbs += parse_zone(bleeder.body_zone)
 		if(length(bleeding_limbs))

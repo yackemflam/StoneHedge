@@ -12,9 +12,9 @@
 
 	// CLASS ARCHETYPES
 	H.adjust_blindness(-3)
+	H.mind.adjust_spellpoints(2)
 	var/classes = list("Evoker","Arcanist","Enchanter","Spellblade")
 	var/classchoice = input("Choose your Specialization", "Available Specializations") as anything in classes
-
 	switch(classchoice)
 
 		if("Evoker")
@@ -155,6 +155,6 @@
 		cloak = /obj/item/clothing/cloak/half
 	if(classchoice == "Enchanter")
 		head = /obj/item/clothing/head/roguetown/wizhat
-		shirt = /obj/item/clothing/suit/roguetown/shirt/robe/merchant
+		shirt = /obj/item/clothing/suit/roguetown/shirt/robe/abyssoracorobe
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		shoes = /obj/item/clothing/shoes/roguetown/shalal

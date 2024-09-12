@@ -24,6 +24,7 @@
 	domain = "Intellect, Study, Divination, Introspection. Rivers, Moons, Reflections. (Passive Energies)"
 	desc = "Lune, the Silver Dragon. Twin of Elysius, symbolized by the moon. She is Patron of wisdom."
 	worshippers = "Wizards, Scholars, Wisened Folk,"
+	mob_traits = list(TRAIT_NOCSIGHT)
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness
 	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
 	confess_lines = list(
@@ -53,7 +54,7 @@
 	domain = "God of the Ocean, Storms and the Tide"
 	desc = "The Beloved Daughter of the Sea, gifted primordial kin food and water. She is said to be both cruel and calm, if her icey waters and wailing winds are heeded ahead of time. She is the warning and the Omen."
 	worshippers = "Men and Women of the Sea, Primitive Aquatics, Merfolk, Druids, Creatures of the Deep."
-	mob_traits = list (TRAIT_WATERBREATHING, TRAIT_SHOCKIMMUNE,)
+	mob_traits = list (TRAIT_WATERBREATHING, TRAIT_ABYSSOR_SWIM,)
 	confess_lines = list(
 		"ABYSSIA COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",

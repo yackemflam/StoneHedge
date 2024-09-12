@@ -198,8 +198,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Hedge Knight"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/bailiff
-	name = "Bailiff"
+/obj/effect/landmark/start/judge
+	name = "Judge"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/councillor
@@ -317,10 +317,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/beastmonger
 	name = "Butcher"
-	icon_state = "arrow"
-
-/obj/effect/landmark/start/cook
-	name = "Cook"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/gravedigger
@@ -498,13 +494,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 //Vampire Additions
 
 /obj/effect/landmark/start/vampthrall
-	name = "Vampire Thrall"
+	name = "Antediluvian Peasant"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/vampthralllate
 	name = "Vampirethralllate"
 	icon_state = "arrow"
-	jobspawn_override = list("Vampire Thrall")
+	jobspawn_override = list("Antediluvian Peasant")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampsmith
@@ -554,10 +550,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/atmospheric_technician
 	name = "Atmospheric Technician"
 	icon_state = "Atmospheric Technician"
-
-/obj/effect/landmark/start/cook
-	name = "Cook"
-	icon_state = "Cook"
 
 /obj/effect/landmark/start/shaft_miner
 	name = "Shaft Miner"

@@ -64,7 +64,7 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Consort",
 	"Royal Heir",
 	"Watchmen Captain",
-	"Bailiff",
+	"Judge",
 	"Councillor",
 	"Steward",
 	"Knight",
@@ -176,7 +176,7 @@ GLOBAL_LIST_INIT(viking_positions, list(
 ))
 
 GLOBAL_LIST_INIT(vampire_positions, list(
-	"Vampire Thrall",
+	"Antediluvian Peasant",
 	"Vampire Smith"
 ))
 

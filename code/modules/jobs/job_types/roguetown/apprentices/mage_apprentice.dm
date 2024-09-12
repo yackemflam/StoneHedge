@@ -27,6 +27,10 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/keyring/mage
 	r_hand = /obj/item/rogueweapon/woodstaff
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+		H.mind.adjust_spellpoints(1)
 	if(H.gender == MALE)
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		armor = /obj/item/clothing/suit/roguetown/armor/workervest
