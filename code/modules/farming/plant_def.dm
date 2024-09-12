@@ -151,7 +151,8 @@
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "pumpkin"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/pumpkin
-	produce_amount = 3
+	produce_amount_min = 3
+	produce_amount_max = 4
 	maturation_nutrition = 30
 	produce_nutrition = 20
 	maturation_time = 6 MINUTES
@@ -163,7 +164,8 @@
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "carrot"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/carrot
-	produce_amount = 4
+	produce_amount_min = 4
+	produce_amount_max = 5
 	maturation_nutrition = 30
 	produce_nutrition = 20
 	maturation_time = 4 MINUTES
@@ -175,7 +177,8 @@
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "garlic"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/garlic
-	produce_amount = 4
+	produce_amount_min = 4
+	produce_amount_max = 5
 	maturation_nutrition = 30
 	produce_nutrition = 20
 	maturation_time = 5 MINUTES
@@ -187,7 +190,8 @@
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "onion"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/onion/rogue
-	produce_amount = 4
+	produce_amount_min = 4
+	produce_amount_max = 5
 	maturation_nutrition = 30
 	produce_nutrition = 20
 	maturation_time = 5 MINUTES
@@ -199,7 +203,8 @@
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "cabbage"
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/cabbage/rogue
-	produce_amount = 4
+	produce_amount_min = 4
+	produce_amount_max = 5
 	maturation_nutrition = 30
 	produce_nutrition = 20
 	maturation_time = 5 MINUTES

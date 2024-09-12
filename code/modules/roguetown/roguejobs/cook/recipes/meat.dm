@@ -1,3 +1,4 @@
+/*
 /datum/crafting_recipe/roguetown/cooking/sausage
 	name = "sausage (mm)"
 	reqs = list(
@@ -56,7 +57,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/fat = 1,
 		/obj/item/reagent_containers/powder/salt = 1)
-	result = /obj/item/reagent_containers/food/snacks/salo
+	result = /obj/item/reagent_containers/food/snacks/fat/salo
 	craftdiff = 0
 	structurecraft = /obj/structure/fluff/dryingrack
 	req_table = FALSE
@@ -73,3 +74,4 @@
 	craftdiff = 0
 	subtype_reqs = TRUE
 	structurecraft = /obj/structure/fluff/dryingrack
+*/
