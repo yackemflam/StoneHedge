@@ -113,6 +113,10 @@
 	///used for in-round gained roles for examine.
 	var/funnyrole
 
+	var/flavor_text = null
+
+	var/ooc_notes = null
+
 	possible_rmb_intents = list(/datum/rmb_intent/feint,\
 	/datum/rmb_intent/aimed,\
 	/datum/rmb_intent/strong,\

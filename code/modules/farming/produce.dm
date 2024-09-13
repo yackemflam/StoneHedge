@@ -260,7 +260,7 @@
 	tastes = list("stinging pain" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
 
-/obj/item/reagent_containers/food/snacks/grown/rogue/potato
+/obj/item/reagent_containers/food/snacks/grown/potato/rogue
 	seed = /obj/item/seeds/potato
 	name = "potato"
 	desc = ""

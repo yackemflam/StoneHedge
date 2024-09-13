@@ -31,6 +31,22 @@
 	flag = "bullet"
 	speed = 0.5
 
+/obj/projectile/bullet/reusable/bolt/on_hit(atom/target)
+	. = ..()
+
+	var/mob/living/L = firer
+	if(!L || !L.mind) return
+
+	var/skill_multiplier = 0
+
+	if(isliving(target)) // If the target theyre shooting at is a mob/living
+		var/mob/living/T = target
+		if(T.stat != DEAD) // If theyre alive
+			skill_multiplier = 4
+
+	if(skill_multiplier)
+		L.mind.adjust_experience(/datum/skill/combat/crossbows, L.STAINT * skill_multiplier)
+
 /obj/projectile/bullet/reusable/bolt/poison
 	name = "poisoned bolt"
 	damage = 70
@@ -82,9 +98,21 @@
 	flag = "bullet"
 	speed = 0.4
 
-/obj/projectile/bullet/reusable/arrow/iron
-	name = "iron arrow"
-	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/iron
+/obj/projectile/bullet/reusable/arrow/on_hit(atom/target)
+	. = ..()
+
+	var/mob/living/L = firer
+	if(!L || !L.mind) return
+
+	var/skill_multiplier = 0
+
+	if(isliving(target)) // If the target theyre shooting at is a mob/living
+		var/mob/living/T = target
+		if(T.stat != DEAD) // If theyre alive
+			skill_multiplier = 4
+
+	if(skill_multiplier)
+		L.mind.adjust_experience(/datum/skill/combat/bows, L.STAINT * skill_multiplier)
 
 /obj/projectile/bullet/reusable/arrow/stone
 	name = "stone arrow"
