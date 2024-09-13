@@ -21,6 +21,7 @@
 		var/mob/user = usr
 		var/list/dat = list("<table width='100%' height='100%'><td align='center' valign='middle'><img src='[nudeshot_link]' width='560px' height='680px'></td></table>")
 		var/datum/browser/popup = new(user, "nudeshot", "<div align='center'>[src]</div>", 610, 730)
+		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return
 	if(href_list["task"] == "view_flavor")

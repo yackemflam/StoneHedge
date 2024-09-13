@@ -508,25 +508,21 @@
 
 	if(!obscure_name && headshot_link)
 		. += "<a href='?src=[REF(src)];task=view_headshot;'>View face closely</a>"
+		for(var/line in lines)        //this line
+			. += span_info(line)	// and this line are responsible for placing descriptor position
 	if(nudeshot_link && !wear_shirt)
 		. += "<a href='?src=[REF(src)];task=view_nudeshot;'>View body closely</a>"
-
-	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
-	for(var/line in lines)
-		. += span_info(line)
-
+		for(var/line in lines)
+			. += span_info(line)
 	//unnecessary
 	//	. += "<a href='?src=[REF(src)];task=view_headshot;'>View Infocard</a>"
 	//	. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
-		for(var/line in lines)        //this line
-			. += span_info(line)	// and this line are responsible for placing descriptor position
 	if(!obscure_name && flavor_text)
 		if(!obscure_name && headshot_link)
-	 	return
-		. += "<a href='?src=[REF(src)];task=view_flavor;'>View Description</a>"
-		. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
-		for(var/line in lines)        //this line
-			. += span_info(line)	// and this line are responsible for placing descriptor position
+			. += "<a href='?src=[REF(src)];task=view_flavor;'>View Description</a>"
+			. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
+			for(var/line in lines)
+				. += span_info(line)
 	if(!obscure_name && ooc_notes)
 		if(!obscure_name && headshot_link)
 			return
@@ -534,8 +530,8 @@
 			return
 		. += "<a href='?src=[REF(src)];task=view_ooc_notes;'>View OOC Notes</a>"
 		. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
-		for(var/line in lines)        //this line
-			. += span_info(line)	// and this line are responsible for placing descriptor position
+		for(var/line in lines)
+			. += span_info(line)
 	if(!obscure_name)
 		if(!obscure_name && headshot_link)
 			return
@@ -544,8 +540,8 @@
 		if(!obscure_name && ooc_notes)
 			return
 		. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
-		for(var/line in lines)        //this line
-			. += span_info(line)	// and this line are responsible for placing descriptor position
+		for(var/line in lines)
+			. += span_info(line)
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))
 		. += trait_exam

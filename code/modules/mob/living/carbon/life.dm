@@ -19,7 +19,7 @@
 			return
 
 		handle_wounds()
-		//handle_embedded_objects()
+		handle_embedded_objects()
 		handle_blood()
 		handle_roguebreath()
 		var/bprv = handle_bodyparts()

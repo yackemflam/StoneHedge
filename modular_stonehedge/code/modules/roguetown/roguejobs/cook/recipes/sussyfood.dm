@@ -144,6 +144,13 @@
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rogue/mothercheese/slice/aged
 	icon_state = "mothercheese_slice"
 
+/obj/item/reagent_containers/food/snacks/rogue/mothercheese/slice/aged
+	name = "slice of cured breastmilk cheese"
+	desc = "A golden slice of breast milk cheese."
+	icon_state = "cheese_slice"
+	become_rot_type = null
+	rotprocess = null
+
 /obj/item/reagent_containers/food/snacks/rogue/cheddarslice/aged
 	name = "slice of aged cheese"
 	desc = "A dangerous slice of cheese."
