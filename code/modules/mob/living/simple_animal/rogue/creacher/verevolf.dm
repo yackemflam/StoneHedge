@@ -33,7 +33,7 @@
 	if(prob(33))
 		milkies = TRUE
 		gender = FEMALE
-	givegenitals()
+	give_genitals()
 	if(gender == MALE)
 		icon_state = "wwolf_m"
 		icon_dead = "wwolf_md"

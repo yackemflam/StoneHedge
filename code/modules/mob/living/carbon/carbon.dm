@@ -1293,7 +1293,7 @@
 //maybe if we make some monsters that would be similiar to werewolves as is, unlike goblins these will take existing gender than assign one.
 //internal organs so sixtuplet or whatever the fuck breasts etc shouldnt matter probably, no graphic. Maybe can use for monstergirls or something too.
 //Call this proc to give genitals automatically where needed.
-/mob/living/proc/givegenitals()
+/mob/living/proc/give_genitals()
 	defiant = 0
 	erpable = TRUE
 	if(!sexcon)

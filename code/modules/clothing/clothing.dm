@@ -58,7 +58,10 @@
 	var/immune_to_genderswap = FALSE
 	var/armor_class = ARMOR_CLASS_NONE
 
+	///for skirts etc that allow passage to fun lands.
 	var/genitalaccess = FALSE
+	///for bra only body armors that allow groin interactions.
+	var/is_bra = FALSE
 
 	sellprice = 1
 
