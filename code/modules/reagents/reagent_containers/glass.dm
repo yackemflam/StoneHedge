@@ -46,7 +46,7 @@
 			if(ishuman(M))
 				var/mob/living/carbon/human/humanized = M
 				var/obj/item/organ/filling_organ/breasts/tiddies = humanized.getorganslot(ORGAN_SLOT_BREASTS) // tiddy hehe
-				if(humanized.zone_selected == BODY_ZONE_CHEST)
+				if(humanized.zone_selected == BODY_ZONE_CHEST) //chest
 					if(!humanized.wear_shirt || (!humanized.wear_shirt.flags_inv & HIDEBOOB || humanized.wear_shirt.genitalaccess))
 						if(humanized.has_breasts())
 							if(tiddies.reagents.total_volume > 0)
@@ -63,7 +63,7 @@
 							to_chat(user, span_warning("[humanized] cannot be milked!"))
 					else
 						to_chat(user, span_warning("[humanized]'s chest must be exposed before I can milk them!"))
-				if(humanized.zone_selected == BODY_ZONE_PRECISE_GROIN)
+				if(humanized.zone_selected == BODY_ZONE_PRECISE_GROIN) //groin
 					if(!humanized.wear_pants || (humanized.wear_pants.flags_inv & HIDECROTCH || humanized.wear_pants.genitalaccess == FALSE))
 						var/obj/item/organ/filling_organ/testicles/testes = humanized.getorganslot(ORGAN_SLOT_TESTICLES)
 						if(testes)
@@ -76,11 +76,11 @@
 								else
 									to_chat(user, span_warning("[src] is full."))
 							else
-								to_chat(user, span_warning("[humanized] is out of milk!"))
+								to_chat(user, span_warning("[humanized] is out of cum!"))
 						else
 							to_chat(user, span_warning("[humanized] cannot be milked!"))
 					else
-						to_chat(user, span_warning("[humanized]'s chest must be exposed before I can milk them!"))
+						to_chat(user, span_warning("[humanized]'s groin must be exposed before I can milk them!"))
 				return 1
 
 		if(!reagents || !reagents.total_volume)
