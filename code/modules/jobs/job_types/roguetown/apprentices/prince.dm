@@ -83,7 +83,7 @@
 		pants = /obj/item/clothing/under/roguetown/tights
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/keyring/royal
+		beltl = /obj/item/storage/keyring/royal
 		beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 		backr = /obj/item/storage/backpack/rogue/satchel
 		if(H.mind)
@@ -108,7 +108,7 @@
 			H.change_stat("intelligence", 2)
 
 	else
-		beltl = /obj/item/keyring/royal
+		beltl = /obj/item/storage/keyring/royal
 		head = /obj/item/clothing/head/roguetown/hennin
 		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 		belt = /obj/item/storage/belt/rogue/leather/cloth/lady

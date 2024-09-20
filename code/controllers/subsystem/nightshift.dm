@@ -87,5 +87,5 @@ SUBSYSTEM_DEF(nightshift)
 		apply_status_effect(/datum/status_effect/debuff/sleepytime)
 		if(HAS_TRAIT(src, TRAIT_NIGHT_OWL))
 			add_stress(/datum/stressevent/night_owl)
-/*		else
-			add_stress(/datum/stressevent/sleepytime)  Sleep advancement. We don't have this so editted out. */
+		else
+			add_stress(/datum/stressevent/sleepytime)

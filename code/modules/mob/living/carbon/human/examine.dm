@@ -8,7 +8,7 @@
 		if(HAS_TRAIT(user, TRAIT_XENOPHOBIC))
 			event_type = /datum/stressevent/shunned_race_xenophobic
 		var/datum/stressevent/event = user.add_stress(event_type)
-		event.desc = self_species.stress_desc /Editted out of 21 traits port, likely from sleep adv pr*/
+		event.desc = self_species.stress_desc */
 	if(user.has_flaw(/datum/charflaw/paranoid) && (STASTR - user.STASTR) > 1)
 		user.add_stress(/datum/stressevent/parastr)
 	if(HAS_TRAIT(user, TRAIT_JESTERPHOBIA) && job == "Jester")

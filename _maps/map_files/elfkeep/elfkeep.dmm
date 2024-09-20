@@ -7752,7 +7752,7 @@
 /area/rogue/indoors/town/tavern)
 "dYP" = (
 /obj/structure/table/wood,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/structure/fluff/railing/wood{
 	dir = 1;
 	pixel_y = 7;
@@ -15173,7 +15173,7 @@
 	icon_state = "tablewood1";
 	dir = 1
 	},
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/velder,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
@@ -20029,7 +20029,7 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/town_barracks,
 /obj/item/roguekey/town_barracks,
 /obj/item/roguekey/town_barracks,
@@ -34749,8 +34749,8 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/town_barracks,
 /obj/item/roguekey/town_barracks,
 /obj/item/roguekey/town_barracks,
@@ -35860,7 +35860,7 @@
 "tuG" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/roguekey/walls,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/storage/backpack/rogue/satchel,
 /turf/open/floor/carpet/royalblack,
@@ -42211,7 +42211,7 @@
 	icon_state = "largetable";
 	dir = 8
 	},
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/rogue/instrument/lute,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"

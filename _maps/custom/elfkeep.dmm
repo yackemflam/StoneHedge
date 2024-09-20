@@ -1613,7 +1613,7 @@
 "bia" = (
 /obj/structure/closet/crate/chest,
 /obj/item/rope/chain,
-/obj/item/roguekey/sheriff,
+/obj/item/roguekey/sheriff_office,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
 "big" = (
@@ -5913,7 +5913,7 @@
 /area/rogue/indoors/town/tavern)
 "dYP" = (
 /obj/structure/table/wood,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/structure/fluff/railing/wood{
 	dir = 1;
 	pixel_y = 7;
@@ -11128,7 +11128,7 @@
 	icon_state = "longtable_mid";
 	dir = 1
 	},
-/obj/item/roguekey/sheriff,
+/obj/item/roguekey/sheriff_office,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
 "hZa" = (
@@ -11336,7 +11336,7 @@
 	icon_state = "tablewood1";
 	dir = 1
 	},
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/velder,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
@@ -15037,7 +15037,7 @@
 	},
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/garrison,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/tile{
 	icon_state = "greenstone"
 	},
@@ -26065,8 +26065,8 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/roguekey/walls,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/tile{
 	icon_state = "greenstone"
 	},
@@ -26871,7 +26871,7 @@
 /obj/structure/closet/crate/roguecloset,
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/walls,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/storage/backpack/rogue/satchel,
 /turf/open/floor/carpet/royalblack,
@@ -31662,7 +31662,7 @@
 	icon_state = "largetable";
 	dir = 8
 	},
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/rogue/instrument/lute,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"

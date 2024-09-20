@@ -31,8 +31,8 @@
 		else
 			to_chat(user, span_warning("Wrong key."))
 			return
-	if(istype(P, /obj/item/keyring))
-		var/obj/item/keyring/K = P
+	if(istype(P, /obj/item/storage/keyring))
+		var/obj/item/storage/keyring/K = P
 		for(var/obj/item/roguekey/KE in K.keys)
 			if(KE.lockid == "merchant")
 				locked = !locked
@@ -226,7 +226,7 @@
 	START_PROCESSING(SSroguemachine, src)
 	update_icon()
 	held_items[/obj/item/storage/box/matches] = list("PRICE" = 8,"NAME" = "matches")
-	held_items[/obj/item/keyring			] = list("PRICE" = 5,"NAME" = "keyring")
+	held_items[/obj/item/storage/keyring			] = list("PRICE" = 5,"NAME" = "keyring")
 	held_items[/obj/item/needle				] = list("PRICE" = 10,"NAME" = "needle")
 	held_items[/obj/item/flint				] = list("PRICE" = 10,"NAME" = "flint")
 	held_items[/obj/item/paper/scroll		] = list("PRICE" = 3,"NAME" = "scroll")

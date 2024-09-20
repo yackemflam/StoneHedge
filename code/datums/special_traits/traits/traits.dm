@@ -1,5 +1,6 @@
 //// Sleep Specials
 //// these should still be in the round-start/late join specials as well! It's just these are contextually fitting for Sleep Specials as well!
+/* made most of those into traits instead.
 /datum/special_trait/nothing
 	name = "Nothing"
 	greet_text = span_notice("You're not special")
@@ -563,3 +564,4 @@
 /datum/special_trait/illicit_merchant/on_apply(mob/living/carbon/human/character, silent)
 	character.mind.special_items["Merchant Key"] = /obj/item/roguekey/merchant
 	character.mind.special_items["GOLDFACE Gem"] = /obj/item/gem_device/goldface
+*/

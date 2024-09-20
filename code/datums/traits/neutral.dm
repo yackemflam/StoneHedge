@@ -39,6 +39,7 @@
 		var/datum/species/species = H.dna.species
 		species.disliked_food &= ~PINEAPPLE
 
+/*
 /datum/quirk/deviant_tastes
 	name = "Deviant Tastes"
 	desc = "Stuff you like is now the stuff you hate, and other way around. (probably) Has no effect."
@@ -60,16 +61,16 @@
 		var/datum/species/species = H.dna.species
 		species.liked_food = initial(species.liked_food)
 		species.disliked_food = initial(species.disliked_food)
+*/
 
 /datum/quirk/monsterhunter
-	name = "Monster hunter"
-	desc = "Allows targeting by specific monsters for something else than just killing. May be unfair to you in combat."
+	name = "Monster \"Hunter\""
+	desc = "Allows targeting by specific monsters for something more than just killing. May be unfair to you in combat."
 	value = 0
 	gain_text = span_notice("I want to feel a monster inside.. or inside a monster.")
 	lose_text = span_notice("I no longer am a degenerate.")
 
 /datum/quirk/selfawaregeni
 	name = "Sensitiveness"
-	desc = "I feel more about my lewd bits (you will receive too much messages about those likely.)"
+	desc = "I can tell more about my private bits (may be spammy, exact liquid information and alerts etc.)"
 	value = 0
-	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."

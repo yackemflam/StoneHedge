@@ -163,7 +163,6 @@ datum/quirk/fan_mime
 	name = "Night Vision"
 	desc = "I see a little better in the dark."
 	value = 1
-	mob_trait = TRAIT_NIGHT_VISION
 	gain_text = span_notice("The shadows seem a little less dark.")
 	lose_text = span_danger("Everything seems a little darker.")
 	medical_record_text = "Patient's eyes show above-average acclimation to darkness."
@@ -173,7 +172,18 @@ datum/quirk/fan_mime
 	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
 	if(!eyes || eyes.lighting_alpha)
 		return
-	eyes.Insert(H) //refresh their eyesight and vision
+	eyes.see_in_dark = 1
+	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_LESSER_NV_TRAIT
+	eyes.Insert(H)
+
+/datum/quirk/elvishtalker
+	name = "Knows Elvish"
+	desc = "I learned to speak elvish in my time here."
+	value = 1
+
+/datum/quirk/elvishtalker/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/elvish)
 
 /*
 /datum/quirk/photographer

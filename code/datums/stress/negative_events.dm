@@ -216,7 +216,7 @@
 	stressadd = 1
 //	desc = span_red("My head is cold and ugly.")
 
-/datum/stressevent/sleeptime
+/datum/stressevent/sleepytime
 	timer = 0
 	stressadd = 1
 	desc = span_red("I'm tired.")

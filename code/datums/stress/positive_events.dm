@@ -140,7 +140,7 @@
 
 /datum/stressevent/beautiful
 	stressadd = -2
-	desc = span_green("Their face is a work of art")
+	desc = span_green("I saw someone beautiful.")
 	timer = 2 MINUTES
 
 /datum/stressevent/night_owl

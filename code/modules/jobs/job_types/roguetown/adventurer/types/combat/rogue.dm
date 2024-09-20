@@ -34,6 +34,7 @@
 			duelistarch(H)
 
 /datum/outfit/job/roguetown/adventurer/rogue/proc/roguearch(mob/living/carbon/human/H)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rogue_vanish)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
@@ -72,6 +73,7 @@
 	H.change_stat("intelligence", 2)
 
 /datum/outfit/job/roguetown/adventurer/rogue/proc/assassinarch(mob/living/carbon/human/H)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rogue_vanish)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
@@ -155,3 +157,29 @@
 	H.change_stat("speed", 2)
 	H.change_stat("intelligence", 2)
 	H.visible_message(span_info("I trained as a swashbuckler, flair and precision is my weapon... And some dirty tricks under my cape. I can fool people into underestimating me, their last mistake."))
+
+//rogue innate vanish
+/obj/effect/proc_holder/spell/self/rogue_vanish
+	name = "Vanish"
+	overlay_state = "Smoke Bomb"
+	releasedrain = 0
+	charge_max = 50 SECONDS
+	still_recharging_msg = span_notice("I don't have another smoke bomb ready yet.")
+	warnie = "sydwarning"
+	invocation_emote_self = "pulls out a smoke bomb and slams it to the ground!"
+	movement_interrupt = FALSE
+	antimagic_allowed = TRUE
+	sound = 'sound/misc/explode/incendiary (1).ogg'
+	invocation = ""
+	invocation_type = "none"
+	associated_skill = /datum/skill/misc/sneaking
+	cooldown_min = 20 SECONDS
+
+/obj/effect/proc_holder/spell/self/rogue_vanish/cast(mob/living/user = usr)
+	new /obj/effect/particle_effect/smoke(get_turf(user))
+	user.visible_message(span_warning("[user] vanishes in a puff of smoke!"), span_notice("You vanish in a puff of smoke!"))
+	animate(user, alpha = 100, time = 1 SECONDS, easing = EASE_IN)
+	user.mob_timers[MT_INVISIBILITY] = world.time + 15 SECONDS
+	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, update_sneak_invis), TRUE), 15 SECONDS)
+	addtimer(CALLBACK(user, TYPE_PROC_REF(/atom/movable, visible_message), span_warning("[user] fades back into view."), span_notice("You become visible again.")), 15 SECONDS)
+	return FALSE
