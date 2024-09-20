@@ -75,6 +75,8 @@
 		6 = -1,
 	)
 
+	var/experience_multiplier = 0.5 // Multiply int with this for total XP gain
+
 	/// Handles techweb-oriented surgeries
 	var/requires_tech = FALSE
 	/**
@@ -231,7 +233,7 @@
 				return FALSE
 	*/
 
-	if(!ignore_clothes && !get_location_accessible(target, target_zone || bodypart.body_zone, skip_undies = TRUE))
+	if(!ignore_clothes && !get_location_accessible(target, target_zone || bodypart.body_zone, skipundies = TRUE))
 		return FALSE
 
 	return TRUE
@@ -317,6 +319,9 @@
 	LAZYREMOVE(target.surgeries, target_zone)
 	var/success = !try_to_fail && ((iscyborg(user) && !silicons_obey_prob) || prob(success_prob)) && chem_check(target)
 	if(success && success(user, target, target_zone, tool, intent))
+		if(ishuman(user))
+			var/mob/living/carbon/human/doctor = user
+			user.mind.adjust_experience(/datum/skill/misc/medicine, doctor.STAINT * (skill_min * experience_multiplier))
 		play_success_sound(user, target, target_zone, tool)
 		if(repeating && can_do_step(user, target, target_zone, tool, intent, try_to_fail))
 			initiate(user, target, target_zone, tool, intent, try_to_fail)

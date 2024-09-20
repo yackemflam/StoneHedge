@@ -57,7 +57,7 @@
 		bodypart_status += "[src] is dislocated."
 	var/location_accessible = TRUE
 	if(owner)
-		location_accessible = get_location_accessible(owner, body_zone, skip_undies = TRUE)
+		location_accessible = get_location_accessible(owner, body_zone, skipundies = TRUE)
 		if(!observer_privilege && !location_accessible)
 			bodypart_status += "Obscured by clothing."
 	var/owner_ref = owner ? REF(owner) : REF(src)
@@ -116,7 +116,7 @@
 
 	if(owner)
 		location_accessible = get_location_accessible(owner, body_zone) //Hidden by underwear
-		if((body_zone == BODY_ZONE_CHEST || body_zone == BODY_ZONE_PRECISE_GROIN) && location_accessible) //Vrell - Makes genitals visible when inspecting the chest.
+		if(body_zone == BODY_ZONE_CHEST || body_zone == BODY_ZONE_PRECISE_GROIN) //Vrell - Makes genitals visible when inspecting the chest.
 			bodypart_status += "<B>Genitalia:</B>"
 			if(owner.has_penis())
 				var/obj/item/organ/penis/ownerpenis = owner.getorgan(/obj/item/organ/penis)

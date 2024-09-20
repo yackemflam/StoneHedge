@@ -66,7 +66,7 @@
 	domain = "War, Dance, Tactic, Rejoice, Celebration."
 	desc = "The dervish of Blades, Minhur teaches that battle is like a dance; the duality between life/death and revelry. Minhur's followers prefer dexterity and tactful dancelike movements; encouraging mortals to act with decorum, etiquette and poise whenever possible."
 	worshippers = "Warriors, Sellswords & Fencers."
-	mob_traits = list (TRAIT_SHOCKIMMUNE, TRAIT_DODGEEXPERT,)
+	mob_traits = list (TRAIT_SHOCKIMMUNE, TRAIT_DODGEEXPERT)
 	confess_lines = list(
 		"MINHUR'S WHIRLWIND!",
 		"THROUGH STRIFE, GRACE!",
@@ -117,11 +117,9 @@
 	desc = "Hermeir is known as the Messenger; said to have a staff of entwined serpents in a figure eight, one white, the other black. Which their magick staff they are able to discern all things. To know all truths and observations with time in their immortal knowledgeable gaze. The followers of Hermeir are able to utilize magic as much as the mundane to assist the wounded,or departed. Hermeir believes whatever the means - we must swear an oath to perpetual foward progress and divine good.."
 	worshippers = "The Sick, Phyicians, Apothecaries, Healers, Scientists, Alchemists."
 	mob_traits = list(TRAIT_EMPATH, TRAIT_ROT_EATER)
-	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
-	t1 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t2 = /obj/effect/proc_holder/spell/invoked/heal
-	t3 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
-	t4 = /obj/effect/proc_holder/spell/invoked/cure_rot
+	t1 = /obj/effect/proc_holder/spell/invoked/heal
+	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
+	t3 = /obj/effect/proc_holder/spell/invoked/cure_rot
 	confess_lines = list(
 		"Hermeir will guide all formula!",
 		"The Wheel turns, I am but a part of it all!",
@@ -133,7 +131,7 @@
 	domain = "Fire, Metalwork, Temperance, Defence, Craft, Cunning, Artisanry."
 	desc = "Svaeryog blessed  the lands with metal and the lessons of temperance. Iron of heart and mind through perseverance. He was said to be a mortal who turned himself with magick and metals to the form of a mighty divine golem. "
 	worshippers = "Smiths, Crafters, Masochists, Miners, Artisans."
-	mob_traits = list(TRAIT_BREADY)
+	mob_traits = list(TRAIT_MALUMSGRACE)
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	confess_lines = list(
 		"Blessed forgefires be my guidance!",
@@ -148,7 +146,7 @@
 	domain = "Feeling, Empathy, Passion.Hearts, Desires, Connection."
 	desc = "Viiritri is the god of emotions, the soul and the heart. Viiritri teaches the art of feeling, and their devoted are often spiritual healers and lovers of all walks. Viiritri is said to take the shape of songbirds and other mystical acts  of inspiration. Their realm known as Halceon is rumored to be full of song, dance and bliss to those who loved truly, purely and freely in her service."
 	worshippers = "Lovers, Healers, Adventurers, Poets, Families and Warriors."
-	mob_traits = list(TRAIT_SEXDEVO, TRAIT_SEEDKNOW,TRAIT_GOODLOVER,)
+	mob_traits = list(TRAIT_SEXDEVO, TRAIT_SEEDKNOW)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/bud
 	t2 = /obj/effect/proc_holder/spell/invoked/eoracurse

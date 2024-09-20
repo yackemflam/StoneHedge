@@ -36,15 +36,16 @@
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-		shoes = /obj/item/clothing/shoes/roguetown/shortboots
-		belt = /obj/item/storage/belt/rogue/leather
-		beltr = /obj/item/keyring/servant
-		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
+		belt = /obj/item/storage/belt/rogue/leather/rope
+		neck = /obj/item/storage/belt/rogue/pouch
+		beltr = /obj/item/storage/keyring/servant
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-		cloak = /obj/item/clothing/cloak/apron/waist
-		belt = /obj/item/storage/belt/rogue/leather
-		beltr = /obj/item/keyring/servant
-		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+		neck = /obj/item/storage/belt/rogue/pouch
+		belt = /obj/item/storage/belt/rogue/leather/rope
+		beltr = /obj/item/storage/keyring/servant
+		H.change_stat("perception", 1)

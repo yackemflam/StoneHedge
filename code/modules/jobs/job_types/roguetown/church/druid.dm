@@ -33,7 +33,13 @@
 	head = /obj/item/clothing/head/roguetown/dendormask
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
-	backpack_contents = list(/obj/item/roguekey/farm = 1)		//Should populate pouch with this.
+	backpack_contents = list(
+		/obj/item/seeds/wheat = 1,
+		/obj/item/seeds/apple = 1,
+		/obj/item/seeds/shroom = 1,
+		/obj/item/seeds/sweetleaf = 1,
+		/obj/item/roguekey/church = 1,
+	)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
@@ -53,6 +59,7 @@
 		H.change_stat("intelligence", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("perception", -1)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)

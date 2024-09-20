@@ -151,4 +151,3 @@
 
 /datum/species/elf/dark/random_surname()
 	return " [pick(world.file2list("strings/rt/names/elf/elfsnf.txt"))]"
-

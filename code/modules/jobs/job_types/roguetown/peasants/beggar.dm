@@ -18,9 +18,9 @@
 	display_order = JDO_VAGRANT
 	show_in_credits = FALSE
 	can_random = FALSE
-	
+
 	cmode_music = 'sound/music/combat_bum.ogg'
-	
+
 	/// Chance to become a wise beggar, if we still have space for more wise beggars
 	var/wise_chance = 10
 	/// Amount of wise beggars spawned as of now
@@ -48,6 +48,8 @@
 	// guaranteed full beggar gear + random stats
 	if(is_wise)
 		head = /obj/item/clothing/head/roguetown/wizhat/gen/wise //wise hat
+		backr = /obj/item/storage/backpack/rogue/satchel
+		belt = /obj/item/storage/belt/rogue/leather
 		beltr = /obj/item/reagent_containers/powder/moondust
 		beltl = /obj/item/clothing/mask/cigarette/rollie/cannabis
 		cloak = /obj/item/clothing/cloak/raincloak/brown
@@ -107,7 +109,7 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, rand(1,5), TRUE)
 		H.STALUC = rand(1, 20)
 	if(prob(5))
@@ -122,6 +124,10 @@
 	H.change_stat("intelligence", -4)
 	H.change_stat("constitution", -3)
 	H.change_stat("endurance", -3)
+	backr = /obj/item/storage/backpack/rogue/satchel
+	belt = /obj/item/storage/belt/rogue/leather
+	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 
 /datum/outfit/job/roguetown/vagrant
 	name = "Beggar"

@@ -92,6 +92,30 @@
 		else if(slice(W, user))
 			return 1
 	..()
+/*	........   Spicing and Poisoning   ................ */
+
+// Used for adding reagents from bottles into food items.
+
+/obj/item/reagent_containers/food/snacks/rogue/MiddleClick(mob/living/user, params) 
+	. = ..()
+	
+	var/obj/item/held_item = user.get_active_held_item()
+	
+	if(held_item)
+		if(istype(held_item, /obj/item/reagent_containers/glass/bottle))
+			if(!held_item.reagents.total_volume)
+				to_chat(user, span_warning("[held_item] is empty!"))
+				return
+			if(src.reagents.total_volume >= src.reagents.maximum_volume)
+				to_chat(user, span_warning("You can't add anymore to [src]!"))
+				return
+			held_item.reagents.trans_to(src, 3, transfered_by = user)
+			var/stealth = user.mind.get_skill_level(/datum/skill/misc/sneaking)
+			var/soh = (6 - (stealth + rand(0,4))) // master level sneaking means a 80% chance of not being noticed at all, decreasing in increments of 20% per level under.
+			if(soh >= 1)
+				user.visible_message(span_warning("[user] slips something into the [src]"), span_warning("I hastily transfer some of the reagents to [src]."), vision_distance = soh)
+			else
+				user.visible_message(span_warning("[user] slips something into the [src]"), span_notice("I carefully transfer some of the reagents to [src]."), vision_distance = soh)
 
 /*	........   Kitchen tools / items   ................ */
 /obj/item/kitchen/spoon
@@ -176,7 +200,7 @@
 	..()
 	update_icon()
 
-/obj/item/reagent_containers/glass/bowl/attackby(obj/item/I, mob/user, params) // lets you eat with a spoon from a bowl
+/obj/item/reagent_containers/glass/bowl/attackby(obj/item/I, mob/living/user, params) // lets you eat with a spoon from a bowl
 	if(istype(I, /obj/item/kitchen/spoon))
 		if(reagents.total_volume > 0)
 			beingeaten()
@@ -229,6 +253,69 @@
 	icon_state ="book8_0"
 	base_icon_state = "book8"
 	bookfile = "Neu_cooking.json"
+
+/obj/item/storage/foodbag
+	name = "food pouch"
+	desc = "A small pouch for carrying handfuls of food items."
+	icon_state = "sack_rope"
+	item_state = "sack_rope"
+	icon = 'icons/roguetown/items/misc.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_HIP
+	resistance_flags = NONE
+	max_integrity = 300
+
+/obj/item/storage/foodbag/examine(mob/user)
+	. = ..()
+	if(contents.len)
+		. += span_notice("[contents.len] thing[contents.len > 1 ? "s" : ""] in the sack.")
+
+/obj/item/storage/foodbag/attack_right(mob/user)
+	. = ..()
+	if(.)
+		return
+	user.changeNext_move(CLICK_CD_MELEE)
+	testing("yea144")
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/list/things = STR.contents()
+	if(things.len)
+		testing("yea64")
+		var/obj/item/I = pick(things)
+		STR.remove_from_storage(I, get_turf(user))
+		user.put_in_hands(I)
+
+/obj/item/storage/foodbag/update_icon()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/list/things = STR.contents()
+	if(things.len)
+		icon_state = "sack_rope"
+		w_class = WEIGHT_CLASS_NORMAL
+	else
+		icon_state = "sack_rope"
+		w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/foodbag/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 20
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_items = 5
+	STR.set_holdable(list(
+		/obj/item/reagent_containers/food/snacks/rogue/berrycandy,
+		/obj/item/reagent_containers/food/snacks/rogue/applecandy,
+		/obj/item/reagent_containers/food/snacks/rogue/raisins,
+		/obj/item/reagent_containers/food/snacks/rogue/crackerscooked
+		))
+	STR.click_gather = TRUE
+	STR.attack_hand_interact = FALSE
+	STR.collection_mode = COLLECT_EVERYTHING
+	STR.dump_time = 0
+	STR.allow_quick_gather = TRUE
+	STR.allow_quick_empty = TRUE
+	STR.allow_look_inside = FALSE
+	STR.allow_dump_out = TRUE
+	STR.display_numerical_stacking = TRUE
+
 
 /* * * * * * * * * * * * * * *	*
  *								*
@@ -326,7 +413,7 @@
 	..()
 	qdel(src)
 
-/obj/item/reagent_containers/powder/flour/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/powder/flour/attackby(obj/item/I, mob/living/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	var/obj/item/reagent_containers/R = I
 	if(user.mind)
@@ -343,6 +430,7 @@
 	to_chat(user, "<span class='notice'>Adding water, now its time to knead it...</span>")
 	playsound(get_turf(user), 'modular/Neu_Food/sound/splishy.ogg', 100, TRUE, -1)
 	if(do_after(user,2 SECONDS, target = src))
+		user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 		name = "wet powder"
 		desc = "Destined for greatness, at your hands."
 		R.reagents.remove_reagent(/datum/reagent/water, 10)
@@ -350,10 +438,11 @@
 		color = "#d9d0cb"	
 	return TRUE
 
-/obj/item/reagent_containers/powder/flour/attack_hand(mob/user)
+/obj/item/reagent_containers/powder/flour/attack_hand(mob/living/user)
 	if(water_added)
 		playsound(get_turf(user), 'modular/Neu_Food/sound/kneading_alt.ogg', 90, TRUE, -1)
 		if(do_after(user,3 SECONDS, target = src))
+			user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 			new /obj/item/reagent_containers/food/snacks/rogue/dough_base(loc)
 			qdel(src)
 	else ..()
@@ -374,12 +463,13 @@
 	qdel(src)
 
 /*	..................   Food platter   ................... */
-/obj/item/cooking/platter/attackby(obj/item/I, mob/user, params)
+/obj/item/cooking/platter/attackby(obj/item/I, mob/living/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -389,6 +479,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/peppersteak/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -398,6 +489,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/onionsteak/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -407,6 +499,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -416,6 +509,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/friedrat/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -425,6 +519,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/hcakeslice/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -434,6 +529,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/ccakeslice/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -443,6 +539,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/bun_grenz/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -452,6 +549,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -461,6 +559,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -470,6 +569,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -479,6 +579,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -488,6 +589,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/wienercabbage/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -497,6 +599,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotato/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -506,6 +609,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/wieneronions/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -515,6 +619,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions/plated(loc)
 				qdel(I)
 				qdel(src)
@@ -524,6 +629,7 @@
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
 			if(do_after(user,2 SECONDS, target = src))
+				user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 				new /obj/item/reagent_containers/food/snacks/rogue/frybirdtato/plated(loc)
 				qdel(I)
 				qdel(src)

@@ -37,11 +37,11 @@
 /obj/structure/closet/crate/chest/steward/bogguard/Initialize()
 	. = ..()
 	new /obj/item/clothing/cloak/stabard/bog(src)
-	new /obj/item/keyring/bog_guard(src)
+	new /obj/item/storage/keyring/guard(src)
 	new /obj/item/clothing/suit/roguetown/armor/gambeson(src)
 	new /obj/item/rogueweapon/mace/cudgel(src)
 	new /obj/item/rope/chain(src)
-	
+
 /datum/roguestock/import/townguard
 	name = "Watchman Equipment Crate"
 	desc = "Starting kit for a new Watchman."
@@ -52,7 +52,7 @@
 /obj/structure/closet/crate/chest/steward/townguard/Initialize()
 	. = ..()
 	new /obj/item/clothing/cloak/stabard/guard(src)
-	new /obj/item/keyring/town_watch(src)
+	new /obj/item/storage/keyring/guard(src)
 	new /obj/item/clothing/suit/roguetown/armor/gambeson(src)
 	new /obj/item/rogueweapon/mace/cudgel(src)
 	new /obj/item/rope/chain(src)
@@ -104,7 +104,7 @@
 	new /obj/item/clothing/suit/roguetown/armor/chainmail(src)
 	new /obj/item/clothing/suit/roguetown/armor/plate/full(src)
 	new /obj/item/clothing/shoes/roguetown/boots/armor(src)
-	new /obj/item/keyring/knight(src)
+	new /obj/item/storage/keyring/guardcastle(src)
 	new /obj/item/storage/belt/rogue/leather/hand(src)
 	new /obj/item/rogueweapon/sword/long(src)
 
@@ -126,7 +126,7 @@
 	new /obj/item/clothing/suit/roguetown/armor/chainmail(src)
 	new /obj/item/clothing/suit/roguetown/armor/plate/half(src)
 	new /obj/item/clothing/shoes/roguetown/boots/armor(src)
-	new /obj/item/keyring/man_at_arms(src)
+	new /obj/item/storage/keyring/guardcastle(src)
 	new /obj/item/storage/belt/rogue/leather/hand(src)
 	new /obj/item/rogueweapon/spear(src)
 
@@ -199,18 +199,3 @@
 	new /obj/item/natural/stone(src)
 	new /obj/item/roguebin(src)
 	new /obj/item/reagent_containers/glass/bucket/wooden(src)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

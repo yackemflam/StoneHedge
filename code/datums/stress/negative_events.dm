@@ -171,6 +171,11 @@
 	stressadd = 2
 	desc = list(span_red("My loins took a bad beating!"),span_red("My loins got slammed badly!"),span_red("My loins got beaten badly!"))
 
+/datum/stressevent/shunned_race_xenophobic
+	timer = 2 MINUTES
+	stressadd = 5
+	desc = span_red("Better stay away.")
+
 /datum/stressevent/paracrowd
 	timer = 15 SECONDS
 	stressadd = 2
@@ -200,6 +205,11 @@
 	timer = 2 MINUTES
 	stressadd = 2
 	desc = "<span class='red'>Where did everyone go? Did something happen?!</span>"
+
+/datum/stressevent/jesterphobia
+	timer = 4 MINUTES
+	stressadd = 5
+	desc = span_red("No! Get the Jester away from me!")
 
 /datum/stressevent/coldhead
 	timer = 60 SECONDS

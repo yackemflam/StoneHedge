@@ -50,7 +50,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/full
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	beltr = /obj/item/rogueweapon/sword/long
-	beltl = /obj/item/keyring/knight
+	beltl = /obj/item/storage/keyring/guardcastle
 	belt = /obj/item/storage/belt/rogue/leather/hand
 	backr = /obj/item/storage/backpack/rogue/satchel/black
 	if(prob(50))
@@ -66,7 +66,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE) 
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
@@ -82,4 +82,3 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) //These traits are fine? Needs a reducation else where. Likely equipment could do with a reduction.
-	

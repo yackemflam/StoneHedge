@@ -62,23 +62,27 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	shoes = /obj/item/clothing/shoes/roguetown/boots
-	beltl = /obj/item/keyring/town_watch
+	beltl = /obj/item/storage/keyring/guard
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	backr = /obj/item/storage/backpack/rogue/satchel/black
+	gloves = /obj/item/clothing/gloves/roguetown/leather
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/signal_horn = 1)
 	if(is_bowman)
 		backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 		beltr = /obj/item/quiver/arrows //replaces mace
 		pants = /obj/item/clothing/under/roguetown/brayette //replaces chausses
+		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	else
+		ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		backl = null
 	if(H.mind)
 		assign_skills(H)
 	H.verbs |= /mob/proc/haltyell
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 /datum/outfit/job/roguetown/guardsman/proc/assign_skills(mob/living/carbon/human/guard)
 	guard.mind.adjust_skillrank(/datum/skill/combat/maces, pick(3,4), TRUE)

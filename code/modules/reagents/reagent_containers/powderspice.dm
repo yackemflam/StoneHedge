@@ -158,15 +158,15 @@
 	color = "#FFFFFF" // rgb: 96, 165, 132
 	
 
-/obj/item/reagent_containers/powder/sugar
-	name = "sugar"
-	desc = ""
-	gender = PLURAL
-	icon_state = "sugar"
-	list_reagents = list(/datum/reagent/sugar = 1)
-	grind_results = list(/datum/reagent/sugar = 10)
-	volume = 1
-	sellprice = 0
+// /obj/item/reagent_containers/powder/sugar
+// 	name = "sugar"
+// 	desc = ""
+// 	gender = PLURAL
+// 	icon_state = "sugar"
+// 	list_reagents = list(/datum/reagent/sugar = 1)
+// 	grind_results = list(/datum/reagent/sugar = 10)
+// 	volume = 1
+// 	sellprice = 0
 
 /datum/reagent/sugar
 	name = "sugar"

@@ -15,7 +15,7 @@
 			You only answer to the Judge, Queen, King, Princes, or Princesses. However, your main focus is to assist the Judge."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/councillor
-	
+
 	give_bank_account = 40
 	min_pq = 1
 	max_pq = null
@@ -30,10 +30,10 @@
 	head = /obj/item/clothing/head/roguetown/chaperon/councillor
 	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltl = /obj/item/keyring/councillor
+	beltl = /obj/item/storage/keyring/guardcastle
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
 	cloak = /obj/item/clothing/cloak/stabard/surcoat/councillor
-	backpack_contents = list(/obj/item/keyring/councillor = 1)
+	backpack_contents = list(/obj/item/storage/keyring/councillor = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
@@ -44,4 +44,3 @@
 		H.change_stat("intelligence", 3)
 		H.change_stat("constitution", 1)
 		H.change_stat("fortune", 2)
-

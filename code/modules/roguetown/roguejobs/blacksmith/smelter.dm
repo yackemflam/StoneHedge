@@ -56,6 +56,7 @@
 		return ..()
 	if(W.smeltresult)
 		if(ore.len < maxore)
+			user.dropItemToGround(W)
 			W.forceMove(src)
 			ore += W
 			if(!isliving(user) || !user.mind)

@@ -32,9 +32,11 @@
 	cloak = /obj/item/clothing/cloak/apron/waist
 	if(H.gender == MALE)
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
+		shoes = /obj/item/clothing/shoes/roguetown/shortboots
+		backr = /obj/item/storage/backpack/rogue/satchel
 		belt = /obj/item/storage/belt/rogue/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-		neck = /obj/item/keyring/innkeep
+		neck = /obj/item/storage/keyring/innkeep
 		cloak = /obj/item/clothing/cloak/apron/waist
 		H.change_stat("strength", 2)
 		H.change_stat("endurance", 1)
@@ -42,7 +44,7 @@
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress
 		neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		beltl = /obj/item/keyring/innkeep
+		beltl = /obj/item/storage/keyring/innkeep
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)

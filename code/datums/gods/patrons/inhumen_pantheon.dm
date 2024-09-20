@@ -38,6 +38,9 @@
 	desc = "Man turned God, the 'Giver' 'The Thief' stole fire from 'Elysius' and gave it to primitive Mortal Kin huddled in darkness and demands the riches flame creates in sacrifice."
 	worshippers = "Free-Men, Outlaws and Frontiersmen"
 	mob_traits = list(TRAIT_COMMIE, TRAIT_ZJUMP)
+	t1 = /obj/effect/proc_holder/spell/invoked/Joy_takes_flight
+	t2 = /obj/effect/proc_holder/spell/invoked/Laughing_god
+	t3 = /obj/effect/proc_holder/spell/invoked/Smokebomb
 	confess_lines = list(
 		"I TAKE WITH SKILLED AND NIMBLE HANDS!",
 		"THIEFLORD'S GIFT CONSUME YOU!",

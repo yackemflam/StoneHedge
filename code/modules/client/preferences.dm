@@ -135,6 +135,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/menuoptions
 
 	var/datum/migrant_pref/migrant
+	var/next_special_trait = null
 
 	var/action_buttons_screen_locs = list()
 
@@ -165,6 +166,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/char_accent = "No accent"
 
+	var/datum/loadout_item/loadout
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -427,7 +429,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<a href='?_src_=prefs;preference=view_nudeshot;task=input'>View</a>"
 			dat += "<br><b>Flavor Text:</b> <a href='?_src_=prefs;preference=flavor;task=input'>Change</a>"
 			dat += "<br><b>OOC Notes:</b> <a href='?_src_=prefs;preference=oocnotes;task=input'>Change</a>"
-
+			dat += "<br><b>Loadout Item:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "None"]</a>"
 			dat += "</td>"
 
 			dat += "</tr></table>"
@@ -680,6 +682,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	dat += "<tr>"
 	dat += "<td width='33%' align='left'></td>"
 	dat += "<td width='33%' align='center'>"
+	/* Special thing makes things LRP as someone just keeps changing every round, better just incorporate the things to selectable traits instead --vide noir
+	dat += "<a href='?_src_=prefs;preference=bespecial'><b>[next_special_trait ? "<font color='red'>SPECIAL</font>" : "Be Special"]</b></a><BR>"
+	*/
 	var/mob/dead/new_player/N = user
 	if(istype(N))
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
@@ -1645,7 +1650,24 @@ Slots: [job.spawn_positions]</span>
 						return
 					ooc_notes = new_ooc_notes
 					to_chat(user, "<span class='notice'>Successfully updated OOC Notes</span>")
-					log_game("[user] has set their description to '[ooc_notes]'.")
+					log_game("[user] has set their OOC Notes to '[ooc_notes]'.")
+				if("loadout_item")
+					var/list/loadouts_available = list("None")
+					for (var/path as anything in GLOB.loadout_items)
+						var/datum/loadout_item/loadout = GLOB.loadout_items[path]
+						if (!loadout.name)
+							continue
+						loadouts_available[loadout.name] = loadout
+					var/loadout_input = input(user, "Choose your character's loadout item.", "Loadout") as null|anything in loadouts_available
+					if(loadout_input)
+						if(loadout_input == "None")
+							loadout = null
+							to_chat(user, "Who needs stuff anyway?")
+						else
+							loadout = loadouts_available[loadout_input]
+							to_chat(user, "<font color='yellow'><b>[loadout.name]</b></font>")
+							if(loadout.desc)
+								to_chat(user, "[loadout.desc]")
 
 				if("nudeshot")
 					to_chat(user, "<span class='notice'>["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
@@ -1868,6 +1890,24 @@ Slots: [job.spawn_positions]</span>
 					else
 						sexable = FALSE
 				*/
+				if("bespecial")
+					if(next_special_trait)
+						print_special_text(user, next_special_trait)
+						return
+					to_chat(user, span_boldwarning("You will become special for one round, this could be something negative, positive or neutral and could have a high impact on your character and your experience."))
+					var/result = alert(user, "You'll receive a unique trait for one round\nDo I really want become special?", "Be Special", "Yes", "No")
+					if(result != "Yes")
+						return
+					if(next_special_trait)
+						return
+					next_special_trait = roll_random_special(user.client)
+					if(next_special_trait)
+						log_game("SPECIALS: Rolled [next_special_trait] for ckey: [user.ckey]")
+						print_special_text(user, next_special_trait)
+						user.playsound_local(user, 'sound/misc/alert.ogg', 100)
+						to_chat(user, span_warning("This will be applied on your next game join. You cannot reroll this, and it will not carry over to other rounds"))
+						to_chat(user, span_warning("You may switch your character and choose any role, if you don't meet the requirements (if any are specified) it won't be applied"))
+
 				if("family")
 					var/list/loly = list("Not yet.","Work in progress.","Don't click me.","Stop clicking this.","Nope.","Be patient.","Sooner or later.")
 					to_chat(user, "<font color='red'>[pick(loly)]</font>")

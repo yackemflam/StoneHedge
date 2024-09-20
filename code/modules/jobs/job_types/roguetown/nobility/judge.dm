@@ -27,8 +27,8 @@
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	head = /obj/item/clothing/head/roguetown/judgehat
 	backl = /obj/item/storage/backpack/rogue/satchel
-	belt = /obj/item/storage/belt/rogue/leather/plaquegold
-	beltl = /obj/item/keyring/judge
+	belt = /obj/item/storage/belt/rogue/leather/black
+	beltl = /obj/item/storage/keyring/judge
 	beltr = /obj/item/rogueweapon/mace
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	gloves = /obj/item/clothing/gloves/roguetown/angle

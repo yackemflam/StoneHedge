@@ -16,6 +16,12 @@
 	projectile_type = /obj/projectile/bullet/reusable/bolt/poison
 	icon_state = "bolt_poison"
 
+/obj/item/ammo_casing/caseless/rogue/bolt/tranq
+	name = "tranquilizer bolt"
+	desc = "A durable iron bolt. This one has an injection mechanism filled with a clear liquid."
+	projectile_type = /obj/projectile/bullet/reusable/bolt/tranq
+	icon_state = "bolt_poison"
+
 /obj/projectile/bullet/reusable/bolt
 	name = "bolt"
 	damage = 70
@@ -58,6 +64,22 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 7) //not gonna kill anyone, but they will be quite quiet
+
+/obj/projectile/bullet/reusable/bolt/tranq
+	name = "bolt"
+	damage = 15 // Enough damage and penetration to pierce medium, but not heavy.
+	damage_type = BRUTE
+	armor_penetration = 50
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "bolt_proj"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt/tranq
+	range = 15
+	embedchance = 0
+	woundclass = BCLASS_BLUNT
+	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
+	poisontype = /datum/reagent/medicine/tranquilizer
+	poisonfeel = "intense numbing" 
+	poisonamount = 10
 
 /obj/item/ammo_casing/caseless/rogue/arrow
 	name = "arrow"
@@ -120,10 +142,23 @@
 	icon_state = "arrow_poison"
 	max_integrity = 20 // same as normal arrow; usually breaks on impact with a mob anyway
 
+/obj/item/ammo_casing/caseless/rogue/arrow/sopor
+	name = "soporific arrow"
+	desc = "A wooden shaft with a pointy iron end. This one is stained green with spider toxins."
+	projectile_type = /obj/projectile/bullet/reusable/arrow/sopor
+	icon_state = "arrow_poison"
+	max_integrity = 20 // same as normal arrow; usually breaks on impact with a mob anyway
+
 /obj/item/ammo_casing/caseless/rogue/arrow/stone/poison
 	name = "poisoned stone arrow"
 	desc = "A wooden shaft with a jagged rock on the end. This one is stained green with floral toxins."
 	projectile_type = /obj/projectile/bullet/reusable/arrow/poison/stone
+	icon_state = "stonearrow_poison"
+
+/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor
+	name = "soporific stone arrow"
+	desc = "A wooden shaft with a jagged rock on the end. This one is stained green with spider toxins."
+	projectile_type = /obj/projectile/bullet/reusable/arrow/sopor/stone
 	icon_state = "stonearrow_poison"
 
 /obj/projectile/bullet/reusable/arrow/poison
@@ -139,7 +174,27 @@
 	poisonfeel = "burning" //Ditto
 	poisonamount = 5 //Support and balance for bodkins, which will hold less poison due to how
 
+/obj/projectile/bullet/reusable/arrow/sopor
+	name = "arrow"
+	damage = 15 // Support arrow, effects outweigh the need for damage here
+	damage_type = BRUTE
+	armor_penetration = 50
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "arrow_proj"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow
+	range = 15
+	embedchance = 0
+	woundclass = BCLASS_BLUNT
+	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
+	poisontype = /datum/reagent/medicine/soporpot
+	poisonfeel = "numbing" 
+	poisonamount = 15
+
 /obj/projectile/bullet/reusable/arrow/poison/stone
+	name = "stone arrow"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/stone
+
+/obj/projectile/bullet/reusable/arrow/sopor/stone
 	name = "stone arrow"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/stone
 

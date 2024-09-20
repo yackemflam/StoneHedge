@@ -123,7 +123,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
 		STR.max_combined_w_class = 6
-		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_w_class = WEIGHT_CLASS_SMALL
 		STR.max_items = 3
 		STR.not_while_equipped = FALSE
 
@@ -246,6 +246,18 @@
 	new /obj/item/natural/feather(src)
 	new /obj/item/paper(src)
 
+/obj/item/storage/backpack/rogue/satchel/mule/PopulateContents()
+	for(var/i in 1 to 3)
+		switch(rand(1,4))
+			if(1)	
+				new /obj/item/reagent_containers/powder/moondust_purest(src)
+			if(2)
+				new /obj/item/reagent_containers/powder/moondust_purest(src)
+			if(3)
+				new /obj/item/reagent_containers/powder/ozium(src)
+			if(4)
+				new /obj/item/reagent_containers/powder(src)
+
 
 /obj/item/storage/backpack/rogue/satchel/black
 	color = CLOTHING_BLACK
@@ -257,6 +269,9 @@
 		STR.max_combined_w_class = 21
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 5
+		STR.click_gather = TRUE
+		STR.allow_quick_empty = TRUE
+		STR.allow_dump_out = TRUE
 
 /obj/item/storage/backpack/rogue/attack_right(mob/user)
 	var/datum/component/storage/CP = GetComponent(/datum/component/storage)
@@ -287,6 +302,7 @@
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 14
 		STR.not_while_equipped = TRUE
+		STR.allow_dump_out = TRUE
 
 /obj/item/storage/belt/rogue/leather/exoticsilkbelt
 	name = "Exotic Silk Belt"
