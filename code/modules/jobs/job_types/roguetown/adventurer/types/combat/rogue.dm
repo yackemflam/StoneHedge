@@ -59,6 +59,10 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
@@ -69,10 +73,11 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+	beltr = /obj/item/quiver/bolts
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
-	backpack_contents = list(/obj/item/lockpickring/mundane)
+	backpack_contents = list(/obj/item/lockpickring/mundane, /obj/item/rogueweapon/huntingknife/idagger/steel)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.change_stat("strength", -1)
@@ -88,23 +93,25 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 6, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE)
+	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-	gloves = /obj/item/clothing/gloves/roguetown/fingerless
+	gloves = /obj/item/clothing/gloves/roguetown/leather/black
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
@@ -120,14 +127,14 @@
 	H.change_stat("speed", pick(3,4))
 	H.change_stat("intelligence", 2)
 	H.visible_message(span_info("I honed my skills as a rogue through the years, and was skilled enough to become an assassin. Now it depends to me how I use my abilities."))
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel)
+	backpack_contents = list(/obj/item/lockpickring/mundane, /obj/item/rogueweapon/huntingknife/idagger/steel)
 
 /datum/outfit/job/roguetown/adventurer/rogue/proc/duelistarch(mob/living/carbon/human/H)
 	//less of other skills, more sword and knife combat skills.
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
@@ -170,15 +177,15 @@
 
 // Arcane Trickster - A charlatan, magic using rogue (based on arcane trickster archetype from 5e)
 /datum/outfit/job/roguetown/adventurer/rogue/proc/tricksterarch(mob/living/carbon/human/H)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,1,2), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(2,3), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, pick(1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
@@ -213,9 +220,9 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(2,3), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, pick(0,1), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
@@ -248,7 +255,7 @@
 	name = "Vanish"
 	overlay_state = "Smoke Bomb"
 	releasedrain = 0
-	charge_max = 50 SECONDS
+	charge_max = 20 SECONDS
 	still_recharging_msg = span_notice("I don't have another smoke bomb ready yet.")
 	warnie = "sydwarning"
 	invocation_emote_self = "pulls out a smoke bomb and slams it to the ground!"
@@ -258,13 +265,19 @@
 	invocation = ""
 	invocation_type = "none"
 	associated_skill = /datum/skill/misc/sneaking
-	cooldown_min = 20 SECONDS
+	cooldown_min = 10 SECONDS
 
-/obj/effect/proc_holder/spell/self/rogue_vanish/cast(mob/living/user = usr)
+/obj/effect/proc_holder/spell/self/rogue_vanish/cast(mob/living/carbon/human/user = usr)
 	new /obj/effect/particle_effect/smoke(get_turf(user))
-	user.visible_message(span_warning("[user] vanishes in a puff of smoke!"), span_notice("You vanish in a puff of smoke!"))
-	animate(user, alpha = 100, time = 1 SECONDS, easing = EASE_IN)
-	user.mob_timers[MT_INVISIBILITY] = world.time + 15 SECONDS
-	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, update_sneak_invis), TRUE), 15 SECONDS)
-	addtimer(CALLBACK(user, TYPE_PROC_REF(/atom/movable, visible_message), span_warning("[user] fades back into view."), span_notice("You become visible again.")), 15 SECONDS)
+	user.visible_message(span_warning("[user] tosses a smokebomb to the ground and vanishes in a puff of smoke!"), span_notice("I toss a smokebomb to the ground and vanish in a puff of smoke!"))
+	for(var/mob/living/simple_animal/hostile/nearmob in viewers(12, user))
+		if(nearmob.target == user)
+			nearmob.LoseTarget()
+	for(var/mob/living/carbon/human/nearmob in viewers(12, user))
+		if(nearmob.target == user)
+			nearmob.back_to_idle()
+	animate(user, alpha = 100, time = 0.5 SECONDS, easing = )
+	user.mob_timers[MT_INVISIBILITY] = world.time + 6 SECONDS
+	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, update_sneak_invis), TRUE), 6 SECONDS)
+	addtimer(CALLBACK(user, TYPE_PROC_REF(/atom/movable, visible_message), span_warning("[user] fades back into view."), span_warning("I become visible again.")), 6 SECONDS)
 	return FALSE

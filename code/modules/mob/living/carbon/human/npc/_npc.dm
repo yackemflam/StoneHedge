@@ -238,6 +238,9 @@
 	if(L.stat == DEAD)
 		return FALSE
 
+	if(L.alpha <= 100) //if mostly invisible dont see it, surely this wont go wrong.
+		return FALSE
+
 	if(L.InFullCritical())
 		return FALSE
 

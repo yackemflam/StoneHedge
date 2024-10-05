@@ -196,6 +196,8 @@
 /obj/item/rogueweapon/huntingknife/idagger/silver/pickup(mob/user)
 	. = ..()
 	var/mob/living/carbon/human/H = user
+	if(!H.mind) //to prevent runtime errors
+		return
 	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 	var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
 	if(ishuman(H))
@@ -219,6 +221,8 @@
 	. = ..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
+		if(!H.mind) //to prevent runtime errors
+			return
 		var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 		var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
 		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
@@ -246,6 +250,8 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/s_user = user
 		var/mob/living/carbon/human/H = target
+		if(!H.mind) //to prevent runtime errors
+			return
 		var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
 		var/datum/antagonist/vampirelord/lesser/Vp = H.mind.has_antag_datum(/datum/antagonist/vampire)
 		var/datum/antagonist/vampirelord/lesser/V = H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)

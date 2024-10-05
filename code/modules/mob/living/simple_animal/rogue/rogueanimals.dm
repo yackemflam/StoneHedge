@@ -173,7 +173,7 @@
 		if(prob(23))
 			enemies = list()
 			src.visible_message(span_notice("[src] calms down."))
-			LoseTarget()
+			
 		else
 			return
 	..()
