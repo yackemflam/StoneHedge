@@ -23,8 +23,8 @@
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
-			if(pantsies.flags_inv & HIDECROTCH) 
-				if(!pantsies.genitalaccess) 
+			if(pantsies.flags_inv & HIDECROTCH)
+				if(!pantsies.genitalaccess)
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
 		if(issimple(target) && target.gender == FEMALE && target.sexcon)
@@ -48,12 +48,26 @@
 					to_chat(H, span_userdanger("This will sting a little."))
 			if(W && W.transformed == TRUE)
 				to_chat(H, span_userdanger("This will HURT."))
-	user.visible_message(span_warning("[user] shoves \the [dildo] in [target]'s cunt..."))
+	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))
+		user.visible_message(span_warning("[user] forces \the [dildo] in [target]'s tiny cunt!"))
+		var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
+		target.apply_damage(30, BRUTE, BPG)
+	else
+		user.visible_message(span_warning("[user] shoves \the [dildo] in [target]'s cunt..."))
 
-/datum/sex_action/toy_other_vagina/on_perform(mob/living/user, mob/living/target)
+/datum/sex_action/toy_other_vagina/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
-	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s cunt with \the [dildo]..."))
+	if(user.sexcon.do_message_signature("[type]"))
+		if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))
+			user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] stuffs [target]'s tiny cunt with \the [dildo]..."))
+		else
+			user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] pleasures [target]'s cunt with \the [dildo]..."))
 	playsound(user, 'sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)
+
+	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))
+		//Scream and organ damage
+		target.apply_damage(10, BRUTE, target.get_bodypart(BODY_ZONE_CHEST))
+		target.apply_damage(3, BRUTE, target.get_bodypart(BODY_ZONE_PRECISE_GROIN))
 
 	user.sexcon.perform_sex_action(target, 2, 4, TRUE)
 	if(check_dildo_silver(user))

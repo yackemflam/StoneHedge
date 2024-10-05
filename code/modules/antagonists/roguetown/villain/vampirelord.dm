@@ -375,7 +375,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 	if(vitae > 0)
 		H.blood_volume = BLOOD_VOLUME_NORMAL
-		if(vitae < 200)
+		if(vitae < -100)
 			if(disguised)
 				to_chat(H, span_warning("My disguise fails!"))
 				H.vampire_undisguise(src)
@@ -916,7 +916,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/one/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/churchjobs = list("Prophet", "Priestess", "Priest", "Priest", "Templar", "Churchling", "Crusader", "Witcher")
+	var/list/churchjobs = list("Prophet", "Priestess", "Priest", "Priest", "Templar", "Churchling", "Crusader", "Grandmaster", "Witcher")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in churchjobs)
 			return TRUE
@@ -1360,4 +1360,3 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			to_chat(L, "<font color='purple'>You feel like a curtain is coming over your mind.</font>")
 			sleep(50)
 			L.Sleeping(300)
-

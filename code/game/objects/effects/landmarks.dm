@@ -118,6 +118,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Mercenarylate"
 	icon_state = "arrow"
 	jobspawn_override = list("Mercenary")
+
+/obj/effect/landmark/start/seelie
+	name = "Town Seelie"
+	icon_state = "arrow"
+/obj/effect/landmark/start/seelielate
+	name = "Seelielate"
+	icon_state = "arrow"
+	jobspawn_override = list("Town Seelie")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/desertriderlate
@@ -248,6 +256,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/templar
 	name = "Templar"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/grandtemplar
+	name = "Grandmaster"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/puritan

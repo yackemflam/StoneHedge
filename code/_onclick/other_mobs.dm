@@ -189,6 +189,12 @@
 		if(!apply_damage(dam2do, BRUTE, def_zone, armor_block, user))
 			nodmg = TRUE
 			next_attack_msg += " <span class='warning'>Armor stops the damage.</span>"
+			if(HAS_TRAIT(user, TRAIT_POISONBITE))
+				if(src.reagents)
+					var/poison = user.STACON/2
+					src.reagents.add_reagent(/datum/reagent/toxin/venom, poison/2)
+					src.reagents.add_reagent(/datum/reagent/medicine/soporpot, poison)
+					to_chat(user, span_warning("Your fangs inject venom into [src]!"))
 
 	var/datum/wound/caused_wound
 	if(!nodmg)
@@ -232,6 +238,11 @@
 	..()
 	if(!mmb_intent)
 		if(!A.Adjacent(src))
+			return
+		if(isseelie(A) && !(isseelie(src)))
+			var/mob/living/carbon/human/target = A
+			if(target.pulledby == src)
+				target.dna.species.on_wing_removal(A, src)
 			return
 		A.MiddleClick(src, params)
 	else

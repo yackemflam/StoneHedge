@@ -150,7 +150,14 @@
 	landsound = 'sound/foley/jumpland/grassland.wav'
 	slowdown = 0
 	neighborlay = "grassedge"
-
+/turf/open/floor/rogue/grass/get_slowdown(mob/user)
+	var/returned = slowdown
+	var/negate_slowdown = FALSE
+	if(HAS_TRAIT(user, TRAIT_BOG_TREKKING))
+		negate_slowdown = TRUE
+	if(negate_slowdown)
+		returned = max(returned-0.5, -1)
+	return returned
 // /turf/open/floor/rogue/grass/Initialize()
 //	dir = pick(GLOB.cardinals)
 //	GLOB.dirt_list += src
@@ -209,14 +216,26 @@
 	var/dirt_amt = 3
 
 /turf/open/floor/rogue/dirt/get_slowdown(mob/user)
+	//No tile slowdown for fairies
+	var/mob/living/carbon/human/FM = user
+	if(isseelie(FM) && !(FM.resting))	//Add wingcheck
+		return 0
+
 	var/returned = slowdown
+	var/negate_slowdown = FALSE
 	for(var/obj/item/I in user.held_items)
 		if(I.walking_stick)
 			if(!I.wielded)
 				var/mob/living/L = user
 				if(!L.cmode)
-					returned = max(returned-2, 0)
+					negate_slowdown = TRUE
+
+	if(HAS_TRAIT(user, TRAIT_BOG_TREKKING))
+		negate_slowdown = TRUE
+	if(negate_slowdown)
+		returned = max(returned-2.5, -1)
 	return returned
+
 
 
 /turf/open/floor/rogue/dirt/attack_right(mob/user)
@@ -244,7 +263,7 @@
 	..()
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O
-		if(H.shoes && !HAS_TRAIT(H, TRAIT_LIGHT_STEP))
+		if((H.shoes && !HAS_TRAIT(H, TRAIT_LIGHT_STEP)) || !isseelie(H)) //Seelie hover, so they won't step on blood
 			var/obj/item/clothing/shoes/S = H.shoes
 			if(!S.can_be_bloody)
 				return
@@ -331,7 +350,14 @@
 	canSmoothWith = list(/turf/open/floor/rogue, /turf/closed/mineral, /turf/closed/wall/mineral)
 	neighborlay = "dirtedge"
 	slowdown = 0
-
+/turf/open/floor/rogue/dirt/road/get_slowdown(mob/user)
+	var/returned = slowdown
+	var/negate_slowdown = FALSE
+	if(HAS_TRAIT(user, TRAIT_BOG_TREKKING))
+		negate_slowdown = TRUE
+	if(negate_slowdown)
+		returned = max(returned-0.5, -1)
+	return returned
 /turf/open/floor/rogue/dirt/road/attack_right(mob/user)
 	return
 

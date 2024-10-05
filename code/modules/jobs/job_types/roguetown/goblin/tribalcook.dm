@@ -23,13 +23,18 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	cloak = /obj/item/clothing/cloak/apron/cook
 	neck = /obj/item/clothing/neck/roguetown/psicross/talisman
+	backl = /obj/item/storage/backpack/rogue/satchel
+	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/labor/fishing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 		H.change_stat("intelligence", 1)
 		H.change_stat("fortune", 1)

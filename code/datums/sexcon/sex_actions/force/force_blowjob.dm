@@ -12,6 +12,8 @@
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
+	if(HAS_TRAIT(target, TRAIT_TINY) || HAS_TRAIT(user, TRAIT_TINY)) //Size issues
+		return FALSE
 	return TRUE
 
 /datum/sex_action/force_blowjob/can_perform(mob/living/user, mob/living/target)

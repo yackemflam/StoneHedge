@@ -12,6 +12,8 @@
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
+	if(HAS_TRAIT(user, TRAIT_TINY)) //Fairy is too small and weak to force this
+		return FALSE
 	return TRUE
 
 /datum/sex_action/force_cunnilingus/can_perform(mob/living/user, mob/living/target)

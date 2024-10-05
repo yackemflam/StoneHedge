@@ -6,10 +6,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = list(
-		/datum/species/elf/dark,
-		/datum/species/elf/wood,
-	)
+	allowed_races = RACES_ALL_KINDSPLUS
 
 	tutorial = "The Wood Elves were known for their Blade dancing Harlequins, wisemen with a tongue just as sharp and quick as their blades.. \
 		You command a position of a fool, Hierophant and wild voice. \
@@ -29,6 +26,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/jester
 	pants = /obj/item/clothing/under/roguetown/tights
 	armor = /obj/item/clothing/suit/roguetown/shirt/jester
+	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch
@@ -41,9 +39,18 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
-		H.STASTR = rand(1, 20)
-		H.STAINT = rand(1, 20)
-		H.STALUC = rand(1, 20)
+		if(!isseelie(H))
+			H.STASTR = rand(1, 20)
+			H.STAINT = rand(1, 20)
+			H.STALUC = rand(1, 20)
+		else if(isseelie(H))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/seelie_dust)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/summon_rat)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/strip)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/seelie_kiss)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/splash)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/roustame)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/animate_object)
 		H.cmode_music = 'sound/music/combat_jester.ogg'
 	H.verbs |= /mob/living/carbon/human/proc/ventriloquate
 	H.verbs |= /mob/living/carbon/human/proc/ear_trick
@@ -54,4 +61,3 @@
 		ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC) // Jester :3
 	else
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Joker >:(
-

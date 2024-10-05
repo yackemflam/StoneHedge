@@ -158,7 +158,7 @@
 	name = "highland pants"
 	desc = "Pants worn by clanmen in the Narvali Highlands."
 	icon_state = "narvali_green"
-	item_state = "narvali_green"		
+	item_state = "narvali_green"
 
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
@@ -288,6 +288,20 @@
 	name = "carapace plated skirt"
 	icon_state = "carapace_skirt"
 	item_state = "carapace_skirt"
+	genitalaccess = TRUE
+
+/obj/item/clothing/under/roguetown/carapacelegs/dragon
+	name = "dragonscale platelegs"
+	desc = "dragonscale armor to protect the legs."
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
+	color = "red"
+	sellprice = 50
+
+/obj/item/clothing/under/roguetown/carapacelegs/dragon/skirt
+	name = "dragonscale plated skirt"
+	icon_state = "carapace_skirt"
+	item_state = "carapace_skirt"
+	sellprice = 50
 	genitalaccess = TRUE
 
 /obj/item/clothing/under/roguetown/loincloth

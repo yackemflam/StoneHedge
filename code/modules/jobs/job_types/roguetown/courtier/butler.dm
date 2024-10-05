@@ -7,7 +7,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_ages = ALL_AGES_LIST
 
 	tutorial = "Servitude unto death; That is your motto. Having nurtured royalty for years, you are nothing short of the King's majordomo, commanding over the rest of the house staff."
@@ -24,9 +24,12 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 		H.change_stat("strength", -1)
 		H.change_stat("constitution", -1)
@@ -41,7 +44,10 @@
 		beltr = /obj/item/storage/keyring/servant
 		neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
-		head = /obj/item/clothing/head/roguetown/fancyhat
+		backl = /obj/item/storage/backpack/rogue/satchel
+		H.change_stat("strength", -1)
+		H.change_stat("intelligence", 1)
+		H.change_stat("perception", 1)
 	else
 		switch(H.patron?.type)
 			if(/datum/patron/divine/eora) //Eoran loadouts
@@ -61,3 +67,11 @@
 		H.change_stat("strength", -1)
 		H.change_stat("intelligence", 1)
 		H.change_stat("perception", 1)
+	if(isseelie(H))
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/seelie_dust)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/summon_rat)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/strip)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/seelie_kiss)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/splash)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/roustame)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/animate_object)

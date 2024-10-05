@@ -11,7 +11,9 @@
 	var/allow_mobs = TRUE
 	var/list/allowed_types = list(
 			/obj/item/clothing,
+			/obj/item/storage
 			)
+
 	var/static/list/selectable_colors = list(
 		"White" = "#ffffff",
 		"Black" = "#414143",

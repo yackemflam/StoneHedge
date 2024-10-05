@@ -5,8 +5,8 @@
 	flag = VIKINGGRUNT
 	department_flag = VIKING
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 3
+	spawn_positions = 3
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
@@ -61,6 +61,5 @@
 
 		H.change_stat("strength", 3)		//Same as captain.
 		H.change_stat("intelligence", -2)
-		H.change_stat("constitution", 3)
-		H.change_stat("endurance", 3)
-		H.change_stat("speed", -2)
+		H.change_stat("constitution", 4)
+		H.change_stat("endurance", 4)

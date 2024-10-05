@@ -103,7 +103,7 @@
 	item_state = "chainkini"
 	allowed_sex = list(FEMALE)
 	allowed_race = CLOTHED_RACES_TYPES
-	
+
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini/bra
 	name = "chainmail bra"
@@ -148,6 +148,28 @@
 	item_state = "carapacecuirass"
 	max_integrity = 150
 	equip_delay_self = 30
+
+/obj/item/clothing/suit/roguetown/armor/carapace/dragon
+	name = "dragonscale armor"
+	desc = "armor crafted from the hardened bones of a dragon."
+	body_parts_covered = CHEST|GROIN|VITALS
+	color = "red"
+	icon_state = "carapacecuirass"
+	item_state = "carapacecuirass"
+	max_integrity = 200
+	sellprice = 50
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 0, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/roguetown/armor/carapace/dragon/cuirass
+	name = "dragonscale cuirass"
+	desc = "vest styled dragonbone chest armor sown in layers."
+	body_parts_covered = CHEST|GROIN|VITALS
+	color = "red"
+	icon_state = "carapacecuirass"
+	item_state = "carapacecuirass"
+	max_integrity = 175
+	equip_delay_self = 30
+	sellprice = 50
 
 /obj/item/clothing/suit/roguetown/armor/plate
 	slot_flags = ITEM_SLOT_ARMOR
@@ -241,7 +263,7 @@
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
-/obj/item/clothing/suit/roguetown/armor/plate/bikini
+/obj/item/clothing/suit/roguetown/armor/plate/half/bikini
 	name = "plate bikini"
 	desc = "Half plate in bikini form, still just as protective somehow."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
@@ -250,7 +272,6 @@
 	item_state = "halfplatekini"
 	allowed_sex = list(FEMALE)
 	anvilrepair = /datum/skill/craft/armorsmithing
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/plate/bikini/bra
 	name = "plate bra"
@@ -433,7 +454,6 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT)
 	blocksound = SOFTHIT
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = NON_DWARVEN_RACE_TYPES
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
@@ -470,7 +490,6 @@
 	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
 	icon_state = "dgamb"
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = NON_DWARVEN_RACE_TYPES
 
 /obj/item/clothing/suit/roguetown/armor/leather
 	name = "leather armor"
@@ -616,7 +635,6 @@
 	icon_state = "nightman"
 	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = NON_DWARVEN_RACE_TYPES
 
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/hand
@@ -625,7 +643,6 @@
 	icon_state = "handcoat"
 	color = null
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = NON_DWARVEN_RACE_TYPES
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 	color = "#3c3a38"
@@ -959,7 +976,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
 	equip_delay_self = 20
-	armor_class = ARMOR_CLASS_LIGHT	
+	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/plate/vikingbodyguardchestplate
 	slot_flags = ITEM_SLOT_ARMOR
@@ -972,7 +989,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
-	armor_class = ARMOR_CLASS_MEDIUM		
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/goldchestplate
 	slot_flags = ITEM_SLOT_ARMOR
@@ -987,7 +1004,7 @@
 	max_integrity = 450
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/gold
-	armor_class = ARMOR_CLASS_MEDIUM	
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/bone/chestplate
 	name = "bone chestplate"
