@@ -58,7 +58,8 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/poppy
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
-	produce_amount = 2
+	produce_amount_min = 2
+	produce_amount_max = 3
 	maturation_nutrition = 60
 	produce_nutrition =  30
 	maturation_time = 10 MINUTES
@@ -71,7 +72,8 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/herbs
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
-	produce_amount = 2
+	produce_amount_min = 2
+	produce_amount_max = 3
 	maturation_nutrition = 60
 	produce_nutrition =  30
 	maturation_time = 10 MINUTES

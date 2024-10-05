@@ -175,7 +175,6 @@
 	light_flags = NONE
 	light_color = "#3FBAFD"
 
-/*
 //A spell to choose new spells, upon spawning or gaining levels
 /obj/effect/proc_holder/spell/invoked/learnspell
 	name = "Attempt to learn a new spell"
@@ -240,7 +239,7 @@
 	else
 		user.mind.used_spell_points += item.cost
 		user.mind.AddSpell(new item)
-*/
+
 
 //forcewall
 /obj/effect/proc_holder/spell/invoked/forcewall_weak

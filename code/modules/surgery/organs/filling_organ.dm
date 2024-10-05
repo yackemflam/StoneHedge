@@ -76,20 +76,20 @@
 	// modify nutrition to generate reagents
 	if(refilling) //self-consuming liquids for refilling organs.
 		if(!HAS_TRAIT(src, TRAIT_NOHUNGER)) //if not nohunger
-			if(owner.nutrition < NUTRITION_LEVEL_FED && uses_nutrient) //consumes if hungry and uses nutrient
+			if(owner.nutrition < (NUTRITION_LEVEL_FED + 25) && uses_nutrient) //consumes if hungry and uses nutrient, putting just above the limit so person dont get stress message spam.
 				var/remove_amount = min(reagent_generate_rate, reagents.total_volume)
 				owner.adjust_nutrition(remove_amount*20) //since hunger factor is so tiny compared to the nutrition levels it has to fill
 				reagents.remove_reagent(reagent_to_make, remove_amount)
 			else
-				if((reagents.total_volume < reagents.maximum_volume) && hungerhelp) //if organ is not full
-					var/max_restore = owner.nutrition > NUTRITION_LEVEL_WELL_FED ? reagent_generate_rate * 2 : reagent_generate_rate
+				if((reagents.total_volume < reagents.maximum_volume) && hungerhelp) //if organ is not full.
+					var/max_restore = owner.nutrition > (NUTRITION_LEVEL_WELL_FED) ? reagent_generate_rate * 2 : reagent_generate_rate
 					var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume) // amount restored if fed, capped by reagents.maximum_volume
 					if(uses_nutrient)
 						owner.adjust_nutrition(-restore_amount*20)
 					reagents.add_reagent(reagent_to_make, restore_amount)
-		else //if nohunger, should just regenerate stuff for free no matter what if refilling.
+		else //if nohunger, should just regenerate stuff for free no matter what, if refilling.
 			if((reagents.total_volume < reagents.maximum_volume))
-				var/max_restore = owner.nutrition > NUTRITION_LEVEL_WELL_FED ? reagent_generate_rate * 2 : reagent_generate_rate
+				var/max_restore = reagent_generate_rate
 				var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume)
 				reagents.add_reagent(reagent_to_make, restore_amount)
 

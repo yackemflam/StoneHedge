@@ -52,8 +52,8 @@
 
 /mob/living/onZImpact(turf/T, levels)
 	if(HAS_TRAIT(src, TRAIT_NOFALLDAMAGE1))
-		if(levels <= 2 || isseelie(src))
-			return
+		if(levels <= 2 || isseelie(src))	
+			return 
 	var/points
 	for(var/i in 2 to levels)
 		i++
@@ -182,9 +182,6 @@
 
 	if(m_intent == MOVE_INTENT_RUN && dir == get_dir(src, M))
 		if(isliving(M))
-			var/sprint_distance = sprinted_tiles
-			toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
-
 			var/mob/living/L = M
 			if(STACON > L.STACON)
 				if(STASTR > L.STASTR)
@@ -903,9 +900,6 @@
 
 	var/old_direction = dir
 	var/turf/T = loc
-
-	if(m_intent == MOVE_INTENT_RUN)
-		sprinted_tiles++
 
 	if(wallpressed)
 		update_wallpress(T, newloc, direct)

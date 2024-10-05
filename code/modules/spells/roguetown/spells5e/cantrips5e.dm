@@ -301,7 +301,7 @@
 		hand.bodypart = bodypart
 		hand.forceMove(target)
 		bodypart.add_embedded_object(hand, silent = TRUE, crit_message = FALSE)
-		if(user.zone_selected == BODY_ZONE_CHEST && !target.cmode && target.client.prefs.sexable) //must be out of combat mode and have erp panel allowed for this prompt to appear
+		if(user.zone_selected == BODY_ZONE_CHEST && !target.cmode) //must be out of combat mode and have erp panel allowed for this prompt to appear
 			target.visible_message(span_warning("A skeletal hand grips [target]'s [bodypart]!"), span_danger("A skeletal hand grips me [bodypart]!"))
 		//	var/choice = alert(target, "A skeletal hand attempts to grapple your private parts!", "", "Accept it!", "Fight it!")
 		//	switch(choice)
@@ -374,7 +374,7 @@
 				target.adjustOxyLoss(oxy_drain*mult*2)
 			if(BODY_ZONE_CHEST) //pleasure if erp, hurt if not
 				//if erp allowed & said yes to prompt pleasure them & combat mode OFF
-				if(target.client.prefs.sexable == TRUE && pleasureaccepted && !target.cmode)
+				if(pleasureaccepted && !target.cmode)
 					to_chat(host, "<span class='warning'>[host] is rubbed by a skeletal hand!</span>")
 					playsound(get_turf(host), pick('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 100, FALSE, -1)
 					target.sexcon.perform_sex_action(host, pleasure*mult*3, 0, TRUE)

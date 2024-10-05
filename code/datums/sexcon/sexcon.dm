@@ -60,10 +60,6 @@
 	msg_signature = properkey
 	last_msg_signature = world.time
 	return TRUE
-/datum/sex_controller/proc/is_spent()
-	if(charge < CHARGE_FOR_CLIMAX)
-		return TRUE
-	return FALSE
 
 /datum/sex_controller/proc/finished_check()
 	if(arousal > 100 && issimple(user))
