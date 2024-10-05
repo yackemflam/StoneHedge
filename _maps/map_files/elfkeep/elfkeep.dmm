@@ -52,7 +52,7 @@
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town)
 "abP" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/water/swamp,
 /area/rogue)
 "abV" = (
@@ -390,7 +390,7 @@
 /area/rogue/indoors/town/church)
 "alr" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -409,7 +409,7 @@
 /turf/closed/mineral/random/rogue/med,
 /area/rogue/under/cave)
 "amj" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -470,7 +470,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "anO" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -740,7 +740,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/cave)
 "auK" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/water/river{
@@ -765,7 +765,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
 "avF" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -1196,7 +1196,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "aJN" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/water/cleanshallow,
@@ -1470,7 +1470,7 @@
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/woods)
 "aRC" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -1718,7 +1718,7 @@
 /area/rogue/indoors/town/garrison)
 "aWX" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t9";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -1739,14 +1739,14 @@
 	})
 "aXZ" = (
 /obj/structure/flora/roguegrass/water/reeds,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/bog)
 "aYr" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/dirt,
@@ -2087,7 +2087,7 @@
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/manor)
 "bgK" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -2806,7 +2806,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/tribalfort)
 "bzC" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -3355,7 +3355,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "bKF" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/dirt,
@@ -3377,7 +3377,7 @@
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
 /area/rogue/outdoors/woods)
 "bLo" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -3746,7 +3746,7 @@
 	},
 /area/rogue/under/town/sewer)
 "bVM" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavewet/bogcaves{
 	first_time_text = "The Underdark..";
@@ -3882,7 +3882,7 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "bXV" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -4628,7 +4628,7 @@
 	})
 "cqL" = (
 /obj/structure/flora/roguegrass/maneater/real,
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/water/swamp/deep,
@@ -4681,7 +4681,7 @@
 /area/rogue/outdoors/town/roofs)
 "crE" = (
 /obj/structure/flora/roguetree/burnt,
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "crG" = (
@@ -5102,7 +5102,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/church)
 "cDR" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/water/cleanshallow,
@@ -6048,7 +6048,7 @@
 "ddu" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -6403,7 +6403,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "doM" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -7330,7 +7330,7 @@
 /area/rogue/outdoors/mountains)
 "dLy" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -7343,7 +7343,7 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/town/tavern)
 "dLL" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -7381,7 +7381,7 @@
 	},
 /area/rogue/outdoors/woods)
 "dME" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -7660,7 +7660,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "dSP" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t2";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -7689,7 +7689,7 @@
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue)
 "dTB" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -7802,7 +7802,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "dXh" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -7900,7 +7900,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/caves)
 "dZE" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -8207,7 +8207,7 @@
 /turf/closed/wall/mineral/rogue/decostone/mossy/end,
 /area/rogue/indoors/town/manor)
 "eih" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -8252,7 +8252,7 @@
 /turf/open/water/swamp/deep,
 /area/rogue/under/cave)
 "ejj" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -8361,7 +8361,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "emr" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/water/swamp/deep,
@@ -8654,7 +8654,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods)
 "evp" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/floor/rogue/dirt,
@@ -8798,7 +8798,7 @@
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/woods)
 "exZ" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -9043,7 +9043,7 @@
 	first_time_text = null
 	})
 "eEJ" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -9288,7 +9288,7 @@
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church/chapel)
 "eKN" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -9458,7 +9458,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/roofs)
 "ePb" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -9508,7 +9508,7 @@
 	},
 /area/rogue/under/town/sewer)
 "eRg" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -9558,7 +9558,7 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/basement)
 "eSr" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/cobblerock,
@@ -9630,7 +9630,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/roofs)
 "eVf" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/water/river{
@@ -10541,7 +10541,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "fwQ" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -10570,7 +10570,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "fxj" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -11752,7 +11752,7 @@
 	pixel_x = 1;
 	layer = 2.7
 	},
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -11931,7 +11931,7 @@
 	first_time_text = "Weeping God's Waterfall"
 	})
 "giy" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t2";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -11958,7 +11958,7 @@
 	})
 "gjA" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -11994,7 +11994,7 @@
 /area/rogue/under/town/sewer)
 "gkT" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -12674,7 +12674,7 @@
 	},
 /area/rogue/under/town/basement)
 "gEf" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -12742,7 +12742,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "gFY" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/dirt,
@@ -12867,7 +12867,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "gJT" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/grass,
 /area/rogue/under/cavewet)
 "gJU" = (
@@ -13201,7 +13201,7 @@
 	name = "Academy"
 	})
 "gUo" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -13518,7 +13518,7 @@
 /area/rogue/outdoors/mountains)
 "hep" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -13799,7 +13799,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
 "hkC" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -14406,7 +14406,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/tribalfort)
 "hFf" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t8";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -14444,7 +14444,7 @@
 	})
 "hHc" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -14681,7 +14681,7 @@
 "hND" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -15896,7 +15896,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/town/roofs)
 "iua" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -15906,7 +15906,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "iuk" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t12";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -16459,7 +16459,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/tribalfort)
 "iKe" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -16543,7 +16543,7 @@
 	first_time_text = "Palace Courtyard"
 	})
 "iMk" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -17051,7 +17051,7 @@
 	},
 /area/rogue/indoors/town/shop)
 "jay" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/water/swamp/deep,
@@ -17418,7 +17418,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort)
 "jnz" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave)
 "jnZ" = (
@@ -17600,7 +17600,7 @@
 	},
 /area/rogue/outdoors/mountains)
 "jsV" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/floor/rogue/grass,
@@ -17850,7 +17850,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/shop)
 "jAs" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /obj/structure/flora/grass/jungle,
@@ -17974,7 +17974,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue)
 "jDH" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -18450,7 +18450,7 @@
 	first_time_text = "The Twilight Woods"
 	})
 "jRX" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/water/swamp/deep,
@@ -18629,7 +18629,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
 "jXP" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -18857,7 +18857,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort)
 "kcP" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t2";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -18985,7 +18985,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "kgh" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -19022,7 +19022,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "kgG" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/dirt,
@@ -19253,7 +19253,7 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cave)
 "klp" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/floor/rogue/dirt,
@@ -19652,7 +19652,7 @@
 	},
 /area/rogue/outdoors/town/roofs)
 "kxL" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/grass,
 /area/rogue/under/cave)
 "kxQ" = (
@@ -19835,7 +19835,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "kCk" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -20211,7 +20211,7 @@
 	},
 /area/rogue/indoors/town/church)
 "kMo" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -20411,7 +20411,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/church)
 "kSB" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /obj/structure/flora/roguegrass,
@@ -20419,7 +20419,7 @@
 /area/rogue/under/cavewet)
 "kSU" = (
 /obj/structure/spacevine,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -20665,7 +20665,7 @@
 /turf/open/water/cleanshallow,
 /area/rogue/under/cavewet)
 "kZv" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/water/cleanshallow,
@@ -20798,7 +20798,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "lep" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/grass,
@@ -20848,7 +20848,7 @@
 /area/rogue/outdoors/beach)
 "lfL" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -20885,7 +20885,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/tribalfort)
 "lgv" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -21094,7 +21094,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/beach)
 "lme" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -21300,7 +21300,7 @@
 	name = "Academy"
 	})
 "lte" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -21500,7 +21500,7 @@
 /area/rogue/outdoors/caves)
 "lAO" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -21521,7 +21521,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "lBt" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -21673,7 +21673,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "lEK" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/dirt,
@@ -21780,7 +21780,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "lHh" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -22022,7 +22022,7 @@
 /obj/structure/fluff/walldeco/church/line{
 	dir = 4
 	},
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t14";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -22074,7 +22074,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "lPp" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
 	},
 /turf/open/water/swamp/deep,
@@ -22225,7 +22225,7 @@
 /turf/closed/wall/mineral/rogue/pipe,
 /area/rogue/indoors/town/shop)
 "lUT" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/dirt,
@@ -22302,7 +22302,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "lXu" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -22553,7 +22553,7 @@
 	})
 "mez" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t9";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -23033,7 +23033,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/caves)
 "mrt" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -23183,7 +23183,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort)
 "mwa" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/closed/mineral/random/rogue,
@@ -23312,7 +23312,7 @@
 	},
 /area/rogue/under/town/basement)
 "mzv" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
 	},
 /turf/open/floor/rogue/dirt,
@@ -23358,7 +23358,7 @@
 /area/rogue/indoors/shelter/woods)
 "mAK" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -23569,7 +23569,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "mIp" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t2";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -24350,7 +24350,7 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/shelter/woods)
 "neb" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/water/swamp,
@@ -24507,7 +24507,7 @@
 	first_time_text = "THE SHROUDHEDGE"
 	})
 "niE" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -24841,7 +24841,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
 "nqg" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t12";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -24864,7 +24864,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "nrc" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
@@ -24883,7 +24883,7 @@
 	first_time_text = "Palace Courtyard"
 	})
 "nrS" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -24957,7 +24957,7 @@
 	},
 /area/rogue/indoors/town)
 "nth" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -25053,7 +25053,7 @@
 	},
 /area/rogue/under/town/basement)
 "nwP" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
 "nwW" = (
@@ -25325,7 +25325,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "nDk" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
 	},
 /turf/open/floor/rogue/dirt,
@@ -25334,7 +25334,7 @@
 	name = "Underdark"
 	})
 "nDs" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -25431,7 +25431,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/caves)
 "nEP" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -25615,7 +25615,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
 "nJX" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -26029,7 +26029,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/bath)
 "nVe" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -26539,7 +26539,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/underworld)
 "ofy" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -26769,7 +26769,7 @@
 /area/rogue/indoors/town)
 "omw" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -26975,7 +26975,7 @@
 /area/rogue/indoors/shelter/woods)
 "oru" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -27137,7 +27137,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "oxc" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -27349,7 +27349,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
 "oCH" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -27584,7 +27584,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "oJb" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/water/swamp,
@@ -28082,7 +28082,7 @@
 	name = "Underdark"
 	})
 "oXj" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/grass,
@@ -28274,7 +28274,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "pcn" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t9";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -28470,7 +28470,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "pik" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t2";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -29151,7 +29151,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
 "pBF" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t12";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -29245,7 +29245,7 @@
 /area/rogue/indoors/town/church)
 "pEz" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -29852,7 +29852,7 @@
 	first_time_text = "Ravenloft Academy"
 	})
 "pWU" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/grass,
@@ -30011,7 +30011,7 @@
 /area/rogue/outdoors/woods)
 "qbd" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t12";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -30264,7 +30264,7 @@
 	})
 "qjp" = (
 /obj/structure/flora/roguegrass/water/reeds,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -30474,7 +30474,7 @@
 /turf/open/water/bath,
 /area/rogue/indoors/town/manor)
 "qpj" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t12";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -31111,7 +31111,7 @@
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/indoors/town/bath)
 "qGV" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue)
 "qHt" = (
@@ -31207,7 +31207,7 @@
 /area/rogue/outdoors/woods)
 "qJp" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t2";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -31297,7 +31297,7 @@
 	first_time_text = "Swampwyld"
 	})
 "qMa" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -31802,7 +31802,7 @@
 /turf/open/water/swamp/deep,
 /area/rogue/under/town/sewer)
 "qZX" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/cobblerock,
@@ -31990,7 +31990,7 @@
 	},
 /area/rogue/indoors/town/church)
 "rgu" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t2";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -32002,7 +32002,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "rgQ" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/water/swamp/deep,
 /area/rogue/under/cave)
 "rgX" = (
@@ -32872,14 +32872,14 @@
 /area/rogue/under/town/basement)
 "rAX" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t8";
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors)
 "rBf" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
 	},
 /turf/open/water/swamp/deep,
@@ -32929,7 +32929,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
 "rCf" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
@@ -33112,7 +33112,7 @@
 /area/rogue/outdoors/woods)
 "rJy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t14";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -33125,7 +33125,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
 "rJM" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/water,
@@ -33334,7 +33334,7 @@
 	first_time_text = "The Twilight Woods"
 	})
 "rQH" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -33582,7 +33582,7 @@
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/tavern)
 "rYa" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t2";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -33775,7 +33775,7 @@
 /area/rogue/indoors/town/tavern)
 "sec" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -34527,7 +34527,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "sAf" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -34561,7 +34561,7 @@
 /area/rogue)
 "sAP" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -34631,7 +34631,7 @@
 	},
 /area/rogue/indoors/town/shop)
 "sCc" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/floor/rogue/dirt,
@@ -35097,7 +35097,7 @@
 /turf/closed/mineral/rogue/salt,
 /area/rogue/outdoors/bog)
 "sOX" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -35308,7 +35308,7 @@
 	pixel_x = 1;
 	layer = 2.7
 	},
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -35678,7 +35678,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/tavern)
 "tfJ" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -35848,7 +35848,7 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/town/basement)
 "tlA" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -36493,7 +36493,7 @@
 /area/rogue)
 "tCp" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -37159,7 +37159,7 @@
 	},
 /area/rogue/under/town/sewer)
 "tWC" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -37796,7 +37796,7 @@
 	first_time_text = "Swampwyld"
 	})
 "ups" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -37847,7 +37847,7 @@
 	},
 /area/rogue/indoors/town/manor)
 "ure" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
 "urh" = (
@@ -37949,7 +37949,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "utp" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/grass,
 /area/rogue/under/cavewet/bogcaves{
 	first_time_text = "The Underdark..";
@@ -38145,7 +38145,7 @@
 	})
 "uzQ" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -38171,7 +38171,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "uBp" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -39232,7 +39232,7 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors)
 "vdq" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t9";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -39348,7 +39348,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/under/town/basement)
 "vgM" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/water/swamp/deep,
@@ -39365,7 +39365,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/church)
 "vhn" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/dirt,
@@ -39378,14 +39378,14 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
 "vhO" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavewet)
 "vij" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -39436,7 +39436,7 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/town/church/chapel)
 "vjQ" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -39520,7 +39520,7 @@
 	first_time_text = null
 	})
 "vlY" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -39991,7 +39991,7 @@
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/beach)
 "vyZ" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -40486,7 +40486,7 @@
 	first_time_text = null
 	})
 "vPH" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
 "vPQ" = (
@@ -40949,7 +40949,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
 "wdn" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "wdp" = (
@@ -41255,7 +41255,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "wkx" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t4";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -41329,7 +41329,7 @@
 "wlN" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/grass,
@@ -41571,7 +41571,7 @@
 /turf/closed/mineral/random/rogue/med,
 /area/rogue/outdoors/woods)
 "wsg" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavewet)
 "wsh" = (
@@ -42701,7 +42701,7 @@
 /turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
 "wYX" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -43104,7 +43104,7 @@
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/outdoors/woods)
 "xjG" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t12";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -43144,7 +43144,7 @@
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/basement)
 "xkU" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
 	},
 /turf/open/floor/rogue/grass,
@@ -43421,7 +43421,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor)
 "xtw" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -43498,7 +43498,7 @@
 /turf/open/water/river,
 /area/rogue/outdoors/woods)
 "xwU" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet/bogcaves{
 	first_time_text = "The Underdark..";
@@ -43512,7 +43512,7 @@
 	})
 "xxf" = (
 /obj/structure/roguemachine/camera/left,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t2";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -43912,7 +43912,7 @@
 /area/rogue/indoors)
 "xIN" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -44126,7 +44126,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "xOd" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -44316,7 +44316,7 @@
 	name = "Underdark"
 	})
 "xSJ" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/grass,
@@ -44415,7 +44415,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/church/chapel)
 "xUt" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -44472,7 +44472,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "xWe" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/dirt/road,
@@ -44622,7 +44622,7 @@
 	})
 "xZF" = (
 /obj/structure/flora/roguegrass/maneater/real,
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
 	},
 /turf/open/floor/rogue/grass,
@@ -44751,7 +44751,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/bog)
 "ydu" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -44820,7 +44820,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "yfR" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -44834,7 +44834,7 @@
 /area/rogue)
 "yfZ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t3";
 	desc = "An old, beloved tree that even elves could love."
 	},
@@ -45045,7 +45045,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
 "ylX" = (
-/obj/structure/flora/roguetree{
+/obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
 	},
 /turf/open/floor/rogue/dirt,

@@ -551,7 +551,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/cave)
 "auK" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/water/river{
 	dir = 8;
 	icon_state = "rockwd"
@@ -900,7 +900,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains)
 "aJN" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/bog)
 "aJQ" = (
@@ -2912,7 +2912,7 @@
 	},
 /area/rogue/under/town/sewer)
 "bVM" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavewet/bogcaves{
 	first_time_text = "The Underdark..";
@@ -3954,7 +3954,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "cDR" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/water/cleanshallow,
 /area/rogue/under/cavewet)
 "cDV" = (
@@ -8744,7 +8744,7 @@
 	},
 /area/rogue/under/cave)
 "gea" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/shroud,
 /area/rogue/under/cave)
 "gee" = (
@@ -9747,7 +9747,7 @@
 	name = "Academy"
 	})
 "gUo" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
 	first_time_text = null
@@ -13209,7 +13209,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/shop)
 "jAs" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
@@ -14208,7 +14208,7 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/outdoors/spidercave)
 "klp" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
 	},
 /turf/open/floor/rogue/dirt,
@@ -15315,7 +15315,7 @@
 	first_time_text = "THE SHROUDHEDGE"
 	})
 "kZv" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/bog/dense{
 	first_time_text = "THE SHROUDHEDGE"
@@ -18572,7 +18572,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "nrc" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "nru" = (
@@ -18709,7 +18709,7 @@
 	},
 /area/rogue/under/town/basement)
 "nwP" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
 "nwW" = (
@@ -19733,7 +19733,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/underworld)
 "ofD" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "ofZ" = (
@@ -21822,7 +21822,7 @@
 	},
 /area/rogue/under/town/basement)
 "pJl" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/dirt,
 /area/rogue)
 "pJv" = (
@@ -23701,7 +23701,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "rgQ" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/water/swamp/deep,
 /area/rogue/under/cave)
 "rgZ" = (
@@ -24509,7 +24509,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
 "rJM" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/water,
 /area/rogue/outdoors/bog/dense{
 	first_time_text = "THE SHROUDHEDGE"
@@ -24657,7 +24657,7 @@
 	first_time_text = "THE SHROUDHEDGE"
 	})
 "rPW" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "rQj" = (
@@ -26028,7 +26028,7 @@
 /turf/closed/mineral/rogue/salt,
 /area/rogue/outdoors/bog)
 "sOX" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "sPc" = (
@@ -27899,7 +27899,7 @@
 	})
 "ups" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "upI" = (
@@ -27995,7 +27995,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "utp" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/grass,
 /area/rogue/under/cavewet/bogcaves{
 	first_time_text = "The Underdark..";
@@ -29093,7 +29093,7 @@
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church)
 "vhn" = (
-/obj/structure/flora/rogueshroom{
+/obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/dirt,
@@ -29317,7 +29317,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "vpE" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield{
 	first_time_text = null
@@ -29976,7 +29976,7 @@
 	first_time_text = null
 	})
 "vPH" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
 "vPQ" = (
@@ -32285,7 +32285,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "xwU" = (
-/obj/structure/flora/rogueshroom,
+/obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue)
 "xxf" = (
@@ -32392,7 +32392,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "xAH" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/water/river{
 	icon_state = "rockwd"
 	},
@@ -32958,7 +32958,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "xWe" = (
-/obj/structure/flora/roguetree,
+/obj/structure/flora/roguetree/happyrandom,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "xWm" = (

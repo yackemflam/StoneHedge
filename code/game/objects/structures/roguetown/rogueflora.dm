@@ -665,3 +665,22 @@
 	if(get_dir(mover.loc, target) == dir)
 		return 0
 	return 1
+
+/obj/structure/flora/roguetree/happyrandom
+	name = "tree"
+	icon = 'modular_stonehedge/icons/roguetown/misc/foliagetall.dmi'
+	desc = "An healthy tree, elves sure love trees."
+
+/obj/structure/flora/roguetree/happy/Initialize()
+	. = ..()
+	//random healthy tree sprite every time one is spawned
+	icon_state = "t[rand(1,14)]"
+
+/obj/structure/flora/rogueshroom/happyrandom
+	name = "mushroom"
+	icon = 'modular_stonehedge/icons/roguetown/misc/foliagetall.dmi'
+	desc = "Mushrooms might be the happiest beings in this island."
+
+/obj/structure/flora/rogueshroom/happyrandom/Initialize()
+	. = ..()
+	icon_state = "mush[rand(1,5)]"
