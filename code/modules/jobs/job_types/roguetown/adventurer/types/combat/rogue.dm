@@ -276,7 +276,7 @@
 	for(var/mob/living/carbon/human/nearmob in viewers(12, user))
 		if(nearmob.target == user)
 			nearmob.back_to_idle()
-	animate(user, alpha = 100, time = 0.5 SECONDS, easing = )
+	animate(user, alpha = 100, time = 0.5 SECONDS, easing = EASE_IN)
 	user.mob_timers[MT_INVISIBILITY] = world.time + 6 SECONDS
 	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, update_sneak_invis), TRUE), 6 SECONDS)
 	addtimer(CALLBACK(user, TYPE_PROC_REF(/atom/movable, visible_message), span_warning("[user] fades back into view."), span_warning("I become visible again.")), 6 SECONDS)
