@@ -3,7 +3,7 @@
 	icon_state = "energy"
 	damage = 0
 	damage_type = OXY
-	nodamage = TRUE
+	nodamage = FALSE
 	armor_penetration = 100
 	pass_flags = PASSTABLE | PASSGRILLE
 	flag = "magic"
@@ -231,13 +231,13 @@
 							/mob/living/simple_animal/hostile/blob/blobbernaut/independent,
 							/mob/living/simple_animal/hostile/carp/ranged,
 							/mob/living/simple_animal/hostile/carp/ranged/chaos,
-							/mob/living/simple_animal/hostile/asteroid/basilisk/watcher,
-							/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+							/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk/watcher,
+							/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/goliath/beast,
 							/mob/living/simple_animal/hostile/headcrab,
 							/mob/living/simple_animal/hostile/morph,
 							/mob/living/simple_animal/hostile/stickman,
 							/mob/living/simple_animal/hostile/stickman/dog,
-							/mob/living/simple_animal/hostile/megafauna/dragon/lesser,
+							/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/dragon/lesser,
 							/mob/living/simple_animal/hostile/gorilla,
 							/mob/living/simple_animal/parrot,
 							/mob/living/simple_animal/pet/dog/corgi,
@@ -309,11 +309,13 @@
 	nodamage = TRUE
 
 /obj/projectile/magic/animate/on_hit(atom/target, blocked = FALSE)
+	var/mob/living/carbon/human/caster = firer
+	caster.rogstam_add(-120)	//Remove even more stam for this cast, couldnt be handled by releasedrain due to fatigue crit
 	target.animate_atom_living(firer)
 	..()
 
 /atom/proc/animate_atom_living(mob/living/owner = null)
-	if((isitem(src) || isstructure(src)) && !is_type_in_list(src, GLOB.protected_objects))
+	if((isitem(src) || istype(src, /obj/structure/closet/crate/chest) || istype(src, /obj/structure/handcart ) || istype(src, /obj/structure/chair/wood/rogue )) && !is_type_in_list(src, GLOB.protected_objects))
 		if(istype(src, /obj/structure/statue/petrified))
 			var/obj/structure/statue/petrified/P = src
 			if(P.petrified_mob)
@@ -765,3 +767,22 @@
 	armor_penetration = 100
 	temperature = 50
 	flag = "magic"
+
+/obj/projectile/magic/water
+	name = "bolt of water"
+	icon_state = "ice_2"
+	flag = "magic"
+
+/obj/projectile/magic/water/on_hit(target)
+	. = ..()
+	var/obj/item/reagent_containers/K = new /obj/item/reagent_containers/glass/bucket/wooden/spell_water(get_turf(target))
+	playsound(target, 'sound/foley/waterenter.ogg', 100, FALSE)
+	if(ismob(target))
+		var/mob/living/mob_target = target
+		K.reagents.reaction(mob_target, TOUCH)
+		mob_target.Slowdown(10)
+		mob_target.log_message("has been hit by a water bolt from [key_name(src)]", LOG_ATTACK)
+	else if(istype(target, /obj/structure/soil))
+		var/obj/structure/soil/target_soil = target
+		target_soil.adjust_water(150)
+	qdel(K)

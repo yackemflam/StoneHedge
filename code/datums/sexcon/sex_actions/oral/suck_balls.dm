@@ -22,8 +22,8 @@
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
-			if(pantsies.flags_inv & HIDECROTCH) 
-				if(!pantsies.genitalaccess) 
+			if(pantsies.flags_inv & HIDECROTCH)
+				if(!pantsies.genitalaccess)
 					return FALSE
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
@@ -33,18 +33,28 @@
 			return FALSE
 	return TRUE
 
-/datum/sex_action/suck_balls/on_start(mob/living/user, mob/living/target)
-	user.visible_message(span_warning("[user] starts sucking [target]'s balls..."))
+/datum/sex_action/suck_balls/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
+		user.visible_message(span_warning("[user] starts licking [target]'s balls..."))	//Fairy too small to do anything but lick instead
+	else
+		user.visible_message(span_warning("[user] starts sucking [target]'s balls..."))
 
-/datum/sex_action/suck_balls/on_perform(mob/living/user, mob/living/target)
-	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] sucks [target]'s balls..."))
+/datum/sex_action/suck_balls/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	if(user.sexcon.do_message_signature("[type]"))
+		if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
+			user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] licks [target]'s balls..."))
+		else
+			user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] sucks [target]'s balls..."))
 	user.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(target, 1, 3, TRUE)
 	target.sexcon.handle_passive_ejaculation()
 
-/datum/sex_action/suck_balls/on_finish(mob/living/user, mob/living/target)
-	user.visible_message(span_warning("[user] stops sucking [target]'s balls ..."))
+/datum/sex_action/suck_balls/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
+		user.visible_message(span_warning("[user] stops licking [target]'s balls ..."))
+	else
+		user.visible_message(span_warning("[user] stops sucking [target]'s balls ..."))
 
 /datum/sex_action/suck_balls/is_finished(mob/living/user, mob/living/target)
 	if(target.sexcon.finished_check())

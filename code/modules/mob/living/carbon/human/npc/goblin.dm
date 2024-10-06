@@ -14,8 +14,14 @@
 	erpable = TRUE
 	//skin color is "e8b59b"
 
+/mob/living/carbon/human/species/goblin/unarmed
+	gob_outfit = null
+
+/mob/living/carbon/human/species/goblin/cave/unarmed
+	gob_outfit = null
+
 /mob/living/carbon/human/species/goblin/npc
-	aggressive=1
+	aggressive = 1
 	mode = AI_IDLE
 	dodgetime = 30 //they can dodge easily, but have a cooldown on it
 	flee_in_pain = TRUE
@@ -69,7 +75,7 @@
 	raceicon = "goblin_moon"
 
 /datum/species/goblin/moon/spec_death(gibbed, mob/living/carbon/human/H)
-	new /obj/item/reagent_containers/powder/moondust_purest(get_turf(H))
+	new /obj/item/reagent_containers/powder/moondust/purest(get_turf(H))
 	H.visible_message(span_blue("Moondust falls from [H]!"))
 //	qdel(H)
 

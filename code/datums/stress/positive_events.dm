@@ -5,7 +5,7 @@
 
 /datum/stressevent/raining
 	timer = 60 SECONDS
-	stressadd = 1
+	stressadd = -1
 	desc = span_red("It's raining.")
 
 /datum/stressevent/viewsinpunish

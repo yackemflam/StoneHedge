@@ -22,8 +22,8 @@
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
-			if(pantsies.flags_inv & HIDECROTCH) 
-				if(!pantsies.genitalaccess) 
+			if(pantsies.flags_inv & HIDECROTCH)
+				if(!pantsies.genitalaccess)
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
 		if(issimple(target) && target.gender == MALE && target.sexcon)
@@ -31,8 +31,13 @@
 			return FALSE
 	return TRUE
 
-/datum/sex_action/masturbate_penis_other/on_start(mob/living/user, mob/living/target)
-	user.visible_message(span_warning("[user] starts jerking [target]'s off..."))
+/datum/sex_action/masturbate_penis_other/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))	//Make it more explicit in telling the size difference, fairies need both hands
+		user.visible_message(span_warning("[user] starts rubbing both hands against [target]'s cock..."))
+	else if(!(HAS_TRAIT(user, TRAIT_TINY)) && HAS_TRAIT(target, TRAIT_TINY))
+		user.visible_message(span_warning("[user] starts jerking off [target]'s tiny cock between their thumb and finger..."))
+	else
+		user.visible_message(span_warning("[user] starts jerking [target]'s off..."))
 
 /datum/sex_action/masturbate_penis_other/on_perform(mob/living/user, mob/living/target)
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] jerks [target]'s cock off..."))

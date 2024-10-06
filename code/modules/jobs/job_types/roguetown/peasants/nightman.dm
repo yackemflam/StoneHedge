@@ -4,7 +4,7 @@
 	flag = NIGHTMASTER
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 1 
+	total_positions = 1
 	spawn_positions = 1
 
 	allowed_sexes = list(MALE, FEMALE)
@@ -38,11 +38,14 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -1)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou/leather
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
+		shoes = /obj/item/clothing/shoes/roguetown/shortboots
+		backl = /obj/item/storage/backpack/rogue/satchel
 		if(H.dna?.species)
 			if(iself(H) || ishalfelf(H))
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor

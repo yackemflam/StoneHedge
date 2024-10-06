@@ -17,10 +17,22 @@
 	created_item = /obj/item/rogueweapon/sword/iron/short
 	i_type = "Weapons"
 
+/datum/anvil_recipe/weapons/duster
+	name = "Metal Duster"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/duster
+	i_type = "Weapons"
+
 /datum/anvil_recipe/weapons/imesser
 	name = "Messer"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron/messer
+	i_type = "Weapons"
+
+/datum/anvil_recipe/weapons/smesser
+	name = "Messer"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/sword/iron/messer/steel
 	i_type = "Weapons"
 
 /datum/anvil_recipe/weapons/idagger
@@ -111,7 +123,7 @@
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/sswordshort
-	name = "steel short sword"
+	name = "Arming Sword"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword/short
 	i_type = "Weapons"
@@ -167,6 +179,23 @@
 	created_item = /obj/item/rogueweapon/spear/billhook
 	i_type = "Weapons"
 	craftdiff = 2
+
+/datum/anvil_recipe/weapons/langesmesser
+	name = "Langesmesser (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/rogueweapon/sword/long/rider/messer
+	craftdiff = 2
+	i_type = "Weapons"
+
+/datum/anvil_recipe/weapons/estoc
+	name = "Estoc (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/rogueweapon/sword/estoc
+	craftdiff = 2
+	i_type = "Weapons"
+
 
 /// ADVANCED WEAPONS
 // Craft Difficulty: 3

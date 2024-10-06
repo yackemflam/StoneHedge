@@ -97,6 +97,14 @@
 		target.remove_client_colour(/datum/client_colour/monochrome)
 		target.emote("breathgasp")
 		target.Jitter(100)
+		if(isseelie(target))
+			var/mob/living/carbon/human/fairy_target = target
+			fairy_target.set_heartattack(FALSE)
+			var/obj/item/organ/wings/Wing = fairy_target.getorganslot(ORGAN_SLOT_WINGS)
+			if(Wing == null)
+				var/wing_type = fairy_target.dna.species.organs[ORGAN_SLOT_WINGS]
+				var/obj/item/organ/wings/seelie/new_wings = new wing_type()
+				new_wings.Insert(fairy_target)
 		target.update_body()
 		target.visible_message(span_notice("[target] is revived by radiant light!"), span_green("I awake from the realm before death."))
 		if(target.mind)

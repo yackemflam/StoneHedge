@@ -73,7 +73,7 @@ Slimecrossing Potions
 	icon = 'icons/roguetown/items/cooking.dmi'
 	icon_state = "lovebottle"
 
-/obj/item/slimepotion/lovepotion/attack(list/targets, mob/living/M, mob/user)
+/obj/item/slimepotion/lovepotion/attack(mob/living/M, mob/user)
 	if(!isliving(M) || M.stat == DEAD)
 		to_chat(user, span_warning("The love potion only works on living things, sicko!"))
 		return ..()
@@ -92,17 +92,12 @@ Slimecrossing Potions
 
 	if(!do_after(user, 50, target = M))
 		return
-
 	to_chat(user, span_notice("I feed [M] the love potion!"))
 	to_chat(M, span_notice("I develop feelings for [user], and anyone [user.p_they()] like."))
-	if(M.mind) //if it could be resisted there would be no purpose of this.
+	if(M.mind)
 		M.mind.store_memory("You are in love with [user].")
-		M.faction |= "[REF(user)]"
-		M.apply_status_effect(STATUS_EFFECT_INLOVE, user)
-		return TRUE
-	else //No mind no love
-		to_chat(user, span_notice("I feed [M] the love potion - but it has no effect!"))
-		to_chat(M, span_notice("[user] fed me the love potion but.. it doesn't appear to have an effect!"))
+	M.faction |= "[REF(user)]"
+	M.apply_status_effect(STATUS_EFFECT_INLOVE, user)
 	qdel(src)
 
 //Pressure potion - Charged Dark Blue
