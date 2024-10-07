@@ -1666,7 +1666,7 @@ Slots: [job.spawn_positions]</span>
 							loadout = loadouts_available[loadout_input]
 							to_chat(user, "<font color='yellow'><b>[loadout.name]</b></font>")
 							if(loadout.desc)
-								to_chat(user, "[loadout.desc]")
+								to_chat(user, "[loadout.desc]. I can retrieve it by right-clicking a tree, clock or statue as well as any stashed item.")
 
 				if("nudeshot")
 					to_chat(user, "<span class='notice'>["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
