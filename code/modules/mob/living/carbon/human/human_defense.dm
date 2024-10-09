@@ -852,11 +852,11 @@
 		if(forgan.contents.len)
 			examination += span_info("There is <bold>[english_list(forgan.contents)]</bold> in my [pick(forgan.altnames)].")
 		continue
+#endif
 	examination += "ø ------------ ø</span>"
 	if(!silent)
 		to_chat(user, examination.Join("\n"))
 	return examination
-#endif
 
 /mob/living/carbon/human/proc/check_limb_for_injuries(mob/user = src, choice = BODY_ZONE_CHEST, advanced = FALSE, silent = FALSE)
 	choice = check_zone(choice)
