@@ -11,27 +11,27 @@
 
 /datum/outfit/job/roguetown/adventurer/rogue/pre_equip(mob/living/carbon/human/H)
 	..()
-	// Contributor after choices, if not contributor defaults to el rogue.
-	var/classchoice
+	H.adjust_blindness(-3)
+	var/classes = list(
+	"Rogue",
+	"Swashbuckler",
+	"Arcane Trickster",
+	"Phantom"
+	)
 	if(check_contributor(H.ckey))
-		H.adjust_blindness(-3)
 		H.visible_message(span_info("I contributed into this world, I have been around..."))
-		var/classes = list("Rogue","Assassin","Duelist","Arcane Trickster","Phantom")
-		classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
-	else //not contributor
-		H.adjust_blindness(-3)
-		var/classes = list("Rogue","Duelist","Arcane Trickster","Phantom")
-		classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
+		classes += "Assassin"
+	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 	switch(classchoice)
-		if("Rogue")
+		if("Thief")
 			H.set_blindness(0)
 			roguearch(H)
 		if("Assassin")
 			H.set_blindness(0)
 			assassinarch(H)
-		if("Duelist")
+		if("Swashbuckler")
 			H.set_blindness(0)
-			duelistarch(H)
+			swashbucklerarch(H)
 		if("Arcane Trickster")
 			H.set_blindness(0)
 			tricksterarch(H)
@@ -80,6 +80,7 @@
 	backpack_contents = list(/obj/item/lockpickring/mundane, /obj/item/rogueweapon/huntingknife/idagger/steel)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_SEEPRICES_SHITTY, TRAIT_GENERIC)
 	H.change_stat("strength", -1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", pick(3,4))
@@ -122,6 +123,7 @@
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_SEEPRICES_SHITTY, TRAIT_GENERIC)
 	H.change_stat("strength", -1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", pick(3,4))
@@ -129,33 +131,34 @@
 	H.visible_message(span_info("I honed my skills as a rogue through the years, and was skilled enough to become an assassin. Now it depends to me how I use my abilities."))
 	backpack_contents = list(/obj/item/lockpickring/mundane, /obj/item/rogueweapon/huntingknife/idagger/steel)
 
-/datum/outfit/job/roguetown/adventurer/rogue/proc/duelistarch(mob/living/carbon/human/H)
-	//less of other skills, more sword and knife combat skills.
+// Less thief-ish skills, but you have better starting skills and no strength penalty. Plus, shield skill and a parry dagger.
+/datum/outfit/job/roguetown/adventurer/rogue/proc/swashbucklerarch(mob/living/carbon/human/H)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	head = /obj/item/clothing/head/roguetown/bardhat
+	//head = /obj/item/clothing/head/roguetown/helmet/tricorn
+	shoes = /obj/item/clothing/shoes/roguetown/boots
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	gloves = /obj/item/clothing/gloves/roguetown/angle
+	gloves = /obj/item/clothing/gloves/roguetown/leather/black
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/parrying)
+	if(prob(15))
+		gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	if(H.gender == FEMALE && prob(25)) //funny
@@ -166,14 +169,13 @@
 	beltr = /obj/item/rogueweapon/shield/buckler
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/parrying)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DECEIVING_MEEKNESS, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC) //extra damage to groin (dirty fighting)
 	H.change_stat("strength", 1)
 	H.change_stat("speed", 2)
 	H.change_stat("intelligence", 2)
-	H.visible_message(span_info("I trained as a swashbuckler, flair and precision is my weapon... And some dirty tricks under my cape. I can fool people into underestimating me, their last mistake."))
+	H.visible_message(span_info("I trained as a swashbuckler. I have some skills and tricks under my cape."))
 
 // Arcane Trickster - A charlatan, magic using rogue (based on arcane trickster archetype from 5e)
 /datum/outfit/job/roguetown/adventurer/rogue/proc/tricksterarch(mob/living/carbon/human/H)
@@ -191,20 +193,22 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 2, TRUE)
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	head = /obj/item/clothing/head/roguetown/bardhat
 	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	gloves = /obj/item/clothing/gloves/roguetown/angle
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	if(prob(30))
+		gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	belt = /obj/item/storage/belt/rogue/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
-	cloak = /obj/item/clothing/cloak/half
+	armor = /obj/item/clothing/suit/roguetown/armor/leather
+	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/sword/rapier
-	beltr = /obj/item/rogueweapon/shield/buckler
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/parrying)
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+	beltr = /obj/item/quiver/bolts
+	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC) //extra damage to groin (dirty fighting)
+	ADD_TRAIT(H, TRAIT_SEEPRICES_SHITTY, TRAIT_GENERIC)
 	H.change_stat("strength", -1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", pick(1,2))
@@ -227,23 +231,23 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	head = /obj/item/clothing/head/roguetown/bardhat
 	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	gloves = /obj/item/clothing/gloves/roguetown/angle
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	if(prob(30))
+		gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	belt = /obj/item/storage/belt/rogue/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
-	cloak = /obj/item/clothing/cloak/half
+	armor = /obj/item/clothing/suit/roguetown/armor/leather
+	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/sword/rapier
-	beltr = /obj/item/rogueweapon/shield/buckler
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/parrying)
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+	beltr = /obj/item/quiver/bolts
+	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
 	ADD_TRAIT(H, TRAIT_NOMOOD, TRAIT_GENERIC) //unaffected by mood changes
 	ADD_TRAIT(H, TRAIT_FAKEDEATH, TRAIT_GENERIC) //appears as dead upon examination
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC) //never queezy around death
 	ADD_TRAIT(H, TRAIT_SIXTHSENSE, TRAIT_GENERIC) //can hear ghosts
+	ADD_TRAIT(H, TRAIT_SOUL_EXAMINE, TRAIT_GENERIC) //can determine if someone has their soul.
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
 	H.change_stat("speed", pick(2,3))
@@ -270,6 +274,7 @@
 /obj/effect/proc_holder/spell/self/rogue_vanish/cast(mob/living/carbon/human/user = usr)
 	new /obj/effect/particle_effect/smoke(get_turf(user))
 	user.visible_message(span_warning("[user] tosses a smokebomb to the ground and vanishes in a puff of smoke!"), span_notice("I toss a smokebomb to the ground and vanish in a puff of smoke!"))
+	playsound(user.loc, 'sound/misc/explode/incendiary (1).ogg', 50, FALSE, -1)
 	for(var/mob/living/simple_animal/hostile/nearmob in viewers(12, user))
 		if(nearmob.target == user)
 			nearmob.LoseTarget()
