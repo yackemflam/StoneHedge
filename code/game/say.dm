@@ -27,7 +27,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	if(!language)
 		language = get_default_language()
 	send_speech(message, 7, src, , spans, message_language=language)
-	if(language.flags && language.flags & SIGNLANG)
+	if(language.flags & SIGNLANG)
 		//do emote from list
 		var/emote = pick(language.signlang_verb)
 		src.visible_message(span_emote("[emote]"))
