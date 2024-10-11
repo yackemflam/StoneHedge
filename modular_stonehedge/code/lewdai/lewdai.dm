@@ -337,3 +337,31 @@
 			fuckcd = rand(20,40)
 
 
+/mob/living/carbon/human/should_target(mob/living/L)
+	if(!L)
+		return
+	//those are here for proc dependancy.
+	if(L.lying && !L.held_items) //laying with no items in hand, no threat.
+		if(prob(4) && L.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
+			fuckcd = 0
+			seeklewd()
+		return FALSE
+
+	var/mob/living/carbon/lcarbon = L
+	if(istype(lcarbon, /mob/living/carbon)) //leave alone if handcuffed.
+		if(lcarbon.handcuffed)
+			if(prob(8) && lcarbon.has_quirk(/datum/quirk/monsterhunter) && erpable) //small chance to trigger abuss.
+				fuckcd = 0
+				seeklewd()
+			return FALSE
+	. = ..()
+
+/mob/living/carbon/human/Life()
+	if(seeksfuck)
+		Lewd_Tick()
+	. = ..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/Life()
+	if(seeksfuck)
+		Lewd_Tick()
+	. = ..()

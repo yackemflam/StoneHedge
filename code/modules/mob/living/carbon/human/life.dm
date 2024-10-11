@@ -29,9 +29,6 @@
 
 	. = ..()
 
-	if(seeksfuck)
-		Lewd_Tick()
-
 	if (QDELETED(src))
 		return 0
 

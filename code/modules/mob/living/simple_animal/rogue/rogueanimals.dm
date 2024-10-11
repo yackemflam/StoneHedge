@@ -225,8 +225,6 @@
 			if(production > 0)
 				production--
 				udder.generateMilk()
-	if(seeksfuck)
-		Lewd_Tick()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()
 //	if(!enemies.len && message)
