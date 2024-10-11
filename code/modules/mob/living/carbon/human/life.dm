@@ -22,11 +22,15 @@
 	var/allmig_reward = 0
 
 /mob/living/carbon/human/Life()
+
 //	set invisibility = 0
 	if (notransform)
 		return
 
 	. = ..()
+
+	if(seeksfuck)
+		Lewd_Tick()
 
 	if (QDELETED(src))
 		return 0

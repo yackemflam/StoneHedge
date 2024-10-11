@@ -232,6 +232,20 @@
 	if(HAS_TRAIT(src, TRAIT_PACIFISM))
 		return FALSE
 
+	if(L.lying && !L.held_items) //laying with no items in hand, no threat.
+		if(prob(4) && L.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
+			fuckcd = 0
+			seeklewd()
+		return FALSE
+
+	var/mob/living/carbon/lcarbon = L
+	if(istype(lcarbon, /mob/living/carbon)) //leave alone if handcuffed.
+		if(lcarbon.handcuffed)
+			if(prob(8) && lcarbon.has_quirk(/datum/quirk/monsterhunter) && erpable) //small chance to trigger abuss.
+				fuckcd = 0
+				seeklewd()
+			return FALSE
+
 	if(L == src)
 		return FALSE
 

@@ -213,6 +213,8 @@
 	. = ..()
 	spawn(10)
 		after_creation()
+	if(hornychance)
+		seeksfuck = TRUE
 	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
 
 /mob/living/carbon/human/species/goblin/handle_combat()
@@ -353,6 +355,11 @@
 			if(prob(20))
 				r_hand = /obj/item/rogueweapon/flail
 			l_hand = /obj/item/rogueweapon/shield/wood
+		if(6) //tribal club with rope for lewd
+			r_hand = /obj/item/rogueweapon/mace/woodclub
+			l_hand = /obj/item/rope
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
+			H.seeksfuck = TRUE
 
 
 ////
