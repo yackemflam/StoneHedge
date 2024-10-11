@@ -345,8 +345,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<BR>"
 			dat += "<b>Race:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
 
-			// LETHALSTONE EDIT BEGIN: add statpack selection
-			dat += "<b>Statpack:</b> <a href='?_src_=prefs;preference=statpack;task=input'>[statpack.name]</a><BR>"
 //			dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SPECIES]'>Always Random Species: [(randomise[RANDOM_SPECIES]) ? "Yes" : "No"]</A><br>"
 
@@ -362,10 +360,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
 					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER]'>Always Random Bodytype: [(randomise[RANDOM_GENDER]) ? "Yes" : "No"]</A>"
 					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER_ANTAG]'>When Antagonist: [(randomise[RANDOM_GENDER_ANTAG]) ? "Yes" : "No"]</A>"
-			// LETHALSTONE EDIT BEGIN: add voice type prefs
-			dat += "<b>Voice Type</b>: <a href='?_src_=prefs;preference=voicetype;task=input'>[voice_type]</a><BR>"
-			// LETHALSTONE EDIT END
-
 
 			dat += "<b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 
@@ -375,12 +369,20 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE_ANTAG]'>When Antagonist: [(randomise[RANDOM_AGE_ANTAG]) ? "Yes" : "No"]</A>"
 
 //			dat += "<b><a href='?_src_=prefs;preference=name;task=random'>Random Name</A></b><BR>"
+			dat += "<b>__________________________</b><br>"
 			dat += "<b>Flaw:</b> <a href='?_src_=prefs;preference=charflaw;task=input'>[charflaw]</a><BR>"
 			var/datum/faith/selected_faith = GLOB.faithlist[selected_patron?.associated_faith]
 			dat += "<b>Faith:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
 			dat += "<b>Patron:</b> <a href='?_src_=prefs;preference=patron;task=input'>[selected_patron?.name || "FUCK!"]</a><BR>"
 //			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>Unknown</a><BR>" // Disabling until its working
 			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
+			dat += "<b>Statpack:</b> <a href='?_src_=prefs;preference=statpack;task=input'>[statpack.name]</a><BR>"
+			dat += "<b>Loadout Item:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "None"]</a><br>"
+			dat += "<b>__________________________</b><br>"
+			dat += "<b>Voice Type</b>: <a href='?_src_=prefs;preference=voicetype;task=input'>[voice_type]</a><BR>"
+			dat += "<b>Voice Color:</b> <a href='?_src_=prefs;preference=voice;task=input'>Change</a><br>"
+			dat += "<b>Voice Pitch:</b> <a href='?_src_=prefs;preference=voice_pitch;task=input'>[voice_pitch]</a><br>"
+			dat += "<b><b>Accent:</b> <a href='?_src_=prefs;preference=char_accent;task=input'>[char_accent]</a><br>"
 
 //			dat += "<b>ERP Panel:</b> <a href='?_src_=prefs;preference=sexable'>[sexable == TRUE ? "Yes" : "No"]</a><BR>"
 
@@ -430,22 +432,14 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<b>Mutant Color #3:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
 
 
-			dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
-			dat += "<br>Voice Pitch: </b><a href='?_src_=prefs;preference=voice_pitch;task=input'>[voice_pitch]</a>"
-			dat += "<br><b>Accent:</b> <a href='?_src_=prefs;preference=char_accent;task=input'>[char_accent]</a>"
 			dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
 			dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
 			dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
 
-			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
-			if(headshot_link != null)
-				dat += "<a href='?_src_=prefs;preference=view_headshot;task=input'>View</a>"
-
-			dat += "<br><b>Nudeshot:</b> <a href='?_src_=prefs;preference=nudeshot;task=input'>Change</a>"
-			if(nudeshot_link != null)
-				dat += "<a href='?_src_=prefs;preference=view_nudeshot;task=input'>View</a>"
+			dat += "<br><b>__________________________</b>"
 			dat += "<br><b>Flavor Text:</b> <a href='?_src_=prefs;preference=flavor;task=input'>Change</a>"
 			dat += "<br><b>OOC Notes:</b> <a href='?_src_=prefs;preference=oocnotes;task=input'>Change</a>"
+			dat += "<br><b>NSFW Notes:</b> <a href='?_src_=prefs;preference=nsfwinfo;task=input'>Change</a>"
 			dat += "<br><b>Infocard Background:</b> <a href='?_src_=prefs;preference=background;task=input'>Change</a>"
 /* useless hearthstone shit.
 			dat += "<br><b>Title:</b> <a href='?_src_=prefs;preference=alias;task=input'>Change</a>"
@@ -455,9 +449,15 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<br><b>Strengths:</b> <a href='?_src_=prefs;preference=strengths;task=input'>Change</a>"
 			dat += "<br><b>Weaknesses:</b> <a href='?_src_=prefs;preference=weakness;task=input'>Change</a>"
 */
-			dat += "<br><b>Theme:</b> <a href='?_src_=prefs;preference=theme;task=input'>Change</a>"
-			dat += "<br><b>Loadout Item:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "None"]</a>"
-			dat += "<br><b>NSFW Info:</b> <a href='?_src_=prefs;preference=nsfwinfo;task=input'>Change</a>"
+			dat += "<br><b>Infocard Music:</b> <a href='?_src_=prefs;preference=theme;task=input'>Change</a>"
+			dat += "<br><b>__________________________</b>"
+			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
+			if(headshot_link != null)
+				dat += "<a href='?_src_=prefs;preference=view_headshot;task=input'>View</a>"
+
+			dat += "<br><b>Nudeshot:</b> <a href='?_src_=prefs;preference=nudeshot;task=input'>Change</a>"
+			if(nudeshot_link != null)
+				dat += "<a href='?_src_=prefs;preference=view_nudeshot;task=input'>View</a>"
 			dat += "</td>"
 
 			dat += "</tr></table>"
@@ -1848,7 +1848,7 @@ Slots: [job.spawn_positions]</span>
 							loadout = loadouts_available[loadout_input]
 							to_chat(user, "<font color='yellow'><b>[loadout.name]</b></font>")
 							if(loadout.desc)
-								to_chat(user, "[loadout.desc]")
+								to_chat(user, "[loadout.desc]. I can retrieve it by right-clicking a tree, clock or statue as well as any stashed item.")
 
 				if("nudeshot")
 					to_chat(user, "<span class='notice'>["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
