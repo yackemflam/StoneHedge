@@ -230,7 +230,7 @@
 		return FALSE
 
 	//those are here for proc dependancy.
-	if(L.lying && !L.held_items) //laying with no items in hand, no threat.
+	if(L.lying && !L.get_active_held_item()) //laying with no items in hand, no threat.
 		if(prob(4) && L.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
 			fuckcd = 0
 		return FALSE
