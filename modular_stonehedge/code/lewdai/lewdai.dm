@@ -231,10 +231,9 @@
 	if(sexcon && !chasesfuck)
 		var/list/around = view(10, src)
 		for(var/mob/living/carbon/human/fucktarg in around)
-			var/datum/sex_controller/sc = fucktarg.sexcon
 			if(!src.aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
 				continue
-			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && !sc.beingfucked)
+			if(fucktarg.has_quirk(/datum/quirk/monsterhunter)) //normally checks !sc.beingfucked but carbon mobs arent directly on top of the mob to fuck so its probably fine to get ganged.
 				chasesfuck = TRUE
 				if(lewd_talk)
 					if(src.gender == MALE)
@@ -358,12 +357,14 @@
 	if(target && Adjacent(target))
 		if(aggressive && !target.handcuffed && target.lying) //aggro mob, not handcuffed, lying.
 			for(var/obj/item/rope/ropey in src.held_items)
-				start_pulling(target)
-				ropey.attack(target, src)
 				if(target.cmode)
 					visible_message(span_info("[src] struggles with [target]!"))
 					src.adjustStaminaLoss(50, TRUE)
 					target.adjustStaminaLoss(50, TRUE)
+				else
+					ropey.apply_cuffs(target, src)
+					visible_message(span_info("[src] ties up [target] with a rope!"))
+					start_pulling(target)
 				emote("laugh")
 				break
 		else if(aggressive && target.handcuffed) //already cuffed.

@@ -12,7 +12,7 @@
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
 	possible_rmb_intents = list()
 	erpable = TRUE
-	hornychance = 15
+	hornychance = 25
 	//skin color is "e8b59b"
 
 /mob/living/carbon/human/species/goblin/unarmed
@@ -313,7 +313,7 @@
 		H.STAINT = 8
 	else
 		H.STAINT = 4
-	var/loadout = rand(1,5)
+	var/loadout = rand(1,6)
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	switch(loadout)

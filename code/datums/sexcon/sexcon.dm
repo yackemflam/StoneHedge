@@ -192,7 +192,7 @@
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
 	if(!issimple(target))
 		log_combat(user, target, "Came inside [target]")
-		if(HAS_TRAIT(target?, TRAIT_GOODLOVER))
+		if(HAS_TRAIT(target, TRAIT_GOODLOVER))
 			if(!user.mob_timers["cumtri"])
 				user.mob_timers["cumtri"] = world.time
 				user.adjust_triumphs(1)

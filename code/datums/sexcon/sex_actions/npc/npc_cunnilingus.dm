@@ -21,7 +21,7 @@
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] licking [target]'s cunt..."))
 	user.make_sucking_noise()
 
-	target.heal_bodypart_damage(1,1,0.5,TRUE)
+	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	user.sexcon.perform_sex_action(target, 2, 3, TRUE)
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] ejaculates into [user]'s mouth!"))

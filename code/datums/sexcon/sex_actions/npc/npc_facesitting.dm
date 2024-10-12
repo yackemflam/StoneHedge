@@ -25,7 +25,7 @@
 	user.sexcon.perform_sex_action(user, 1, 3, TRUE)
 	user.sexcon.handle_passive_ejaculation()
 
-	target.heal_bodypart_damage(1,1,0.5,TRUE)
+	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
 	user.sexcon.perform_sex_action(target, 0, 2, FALSE)
 	target.sexcon.handle_passive_ejaculation()

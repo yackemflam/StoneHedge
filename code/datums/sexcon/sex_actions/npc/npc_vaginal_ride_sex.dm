@@ -30,7 +30,7 @@
 
 	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 
-	target.heal_bodypart_damage(1,1,0.5,TRUE)
+	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	if(target.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 3, TRUE)
 	else

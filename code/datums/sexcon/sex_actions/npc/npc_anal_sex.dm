@@ -46,7 +46,7 @@
 		user.sexcon.cum_into(anal = TRUE)
 		user.virginity = FALSE
 
-	target.heal_bodypart_damage(1,1,0.5,TRUE)
+	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 4, FALSE)
 	else
