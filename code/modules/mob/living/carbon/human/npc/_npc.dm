@@ -81,7 +81,7 @@
 		return
 	next_idle = world.time + rand(30,50)
 	if((mobility_flags & MOBILITY_MOVE) && isturf(loc))
-		if(wander)
+		if(wander && mode != AI_OFF)
 			if(prob(50))
 				var/turf/T = get_step(loc,pick(GLOB.cardinals))
 				if(!istype(T, /turf/open/transparent/openspace))

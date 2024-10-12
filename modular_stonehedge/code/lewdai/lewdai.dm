@@ -228,7 +228,6 @@
 		return
 	if(isfucking)
 		return
-	STOP_PROCESSING(SShumannpc,src)
 	if(sexcon && !chasesfuck)
 		var/list/around = view(10, src)
 		for(var/mob/living/carbon/human/fucktarg in around)
@@ -272,6 +271,8 @@
 		if(fucktarg.has_quirk(/datum/quirk/monsterhunter))
 			foundfuckmeat += fucktarg
 			L = fucktarg
+			STOP_PROCESSING(SShumannpc,src)
+			mode = AI_OFF
 			if(src.Adjacent(L))
 				if(iscarbon(L))
 					isfucking = TRUE
@@ -376,7 +377,7 @@
 	chasesfuck = FALSE
 	seekboredom = 0
 	START_PROCESSING(SShumannpc,src)
-	wander = initial(wander)
+	mode = AI_IDLE
 	var/datum/sex_controller/sc = src.sexcon
 	if(sc.just_ejaculated() || timedout) //is it satisfied or given up
 		fuckcd = rand(50,350)
