@@ -155,7 +155,7 @@
 	refilling = TRUE
 	hungerhelp = TRUE //balls be dry if you starve
 	organ_sizeable = TRUE
-	storage_per_size = 5
+	storage_per_size = 6
 	altnames = list("balls", "testicles", "testes", "orbs", "cum tanks", "seed tanks") //used in thought messages.
 	startsfilled = TRUE
 	blocker = ITEM_SLOT_PANTS

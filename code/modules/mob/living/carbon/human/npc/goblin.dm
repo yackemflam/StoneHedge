@@ -12,6 +12,9 @@
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
 	possible_rmb_intents = list()
 	erpable = TRUE
+	hornychance = 25
+	//If someone ends up writing custom messages for goblins, lewd talk could be used ig -vide
+	//lewd_talk = TRUE
 	//skin color is "e8b59b"
 
 /mob/living/carbon/human/species/goblin/unarmed
@@ -78,6 +81,9 @@
 	new /obj/item/reagent_containers/powder/moondust/purest(get_turf(H))
 	H.visible_message(span_blue("Moondust falls from [H]!"))
 //	qdel(H)
+
+/mob/living/carbon/human/species/goblin/npc/horny
+	seeksfuck = TRUE
 
 /obj/item/bodypart/chest/goblin
 	dismemberable = 0
@@ -308,7 +314,7 @@
 		H.STAINT = 8
 	else
 		H.STAINT = 4
-	var/loadout = rand(1,5)
+	var/loadout = rand(1,6)
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	switch(loadout)
@@ -352,6 +358,11 @@
 			if(prob(20))
 				r_hand = /obj/item/rogueweapon/flail
 			l_hand = /obj/item/rogueweapon/shield/wood
+		if(6) //tribal club with rope for lewd
+			r_hand = /obj/item/rogueweapon/mace/woodclub
+			l_hand = /obj/item/rope
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
+			H.seeksfuck = TRUE
 
 
 ////

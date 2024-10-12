@@ -81,7 +81,7 @@
 		return
 	next_idle = world.time + rand(30,50)
 	if((mobility_flags & MOBILITY_MOVE) && isturf(loc))
-		if(wander)
+		if(wander && mode != AI_OFF)
 			if(prob(50))
 				var/turf/T = get_step(loc,pick(GLOB.cardinals))
 				if(!istype(T, /turf/open/transparent/openspace))
@@ -228,6 +228,21 @@
 /mob/living/carbon/human/proc/should_target(mob/living/L)
 	if(!L)
 		return FALSE
+
+	//those are here for proc dependancy.
+	if(L.lying && !L.get_active_held_item()) //laying with no items in hand, no threat.
+		if(prob(4) && L.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
+			fuckcd = 0
+		return FALSE
+
+	var/mob/living/carbon/lcarbon = L
+	if(istype(lcarbon, /mob/living/carbon)) //leave alone if handcuffed.
+		if(lcarbon.handcuffed)
+			if(prob(8) && lcarbon.has_quirk(/datum/quirk/monsterhunter) && erpable) //small chance to trigger abuss.
+				fuckcd = 0
+			return FALSE
+		if(lcarbon.sexcon.beingfucked) //dont touch the battlefucked
+			return FALSE
 
 	if(HAS_TRAIT(src, TRAIT_PACIFISM))
 		return FALSE

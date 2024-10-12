@@ -480,7 +480,7 @@
 	return TRUE
 
 /datum/sex_controller/proc/can_ejaculate()
-	if(issimple(user))
+	if(user.seeksfuck) //should filter down to only npcs with seeksfuck behavior.
 		return TRUE
 	if(!user.getorganslot(ORGAN_SLOT_TESTICLES) && !user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
@@ -702,13 +702,13 @@
 /datum/sex_controller/proc/get_speed_multiplier()
 	switch(speed)
 		if(SEX_SPEED_LOW)
-			return 1
+			return 1.5
 		if(SEX_SPEED_MID)
-			return 2
-		if(SEX_SPEED_HIGH)
 			return 2.5
-		if(SEX_SPEED_EXTREME)
+		if(SEX_SPEED_HIGH)
 			return 3
+		if(SEX_SPEED_EXTREME)
+			return 4
 
 /datum/sex_controller/proc/get_stamina_cost_multiplier()
 	switch(force)

@@ -46,7 +46,6 @@
 
 /datum/sex_action/vaginal_sex/on_start(mob/living/user, mob/living/target)
 	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))	//Non-Seelie on Seelie
-		//Scream and rib break
 		user.visible_message(span_warning("[user] forces his cock into [target]'s tiny cunt!"))
 		var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
 		target.apply_damage(30, BRUTE, BPG)
@@ -65,8 +64,6 @@
 		return FALSE //Return because male seelie cannot succesfully penetrate a large humen target
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s cunt."))
-	if((HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))
-		return FALSE
 	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 
 	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))

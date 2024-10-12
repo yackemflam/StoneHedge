@@ -25,6 +25,7 @@
 	del_on_deaggro = 0
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/wolf
+	erpable = TRUE
 	
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/werewolf/Initialize()

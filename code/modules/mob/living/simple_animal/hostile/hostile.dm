@@ -237,7 +237,18 @@
 		if(M.name in friends)
 			return FALSE
 
+	if(ishuman(the_target))
+		var/mob/living/carbon/human/th = the_target
+		if(th.sexcon.beingfucked) //dont touch the battlefucked
+			return FALSE
+		if(th.lying && !th.get_active_held_item()) //if is laying and holding nothing, and not in cmode. Ignore.
+			if(prob(4) && th.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
+				fuckcd = 0
+			return FALSE
+
 	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
+		return FALSE
+	if(the_target.alpha <= 100) //if target has less than or exactly 100 alpha, does not attack.
 		return FALSE
 	if(search_objects < 2)
 		if(isliving(the_target))
@@ -246,12 +257,6 @@
 			if(robust_searching)
 				if(faction_check && !attack_same)
 					return FALSE
-				if(ishuman(L))
-					var/mob/living/carbon/human/lh = L
-					if(lh.sexcon.beingfucked) //dont touch the battlefucked
-						return FALSE
-					if(lh.lying && !lh.get_active_held_item()) //if is laying and holding nothing, ignore.
-						return FALSE
 				if(L.stat > stat_attack)
 					return FALSE
 			else

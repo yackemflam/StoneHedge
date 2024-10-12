@@ -7,21 +7,30 @@
 	return FALSE
 
 /datum/sex_action/npc_vaginal_ride_sex/can_perform(mob/living/user, mob/living/target)
-	if(issimple(user))
+	if(user.seeksfuck) //should filter down to only npcs with seeksfuck behavior.
 		return TRUE
 	return FALSE
 
 /datum/sex_action/npc_vaginal_ride_sex/on_start(mob/living/user, mob/living/target)
-	user.visible_message(span_warning("[user] gets on top of [target] and begins riding them with their cunt!"))
-	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
+	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))
+		user.visible_message(span_warning("[user] gets on top of [target], trying and failing to ride the tiny cock with their cunt!"))
+	else
+		user.visible_message(span_warning("[user] gets on top of [target] and begins riding them with their cunt!"))
+		playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 	var/datum/sex_controller/sc = target.sexcon
 	sc.beingfucked = TRUE
 
 /datum/sex_action/npc_vaginal_ride_sex/on_perform(mob/living/user, mob/living/target)
-	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] rides [target]."))
+	if(user.sexcon.do_message_signature("[type]"))
+		if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))
+			user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] tries to ride [target], unsuccessfully."))
+			do_thrust_animate(user, target)
+			return	//Return because male seelie cannot succesfully penetrate a large humen target
+		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] rides [target]."))
+
 	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 
-	target.heal_bodypart_damage(1,1,0.5,TRUE)
+	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	if(target.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 3, TRUE)
 	else
@@ -39,15 +48,19 @@
 /datum/sex_action/npc_vaginal_ride_sex/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] gets off [target]."))
 	var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
-	usermob.stoppedfucking()
+	usermob.stoppedfucking(target)
 	var/datum/sex_controller/sc = target.sexcon
 	sc.beingfucked = FALSE
 
 
 /datum/sex_action/npc_vaginal_ride_sex/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())
-		var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
-		usermob.stoppedfucking()
+		if(issimple(user))
+			var/mob/living/simple_animal/hostile/retaliate/rogue/simpleuser = user
+			simpleuser.stoppedfucking(target)
+		else
+			var/mob/living/carbon/human/humanuser = user
+			humanuser.stoppedfucking(target)
 		var/datum/sex_controller/sc = target.sexcon
 		sc.beingfucked = FALSE
 		return TRUE

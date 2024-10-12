@@ -509,7 +509,7 @@
 	alert_type = null
 
 /datum/status_effect/spasms/tick()
-	if(prob(15))
+	if(prob(5))
 		switch(rand(1,5))
 			if(1)
 				if((owner.mobility_flags & MOBILITY_MOVE) && isturf(owner.loc))
