@@ -17,7 +17,9 @@
 	var/hornychance = 0
 	///dumdumdumdum, use for not so smart mobs like goblins for dumb horny talk. "I smell a mate."
 	var/lewd_talk = FALSE
-
+	//Customizable speech for chasing and when starting to seek a mate.
+	var/male_lewdtalk = list("Come here, mate!", "I smell a mate..!", "I'm going to get in you!",  "You will breed with me!")
+	var/female_lewdtalk = list("Come here, mate!", "I smell a mate..!", "I'm going to get you in me!", "You will breed with me!")
 
 	//stuff related to auto sex stuff
 	///Dont touch or change those manually, those are set automatically with the process.
@@ -25,7 +27,6 @@
 	var/fuckcd = 0
 	var/chasesfuck = FALSE
 	var/seekboredom = 0
-
 
 //--------------simple mobs ----------------
 //sex stuff brainrot for things like werevolves --vide noir
@@ -54,10 +55,10 @@
 				chasesfuck = TRUE
 				if(src.gender == MALE)
 					src.visible_message(span_boldwarning("[src] has his eyes on [fucktarg], cock throbbing!"))
-					src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get in you!",  "You will breed with me!"), language = /datum/language/common)
+					src.say(pick(male_lewdtalk), language = /datum/language/common)
 				else
 					src.visible_message(span_boldwarning("[src] has her eyes on [fucktarg], cunt dripping!"))
-					src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
+					src.say(pick(female_lewdtalk), language = /datum/language/common)
 				break
 			else
 				continue
@@ -70,10 +71,10 @@
 		if(prob(10))
 			if(src.gender == MALE)
 				src.visible_message(span_warning("[src] seeks his mate, cock throbbing!"))
-				src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get in you!",  "You will breed with me!"), language = /datum/language/common)
+				src.say(pick(male_lewdtalk), language = /datum/language/common)
 			else
 				src.visible_message(span_warning("[src] seeks her mate, cunt dripping!"))
-				src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
+				src.say(pick(female_lewdtalk), language = /datum/language/common)
 		seeklewd()
 	if(seekboredom > 25) //give up after a while and go dormant again, this should also help them get unstuck.
 		stoppedfucking(timedout = TRUE)
@@ -238,10 +239,10 @@
 				if(lewd_talk)
 					if(src.gender == MALE)
 						src.visible_message(span_boldwarning("[src] has his eyes on [fucktarg], cock throbbing!"))
-						src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get in you!",  "You will breed with me!"), language = /datum/language/common)
+						src.say(pick(male_lewdtalk), language = /datum/language/common)
 					else
 						src.visible_message(span_boldwarning("[src] has her eyes on [fucktarg], cunt dripping!"))
-						src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
+						src.say(pick(female_lewdtalk), language = /datum/language/common)
 				break
 			else
 				continue
@@ -250,10 +251,10 @@
 		if(prob(10) && lewd_talk)
 			if(src.gender == MALE)
 				src.visible_message(span_warning("[src] seeks his mate, cock throbbing!"))
-				src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get in you!",  "You will breed with me!"), language = /datum/language/common)
+				src.say(pick(male_lewdtalk), language = /datum/language/common)
 			else
 				src.visible_message(span_warning("[src] seeks her mate, cunt dripping!"))
-				src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
+				src.say(pick(female_lewdtalk), language = /datum/language/common)
 		seeklewd()
 	if(seekboredom > 25) //give up after a while and go dormant again, this should also help them get unstuck.
 		stoppedfucking(timedout = TRUE)

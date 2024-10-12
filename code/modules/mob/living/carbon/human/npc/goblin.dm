@@ -13,6 +13,8 @@
 	possible_rmb_intents = list()
 	erpable = TRUE
 	hornychance = 25
+	//If someone ends up writing custom messages for goblins, lewd talk could be used ig -vide
+	//lewd_talk = TRUE
 	//skin color is "e8b59b"
 
 /mob/living/carbon/human/species/goblin/unarmed
