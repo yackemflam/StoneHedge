@@ -841,8 +841,7 @@
 /area/rogue/indoors)
 "cd" = (
 /obj/structure/chair/wood/rogue/fancy{
-	dir = 1;
-	icon_state = "chair1"
+	dir = 1
 	},
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors)
@@ -852,8 +851,7 @@
 /area/rogue/indoors)
 "cf" = (
 /obj/structure/chair/wood/rogue/fancy{
-	dir = 4;
-	icon_state = "chair1"
+	dir = 4
 	},
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors)
@@ -881,8 +879,7 @@
 /area/rogue/indoors)
 "cj" = (
 /obj/structure/chair/wood/rogue/fancy{
-	dir = 8;
-	icon_state = "chair1"
+	dir = 8
 	},
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors)
@@ -954,12 +951,10 @@
 /area/rogue/indoors)
 "cw" = (
 /obj/effect/landmark/start/bandit{
-	dir = 4;
-	icon_state = "arrow"
+	dir = 4
 	},
 /obj/structure/chair/wood/rogue{
-	dir = 8;
-	icon_state = "chair2"
+	dir = 8
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
@@ -976,7 +971,6 @@
 /area/rogue/outdoors)
 "cy" = (
 /obj/structure/table/wood{
-	dir = 2;
 	icon_state = "largetable"
 	},
 /turf/open/floor/carpet/inn,
@@ -1010,8 +1004,7 @@
 /area/rogue/indoors)
 "cD" = (
 /obj/structure/stairs{
-	dir = 4;
-	icon_state = "stairs"
+	dir = 4
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -1031,8 +1024,7 @@
 /area/rogue/indoors)
 "cH" = (
 /obj/structure/table/church{
-	dir = 1;
-	icon_state = "churchtable"
+	dir = 1
 	},
 /obj/structure/fluff/walldeco/bigpainting/lake,
 /obj/item/candle/skull,
@@ -1089,7 +1081,6 @@
 "cS" = (
 /obj/structure/mineral_door/wood/donjon{
 	dir = 4;
-	icon_state = "donjondir";
 	lockid = "mansionvampire"
 	},
 /turf/open/floor/rogue/ruinedwood,
@@ -1144,8 +1135,7 @@
 /area/rogue/indoors)
 "dd" = (
 /obj/structure/stairs{
-	dir = 1;
-	icon_state = "stairs"
+	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
@@ -1179,7 +1169,6 @@
 "di" = (
 /obj/structure/mineral_door/wood/donjon{
 	dir = 1;
-	icon_state = "donjondir";
 	locked = 1;
 	lockid = "mansionvampire"
 	},
@@ -1241,18 +1230,13 @@
 	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "dt" = (
 /obj/structure/chair/wood/rogue{
-	dir = 8;
-	icon_state = "chair2"
+	dir = 8
 	},
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "du" = (
 /obj/machinery/light/rogue/hearth,
@@ -1291,9 +1275,7 @@
 	icon_state = "largetable"
 	},
 /obj/item/storage/roguebag,
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "dA" = (
 /turf/open/floor/rogue/blocks,
@@ -1354,8 +1336,7 @@
 /area/rogue/indoors)
 "dP" = (
 /obj/structure/chair/wood/rogue{
-	dir = 4;
-	icon_state = "chair2"
+	dir = 4
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
@@ -1369,9 +1350,7 @@
 	locked = 1;
 	lockid = "mansionvampire"
 	},
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "dS" = (
 /obj/structure/mineral_door/bars{
@@ -1477,9 +1456,7 @@
 	icon_state = "tablewood3"
 	},
 /obj/item/candle/skull/lit,
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "gI" = (
 /obj/structure/flora/roguetree/burnt,
@@ -1504,7 +1481,6 @@
 /area/rogue/outdoors/bog)
 "jd" = (
 /obj/structure/table/wood{
-	dir = 2;
 	icon_state = "largetable"
 	},
 /turf/open/floor/rogue/hexstone,
@@ -1543,9 +1519,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "jW" = (
-/obj/structure/mirror{
-	pixel_y = 32
-	},
+/obj/structure/mirror,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors)
 "jZ" = (
@@ -1590,8 +1564,7 @@
 /area/rogue)
 "la" = (
 /obj/effect/landmark/start/bandit{
-	dir = 8;
-	icon_state = "arrow"
+	dir = 8
 	},
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/herringbone,
@@ -1601,8 +1574,7 @@
 /area/rogue)
 "mp" = (
 /obj/structure/roguewindow/openclose{
-	dir = 1;
-	icon_state = "woodwindowdir"
+	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
@@ -1634,9 +1606,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
 "ni" = (
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "nj" = (
 /obj/structure/table/wood{
@@ -1647,8 +1617,7 @@
 /area/rogue/indoors)
 "ns" = (
 /obj/effect/landmark/start/bandit{
-	dir = 4;
-	icon_state = "arrow"
+	dir = 4
 	},
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/herringbone,
@@ -1660,8 +1629,7 @@
 "nG" = (
 /obj/item/chair/rogue,
 /obj/effect/landmark/start/bandit{
-	dir = 4;
-	icon_state = "arrow"
+	dir = 4
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
@@ -1679,9 +1647,7 @@
 /obj/item/reagent_containers/powder/salt,
 /obj/item/reagent_containers/powder/salt,
 /obj/structure/closet/crate/chest,
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "oc" = (
 /obj/effect/decal/cleanable/blood,
@@ -1689,8 +1655,7 @@
 /area/rogue/outdoors/bog)
 "oV" = (
 /obj/structure/fluff/railing/fence{
-	dir = 1;
-	icon_state = "fence"
+	dir = 1
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
@@ -1752,12 +1717,10 @@
 /area/rogue/indoors)
 "qR" = (
 /obj/effect/landmark/start/bandit{
-	dir = 4;
-	icon_state = "arrow"
+	dir = 4
 	},
 /obj/structure/chair/wood/rogue{
-	dir = 4;
-	icon_state = "chair2"
+	dir = 4
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
@@ -1790,12 +1753,10 @@
 /area/rogue/outdoors/bog)
 "sh" = (
 /obj/effect/landmark/start/bandit{
-	dir = 8;
-	icon_state = "arrow"
+	dir = 8
 	},
 /obj/structure/chair/wood/rogue{
-	dir = 8;
-	icon_state = "chair2"
+	dir = 8
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
@@ -1868,9 +1829,7 @@
 /area/rogue/outdoors/bog)
 "up" = (
 /obj/item/cooking/pan,
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "uD" = (
 /obj/item/rope/chain,
@@ -2036,9 +1995,7 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood3"
 	},
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "AQ" = (
 /obj/structure/roguemachine/mail/r,
@@ -2055,8 +2012,7 @@
 /area/rogue/indoors)
 "BM" = (
 /obj/structure/mineral_door/wood/deadbolt{
-	dir = 8;
-	icon_state = "wooddir"
+	dir = 8
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
@@ -2120,8 +2076,7 @@
 /area/rogue/outdoors/bog)
 "FJ" = (
 /obj/structure/fluff/railing/fence{
-	dir = 4;
-	icon_state = "fence"
+	dir = 4
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
@@ -2201,8 +2156,7 @@
 /area/rogue/outdoors/woods)
 "IL" = (
 /obj/structure/fluff/railing/fence{
-	dir = 8;
-	icon_state = "fence"
+	dir = 8
 	},
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/dirt,
@@ -2215,8 +2169,7 @@
 /area/rogue)
 "Jo" = (
 /obj/structure/fluff/railing/fence{
-	dir = 8;
-	icon_state = "fence"
+	dir = 8
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
@@ -2255,8 +2208,7 @@
 /area/rogue/indoors)
 "Kb" = (
 /obj/structure/fluff/railing/fence{
-	dir = 4;
-	icon_state = "fence"
+	dir = 4
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
@@ -2281,8 +2233,7 @@
 /area/rogue)
 "Lp" = (
 /obj/structure/mineral_door/wood/deadbolt{
-	dir = 1;
-	icon_state = "wooddir"
+	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
@@ -2304,7 +2255,6 @@
 /area/rogue/outdoors/bog)
 "Ms" = (
 /obj/docking_port/stationary{
-	dir = 1;
 	dwidth = 9;
 	height = 6;
 	id = "supply_away";
@@ -2332,8 +2282,7 @@
 "Oc" = (
 /obj/structure/fluff/railing/fence,
 /obj/structure/fluff/railing/fence{
-	dir = 8;
-	icon_state = "fence"
+	dir = 8
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
@@ -2343,15 +2292,12 @@
 /area/rogue/outdoors/bog)
 "OQ" = (
 /obj/machinery/light/rogue/firebowl/standing,
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "Pg" = (
 /obj/machinery/light/rogue/firebowl/standing,
 /obj/structure/fluff/railing/fence{
-	dir = 4;
-	icon_state = "fence"
+	dir = 4
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
@@ -2392,9 +2338,7 @@
 /area/rogue/outdoors/bog)
 "QP" = (
 /obj/machinery/light/rogue/oven/south,
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "QX" = (
 /obj/item/roguebin/water/gross,
@@ -2430,9 +2374,7 @@
 /area/rogue/outdoors)
 "RK" = (
 /obj/effect/landmark/start/bandit,
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
-	},
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "RX" = (
 /turf/closed/indestructible/riveted,
@@ -2483,8 +2425,7 @@
 /area/rogue/indoors)
 "Uk" = (
 /obj/structure/fluff/railing/fence{
-	dir = 8;
-	icon_state = "fence"
+	dir = 8
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
@@ -2500,8 +2441,7 @@
 "UH" = (
 /obj/effect/decal/cleanable/blood,
 /obj/structure/fluff/railing/fence{
-	dir = 4;
-	icon_state = "fence"
+	dir = 4
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
@@ -2600,8 +2540,7 @@
 "Xk" = (
 /obj/structure/fluff/railing/fence,
 /obj/structure/fluff/railing/fence{
-	dir = 4;
-	icon_state = "fence"
+	dir = 4
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
@@ -2624,8 +2563,7 @@
 /area/rogue/outdoors)
 "XV" = (
 /obj/structure/mineral_door/wood/deadbolt{
-	dir = 1;
-	icon_state = "wooddir"
+	dir = 1
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
@@ -2650,8 +2588,7 @@
 /area/rogue/outdoors/woods)
 "YJ" = (
 /obj/structure/chair/wood/rogue{
-	dir = 8;
-	icon_state = "chair2"
+	dir = 8
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)

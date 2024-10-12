@@ -182,8 +182,6 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	if(!loc)
 		stack_trace("Simple animal being instantiated in nullspace")
 	update_simplemob_varspeed()
-	if(seeksfuck)
-		fuckcd = rand(0,20)
 
 //	if(dextrous)
 //		AddComponent(/datum/component/personal_crafting)
@@ -526,6 +524,14 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		..()
 
 /mob/living/simple_animal/proc/CanAttack(atom/the_target)
+	if(ishuman(the_target))
+		var/mob/living/carbon/human/th = the_target
+		if(th.sexcon.beingfucked) //dont touch the battlefucked
+			return FALSE
+		if(th.lying && !th.held_items) //if is laying and holding nothing, and not in cmode. Ignore.
+			if(prob(4) && th.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
+				fuckcd = 0
+			return FALSE
 	if(see_invisible < the_target.invisibility)
 		return FALSE
 	if(the_target.alpha <= 100) //if target has less than or exactly 100 alpha, does not attack.

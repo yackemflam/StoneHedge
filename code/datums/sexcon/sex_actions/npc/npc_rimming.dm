@@ -27,15 +27,19 @@
 /datum/sex_action/npc_rimming/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] stops rimming [target]'s butt ..."))
 	var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
-	usermob.stoppedfucking()
+	usermob.stoppedfucking(target)
 	var/datum/sex_controller/sc = target.sexcon
 	sc.beingfucked = FALSE
 
 
 /datum/sex_action/npc_rimming/is_finished(mob/living/user, mob/living/target)
 	if(target.sexcon.finished_check())
-		var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
-		usermob.stoppedfucking()
+		if(issimple(user))
+			var/mob/living/simple_animal/hostile/retaliate/rogue/simpleuser = user
+			simpleuser.stoppedfucking(target)
+		else
+			var/mob/living/carbon/human/humanuser = user
+			humanuser.stoppedfucking(target)
 		var/datum/sex_controller/sc = target.sexcon
 		sc.beingfucked = FALSE
 		return TRUE

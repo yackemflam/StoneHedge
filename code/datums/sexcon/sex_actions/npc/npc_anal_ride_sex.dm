@@ -47,14 +47,18 @@
 /datum/sex_action/npc_anal_ride_sex/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] gets off [target]."))
 	var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
-	usermob.stoppedfucking()
+	usermob.stoppedfucking(target)
 	var/datum/sex_controller/sc = target.sexcon
 	sc.beingfucked = FALSE
 
 /datum/sex_action/npc_anal_ride_sex/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())
-		var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
-		usermob.stoppedfucking()
+		if(issimple(user))
+			var/mob/living/simple_animal/hostile/retaliate/rogue/simpleuser = user
+			simpleuser.stoppedfucking(target)
+		else
+			var/mob/living/carbon/human/humanuser = user
+			humanuser.stoppedfucking(target)
 		var/datum/sex_controller/sc = target.sexcon
 		sc.beingfucked = FALSE
 		return TRUE

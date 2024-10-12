@@ -1,4 +1,6 @@
 //By Vide Noir https://github.com/EaglePhntm.
+//probably janky as fuck but it is what it is, all mobs having this stuff enabled will stunlock poor warriors with defiant off and monster hunter quirk, likely.
+
 
 //The funny itself... Works with retaliate/rogue simple mobs and non simple human mobs.
 //To set up proper you need to change seeksfuck var to TRUE
@@ -74,9 +76,9 @@
 				src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
 		seeklewd()
 	if(seekboredom > 25) //give up after a while and go dormant again, this should also help them get unstuck.
-		stoppedfucking(TRUE)
+		stoppedfucking(timedout = TRUE)
 	if(retreating && chasesfuck) //we are outta here
-		stoppedfucking(TRUE)
+		stoppedfucking(timedout = TRUE)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/seeklewd()
 	var/mob/living/carbon/human/L
@@ -123,7 +125,6 @@
 					src.throw_at(get_turf(L.loc), 3, 3, spin = FALSE)
 					if(!get_turf(src) == get_turf(L)) //are we at the same tile?
 						walk_to(src, get_turf(L.loc), 1, move_to_delay) //get on them.
-					start_pulling(L)
 					src.visible_message(span_danger("[src] starts to breed [L]!"))
 					if(sc.force == SEX_FORCE_MAX)
 						src.visible_message(span_danger("[src] pins [L] down for a savage fucking!"))
@@ -170,15 +171,13 @@
 					sc.target = L
 					sc.try_start_action(current_action)
 					return
-		else if(foundfuckmeat == list())
-			fuckcd = rand(20,80)
 	for(var/mob/living/fucktarg in foundfuckmeat)
 		var/turf/T = get_turf(fucktarg)
 		Goto(T,move_to_delay,0)
 		break
 	return 
 
-/mob/living/simple_animal/hostile/retaliate/rogue/proc/stoppedfucking(timedout = FALSE)
+/mob/living/simple_animal/hostile/retaliate/rogue/proc/stoppedfucking(mob/living/carbon/target, timedout = FALSE)
 	walk_away(src, get_turf(src.loc), 4, move_to_delay)
 	isfucking = FALSE
 	chasesfuck = FALSE
@@ -211,6 +210,7 @@
 		give_genitals()
 	if(prob(hornychance))
 		seeksfuck = TRUE
+		fuckcd = rand(0,20)
 
 //--------------not so simple mobs ----------------
 //gonna be conversion of the simple mob stuff i made before somehow -videnoir
@@ -228,6 +228,7 @@
 		return
 	if(isfucking)
 		return
+	STOP_PROCESSING(SShumannpc,src)
 	if(sexcon && !chasesfuck)
 		var/list/around = view(10, src)
 		for(var/mob/living/carbon/human/fucktarg in around)
@@ -246,11 +247,8 @@
 				break
 			else
 				continue
-	if(chasesfuck && (get_complex_pain() < ((STAEND * 10)*0.9))) //until fuck is acquired, keep chasing.
+	if(chasesfuck) //until fuck is acquired, keep chasing.
 		seekboredom += 1
-		enemies = list()
-		target = null
-		mode = AI_IDLE
 		if(prob(10) && lewd_talk)
 			if(src.gender == MALE)
 				src.visible_message(span_warning("[src] seeks his mate, cock throbbing!"))
@@ -261,7 +259,7 @@
 		seeklewd()
 	if(seekboredom > 25) //give up after a while and go dormant again, this should also help them get unstuck.
 		stoppedfucking(timedout = TRUE)
-	if((get_complex_pain() >= ((STAEND * 10)*0.9)) && chasesfuck) //we are outta here due pain.
+	if(chasesfuck) //we are outta here due pain.
 		stoppedfucking(timedout = TRUE)
 
 /mob/living/carbon/human/proc/seeklewd()
@@ -271,15 +269,13 @@
 	if(isfucking && fuckcd > 0)
 		return
 	for(var/mob/living/carbon/human/fucktarg in around)
-		if((get_complex_pain() < ((STAEND * 10)*0.9)) && fucktarg.has_quirk(/datum/quirk/monsterhunter))
+		if(fucktarg.has_quirk(/datum/quirk/monsterhunter))
 			foundfuckmeat += fucktarg
 			L = fucktarg
 			if(src.Adjacent(L))
 				if(iscarbon(L))
 					isfucking = TRUE
 					chasesfuck = FALSE
-					mode = AI_OFF
-					wander = FALSE
 					if(L.cmode)
 						L.SetImmobilized(20)
 						L.SetKnockdown(20)
@@ -295,8 +291,7 @@
 						thepants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
 					else if(L.cmode && L.wear_pants)
 						src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
-					enemies = list()
-					target = null
+
 					var/datum/sex_controller/sc = src.sexcon
 					if(aggressive)
 						sc.force = SEX_FORCE_MAX
@@ -304,7 +299,7 @@
 						sc.force = SEX_FORCE_MID
 					src.throw_at(get_turf(L.loc), 3, 3, spin = FALSE)
 					if(!get_turf(src) == get_turf(L)) //are we at the same tile?
-						walk2derpless(L) //get on them.
+						walk2derpless(L.loc) //get on them.
 					start_pulling(L)
 					src.visible_message(span_danger("[src] starts to breed [L]!"))
 					if(sc.force == SEX_FORCE_MAX)
@@ -352,8 +347,6 @@
 					sc.target = L
 					sc.try_start_action(current_action)
 					return
-		else if(foundfuckmeat == list())
-			fuckcd = rand(20,80)
 	for(var/mob/living/carbon/human/fucktarg in foundfuckmeat)
 		var/turf/T = get_turf(fucktarg)
 		walk2derpless(T)
@@ -362,7 +355,7 @@
 
 /mob/living/carbon/human/proc/stoppedfucking(mob/living/carbon/target, timedout = FALSE)
 	//try to bind after sex.
-	if(!target && !timedout)
+	if(target && Adjacent(target))
 		if(aggressive && !target.handcuffed && target.lying) //aggro mob, not handcuffed, lying.
 			for(var/obj/item/rope/ropey in src.held_items)
 				start_pulling(target)
@@ -373,7 +366,7 @@
 					target.adjustStaminaLoss(50, TRUE)
 				emote("laugh")
 				break
-		else if(target.handcuffed)
+		else if(aggressive && target.handcuffed) //already cuffed.
 			emote("laugh")
 			target.adjustStaminaLoss(25, TRUE)
 			src.adjustStaminaLoss(25, TRUE)
@@ -382,7 +375,7 @@
 	isfucking = FALSE
 	chasesfuck = FALSE
 	seekboredom = 0
-	mode = AI_ON
+	START_PROCESSING(SShumannpc,src)
 	wander = initial(wander)
 	var/datum/sex_controller/sc = src.sexcon
 	if(sc.just_ejaculated() || timedout) //is it satisfied or given up
@@ -393,27 +386,6 @@
 			//if its in combat and unsatisfied by prey slipping off, it will wanna try again. But with some delay so the person can actually get up
 			// and if they are taking turns with multiple seeksfuck mobs around this may help a bit.
 			fuckcd = rand(10,20)
-
-
-/mob/living/carbon/human/should_target(mob/living/L)
-	if(!L)
-		return
-	//those are here for proc dependancy.
-	if(L.lying && L.held_items == list()) //laying with no items in hand, no threat.
-		if(prob(4) && L.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
-			fuckcd = 0
-			seeklewd()
-		return FALSE
-	. = ..()
-
-	var/mob/living/carbon/lcarbon = L
-	if(istype(lcarbon, /mob/living/carbon)) //leave alone if handcuffed.
-		if(lcarbon.handcuffed)
-			if(prob(8) && lcarbon.has_quirk(/datum/quirk/monsterhunter) && erpable) //small chance to trigger abuss.
-				fuckcd = 0
-				seeklewd()
-			return FALSE
-	. = ..()
 
 /mob/living/carbon/human/Life()
 	. = ..()
@@ -426,6 +398,7 @@
 		give_genitals()
 	if(prob(hornychance))
 		seeksfuck = TRUE
+		fuckcd = rand(0,20)
 
 //maybe if we make some monsters that would be similiar to werewolves as is, These will take existing gender var on src and use it to assign genitals.
 //internal organs so sixtuplet or whatever the fuck breasts etc shouldnt matter probably, no graphic. Maybe can use for monstergirls or something too.
