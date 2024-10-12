@@ -12,6 +12,7 @@
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
 	possible_rmb_intents = list()
 	erpable = TRUE
+	hornychance = 15
 	//skin color is "e8b59b"
 
 /mob/living/carbon/human/species/goblin/unarmed
@@ -78,6 +79,9 @@
 	new /obj/item/reagent_containers/powder/moondust/purest(get_turf(H))
 	H.visible_message(span_blue("Moondust falls from [H]!"))
 //	qdel(H)
+
+/mob/living/carbon/human/species/goblin/npc/horny
+	seeksfuck = TRUE
 
 /obj/item/bodypart/chest/goblin
 	dismemberable = 0

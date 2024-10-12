@@ -8,7 +8,7 @@
 	return FALSE
 
 /datum/sex_action/npc_cunnilingus/can_perform(mob/living/user, mob/living/target)
-	if(issimple(user))
+	if(user.seeksfuck) //should filter down to only npcs with seeksfuck behavior.
 		return TRUE
 	return FALSE
 

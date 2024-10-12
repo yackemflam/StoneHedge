@@ -34,11 +34,15 @@
 		return
 	if(!erpable)
 		return
-	if(!seeksfuck)
-		return
-	if(!isfucking && seeksfuck && fuckcd > 0)
+	if(fuckcd > 0)
 		fuckcd -= 1
-	if(sexcon && seeksfuck && !isfucking && !fuckcd && prob(100) && !chasesfuck && !retreating)
+	if(fuckcd)
+		return
+	if(isfucking)
+		return
+	if(retreating)
+		return
+	if(sexcon && !chasesfuck)
 		var/list/around = view(aggro_vision_range, src)
 		for(var/mob/living/carbon/human/fucktarg in around)
 			var/datum/sex_controller/sc = fucktarg.sexcon
@@ -55,7 +59,7 @@
 				break
 			else
 				continue
-	if(chasesfuck && !retreating) //until fuck is acquired, keep chasing.
+	if(chasesfuck) //until fuck is acquired, keep chasing.
 		seekboredom += 1
 		enemies = list()
 		target = null
@@ -70,9 +74,9 @@
 				src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
 		seeklewd()
 	if(seekboredom > 25) //give up after a while and go dormant again, this should also help them get unstuck.
-		stoppedfucking(src, TRUE)
+		stoppedfucking(TRUE)
 	if(retreating && chasesfuck) //we are outta here
-		stoppedfucking(src, TRUE)
+		stoppedfucking(TRUE)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/seeklewd()
 	var/mob/living/carbon/human/L
@@ -101,8 +105,9 @@
 						L.emote("gasp")
 					if(!L.cmode && L.wear_pants) //pants off if not in cmode
 						src.visible_message(span_danger("[src] manages to rip [L]'s [L.wear_pants.name] off!"))
-						L.dropItemToGround(L.wear_pants)
-						L.wear_pants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
+						var/obj/item/clothing/thepants = L.wear_pants
+						L.dropItemToGround(thepants)
+						thepants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
 					else if(L.cmode && L.wear_pants)
 						src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
 					enemies = list()
@@ -118,6 +123,7 @@
 					src.throw_at(get_turf(L.loc), 3, 3, spin = FALSE)
 					if(!get_turf(src) == get_turf(L)) //are we at the same tile?
 						walk_to(src, get_turf(L.loc), 1, move_to_delay) //get on them.
+					start_pulling(L)
 					src.visible_message(span_danger("[src] starts to breed [L]!"))
 					if(sc.force == SEX_FORCE_MAX)
 						src.visible_message(span_danger("[src] pins [L] down for a savage fucking!"))
@@ -169,7 +175,7 @@
 	for(var/mob/living/fucktarg in foundfuckmeat)
 		var/turf/T = get_turf(fucktarg)
 		Goto(T,move_to_delay,0)
-		return
+		break
 	return 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/stoppedfucking(timedout = FALSE)
@@ -191,8 +197,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()
 	. = ..()
-	if(src.isfucking)
-		src.stoppedfucking()
+	if(isfucking)
+		stoppedfucking()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Life()
 	if(seeksfuck)
@@ -216,15 +222,17 @@
 		return
 	if(!erpable)
 		return
-	if(!seeksfuck)
-		return
-	if(!isfucking && seeksfuck && fuckcd > 0)
+	if(fuckcd > 0)
 		fuckcd -= 1
-	if(sexcon && seeksfuck && !isfucking && !fuckcd && prob(100) && !chasesfuck && !flee_in_pain)
+	if(fuckcd)
+		return
+	if(isfucking)
+		return
+	if(sexcon && !chasesfuck)
 		var/list/around = view(10, src)
 		for(var/mob/living/carbon/human/fucktarg in around)
 			var/datum/sex_controller/sc = fucktarg.sexcon
-			if(!src.aggressive && fucktarg.cmode  && !fucktarg.lying) //skip if the target has cmode on and the mob is not aggressive.
+			if(!src.aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
 				continue
 			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && !sc.beingfucked)
 				chasesfuck = TRUE
@@ -238,7 +246,7 @@
 				break
 			else
 				continue
-	if(chasesfuck && !flee_in_pain) //until fuck is acquired, keep chasing.
+	if(chasesfuck && (get_complex_pain() < ((STAEND * 10)*0.9))) //until fuck is acquired, keep chasing.
 		seekboredom += 1
 		enemies = list()
 		target = null
@@ -252,9 +260,9 @@
 				src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
 		seeklewd()
 	if(seekboredom > 25) //give up after a while and go dormant again, this should also help them get unstuck.
-		stoppedfucking(src, TRUE)
-	if(flee_in_pain && chasesfuck) //we are outta here
-		stoppedfucking(src, TRUE)
+		stoppedfucking(timedout = TRUE)
+	if((get_complex_pain() >= ((STAEND * 10)*0.9)) && chasesfuck) //we are outta here due pain.
+		stoppedfucking(timedout = TRUE)
 
 /mob/living/carbon/human/proc/seeklewd()
 	var/mob/living/carbon/human/L
@@ -263,7 +271,7 @@
 	if(isfucking && fuckcd > 0)
 		return
 	for(var/mob/living/carbon/human/fucktarg in around)
-		if(!flee_in_pain && fucktarg.has_quirk(/datum/quirk/monsterhunter) && fucktarg.lying)
+		if((get_complex_pain() < ((STAEND * 10)*0.9)) && fucktarg.has_quirk(/datum/quirk/monsterhunter))
 			foundfuckmeat += fucktarg
 			L = fucktarg
 			if(src.Adjacent(L))
@@ -282,8 +290,9 @@
 						L.emote("gasp")
 					if(!L.cmode && L.wear_pants) //pants off if not in cmode
 						src.visible_message(span_danger("[src] manages to rip [L]'s [L.wear_pants.name] off!"))
-						L.dropItemToGround(L.wear_pants)
-						L.wear_pants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
+						var/obj/item/clothing/thepants = L.wear_pants
+						L.dropItemToGround(thepants)
+						thepants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
 					else if(L.cmode && L.wear_pants)
 						src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
 					enemies = list()
@@ -296,17 +305,12 @@
 					src.throw_at(get_turf(L.loc), 3, 3, spin = FALSE)
 					if(!get_turf(src) == get_turf(L)) //are we at the same tile?
 						walk2derpless(L) //get on them.
+					start_pulling(L)
 					src.visible_message(span_danger("[src] starts to breed [L]!"))
 					if(sc.force == SEX_FORCE_MAX)
 						src.visible_message(span_danger("[src] pins [L] down for a savage fucking!"))
 					else
 						src.visible_message(span_info("[src] climbs on [L] to breed."))
-					if(aggressive && !L.handcuffed && L.lying && !L.cmode) //aggro mob, not handcuffed, lying and not in cmode.
-						for(var/obj/item/rope/ropey in src.held_items)
-							src.visible_message(span_info("[src] puts the ropes on [L]!"))
-							ropey.apply_cuffs(L, src)
-							src.start_pulling(L)
-							break
 					sc.speed = SEX_SPEED_MAX
 					if(gender == MALE)
 						sc.manual_arousal = SEX_MANUAL_AROUSAL_MAX
@@ -350,14 +354,31 @@
 					return
 		else if(foundfuckmeat == list())
 			fuckcd = rand(20,80)
-	for(var/mob/living/fucktarg in foundfuckmeat)
+	for(var/mob/living/carbon/human/fucktarg in foundfuckmeat)
 		var/turf/T = get_turf(fucktarg)
 		walk2derpless(T)
-		return
+		break
 	return 
 
-/mob/living/carbon/human/proc/stoppedfucking(timedout = FALSE)
-	walk_away(src, get_turf(src.loc), 4, 1)
+/mob/living/carbon/human/proc/stoppedfucking(mob/living/carbon/target, timedout = FALSE)
+	//try to bind after sex.
+	if(!target && !timedout)
+		if(aggressive && !target.handcuffed && target.lying) //aggro mob, not handcuffed, lying.
+			for(var/obj/item/rope/ropey in src.held_items)
+				start_pulling(target)
+				ropey.attack(target, src)
+				if(target.cmode)
+					visible_message(span_info("[src] struggles with [target]!"))
+					src.adjustStaminaLoss(50, TRUE)
+					target.adjustStaminaLoss(50, TRUE)
+				emote("laugh")
+				break
+		else if(target.handcuffed)
+			emote("laugh")
+			target.adjustStaminaLoss(25, TRUE)
+			src.adjustStaminaLoss(25, TRUE)
+	else if(target)
+		walk_away(src, get_turf(src.loc), 4, 1)
 	isfucking = FALSE
 	chasesfuck = FALSE
 	seekboredom = 0
@@ -365,24 +386,25 @@
 	wander = initial(wander)
 	var/datum/sex_controller/sc = src.sexcon
 	if(sc.just_ejaculated() || timedout) //is it satisfied or given up
-		fuckcd = rand(100,680)
+		fuckcd = rand(50,350)
 	else
 		fuckcd = rand(20,80)
 		if(aggressive)
 			//if its in combat and unsatisfied by prey slipping off, it will wanna try again. But with some delay so the person can actually get up
 			// and if they are taking turns with multiple seeksfuck mobs around this may help a bit.
-			fuckcd = rand(20,40)
+			fuckcd = rand(10,20)
 
 
 /mob/living/carbon/human/should_target(mob/living/L)
 	if(!L)
 		return
 	//those are here for proc dependancy.
-	if(L.lying && !L.held_items) //laying with no items in hand, no threat.
+	if(L.lying && L.held_items == list()) //laying with no items in hand, no threat.
 		if(prob(4) && L.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
 			fuckcd = 0
 			seeklewd()
 		return FALSE
+	. = ..()
 
 	var/mob/living/carbon/lcarbon = L
 	if(istype(lcarbon, /mob/living/carbon)) //leave alone if handcuffed.
@@ -394,9 +416,9 @@
 	. = ..()
 
 /mob/living/carbon/human/Life()
+	. = ..()
 	if(seeksfuck)
 		Lewd_Tick()
-	. = ..()
 
 /mob/living/carbon/human/Initialize()
 	. = ..()
@@ -412,7 +434,7 @@
 /mob/living/proc/give_genitals(hidden_organs = TRUE)
 	defiant = 0
 	erpable = TRUE
-	if(!sexcon)
+	if(sexcon == null)
 		sexcon = new /datum/sex_controller(src)
 	if(!issimple(src))
 		if(!src.getorganslot(ORGAN_SLOT_ANUS))

@@ -480,7 +480,7 @@
 	return TRUE
 
 /datum/sex_controller/proc/can_ejaculate()
-	if(issimple(user))
+	if(user.seeksfuck) //should filter down to only npcs with seeksfuck behavior.
 		return TRUE
 	if(!user.getorganslot(ORGAN_SLOT_TESTICLES) && !user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
