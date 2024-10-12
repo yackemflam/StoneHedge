@@ -22,7 +22,6 @@
 	var/allmig_reward = 0
 
 /mob/living/carbon/human/Life()
-
 //	set invisibility = 0
 	if (notransform)
 		return

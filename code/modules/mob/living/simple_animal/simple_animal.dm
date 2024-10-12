@@ -167,13 +167,6 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 	var/swinging = FALSE
 
-	//stuff related to auto sex stuff
-	var/isfucking = FALSE
-	var/fuckcd = 0
-	var/seeksfuck = FALSE
-	var/chasesfuck = FALSE
-	var/seekboredom = 0
-
 	buckle_lying = FALSE
 	cmode = 1
 

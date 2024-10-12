@@ -1290,48 +1290,7 @@
 	if(istype(loc, /turf/open/water) && !(mobility_flags & MOBILITY_STAND))
 		return FALSE
 
-//maybe if we make some monsters that would be similiar to werewolves as is, unlike goblins these will take existing gender than assign one.
-//internal organs so sixtuplet or whatever the fuck breasts etc shouldnt matter probably, no graphic. Maybe can use for monstergirls or something too.
-//Call this proc to give genitals automatically where needed.
-/mob/living/proc/give_genitals()
-	defiant = 0
-	erpable = TRUE
-	if(!sexcon)
-		sexcon = new /datum/sex_controller(src)
-	if(!issimple(src))
-		if(!src.getorganslot(ORGAN_SLOT_ANUS))
-			var/obj/item/organ/filling_organ/anus/ass = src.getorganslot(ORGAN_SLOT_ANUS)
-			ass = new /obj/item/organ/filling_organ/anus
-			ass.Insert(src)
-		if(gender == MALE)
-			var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
-			testicles = new /obj/item/organ/filling_organ/testicles/internal
-			testicles.organ_size = rand(3)
-			testicles.Insert(src)
-			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
-			penis = new /obj/item/organ/penis/internal
-			penis.penis_size = rand(3)
-			penis.Insert(src)
-		if(gender == FEMALE)
-			var/obj/item/organ/filling_organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
-			breasts = new /obj/item/organ/filling_organ/breasts/internal
-			breasts.organ_size = rand(10)
-			breasts.Insert(src)
-			var/obj/item/organ/filling_organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
-			vagina = new /obj/item/organ/filling_organ/vagina/internal
-			vagina.Insert(src)
-			if(prob(3)) //3 chance to be dickgirl.
-				var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
-				testicles = new /obj/item/organ/filling_organ/testicles/internal
-				testicles.organ_size = rand(3)
-				testicles.Insert(src)
-				var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
-				penis = new /obj/item/organ/penis/internal
-				penis.penis_size = rand(3)
-				penis.Insert(src)
-	src.sexcon.manual_arousal = 4
-
-//fucks sake --vide noir
+//had to make this ghetto ass shit, fucks sake -vide noir
 /mob/living/carbon/proc/mob_slot_wearing(zone)
 	if(iscarbon(src))
 		var/mob/living/carbon/human/user = src

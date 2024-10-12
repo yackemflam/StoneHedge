@@ -213,8 +213,6 @@
 	. = ..()
 	spawn(10)
 		after_creation()
-	if(hornychance)
-		seeksfuck = TRUE
 	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
 
 /mob/living/carbon/human/species/goblin/handle_combat()

@@ -1,7 +1,40 @@
+//By Vide Noir https://github.com/EaglePhntm.
+
+//The funny itself... Works with retaliate/rogue simple mobs and non simple human mobs.
+//To set up proper you need to change seeksfuck var to TRUE
+/mob/living
+
+	//You can use this with any living.
+	///Will this mob be given genitals and sexcontroller, therefore enabling erp panel, and basically enables everything else, key variable.
+	var/erpable = FALSE
+
+	//You can not use the vars below with anything less than retaliate/rogue simple mobs, anything less dont have retaliate ai and required vars.
+	///Is this a horny goober that periodically tries to get in people.
+	var/seeksfuck = FALSE
+	///percent chance at initialize to enable seeksfuck, if normally not enabled in type.
+	var/hornychance = 0
+	///dumdumdumdum, use for not so smart mobs like goblins for dumb horny talk. "I smell a mate."
+	var/lewd_talk = FALSE
+
+
+	//stuff related to auto sex stuff
+	///Dont touch or change those manually, those are set automatically with the process.
+	var/isfucking = FALSE
+	var/fuckcd = 0
+	var/chasesfuck = FALSE
+	var/seekboredom = 0
+
+
 //--------------simple mobs ----------------
-//sex stuff brainrot --vide noir
+//sex stuff brainrot for things like werevolves --vide noir
+//talking is not optional here for show of sentience.
+
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/Lewd_Tick()
 	if(client)
+		return
+	if(!erpable)
+		return
+	if(!seeksfuck)
 		return
 	if(!isfucking && seeksfuck && fuckcd > 0)
 		fuckcd -= 1
@@ -161,25 +194,29 @@
 	if(src.isfucking)
 		src.stoppedfucking()
 
+/mob/living/simple_animal/hostile/retaliate/rogue/Life()
+	if(seeksfuck)
+		Lewd_Tick()
+	. = ..()
+
+/mob/living/simple_animal/Initialize()
+	. = ..()
+	if(erpable)
+		give_genitals()
+	if(prob(hornychance))
+		seeksfuck = TRUE
+
 //--------------not so simple mobs ----------------
 //gonna be conversion of the simple mob stuff i made before somehow -videnoir
 //those should not tackle down but only pounce laying mobs.
 //those mobs may instantly refresh their cooldown if a mob is laying or is handcuffed nearby while seeking targets.
 
-/mob/living/carbon/human
-	//stuff related to auto sex stuff
-	var/isfucking = FALSE
-	var/fuckcd = 0
-	var/seeksfuck = FALSE
-	var/chasesfuck = FALSE
-	var/seekboredom = 0
-	//dumdumdumdum, use for not so smart mobs like goblins for dumb horny talk.
-	var/dumblewdtalk = FALSE
-	//since there may be so many at once, best make only a few try.
-	var/hornychance = 15 //percent.
-
 /mob/living/carbon/human/proc/Lewd_Tick()
 	if(client)
+		return
+	if(!erpable)
+		return
+	if(!seeksfuck)
 		return
 	if(!isfucking && seeksfuck && fuckcd > 0)
 		fuckcd -= 1
@@ -191,7 +228,7 @@
 				continue
 			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && !sc.beingfucked)
 				chasesfuck = TRUE
-				if(dumblewdtalk)
+				if(lewd_talk)
 					if(src.gender == MALE)
 						src.visible_message(span_boldwarning("[src] has his eyes on [fucktarg], cock throbbing!"))
 						src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get in you!",  "You will breed with me!"), language = /datum/language/common)
@@ -206,7 +243,7 @@
 		enemies = list()
 		target = null
 		mode = AI_IDLE
-		if(prob(10) && dumblewdtalk)
+		if(prob(10) && lewd_talk)
 			if(src.gender == MALE)
 				src.visible_message(span_warning("[src] seeks his mate, cock throbbing!"))
 				src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get in you!",  "You will breed with me!"), language = /datum/language/common)
@@ -361,7 +398,66 @@
 		Lewd_Tick()
 	. = ..()
 
-/mob/living/simple_animal/hostile/retaliate/rogue/Life()
-	if(seeksfuck)
-		Lewd_Tick()
+/mob/living/carbon/human/Initialize()
 	. = ..()
+	if(erpable)
+		give_genitals()
+	if(prob(hornychance))
+		seeksfuck = TRUE
+
+//maybe if we make some monsters that would be similiar to werewolves as is, These will take existing gender var on src and use it to assign genitals.
+//internal organs so sixtuplet or whatever the fuck breasts etc shouldnt matter probably, no graphic. Maybe can use for monstergirls or something too.
+//Call this proc to give genitals automatically where needed.
+//hidden organs are on by default due to coloring issues.
+/mob/living/proc/give_genitals(hidden_organs = TRUE)
+	defiant = 0
+	erpable = TRUE
+	if(!sexcon)
+		sexcon = new /datum/sex_controller(src)
+	if(!issimple(src))
+		if(!src.getorganslot(ORGAN_SLOT_ANUS))
+			var/obj/item/organ/filling_organ/anus/ass = src.getorganslot(ORGAN_SLOT_ANUS)
+			ass = new /obj/item/organ/filling_organ/anus
+			ass.Insert(src)
+		if(gender == MALE)
+			var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
+			testicles = new /obj/item/organ/filling_organ/testicles/internal
+			testicles.organ_size = rand(3)
+			testicles.Insert(src)
+			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
+			if(hidden_organs)
+				penis = new /obj/item/organ/penis/internal
+			else
+				penis = new /obj/item/organ/penis
+			penis.penis_size = rand(3)
+			penis.Insert(src)
+		if(gender == FEMALE)
+			var/obj/item/organ/filling_organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
+			if(hidden_organs)
+				breasts = new /obj/item/organ/filling_organ/breasts/internal
+			else
+				breasts = new /obj/item/organ/filling_organ/breasts
+			breasts.organ_size = rand(10)
+			breasts.Insert(src)
+			var/obj/item/organ/filling_organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
+			if(hidden_organs)
+				vagina = new /obj/item/organ/filling_organ/vagina/internal
+			else
+				vagina = new /obj/item/organ/filling_organ/vagina
+			vagina.Insert(src)
+			if(prob(3)) //3 chance to be dickgirl.
+				var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
+				if(hidden_organs)
+					testicles = new /obj/item/organ/filling_organ/testicles/internal
+				else
+					testicles = new /obj/item/organ/filling_organ/testicles
+				testicles.organ_size = rand(3)
+				testicles.Insert(src)
+				var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
+				if(hidden_organs)
+					penis = new /obj/item/organ/penis/internal
+				else
+					penis = new /obj/item/organ/penis
+				penis.penis_size = rand(3)
+				penis.Insert(src)
+	src.sexcon.manual_arousal = 4
