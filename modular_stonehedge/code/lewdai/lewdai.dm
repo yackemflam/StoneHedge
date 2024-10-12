@@ -298,9 +298,8 @@
 						sc.force = SEX_FORCE_MAX
 					else
 						sc.force = SEX_FORCE_MID
-					src.throw_at(get_turf(L.loc), 3, 3, spin = FALSE)
-					if(!get_turf(src) == get_turf(L)) //are we at the same tile?
-						walk2derpless(L.loc) //get on them.
+					if(!Adjacent(L)) //are we at the same tile?
+						walk2derpless(Adjacent(L)) //get next to them since it looks like shit tweaks out.
 					start_pulling(L)
 					src.visible_message(span_danger("[src] starts to breed [L]!"))
 					if(sc.force == SEX_FORCE_MAX)
@@ -350,7 +349,7 @@
 					return
 	for(var/mob/living/carbon/human/fucktarg in foundfuckmeat)
 		var/turf/T = get_turf(fucktarg)
-		walk2derpless(T)
+		walk2derpless(Adjacent(T))
 		break
 	return 
 
