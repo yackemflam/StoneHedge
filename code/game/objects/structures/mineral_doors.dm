@@ -368,7 +368,7 @@
 
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user)
 	user.changeNext_move(CLICK_CD_FAST)
-	if(istype(I, /obj/item/roguekey) || istype(I, /obj/item/keyring))
+	if(istype(I, /obj/item/roguekey) || istype(I, /obj/item/storage/keyring))
 		if(!locked)
 			to_chat(user, span_warning("It won't turn this way. Try turning to the right."))
 			rattle()
@@ -432,7 +432,7 @@
 /obj/structure/mineral_door/attack_right(mob/user)
 	user.changeNext_move(CLICK_CD_FAST)
 	var/obj/item = user.get_active_held_item()
-	if(istype(item, /obj/item/roguekey) || istype(item, /obj/item/keyring))
+	if(istype(item, /obj/item/roguekey) || istype(item, /obj/item/storage/keyring))
 		if(locked)
 			to_chat(user, span_warning("It won't turn this way. Try turning to the left."))
 			rattle()

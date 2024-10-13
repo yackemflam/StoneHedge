@@ -38,7 +38,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	beltr = /obj/item/cooking/pan
 	beltl = /obj/item/flashlight/flare/torch/lantern
-	mouth = /obj/item/rogueweapon/huntingknife/elvish/drow // A simple knife for a legend? No. Never.
+	mouth = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow // A simple knife for a legend? No. Never.
 	backpack_contents = list(/obj/item/reagent_containers/powder/salt = 8,/obj/item/reagent_containers/food/snacks/rogue/cheddar = 2,/obj/item/bait = 4)
 	H.change_stat("intelligence", 3)
 	H.change_stat("strength", 2) // Intended to be legendary butcher, as well

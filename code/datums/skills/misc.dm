@@ -40,3 +40,6 @@
 
 /datum/skill/misc/sewing
 	name = "Sewing"
+
+/datum/skill/misc/tracking
+	name = "Tracking"

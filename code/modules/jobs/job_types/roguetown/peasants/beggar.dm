@@ -118,7 +118,7 @@
 		l_hand = /obj/item/rogueweapon/mace/woodclub
 	else
 		l_hand = null
-	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, pick(1,2,3,4,5), TRUE) //random lockpicking skill cool.
+	H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, pick(1,2,3,4,5), TRUE) //random lockpicking skill cool.
 	H.change_stat("strength", 1)
 	H.change_stat("constitution", 2) // look I get it human garbage. but no ones playing this shit with that.
 	H.change_stat("endurance", 1)

@@ -608,7 +608,7 @@
 "cu" = (
 /obj/structure/table/wood,
 /obj/item/roguekey/dungeon,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/garrison,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
@@ -3432,7 +3432,7 @@
 	},
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/garrison,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "oG" = (
@@ -4028,8 +4028,8 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/roguekey/walls,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
 "rl" = (
@@ -4198,7 +4198,7 @@
 /area/rogue/outdoors/rtfield)
 "sa" = (
 /obj/item/roguekey/shop,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/structure/table/wood{
 	icon_state = "largetable";
 	dir = 10
@@ -7466,7 +7466,7 @@
 /obj/structure/closet/crate/roguecloset,
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/walls,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/storage/backpack/rogue/satchel,
 /turf/open/floor/carpet/royalblack,
@@ -9149,7 +9149,7 @@
 /area/rogue/indoors/town/church)
 "Lb" = (
 /obj/structure/table/wood,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/structure/fluff/railing/wood{
 	dir = 1;
 	pixel_y = 7;
@@ -11330,7 +11330,7 @@
 /area/rogue/indoors)
 "Tt" = (
 /obj/structure/table/wood,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town)
 "Tu" = (

@@ -187,6 +187,7 @@
 #define GRENZELHOFT		(1<<2)
 #define VETERAN		(1<<3)
 #define SEELIE		(1<<4)
+#define SELLSWORD		(1<<4)
 
 #define TRIBAL		(1<<8)
 
@@ -295,6 +296,7 @@
 #define JDO_DESERT_RIDER 31.2
 #define JDO_VET 31.3
 #define JDO_SEELIE 31.4
+#define JDO_SELLSWORD 31.5
 
 #define JDO_VAGRANT 33
 #define JDO_VAGABOND 34

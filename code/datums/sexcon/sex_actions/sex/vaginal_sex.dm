@@ -50,12 +50,13 @@
 	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))	//Non-Seelie on Seelie
 		//Scream and rib break
 		user.visible_message(span_warning("[user] forces their cock into [target]'s tiny cunt!"))
+		var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
+		var/obj/item/bodypart/BPC = target.get_bodypart(BODY_ZONE_CHEST)
 		if(user.sexcon.force > SEX_FORCE_LOW)
-			var/obj/item/bodypart/BPC = target.get_bodypart(BODY_ZONE_CHEST)
-			var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
 			BPC.add_wound(/datum/wound/fracture/chest)
 			BPG.add_wound(/datum/wound/fracture/groin)
-		target.apply_damage(30, BRUTE, BPC)
+		target.apply_damage(15, BRUTE, BPC)
+		target.apply_damage(15, BRUTE, BPG)
 		playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY)) //Seelie on Non-Seelie action
 		user.visible_message(span_warning("[user] tries and fails to insert their tiny cock into [target]'s cunt."))

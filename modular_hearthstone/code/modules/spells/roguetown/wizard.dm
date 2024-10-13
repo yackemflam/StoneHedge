@@ -26,7 +26,7 @@
 		/obj/effect/proc_holder/spell/invoked/push_spell,
 		/obj/effect/proc_holder/spell/invoked/longjump,
 		/obj/effect/proc_holder/spell/invoked/blade_burst,
-	//	/obj/effect/proc_holder/spell/invoked/boomingblade5e,
+		/obj/effect/proc_holder/spell/invoked/boomingblade5e,
 		/obj/effect/proc_holder/spell/invoked/arcyne_storm,
 		/obj/effect/proc_holder/spell/invoked/frostbite5e,
 		/obj/effect/proc_holder/spell/invoked/poisonspray5e,
@@ -35,7 +35,7 @@
 		/obj/effect/proc_holder/spell/invoked/infestation5e,
 		/obj/effect/proc_holder/spell/invoked/magicstone5e,
 		/obj/effect/proc_holder/spell/invoked/mending5e,
-	//	/obj/effect/proc_holder/spell/invoked/decompose5e,
+		/obj/effect/proc_holder/spell/invoked/decompose5e,
 		/obj/effect/proc_holder/spell/aoe_turf/conjure/Wolf,
 		/obj/effect/proc_holder/spell/targeted/encodethoughts5e,
 		/obj/effect/proc_holder/spell/invoked/mindsliver5e,
@@ -62,76 +62,6 @@
 	else
 		user.mind.used_spell_points += item.cost
 		user.mind.AddSpell(new item)
-
-
-//forcewall
-/obj/effect/proc_holder/spell/invoked/forcewall_weak
-	name = "Forcewall"
-	desc = "Conjure a wall of Arcyne force,  preventing anyone and anything other than you from moving"
-	school = "transmutation"
-	releasedrain = 30
-	chargedrain = 1
-	chargetime = 15
-	charge_max = 35 SECONDS
-	warnie = "spellwarning"
-	no_early_release = TRUE
-	movement_interrupt = FALSE
-	charging_slowdown = 3
-	clothes_req = FALSE
-	active = FALSE
-	sound = 'sound/blank.ogg'
-	overlay_state = "forcewall"
-	range = -1
-	chargedloop = /datum/looping_sound/invokegen
-	associated_skill = /datum/skill/magic/arcane
-	var/wall_type = /obj/structure/forcefield_weak/caster
-	xp_gain = TRUE
-	cost = 1
-
-//adapted from forcefields.dm, this needs to be destructible
-/obj/structure/forcefield_weak
-	desc = "A wall of pure arcyne force."
-	name = "Arcyne Wall"
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "m_shield"
-	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
-	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
-	opacity = 0
-	density = TRUE
-	max_integrity = 80	
-	CanAtmosPass = ATMOS_PASS_DENSITY
-	var/timeleft = 20 SECONDS  
-
-/obj/structure/forcefield_weak/Initialize()
-	. = ..()
-	if(timeleft)
-		QDEL_IN(src, timeleft) //delete after it runs out
-
-/obj/effect/proc_holder/spell/invoked/forcewall_weak/cast(list/targets,mob/user = usr)
-	new wall_type(get_turf(user),user)
-	if(user.dir == SOUTH || user.dir == NORTH)
-		new wall_type(get_step(user, EAST),user)
-		new wall_type(get_step(user, WEST),user)
-	else
-		new wall_type(get_step(user, NORTH),user)
-		new wall_type(get_step(user, SOUTH),user)
-	return TRUE
-
-/obj/structure/forcefield_weak
-	var/mob/caster
-
-/obj/structure/forcefield_weak/caster/Initialize(mapload, mob/summoner)
-	. = ..()
-	caster = summoner
-
-/obj/structure/forcefield_weak/caster/CanPass(atom/movable/mover, turf/target)	//only the caster can move through this freely
-	if(mover == caster)		
-		return TRUE
-	if(ismob(mover))
-		var/mob/M = mover
-		if(M.anti_magic_check(chargecost = 0))
-			return TRUE
-	return FALSE
 
 /obj/effect/proc_holder/spell/invoked/message
 	name = "Message"
@@ -275,53 +205,6 @@
 	REMOVE_TRAIT(user, TRAIT_LEAPER, MAGIC_TRAIT)
 	to_chat(user, span_warning("The energy in my legs dissapates."))
 
-/obj/effect/proc_holder/spell/invoked/blade_burst
-	name = "Blade Burst"
-	desc = "summon a storm of arcyne force in an area, wounding anything in that location"
-	cost = 1
-	xp_gain = TRUE
-	releasedrain = 30
-	chargedrain = 1
-	chargetime = 0
-	charge_max = 15 SECONDS
-	warnie = "spellwarning"
-	no_early_release = TRUE
-	movement_interrupt = FALSE
-	charging_slowdown = 2
-	chargedloop = /datum/looping_sound/invokegen
-	associated_skill = /datum/skill/magic/arcane
-	overlay_state = "blade_burst"
-	var/delay = 7
-	var/damage = 40
-
-/obj/effect/temp_visual/trap
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "trap"
-	light_range = 2
-	duration = 7
-	layer = ABOVE_ALL_MOB_LAYER //this doesnt render above mobs? it really should
-
-/obj/effect/temp_visual/blade_burst
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "purplesparkles"
-	name = "rippeling arcyne energy"
-	desc = "Get out of the way!"
-	randomdir = FALSE
-	duration = 1 SECONDS
-	layer = ABOVE_ALL_MOB_LAYER
-
-/obj/effect/proc_holder/spell/invoked/blade_burst/cast(list/targets, mob/user)
-	var/turf/T = get_turf(targets[1])
-	new /obj/effect/temp_visual/trap(T)
-	sleep(delay)
-	new /obj/effect/temp_visual/blade_burst(T)
-	playsound(T,'sound/magic/charged.ogg', 80, TRUE)
-	for(var/mob/living/L in T.contents)
-		L.adjustBruteLoss(damage)
-		playsound(T, "genslash", 80, TRUE)
-		to_chat(L, "<span class='userdanger'>I'm cut by arcyne force!</span>")
-	return TRUE
-
 /obj/effect/proc_holder/spell/invoked/arcyne_storm
 	name = "Arcyne storm"
 	desc = "Conjure ripples of force into existance over a large area, injuring any who enter"
@@ -359,7 +242,3 @@
 			L.adjustBruteLoss(damage)
 			playsound(damage_turf, "genslash", 40, TRUE)
 			to_chat(L, "<span class='userdanger'>I'm cut by arcyne force!</span>")
-
-#undef PRESTI_CLEAN
-#undef PRESTI_SPARK
-#undef PRESTI_MOTE

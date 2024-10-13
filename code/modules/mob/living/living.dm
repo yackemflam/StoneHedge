@@ -1120,7 +1120,6 @@
 	var/wrestling_diff = 0
 	var/resist_chance = 40
 	var/mob/living/L = pulledby
-	var/combat_modifier = 1
 
 	if(mind)
 		wrestling_diff += (mind.get_skill_level(/datum/skill/combat/wrestling)) //NPCs don't use this

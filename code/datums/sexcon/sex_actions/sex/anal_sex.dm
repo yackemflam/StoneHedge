@@ -50,12 +50,13 @@
 	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))	//Humen on Seelie
 		//Scream and rib break
 		user.visible_message(span_warning("[user] forces their cock into [target]'s tiny butt!"))
+		var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
+		var/obj/item/bodypart/BPC = target.get_bodypart(BODY_ZONE_CHEST)
 		if(user.sexcon.force > SEX_FORCE_LOW)
-			var/obj/item/bodypart/BPC = target.get_bodypart(BODY_ZONE_CHEST)
-			var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
 			BPC.add_wound(/datum/wound/fracture/chest)
 			BPG.add_wound(/datum/wound/fracture/groin)
-		target.apply_damage(30, BRUTE, BPC)
+		target.apply_damage(15, BRUTE, BPC)
+		target.apply_damage(15, BRUTE, BPG)
 	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))	//Seelie on Humen
 		user.visible_message(span_warning("[user] tries and fails to insert their tiny cock into [target]'s butt!"))
 	else
