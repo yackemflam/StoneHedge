@@ -9,7 +9,7 @@
 	dropshrink = 0.6
 	max_integrity = 10
 	force = 10
-
+	w_class = WEIGHT_CLASS_SMALL
 /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	name = "poisoned bolt"
 	desc = "A durable iron bolt that will pierce a skull easily. This one is coated in a clear liquid."
@@ -78,7 +78,7 @@
 	woundclass = BCLASS_BLUNT
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	poisontype = /datum/reagent/medicine/tranquilizer
-	poisonfeel = "intense numbing" 
+	poisonfeel = "intense numbing"
 	poisonamount = 10
 
 /obj/item/ammo_casing/caseless/rogue/arrow
@@ -88,7 +88,20 @@
 	caliber = "arrow"
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "arrow"
-	force = 30
+	force = 7
+	dropshrink = 0.6
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	max_integrity = 20
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_casing/caseless/rogue/arrow/iron
+	name = "iron arrow"
+	desc = "A wooden shaft with a pointy iron end."
+	projectile_type = /obj/projectile/bullet/reusable/arrow/iron
+	caliber = "arrow"
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "arrow"
+	force = 7
 	dropshrink = 0.6
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	max_integrity = 20
@@ -187,7 +200,7 @@
 	woundclass = BCLASS_BLUNT
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	poisontype = /datum/reagent/medicine/soporpot
-	poisonfeel = "numbing" 
+	poisonfeel = "numbing"
 	poisonamount = 15
 
 /obj/projectile/bullet/reusable/arrow/poison/stone
@@ -230,4 +243,5 @@
 	icon_state = "musketball"
 	dropshrink = 0.5
 	possible_item_intents = list(/datum/intent/use)
-	max_integrity = 0.1
+	max_integrity = 0
+	w_class = WEIGHT_CLASS_TINY

@@ -626,6 +626,19 @@
 	name = "Mask"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/mask/rogue/facemask/steel
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/platemask/steel/hound
+	name = "Mask (Hound)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/mask/rogue/facemask/steel/hound
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/astratahelm
+	name = "Astrata Helmet (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/head/roguetown/helmet/astratahelm
 	craftdiff = 2
 	i_type = "Armor"
 
@@ -633,6 +646,13 @@
 	name = "Spellslinger Helmet (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
+
+
+/datum/anvil_recipe/armor/nochelm
+	name = "Noc Helmet (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/head/roguetown/helmet/nochelm
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm
 	craftdiff = 4	//Heavy helm
 	i_type = "Armor"

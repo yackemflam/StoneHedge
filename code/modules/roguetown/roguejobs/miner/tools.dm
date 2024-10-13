@@ -14,6 +14,7 @@
 	associated_skill = /datum/skill/combat/maces
 	smeltresult = /obj/item/ingot/iron
 	improvised = TRUE
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/rogueweapon/pick/getonmobprop(tag)
 	. = ..()

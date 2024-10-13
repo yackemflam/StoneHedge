@@ -37,6 +37,7 @@
 	name = "knotted penis"
 	penis_type = PENIS_TYPE_KNOTTED
 	sheath_type = SHEATH_TYPE_NORMAL
+	icon_state = "knotpenis"
 
 /obj/item/organ/penis/knotted/big
 	penis_size = 3
@@ -45,41 +46,49 @@
 	name = "equine penis"
 	penis_type = PENIS_TYPE_EQUINE
 	sheath_type = SHEATH_TYPE_NORMAL
+	icon_state = "equinepenis"
 
 /obj/item/organ/penis/tapered_mammal
 	name = "tapered penis"
 	penis_type = PENIS_TYPE_TAPERED
 	sheath_type = SHEATH_TYPE_NORMAL
+	icon_state = "taperedpenis"
 
 /obj/item/organ/penis/tapered
 	name = "tapered penis"
 	penis_type = PENIS_TYPE_TAPERED
 	sheath_type = SHEATH_TYPE_SLIT
+	icon_state = "taperedpenis"
 
 /obj/item/organ/penis/tapered_double
 	name = "hemi tapered penis"
 	penis_type = PENIS_TYPE_TAPERED_DOUBLE
 	sheath_type = SHEATH_TYPE_SLIT
+	icon_state = "hemipenis"
 
 /obj/item/organ/penis/tapered_double_knotted
 	name = "hemi knotted tapered penis"
 	penis_type = PENIS_TYPE_TAPERED_DOUBLE_KNOTTED
 	sheath_type = SHEATH_TYPE_SLIT
+	icon_state = "hemiknotpenis"
 
 /obj/item/organ/penis/barbed
 	name = "barbed penis"
 	penis_type = PENIS_TYPE_BARBED
 	sheath_type = SHEATH_TYPE_NORMAL
+	icon_state = "barbpenis"
 
 /obj/item/organ/penis/barbed_knotted
 	name = "barbed knotted penis"
 	penis_type = PENIS_TYPE_BARBED_KNOTTED
 	sheath_type = SHEATH_TYPE_NORMAL
+	icon_state = "barbpenis"
 
 /obj/item/organ/penis/tentacle
 	name = "tentacle penis"
 	penis_type = PENIS_TYPE_TENTACLE
 	sheath_type = SHEATH_TYPE_NONE
+	icon_state = "tentapenis"
 
 /obj/item/organ/filling_organ/anus
 	//absorbs faster than womb, less capacity.

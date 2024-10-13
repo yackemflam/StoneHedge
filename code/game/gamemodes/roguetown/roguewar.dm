@@ -120,8 +120,8 @@
 	"Knight",
 	"Merchant",
 	"Gatemaster",
-	"Watchmen Captain",
-	"Witcher",
+	"Retinue Captain",
+	"Inquisitor",
 	"Village Elder",
 	"Watchman")
 	var/num_bandits = 0
@@ -212,7 +212,7 @@
 						found = FALSE
 					if(rebelguy.assigned_role in GLOB.noble_positions)
 						found = FALSE
-					if(rebelguy.assigned_role in GLOB.apprentices_positions)
+					if(rebelguy.assigned_role in GLOB.youngfolk_positions)
 						found = FALSE
 					if(rebelguy.assigned_role in GLOB.church_positions)
 						found = FALSE
@@ -232,12 +232,12 @@
 /datum/game_mode/chaosmode/proc/pick_maniac()
 	restricted_jobs = list("Lord",
 	"Prisoner",
-	"Beastmaster",
-	"Witcher",
+	"Dungeoneer",
+	"Inquisitor",
 	"Shepherd",
 	"Monk",
-	"Priest",
-	"Watchmen Captain")
+	"Cleric",
+	"Retinue Captain")
 	var/proab
 #ifdef TESTSERVER
 	proab = 100
@@ -252,7 +252,7 @@
 			for(var/M in allantags)
 				if(M == villain)
 					found = TRUE
-			if(villain.assigned_role in GLOB.apprentices_positions)
+			if(villain.assigned_role in GLOB.youngfolk_positions)
 				found = FALSE
 			if(villain.current)
 				if(villain.current.gender == FEMALE)
@@ -271,7 +271,7 @@
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_vampires()
-	restricted_jobs = list("Monk","Prophet","Witcher","Shepherd")
+	restricted_jobs = list("Monk","Priest","Inquisitor","Shepherd")
 	var/num_vampires = rand(1,3)
 #ifdef TESTSERVER
 	num_vampires = 100
@@ -287,7 +287,7 @@
 					found = TRUE
 					allantags -= M
 					break
-			if(vampire.assigned_role in GLOB.apprentices_positions)
+			if(vampire.assigned_role in GLOB.youngfolk_positions)
 				found = FALSE
 			if(!found)
 				continue
@@ -302,7 +302,7 @@
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_werewolves()
-	restricted_jobs = list("Prisoner","Knight","Witcher","Shepherd")
+	restricted_jobs = list("Prisoner","Knight","Inquisitor","Shepherd")
 	var/num_werewolves = rand(1,3)
 #ifdef TESTSERVER
 	num_werewolves = 100
@@ -317,7 +317,7 @@
 					found = TRUE
 					allantags -= M
 					break
-			if(werewolf.assigned_role in GLOB.apprentices_positions)
+			if(werewolf.assigned_role in GLOB.youngfolk_positions)
 				found = FALSE
 			if(!found)
 				continue

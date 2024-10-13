@@ -40,6 +40,3 @@
 
 /datum/skill/misc/sewing
 	name = "Sewing"
-
-// /datum/skill/misc/weaving // removed and absorbed into sewing
-//	name = "Weaving"

@@ -34,6 +34,7 @@
 	var/blood_maximum = BLOOD_VOLUME_SURVIVE
 	// Who are we latching onto?
 	var/mob/living/host
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/natural/worms/leech/Initialize()
 	. = ..()

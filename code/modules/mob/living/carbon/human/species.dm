@@ -142,6 +142,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		/datum/descriptor_choice/prominent_four,
 	)
 
+	var/list/specstats = list(
+		"strength" = 0, 
+		"perception" = 0, 
+		"intelligence" = 0, 
+		"constitution" = 0, 
+		"endurance" = 0, 
+		"speed" = 0, 
+		"fortune" = 0
+		)
+	var/list/specstats_m = list(
+		"constitution" = 1, 
+		"intelligence" = -1,
+	)
+	var/list/specstats_f = list(
+		"strength" = -1, 
+		"speed" = 1,
+	)
+	var/list/specskills
+	var/list/specskills_m
+	var/list/specskills_f
 	var/obj/item/mutanthands
 
 	/// List of organ customizers for preferences to customize organs.
@@ -878,7 +898,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		return TRUE
 	if(HAS_TRAIT(H, TRAIT_CHUNKYFINGERS))
 		return do_after(H, 5 MINUTES, target = H)
-//	H.visible_message(span_notice("[H] start putting on [I]..."), span_notice("I start putting on [I]..."))
+	if(I.equip_delay_self >= 10)
+		H.visible_message(span_smallnotice("[H] start putting on [I]..."), span_smallnotice("I start putting on [I]..."))
 	if(I.edelay_type)
 		return move_after(H, minone(I.equip_delay_self-H.STASPD), target = H)
 	else

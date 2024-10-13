@@ -175,7 +175,7 @@
 	muteinmouth = TRUE
 	var/listening = TRUE
 	var/speaking = TRUE
-	sellprice = 35
+	sellprice = 200
 //wip
 /obj/item/scomstone/attack_right(mob/user)
     user.changeNext_move(CLICK_CD_MELEE)
@@ -265,9 +265,9 @@
 	return
 //LISTENSTONE		LISTENSTONE
 /obj/item/listenstone
-	name = "emerald choker"
+	name = "gemerald choker"
 	icon_state = "listenstone"
-	desc = "A iron and gold choker with an emerald gem."
+	desc = "A iron and gold choker with an gemerald gem."
 	gripped_intents = null
 	//dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)

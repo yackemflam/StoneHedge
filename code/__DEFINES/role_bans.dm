@@ -6,7 +6,7 @@
 	if(is_misc_banned(ckey, BAN_MISC_LOOC)) //Prevent from opening the panel entirely
 		to_chat(src, span_danger("I have been banned from LOOC."))
 		return //Forcibly return.
-*/ 
+*/
 
 
 #define TRAIT_BAN_PUNISHMENT "banpunish"

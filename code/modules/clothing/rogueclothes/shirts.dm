@@ -14,6 +14,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	flags_inv = HIDEBOOB
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt
 	name = "shirt"

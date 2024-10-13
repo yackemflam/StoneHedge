@@ -1,6 +1,8 @@
 /datum/sex_action/blowjob
 	name = "Suck them off"
 	check_same_tile = FALSE
+	check_incapacitated = FALSE
+	gags_user = TRUE
 
 /datum/sex_action/blowjob/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))
@@ -34,6 +36,7 @@
 	return TRUE
 
 /datum/sex_action/blowjob/on_start(mob/living/user, mob/living/target)
+	..()
 	if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
 		user.visible_message(span_warning("[user] starts licking [target]'s cock..."))	//Changed to licking due to fairy size
 	else
@@ -46,6 +49,7 @@
 		else
 			user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] sucks [target]'s cock..."))
 	user.make_sucking_noise()
+	do_thrust_animate(user, target)
 
 	user.sexcon.perform_sex_action(target, 2, 0, TRUE)
 	if(!target.sexcon.considered_limp())
@@ -59,6 +63,7 @@
 			target.sexcon.cum_into()
 
 /datum/sex_action/blowjob/on_finish(mob/living/user, mob/living/target)
+	..()
 	if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
 		user.visible_message(span_warning("[user] stops licking [target]'s cock ..."))
 	else

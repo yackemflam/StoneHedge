@@ -28,7 +28,7 @@
 		OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
 		OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
 		OFFSET_FACE = list(0,1), OFFSET_BELT = list(0,1), OFFSET_BACK = list(0,1), \
-		OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,1), \
+		OFFSET_NECK = list(0,1), OFFSET_MOUTH = list(0,1), OFFSET_PANTS = list(0,0), \
 		OFFSET_SHIRT = list(0,1), OFFSET_ARMOR = list(0,1), OFFSET_HANDS = list(0,1), OFFSET_UNDIES = list(0,1), \
 		OFFSET_ID_F = list(0,-1), OFFSET_GLOVES_F = list(0,0), OFFSET_WRISTS_F = list(0,0), OFFSET_HANDS_F = list(0,0), \
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
@@ -45,13 +45,13 @@
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
 		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
-		ORGAN_SLOT_EARS = /obj/item/organ/ears/cat,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/tabaxi,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 		ORGAN_SLOT_ANUS = /obj/item/organ/filling_organ/anus,
-		ORGAN_SLOT_TAIL = /obj/item/organ/tail/cat,
+		//ORGAN_SLOT_TAIL = /obj/item/organ/tail/cat, //Commenting out due to use of customizer organs.
 		ORGAN_SLOT_SNOUT = /obj/item/organ/snout/cat,
 		)
 	bodypart_features = list(
@@ -66,6 +66,7 @@
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/snout/tabaxi,
+		/datum/customizer/organ/ears/tabaxi,
 		/datum/customizer/organ/tail/tabaxi,
 		/datum/customizer/organ/testicles/external,
 		/datum/customizer/organ/penis/feline,
@@ -80,12 +81,23 @@
 		/datum/body_marking_set/belly,
 	)
 	body_markings = list(
+		/datum/body_marking/plain,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
+		/datum/body_marking/socklonger,
+		/datum/body_marking/tips,
 		/datum/body_marking/belly,
 		/datum/body_marking/bellyslim,
 		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
 		/datum/body_marking/tonage,
 		/datum/body_marking/splotches,
 		/datum/body_marking/splotcheswap,
+		/datum/body_marking/spotted,
 	)
 	languages = list(
 		/datum/language/common,

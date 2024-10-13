@@ -102,7 +102,7 @@
 #define STEWARD		(1<<3)
 #define KNIGHT		(1<<4)
 #define GUARD_CAPTAIN		(1<<5)
-#define JUDGE	(1<<6)
+#define JUDGE		(1<<6)
 #define HOSTAGE		(1<<7)
 #define NOBLE		(1<<8)
 

@@ -50,7 +50,7 @@
 	patron = null
 	granted_spells = null
 	STOP_PROCESSING(SSobj, src)
-	
+
 /datum/devotion/process()
 	if(!passive_devotion_gain && !passive_progression_gain)
 		return PROCESS_KILL
@@ -125,7 +125,8 @@
 		H.mind.AddSpell(newspell)
 		LAZYADD(granted_spells, newspell)
 	level = CLERIC_T0
-	max_devotion = CLERIC_REQ_1 //Max devotion limit - Paladin/Templars are stronger than others but cannot pray to gain all abilities beyond t1
+	update_devotion(50, 50, silent = TRUE)
+	max_devotion = CLERIC_REQ_1 //Max devotion limit - Paladins are stronger but cannot pray to gain all abilities beyond t1
 	max_progression = CLERIC_REQ_1
 
 /datum/devotion/proc/grant_spells_cleric(mob/living/carbon/human/H)
@@ -193,6 +194,18 @@
 	passive_progression_gain = 1
 	update_devotion(100, CLERIC_REQ_4, silent = TRUE)
 	START_PROCESSING(SSobj, src)
+/datum/devotion/proc/excommunicate(mob/living/carbon/human/H)
+	if(!devotion)
+		return
+
+	prayer_effectiveness = 0
+	devotion = 0
+	to_chat(holder, span_boldnotice("I have been excommunicated. I am now unable to gain devotion."))
+
+/datum/devotion/proc/recommunicate(mob/living/carbon/human/H)
+
+	prayer_effectiveness = 2
+	to_chat(holder, span_boldnotice("I have been welcomed back to the Church. I am now able to gain devotion again."))
 
 // Debug verb
 /mob/living/carbon/human/proc/devotionchange()
@@ -214,14 +227,14 @@
 
 	if(!devotion)
 		return FALSE
-	
+
 	to_chat(src,"My devotion is [devotion.devotion].")
 	return TRUE
 
 /mob/living/carbon/human/proc/clericpray()
 	set name = "Give Prayer"
 	set category = "Cleric"
-	
+
 	if(!devotion)
 		return FALSE
 
