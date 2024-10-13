@@ -20,10 +20,10 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/milk_container/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/milk_container/on_start(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] starts milking themself into [user.get_active_held_item()]..."))
 
-/datum/sex_action/milk_container/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/milk_container/on_perform(mob/living/user, mob/living/target)
 	var/chosen_verb = pick(list("milks themself over [user.get_active_held_item()]", "squeezes their breasts over [user.get_active_held_item()]"))
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] [chosen_verb]..."))
@@ -33,7 +33,7 @@
 
 	user.sexcon.handle_container_milk()
 
-/datum/sex_action/milk_container/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/milk_container/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] stops milking themself into the container."))
 
 /datum/sex_action/milk_container/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
