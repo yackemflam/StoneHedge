@@ -21,9 +21,6 @@
 	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
 	break_sound = "glassbreak"
 	destroy_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
-	var/base_state = "window-solid"
-	var/lockdir = 0
-	var/brokenstate = 0
 	var/curtains = FALSE
 	var/currently_curtained = FALSE
 	var/openable = FALSE
@@ -171,16 +168,6 @@
 	else
 		open_up(user)
 	update_opacity()
-	update_icon()
-
-
-
-
-/obj/structure/roguewindow/proc/open_up(mob/user)
-	visible_message(span_info("[user] opens [src]."))
-	playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
-	climbable = TRUE
-	opacity = FALSE
 	update_icon()
 
 /obj/structure/roguewindow/proc/try_toggle_curtains(mob/user)

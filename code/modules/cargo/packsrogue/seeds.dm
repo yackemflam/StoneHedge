@@ -109,6 +109,8 @@
 					/obj/item/seeds/cabbage,
 					/obj/item/seeds/cabbage,
 					/obj/item/seeds/cabbage,
+				)
+
 /datum/supply_pack/rogue/seeds/vegetable
 	name = "Vegetable Garden"
 	cost = 30
@@ -162,5 +164,4 @@
 					/obj/item/seeds/mycelium/plumphelmet,
 					/obj/item/seeds/mycelium/plumphelmet,
 					/obj/item/seeds/mycelium/trippy,
-
 				)

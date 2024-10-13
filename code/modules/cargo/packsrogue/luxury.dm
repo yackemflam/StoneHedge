@@ -42,16 +42,6 @@
 	cost = 20
 	contains = list(/obj/item/reagent_containers/powder/spice)
 
-/datum/supply_pack/rogue/luxury/westspice
-	name = "Western Herbs"
-	cost = 50
-	contains = list(/obj/item/reagent_containers/food/snacks/grown/westspice)
-
-/datum/supply_pack/rogue/luxury/eastspice
-	name = "Eastern Spices"
-	cost = 200
-	contains = list(/obj/item/reagent_containers/food/snacks/grown/eastspice)
-
 /datum/supply_pack/rogue/luxury/mbox
 	name = "Music Box"
 	cost = 500

@@ -88,3 +88,29 @@
 		new /obj/structure/spacevine/dendor(target_turf_three)
 
 	return TRUE
+
+/obj/effect/proc_holder/spell/targeted/conjure_glowshroom
+	name = "Fungal Illumination"
+	range = 1
+	overlay_state = "blesscrop"
+	releasedrain = 30
+	charge_max = 30 SECONDS
+
+
+
+	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
+	max_targets = 0
+	cast_without_targets = TRUE
+	sound = 'sound/items/dig_shovel.ogg'
+	associated_skill = /datum/skill/magic/holy
+	invocation = "Nature spirits, come to me.."
+	invocation_type = "whisper" //can be none, whisper, emote and shout
+	devotion_cost = 30
+
+/obj/effect/proc_holder/spell/targeted/conjure_glowshroom/cast(list/targets, mob/user = usr)
+	. = ..()
+	var/turf/T = user.loc
+	for(var/X in GLOB.cardinals)
+		var/turf/TT = get_step(T, X)
+		if(!isclosedturf(TT) && !locate(/obj/structure/glowshroom) in TT)
+			new /obj/structure/glowshroom(TT)

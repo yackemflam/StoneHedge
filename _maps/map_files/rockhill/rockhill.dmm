@@ -5342,7 +5342,7 @@
 "eZD" = (
 /obj/structure/rack/rogue,
 /obj/item/cooking/pan,
-/obj/item/reagent_containers/glass/pot,
+/obj/item/reagent_containers/glass/bucket/pot,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "faB" = (
@@ -8809,7 +8809,7 @@
 	pixel_x = -11;
 	pixel_y = 13
 	},
-/obj/item/reagent_containers/glass/pot,
+/obj/item/reagent_containers/glass/bucket/pot,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "iBJ" = (
@@ -18552,7 +18552,7 @@
 /area/rogue/outdoors/rtfield)
 "snI" = (
 /obj/machinery/light/rogue/wallfire/candle,
-/obj/item/reagent_containers/glass/pot,
+/obj/item/reagent_containers/glass/bucket/pot,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "snP" = (
@@ -24018,7 +24018,7 @@
 /obj/machinery/light/rogue/hearth{
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/glass/pot{
+/obj/item/reagent_containers/glass/bucket/pot{
 	pixel_y = 10
 	},
 /turf/open/floor/rogue/church,

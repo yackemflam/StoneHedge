@@ -32,23 +32,6 @@
 	user = null
 	target = null
 	. = ..()
-/proc/do_thrust_animate(atom/movable/user, atom/movable/target, pixels = 4, time = 2.7)
-	var/oldx = user.pixel_x
-	var/oldy = user.pixel_y
-	var/target_x = oldx
-	var/target_y = oldy
-	var/dir = get_dir(user, target)
-	if(user.loc == target.loc)
-		dir = user.dir
-	switch(dir)
-		if(NORTH)
-			target_y += pixels
-		if(SOUTH)
-			target_y -= pixels
-		if(WEST)
-			target_x -= pixels
-		if(EAST)
-			target_x += pixels
 
 /proc/do_thrust_animate(atom/movable/user, atom/movable/target, pixels = 4, time = 2.7)
 	var/oldx = user.pixel_x

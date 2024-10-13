@@ -94,18 +94,6 @@
 	max_integrity = 20
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_casing/caseless/rogue/arrow/iron
-	name = "iron arrow"
-	desc = "A wooden shaft with a pointy iron end."
-	projectile_type = /obj/projectile/bullet/reusable/arrow/iron
-	caliber = "arrow"
-	icon = 'icons/roguetown/weapons/ammo.dmi'
-	icon_state = "arrow"
-	force = 7
-	dropshrink = 0.6
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	max_integrity = 20
-
 /obj/projectile/bullet/reusable/arrow
 	name = "arrow"
 	damage = 50

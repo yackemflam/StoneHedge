@@ -12,6 +12,12 @@
 	var/wallclimb = FALSE
 	var/climbdiff = 0
 
+/mob/living/proc/update_wallpress_slowdown()
+        if(wallpressed)
+                add_movespeed_modifier("wallpress", TRUE, 100, override = TRUE, multiplicative_slowdown = 3)
+        else
+                remove_movespeed_modifier("wallpress")
+
 /turf/closed/Bumped(atom/movable/AM)
 	..()
 	if(density)

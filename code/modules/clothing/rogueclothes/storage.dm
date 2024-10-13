@@ -253,14 +253,12 @@
 
 /obj/item/storage/backpack/rogue/satchel/mule/PopulateContents()
 	for(var/i in 1 to 3)
-		switch(rand(1,4))
+		switch(rand(1,3))
 			if(1)
-				new /obj/item/reagent_containers/powder/moondust_purest(src)
+				new /obj/item/reagent_containers/powder/moondust(src)
 			if(2)
-				new /obj/item/reagent_containers/powder/moondust_purest(src)
-			if(3)
 				new /obj/item/reagent_containers/powder/ozium(src)
-			if(4)
+			if(3)
 				new /obj/item/reagent_containers/powder/spice(src)
 
 

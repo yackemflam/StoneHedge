@@ -178,9 +178,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	/// Tracker to whether the person has ever spawned into the round, for purposes of applying the respawn ban
 	var/has_spawned = FALSE
 
-	/// Tracker to whether the person has ever spawned into the round, for purposes of applying the respawn ban
-	var/has_spawned = FALSE
-
 	var/char_accent = "No accent"
 
 	var/datum/loadout_item/loadout
