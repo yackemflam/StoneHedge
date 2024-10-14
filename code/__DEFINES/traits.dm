@@ -90,7 +90,7 @@
 #define TRAIT_NORUN "Decayed Flesh"
 #define TRAIT_PUNISHMENT_CURSE "PunishmentCurse"
 #define TRAIT_LEPROSY "Leprosy"
-#define TRAIT_NUDE_SLEEPER "Nude Sleeper"
+#define TRAIT_NUDE_SLEEPER "Picky Sleeper"
 
 // PATRON CURSE TRAITS
 #define TRAIT_CURSE "Curse" //source
@@ -161,12 +161,11 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NORUN = span_warning("My body has atrophied in my state of decay; my leg joints just don't have the strength or durability for running anymore"),
 	TRAIT_GOODLOVER = span_love("It's a lucky thing to share my bed."),
 	TRAIT_SEEDKNOW = span_info("I know which seeds grow which crops."),
-	TRAIT_CIVILIZEDBARBARIAN = span_info("Your fists are heavier."),
 	TRAIT_COMICSANS = span_sans("I am cursed with a odd voice."),
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_SEXDEVO = span_info("Sex is more benefical to me."),
 	TRAIT_ABYSSOR_SWIM = "The Abyssor protects me when I am at sea.",
-	TRAIT_CIVILIZEDBARBARIAN = span_info("Improvised weapons are your specialty."),
+	TRAIT_CIVILIZEDBARBARIAN = span_info("I am a barstool warrior, improvised weapons are my specialty."),
 	TRAIT_COMICSANS = span_sans("I am cursed with a odd voice."),
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
@@ -182,6 +181,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_GOODRUNNER = span_info("I can run without breaking a sweat!"),
 	TRAIT_NUDE_SLEEPER = span_warning("I can't fall asleep unless I'm nude and in bed."),
 	TRAIT_TINY = span_info("I am tiny in size and quite fragile!"),
+	TRAIT_FASTSLEEP = span_info("I am narcoleptic and may fall asleep where I stand. Moondust can help me stay awake."),
 ))
 
 // trait accessor defines
@@ -410,6 +410,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define VEHICLE_TRAIT "vehicle" // inherited from riding vehicles
 #define INNATE_TRAIT "innate"
 #define SHARD_TRAIT "granter (fragment)" // apple: inherited from shard granters
+#define QUIRK_TRAIT "quirk"
 
 // unique trait sources, still defines
 #define TRAIT_BOG_TREKKING "trekking"
