@@ -1215,7 +1215,6 @@
 							* second. This seems to be the best way
 							* to use the least amount of variables.
 							*/
-							var/name_placement = 1
 							for(var/X in A.bitten_names)
 								if(C.real_name == X)
 									testing("foundbiter [C.real_name]")

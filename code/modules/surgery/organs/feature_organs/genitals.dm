@@ -93,7 +93,7 @@
 /obj/item/organ/filling_organ/anus
 	//absorbs faster than womb, less capacity.
 	name = "anus"
-	icon = "modular_stonehedge/icons/obj/surgery.dmi"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
 	icon_state = "anus"
 	dropshrink = 0.5
 	visible_organ = TRUE
@@ -109,7 +109,7 @@
 
 /obj/item/organ/filling_organ/vagina
 	name = "vagina"
-	icon = "modular_stonehedge/icons/obj/surgery.dmi"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
 	icon_state = "vagina"
 	dropshrink = 0.5
 	visible_organ = TRUE
@@ -126,7 +126,7 @@
 
 /obj/item/organ/filling_organ/breasts
 	name = "breasts"
-	icon = "modular_stonehedge/icons/obj/surgery.dmi"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
 	icon_state = "breasts"
 	dropshrink = 0.8
 	visible_organ = TRUE
@@ -145,7 +145,7 @@
 
 /obj/item/organ/belly
 	name = "belly"
-	icon = "modular_stonehedge/icons/obj/surgery.dmi"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
 	icon_state = "belly"
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_STOMACH
@@ -156,7 +156,7 @@
 
 /obj/item/organ/filling_organ/testicles
 	name = "testicles"
-	icon = "modular_stonehedge/icons/obj/surgery.dmi"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
 	icon_state = "testicles"
 	dropshrink = 0.5
 	visible_organ = TRUE
