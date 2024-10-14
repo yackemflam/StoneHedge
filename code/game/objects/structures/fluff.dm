@@ -1195,26 +1195,16 @@
 					return FALSE
 				var/marriage
 				var/obj/item/reagent_containers/food/snacks/grown/apple/A = W
-				//The MARRIAGE TEST BEGINS
 				if(A.bitten_names.len)
 					if(A.bitten_names.len == 2)
-						//Groom provides the surname that the bride will take
-						var/mob/living/carbon/human/thegroom
-						var/mob/living/carbon/human/thebride
-						//Did anyone get cold feet on the wedding?
+						var/list/found_mobs = list()
 						for(var/mob/M in viewers(src, 7))
 							testing("check [M]")
-							if(thegroom && thebride)
+							if(found_mobs.len >= 2)
 								break
 							if(!ishuman(M))
 								continue
 							var/mob/living/carbon/human/C = M
-							/*
-							* This is for making the first biters name
-							* always be applied to the groom.
-							* second. This seems to be the best way
-							* to use the least amount of variables.
-							*/
 							for(var/X in A.bitten_names)
 								if(C.real_name == X)
 									testing("foundbiter [C.real_name]")
@@ -1269,7 +1259,7 @@
 				if(!marriage)
 					A.burn()
 					return
-	return ..()
+	. = ..()
 
 /obj/structure/fluff/psycross/proc/check_prayer(mob/living/L,message)
 	if(!L || !message)
