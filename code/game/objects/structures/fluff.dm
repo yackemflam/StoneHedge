@@ -1040,7 +1040,7 @@
 	icon_state = "evilidol"
 	icon = 'icons/roguetown/misc/structure.dmi'
 
-// What items the idol will accept 
+// What items the idol will accept
 	var/treasuretypes = list(
 		/obj/item/roguecoin,
 		/obj/item/roguegem,
@@ -1217,68 +1217,55 @@
 							*/
 							var/name_placement = 1
 							for(var/X in A.bitten_names)
-								//I think that guy is dead.
-								if(C.stat == DEAD)
-									continue
-								//That person is not a player or afk.
-								if(!C.client)
-									continue
-								//Gotta get a divorce first
-								if(C.marriedto)
-									continue
 								if(C.real_name == X)
-									//I know this is very sloppy but its alot less code.
-									switch(name_placement)
-										if(1)
-											if(thegroom)
-												continue
-											thegroom = C
-										if(2)
-											if(thebride)
-												continue
-											thebride = C
 									testing("foundbiter [C.real_name]")
-									name_placement++
-
-						//WE FOUND THEM LETS GET THIS SHOW ON THE ROAD!
-						if(!thegroom || !thebride)
-							testing("fail22")
-							return
-						//Alright now for the boring surname formatting.
-						var/surname2use
-						var/index = findtext(thegroom.real_name, " ")
-						var/bridefirst
-						thegroom.original_name = thegroom.real_name
-						thebride.original_name = thebride.real_name
-						if(!index)
-							surname2use = thegroom.dna.species.random_surname()
-						else
-							/*
-							* This code prevents inheriting the last name of
-							* " of wolves" or " the wolf"
-							* remove this if you want "Skibbins of wolves" to
-							* have his bride become "Sarah of wolves".
-							*/
-							if(findtext(thegroom.real_name, " of ") || findtext(thegroom.real_name, " the "))
-								surname2use = thegroom.dna.species.random_surname()
-								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+									found_mobs += C
+						testing("foundmobslen [found_mobs.len]")
+						if(found_mobs.len == 2)
+							var/mob/living/carbon/human/FirstPerson
+							var/mob/living/carbon/human/SecondPerson
+							for(var/mob/living/carbon/human/M in found_mobs)
+								if(M.marriedto)
+									continue
+								if(!FirstPerson)
+									FirstPerson = M
+								else
+									if(!SecondPerson)
+										SecondPerson = M
+							if(!FirstPerson || !SecondPerson)
+								testing("fail22")
+								return
+							var/surname2use
+							var/index = findtext(FirstPerson.real_name, " ")
+							var/SecondPersonFirstName
+							FirstPerson.original_name = FirstPerson.real_name
+							SecondPerson.original_name = SecondPerson.real_name
+							if(!index)
+								surname2use = FirstPerson.dna.species.random_surname()
 							else
-								surname2use = copytext(thegroom.real_name, index)
-								thegroom.change_name(copytext(thegroom.real_name, 1,index))
-						index = findtext(thebride.real_name, " ")
-						if(index)
-							thebride.change_name(copytext(thebride.real_name, 1,index))
-						bridefirst = thebride.real_name
-						thegroom.change_name(thegroom.real_name + surname2use)
-						thebride.change_name(thebride.real_name + surname2use)
-						thegroom.marriedto = thebride.real_name
-						thebride.marriedto = thegroom.real_name
-						thegroom.adjust_triumphs(1)
-						thebride.adjust_triumphs(1)
-						//Bite the apple first if you want to be the groom.
-						priority_announce("[thegroom.real_name] has married [bridefirst]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
-						marriage = TRUE
-						qdel(A)
+								if(findtext(FirstPerson.real_name, " of ") || findtext(FirstPerson.real_name, " the "))
+									surname2use = FirstPerson.dna.species.random_surname()
+									FirstPerson.change_name(copytext(FirstPerson.real_name, 1,index))
+								else
+									surname2use = copytext(FirstPerson.real_name, index)
+									FirstPerson.change_name(copytext(FirstPerson.real_name, 1,index))
+							index = findtext(SecondPerson.real_name, " ")
+							if(index)
+								SecondPerson.change_name(copytext(SecondPerson.real_name, 1,index))
+							SecondPersonFirstName = SecondPerson.real_name
+							FirstPerson.change_name(FirstPerson.real_name + surname2use)
+							SecondPerson.change_name(SecondPerson.real_name + surname2use)
+							FirstPerson.marriedto = SecondPerson.real_name
+							SecondPerson.marriedto = FirstPerson.real_name
+							FirstPerson.adjust_triumphs(1)
+							SecondPerson.adjust_triumphs(1)
+							priority_announce("[FirstPerson.real_name] has married [SecondPersonFirstName]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
+							marriage = TRUE
+							qdel(A)
+//							if(FirstPerson.has_stress(/datum/stressevent/nobel))
+//								SecondPerson.add_stress(/datum/stressevent/nobel)
+//							if(SecondPerson.has_stress(/datum/stressevent/nobel))
+//								FirstPerson.add_stress(/datum/stressevent/nobel)
 
 				if(!marriage)
 					A.burn()

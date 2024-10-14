@@ -90,7 +90,7 @@
 					sleepy_mod = bed.sleepy
 			if(sleepy_mod > 0)
 			//Hearthstone end.
-				if(eyesclosed)
+				if(eyesclosed && !cant_fall_asleep)
 					if(!fallingas)
 						to_chat(src, span_warning("I'll fall asleep soon..."))
 					fallingas++
@@ -103,7 +103,7 @@
 					rogstam_add(sleepy_mod * 10)
 			// Resting on the ground (not sleeping or with eyes closed and about to fall asleep)
 			else if(!(mobility_flags & MOBILITY_STAND))
-				if(eyesclosed && !HAS_TRAIT(src, TRAIT_NUDE_SLEEPER) && !cant_fall_asleep || (eyesclosed && !HAS_TRAIT(src, TRAIT_NUDE_SLEEPER) && !(fallingas >= 14 && cant_fall_asleep)))
+				if((eyesclosed && !HAS_TRAIT(src, TRAIT_NUDE_SLEEPER) && !cant_fall_asleep) || (eyesclosed && !HAS_TRAIT(src, TRAIT_NUDE_SLEEPER) && !(fallingas >= 14 && cant_fall_asleep)) || InCritical())
 					if(!fallingas)
 						to_chat(src, span_warning("I'll fall asleep soon, although a bed would be more comfortable..."))
 					fallingas++
