@@ -1,7 +1,11 @@
 /datum/sex_action/feather_feet
 	name = "Tickle their feet with feather"
 
-/datum/sex_action/feather_feet/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/feather_feet/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.erpable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!get_feather_in_either_hand(user))

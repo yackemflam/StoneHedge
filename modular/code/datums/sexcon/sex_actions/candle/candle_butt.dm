@@ -1,7 +1,11 @@
 /datum/sex_action/candle_butt
 	name = "Use candle wax on their buttocks"
 
-/datum/sex_action/candle_butt/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/candle_butt/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.erpable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!get_candle_in_either_hand(user))
@@ -11,8 +15,13 @@
 /datum/sex_action/candle_butt/can_perform(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
-	if(!get_location_accessible(target, BODY_ZONE_PRECISE_GROIN))
-		return FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/targethuman = target
+		if(targethuman.wear_pants)
+			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
+			if(pantsies.flags_inv & HIDECROTCH) 
+				if(!pantsies.genitalaccess) 
+					return FALSE
 	if(!get_candle_in_either_hand(user))
 		return FALSE
 	var/obj/item/candle/C = get_candle_in_either_hand(user)

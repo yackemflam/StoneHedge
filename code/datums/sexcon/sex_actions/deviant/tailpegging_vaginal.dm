@@ -2,7 +2,11 @@
 	name = "Peg cunt with tail"
 	check_incapacitated = FALSE
 
-/datum/sex_action/tailpegging_vaginal/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/tailpegging_vaginal/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.erpable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
@@ -14,8 +18,13 @@
 	return TRUE
 
 /datum/sex_action/tailpegging_vaginal/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(!get_location_accessible(target, BODY_ZONE_PRECISE_GROIN))
-		return FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/targethuman = target
+		if(targethuman.wear_pants)
+			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
+			if(pantsies.flags_inv & HIDECROTCH) 
+				if(!pantsies.genitalaccess) 
+					return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_TAIL))
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_TAIL).can_penetrate)
@@ -27,11 +36,13 @@
 	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))	//Humen on Seelie
 		//Scream and rib break
 		user.visible_message(span_warning("[user] forces their tail into [target]'s tiny cunt!"))
-		var/obj/item/bodypart/BPC = target.get_bodypart(BODY_ZONE_CHEST)
 		var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
-		BPC.add_wound(/datum/wound/fracture/chest)
-		BPG.add_wound(/datum/wound/fracture/groin)
-		target.apply_damage(30, BRUTE, BPC)
+		var/obj/item/bodypart/BPC = target.get_bodypart(BODY_ZONE_CHEST)
+		if(user.sexcon.force > SEX_FORCE_LOW)
+			BPC.add_wound(/datum/wound/fracture/chest)
+			BPG.add_wound(/datum/wound/fracture/groin)
+		target.apply_damage(15, BRUTE, BPC)
+		target.apply_damage(15, BRUTE, BPG)
 	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))	//Seelie on Humen
 		user.visible_message(span_warning("[user] tries and fails to insert their tiny tail into [target]'s cunt!"))
 	else

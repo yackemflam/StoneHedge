@@ -1,7 +1,11 @@
 /datum/sex_action/candle_breasts
 	name = "Use candle wax on their breasts"
 
-/datum/sex_action/candle_breasts/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/candle_breasts/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.erpable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!get_candle_in_either_hand(user))
@@ -11,8 +15,13 @@
 /datum/sex_action/candle_breasts/can_perform(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
-	if(!get_location_accessible(target, BODY_ZONE_CHEST))
-		return FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/targethuman = target
+		if(targethuman.wear_shirt)
+			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
+			if(shirtsies.flags_inv & HIDEBOOB)
+				if(shirtsies.genitalaccess == FALSE)
+					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE
 	if(!get_candle_in_either_hand(user))
