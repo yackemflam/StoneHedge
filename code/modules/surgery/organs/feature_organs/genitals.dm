@@ -167,7 +167,7 @@
 	organ_size = DEFAULT_TESTICLES_SIZE
 	reagent_to_make = /datum/reagent/consumable/cum
 	refilling = TRUE
-	hungerhelp = TRUE //balls be dry if you starve
+	hungerhelp = FALSE //balls dont be dry if you starve
 	organ_sizeable = TRUE
 	storage_per_size = 6
 	altnames = list("balls", "testicles", "testes", "orbs", "cum tanks", "seed tanks") //used in thought messages.

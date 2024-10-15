@@ -13,6 +13,8 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	w_class = WEIGHT_CLASS_NORMAL
+	genitalaccess = TRUE
+	is_bra = TRUE //so it lets bottom access.
 
 /obj/item/clothing/suit/roguetown/shirt/robe/monk
 	slot_flags = ITEM_SLOT_ARMOR

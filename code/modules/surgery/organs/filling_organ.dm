@@ -173,7 +173,7 @@
 	pregnant = TRUE
 	if(owner.getorganslot(ORGAN_SLOT_BREASTS)) //shitty default behavior i guess, i aint gonna customiza-ble this fuck that.
 		var/obj/item/organ/filling_organ/breasts/breasties = owner.getorganslot(ORGAN_SLOT_BREASTS)
-		if(breasties.refilling == FALSE)
+		if(!breasties.refilling)
 			breasties.refilling = TRUE
 			if(owner.has_quirk(/datum/quirk/selfawaregeni))
 				to_chat(owner, span_love("My breasts should start lactating soon..."))
