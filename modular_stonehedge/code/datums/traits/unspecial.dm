@@ -22,7 +22,7 @@
 
 /datum/quirk/thickskin/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_BREADY, "[type]")
+	ADD_TRAIT(H, TRAIT_BREADY, QUIRK_TRAIT)
 	H.change_stat("constitution", 2)
 
 /datum/quirk/curseofcain
@@ -32,8 +32,8 @@
 
 /datum/quirk/curseofcain/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_NOHUNGER, "[type]")
-	ADD_TRAIT(H, TRAIT_NOBREATH, "[type]")
+	ADD_TRAIT(H, TRAIT_NOHUNGER, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_NOBREATH, QUIRK_TRAIT)
 
 /datum/quirk/deadened
 	name = "Deadened"
@@ -42,7 +42,7 @@
 
 /datum/quirk/deadened/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_NOMOOD, "[type]")
+	ADD_TRAIT(H, TRAIT_NOMOOD, QUIRK_TRAIT)
 
 /datum/quirk/value
 	name = "Appraiser"
@@ -51,7 +51,7 @@
 
 /datum/quirk/value/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_SEEPRICES_SHITTY, "[type]")
+	ADD_TRAIT(H, TRAIT_SEEPRICES_SHITTY, QUIRK_TRAIT)
 
 /datum/quirk/night_owl
 	name = "Night Owl"
@@ -60,7 +60,7 @@
 
 /datum/quirk/night_owl/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_NIGHT_OWL, "[type]")
+	ADD_TRAIT(H, TRAIT_NIGHT_OWL, QUIRK_TRAIT)
 
 /datum/quirk/beautiful
 	name = "Beautiful"
@@ -69,7 +69,7 @@
 
 /datum/quirk/beautiful/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_BEAUTIFUL, "[type]")
+	ADD_TRAIT(H, TRAIT_BEAUTIFUL, QUIRK_TRAIT)
 
 //positive
 /datum/quirk/duelist
@@ -155,7 +155,7 @@
 
 /datum/quirk/spring_in_my_step/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_ZJUMP, "[type]")
+	ADD_TRAIT(H, TRAIT_ZJUMP, QUIRK_TRAIT)
 
 /datum/quirk/thief
 	name = "Thief"
@@ -183,8 +183,8 @@
 
 /datum/quirk/civilizedbarbarian
 	name = "Tavern Brawler"
-	desc = "My fists feel heavier!"
-	value = 3
+	desc = "I am a barstool warrior. Improvised weapons are more effective in my hands."
+	value = 2
 
 /datum/quirk/civilizedbarbarian/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -195,7 +195,8 @@
 	desc = "In my youth, I've decided I'd get a grasp on every trade, and pursued the 10 arts of the craft. I am passable at each of them."
 	value = 3
 
-/datum/quirk/mastercraftsmen/on_spawn(mob/living/carbon/human/H)
+/datum/quirk/mastercraftsmen/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 2, TRUE)
@@ -214,7 +215,7 @@
 
 /datum/quirk/bleublood/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_NOBLE, "[type]")
+	ADD_TRAIT(H, TRAIT_NOBLE, QUIRK_TRAIT)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
 	var/obj/item/pouch = new /obj/item/storage/belt/rogue/pouch/coins/rich(get_turf(H))
 	H.put_in_hands(pouch, forced = TRUE)
@@ -236,7 +237,8 @@
 
 /datum/quirk/swift/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_DODGEEXPERT, "[type]")
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_GOODRUNNER, QUIRK_TRAIT)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 5, TRUE)
 	H.change_stat("speed", 3)
 
@@ -247,7 +249,7 @@
 
 /datum/quirk/gourmand/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_NASTY_EATER, "[type]")
+	ADD_TRAIT(H, TRAIT_NASTY_EATER, QUIRK_TRAIT)
 
 //neutral
 /datum/quirk/backproblems
@@ -255,7 +257,8 @@
 	desc = "I've always been called a giant (atleast among my kin). I am valued for my stature, but, this world made for smaller folk has forced me to move cautiously."
 	value = 0
 
-/datum/quirk/backproblems/on_spawn(mob/living/carbon/human/H)
+/datum/quirk/backproblems/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
 	H.change_stat("strength", 2)
 	H.change_stat("constitution", 1)
 	H.change_stat("speed", -2)
@@ -355,7 +358,7 @@
 
 /datum/quirk/sillyvoice/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_COMICSANS, "[type]")
+	ADD_TRAIT(H, TRAIT_COMICSANS, QUIRK_TRAIT)
 	H.dna.add_mutation(WACKY)
 
 /datum/quirk/unlucky
@@ -375,7 +378,7 @@
 
 /datum/quirk/jesterphobia/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_JESTERPHOBIA, "[type]")
+	ADD_TRAIT(H, TRAIT_JESTERPHOBIA, QUIRK_TRAIT)
 
 /datum/quirk/wild_night
 	name = "Wild Night"
@@ -393,7 +396,19 @@
 	desc = "When growing up I could barely feed myself... this left me weak and fragile"
 	value = -3
 
-/datum/quirk/atrophy/on_spawn(mob/living/carbon/human/H)
+/datum/quirk/atrophy/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
 	H.change_stat("strength", -2)
 	H.change_stat("constitution", -2)
 	H.change_stat("endurance", -1)
+
+/datum/quirk/nude_sleeper
+	name = "Picky Sleeper"
+	desc = "I just can't seem to fall asleep unless I'm <i>truly</i> comfortable..."
+	value = -2 //bothersome so i guess -2 is fine, especially with armor remove and equip delays, and overall risk.
+
+/datum/quirk/nude_sleeper/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.change_stat("endurance", 1) //since sleeping naked will probably get you sick or some shit.
+	H.change_stat("constitution", 1)
+	ADD_TRAIT(H, TRAIT_NUDE_SLEEPER, QUIRK_TRAIT)

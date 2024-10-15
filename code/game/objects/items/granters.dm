@@ -616,7 +616,6 @@
 	icon_state ="scrolldarkred"
 	remarks = list("Mediolanum ventis..", "Sana damnatorum..", "Frigidus ossa mortuorum..")
 
-
 //scroll for giving the reader a spell point, this should be dungeon loot
 /obj/item/book/granter/spell_points
 	name = "Arcyne Insight"
@@ -638,6 +637,3 @@
 		desc = "A scroll once inscribed with magical scripture. The surface is now barren of knowledge, siphoned by someone else. It's utterly useless."
 		icon_state = "scroll"
 		user.visible_message(span_warning("[src] has had its magic ink ripped from the scroll!"))
-	
-	
-

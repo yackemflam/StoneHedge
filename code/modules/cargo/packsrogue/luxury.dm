@@ -5,15 +5,24 @@
 	crate_name = "merchant guild's crate"
 	crate_type = /obj/structure/closet/crate/chest/merchant
 
-
 /datum/supply_pack/rogue/luxury/sigs
 	name = "Pipe Weed Zig"
 	cost = 3
 	contains = list(/obj/item/clothing/mask/cigarette/rollie/nicotine)
 
+/datum/supply_pack/rogue/luxury/perfume
+	name = "Perfume"
+	cost = 15
+	contains = list(/obj/item/perfume/random)
+
+/datum/supply_pack/rogue/luxury/ozium
+	name = "Ozium"
+	cost = 5
+	contains = list(/obj/item/reagent_containers/powder/ozium)
+
 /datum/supply_pack/rogue/luxury/moondust
 	name = "Moon Dust"
-	cost = 5
+	cost = 30
 	contains = list(/obj/item/reagent_containers/powder/moondust)
 
 /datum/supply_pack/rogue/luxury/sublimate // Far cheaper to make your own.
@@ -30,7 +39,7 @@
 
 /datum/supply_pack/rogue/luxury/spice
 	name = "Spice"
-	cost = 50
+	cost = 20
 	contains = list(/obj/item/reagent_containers/powder/spice)
 
 /datum/supply_pack/rogue/luxury/mbox
@@ -79,7 +88,7 @@
 	contains = list(/obj/item/scrying)
 
 /datum/supply_pack/rogue/luxury/listenst
-	name = "Emerald Choker"
+	name = "Gemerald Choker"
 	cost = 250
 	contains = list(/obj/item/listenstone)
 

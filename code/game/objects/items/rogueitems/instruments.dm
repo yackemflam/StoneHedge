@@ -13,6 +13,8 @@
 	var/list/song_list = list()
 	var/playing = FALSE
 	improvised = TRUE
+	w_class = WEIGHT_CLASS_NORMAL
+
 
 /obj/item/rogue/instrument/equipped(mob/living/user, slot)
 	. = ..()

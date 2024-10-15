@@ -37,6 +37,7 @@
 	name = "knotted penis"
 	penis_type = PENIS_TYPE_KNOTTED
 	sheath_type = SHEATH_TYPE_NORMAL
+	icon_state = "knotpenis"
 
 /obj/item/organ/penis/knotted/big
 	penis_size = 3
@@ -45,45 +46,54 @@
 	name = "equine penis"
 	penis_type = PENIS_TYPE_EQUINE
 	sheath_type = SHEATH_TYPE_NORMAL
+	icon_state = "equinepenis"
 
 /obj/item/organ/penis/tapered_mammal
 	name = "tapered penis"
 	penis_type = PENIS_TYPE_TAPERED
 	sheath_type = SHEATH_TYPE_NORMAL
+	icon_state = "taperedpenis"
 
 /obj/item/organ/penis/tapered
 	name = "tapered penis"
 	penis_type = PENIS_TYPE_TAPERED
 	sheath_type = SHEATH_TYPE_SLIT
+	icon_state = "taperedpenis"
 
 /obj/item/organ/penis/tapered_double
 	name = "hemi tapered penis"
 	penis_type = PENIS_TYPE_TAPERED_DOUBLE
 	sheath_type = SHEATH_TYPE_SLIT
+	icon_state = "hemipenis"
 
 /obj/item/organ/penis/tapered_double_knotted
 	name = "hemi knotted tapered penis"
 	penis_type = PENIS_TYPE_TAPERED_DOUBLE_KNOTTED
 	sheath_type = SHEATH_TYPE_SLIT
+	icon_state = "hemiknotpenis"
 
 /obj/item/organ/penis/barbed
 	name = "barbed penis"
 	penis_type = PENIS_TYPE_BARBED
 	sheath_type = SHEATH_TYPE_NORMAL
+	icon_state = "barbpenis"
 
 /obj/item/organ/penis/barbed_knotted
 	name = "barbed knotted penis"
 	penis_type = PENIS_TYPE_BARBED_KNOTTED
 	sheath_type = SHEATH_TYPE_NORMAL
+	icon_state = "barbpenis"
 
 /obj/item/organ/penis/tentacle
 	name = "tentacle penis"
 	penis_type = PENIS_TYPE_TENTACLE
 	sheath_type = SHEATH_TYPE_NONE
+	icon_state = "tentapenis"
 
 /obj/item/organ/filling_organ/anus
 	//absorbs faster than womb, less capacity.
 	name = "anus"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
 	icon_state = "anus"
 	dropshrink = 0.5
 	visible_organ = TRUE
@@ -99,6 +109,7 @@
 
 /obj/item/organ/filling_organ/vagina
 	name = "vagina"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
 	icon_state = "vagina"
 	dropshrink = 0.5
 	visible_organ = TRUE
@@ -115,6 +126,7 @@
 
 /obj/item/organ/filling_organ/breasts
 	name = "breasts"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
 	icon_state = "breasts"
 	dropshrink = 0.8
 	visible_organ = TRUE
@@ -133,6 +145,7 @@
 
 /obj/item/organ/belly
 	name = "belly"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
 	icon_state = "belly"
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_STOMACH
@@ -143,6 +156,7 @@
 
 /obj/item/organ/filling_organ/testicles
 	name = "testicles"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
 	icon_state = "testicles"
 	dropshrink = 0.5
 	visible_organ = TRUE

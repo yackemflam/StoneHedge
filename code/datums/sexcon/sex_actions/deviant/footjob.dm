@@ -1,6 +1,7 @@
 /datum/sex_action/footjob
 	name = "Jerk them off with feet"
 	check_same_tile = FALSE
+	check_incapacitated = FALSE
 
 /datum/sex_action/footjob/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))
@@ -13,6 +14,9 @@
 		if(issimple(target) && target.gender == MALE && target.sexcon)
 		else
 			return FALSE
+
+	if(!(HAS_TRAIT(user, TRAIT_TINY)) && HAS_TRAIT(target, TRAIT_TINY))	//Normal size trying to footjob male Seelie, pp too smol
+		return FALSE
 	return TRUE
 
 /datum/sex_action/footjob/can_perform(mob/living/user, mob/living/target)
@@ -37,6 +41,7 @@
 	return TRUE
 
 /datum/sex_action/footjob/on_start(mob/living/user, mob/living/target)
+	..()
 	if(HAS_TRAIT(user, TRAIT_TINY) && !HAS_TRAIT(target, TRAIT_TINY))
 		user.visible_message(span_warning("[user] plants their tiny feet against [target]'s cock..."))
 	else
@@ -55,6 +60,7 @@
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/footjob/on_finish(mob/living/user, mob/living/target)
+	..()
 	if(HAS_TRAIT(user, TRAIT_TINY) && !HAS_TRAIT(target, TRAIT_TINY))
 		user.visible_message(span_warning("[user] stops rubbing their feet along [target]'s cock."))
 	else

@@ -105,7 +105,7 @@
 		M.blood_volume = min(M.blood_volume+200, BLOOD_VOLUME_MAXIMUM)
 	else
 		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
-	if(wCount.len > 0)	
+	if(wCount.len > 0)
 		M.heal_wounds(6)
 		M.update_damage_overlays()
 	M.adjustBruteLoss(-4.5*REM, 0)
@@ -265,3 +265,11 @@
 		M.add_nausea(9)
 		M.adjustToxLoss(3, 0)
 	return ..()
+
+/datum/reagent/erpjuice/cum
+	name = "Erotic Fluid"
+	description = "A thick, sticky, cream like fluid. produced during an orgasm."
+	reagent_state = LIQUID
+	color = "#ebebeb"
+	taste_description = "salty and tangy"
+	metabolization_rate = 0.1

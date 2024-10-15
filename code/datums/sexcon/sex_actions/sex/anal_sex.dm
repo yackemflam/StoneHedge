@@ -1,6 +1,7 @@
 /datum/sex_action/anal_sex
 	name = "Sodomize them"
 	stamina_cost = 1.0
+	check_incapacitated = FALSE
 
 /datum/sex_action/anal_sex/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))
@@ -45,26 +46,34 @@
 	return TRUE
 
 /datum/sex_action/anal_sex/on_start(mob/living/user, mob/living/target)
-	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))	//Non-Seelie on Seelie
+	..()
+	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))	//Humen on Seelie
 		//Scream and rib break
-		user.visible_message(span_warning("[user] forces his cock into [target]'s tiny ass!"))
+		user.visible_message(span_warning("[user] forces their cock into [target]'s tiny butt!"))
 		var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
-		target.apply_damage(30, BRUTE, BPG)
-		playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
-	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY)) //Seelie on Non-Seelie action
-		user.visible_message(span_warning("[user] tries and fails to insert his tiny cock into [target]'s ass."))
-	else //Normal humen sized creatures or Seelie on Seelie (which would be normal)
-		user.visible_message(span_warning("[user] slides his cock into [target]'s ass!"))
-		playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
+		var/obj/item/bodypart/BPC = target.get_bodypart(BODY_ZONE_CHEST)
+		if(user.sexcon.force > SEX_FORCE_LOW)
+			BPC.add_wound(/datum/wound/fracture/chest)
+			BPG.add_wound(/datum/wound/fracture/groin)
+		target.apply_damage(15, BRUTE, BPC)
+		target.apply_damage(15, BRUTE, BPG)
+	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))	//Seelie on Humen
+		user.visible_message(span_warning("[user] tries and fails to insert their tiny cock into [target]'s butt!"))
+	else
+		user.visible_message(span_warning("[user] slides his cock into [target]'s butt!"))
+	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
 /datum/sex_action/anal_sex/on_perform(mob/living/user, mob/living/target)
-	if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY)) //Male seelie trying to fuck normal size humen
+	if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))	//Seelie on Humen
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] tries to fuck [target]'s ass, unsuccessfully."))
 		do_thrust_animate(user, target)
+		playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 		return FALSE //Return because male seelie cannot succesfully penetrate a large humen target
+
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s ass."))
 	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
+	do_thrust_animate(user, target)
 
 	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))
 		//Body damage
@@ -79,11 +88,14 @@
 
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 4, FALSE)
+	//else if((HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))
+	//	user.sexcon.perform_sex_action(target, 0.2, 0, FALSE)
 	else
 		user.sexcon.perform_sex_action(target, 2.4, 9, FALSE)
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/anal_sex/on_finish(mob/living/user, mob/living/target)
+	..()
 	if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY)) //Male seelie trying to fuck normal size humen
 		user.visible_message(span_warning("[user] stops trying to insert hit tiny cock into [target]'s ass."))
 	else

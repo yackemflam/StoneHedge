@@ -558,11 +558,11 @@
 	if(isliving(src))
 		L = src
 	var/client/client = L.client
-	if(L.IsSleeping())
+	if(L.IsSleeping() || L.surrendering)
 		if(cmode)
 			playsound_local(src, 'sound/misc/comboff.ogg', 100)
 			SSdroning.play_area_sound(get_area(src), client)
-			cmode = FALSE
+			set_cmode(FALSE)
 		if(hud_used)
 			if(hud_used.cmode_button)
 				hud_used.cmode_button.update_icon()
@@ -570,11 +570,11 @@
 	if(cmode)
 		playsound_local(src, 'sound/misc/comboff.ogg', 100)
 		SSdroning.play_area_sound(get_area(src), client)
-		cmode = FALSE
-		if(client && HAS_TRAIT(src, TRAIT_SCREENSHAKE))
-			animate(client, pixel_y)
+		set_cmode(FALSE)
+		if(client && HAS_TRAIT(src, TRAIT_SCHIZO_AMBIENCE) && !HAS_TRAIT(src, TRAIT_SCREENSHAKE))
+			animate(client, pixel_y) // stops screenshake if you're not on 4th wonder yet.
 	else
-		cmode = TRUE
+		set_cmode(TRUE)
 		playsound_local(src, 'sound/misc/combon.ogg', 100)
 		if(L.cmode_music)
 			SSdroning.play_combat_music(L.cmode_music, client)
@@ -584,6 +584,15 @@
 	if(hud_used)
 		if(hud_used.cmode_button)
 			hud_used.cmode_button.update_icon()
+
+/mob/proc/set_cmode(var/new_cmode)
+	if(cmode == new_cmode)
+		return
+	cmode = new_cmode
+	if(new_cmode)
+		SEND_SIGNAL(src, COMSIG_MOB_CMODE_ENABLED, src)
+	else
+		SEND_SIGNAL(src, COMSIG_MOB_CMODE_DISABLED, src)
 
 /mob
 	var/last_aimhchange = 0

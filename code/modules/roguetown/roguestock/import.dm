@@ -81,11 +81,26 @@
 
 /obj/structure/closet/crate/chest/steward/redpotion/Initialize()
 	. = ..()
-	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
-	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
-	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
-	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
-	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/antipregnancy(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/antipregnancy(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/antipregnancy(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/antipregnancy(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/antipregnancy(src)
+
+/datum/roguestock/import/perfume
+	name = "Crate of perfumes"
+	desc = "To keep the stench away."
+	item_type = /obj/structure/closet/crate/chest/steward/perfume
+	export_price = 60
+	importexport_amt = 1
+
+/obj/structure/closet/crate/chest/steward/perfume/Initialize()
+	. = ..()
+	new /obj/item/perfume/random(src)
+	new /obj/item/perfume/random(src)
+	new /obj/item/perfume/random(src)
+	new /obj/item/perfume/random(src)
+	new /obj/item/perfume/random(src)
 
 /datum/roguestock/import/knight
 	name = "Knight Equipment Crate"

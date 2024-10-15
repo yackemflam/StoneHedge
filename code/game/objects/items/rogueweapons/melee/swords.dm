@@ -58,7 +58,7 @@
 
 
 /datum/intent/sword/cut
-	name = "strike"
+	name = "cut"
 	icon_state = "incut"
 	attack_verb = list("cuts", "slashes")
 	animname = "cut"
@@ -116,7 +116,6 @@
 	associated_skill = /datum/skill/combat/swords
 	throwforce = 15
 	thrown_bclass = BCLASS_CUT
-	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/sword/long/death
@@ -167,7 +166,6 @@
 	associated_skill = /datum/skill/combat/swords
 	throwforce = 15
 	thrown_bclass = BCLASS_CUT
-	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/sword/long/getonmobprop(tag)
@@ -205,7 +203,6 @@
 	associated_skill = /datum/skill/combat/swords
 	throwforce = 15
 	thrown_bclass = BCLASS_CUT
-	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 363
 	static_price = TRUE
@@ -245,7 +242,6 @@
 	max_integrity = 9999
 	throwforce = 15
 	thrown_bclass = BCLASS_CUT
-	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 363
 	static_price = TRUE
@@ -284,7 +280,6 @@
 	associated_skill = /datum/skill/combat/swords
 	throwforce = 15
 	thrown_bclass = BCLASS_CUT
-	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/sword/long/rider/getonmobprop(tag)
@@ -297,6 +292,16 @@
 				return list("shrink" = 0.6,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/sword/long/rider/messer
+	force = 20
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop, /datum/intent/sword/thrust, /datum/intent/sword/strike)
+	icon_state = "Kmesser"
+	item_state = "Kmesser"
+	name = "langesmesser"
+	desc = "A lengthened messer, inspired by those from grenzelhoft. It chops and cuts with terrifying efficiency."
 
 /obj/item/rogueweapon/sword/long/marlin
 	force = 26
@@ -323,7 +328,6 @@
 	associated_skill = /datum/skill/combat/swords
 	throwforce = 15
 	thrown_bclass = BCLASS_CUT
-	dropshrink = 0.75
 	minstr = 6
 	sellprice = 42
 	wdefense = 5
@@ -343,7 +347,7 @@
 /datum/intent/sword/strike
 	name = "pommel strike"
 	icon_state = "instrike"
-	attack_verb = list("bashes", "clubs")
+	attack_verb = list("bashes", "clubs", "strikes")
 	animname = "strike"
 	blade_class = BCLASS_BLUNT
 	hitsound = list('sound/combat/hits/blunt/metalblunt (1).ogg', 'sound/combat/hits/blunt/metalblunt (2).ogg', 'sound/combat/hits/blunt/metalblunt (3).ogg')
@@ -436,6 +440,7 @@
 	name = "iron messer"
 	desc = "A single edged blade to slice and chop with."
 	icon_state = "imesser"
+	max_integrity = 125
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/axe/chop)
 	gripped_intents = null
 	minstr = 4
@@ -445,8 +450,8 @@
 	name = "steel messer" //People often ask for messers when the smithy only has steel, now they can make it.
 	desc = "A single edged blade to slice and chop with. This one is made of sturdy steel."
 	icon_state = "smesser"
+	smeltresult = /obj/item/ingot/steel
 	max_integrity = 175 //A stout blade that will last a long time before breakage
-
 
 /obj/item/rogueweapon/sword/falchion
 	force = 20
@@ -460,8 +465,9 @@
 
 /obj/item/rogueweapon/sword/sabre
 	name = "sabre"
-	desc = "A swift saber. Parries realiantly and strikes swiftly"
+	desc = "A swift sabre. Parries realiantly and strikes swiftly"
 	icon_state = "saber"
+	max_integrity = 230
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust)
 	gripped_intents = null
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
@@ -497,6 +503,7 @@
 	name = "rapier"
 	desc = "A precise rapier, a good stabbing weapon."
 	icon_state = "rapier"
+	max_integrity = 215
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
 	gripped_intents = null
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
@@ -507,7 +514,7 @@
 
 /datum/intent/sword/cut/rapier
 	clickcd = 10
-	damfactor = 0.5
+	damfactor = 0.7
 
 /datum/intent/sword/thrust/rapier
 	clickcd = 8
@@ -526,13 +533,29 @@
 	max_blade_int = 300
 	wdefense = 7
 
+/obj/item/rogueweapon/sword/estoc
+	name = "estoc"
+	desc = "An specialised steel longsword, tailor made for stabbing through armor."
+	force = 18
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/sword/cut/rapier, /datum/intent/sword/thrust) //Better at stabbing than the longsword, worse at everything else. It fits the time period because of our use of bervors and visored sallets.
+	icon_state = "estoc"
+	gripped_intents = list(/datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/estoc, /datum/intent/sword/strike)
+	minstr = 6
+	wdefense = 4
+
+/datum/intent/sword/thrust/estoc // Around 12 or so dmg gets through armor, making it weaker than spears, but more portable.
+	clickcd = 10
+	penfactor = 60
+
 /obj/item/rogueweapon/sword/cutlass
 	name = "cutlass"
 	desc = "Used by pirates and deckhands."
 	icon_state = "cutlass"
+	max_integrity = 220
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	gripped_intents = null
-	wdefense = 6
+	wdefense = 7
 
 /obj/item/rogueweapon/sword/silver
 	//no sprite, used as base for silver swords because this code fucking sucks.
@@ -651,6 +674,7 @@
 	icon_state = "esaber"
 	item_state = "esaber"
 	smeltresult = /obj/item/ingot/silver
+	max_integrity = 205
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 

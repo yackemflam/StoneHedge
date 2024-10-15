@@ -32,10 +32,13 @@
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/traitor.ogg', 80, FALSE, pressure_affected = FALSE)
 	var/mob/living/carbon/human/H = owner.current
 	ADD_TRAIT(H, TRAIT_BANDITCAMP, TRAIT_GENERIC)
+	for(var/obj/structure/fluff/traveltile/bandit/tile in GLOB.traveltiles)
+		tile.show_travel_tile(H)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_COMMIE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_TOLERANT, TRAIT_GENERIC)
 	H.set_patron(/datum/patron/inhumen/matthios)
 	to_chat(H, span_alertsyndie("I am a BANDIT!"))
 	to_chat(H, span_boldwarning("Long ago I did a crime worthy of my bounty being hung on the wall outside of the local inn. I live now with fellow free men in reverence to MATTHIOS whose idol grants us boons and wishes when fed the money, treasures, and metals of the civilized wretches. I must feed the idol to satisfy my greed!"))
@@ -105,21 +108,16 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
 	belt = /obj/item/storage/belt/rogue/leather
 	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1)
 	mask = /obj/item/clothing/mask/rogue/facemask/steel
-	neck = /obj/item/clothing/neck/roguetown/coif
-	head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-	if(prob(40))
-		neck = /obj/item/clothing/neck/roguetown/chaincoif
-	if(prob(23))
-		gloves = /obj/item/clothing/gloves/roguetown/leather
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson
-	else
-		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-		armor = /obj/item/clothing/suit/roguetown/armor/leather
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	head = /obj/item/clothing/head/roguetown/menacing/bandit
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	var/loadoutm = rand(1,16)
 	switch(loadoutm)
 		if(1 to 3) // sword bandit
@@ -170,6 +168,7 @@
 	H.change_stat("speed", 1)
 	H.change_stat("intelligence", -3)
 
+	H.verbs |= /mob/proc/haltyell
 	H.ambushable = FALSE
 
 /datum/antagonist/bandit/roundend_report()

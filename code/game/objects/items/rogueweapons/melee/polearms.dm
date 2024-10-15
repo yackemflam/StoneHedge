@@ -16,7 +16,7 @@
 	name = "bash"
 	blade_class = BCLASS_BLUNT
 	icon_state = "inbash"
-	attack_verb = list("bashes", "strikes")
+	attack_verb = list("bashes", "clubs", "strikes")
 	penfactor = 10
 	damfactor = 0.8
 	item_d_type = "blunt"
@@ -97,7 +97,7 @@
 /obj/item/rogueweapon/spear
 	force = 18
 	force_wielded = 30
-	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
+	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for non-lethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
 	name = "spear"
 	desc = "This iron spear is great to impale goblins."
@@ -204,7 +204,7 @@
 /obj/item/rogueweapon/halberd
 	force = 15
 	force_wielded = 30
-	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
+	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for less-lethal takedowns, only targets limbs.
 	gripped_intents = list(SPEAR_THRUST, /datum/intent/spear/cut/halberd, /datum/intent/sword/chop, SPEAR_BASH)
 	name = "halberd"
 	desc = "An iron halberd, mostly used by town guards."
@@ -240,7 +240,7 @@
 
 
 /obj/item/rogueweapon/halberd/bardiche
-	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
+	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak, SPEAR_BASH) //bash is for less-lethal takedowns, only targets limbs.
 	gripped_intents = list(/datum/intent/spear/thrust/eaglebeak, /datum/intent/spear/cut/halberd, /datum/intent/axe/chop, SPEAR_BASH)
 	name = "bardiche"
 	desc = "A beautiful variant of the halberd."
@@ -256,7 +256,7 @@
 /obj/item/rogueweapon/eaglebeak
 	force = 15
 	force_wielded = 30
-	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
+	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak, SPEAR_BASH) //bash is for less-lethal takedowns, only targets limbs.
 	gripped_intents = list(/datum/intent/spear/thrust/eaglebeak, /datum/intent/mace/smash/eaglebeak, SPEAR_BASH)
 	name = "eagle's beak"
 	desc = "A heavy polearm with a hammer on its end, topped with a spike."
@@ -313,6 +313,22 @@
 	gripped_intents = list(/datum/intent/unarmed/shove)
 	bigboy = FALSE
 	gripsprite = FALSE
+
+/obj/item/rogueweapon/greatsword
+	force = 12
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for less-lethal takedowns, only targets limbs.
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike)
+	name = "greatsword"
+	desc = "Might be able to chop anything in half!"
+	icon_state = "gsw"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
 	wlength = WLENGTH_GREAT
 	w_class = WEIGHT_CLASS_BULKY
 	smeltresult = null

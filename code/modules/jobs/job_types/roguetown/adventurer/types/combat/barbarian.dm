@@ -49,7 +49,7 @@
 			if(prob(40))
 				cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 			H.change_stat("intelligence", -2)
-			H.change_stat("strength", 3) // Barbs are traditionally a mix of strength/resilience. 
+			H.change_stat("strength", 3) // Barbs are traditionally a mix of strength/resilience.
 			H.change_stat("constitution", 3)
 			H.change_stat("endurance", 2)
 		if("Hunter Killer")
@@ -90,7 +90,7 @@
 			else
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 			H.change_stat("intelligence", -1) // The hunter is smarter, more skilled -- but not as tough.
-			H.change_stat("strength", 2) 
+			H.change_stat("strength", 2)
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 3)
 			H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
@@ -125,8 +125,8 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/leather
 			else
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
-			H.change_stat("intelligence", -2) 
-			H.change_stat("strength", 3) 
+			H.change_stat("intelligence", -2)
+			H.change_stat("strength", 3)
 			H.change_stat("constitution", 3)
 			H.change_stat("endurance", 2)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rav_claws)
@@ -172,13 +172,13 @@
 					if(prob(40))
 						cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 					H.change_stat("intelligence", -2)
-					H.change_stat("strength", 3) // Barbs are traditionally a mix of strength/resilience. 
+					H.change_stat("strength", 3) // Barbs are traditionally a mix of strength/resilience.
 					H.change_stat("constitution", 3)
 					H.change_stat("endurance", 2)
 				else if(prob(45)) // Hunter Killer
 					H.set_blindness(0)
 					to_chat(src, span_warning("You are a barbarian of the outlands, having fought many monstrous beasts and men in your time -- you now find yourself in the lands of nobles and beggars."))
-					
+
 					H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 					H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 					H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
@@ -192,7 +192,7 @@
 					H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
 					H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
 					H.mind.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
-					
+
 					H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 					H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 					H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
@@ -213,7 +213,7 @@
 					else
 						armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 					H.change_stat("intelligence", -1) // The hunter is smarter, more skilled -- but not as tough.
-					H.change_stat("strength", 2) 
+					H.change_stat("strength", 2)
 					H.change_stat("constitution", 2)
 					H.change_stat("endurance", 3)
 				else // Bear Wolf. Barbarian Unique. They don't get armor.
@@ -234,8 +234,8 @@
 					H.mind.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
 					H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 					H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-					H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE) 
-					H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE) 
+					H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
 					H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 					beltr = /obj/item/rogueweapon/stoneaxe/woodcut
 					belt = /obj/item/storage/belt/rogue/leather
@@ -249,7 +249,7 @@
 					H.change_stat("constitution", 3)
 					H.change_stat("endurance", 4)
 */
-/* 
+/*
 	var/randy = rand(1,5)
 	switch(randy) // Pick wep. Choose skill.
 		if(1 to 2)
@@ -258,7 +258,7 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/axes, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		if(3 to 4)
-			
+
 		if(5)
 			beltr = /obj/item/rogueweapon/mace/steel
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
@@ -266,4 +266,3 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 */
 	//70% chance to be raceswapped to Gronn because slop lore
-

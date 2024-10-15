@@ -261,7 +261,7 @@
 	sellprice = 16	//Costs about ~10 to make.
 	craftdiff = 1	//Slightly harder craft.
 
-/datum/crafting_recipe/roguetown/leather/vest
+/datum/crafting_recipe/roguetown/leather/vest/sailor
 	name = "leather sea jacket"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	reqs = list(/obj/item/natural/hide = 2)

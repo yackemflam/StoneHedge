@@ -207,7 +207,7 @@
 			if((bclass in GLOB.artery_strong_bclasses) && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				used += 10
 			else if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
-				used += 10
+				used += user.STAPER
 		if(prob(used))
 			attempted_wounds += /datum/wound/artery
 
@@ -257,7 +257,7 @@
 			if((bclass in GLOB.artery_strong_bclasses) && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				used += 10
 			else if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
-				used += 10
+				used += user.STAPER
 		if(prob(used))
 			if((zone_precise == BODY_ZONE_PRECISE_STOMACH) && !resistance)
 				attempted_wounds += /datum/wound/slash/disembowel
@@ -334,7 +334,7 @@
 					used += 10
 			else
 				if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
-					used += 10
+					used += user.STAPER
 		var/artery_type = /datum/wound/artery
 		if(zone_precise == BODY_ZONE_PRECISE_NECK)
 			artery_type = /datum/wound/artery/neck
@@ -345,7 +345,7 @@
 					var/obj/item/organ/ears/my_ears = owner.getorganslot(ORGAN_SLOT_EARS)
 					if(!my_ears || has_wound(/datum/wound/facial/ears))
 						attempted_wounds += /datum/wound/fracture/head/ears
-					else 
+					else
 						attempted_wounds += /datum/wound/facial/ears
 				else if(zone_precise in eyestab_zones)
 					var/obj/item/organ/my_eyes = owner.getorganslot(ORGAN_SLOT_EYES)
@@ -381,7 +381,7 @@
 	if(!embedder || !can_embed(embedder))
 		return FALSE
 	if(owner && ((owner.status_flags & GODMODE) || HAS_TRAIT(owner, TRAIT_PIERCEIMMUNE)))
-		return FALSE 
+		return FALSE
 	LAZYADD(embedded_objects, embedder)
 	embedder.is_embedded = TRUE
 	embedder.forceMove(src)

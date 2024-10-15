@@ -175,7 +175,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/descriptor_entries = list()
 	var/list/custom_descriptors = list()
 	var/defiant = TRUE
-
 	/// Tracker to whether the person has ever spawned into the round, for purposes of applying the respawn ban
 	var/has_spawned = FALSE
 
@@ -779,7 +778,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	popup.open(FALSE)
 	onclose(user, "capturekeypress", src)
 
-/datum/preferences/proc/SetChoices(mob/user, limit = 14, list/splitJobs = list("Watchmen Captain", "Prophet", "Merchant Prince", "Archivist", "Nightmaster", "Towner", "Grenzelhoft Mercenary", "Beggar", "Prisoner", "Chieftain"), widthPerColumn = 295, height = 620) //295 620
+/datum/preferences/proc/SetChoices(mob/user, limit = 15, list/splitJobs = list("Watchmen Captain", "Prophet", "Merchant Prince", "Archivist", "Nightmaster", "Towner", "Grenzelhoft Mercenary", "Beggar", "Prisoner", "Chieftain"), widthPerColumn = 295, height = 620) //295 620
 	if(!SSjob)
 		return
 
@@ -2064,13 +2063,6 @@ Slots: [job.spawn_positions]</span>
 						domhand = 2
 					else
 						domhand = 1
-				/*
-				if("sexable")
-					if(sexable == FALSE)
-						sexable = TRUE
-					else
-						sexable = FALSE
-				*/
 				if("bespecial")
 					if(next_special_trait)
 						print_special_text(user, next_special_trait)
@@ -2284,7 +2276,7 @@ Slots: [job.spawn_positions]</span>
 				if("be_defiant")
 					defiant = !defiant
 					if(defiant)
-						to_chat(user, span_notice("You will now have resistance from people violating you, but be punished for trying to violate others. This is not full protection."))
+						to_chat(user, span_notice("You will now have resistance from people violating you, but be punished for trying to violate others." + " " + span_boldwarning("(COMBAT Mode will disable ERP interactions. Bypassing this is a bannable offense, AHELP if necessary.)")))
 					else
 						to_chat(user, span_boldwarning("You fully immerse yourself in the grim experience, waiving your resistance from people violating you, but letting you do the same unto other non-defiants"))
 
