@@ -68,7 +68,7 @@
 		user.sexcon.perform_sex_action(target, 1.2, 3, TRUE)
 	else
 		user.sexcon.perform_sex_action(target, 2.4, 7, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_ejaculation()
 
 	user.sexcon.perform_sex_action(target, 2, 4, FALSE)
 	if(target.sexcon.check_active_ejaculation())
