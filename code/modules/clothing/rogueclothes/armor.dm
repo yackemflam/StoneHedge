@@ -107,16 +107,13 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "chainmail bikini"
-	desc = "Try not to get your nipple caught between the chains, and other bits."
+	desc = "Try not to get your nipples caught between the chains, and other bits."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "chainkini"
 	item_state = "chainkini"
-	max_integrity = 225
 	allowed_sex = list(FEMALE)
-	allowed_race = CLOTHED_RACES_TYPES
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 
@@ -124,7 +121,26 @@
 	name = "chainmail bra"
 	icon_state = "chainbra"
 	item_state = "chainbra"
-	desc = "Try not to get your nipple caught between the chains."
+	desc = "Try not to get your nipples caught between the chains."
+	flags_inv = HIDEBOOB
+	is_bra = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini
+	name = "iron chainmail bikini"
+	desc = "Try not to get your nipples caught between the chains, and other bits."
+	icon = 'modular_stonehedge/icons/armor/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	icon_state = "chainkini"
+	item_state = "chainkini"
+	color = "#9EA48E"
+	allowed_sex = list(FEMALE)
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini/bra
+	name = "iron chainmail bra"
+	icon_state = "chainbra"
+	item_state = "chainbra"
+	color = "#9EA48E"
+	desc = "Try not to get your nipples caught between the chains."
 	flags_inv = HIDEBOOB
 	is_bra = TRUE
 

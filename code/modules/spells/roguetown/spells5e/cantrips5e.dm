@@ -1332,7 +1332,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 //in the source material this would just be some sort of poison, since we have all sorts of potions, this is better.
 //my hope is that it doesn't work with love poiton...
 /obj/effect/proc_holder/spell/invoked/poisonspray5e
-	name = "Poison Spray"
+	name = "Poison Cloud" //renamed to better reflect wtf this does -- vide
 	overlay_state = "null"
 	releasedrain = 50
 	chargetime = 3

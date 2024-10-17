@@ -95,6 +95,15 @@
 		/obj/item/reagent_containers/food/snacks/fish = 2)
 	craftdiff = 2
 
+//fuck fish
+/datum/crafting_recipe/roguetown/alchemy/healthpot3xalt
+	name = "3x Health Potion (Honey)"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/food/snacks/rogue/honey = 2)
+	craftdiff = 3
+
 /datum/crafting_recipe/roguetown/alchemy/majorhealthpot
 	name = "Major Health Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot)

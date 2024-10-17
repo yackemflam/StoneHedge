@@ -57,13 +57,9 @@
 	name = "poisoned bolt"
 	damage = 70
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt/poison
-
-
-/obj/projectile/bullet/reusable/bolt/poison/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
-		M.reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 7) //not gonna kill anyone, but they will be quite quiet
+	poisontype = /datum/reagent/berrypoison
+	poisonfeel = "burning" //Ditto
+	poisonamount = 7 //Can't spam crossbows as much as bows, and its a thiccer projectile so slight more poison in bolts.
 
 /obj/projectile/bullet/reusable/bolt/tranq
 	name = "bolt"
