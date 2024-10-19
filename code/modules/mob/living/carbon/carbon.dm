@@ -152,12 +152,19 @@
 		if(victim.movement_type & FLYING)
 			return
 		if(hurt)
-			victim.take_bodypart_damage(10,check_armor = TRUE)
-			take_bodypart_damage(10,check_armor = TRUE)
-			if(victim.IsOffBalanced())
-				victim.Knockdown(30)
-			visible_message("<span class='danger'>[src] crashes into [victim]!",\
-				span_danger("I violently crash into [victim]!"))
+			if(HAS_TRAIT(src, TRAIT_MARTIALARTIST))
+				victim.take_bodypart_damage(25,check_armor = TRUE)
+				if(victim.IsOffBalanced())
+					victim.Knockdown(30)
+				visible_message("<span class='danger'>[src] jump kick's [victim]!",\
+					span_danger("I jump kick [victim]!"))
+			else
+				victim.take_bodypart_damage(10,check_armor = TRUE)
+				take_bodypart_damage(10,check_armor = TRUE)
+				if(victim.IsOffBalanced())
+					victim.Knockdown(30)
+				visible_message("<span class='danger'>[src] crashes into [victim]!",\
+					span_danger("I violently crash into [victim]!"))
 		playsound(src,"genblunt",100,TRUE)
 
 
@@ -351,9 +358,13 @@
 		buckled.user_unbuckle_mob(src,src)
 
 /mob/living/carbon/resist_fire()
-	fire_stacks -= 2.5
-	if(fire_stacks > 10 || !(mobility_flags & MOBILITY_STAND))
-		Paralyze(50, TRUE, TRUE)
+	if(HAS_TRAIT(src, TRAIT_ROTMAN))
+		visible_message(span_warning("[src] groans loudly, unable to remember how to put [p_them()]self out!"))//DIE VECNA DIE
+		emote("idle")
+		return
+	fire_stacks -= 5
+	if(fire_stacks > 10)
+		Paralyze(60, TRUE, TRUE)
 		spin(32,2)
 		fire_stacks -= 7.5
 		visible_message(span_warning("[src] rolls on the ground, trying to put [p_them()]self out!"))

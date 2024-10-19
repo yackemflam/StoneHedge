@@ -159,3 +159,5 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/robe/abyssoracorobe
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		shoes = /obj/item/clothing/shoes/roguetown/shalal
+
+	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
