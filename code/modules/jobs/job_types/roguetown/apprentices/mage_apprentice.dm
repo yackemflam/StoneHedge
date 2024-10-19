@@ -61,6 +61,7 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/roustame)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/animate_object)
 
+/* Unused until we know what to do with all the magic dump. -vide
 	// TODO: GLOBAL LISTS OF SPELLS, THIS IS PAINFUL
 	// THIS IS WHERE SPELL SELECTION HAPPENS AT ROUND START
 	var/list/combat_spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fireball,/obj/effect/proc_holder/spell/invoked/projectile/lightningbolt,/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e,/obj/effect/proc_holder/spell/invoked/projectile/fetch,/obj/effect/proc_holder/spell/invoked/projectile/spitfire,/obj/effect/proc_holder/spell/invoked/projectile/firebolt5e,/obj/effect/proc_holder/spell/invoked/projectile/rayoffrost5e,/obj/effect/proc_holder/spell/invoked/projectile/acidsplash5e,/obj/effect/proc_holder/spell/invoked/blade_burst,/obj/effect/proc_holder/spell/invoked/frostbite5e,/obj/effect/proc_holder/spell/invoked/poisonspray5e,/obj/effect/proc_holder/spell/invoked/arcyne_storm,/obj/effect/proc_holder/spell/invoked/chilltouch5e,/obj/effect/proc_holder/spell/invoked/infestation5e,/obj/effect/proc_holder/spell/invoked/mindsliver5e,/obj/effect/proc_holder/spell/targeted/lightninglure5e,/obj/effect/proc_holder/spell/invoked/greenflameblade5e,)
@@ -83,5 +84,6 @@
 
 			if("End Spell Selection (You will lose all points not spent)") // In case someone doesn't want to spend every point they have and plays a gimped mage, for whatever reason
 				H.mind.spell_points = H.mind.used_spell_points
+*/
 
 	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)

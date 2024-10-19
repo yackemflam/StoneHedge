@@ -507,7 +507,7 @@
 	result = /obj/item/bait
 	reqs = list(/obj/item/storage/roguebag = 1,
 				/obj/item/reagent_containers/food/snacks/grown/wheat = 2)
-	req_table = TRUE
+	req_table = FALSE
 	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/sbaita
@@ -515,7 +515,7 @@
 	result = /obj/item/bait/sweet
 	reqs = list(/obj/item/storage/roguebag = 1,
 				/obj/item/reagent_containers/food/snacks/grown/apple = 2)
-	req_table = TRUE
+	req_table = FALSE
 	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/sbait
@@ -523,7 +523,7 @@
 	result = /obj/item/bait/sweet
 	reqs = list(/obj/item/storage/roguebag = 1,
 				/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2)
-	req_table = TRUE
+	req_table = FALSE
 	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/bloodbait
@@ -531,7 +531,7 @@
 	result = /obj/item/bait/bloody
 	reqs = list(/obj/item/storage/roguebag = 1,
 				/obj/item/reagent_containers/food/snacks/rogue/meat = 2)
-	req_table = TRUE
+	req_table = FALSE
 	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/pipe
@@ -679,7 +679,7 @@
 /datum/crafting_recipe/roguetown/boneaxe
 	name = "bone axe"
 	result = /obj/item/rogueweapon/stoneaxe/boneaxe
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	reqs = list(/obj/item/natural/stone = 1,
 				/obj/item/natural/bone = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
@@ -764,7 +764,7 @@
 /datum/crafting_recipe/roguetown/bonespear
 	name = "bone spear"
 	result = /obj/item/rogueweapon/spear/bonespear
-	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
+	reqs = list(/obj/item/natural/stone = 1,
 				/obj/item/natural/bone = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
