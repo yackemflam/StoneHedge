@@ -7,7 +7,7 @@
 	return FALSE
 
 /datum/sex_action/npc_rimming/can_perform(mob/living/user, mob/living/target)
-	if(issimple(user))
+	if(user.seeksfuck) //should filter down to only npcs with seeksfuck behavior.
 		return TRUE
 	return FALSE
 
@@ -20,22 +20,26 @@
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] rims [target]'s butt..."))
 	user.make_sucking_noise()
 
-	target.heal_bodypart_damage(1,1,0.5,TRUE)
+	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	user.sexcon.perform_sex_action(target, 2, 0, TRUE)
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/npc_rimming/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] stops rimming [target]'s butt ..."))
 	var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
-	usermob.stoppedfucking()
+	usermob.stoppedfucking(target)
 	var/datum/sex_controller/sc = target.sexcon
 	sc.beingfucked = FALSE
 
 
 /datum/sex_action/npc_rimming/is_finished(mob/living/user, mob/living/target)
 	if(target.sexcon.finished_check())
-		var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
-		usermob.stoppedfucking()
+		if(issimple(user))
+			var/mob/living/simple_animal/hostile/retaliate/rogue/simpleuser = user
+			simpleuser.stoppedfucking(target)
+		else
+			var/mob/living/carbon/human/humanuser = user
+			humanuser.stoppedfucking(target)
 		var/datum/sex_controller/sc = target.sexcon
 		sc.beingfucked = FALSE
 		return TRUE

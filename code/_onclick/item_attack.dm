@@ -64,12 +64,7 @@
 
 /mob/living
 	var/tempatarget = null
-	var/erpable = FALSE
-
-/mob/living/Initialize()
-	. = ..()
-	if(erpable)
-		give_genitals()
+	var/mouth_blocked = FALSE
 
 /obj/item/proc/attack(mob/living/M, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)

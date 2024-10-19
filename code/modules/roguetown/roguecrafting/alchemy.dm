@@ -7,6 +7,12 @@
 	subtype_reqs = TRUE
 	structurecraft = /obj/structure/fluff/alch
 
+/datum/crafting_recipe/roguetown/alchemy/thermometer
+	name = "Thermoscope"
+	result = list(/obj/item/thermometer)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /datum/reagent/mercury = 5)
+	craftdiff = 2
+
 /datum/crafting_recipe/roguetown/alchemy/bbomb
 	name = "Bottle bomb"
 	result = list(/obj/item/bomb)
@@ -88,6 +94,15 @@
 		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2,
 		/obj/item/reagent_containers/food/snacks/fish = 2)
 	craftdiff = 2
+
+//fuck fish
+/datum/crafting_recipe/roguetown/alchemy/healthpot3xalt
+	name = "3x Health Potion (Honey)"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/food/snacks/rogue/honey = 2)
+	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/alchemy/majorhealthpot
 	name = "Major Health Potion"

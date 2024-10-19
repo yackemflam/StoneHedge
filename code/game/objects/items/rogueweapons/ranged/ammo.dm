@@ -9,7 +9,7 @@
 	dropshrink = 0.6
 	max_integrity = 10
 	force = 10
-
+	w_class = WEIGHT_CLASS_SMALL
 /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	name = "poisoned bolt"
 	desc = "A durable iron bolt that will pierce a skull easily. This one is coated in a clear liquid."
@@ -57,13 +57,9 @@
 	name = "poisoned bolt"
 	damage = 70
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt/poison
-
-
-/obj/projectile/bullet/reusable/bolt/poison/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
-		M.reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 7) //not gonna kill anyone, but they will be quite quiet
+	poisontype = /datum/reagent/berrypoison
+	poisonfeel = "burning" //Ditto
+	poisonamount = 7 //Can't spam crossbows as much as bows, and its a thiccer projectile so slight more poison in bolts.
 
 /obj/projectile/bullet/reusable/bolt/tranq
 	name = "bolt"
@@ -78,7 +74,7 @@
 	woundclass = BCLASS_BLUNT
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	poisontype = /datum/reagent/medicine/tranquilizer
-	poisonfeel = "intense numbing" 
+	poisonfeel = "intense numbing"
 	poisonamount = 10
 
 /obj/item/ammo_casing/caseless/rogue/arrow
@@ -88,10 +84,11 @@
 	caliber = "arrow"
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "arrow"
-	force = 30
+	force = 7
 	dropshrink = 0.6
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	max_integrity = 20
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/projectile/bullet/reusable/arrow
 	name = "arrow"
@@ -187,7 +184,7 @@
 	woundclass = BCLASS_BLUNT
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	poisontype = /datum/reagent/medicine/soporpot
-	poisonfeel = "numbing" 
+	poisonfeel = "numbing"
 	poisonamount = 15
 
 /obj/projectile/bullet/reusable/arrow/poison/stone
@@ -230,4 +227,5 @@
 	icon_state = "musketball"
 	dropshrink = 0.5
 	possible_item_intents = list(/datum/intent/use)
-	max_integrity = 0.1
+	max_integrity = 0
+	w_class = WEIGHT_CLASS_TINY

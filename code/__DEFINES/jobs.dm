@@ -102,7 +102,7 @@
 #define STEWARD		(1<<3)
 #define KNIGHT		(1<<4)
 #define GUARD_CAPTAIN		(1<<5)
-#define JUDGE	(1<<6)
+#define JUDGE		(1<<6)
 #define HOSTAGE		(1<<7)
 #define NOBLE		(1<<8)
 
@@ -187,6 +187,7 @@
 #define GRENZELHOFT		(1<<2)
 #define VETERAN		(1<<3)
 #define SEELIE		(1<<4)
+#define SELLSWORD		(1<<4)
 
 #define TRIBAL		(1<<8)
 
@@ -295,6 +296,7 @@
 #define JDO_DESERT_RIDER 31.2
 #define JDO_VET 31.3
 #define JDO_SEELIE 31.4
+#define JDO_SELLSWORD 31.5
 
 #define JDO_VAGRANT 33
 #define JDO_VAGABOND 34

@@ -18,6 +18,7 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	head = /obj/item/clothing/head/roguetown/bardhat //with this hat, they will get all the pussy(or dick depending on preference(or both ig))
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	cloak = /obj/item/clothing/cloak/half

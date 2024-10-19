@@ -105,6 +105,8 @@ SUBSYSTEM_DEF(job)
 			if(player.client)
 				player.client.prefs.lastclass = null
 				player.client.prefs.save_preferences()
+		if(player.client && player.client.prefs)
+			player.client.prefs.has_spawned = TRUE
 		job.greet(player)
 		return TRUE
 	JobDebug("AR has failed, Player: [player], Rank: [rank]")
@@ -231,6 +233,10 @@ SUBSYSTEM_DEF(job)
 
 		if(!isnull(job.max_pq) && (get_playerquality(player.ckey) > job.max_pq) && !is_misc_banned(player.ckey, BAN_MISC_LUNATIC))
 			JobDebug("GRJ incompatible with maxPQ, Player: [player], Job: [job.title]")
+			continue
+
+		if(job.banned_leprosy && is_misc_banned(player.client.ckey, BAN_MISC_LEPROSY))
+			JobDebug("GRJ incompatible with leprosy, Player: [player], Job: [job.title]")
 			continue
 
 		if(job.banned_leprosy && is_misc_banned(player.client.ckey, BAN_MISC_LEPROSY))
@@ -474,6 +480,10 @@ SUBSYSTEM_DEF(job)
 					JobDebug("DO incompatible with leprosy, Player: [player], Job: [job.title]")
 					continue
 
+				if(job.banned_leprosy && is_misc_banned(player.client.ckey, BAN_MISC_LEPROSY))
+					JobDebug("DO incompatible with leprosy, Player: [player], Job: [job.title]")
+					continue
+
 				if(job.banned_lunatic && is_misc_banned(player.client.ckey, BAN_MISC_LUNATIC))
 					JobDebug("DO incompatible with lunatic, Player: [player], Job: [job.title]")
 					continue
@@ -561,6 +571,9 @@ SUBSYSTEM_DEF(job)
 					continue
 
 				if((player.client.prefs.lastclass == job.title) && (!job.bypass_lastclass))
+					continue
+
+				if(job.banned_leprosy && is_misc_banned(player.client.ckey, BAN_MISC_LEPROSY))
 					continue
 
 				if(job.banned_leprosy && is_misc_banned(player.client.ckey, BAN_MISC_LEPROSY))

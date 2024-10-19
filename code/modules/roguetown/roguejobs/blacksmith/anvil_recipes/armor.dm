@@ -2,6 +2,21 @@
 	appro_skill = /datum/skill/craft/armorsmithing
 	craftdiff = 1
 
+
+/datum/anvil_recipe/armor/ironchainkini
+	name = "Iron Chainmail Bikini (+1 Cloth)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini
+	craftdiff = 1
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/ironchainbra
+	name = "Iron Chainmail Bra"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini/bra
+	i_type = "Armor"
+
 /datum/anvil_recipe/armor/ichainmail
 	name = "Chainmail"
 	req_bar = /obj/item/ingot/iron
@@ -626,6 +641,19 @@
 	name = "Mask"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/mask/rogue/facemask/steel
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/platemask/steel/hound
+	name = "Mask (Hound)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/mask/rogue/facemask/steel/hound
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/astratahelm
+	name = "Astrata Helmet (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
 	craftdiff = 2
 	i_type = "Armor"
 
@@ -634,6 +662,14 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm
+	craftdiff = 4	//Heavy helm
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/nochelm
+	name = "Noc Helmet (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 	craftdiff = 4	//Heavy helm
 	i_type = "Armor"
 

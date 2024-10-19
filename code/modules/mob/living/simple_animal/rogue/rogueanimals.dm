@@ -213,9 +213,11 @@
 				growth_prog += 0.5
 				if(growth_prog >= 100)
 					if(isturf(loc))
+						//Spawn the adult & make it tamed if we are. Note that we do NOT transfer damage, reagents, or any state of the animal...
 						var/mob/living/simple_animal/A = new adult_growth(loc)
 						if(tame)
 							A.tame = TRUE
+							A.tamed() //We unfortunately have to do this because by this point Initialize has already ran.
 						qdel(src)
 						return
 			else
@@ -225,46 +227,6 @@
 			if(production > 0)
 				production--
 				udder.generateMilk()
-
-//sex stuff brainrot --vide noir
-		if(!isfucking && seeksfuck && fuckcd > 0)
-			fuckcd -= 1
-		if(sexcon && seeksfuck && !isfucking && !fuckcd && prob(100) && !chasesfuck && !src.retreating)
-			var/list/around = view(aggro_vision_range, src)
-			for(var/mob/living/carbon/human/fucktarg in around)
-				var/datum/sex_controller/sc = fucktarg.sexcon
-				if(!src.aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
-					continue
-				if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && !sc.beingfucked)
-					chasesfuck = TRUE
-					if(src.gender == MALE)
-						src.visible_message(span_boldwarning("[src] has his eyes on [fucktarg], cock throbbing!"))
-						src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get in you!",  "You will breed with me!"), language = /datum/language/common)
-					else
-						src.visible_message(span_boldwarning("[src] has her eyes on [fucktarg], cunt dripping!"))
-						src.say(pick("Come here, mate!", "I smell a mate..!", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
-					break
-				else
-					continue
-		if(chasesfuck && !retreating) //until fuck is acquired, keep chasing.
-			seekboredom += 1
-			enemies = list()
-			target = null
-			approaching_target = FALSE
-			in_melee = FALSE
-			if(prob(10))
-				if(src.gender == MALE)
-					src.visible_message(span_warning("[src] seeks his mate, cock throbbing!"))
-					src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get in you!",  "You will breed with me!"), language = /datum/language/common)
-				else
-					src.visible_message(span_warning("[src] seeks her mate, cunt dripping!"))
-					src.say(pick("I'll catch you yet...", "I smell a mate...", "I'm going to get you in me!", "You will breed with me!"), language = /datum/language/common)
-			seeklewd()
-		if(seekboredom > 25) //give up after a while and go dormant again, this should also help them get unstuck.
-			stoppedfucking(src, TRUE)
-		if(retreating && chasesfuck) //we are outta here
-			stoppedfucking(src, TRUE)
-
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()
 //	if(!enemies.len && message)
@@ -309,120 +271,3 @@
 		stop_automated_movement = TRUE
 		Goto(user,move_to_delay)
 		addtimer(CALLBACK(src, PROC_REF(return_action)), 3 SECONDS)
-
-/mob/living/simple_animal/hostile/retaliate/rogue/proc/seeklewd()
-	var/mob/living/carbon/human/L
-	var/list/around = view(aggro_vision_range, src)
-	var/list/foundfuckmeat = list()
-	if(isfucking && fuckcd > 0)
-		return
-	for(var/mob/living/carbon/human/fucktarg in around)
-		if(!src.retreating && fucktarg.has_quirk(/datum/quirk/monsterhunter))
-			foundfuckmeat += fucktarg
-			L = fucktarg
-			if(src.Adjacent(L))
-				if(iscarbon(L))
-					isfucking = TRUE
-					chasesfuck = FALSE
-					if(attack_sound)
-						playsound(src, pick(attack_sound), 100, TRUE, -1)
-					stop_automated_movement = TRUE
-					if(L.cmode)
-						L.SetImmobilized(20)
-						L.SetKnockdown(20)
-					else
-						L.SetImmobilized(50)
-						L.SetKnockdown(50)
-					if(!L.lying)
-						L.emote("gasp")
-					if(!L.cmode && L.wear_pants) //pants off if not in cmode
-						L.dropItemToGround(L.wear_pants)
-						L.wear_pants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
-					else if(L.cmode && L.wear_pants)
-						src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
-					enemies = list()
-					target = null
-					approaching_target = FALSE
-					in_melee = FALSE
-					var/datum/sex_controller/sc = src.sexcon
-					toggle_ai(AI_OFF)
-					if(aggressive)
-						sc.force = SEX_FORCE_MAX
-					else
-						sc.force = SEX_FORCE_MID
-					src.throw_at(get_turf(L.loc), 3, 3, spin = FALSE)
-					if(!get_turf(src) == get_turf(L)) //are we at the same tile?
-						walk_to(src, get_turf(L.loc), 1, move_to_delay) //get on them.
-					src.visible_message(span_danger("[src] starts to breed [L]!"))
-					if(sc.force == SEX_FORCE_MAX)
-						src.visible_message(span_danger("[src] pins [L] down for a savage fucking!"))
-					else
-						src.visible_message(span_info("[src] climbs on [L] to breed."))
-					sc.speed = SEX_SPEED_MAX
-					if(gender == MALE)
-						sc.manual_arousal = SEX_MANUAL_AROUSAL_MAX
-					log_admin("[src] is trying to init sex on [L]")
-					var/current_action = /datum/sex_action/npc_rimming
-					if(src.gender == FEMALE && L.gender == MALE)
-						switch(rand(3))
-							if(1) //oral
-								current_action = /datum/sex_action/npc_facesitting
-							if(2) //anal
-								current_action = /datum/sex_action/npc_anal_ride_sex
-							if(3) //vaginal
-								current_action = /datum/sex_action/npc_vaginal_ride_sex
-					if(src.gender == MALE && L.gender == MALE)
-						switch(rand(3))
-							if(1) //oral
-								current_action = /datum/sex_action/npc_throat_sex
-							if(2) //anal
-								current_action = /datum/sex_action/npc_anal_sex
-							if(3) //vaginal
-								current_action = /datum/sex_action/npc_anal_sex
-					if(src.gender == MALE && L.gender == FEMALE)
-						switch(rand(3))
-							if(1) //oral
-								current_action = /datum/sex_action/npc_throat_sex
-							if(2) //anal
-								current_action = /datum/sex_action/npc_anal_sex
-							if(3) //vaginal
-								current_action = /datum/sex_action/npc_vaginal_sex
-					if(src.gender == FEMALE && L.gender == FEMALE)
-						switch(rand(3))
-							if(1) //oral
-								current_action = /datum/sex_action/npc_facesitting
-							if(2) //anal
-								current_action = /datum/sex_action/npc_rimming
-							if(3) //vaginal
-								current_action = /datum/sex_action/npc_cunnilingus
-					sc.do_until_finished = TRUE
-					sc.target = L
-					sc.try_start_action(current_action)
-					return
-	for(var/mob/living/fucktarg in foundfuckmeat)
-		var/turf/T = get_turf(fucktarg)
-		Goto(T,move_to_delay,0)
-		return
-	return 
-
-/mob/living/simple_animal/hostile/retaliate/rogue/proc/stoppedfucking(timedout = FALSE)
-	walk_away(src, get_turf(src.loc), 4, move_to_delay)
-	isfucking = FALSE
-	chasesfuck = FALSE
-	seekboredom = 0
-	toggle_ai(AI_ON)
-	var/datum/sex_controller/sc = src.sexcon
-	if(sc.just_ejaculated() || timedout) //is it satisfied or given up
-		fuckcd = rand(50,350)
-	else
-		fuckcd = rand(20,80)
-		if(aggressive)
-			//if its in combat and unsatisfied by prey slipping off, it will wanna try again. But with some delay so the person can actually get up
-			// and if they are taking turns with multiple seeksfuck mobs around this may help a bit.
-			fuckcd = rand(10,20)
-	stop_automated_movement = 0
-
-/mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()
-	. = ..()
-	if(src.isfucking)
-		src.stoppedfucking()

@@ -19,14 +19,15 @@
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_pants)
 			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
-			if(pantsies.flags_inv & HIDECROTCH) 
-				if(!pantsies.genitalaccess) 
+			if(pantsies.flags_inv & HIDECROTCH)
+				if(!pantsies.genitalaccess)
 					return FALSE
 	if(!get_dildo_in_either_hand(user))
 		return FALSE
 	return TRUE
 
 /datum/sex_action/toy_anal/on_start(mob/living/user, mob/living/target)
+	..()
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
 	if(check_dildo_silver(user))
 		var/mob/living/carbon/human/H = user
@@ -44,7 +45,8 @@
 
 /datum/sex_action/toy_anal/on_perform(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
-	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks their ass with \the [dildo]."))
+	if(user.sexcon.do_message_signature("[type]"))
+		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] pleasures their ass with \the [dildo]."))
 	playsound(user, 'sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 2, 6, TRUE)
@@ -53,6 +55,7 @@
 	user.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/toy_anal/on_finish(mob/living/user, mob/living/target)
+	..()
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
 	user.visible_message(span_warning("[user] pulls \the [dildo] from their ass."))
 

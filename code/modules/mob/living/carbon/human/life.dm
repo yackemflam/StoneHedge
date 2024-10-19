@@ -77,6 +77,7 @@
 							part.add_wound(/datum/wound/slash)
 				adjustToxLoss(0.3)
 			//heart attack stuff
+			handle_curses()
 			handle_heart()
 			handle_liver()
 			update_rogfat()
@@ -84,8 +85,8 @@
 			if(charflaw && !charflaw.ephemeral)
 				charflaw.flaw_on_life(src)
 			if(health <= 0)
-				adjustOxyLoss(0.5)
-			if(!client && !HAS_TRAIT(src, TRAIT_NOSLEEP))
+				adjustOxyLoss(0.3)
+			if(!client && !isfucking && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 				if(mob_timers["slo"])
 					if(world.time > mob_timers["slo"] + 90 SECONDS)
 						Sleeping(100)

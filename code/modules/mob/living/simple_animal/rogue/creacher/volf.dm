@@ -140,6 +140,7 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/horny
+	erpable = TRUE
 	seeksfuck = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/safe
@@ -147,6 +148,7 @@
 	tame = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/safe/horny
+	erpable = TRUE
 	seeksfuck = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/familiar

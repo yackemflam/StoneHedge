@@ -35,6 +35,19 @@
 				if(getOxyLoss() < 20)
 					heart_attacking = FALSE
 
+		var/cant_fall_asleep = FALSE
+		var/cause = " I just can't..."
+		for(var/obj/item/clothing/thing in get_equipped_items(FALSE))
+			if(thing.clothing_flags & CANT_SLEEP_IN)
+				cant_fall_asleep = TRUE
+				cause = " \The [thing] bothers me..."
+				break
+
+		if(HAS_TRAIT(src, TRAIT_NUDE_SLEEPER))
+			if(length(get_equipped_items()))
+				cause = " I need to be nude to be comfortable..."
+				cant_fall_asleep = TRUE
+
 		//Healing while sleeping in a bed
 		if(IsSleeping())
 			//Hearthstone change - beds need no buckle.
@@ -77,28 +90,34 @@
 					sleepy_mod = bed.sleepy
 			if(sleepy_mod > 0)
 			//Hearthstone end.
-				if(eyesclosed)
+				if(eyesclosed && !cant_fall_asleep)
 					if(!fallingas)
 						to_chat(src, span_warning("I'll fall asleep soon..."))
 					fallingas++
 					if(fallingas > 15)
 						Sleeping(300)
+				else if(eyesclosed && fallingas >= 14 && cant_fall_asleep)
+					to_chat(src, span_boldwarning("I can't sleep...[cause]"))
+					fallingas = 1
 				else
 					rogstam_add(sleepy_mod * 10)
 			// Resting on the ground (not sleeping or with eyes closed and about to fall asleep)
 			else if(!(mobility_flags & MOBILITY_STAND))
-				if(eyesclosed)
+				if((eyesclosed && !HAS_TRAIT(src, TRAIT_NUDE_SLEEPER) && !cant_fall_asleep) || (eyesclosed && !HAS_TRAIT(src, TRAIT_NUDE_SLEEPER) && !(fallingas >= 14 && cant_fall_asleep)) || InCritical())
 					if(!fallingas)
 						to_chat(src, span_warning("I'll fall asleep soon, although a bed would be more comfortable..."))
 					fallingas++
 					if(fallingas > 25)
 						Sleeping(300)
+				else if(eyesclosed && fallingas >= 14 && cant_fall_asleep)
+					to_chat(src, span_boldwarning("I can't sleep...[cause]"))
+					fallingas = 1
 				else
 					rogstam_add(10)
 			else if(fallingas)
 				fallingas = 0
 			tiredness = min(tiredness + 1, 100)
-				
+
 		if(!IsSleeping() && (mobility_flags & MOBILITY_STAND) && isseelie(src) && (haswings(src) == TRUE) && !(buckled)) //Very slop but dont know of another way
 			fairy_hover()
 
@@ -672,8 +691,8 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 	if(drowsyness)
 		drowsyness = max(drowsyness - restingpwr, 0)
 		blur_eyes(2)
-		if(prob(5))
-			AdjustSleeping(100)
+		if(drowsyness >= 100)
+			Sleeping(300)
 
 	//Jitteriness
 	if(jitteriness)

@@ -104,10 +104,8 @@
 	return "[icon_state]_[testes.organ_size]"
 
 /datum/sprite_accessory/testicles/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	if(owner.underwear)
-		return FALSE
-	var/obj/item/organ/penis/pp = owner.getorganslot(ORGAN_SLOT_PENIS)
-	if(pp && pp.sheath_type == SHEATH_TYPE_SLIT)
+	var/obj/item/organ/filling_organ/testicles/testes = organ
+	if(!testes.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
 
