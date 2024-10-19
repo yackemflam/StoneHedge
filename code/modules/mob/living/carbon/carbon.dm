@@ -356,7 +356,7 @@
 
 /mob/living/carbon/resist_fire()
 	if(HAS_TRAIT(src, TRAIT_ROTMAN))
-		visible_message(span_warning("[src] groans loudly, unable to remember how to put [p_them()]self out!"))
+		visible_message(span_warning("[src] groans loudly, unable to remember how to put [p_them()]self out!"))//DIE VECNA DIE
 		emote("idle")
 		return
 	fire_stacks -= 5
