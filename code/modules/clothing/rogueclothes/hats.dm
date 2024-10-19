@@ -87,6 +87,8 @@
 	toggle_icon_state = TRUE
 	max_integrity = 100
 	sewrepair = TRUE
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/head/roguetown/roguehood/shalal
 	name = "keffiyeh"
@@ -319,7 +321,7 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 	sewrepair = TRUE
-	//dropshrink = 0.75
+	fiber_salvage = FALSE
 
 /obj/item/clothing/head/roguetown/menacing/bandit
 	icon_state = "bandithood"
@@ -347,6 +349,7 @@
 	desc = "Keeps the sun off your head while toiling the fields."
 	icon_state = "strawhat"
 	sewrepair = TRUE
+	salvage_result = /obj/item/natural/fibers
 
 /obj/item/clothing/head/roguetown/puritan
 	name = "buckled hat"
@@ -469,7 +472,8 @@
 	icon_state = "headband"
 	item_state = "headband"
 	sewrepair = TRUE
-	//dropshrink = 0.75
+	fiber_salvage = FALSE
+	salvage_amount = 1
 	dynamic_hair_suffix = null
 
 /obj/item/clothing/head/roguetown/headband/red
@@ -1243,6 +1247,8 @@
 	sewrepair = TRUE
 	blocksound = SOFTHIT
 	clothing_flags = null
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
@@ -1421,6 +1427,8 @@
 	sewrepair = TRUE
 	blocksound = SOFTHIT
 	clothing_flags = null
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/head/roguetown/helmet/tricorn/skull
 	icon_state = "tricorn_skull"
@@ -2157,3 +2165,6 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
+	clothing_flags = null
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide

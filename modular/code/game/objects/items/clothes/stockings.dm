@@ -9,6 +9,7 @@
 	body_parts_covered = null
 	flags_inv = null
 	genitalaccess = TRUE
+	salvage_amount = 1
 
 /obj/item/clothing/under/roguetown/tights/stockings/random/Initialize()
 	. = ..()

@@ -74,6 +74,8 @@
 	sewrepair = TRUE
 	resistance_flags = null
 	color = "#473a30"
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/shoes/roguetown/simpleshoes/white
 	color = null
@@ -109,7 +111,48 @@
 	item_state = "sandals"
 	sewrepair = TRUE
 
-/obj/item/clothing/shoes/roguetown/shalal
+
+/obj/item/clothing/shoes/roguetown/armor //This subtype is for armoured shoes
+	name = "dark boots"
+	color = "#d5c2aa"
+	desc = "A fine set of dark boots."
+	icon_state = "blackboots"
+	item_state = "blackboots"
+	blocksound = SOFTHIT //This hit sound is for leather
+	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST) //These match leather helmets
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/roguetown/armor/leather
+	name = "leather boots"
+	desc = "Boots made of leather."
+	icon_state = "leatherboots"
+	item_state = "leatherboots"
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide
+
+/obj/item/clothing/shoes/roguetown/armor/steel
+	name = "steel plated boots"
+	desc = "A heavy pair of steel plated boots."
+	icon_state = "armorboots"
+	item_state = "armorboots"
+	color = null
+	blocksound = PLATEHIT
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	sewrepair = FALSE
+	clothing_flags = CANT_SLEEP_IN
+	resistance_flags = FIRE_PROOF
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/roguetown/armor/nobleboot
+	name = "noble boots"
+	desc = "Fine dark leather boots."
+	icon_state = "nobleboots"
+	item_state = "nobleboots"
+	armor = list("blunt" = 35, "slash" = 15, "stab" = 25, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/roguetown/armor/shalal
 	name = "babouche"
 	desc = "Shoes with a point at the toes."
 	gender = PLURAL

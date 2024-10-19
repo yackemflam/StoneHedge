@@ -602,6 +602,7 @@
 	armor_class = ARMOR_CLASS_LIGHT
 	can_hold_endowed = TRUE
 	flags_inv = HIDECROTCH|HIDEBOOB
+	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide
 	name = "hide armor"
@@ -703,6 +704,7 @@
 	sleevetype = null
 	sleeved = null
 	armor_class = ARMOR_CLASS_LIGHT
+	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	name = "sea jacket"
@@ -794,6 +796,7 @@
 	armor_class = ARMOR_CLASS_LIGHT
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = CLOTHED_RACES_TYPES
+	salvage_result = /obj/item/natural/fur
 	can_hold_endowed = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/silkcoat/Initialize()
