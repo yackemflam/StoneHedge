@@ -74,3 +74,9 @@
 	name = "Sensitiveness"
 	desc = "I can tell more about my private bits (may be spammy, exact liquid information and alerts etc.)"
 	value = 0
+
+//damn snowflakes.
+/datum/quirk/weirdo
+	name = "Weirdness"
+	desc = "I can use my 'prison pocket's and more strange things that wouldn't come to mind."
+	value = 0

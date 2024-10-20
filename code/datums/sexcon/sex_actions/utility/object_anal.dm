@@ -10,6 +10,8 @@
 		return FALSE
 	if(user != target)
 		return FALSE
+	if(!user.has_quirk(/datum/quirk/weirdo))
+		return FALSE
 	if(!get_funobject_in_hand(user))
 		return FALSE
 	return TRUE

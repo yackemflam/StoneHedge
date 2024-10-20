@@ -13,6 +13,8 @@
 		return FALSE
 	if(targetass.contents.len)
 		return TRUE
+	if(!target.has_quirk(/datum/quirk/weirdo))
+		return FALSE
 	if(!get_insertable_in_hand(user))
 		return FALSE
 	return TRUE
