@@ -78,5 +78,5 @@
 //damn snowflakes.
 /datum/quirk/weirdo
 	name = "Weirdness"
-	desc = "I can use my 'prison pocket's and more strange things that wouldn't come to mind."
+	desc = "I can use my 'prison pocket's and do more strange sexual things that wouldn't come to sane mind."
 	value = 0
