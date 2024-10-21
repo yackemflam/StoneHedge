@@ -535,6 +535,8 @@
 	name = "padded dress"
 	desc = "This dress has been padded with leather for extra protection."
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
+	desc = "This dress has been padded for extra protection."
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|VITALS
 	icon_state = "armordress"
 	armor = list("blunt" = 60, "slash" = 40, "stab" = 50, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT)
