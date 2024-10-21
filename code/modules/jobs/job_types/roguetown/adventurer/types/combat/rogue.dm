@@ -118,11 +118,10 @@
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
 	belt = /obj/item/storage/belt/rogue/leather
+	armor = /obj/item/clothing/suit/roguetown/armor/leather
 	if(H.gender == FEMALE) //funny
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/bikini
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini
 	else
-		armor = /obj/item/clothing/suit/roguetown/armor/leather
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	backl = /obj/item/storage/backpack/rogue/satchel
@@ -166,11 +165,10 @@
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/parrying)
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/leather
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	if(H.gender == FEMALE) //funny
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 	else
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	cloak = /obj/item/clothing/cloak/half
 	backl = /obj/item/storage/backpack/rogue/satchel
