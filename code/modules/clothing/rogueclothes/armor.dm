@@ -57,7 +57,7 @@
 		return
 
 /obj/item/clothing/suit/roguetown/armor/chainmail
-	slot_flags = ITEM_SLOT_ARMOR
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "haubergeon"
 	desc = "A steel maille shirt."
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
@@ -80,7 +80,6 @@
 													'sound/foley/footsteps/armor/chain (3).ogg'), 100)
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "chainmaille"
 	desc = "A chain vest made of heavy iron rings."
 	body_parts_covered = CHEST|GROIN|VITALS
@@ -91,7 +90,6 @@
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "hauberk"
 	desc = "A longer steel maille that protects the legs."
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS|LEGS
@@ -107,7 +105,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "chainmail bikini"
 	desc = "Try not to get your nipples caught between the chains, and other bits."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
@@ -304,7 +301,6 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/bikini
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "plate bikini"
 	desc = "Half plate in bikini form, still just as protective somehow."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
@@ -337,7 +333,6 @@
 	armor_class = ARMOR_CLASS_HEAVY
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/bikini
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "fullplate bikini"
 	desc = "Full plate in bikini form, full package and full exposure."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
