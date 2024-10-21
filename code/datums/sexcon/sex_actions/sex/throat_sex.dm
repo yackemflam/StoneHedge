@@ -52,7 +52,7 @@
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 0, 2, FALSE)
 	else
-		var/oxyloss = 2.6
+		var/oxyloss = 1.3
 		if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
 			oxyloss*=2
 		user.sexcon.perform_sex_action(target, 0, 7, FALSE)
