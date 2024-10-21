@@ -33,7 +33,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/mothercheese/wheel
 	name = "wheel of breastmilk cheese"
 	desc = "A pale wheel of breastmilk cheese, typically left to cure for long-term storage."
-	icon_state = "blue_cheese"
+	icon_state = "cheesewheel"
 	bitesize = 6
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	w_class = WEIGHT_CLASS_NORMAL
@@ -84,7 +84,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/mothercheese/wedge
 	name = "wedge of breastmilk cheese"
 	desc = "An sweet-tasting wedge of breastmilk milk cheese"
-	icon_state = "mothercheese_wedge"
+	icon_state = "cheese_wedge"
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	w_class = WEIGHT_CLASS_TINY
@@ -142,7 +142,7 @@
 	slices_num = null
 	slice_path = null
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rogue/mothercheese/slice/aged
-	icon_state = "mothercheese_slice"
+	icon_state = "cheese_slice"
 
 /obj/item/reagent_containers/food/snacks/rogue/mothercheese/slice/aged
 	name = "slice of cured breastmilk cheese"
