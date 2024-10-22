@@ -215,26 +215,32 @@
 				to_chat(user, span_love("Our sex was a true TRIUMPH!"))
 	else
 		user.add_stress(/datum/stressevent/cumok)
-	if(!issimple(target) && oral)
-		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
-		if(testes)
+	if(issimple(target))
+		if(testes) //simple target just remove the coom.
+			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
+			testes.reagents.remove_reagent(testes.reagent_to_make, cum_to_take)
+			user.add_stress(/datum/stressevent/cumok)
+			return
+	if(!issimple(target) && testes)
+		if(oral)
+			playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
 			testes.reagents.trans_to(target, cum_to_take, transfered_by = user)
-	else
-		if(testes) //todo make proper transfers, categorize sexactions
-			var/cameloc = user.sexcon.came_into_loc(oral, vaginal, anal, nipple, target)
-			if(istype(cameloc, /obj/item/organ))
+		else
+			var/cameloc
+			if(vaginal)
+				cameloc = target.getorganslot(ORGAN_SLOT_VAGINA)
+			if(anal)
+				cameloc = target.getorganslot(ORGAN_SLOT_ANUS)
+			if(nipple)
+				cameloc = target.getorganslot(ORGAN_SLOT_BREASTS)
+			if(vaginal || anal || nipple)
 				var/obj/item/organ/cameorgan = cameloc
 				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, min(testes.reagents.total_volume, cameorgan.reagents.maximum_volume - cameorgan.reagents.total_volume))
 				testes.reagents.trans_to(cameorgan, cum_to_take, transfered_by = user)
 			else
 				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
-				testes.reagents.trans_to(target,  cum_to_take, transfered_by = user)
-	if(issimple(target))
-		if(testes) //todo make proper transfers, categorize sexactions
-			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
-			testes.reagents.remove_reagent(testes.reagent_to_make, cum_to_take)
-			user.add_stress(/datum/stressevent/cumok)
+				testes.reagents.trans_to(target,  cum_to_take, transfered_by = user) //digest anyway if none of those.
 
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	if(testes && testes.reagents.total_volume <= testes.reagents.maximum_volume / 4)
@@ -268,14 +274,18 @@
 	log_combat(user, user, "Ejaculated into a container")
 	user.visible_message(span_lovebold("[user] spills into [C]!"))
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
-	C.reagents.add_reagent(/datum/reagent/erpjuice/cum, 3)
+	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
+	var/cum_to_take = CLAMP((testes.reagents.maximum_volume), 1, min(testes.reagents.total_volume, C.volume - C.reagents.total_volume))
+	testes.reagents.trans_to(C, cum_to_take, transfered_by = user)
 	after_ejaculation()
 
 /datum/sex_controller/proc/milk_container(obj/item/reagent_containers/glass/C)
 	log_combat(user, user, "Was milked into a container")
 	user.visible_message(span_lovebold("[user] lactates into [C]!"))
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
-	C.reagents.add_reagent(/datum/reagent/consumable/milk, 15)
+	var/obj/item/organ/filling_organ/breasts/tiddies = user.getorganslot(ORGAN_SLOT_BREASTS) // tiddy hehe
+	var/milk_to_take = CLAMP((tiddies.reagents.maximum_volume), 1, min(tiddies.reagents.total_volume, C.volume - C.reagents.total_volume))
+	tiddies.reagents.trans_to(C, milk_to_take, transfered_by = user)
 	after_ejaculation()
 
 /datum/sex_controller/proc/after_ejaculation()

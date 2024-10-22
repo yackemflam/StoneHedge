@@ -88,8 +88,8 @@
 						owner.adjust_nutrition(-restore_amount*20)
 					reagents.add_reagent(reagent_to_make, restore_amount)
 		else //if nohunger, should just regenerate stuff for free no matter what, if refilling.
-			if((reagents.total_volume < reagents.maximum_volume))
-				var/max_restore = reagent_generate_rate
+			if(reagents.total_volume < reagents.maximum_volume)
+				var/max_restore = reagent_generate_rate * 2
 				var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume)
 				reagents.add_reagent(reagent_to_make, restore_amount)
 

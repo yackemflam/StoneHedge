@@ -1,4 +1,3 @@
-/* we got a way of milking filling organs on our own -vide
 /datum/sex_action/milk_container
 	name = "Milk self into container"
 
@@ -51,4 +50,3 @@
 		return TRUE
 	return FALSE
 // WIP, UNFINISHED, I JUST WANT PEOPLE TO SEE. if you want to help feel free to review and add code or whatever. i am a slopcoder so i need it <3
-*/
