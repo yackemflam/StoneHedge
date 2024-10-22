@@ -103,7 +103,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		to_chat(src, span_warning("That message contained a word prohibited in IC chat! Consider reviewing the server rules.\n<span replaceRegex='show_filtered_ic_chat'>\"[message]\"</span>"))
 		SSblackbox.record_feedback("tally", "ic_blocked_words", 1, lowertext(config.ic_filter_regex.match))
 		return
-	
+
 	var/static/regex/ooc_regex = regex(@"^(?=.*[\(\)\[\]\<\>\{\}]).*$") //Yes, i know.
 	if(findtext_char(message, ooc_regex))
 		emote("me", 1, "mumbles incoherently.")
@@ -145,7 +145,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(check_subtler(original_message, forced) || !can_speak_basic(original_message, ignore_spam, forced))
 		return
-		
+
 	if(in_critical)
 		if(!(crit_allowed_modes[message_mode]))
 			return
@@ -168,9 +168,14 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(!language)
 		language = get_default_language()
 
-	// Detection of language needs to be before inherent channels, because
-	// AIs use inherent channels for the holopad. Most inherent channels
-	// ignore the language argument however.
+	if(language.signlang)
+		var/mob/M = src
+		var/emote = pick(language.signlang_verb)
+		M.emote(emote)
+
+	//Detection of language needs to be before inherent channels, because
+	//AIs use inherent channels for the holopad. Most inherent channels
+	//ignore the language argument however.
 
 	if(saymode && !saymode.handle_message(src, message, language))
 		return
@@ -324,7 +329,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			continue
 		listening |= M
 		the_dead[M] = TRUE
-	
+
 	log_seen(src, null, listening, original_message, SEEN_LOG_SAY)
 
 	var/eavesdropping

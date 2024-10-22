@@ -24,6 +24,8 @@
 		return FALSE
 	if((targetbreasts.contents.len <= 2 && target.get_active_held_item() == null) || (targetbreasts.contents.len < 2 && target.get_active_held_item() != null))
 		return TRUE
+	if(!target.has_quirk(/datum/quirk/weirdo))
+		return FALSE
 	if(!get_insertable_in_hand(target))
 		return FALSE
 	return TRUE

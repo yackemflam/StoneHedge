@@ -83,7 +83,7 @@
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
 	t3 = /obj/effect/proc_holder/spell/targeted/soulspeak
-	t4 = /obj/effect/proc_holder/spell/invoked/revive
+	t4 = /obj/effect/proc_holder/spell/invoked/revive/shaman
 	confess_lines = list(
 		"ALL SOULS FIND THEIR WAY TO YAMAIS!",
 		"THE TOLLKEEPER IS OUR FINAL JUDGE!",
@@ -120,6 +120,7 @@
 	t1 = /obj/effect/proc_holder/spell/invoked/heal
 	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
 	t3 = /obj/effect/proc_holder/spell/invoked/cure_rot
+	t4 = /obj/effect/proc_holder/spell/invoked/revive/shaman
 	confess_lines = list(
 		"Hermeir will guide all formula!",
 		"The Wheel turns, I am but a part of it all!",

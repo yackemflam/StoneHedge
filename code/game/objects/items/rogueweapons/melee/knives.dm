@@ -324,6 +324,9 @@
 	item_state = "elfdag"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
-	name = "nite elf dagger"
-	desc = "This ominous, dark handled dagger was crafted by the assassin race of nite elves."
+	name = "drowish dagger"
+	desc = "This ominous, jeweled dagger was crafted by the assassin race of nite elves."
 	force = 25
+	icon = 'modular_stonehedge/icons/roguetown/weapons/32.dmi'
+	icon_state = "drowdagger"
+	item_state = "drowdag"

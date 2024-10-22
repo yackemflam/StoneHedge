@@ -541,6 +541,8 @@
 		. += "<a href='?src=[REF(src)];task=view_flavor;'>View Description</a>"
 	if(!obscure_name && ooc_notes)
 		. += "<a href='?src=[REF(src)];task=view_ooc_notes;'>View OOC Notes</a>"
+	if(!obscure_name && nsfw_info)
+		. += "<a href='?src=[REF(src)];task=view_nsfw_notes;'>View NSFW Notes</a>"
 
 	var/perpname = get_face_name(get_id_name(""))
 	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)))

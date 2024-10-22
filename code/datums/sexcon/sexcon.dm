@@ -147,6 +147,8 @@
 
 /datum/sex_controller/proc/update_pink_screen()
 	var/severity = 0
+	severity = (arousal/20)
+/* arousal/20 should be pretty much same (but half) but easier to mod the whole scaling for any max arousal number.
 	switch(arousal)
 		if(1 to 10)
 			severity = 1
@@ -168,6 +170,7 @@
 			severity = 9
 		if(90 to INFINITY)
 			severity = 10
+*/
 	if(severity > 0)
 		user.overlay_fullscreen("horny", /atom/movable/screen/fullscreen/love, severity)
 	else
@@ -340,7 +343,7 @@
 			to_chat(action_target, span_love(lovermessage))
 	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
 		if(istype(user.rmb_intent, /datum/rmb_intent/strong))
-			pain_amt *= 2
+			pain_amt *= 2.5
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed)
@@ -763,13 +766,13 @@
 /datum/sex_controller/proc/get_stamina_cost_multiplier()
 	switch(force)
 		if(SEX_FORCE_LOW)
-			return 1
+			return 0.5
 		if(SEX_FORCE_MID)
-			return 2
+			return 1
 		if(SEX_FORCE_HIGH)
-			return 2.5
+			return 1.25
 		if(SEX_SPEED_EXTREME)
-			return 3
+			return 1.5
 
 /datum/sex_controller/proc/get_force_pleasure_multiplier(passed_force, giving)
 	switch(passed_force)
@@ -870,3 +873,11 @@
 			return "<span class='love_high'>[string]</span>"
 		if(SEX_FORCE_EXTREME)
 			return "<span class='love_extreme'>[string]</span>"
+
+/datum/sex_controller/proc/try_pelvis_crush(mob/living/carbon/human/target)
+	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
+		if(!target.has_wound(/datum/wound/fracture/groin))
+			if(prob(10)){
+				var/obj/item/bodypart/groin = target.get_bodypart(check_zone(BODY_ZONE_PRECISE_GROIN))
+				groin.add_wound(/datum/wound/fracture)
+			}

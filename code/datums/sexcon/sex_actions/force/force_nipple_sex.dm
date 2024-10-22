@@ -10,6 +10,8 @@
 		return FALSE
 	if(user == target)
 		return FALSE
+	if(!user.has_quirk(/datum/quirk/weirdo) && !target.has_quirk(/datum/quirk/weirdo))
+		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))

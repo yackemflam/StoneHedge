@@ -9,6 +9,8 @@
 	var/obj/item/organ/filling_organ/vagina/uservag = user.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(uservag.contents.len)
 		return TRUE
+	if(!user.has_quirk(/datum/quirk/weirdo))
+		return FALSE
 	if(!get_insertable_in_hand(user))
 		return FALSE
 	return TRUE

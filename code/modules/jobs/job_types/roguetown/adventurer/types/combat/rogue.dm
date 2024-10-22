@@ -116,13 +116,13 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
 	if(H.gender == FEMALE) //funny
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini
+	else
+		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
@@ -161,15 +161,15 @@
 	head = /obj/item/clothing/head/roguetown/helmet/tricorn
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/parrying)
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	if(H.gender == FEMALE) //funny
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
+	else
+		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	cloak = /obj/item/clothing/cloak/half
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/sword/rapier

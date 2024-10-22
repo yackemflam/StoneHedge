@@ -20,6 +20,8 @@
 		return FALSE
 	if((userbreasts.contents.len <= 2 && user.get_active_held_item() == null) || (userbreasts.contents.len < 2 && user.get_active_held_item() != null))
 		return TRUE
+	if(!user.has_quirk(/datum/quirk/weirdo))
+		return FALSE
 	if(!get_insertable_in_hand(user))
 		return FALSE
 	return TRUE

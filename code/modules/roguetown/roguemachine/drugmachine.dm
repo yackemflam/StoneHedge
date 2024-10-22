@@ -231,6 +231,7 @@
 	held_items[/obj/item/clothing/mask/cigarette/rollie/cannabis] = list("PRICE" = 20,"NAME" = "swampweed zig")
 	held_items[/obj/item/clothing/mask/cigarette/rollie/nicotine] = list("PRICE" = 10,"NAME" = "zig")
 	held_items[/obj/item/reagent_containers/glass/bottle/rogue/wine] = list("PRICE" = 20,"NAME" = "vino")
+	held_items[/obj/item/reagent_containers/glass/bottle/rogue/nourish] = list("PRICE" = 20,"NAME" = "NOURISH")
 
 #undef DRUGRADE_MONEYA
 #undef DRUGRADE_MONEYB
