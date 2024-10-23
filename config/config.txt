@@ -18,13 +18,13 @@ $include discord.txt
 SERVERNAME Dream Keep
 
 ## Server tagline: This will appear right below the server's title.
-SERVERTAGLINE H-RP Medieval Noblebright High Fantasy! (+18)
+SERVERTAGLINE M-RP / H-RP Medieval Fantasy: DnD Inspired Setting! (18+)
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME tgstation
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME StoneHedge
+STATIONNAME | The Dreamhold | Ancient Wood Elf City | Adventurer State |
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 HUB
@@ -320,19 +320,19 @@ NOTE_STALE_DAYS 365.2422
 ##Note: all population caps can be used with each other if desired.
 
 ## Uncomment for 'soft' population caps, players will be warned while joining if the living crew exceeds the listed number.
-#SOFT_POPCAP 100
+#SOFT_POPCAP 35
 
 ## Message for soft cap
-SOFT_POPCAP_MESSAGE Be warned that the server is currently serving a high number of users, consider using alternative game servers.
+SOFT_POPCAP_MESSAGE Be warned that the server is currently serving a high number of users, Consider checking out the other servers!
 
 ## Uncomment for 'hard' population caps, players will not be allowed to spawn if the living crew exceeds the listed number, though they may still observe or wait for the living crew to decrease in size.
-HARD_POPCAP 100
+HARD_POPCAP 60
 
 ## Message for hard cap
-HARD_POPCAP_MESSAGE Too many people are alive. Wait for those living to die or donate to our patreon for a reserved slot.
+HARD_POPCAP_MESSAGE Too many people are alive. Wait for people to die or consider visiting a larger server.
 
 ## Uncomment for 'extreme' population caps, players will not be allowed to join the server if living crew exceeds the listed number.
-#EXTREME_POPCAP 200
+#EXTREME_POPCAP 100
 
 ## Message for extreme cap
 EXTREME_POPCAP_MESSAGE The server is currently serving a high number of users, find alternative servers.
