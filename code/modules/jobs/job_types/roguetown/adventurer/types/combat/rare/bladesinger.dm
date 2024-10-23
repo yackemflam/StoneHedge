@@ -7,12 +7,12 @@
 	maximum_possible_slots = 2
 	traits_applied = list(TRAIT_MEDIUMARMOR)
 	category_tags = list(CTAG_ADVENTURER)
-	H.mind.adjust_spellpoints(5)
 
 	outfit = /datum/outfit/job/roguetown/adventurer/bladesinger
 
 /datum/outfit/job/roguetown/adventurer/bladesinger/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.mind.adjust_spellpoints(5)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/armor/leather/vest
 	backr = /obj/item/storage/backpack/rogue/satchel

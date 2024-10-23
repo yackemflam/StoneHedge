@@ -35,17 +35,17 @@
 	/datum/species/anthromorphbig,\
 	/datum/species/moth,\
 	/datum/species/dracon,\
-    /datum/species/seelie,\
-    /datum/species/demihuman\
-    /datum/species/tabaxi,\
-    /datum/species/lizardfolk.\
-    /datum/species/anthromorph.\
+	/datum/species/seelie,\
+	/datum/species/demihuman,\
+	/datum/species/tabaxi,\
+	/datum/species/lizardfolk,\
+	/datum/species/anthromorph,\
 	/datum/species/anthromorphsmall,\
 	/datum/species/elf/dark,\
 
 #define RACES_TOLERATED \
 	/datum/species/lizardfolk,\
-	/datum/species/kobold\
+	/datum/species/kobold,\
 	/datum/species/halforc
 
 #define RACES_SHUNNED \
