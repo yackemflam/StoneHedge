@@ -168,8 +168,8 @@
 	qdel(src)
 
 /obj/item/clothing/neck/roguetown/psicross
-	name = "Divine Symbol"
-	desc = ""
+	name = "divine Symbol"
+	desc = "This focus allows for divine practitioners to ask for favor and channel it."
 	icon_state = "psicross"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
@@ -179,58 +179,58 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/psicross/astrata
-	name = "amulet of Sun"
-	desc = ""
+	name = "Amulet of the Sun"
+	desc = "It glistens with a sheen like the Dragons above."
 	icon_state = "astrata"
 
 /obj/item/clothing/neck/roguetown/psicross/noc
 	name = "amulet of Moon"
-	desc = ""
+	desc = "It sparkles with a sheen like the Dragons above."
 	icon_state = "noc"
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
 	name = "amulet of Nature"
-	desc = ""
+	desc = "The nature spirits are said to favor those who wear this trinket."
 	icon_state = "dendor"
 
 /obj/item/clothing/neck/roguetown/psicross/necra
 	name = "amulet of Death"
-	desc = ""
+	desc = "She watches her faithful with cold eyes."
 	icon_state = "necra"
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
 	name = "amulet of Battle"
-	desc = ""
+	desc = "His blades of flame dance the inferno that unbinds the mortal soul."
 	icon_state = "ravox"
 
 /obj/item/clothing/neck/roguetown/psicross/eora
 	name = "amulet of Love"
-	desc = ""
+	desc = "Said to be held close to their acolytes hearts."
 	icon_state = "eora"
 
 /obj/item/clothing/neck/roguetown/psicross/pestra
 	name = "amulet of Medicine"
-	desc = ""
+	desc = "Worn by those who know the arts of preservation and perseverance."
 	icon_state = "pestra"
 
 /obj/item/clothing/neck/roguetown/psicross/xylix
-	name = "amulet of Xylix"
-	desc = ""
+	name = "amulet of Arts"
+	desc = "Worn by Harlequins and Musicians alike."
 	icon_state = "xylix"
 
 /obj/item/clothing/neck/roguetown/psicross/malum
-	name = "amulet of Malum"
-	desc = ""
+	name = "amulet of the Forge"
+	desc = "Favored by those of the forge."
 	icon_state = "malum"
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
-	name = "amulet of Ravox"
-	desc = ""
+	name = "amulet of Battle"
+	desc = "A symbol of the eternal dance."
 	icon_state = "ravox"
 
 /obj/item/clothing/neck/roguetown/psicross/abyssor
-	name = "amulet of Abyssor"
-	desc = ""
+	name = "amulet of Tides"
+	desc = "Those who call to the tides wear this symbol."
 	icon_state = "abyssor"
 
 /obj/item/clothing/neck/roguetown/psicross/wood
@@ -239,7 +239,7 @@
 	sellprice = 0
 
 /obj/item/clothing/neck/roguetown/psicross/talisman
-	name = "talisman"
+	name = "divine Talisman"
 	icon_state = "talisman"
 	sellprice = 0
 
@@ -297,8 +297,8 @@
 			H.Paralyze(20)
 
 /obj/item/clothing/neck/roguetown/psicross/g
-	name = "golden psycross"
-	desc = ""
+	name = "golden divine symbol"
+	desc = "This symbol is made from gold, known to be favored for its conductive properties."
 	icon_state = "psicrossg"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
@@ -316,8 +316,8 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/horus
-	name = "eye of horuz"
-	desc = ""
+	name = "all-seeing eye"
+	desc = "This amulet can see the true worth of things. Said to be gifted by she who knows."
 	icon_state = "horus"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
 	//dropshrink = 0.75

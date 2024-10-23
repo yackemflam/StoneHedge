@@ -101,8 +101,8 @@
 
 /obj/item/clothing/suit/roguetown/shirt/robe/psydonrobe
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "psydon robe"
-	desc = "Blood of Psydon cleanse me."
+	name = "red robes"
+	desc = "Red like blood.."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "psydonrobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -215,7 +215,7 @@
 	var/fanatic_wear = FALSE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/eora/alt
-	name = "open eoran robe"
+	name = "open courtesan robe"
 	desc = "Used by more radical followers of the loving."
 	body_parts_covered = null
 	icon_state = "eorastraps"
@@ -224,7 +224,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/eora/attack_right(mob/user)
 	switch(fanatic_wear)
 		if(FALSE)
-			name = "open eoran robe"
+			name = "open courtesan robe"
 			desc = "Used by more radical followers of the lovers domain."
 			body_parts_covered = null
 			icon_state = "eorastraps"
