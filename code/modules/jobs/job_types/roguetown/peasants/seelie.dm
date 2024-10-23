@@ -1,5 +1,5 @@
 /datum/job/roguetown/seelie
-	title = "Town Seelie"
+	title = "Forest Seelie"
 	flag = SEELIE
 	department_flag = PEASANTS
 	faction = "Station"
@@ -7,7 +7,7 @@
 	spawn_positions = 5
 	allowed_races = list(/datum/species/seelie,)
 	allowed_ages = ALL_AGES_LIST
-	tutorial = "You are a fae sprite that came into existance around this town, either recently or long ago. Perhaps you support people in their trade and craft, or you may be a disruptive nuisance that plagues the town. Either way, your miriad of mysterious spells and abilites will support you in your endeavours."
+	tutorial = "You are a fae sprite that came into existance around this forest, either recently or long ago. Perhaps you support people in their trade and craft, or you may be a disruptive nuisance that teaches valuable lessons. Either way, your miriad of mysterious spells and abilites will support you in your endeavours."
 	outfit = /datum/outfit/job/roguetown/seelie
 	display_order = JDO_SEELIE
 	min_pq = 0

@@ -34,27 +34,28 @@
 	/datum/species/vulpkanin,\
 	/datum/species/anthromorphbig,\
 	/datum/species/moth,\
-	/datum/species/dracon,
+	/datum/species/dracon,\
+    /datum/species/seelie,\
+    /datum/species/demihuman\
+    /datum/species/tabaxi,\
+    /datum/species/lizardfolk.\
+    /datum/species/anthromorph.\
+	/datum/species/anthromorphsmall,\
+	/datum/species/elf/dark,\
 
 #define RACES_TOLERATED \
 	/datum/species/lizardfolk,\
-	/datum/species/tabaxi,\
-	/datum/species/akula,\
-	/datum/species/anthromorph,\
-	/datum/species/demihuman
+	/datum/species/kobold\
+	/datum/species/halforc
 
 #define RACES_SHUNNED \
-	/datum/species/elf/dark,\
 	/datum/species/tieberian,\
-	/datum/species/anthromorphsmall,\
-	/datum/species/kobold
+	/datum/species/akula,\
 
 #define RACES_VERY_SHUNNED \
-	/datum/species/halforc
 
 #define RACES_DESPISED \
 	/datum/species/goblinp,\
-	/datum/species/seelie
 
 #define RACES_SEELIE \
 	/datum/species/seelie,\

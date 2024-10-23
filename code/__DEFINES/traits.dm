@@ -58,15 +58,15 @@
 //Hearthstone end.
 
 // PATRON GOD TRAITS
-#define TRAIT_ROT_EATER "Blessing of Pestra" //can eat rotten food
-#define TRAIT_ORGAN_EATER "Blessing of Graggar" //can eat organs
-#define TRAIT_VINE_WALKER "Blessing of Dendor"
-#define TRAIT_SOUL_EXAMINE "Blessing of Necra" //can check bodies to see if they have departed
-#define TRAIT_CRACKHEAD "Blessing of Baotha" //will never overdose
-#define TRAIT_COMMIE "Blessing of Matthios" //recognized by bandits as an ally
-#define TRAIT_CHOSEN "Astrata's Chosen"
-#define TRAIT_SEXDEVO "Blessing of Eora" //sex devotion gain and extra healing.
-#define TRAIT_ABYSSOR_SWIM "Blessing of Abyssor" //less base fatigue drain when swimming
+#define TRAIT_ROT_EATER "Blessing of Rot" //can eat rotten food
+#define TRAIT_ORGAN_EATER "Blessing of Hunger" //can eat organs
+#define TRAIT_VINE_WALKER "Blessing of Nature"
+#define TRAIT_SOUL_EXAMINE "Blessing of Hermeir" //can check bodies to see if they have departed
+#define TRAIT_CRACKHEAD "Blessing of Sacrifice" //will never overdose
+#define TRAIT_COMMIE "Blessing of Thieves" //recognized by bandits as an ally
+#define TRAIT_CHOSEN "Sunherald's Chosen"
+#define TRAIT_SEXDEVO "Blessing of Love" //sex devotion gain and extra healing.
+#define TRAIT_ABYSSOR_SWIM "Blessing of Tides" //less base fatigue drain when swimming
 #define TRAIT_FAITHLESS "Ignorant" //being faithless means gods won't really help you, will they
 
 #define TRAIT_KNEESTINGER_IMMUNITY "Kneestinger Immunity"
@@ -110,7 +110,7 @@
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEPROSY = span_necrosis("I'm a disgusting leper..."),
-	TRAIT_CHOSEN = "Astrata choose you to represent her glory.",
+	TRAIT_CHOSEN = "Elysius choose you to represent his glory.",
 	TRAIT_WEBWALK = "I can move freely between webs.",
 	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay."),
 	TRAIT_ZJUMP = "Time to reach a new high.",
@@ -170,8 +170,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
 	TRAIT_PERFECT_TRACKER = span_info("I am the perfect tracker. No tracks will deceive my eyes, nor will they hide their secrets from me."),//Hearthstone change.
-	TRAIT_NOCSIGHT = "Noc blesses my eyes to be unburdened by the night.", //Hearthstone change.
-	TRAIT_MALUMSGRACE = "Malum is my muse.", // Hearthstone change
+	TRAIT_NOCSIGHT = "Lune blesses my eyes to be unburdened by the night.", //Hearthstone change.
+	TRAIT_MALUMSGRACE = "The Forge is my Muse.", // Hearthstone change
 	TRAIT_DEATHBYSNOOSNOO = "It's an unlucky thing to share my bed.", // Hearthstone change
 	TRAIT_POISONBITE = "My bites inject venom into my target.", // Hearthstone change
 	TRAIT_STRONGTHROW = "My throws are mighty!", // Hearthstone change

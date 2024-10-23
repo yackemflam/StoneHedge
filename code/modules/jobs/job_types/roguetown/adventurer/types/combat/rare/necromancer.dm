@@ -1,6 +1,6 @@
 /datum/advclass/necromancer
 	name = "Necromancer"
-	tutorial = "Ostracized and hunted by society for their dark magics and perversion of life, Necromancers have been known to summon ghosts, ghouls, and zombies; you cannot."
+	tutorial = "Ostracized and hunted by society for their mastery over death magicks; Necromancers have been known to summon ghosts, ghouls, and zombies; A rare few using their powers to fight undeath from a different side."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/necromancer
@@ -9,7 +9,7 @@
 	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/roguetown/adventurer/necromancer
-	allowed_patrons = list(/datum/patron/inhumen/zizo)
+	allowed_patrons = list(/datum/patron/inhumen/zizo,/datum/patron/divine/necra,/datum/patron/divine/pestra)
 
 /datum/outfit/job/roguetown/adventurer/necromancer/pre_equip(mob/living/carbon/human/H)
 	..()

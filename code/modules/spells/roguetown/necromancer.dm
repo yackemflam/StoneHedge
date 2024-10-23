@@ -2,7 +2,7 @@
 	name = "Bone Chill"
 	overlay_state = "raiseskele"
 	releasedrain = 30
-	chargetime = 5
+	chargetime = 2
 	range = 7
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
@@ -38,7 +38,7 @@
 	name = "Eyebite"
 	overlay_state = "raiseskele"
 	releasedrain = 30
-	chargetime = 15
+	chargetime = 7
 	range = 7
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
@@ -69,7 +69,7 @@
 	overlay_state = "raiseskele"
 	sound = list('sound/magic/magnet.ogg')
 	releasedrain = 40
-	chargetime = 60
+	chargetime = 30
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	charging_slowdown = 1
@@ -96,7 +96,7 @@
 	sound = list('sound/misc/portal_enter.ogg')
 	active = FALSE
 	releasedrain = 30
-	chargetime = 10
+	chargetime = 5
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	charging_slowdown = 1
