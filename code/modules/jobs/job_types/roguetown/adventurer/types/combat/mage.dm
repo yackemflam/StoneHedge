@@ -12,7 +12,7 @@
 
 	// CLASS ARCHETYPES
 	H.adjust_blindness(-3)
-	H.mind.adjust_spellpoints(1)
+	H.mind.adjust_spellpoints(5)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/learnspell)
 	var/classes = list("Evoker","Arcanist","Enchanter","Spellblade")
 	var/classchoice = input("Choose your Specialization", "Available Specializations") as anything in classes
@@ -20,7 +20,7 @@
 
 		if("Evoker")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You like the raw elements, choosing to specialize in mastering them."))
+			to_chat(H, span_warning("You like the raw elements, choosing to specialize in mastering them for extravagent offensive magicks."))
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, pick(0,1,2), TRUE)
@@ -45,7 +45,6 @@
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/spitfire)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
 		if("Arcanist")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You chose to specialize in raw arcane manipulation."))
@@ -75,7 +74,7 @@
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
 		if("Enchanter")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You specialize in Enchantments and Mental Magick. Unlike most wizards, this leads to a perculiar study between alchemy and Smithing that tends to have you in higher demand in a city."))
+			to_chat(H, span_warning("You specialize in Enchantments and Mental Magick. Unlike most Mages, this leads to a perculiar study between alchemy and Smithing that tends to have you in higher demand in a city."))
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, pick(0,1,2), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(0,1), TRUE)

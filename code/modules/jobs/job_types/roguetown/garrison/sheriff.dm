@@ -11,7 +11,7 @@
 	display_order = JDO_SHERIFF
 	tutorial = "Crime has always been a constant of your life, and you always chose the side of justice. \
 	You rose up through the ranks as a watchman, and now rule over them - Ensure that they enforce the laws of this land properly. \
-	Just make sure not to discard ALL of the Marshal's orders, Xylix knows they get upset about it."
+	Just make sure not to tarry from Order and you shall never lose the trust of the Adventure-Folk."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/sheriff
 	give_bank_account = 26

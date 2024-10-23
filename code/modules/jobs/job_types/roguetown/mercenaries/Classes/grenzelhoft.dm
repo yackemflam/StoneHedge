@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/grenzelhoft
-	name = "Grenzelhoft"
-	tutorial = "Experts, Professionals, Expensive. Those are the first words that come to mind when the emperiate Grenzelhoft mercenary guild is mentioned. While you may work for coin like any common sellsword, maintaining the prestige of the guild will be of utmost priority."
+	name = "Rossevellian"
+	tutorial = "Experts, Professionals, Expensive. Those are the first words that come to mind when the emperiate Rossevellian mercenary guild is mentioned. While you may work for coin like any common sellsword, maintaining the prestige of the guild will be of utmost priority."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft
@@ -66,7 +66,7 @@
 			H.change_stat("constitution", 2)
 			H.change_stat("perception", 1)
 			r_hand = /obj/item/rogueweapon/halberd
-	
+
 	//General gear regardless of class.
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	belt = /obj/item/storage/belt/rogue/leather

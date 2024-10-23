@@ -2,7 +2,7 @@
 	title = "Grandmaster"
 	department_flag = CHURCHMEN
 	faction = "Station"
-	tutorial = "The Strongest. You have vowed and sworn your life to the Priest or Priestess on the Isle of Enigma. Interfaith politics or lordly politics have never interested you ever and todae marks your solem vigil over the land."
+	tutorial = "The Strongest. You have vowed and sworn your life to the Divine of this city. Interfaith politics or lordly politics have never interested you ever and todae marks your solem vigil over the land."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_CLERIC_PATRONS

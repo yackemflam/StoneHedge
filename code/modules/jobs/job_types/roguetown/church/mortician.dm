@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_DIVINE_PATRONS //gets set to necra on the outfit anyways lol
-	tutorial = "As an acolyte of Necra, you have been given the honor and rites  of putting the dead to rest instead of healing the living. Necra bestows much wisdom in her reminders of our balance in life. Will you toil for her?"
+	tutorial = "As an acolyte of Yamais, you have been given the honor and rites  of putting the dead to rest instead of healing the living. Yamais bestows much wisdom in her reminders of our balance in life. Will you toil for her?"
 
 	outfit = /datum/outfit/job/roguetown/undertaker
 	display_order = JDO_GRAVEMAN

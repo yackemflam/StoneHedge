@@ -1,5 +1,5 @@
 /datum/job/roguetown/vampire/vampthrall
-	title = "Antediluvian Peasant"
+	title = "Underdark Peasant"
 	flag = VAMPTHRALL
 	department_flag = VAMPIRE
 	faction = "Station"
@@ -71,7 +71,7 @@
 			if(isturf(H.loc))
 				var/turf/T = H.loc
 				if(T.can_see_sky())
-					if(T.get_lumcount() > 0.15)	
+					if(T.get_lumcount() > 0.15)
 						to_chat(H, span_warning("Astrata spurns me! I must get out of her rays!")) // VLord is more punished for daylight excursions.
 						var/turf/N = H.loc
 						if(N.can_see_sky())
@@ -84,7 +84,7 @@
 		var/datum/antagonist/vampire/new_antag = new /datum/antagonist/vampirelord/lesser()
 		H.mind.add_antag_datum(new_antag)
 
-	
+
 /obj/effect/proc_holder/spell/self/convertrole/vampire
 	name = "Recruit Ally"
 	new_role = "Vampyre Sympathizer"
