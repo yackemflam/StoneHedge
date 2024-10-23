@@ -48,6 +48,9 @@
 				user.visible_message(span_info("[user] repairs [attacked_item]!"))
 				if(attacked_item.obj_broken == TRUE)
 					attacked_item.obj_broken = FALSE
+				if(istype(attacked_item, /obj/item/clothing))
+					var/obj/item/clothing/C = attacked_item
+					C.update_clothes_damaged_state(FALSE)
 			blacksmith_mind.adjust_experience(attacked_item.anvilrepair, exp_gained/2) //We gain as much exp as we fix divided by 2
 			return
 		else

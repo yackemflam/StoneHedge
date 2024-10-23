@@ -102,12 +102,3 @@
 		return
 	new /obj/effect/decal/cleanable/coom(turfu)
 
-
-/datum/sex_controller/proc/came_into_loc(vaginal = FALSE, anal = FALSE, nipple = FALSE, mob/living/target)
-	if(vaginal)
-		return target.getorganslot(ORGAN_SLOT_VAGINA)
-	if(anal)
-		return target.getorganslot(ORGAN_SLOT_ANUS)
-	if(nipple)
-		return target.getorganslot(ORGAN_SLOT_BREASTS)
-	return target //oral just goes in digestion
