@@ -160,7 +160,7 @@ datum/quirk/fan_mime
 	H.equip_in_one_of_slots(B, slots , qdel_on_fail = TRUE)
 
 /datum/quirk/night_vision
-	name = "Night Vision"
+	name = "Low Light Vision"
 	desc = "I see a little better in the dark."
 	value = 1
 	gain_text = span_notice("The shadows seem a little less dark.")
@@ -172,8 +172,8 @@ datum/quirk/fan_mime
 	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
 	if(!eyes || eyes.lighting_alpha)
 		return
-	eyes.see_in_dark = 1
-	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_LESSER_NV_TRAIT
+	eyes.see_in_dark = 7
+	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	eyes.Insert(H)
 
 /datum/quirk/elvishtalker
@@ -221,7 +221,7 @@ datum/quirk/fan_mime
 /datum/quirk/selfaware
 	name = "Self-Aware"
 	desc = "I know the extent of my wounds to a terrifying scale."
-	value = 2
+	value = 1
 	mob_trait = TRAIT_SELF_AWARE
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
 
