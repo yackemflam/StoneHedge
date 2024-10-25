@@ -35,17 +35,17 @@
 	/datum/species/anthromorphbig,\
 	/datum/species/moth,\
 	/datum/species/dracon,\
-    /datum/species/seelie,\
-    /datum/species/demihuman\
-    /datum/species/tabaxi,\
-    /datum/species/lizardfolk.\
-    /datum/species/anthromorph.\
+	/datum/species/seelie,\
+	/datum/species/demihuman,\
+	/datum/species/tabaxi,\
+	/datum/species/lizardfolk,\
+	/datum/species/anthromorph,\
 	/datum/species/anthromorphsmall,\
 	/datum/species/elf/dark,\
 
 #define RACES_TOLERATED \
 	/datum/species/lizardfolk,\
-	/datum/species/kobold\
+	/datum/species/kobold,\
 	/datum/species/halforc
 
 #define RACES_SHUNNED \
@@ -256,6 +256,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_PILGRIM 		"CAT_PILGRIM"  		// Pilgrim classes
 #define CTAG_ADVENTURER 	"CAT_ADVENTURER"  	// Adventurer classes
 #define CTAG_MERCENARY		"CAT_MERCENARY"		// Mercenary classes
+#define CTAG_SELLSWORD		"CAT_SELLSWORD"		// Sellsword classes
 #define CTAG_TOWNER 		"CAT_TOWNER"  		// Villager class - Villagers can use it
 #define CTAG_ANTAG 			"CAT_ANTAG"  		// Antag class - results in an antag
 #define CTAG_BANDIT			"CAT_BANDIT"		// Bandit class - Tied to the bandit antag really
