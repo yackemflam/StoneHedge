@@ -6,7 +6,7 @@
 	desc = "I can easily see in the dark."
 	value = 2
 
-/datum/quirk/nightvision/on_spawn()
+/datum/quirk/greaternightvision/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 	if(!eyes)
