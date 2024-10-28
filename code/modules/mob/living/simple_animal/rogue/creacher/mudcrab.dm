@@ -26,7 +26,7 @@
 	var/obj/item/inventory_mask
 	gold_core_spawnable = FRIENDLY_SPAWN
 
-/mob/living/simple_animal/mudcrabcrab/Life()
+/mob/living/simple_animal/hostile/retaliate/rogue/mudcrab/Life()
 	..()
 	//CRAB movement
 	if(!ckey && !stat)
