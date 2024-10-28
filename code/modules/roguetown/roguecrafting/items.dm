@@ -796,7 +796,7 @@
 
 /datum/crafting_recipe/roguetown/glassbottle
 	name = "Glass bottle (x2)"
-	reqs = /obj/item/ingot/glass
+	reqs = list(/obj/item/ingot/glass)
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue,/obj/item/reagent_containers/glass/bottle/rogue)
 	skillcraft = /datum/skill/craft/smelting
 	structurecraft = /obj/machinery/light/rogue/smelter
@@ -804,7 +804,7 @@
 
 /datum/crafting_recipe/roguetown/glasssyringe
 	name = "Glass syringe (x3)"
-	reqs = /obj/item/ingot/glass
+	reqs = list(/obj/item/ingot/glass)
 	result = list(/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/syringe)
 	skillcraft = /datum/skill/craft/smelting
 	structurecraft = /obj/machinery/light/rogue/smelter
