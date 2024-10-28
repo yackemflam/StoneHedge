@@ -262,6 +262,10 @@
 		var/mob/living/L = AM
 		L.fire_act(1, 20)
 
+/obj/effect/hotspot/attacked_by(obj/item/I, mob/living/user)
+	. = ..()
+	I.fire_act(1, 20) //hopefully lights torches and other shit.
+
 /obj/effect/hotspot/singularity_pull()
 	return
 

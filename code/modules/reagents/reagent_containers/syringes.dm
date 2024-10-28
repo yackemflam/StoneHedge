@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/syringe
-	name = "steel syringe"
+	name = "glass syringe"
 	desc = ""
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_0"
@@ -15,6 +15,9 @@
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 	reagent_flags = TRANSPARENT
 	smeltresult = null
+
+/obj/item/reagent_containers/syringe/steel
+	name = "steel syringe"
 
 /obj/item/reagent_containers/syringe/Initialize()
 	. = ..()

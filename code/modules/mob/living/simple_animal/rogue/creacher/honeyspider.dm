@@ -12,10 +12,10 @@
 	vision_range = 5
 	aggro_vision_range = 9
 	base_intents = list(/datum/intent/simple/bite)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
 					/obj/item/natural/silk = 2,
 					/obj/item/reagent_containers/food/snacks/rogue/honey = 2,
-					/obj/item/hearthnatural/beespider_fang = 1)
+					/obj/item/hearthnatural/beespider_fang = 2)
 	faction = list("spiders")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'
