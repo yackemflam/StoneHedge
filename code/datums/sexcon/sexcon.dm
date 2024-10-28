@@ -147,30 +147,7 @@
 
 /datum/sex_controller/proc/update_pink_screen()
 	var/severity = 0
-	severity = (arousal/20)
-/* arousal/20 should be pretty much same (but half) but easier to mod the whole scaling for any max arousal number.
-	switch(arousal)
-		if(1 to 10)
-			severity = 1
-		if(10 to 20)
-			severity = 2
-		if(20 to 30)
-			severity = 3
-		if(30 to 40)
-			severity = 4
-		if(40 to 50)
-			severity = 5
-		if(50 to 60)
-			severity = 6
-		if(60 to 70)
-			severity = 7
-		if(70 to 80)
-			severity = 8
-		if(80 to 90)
-			severity = 9
-		if(90 to INFINITY)
-			severity = 10
-*/
+	severity = min(arousal/20, 10)
 	if(severity > 0)
 		user.overlay_fullscreen("horny", /atom/movable/screen/fullscreen/love, severity)
 	else
