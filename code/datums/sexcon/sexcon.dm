@@ -147,7 +147,27 @@
 
 /datum/sex_controller/proc/update_pink_screen()
 	var/severity = 0
-	severity = min(arousal/20, 10)
+	switch(arousal)
+		if(1 to 20)
+			severity = 1
+		if(20 to 40)
+			severity = 2
+		if(40 to 60)
+			severity = 3
+		if(60 to 80)
+			severity = 4
+		if(80 to 100)
+			severity = 5
+		if(100 to 120)
+			severity = 6
+		if(120 to 140)
+			severity = 7
+		if(140 to 160)
+			severity = 8
+		if(160 to 180)
+			severity = 9
+		if(180 to INFINITY)
+			severity = 10
 	if(severity > 0)
 		user.overlay_fullscreen("horny", /atom/movable/screen/fullscreen/love, severity)
 	else
@@ -213,10 +233,10 @@
 				cameloc = target.getorganslot(ORGAN_SLOT_BREASTS)
 			if(vaginal || anal || nipple)
 				var/obj/item/organ/cameorgan = cameloc
-				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, min(testes.reagents.total_volume, cameorgan.reagents.maximum_volume - cameorgan.reagents.total_volume))
+				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, min(testes.reagents.total_volume, cameorgan.reagents.maximum_volume - cameorgan.reagents.total_volume))
 				testes.reagents.trans_to(cameorgan, cum_to_take, transfered_by = user)
 			else
-				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
+				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, testes.reagents.total_volume)
 				testes.reagents.trans_to(target,  cum_to_take, transfered_by = user) //digest anyway if none of those.
 
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
@@ -765,24 +785,24 @@
 	switch(passed_force)
 		if(SEX_FORCE_LOW)
 			if(giving)
-				return 0.8
+				return 0.6
 			else
-				return 0.8
+				return 0.6
 		if(SEX_FORCE_MID)
 			if(giving)
-				return 1.2
+				return 1.0
 			else
-				return 1.2
+				return 1.0
 		if(SEX_FORCE_HIGH)
 			if(giving)
-				return 1.6
+				return 1.4
 			else
-				return 1.2
+				return 1.0
 		if(SEX_FORCE_EXTREME)
 			if(giving)
-				return 2.0
+				return 1.8
 			else
-				return 0.8
+				return 0.6
 
 /datum/sex_controller/proc/get_force_pain_multiplier(passed_force)
 	switch(passed_force)

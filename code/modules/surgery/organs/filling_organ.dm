@@ -160,7 +160,7 @@
 									to_chat(H, span_info("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]."))
 				break		
 
-/obj/item/organ/filling_organ/proc/be_impregnated(mob/living/father)
+/obj/item/organ/filling_organ/proc/be_impregnated()
 	if(pregnant)
 		return
 	if(!owner)

@@ -84,7 +84,11 @@ Slimecrossing Potions
 		to_chat(user, span_warning("I can't drink the love potion. What are you, a narcissist?"))
 		return ..()
 	if(M.has_status_effect(STATUS_EFFECT_INLOVE))
-		to_chat(user, span_warning("[M] is already lovestruck!"))
+		to_chat(user, span_warning("[M] is already lovestruck! This will undo the effects..."))
+		M.remove_status_effect(STATUS_EFFECT_INLOVE)
+		M.faction = initial(M.faction)
+		to_chat(M, span_notice("I am freed of the effects of love potion."))
+		qdel(src)
 		return ..()
 
 	M.visible_message(span_danger("[user] starts to feed [M] a love potion!"),
@@ -94,8 +98,6 @@ Slimecrossing Potions
 		return
 	to_chat(user, span_notice("I feed [M] the love potion!"))
 	to_chat(M, span_notice("I develop feelings for [user], and anyone [user.p_they()] like."))
-	if(M.mind)
-		M.mind.store_memory("You are in love with [user].")
 	M.faction |= "[REF(user)]"
 	M.apply_status_effect(STATUS_EFFECT_INLOVE, user)
 	qdel(src)
