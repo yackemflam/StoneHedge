@@ -412,9 +412,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Hedgemaster",
 	"Knight",
 	"Gravesinger",
-	"Desert Rider",
-	"Desert Rider Mercenary",
-	"Grenzelhoft Mercenary",
+	"Mercenary",
 	"Sellsword"
 	)
 

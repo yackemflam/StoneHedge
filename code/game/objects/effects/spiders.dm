@@ -5,7 +5,7 @@
 	desc = ""
 	anchored = TRUE
 	density = FALSE
-	max_integrity = 15
+	max_integrity = 5
 	debris = list(/obj/item/natural/silk = 1)
 
 
@@ -58,11 +58,13 @@
 	return TRUE
 
 
-/obj/structure/spider/stickyweb/fire_act(added, maxstacks)
+/obj/structure/spider/fire_act(added, maxstacks)
 	visible_message(span_warning("[src] catches fire!"))
 	var/turf/T = get_turf(src)
 	qdel(src)
 	new /obj/effect/hotspot(T)
+	for(var/obj/structure/spider/nearbyweb in range(1,T)) //fire spreads to adjacent webs, satisfying.
+		nearbyweb.fire_act(1, 20)
 
 /obj/structure/spider/eggcluster
 	name = "egg cluster"

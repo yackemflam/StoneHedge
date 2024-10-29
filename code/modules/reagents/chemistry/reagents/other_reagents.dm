@@ -952,6 +952,14 @@
 	color = "#D0D0D0" // rgb: 208, 208, 208
 	taste_description = "expensive yet reasonable metal"
 
+//could use in alchemy or some shit.
+/datum/reagent/glass
+	name = "Glass"
+	description = "Grinded up shards of glass, transparentish and sharp as hell, it's like sand but ascended... Quite literally is."
+	reagent_state = SOLID
+	color = "#b5d4ff"
+	taste_description = "glass"
+
 /datum/reagent/silver/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(M.has_bane(BANE_SILVER))
 		M.reagents.add_reagent(/datum/reagent/toxin, reac_volume)

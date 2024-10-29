@@ -9,7 +9,6 @@
 // BEGIN_INCLUDE
 #include "_maps\conflict_marker.dm"
 #include "_maps\elfkeep.dm"
-#include "_maps\map_files\elfkeep\elfkeep.dmm"
 #include "_maps\map_files\generic\CentCom.dmm"
 #include "_maps\templates\bog_shack_small.dm"
 #include "_maps\templates\sewers.dm"
@@ -2354,10 +2353,7 @@
 #include "code\modules\jobs\job_types\roguetown\goblin\tribalslave.dm"
 #include "code\modules\jobs\job_types\roguetown\goblin\tribalsmith.dm"
 #include "code\modules\jobs\job_types\roguetown\goblin\tribalvillager.dm"
-#include "code\modules\jobs\job_types\roguetown\mercenaries\desertrider.dm"
-#include "code\modules\jobs\job_types\roguetown\mercenaries\grenzelhoft.dm"
 #include "code\modules\jobs\job_types\roguetown\mercenaries\mercenary.dm"
-#include "code\modules\jobs\job_types\roguetown\mercenaries\seelie.dm"
 #include "code\modules\jobs\job_types\roguetown\mercenaries\sellsword.dm"
 #include "code\modules\jobs\job_types\roguetown\mercenaries\Classes\desertrider.dm"
 #include "code\modules\jobs\job_types\roguetown\mercenaries\Classes\grenzelhoft.dm"

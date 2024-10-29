@@ -11133,8 +11133,8 @@
 "fqR" = (
 /obj/structure/closet/crate/chest,
 /obj/structure/spider/stickyweb,
-/obj/item/organ/eyes/elf,
-/obj/item/organ/eyes/elf,
+/obj/item/organ/eyes/night_vision/elf,
+/obj/item/organ/eyes/night_vision/elf,
 /obj/item/organ/eyes/goblin,
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church/chapel{
@@ -12426,7 +12426,7 @@
 /turf/open/floor/rogue/twig/platform,
 /area/rogue/outdoors/town/roofs)
 "fZN" = (
-/obj/effect/landmark/start/grenzelhoftlate{
+/obj/effect/landmark/start/mercenarylate{
 	dir = 4
 	},
 /turf/open/floor/rogue/dirt,
@@ -12486,7 +12486,7 @@
 	first_time_text = "The Town of Stone Hedge"
 	})
 "gax" = (
-/obj/effect/landmark/start/grenzelhoftlate{
+/obj/effect/landmark/start/mercenarylate{
 	dir = 4
 	},
 /turf/open/floor/rogue/dirt/road,

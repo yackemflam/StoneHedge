@@ -141,11 +141,10 @@
 	absorbing = FALSE //funny liquid tanks
 	altnames = list("breasts", "tits", "milkers", "tiddies", "badonkas", "boobas") //used in thought messages.
 	startsfilled = TRUE
+	blocker = ITEM_SLOT_SHIRT
 
 /obj/item/organ/filling_organ/breasts/Insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
-	var/datum/organ_dna/breasts/dna = organ_dna_type
-	refilling = dna.refilling
 	if(!refilling)
 		reagents.clear_reagents()
 

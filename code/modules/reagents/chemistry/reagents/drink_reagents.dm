@@ -207,25 +207,22 @@
 	glass_icon_state = "glass_white"
 	glass_name = "glass of semen"
 	glass_desc = ""
-	var/nearegg = FALSE
 	var/virile = TRUE
-	var/obj/item/organ/filling_organ/inorgan = null
 
+//may need to go back on this autistic fluid based pregnancy to old one where its based on vaginal sex since it may not be working.
 /datum/reagent/consumable/cum/on_transfer(atom/A, method, trans_volume)
 	. = ..()
-	if(istype(holder, /obj/item/organ/filling_organ) && virile)
-		var/obj/item/organ/filling_organ/forgan = holder
-		inorgan = forgan
+	if(istype(A, /obj/item/organ/filling_organ) && virile)
+		var/obj/item/organ/filling_organ/forgan = A
 		if(forgan.fertility && !forgan.pregnant)
-			nearegg = TRUE //bomb ready.
+			if(prob(trans_volume/3)) //i was gonna make it have a chance each tick but couldnt, this works somewhat same ig
+				forgan.be_impregnated() //boom
 
 /datum/reagent/consumable/cum/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(prob(15) && nearegg && virile) //bomb has been planted
-			inorgan.be_impregnated(H) //boom
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
 			H.adjust_hydration(5)
 			H.adjust_nutrition(5)

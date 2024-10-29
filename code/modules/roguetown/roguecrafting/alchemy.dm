@@ -186,6 +186,14 @@
 		/datum/reagent/water = 99) // 45 and 90 u allows for bottle duping. This requires 33oz containers, preventing the dupe.
 	craftdiff = 3
 
+/datum/crafting_recipe/roguetown/alchemy/bmilk2milk
+	name = "transmute breastmilk to generic milk"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/milk = 1)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 1,
+		/datum/reagent/consumable/breastmilk = 45) // they said shit about bottle duping but nobody aint gonna have 99 breastmilk i dont know.
+	craftdiff = 3
+
 /datum/crafting_recipe/roguetown/alchemy/w2w
 	name = "transmute water to wine" /// eat your heart out god.
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/wine = 1)

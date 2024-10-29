@@ -174,4 +174,5 @@
 	desc = "Glass, Essential for bottles and windows."
 	icon_state = "ingotglass"
 	smeltresult = /obj/item/ingot/glass
+	grind_results = list(/datum/reagent/glass = 15)
 	sellprice = 15
