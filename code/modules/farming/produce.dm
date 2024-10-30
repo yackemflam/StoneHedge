@@ -245,7 +245,7 @@
 	seed = /obj/item/seeds/poppy
 	name = "poppy flower"
 	desc = "a flower known for its use in ozium creation"
-	icon = 'icons/obj/flora/wildflora.dmi'
+	icon = 'modular_Stonehedge/icons/obj/flora/wildflora.dmi'
 	icon_state = "Poppy Flower"
 	filling_color = "#008000"
 	bitesize_mod = 2
@@ -258,7 +258,7 @@
 /obj/item/reagent_containers/food/snacks/grown/herbs
 	seed = /obj/item/seeds/herbs
 	name = "wild herbs"
-	icon = 'icons/obj/flora/wildflora.dmi'
+	icon = 'modular_Stonehedge/icons/obj/flora/wildflora.dmi'
 	desc = "an assortment of herbs known to sooth pain"
 	icon_state = "Herbs"
 	filling_color = "#008000"

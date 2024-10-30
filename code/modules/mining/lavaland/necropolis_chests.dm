@@ -295,10 +295,10 @@
 	return ..()
 
 /obj/effect/wisp
-	name = "friendly wisp"
-	desc = "My companion in these dark times."
-	icon = 'icons/roguetown/items/lighting.dmi'
-	icon_state = "wisp"
+	name = "wisp"
+	desc = "These seelie spirits often appear in magical forests.."
+	icon = 'modular_stonehedge/icons/obj/lighting.dmi'
+	icon_state = "orb"
 	light_system = MOVABLE_LIGHT
 	light_range = 7
 	pixel_x = 20
