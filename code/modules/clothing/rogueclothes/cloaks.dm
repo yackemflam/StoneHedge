@@ -693,6 +693,9 @@
 /obj/item/clothing/cloak/raincloak/purple
 	color = CLOTHING_PURPLE
 
+/obj/item/clothing/cloak/raincloak/yellow
+	color = CLOTHING_YELLOW
+
 /obj/item/clothing/head/hooded/rainhood
 	name = "hood"
 	desc = "This one will shelter you from the weather and hide your identity too."
@@ -1081,8 +1084,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/astrata
-	name = "astratan tabard"
-	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Astrata on it."
+	name = "Elysian tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Elysius on it."
 	icon_state = "tabard_astrata_alt"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1095,8 +1098,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/noc
-	name = "noc tabard"
-	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Noc on it."
+	name = "Lunite tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Lune on it."
 	icon_state = "tabard_noc"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1109,8 +1112,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/dendor
-	name = "dendor tabard"
-	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Dendor on it."
+	name = "Sylvan tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Sylvarhn on it."
 	icon_state = "tabard_dendor"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1123,8 +1126,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/necra
-	name = "necra tabard"
-	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Necra on it."
+	name = "Yamain tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Yamais on it."
 	icon_state = "tabard_necra"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1137,8 +1140,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/abyssor
-	name = "abyssor tabard"
-	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Abyssor on it."
+	name = "abyssian tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Abyssia on it."
 	icon_state = "tabard_abyssor"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1151,8 +1154,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/malum
-	name = "malum tabard"
-	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Malum on it."
+	name = "Svaeryonite tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Svaeryhog on it."
 	icon_state = "tabard_malum"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1165,8 +1168,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/eora
-	name = "eora tabard"
-	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Eora on it."
+	name = "viriitran tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Viriitri on it."
 	icon_state = "tabard_eora"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1179,8 +1182,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/pestra
-	name = "pestra tabard"
-	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Pestra on it."
+	name = "hermeian tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Hermeis on it."
 	icon_state = "tabard_pestra"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1193,8 +1196,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/ravox
-	name = "ravox tabard"
-	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Ravox on it."
+	name = "minhurite tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Minhur on it."
 	icon_state = "tabard_ravox"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1207,8 +1210,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/xylix
-	name = "xylix tabard"
-	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Xylix on it."
+	name = "Onderite tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Onder on it."
 	icon_state = "tabard_xylix"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN

@@ -45,28 +45,35 @@
 #define TRAIT_CIVILIZEDBARBARIAN "Tavern Brawler"
 #define TRAIT_COMICSANS "Annoying Face"
 #define TRAIT_WATERBREATHING "Water Breathing"
+#define TRAIT_BLINDFIGHTING "Blind Fighting"
 
 //Hearthstone change
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker" //! Will always find any tracks and analyzes them perfectly.
-#define TRAIT_NOCSIGHT "Blessing of Noc" // I can see just a bit more clearly in darkness.
+#define TRAIT_NOCSNEAK "Blessing of Noc" // I can hide in dim light.
 #define TRAIT_MALUMSGRACE "Malum's Grace" // For now, just means you dont combust when snorting malum's fire.
 #define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
 #define TRAIT_POISONBITE "Venomous Bite" // Adds tox damage on bites
 #define TRAIT_STRONGTHROW "Strong Throw" // 1.5x throw distance and force
 #define TRAIT_MARTIALARTIST "Martial Artist" //more unarmed combat options
+#define TRAIT_MISSILESNARING "Deflect Missiles" //can deflect missiles
 #define TRAIT_PUGILIST "Pugilist" //more punch damage
+#define TRAIT_WILDMAGIC "Wild Magic" //low chance for insane stuff to happen when casting
+#define TRAIT_FIENDKISS "Kiss of the Fiend" //after casting some spells, hurl a firebolt at the same location
+#define TRAIT_CHARGER "Charger" //after casting some spells, hurl a firebolt at the same location
+#define TRAIT_ARTIFICER "Artificer" //after casting some spells, hurl a firebolt at the same location
+#define TRAIT_NODETECT "Nondetection" //You can not be scryed on
 //Hearthstone end.
 
 // PATRON GOD TRAITS
-#define TRAIT_ROT_EATER "Blessing of Pestra" //can eat rotten food
-#define TRAIT_ORGAN_EATER "Blessing of Graggar" //can eat organs
-#define TRAIT_VINE_WALKER "Blessing of Dendor"
-#define TRAIT_SOUL_EXAMINE "Blessing of Necra" //can check bodies to see if they have departed
-#define TRAIT_CRACKHEAD "Blessing of Baotha" //will never overdose
-#define TRAIT_COMMIE "Blessing of Matthios" //recognized by bandits as an ally
-#define TRAIT_CHOSEN "Astrata's Chosen"
-#define TRAIT_SEXDEVO "Blessing of Eora" //sex devotion gain and extra healing.
-#define TRAIT_ABYSSOR_SWIM "Blessing of Abyssor" //less base fatigue drain when swimming
+#define TRAIT_ROT_EATER "Blessing of Rot" //can eat rotten food
+#define TRAIT_ORGAN_EATER "Blessing of Hunger" //can eat organs
+#define TRAIT_VINE_WALKER "Blessing of Nature"
+#define TRAIT_SOUL_EXAMINE "Blessing of Hermeir" //can check bodies to see if they have departed
+#define TRAIT_CRACKHEAD "Blessing of Sacrifice" //will never overdose
+#define TRAIT_COMMIE "Blessing of Thieves" //recognized by bandits as an ally
+#define TRAIT_CHOSEN "Sunherald's Chosen"
+#define TRAIT_SEXDEVO "Blessing of Love" //sex devotion gain and extra healing.
+#define TRAIT_ABYSSOR_SWIM "Blessing of Tides" //less base fatigue drain when swimming
 #define TRAIT_FAITHLESS "Ignorant" //being faithless means gods won't really help you, will they
 
 #define TRAIT_KNEESTINGER_IMMUNITY "Kneestinger Immunity"
@@ -110,7 +117,7 @@
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEPROSY = span_necrosis("I'm a disgusting leper..."),
-	TRAIT_CHOSEN = "Astrata choose you to represent her glory.",
+	TRAIT_CHOSEN = "Elysius choose you to represent his glory.",
 	TRAIT_WEBWALK = "I can move freely between webs.",
 	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay."),
 	TRAIT_ZJUMP = "Time to reach a new high.",
@@ -170,18 +177,27 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
 	TRAIT_PERFECT_TRACKER = span_info("I am the perfect tracker. No tracks will deceive my eyes, nor will they hide their secrets from me."),//Hearthstone change.
-	TRAIT_NOCSIGHT = "Noc blesses my eyes to be unburdened by the night.", //Hearthstone change.
-	TRAIT_MALUMSGRACE = "Malum is my muse.", // Hearthstone change
-	TRAIT_DEATHBYSNOOSNOO = "It's an unlucky thing to share my bed.", // Hearthstone change
+	TRAIT_NOCSNEAK = "Lune graces me with her darkest face, allowing me to hide in dim light.", //Hearthstone change.
+	TRAIT_MALUMSGRACE = "The Forge is my Muse.", // Hearthstone change
+	TRAIT_DEATHBYSNOOSNOO = "With strong intent, I can shatter pelvises.", // Hearthstone change
 	TRAIT_POISONBITE = "My bites inject venom into my target.", // Hearthstone change
 	TRAIT_STRONGTHROW = "My throws are mighty!", // Hearthstone change
 	TRAIT_MARTIALARTIST = "I have better kicks.", // Hearthstone change
+	TRAIT_MISSILESNARING = "I can dodge projectiles.", // Hearthstone change
 	TRAIT_PUGILIST = "I have stronger punches.", // Hearthstone change
+	TRAIT_WILDMAGIC = "My magic sometimes has unexpected consequences.", // Hearthstone change
+	TRAIT_FIENDKISS = "When I cast projectile magic, the fiend also hurls a fire bolt at the same location.", // Hearthstone change
+	TRAIT_CHARGER = "I can charge into people like a ram.", // Hearthstone change
+	TRAIT_ARTIFICER = "I can use gems to improve items.", // Hearthstone change
+
 	TRAIT_BOG_TREKKING = "Expert in navigating these lands.", // Hearthstone change
 	TRAIT_GOODRUNNER = span_info("I can run without breaking a sweat!"),
 	TRAIT_NUDE_SLEEPER = span_warning("I can't fall asleep unless I'm nude and in bed."),
 	TRAIT_TINY = span_info("I am tiny in size and quite fragile!"),
 	TRAIT_FASTSLEEP = span_info("I am narcoleptic and may fall asleep where I stand. Moondust can help me stay awake."),
+	TRAIT_NIGHT_VISION = span_info("Whether because of my species, my career choice, or by some boon of my patron, my eyes have adapted to see well in the dark."),
+	TRAIT_SUPER_NV = span_info("My ability to see in the dark extends further than that of most others, and I can consciously control how bright my surroundings appear to me."),
+	TRAIT_BLINDFIGHTING = span_info("I have an incredible sense of awareness, allowing me to dodge and parry attacks even when I can't see them coming, and I'm never in danger from sneak attacks."),
 ))
 
 // trait accessor defines
@@ -363,7 +379,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ALCOHOL_TOLERANCE	"alcohol_tolerance"
 #define TRAIT_AGEUSIA			"ageusia"
 #define TRAIT_HEAVY_SLEEPER		"heavy_sleeper"
-#define TRAIT_NIGHT_VISION		"night_vision"
+#define TRAIT_NIGHT_VISION		"Darkvision"
+#define TRAIT_SUPER_NV			"Superior Darkvision"
 #define TRAIT_LIGHT_STEP		"light_step"
 #define TRAIT_SPIRITUAL			"spiritual"
 #define TRAIT_FAN_CLOWN			"fan_clown"
@@ -385,6 +402,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 // common trait sources
 #define TRAIT_GENERIC "generic"
+#define INFUSION_TRAIT "infusion"
 #define UNCONSCIOUS_BLIND "unconscious_blind"
 #define EYE_DAMAGE "eye_damage"
 #define GENETIC_MUTATION "genetic"
@@ -414,7 +432,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 // unique trait sources, still defines
 #define TRAIT_BOG_TREKKING "trekking"
-#define TRAIT_DARKVISION "darkvision"
+#define TRAIT_DARKVISION "Umbral Sight"
 #define CLONING_POD_TRAIT "cloning-pod"
 #define STATUE_MUTE "statue"
 #define CHANGELING_DRAIN "drain"

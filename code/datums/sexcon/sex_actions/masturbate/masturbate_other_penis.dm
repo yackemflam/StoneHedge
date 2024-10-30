@@ -2,7 +2,11 @@
 	name = "Jerk them off"
 	check_same_tile = FALSE
 
-/datum/sex_action/masturbate_penis_other/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/masturbate_penis_other/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.erpable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
@@ -12,13 +16,18 @@
 /datum/sex_action/masturbate_penis_other/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!get_location_accessible(target, BODY_ZONE_PRECISE_GROIN))
-		return FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/targethuman = target
+		if(targethuman.wear_pants)
+			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
+			if(pantsies.flags_inv & HIDECROTCH) 
+				if(!pantsies.genitalaccess) 
+					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
 	return TRUE
 
-/datum/sex_action/masturbate_penis_other/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/masturbate_penis_other/on_start(mob/living/user, mob/living/target)
 	..()
 	if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))	//Make it more explicit in telling the size difference, fairies need both hands
 		user.visible_message(span_warning("[user] starts rubbing both hands against [target]'s cock..."))
@@ -36,7 +45,7 @@
 
 	target.sexcon.handle_passive_ejaculation()
 
-/datum/sex_action/masturbate_penis_other/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/masturbate_penis_other/on_finish(mob/living/user, mob/living/target)
 	..()
 	user.visible_message(span_warning("[user] stops jerking [target]'s off."))
 

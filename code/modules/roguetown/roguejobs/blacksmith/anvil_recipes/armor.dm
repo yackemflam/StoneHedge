@@ -2,6 +2,21 @@
 	appro_skill = /datum/skill/craft/armorsmithing
 	craftdiff = 1
 
+
+/datum/anvil_recipe/armor/ironchainkini
+	name = "Iron Chainmail Bikini (+1 Cloth)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini
+	craftdiff = 1
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/ironchainbra
+	name = "Iron Chainmail Bra"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini/bra
+	i_type = "Armor"
+
 /datum/anvil_recipe/armor/ichainmail
 	name = "Chainmail"
 	req_bar = /obj/item/ingot/iron
@@ -821,4 +836,11 @@
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket
 	craftdiff = 3
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/roguetown/hiddenblades
+	name = "Assassin bracers (+Leather Bracers, +Cog)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/clothing/wrists/roguetown/bracers/leather, /obj/item/roguegear)
+	created_item = /obj/item/clothing/wrists/roguetown/hiddenblade
 	i_type = "Armor"

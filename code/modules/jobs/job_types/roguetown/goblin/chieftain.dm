@@ -10,7 +10,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/tribal)
-	tutorial = "Chieftain or Chieftress is a fatty lazy pig who wishes to do nothing but eat apple pies and fart while sitting on his stone throne."
+	tutorial = "Chieftain of the Woodland Clan; you guide the wildlings through the dangers of this Enchanted Forest. You have seen it's shadows and taken it's beasts wisdom."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/chieftain
 
@@ -54,7 +54,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)	
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 6, TRUE) //Hearthstone change.
 		H.mind.adjust_skillrank(/datum/skill/labor/fishing, 2, TRUE)

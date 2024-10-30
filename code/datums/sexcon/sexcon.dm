@@ -148,25 +148,25 @@
 /datum/sex_controller/proc/update_pink_screen()
 	var/severity = 0
 	switch(arousal)
-		if(1 to 10)
+		if(1 to 20)
 			severity = 1
-		if(10 to 20)
+		if(20 to 40)
 			severity = 2
-		if(20 to 30)
+		if(40 to 60)
 			severity = 3
-		if(30 to 40)
+		if(60 to 80)
 			severity = 4
-		if(40 to 50)
+		if(80 to 100)
 			severity = 5
-		if(50 to 60)
+		if(100 to 120)
 			severity = 6
-		if(60 to 70)
+		if(120 to 140)
 			severity = 7
-		if(70 to 80)
+		if(140 to 160)
 			severity = 8
-		if(80 to 90)
+		if(160 to 180)
 			severity = 9
-		if(90 to INFINITY)
+		if(180 to INFINITY)
 			severity = 10
 	if(severity > 0)
 		user.overlay_fullscreen("horny", /atom/movable/screen/fullscreen/love, severity)
@@ -212,26 +212,32 @@
 				to_chat(user, span_love("Our sex was a true TRIUMPH!"))
 	else
 		user.add_stress(/datum/stressevent/cumok)
-	if(!issimple(target) && oral)
-		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
-		if(testes)
-			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
-			testes.reagents.trans_to(target, cum_to_take, transfered_by = user)
-	else
-		if(testes) //todo make proper transfers, categorize sexactions
-			var/cameloc = user.sexcon.came_into_loc(oral, vaginal, anal, nipple, target)
-			if(istype(cameloc, /obj/item/organ))
-				var/obj/item/organ/cameorgan = cameloc
-				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, min(testes.reagents.total_volume, cameorgan.reagents.maximum_volume - cameorgan.reagents.total_volume))
-				testes.reagents.trans_to(cameorgan, cum_to_take, transfered_by = user)
-			else
-				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
-				testes.reagents.trans_to(target,  cum_to_take, transfered_by = user)
 	if(issimple(target))
-		if(testes) //todo make proper transfers, categorize sexactions
+		if(testes) //simple target just remove the coom.
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
 			testes.reagents.remove_reagent(testes.reagent_to_make, cum_to_take)
 			user.add_stress(/datum/stressevent/cumok)
+			return
+	if(!issimple(target) && testes)
+		if(oral)
+			playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
+			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
+			testes.reagents.trans_to(target, cum_to_take, transfered_by = user)
+		else
+			var/cameloc
+			if(vaginal)
+				cameloc = target.getorganslot(ORGAN_SLOT_VAGINA)
+			if(anal)
+				cameloc = target.getorganslot(ORGAN_SLOT_ANUS)
+			if(nipple)
+				cameloc = target.getorganslot(ORGAN_SLOT_BREASTS)
+			if(vaginal || anal || nipple)
+				var/obj/item/organ/cameorgan = cameloc
+				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, min(testes.reagents.total_volume, cameorgan.reagents.maximum_volume - cameorgan.reagents.total_volume))
+				testes.reagents.trans_to(cameorgan, cum_to_take, transfered_by = user)
+			else
+				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, testes.reagents.total_volume)
+				testes.reagents.trans_to(target,  cum_to_take, transfered_by = user) //digest anyway if none of those.
 
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	if(testes && testes.reagents.total_volume <= testes.reagents.maximum_volume / 4)
@@ -265,14 +271,18 @@
 	log_combat(user, user, "Ejaculated into a container")
 	user.visible_message(span_lovebold("[user] spills into [C]!"))
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
-	C.reagents.add_reagent(/datum/reagent/erpjuice/cum, 3)
+	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
+	var/cum_to_take = CLAMP((testes.reagents.maximum_volume), 1, min(testes.reagents.total_volume, C.volume - C.reagents.total_volume))
+	testes.reagents.trans_to(C, cum_to_take, transfered_by = user)
 	after_ejaculation()
 
 /datum/sex_controller/proc/milk_container(obj/item/reagent_containers/glass/C)
 	log_combat(user, user, "Was milked into a container")
 	user.visible_message(span_lovebold("[user] lactates into [C]!"))
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
-	C.reagents.add_reagent(/datum/reagent/consumable/milk, 15)
+	var/obj/item/organ/filling_organ/breasts/tiddies = user.getorganslot(ORGAN_SLOT_BREASTS) // tiddy hehe
+	var/milk_to_take = CLAMP((tiddies.reagents.maximum_volume), 1, min(tiddies.reagents.total_volume, C.volume - C.reagents.total_volume))
+	tiddies.reagents.trans_to(C, milk_to_take, transfered_by = user)
 	after_ejaculation()
 
 /datum/sex_controller/proc/after_ejaculation()
@@ -334,13 +344,13 @@
 
 /datum/sex_controller/proc/perform_sex_action(mob/living/action_target, arousal_amt, pain_amt, giving)
 	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
-		arousal_amt *= 2
+		arousal_amt *= 1.5
 		if(prob(10)) //10 perc chance each action to emit the message so they know who the fuckin' wituser.
 			var/lovermessage = pick("This feels so good!","I am in heaven!","This is too good to be possible!","By the ten!","I can't stop, too good!")
 			to_chat(action_target, span_love(lovermessage))
 	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
 		if(istype(user.rmb_intent, /datum/rmb_intent/strong))
-			pain_amt *= 2
+			pain_amt *= 2.5
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed)
@@ -763,36 +773,36 @@
 /datum/sex_controller/proc/get_stamina_cost_multiplier()
 	switch(force)
 		if(SEX_FORCE_LOW)
-			return 1
+			return 0.5
 		if(SEX_FORCE_MID)
-			return 2
+			return 1
 		if(SEX_FORCE_HIGH)
-			return 2.5
+			return 1.25
 		if(SEX_SPEED_EXTREME)
-			return 3
+			return 1.5
 
 /datum/sex_controller/proc/get_force_pleasure_multiplier(passed_force, giving)
 	switch(passed_force)
 		if(SEX_FORCE_LOW)
 			if(giving)
-				return 0.8
+				return 0.6
 			else
-				return 0.8
+				return 0.6
 		if(SEX_FORCE_MID)
 			if(giving)
-				return 1.2
+				return 1.0
 			else
-				return 1.2
+				return 1.0
 		if(SEX_FORCE_HIGH)
 			if(giving)
-				return 1.6
+				return 1.4
 			else
-				return 1.2
+				return 1.0
 		if(SEX_FORCE_EXTREME)
 			if(giving)
-				return 2.0
+				return 1.8
 			else
-				return 0.8
+				return 0.6
 
 /datum/sex_controller/proc/get_force_pain_multiplier(passed_force)
 	switch(passed_force)
@@ -870,3 +880,11 @@
 			return "<span class='love_high'>[string]</span>"
 		if(SEX_FORCE_EXTREME)
 			return "<span class='love_extreme'>[string]</span>"
+
+/datum/sex_controller/proc/try_pelvis_crush(mob/living/carbon/human/target)
+	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
+		if(!target.has_wound(/datum/wound/fracture/groin))
+			if(prob(10)){
+				var/obj/item/bodypart/groin = target.get_bodypart(check_zone(BODY_ZONE_PRECISE_GROIN))
+				groin.add_wound(/datum/wound/fracture)
+			}

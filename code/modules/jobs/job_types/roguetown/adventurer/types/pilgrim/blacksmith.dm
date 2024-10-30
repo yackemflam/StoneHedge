@@ -1,7 +1,7 @@
 /datum/advclass/blacksmith
 	name = "Blacksmith"
-	tutorial = "A skilled blacksmith, able to forge capable weapons for warriors in the bog, \
-	only after building a forge for themselves ofourse."
+	tutorial = "A skilled blacksmith, able to forge capable weapons for warriors; \
+	only after building a forge for themselves of course."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith
@@ -29,12 +29,12 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 	else
-		
+
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE) 
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE) 
+		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE) // okish fists now(used to be four when the last note was written lmao)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)

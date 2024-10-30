@@ -129,15 +129,14 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Docker",
 	"Prisoner",
 	"Beggar",
-	"Town Seelie",
+	"Forest Seelie",
 	"Adventurer",
 	"Pilgrim",
 ))
 
 GLOBAL_LIST_INIT(mercenary_positions, list(
 	"Mercenary",
-	"Grenzelhoft Mercenary",
-	"Desert Rider Mercenary",
+	"Sellsword",
 	"Guild Captain",
 ))
 

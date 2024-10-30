@@ -74,6 +74,10 @@
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s cunt."))
 	if((HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))
 		return FALSE
+
+	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
+		user.sexcon.try_pelvis_crush(target)
+		
 	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
@@ -82,7 +86,6 @@
 		target.apply_damage(10, BRUTE, target.get_bodypart(BODY_ZONE_CHEST))
 		target.apply_damage(3, BRUTE, target.get_bodypart(BODY_ZONE_PRECISE_GROIN))
 
-	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_lovebold("[user] cums into [target]'s cunt!"))
 		user.sexcon.cum_into(vaginal = TRUE)
@@ -91,10 +94,13 @@
 		target.virginity = FALSE
 
 	if(user.sexcon.considered_limp())
+		user.sexcon.perform_sex_action(user, 1.2, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 1.2, 3, FALSE)
 	else
+		user.sexcon.perform_sex_action(user, 2.4, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 2.4, 7, FALSE)
 	target.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/vaginal_sex/on_finish(mob/living/user, mob/living/target)
 	..()

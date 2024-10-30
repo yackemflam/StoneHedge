@@ -10,7 +10,7 @@
 	allowed_patrons = ALL_DIVINE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/monk
-	tutorial = "Chores, some more chores- Even more chores.. Oh how the life of a humble cleric is exhausting… You have faith, but even you know you gave up a life of adventure for that of the security in the Church. Assist the Priest in their daily tasks, maybe today will be the day something interesting happens."
+	tutorial = "Chores, some more chores- Even more chores.. Oh how the life of a humble cleric is exhausting! You have faith, but even you know you gave up a life of adventure for that of the security in the Temple. Assist the Prophets in their daily tasks, maybe today will be the day something interesting happens."
 
 	display_order = JDO_MONK
 	give_bank_account = TRUE
@@ -35,7 +35,7 @@
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
-		if(/datum/patron/divine/noc) //Nocalytes aren't real. Play Cleric.
+		if(/datum/patron/divine/noc) //Nocalytes are real, don't let them tell you otherwise, we love casting spells. (Hearthstone edit: simply gives Noc Acolytes the love that the Noc Clerics got, access to pick spells)
 			head = /obj/item/clothing/head/roguetown/roguehood/nochood
 			neck = /obj/item/clothing/neck/roguetown/psicross/noc
 			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
@@ -44,6 +44,9 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE) // shouldn't be that bad.
 			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
+			H.mind.adjust_spellpoints(1)
+			H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 		if(/datum/patron/divine/dendor) //Dendorites all busted. Play Druid.
 			head = /obj/item/clothing/head/roguetown/helmet/dendorculthelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
@@ -102,7 +105,7 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/ravox
 			pants = /obj/item/clothing/under/roguetown/loincloth
 			shoes = shoes = /obj/item/clothing/shoes/roguetown/sandals
-			shirt =	/obj/item/clothing/suit/roguetown/shirt/undershirt/ravoxrobe			
+			shirt =	/obj/item/clothing/suit/roguetown/shirt/undershirt/ravoxrobe
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)

@@ -98,7 +98,6 @@
 	bundletype = /obj/item/natural/bundle/bone
 	mill_result = /obj/item/ash/bonemeal
 
-
 /obj/item/natural/volf_head
 	name = "volf head"
 	icon_state = "volf_head"

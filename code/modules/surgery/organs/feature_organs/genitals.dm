@@ -136,12 +136,17 @@
 	accessory_type = /datum/sprite_accessory/breasts/pair
 	organ_size = DEFAULT_BREASTS_SIZE
 	reagent_to_make = /datum/reagent/consumable/breastmilk
-	refilling = TRUE
 	hungerhelp = TRUE
 	organ_sizeable = TRUE
 	absorbing = FALSE //funny liquid tanks
 	altnames = list("breasts", "tits", "milkers", "tiddies", "badonkas", "boobas") //used in thought messages.
 	startsfilled = TRUE
+	blocker = ITEM_SLOT_SHIRT
+
+/obj/item/organ/filling_organ/breasts/Insert(mob/living/carbon/M, special, drop_if_replaced)
+	. = ..()
+	if(!refilling)
+		reagents.clear_reagents()
 
 /obj/item/organ/belly
 	name = "belly"
@@ -167,7 +172,8 @@
 	organ_size = DEFAULT_TESTICLES_SIZE
 	reagent_to_make = /datum/reagent/consumable/cum
 	refilling = TRUE
-	hungerhelp = TRUE //balls be dry if you starve
+	hungerhelp = FALSE //balls dont be dry if you starve
+	reagent_generate_rate = 0.2
 	organ_sizeable = TRUE
 	storage_per_size = 6
 	altnames = list("balls", "testicles", "testes", "orbs", "cum tanks", "seed tanks") //used in thought messages.

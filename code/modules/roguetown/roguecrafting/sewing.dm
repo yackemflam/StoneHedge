@@ -185,14 +185,14 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/sewing/feldhood
-	name = "hood"
+	name = "feldhood"
 	result = list(/obj/item/clothing/head/roguetown/roguehood/feldhood)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/sewing/surghood
-	name = "hood"
+	name = "surghood"
 	result = list(/obj/item/clothing/head/roguetown/roguehood/surghood)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
@@ -200,6 +200,12 @@
 
 /* craftdif of 2+ */
 
+/datum/crafting_recipe/roguetown/sewing/sleepingbag
+	name = "sleepcloth"
+	result = list(/obj/item/sleepingbag)
+	reqs =  list(/obj/item/natural/cloth = 2,
+                /obj/item/natural/fibers = 1)
+	craftdiff = 2
 /datum/crafting_recipe/roguetown/sewing/gambeson
 	name = "gambeson"
 	result = /obj/item/clothing/suit/roguetown/armor/gambeson

@@ -57,7 +57,7 @@
 		return
 
 /obj/item/clothing/suit/roguetown/armor/chainmail
-	slot_flags = ITEM_SLOT_ARMOR
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "haubergeon"
 	desc = "A steel maille shirt."
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
@@ -80,7 +80,6 @@
 													'sound/foley/footsteps/armor/chain (3).ogg'), 100)
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "chainmaille"
 	desc = "A chain vest made of heavy iron rings."
 	body_parts_covered = CHEST|GROIN|VITALS
@@ -91,7 +90,6 @@
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "hauberk"
 	desc = "A longer steel maille that protects the legs."
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS|LEGS
@@ -107,16 +105,14 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "chainmail bikini"
-	desc = "Try not to get your nipple caught between the chains, and other bits."
+	desc = "Try not to get your nipples caught between the chains, and other bits."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "chainkini"
 	item_state = "chainkini"
 	max_integrity = 225
 	allowed_sex = list(FEMALE)
-	allowed_race = CLOTHED_RACES_TYPES
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 
@@ -124,7 +120,26 @@
 	name = "chainmail bra"
 	icon_state = "chainbra"
 	item_state = "chainbra"
-	desc = "Try not to get your nipple caught between the chains."
+	desc = "Try not to get your nipples caught between the chains."
+	flags_inv = HIDEBOOB
+	is_bra = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini
+	name = "iron chainmail bikini"
+	desc = "Try not to get your nipples caught between the chains, and other bits."
+	icon = 'modular_stonehedge/icons/armor/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	icon_state = "chainkini"
+	item_state = "chainkini"
+	color = "#9EA48E"
+	allowed_sex = list(FEMALE)
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini/bra
+	name = "iron chainmail bra"
+	icon_state = "chainbra"
+	item_state = "chainbra"
+	color = "#9EA48E"
+	desc = "Try not to get your nipples caught between the chains."
 	flags_inv = HIDEBOOB
 	is_bra = TRUE
 
@@ -286,7 +301,6 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/bikini
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "plate bikini"
 	desc = "Half plate in bikini form, still just as protective somehow."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
@@ -310,26 +324,21 @@
 	name = "plate armor"
 	desc = "Full plate. Leg protecting tassets, groin cup, armored vambraces."
 	icon_state = "plate"
-	max_integrity = 520
+	max_integrity = 700
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	equip_delay_self = 1200
 	unequip_delay_self = 1200
-	equip_delay_other = 60
+	equip_delay_other = 80
 	strip_delay = 60
 	armor_class = ARMOR_CLASS_HEAVY
 
-
 /obj/item/clothing/suit/roguetown/armor/plate/full/bikini
-	slot_flags = ITEM_SLOT_ARMOR
 	name = "fullplate bikini"
 	desc = "Full plate in bikini form, full package and full exposure."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "platekini"
 	allowed_sex = list(FEMALE)
-	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
-	max_integrity = 750
-	equip_delay_self = 80
 	armor_class = ARMOR_CLASS_HEAVY
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/bikini/bra
@@ -345,7 +354,7 @@
 	name = "iron breastplate"
 	desc = "Solid iron to protect the chest."
 	icon_state = "ibreastplate"
-	max_integrity = 235
+	max_integrity = 250
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 

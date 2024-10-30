@@ -1,6 +1,6 @@
 /datum/advclass/bladesinger
 	name = "Bladesinger"
-	tutorial = "A warrior who has been blessed by Noc, because you trained to master both fields, then it has left you without much skill in both."
+	tutorial = "A warrior who was taught in the Arts of Spellweaving. Because you trained to master both fields,  it has left you without much skill in both."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	pickprob = 25
@@ -12,6 +12,7 @@
 
 /datum/outfit/job/roguetown/adventurer/bladesinger/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.mind.adjust_spellpoints(5)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/armor/leather/vest
 	backr = /obj/item/storage/backpack/rogue/satchel
@@ -31,7 +32,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)

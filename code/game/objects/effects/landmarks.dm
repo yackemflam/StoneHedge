@@ -117,28 +117,16 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/mercenarylate
 	name = "Mercenarylate"
 	icon_state = "arrow"
-	jobspawn_override = list("Mercenary")
+	jobspawn_override = list("Mercenary",  "Sellsword")
 
 /obj/effect/landmark/start/seelie
-	name = "Town Seelie"
+	name = "Forest Seelie"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/seelielate
 	name = "Seelielate"
 	icon_state = "arrow"
-	jobspawn_override = list("Town Seelie")
-	delete_after_roundstart = FALSE
-
-/obj/effect/landmark/start/desertriderlate
-	name = "DesertRiderlate"
-	icon_state = "arrow"
-	jobspawn_override = list("Desert Rider Mercenary", "Sellsword")
-	delete_after_roundstart = FALSE
-
-/obj/effect/landmark/start/grenzelhoftlate
-	name = "Grenzelhoftlate"
-	icon_state = "arrow"
-	jobspawn_override = list("Grenzelhoft Mercenary", "Sellsword")
+	jobspawn_override = list("Forest Seelie")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/villagerlate
@@ -342,6 +330,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/mercenary
 	name = "Mercenary"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/sellsword
+	name = "Sellsword"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/vagrant

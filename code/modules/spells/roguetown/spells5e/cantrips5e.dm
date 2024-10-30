@@ -50,12 +50,13 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-
+	ignore_fiendkiss = FALSE
+	
 /obj/effect/proc_holder/spell/self/acidsplash5e/cast(mob/user = usr)
 	var/mob/living/target = user
 	target.visible_message(span_warning("[target] hurls a caustic bubble!"), span_notice("You hurl a caustic bubble!"))
@@ -140,7 +141,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -199,7 +200,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -283,12 +284,13 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-
+	ignore_fiendkiss = FALSE
+	
 // Notes: sorcerer, warlock, wizard
 /obj/effect/proc_holder/spell/invoked/chilltouch5e/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -301,14 +303,10 @@
 		hand.bodypart = bodypart
 		hand.forceMove(target)
 		bodypart.add_embedded_object(hand, silent = TRUE, crit_message = FALSE)
-		if(user.zone_selected == BODY_ZONE_CHEST && !target.cmode) //must be out of combat mode and have erp panel allowed for this prompt to appear
-			target.visible_message(span_warning("A skeletal hand grips [target]'s [bodypart]!"), span_danger("A skeletal hand grips me [bodypart]!"))
-		//	var/choice = alert(target, "A skeletal hand attempts to grapple your private parts!", "", "Accept it!", "Fight it!")
-		//	switch(choice)
-		//	//IF YOU CHOOSE Accept it! - YOU RECIEVE PLEASURE
-		//		if("Accept it!")
-		//			hand.pleasureaccepted = TRUE
-		//		if("Fight it!")
+		target.visible_message(span_warning("A skeletal hand grips [target]'s [bodypart]!"), span_danger("A skeletal hand grips me [bodypart]!"))
+		if(user.zone_selected == BODY_ZONE_CHEST && !user.cmode && !target.cmode) //must be out of combat mode and have erp panel allowed for this prompt to appear
+			hand.pleasureaccepted = TRUE
+		else 
 			hand.pleasureaccepted = FALSE
 	return FALSE
 
@@ -421,7 +419,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -553,12 +551,13 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-
+	ignore_fiendkiss = FALSE
+	
 
 /obj/projectile/magic/eldritchblast5e
 	name = "eldritch blast"
@@ -574,6 +573,28 @@
 	. = ..()
 	playsound(src, 'sound/magic/swap.ogg', 100)
 
+/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e/empowered
+	name = "empowered eldritch blast"
+	charge_max = 8 SECONDS //cooldown
+	releasedrain = 40
+	projectile_type = /obj/projectile/magic/eldritchblast5e/empowered
+
+/obj/projectile/magic/eldritchblast5e/empowered
+	damage = 30
+	range = 25
+
+/obj/projectile/magic/eldritchblast5e/empowered/on_hit(atom/target, blocked = FALSE)
+	var/atom/throw_target = get_step(target, get_dir(firer, target))
+	if(isliving(target))
+		var/mob/living/L = target
+		if(L.anti_magic_check())
+			return BULLET_ACT_BLOCK
+		L.throw_at(throw_target, 200, 4)
+	else
+		if(isitem(target))
+			var/obj/item/I = target
+			I.throw_at(throw_target, 200, 4)
+	playsound(src, 'sound/magic/swap.ogg', 100)
 //==============================================
 //	ENCODE THOUGHTS
 //==============================================
@@ -598,7 +619,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -686,11 +707,12 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
+	ignore_fiendkiss = FALSE
 	
 /obj/effect/proc_holder/spell/invoked/frostbite5e/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -749,7 +771,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -805,7 +827,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -875,12 +897,13 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-	
+	ignore_fiendkiss = FALSE
+		
 /obj/effect/proc_holder/spell/invoked/infestation5e/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
 		var/mob/living/carbon/target = targets[1]
@@ -963,7 +986,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1125,7 +1148,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1135,7 +1158,8 @@
 	var/delay = 3 SECONDS
 	var/sprite_changes = 10
 	var/datum/beam/current_beam = null
-
+	ignore_fiendkiss = FALSE
+	
 obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/user = usr)
 	for(var/mob/living/carbon/C in targets)
 		user.visible_message(span_warning("[C] is connected to [user] with a lightning lure!"), span_warning("You create a static link with [C]."))
@@ -1180,7 +1204,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1229,7 +1253,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1277,13 +1301,14 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	var/delay = 7
-
+	ignore_fiendkiss = FALSE
+	
 /obj/effect/proc_holder/spell/invoked/mindsliver5e/cast(list/targets, mob/user)
 	var/turf/T = get_turf(targets[1])
 	new /obj/effect/temp_visual/mindsliver5e_p1(T)
@@ -1332,7 +1357,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 //in the source material this would just be some sort of poison, since we have all sorts of potions, this is better.
 //my hope is that it doesn't work with love poiton...
 /obj/effect/proc_holder/spell/invoked/poisonspray5e
-	name = "Poison Spray"
+	name = "Poison Cloud" //renamed to better reflect wtf this does -- vide
 	overlay_state = "null"
 	releasedrain = 50
 	chargetime = 3
@@ -1349,7 +1374,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1384,8 +1409,6 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 		to_chat(user, "<span class='warning'>I couldn't find a good place for this!</span>")
 		revert_cast()
 
-
-
 //==============================================
 //	Primal Savagery
 //==============================================
@@ -1412,7 +1435,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1439,7 +1462,6 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	var/mob/living/target = owner
 	REMOVE_TRAIT(target, TRAIT_POISONBITE, TRAIT_GENERIC)
 	. = ..()
-
 
 //==============================================
 //	RAY OF FROST
@@ -1469,13 +1491,13 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-
-
+	ignore_fiendkiss = FALSE
+	
 /obj/projectile/magic/rayoffrost5e
 	name = "ray of frost"
 	icon = 'icons/obj/projectiles.dmi'

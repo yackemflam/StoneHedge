@@ -15,8 +15,8 @@
 	plane = GAME_PLANE_UPPER
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	destroy_sound = 'sound/misc/woodhit.ogg'
-	debris = list(/obj/item/grown/log/tree/stick = 2)
-	static_debris = list(/obj/item/grown/log/tree = 1)
+	debris = list(/obj/item/grown/log/tree/stick = 4)
+	static_debris = list(/obj/item/grown/log/tree = 2)
 	alpha = 200
 	leanable = TRUE
 	var/stump_type = /obj/structure/flora/roguetree/stump
@@ -66,11 +66,12 @@
 								if(NA)
 									if(istype(NA, /turf/open/transparent/openspace))
 										NA.ChangeTurf(/turf/open/floor/rogue/shroud)
-*/
+
 
 	if(istype(loc, /turf/open/floor/rogue/grass))
 		var/turf/T = loc
 		T.ChangeTurf(/turf/open/floor/rogue/dirt)
+		*/
 
 /obj/structure/flora/roguetree/obj_destruction(damage_flag)
 	if(stump_type)
@@ -171,6 +172,19 @@
 /obj/structure/flora/roguetree/stump/Initialize()
 	. = ..()
 	icon_state = "t[rand(1,4)]stump"
+
+
+/obj/structure/flora/roguetree/stump/palm
+	name = "palm tree stump"
+	desc = "Someone cut this palm tree down."
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "palmrs_stump"
+
+/obj/structure/flora/roguetree/stump/Initialize()
+	. = ..()
+	icon_state = "[icon_state]"
+
+
 
 /obj/structure/flora/roguetree/stump/log
 	name = "ancient log"
@@ -688,11 +702,9 @@
 
 //wildplant tree
 
-/obj/structure/flora/wildapples
-	name = "wild apple tree"
-	icon = 'modular_hearthstone/icons/obj/flora/grove_trees.dmi'
-	icon_state = "grove_tree1"
-	desc = "a naturally occuring apple tree, found in the wild."
+/obj/structure/flora/wildtree
+	name = "wild tree"
+	desc = "a naturally occuring tree, found in the wild."
 	opacity = 0
 	density = 1
 	max_integrity = 200
@@ -707,7 +719,7 @@
 	alpha = 200
 	var/stump_type = /obj/structure/flora/roguetree/stump
 
-/obj/structure/flora/wildapples/attack_right(mob/user)
+/obj/structure/flora/wildtree/attack_right(mob/user)
 	if(user.mind && isliving(user))
 		if(user.mind.special_items && user.mind.special_items.len)
 			var/item = input(user, "What will I take?", "STASH") as null|anything in user.mind.special_items
@@ -720,11 +732,11 @@
 						user.put_in_hands(I)
 			return
 
-/obj/structure/flora/wildapples/fire_act(added, maxstacks)
+/obj/structure/flora/wildtree/fire_act(added, maxstacks)
 	if(added > 5)
 		return ..()
 
-/obj/structure/flora/wildapples/Initialize()
+/obj/structure/flora/wildtree/Initialize()
 	. = ..()
 
 /*
@@ -757,8 +769,95 @@
 		var/turf/T = loc
 		T.ChangeTurf(/turf/open/floor/rogue/dirt)
 
-/obj/structure/flora/wildapples/obj_destruction(damage_flag)
+/obj/structure/flora/wildtree/obj_destruction(damage_flag)
 	if(stump_type)
 		new stump_type(loc)
 	playsound(src, 'sound/misc/treefall.ogg', 100, FALSE)
 	. = ..()
+
+//chomp trees
+
+/obj/structure/flora/wildtree/chomp/lcactus
+	name = "cactus"
+	desc = "Jump on it!"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "lcactus"
+	anchored = TRUE
+
+/obj/structure/flora/wildtree/chomp/lcactus2
+	name = "cactus"
+	desc = "Jump on it!"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "lcactus2"
+	anchored = TRUE
+
+
+/obj/structure/flora/wildtree/chomp/palmtreeb
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "palmtreeb"
+	anchored = TRUE
+
+/obj/structure/flora/wildtree/chomp/palmtreeb1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "palmtreeb1"
+	anchored = TRUE
+	pixel_x = -44
+
+/obj/structure/flora/wildtree/chomp/palmtreech
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "palmtree"
+	anchored = TRUE
+
+/obj/structure/flora/wildtree/chomp/palmtreech1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "palmtree1"
+	anchored = TRUE
+
+/obj/structure/flora/wildtree/chomp/mpalmtree
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "mpalmtree"
+	anchored = TRUE
+
+/obj/structure/flora/wildtree/chomp/spalmtree
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "spalmtree"
+	anchored = TRUE
+	stump_type = /obj/structure/flora/roguetree/stump/palm
+	pixel_x = -54
+
+/obj/structure/flora/wildtree/chomp/spalmtree1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "spalmtree1"
+	anchored = TRUE
+	stump_type = /obj/structure/flora/roguetree/stump/palm
+
+/obj/structure/flora/wildtree/chomp/spalmtree3
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "spalmtree3_no"
+	anchored = TRUE
+	stump_type = /obj/structure/flora/roguetree/stump/palm
+	pixel_x = -52
+
+/obj/structure/flora/wildtree/chomp/spalmtree4
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "spalmtree4_no"
+	anchored = TRUE
+	stump_type = /obj/structure/flora/roguetree/stump/palm

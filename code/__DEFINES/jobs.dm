@@ -170,6 +170,7 @@
 #define PRISONERC	(1<<17)
 #define LUNATIC		(1<<18)
 #define MIGRANT (1<<19)
+#define SEELIE		(1<<20)
 
 #define APPRENTICES	(1<<6)
 
@@ -183,11 +184,8 @@
 #define MAGEAPPRENTICE	(1<<7)
 
 #define MERCENARIES		(1<<0)
-#define DESERT_RIDER	(1<<1)
-#define GRENZELHOFT		(1<<2)
-#define VETERAN		(1<<3)
-#define SEELIE		(1<<4)
-#define SELLSWORD		(1<<4)
+#define VETERAN		(1<<1)
+#define SELLSWORD		(1<<2)
 
 #define TRIBAL		(1<<8)
 
@@ -292,8 +290,6 @@
 #define JDO_MIGRANT 32.3
 
 #define JDO_MERCENARY 31
-#define JDO_GRENZELHOFT 31.1
-#define JDO_DESERT_RIDER 31.2
 #define JDO_VET 31.3
 #define JDO_SEELIE 31.4
 #define JDO_SELLSWORD 31.5
@@ -386,9 +382,7 @@
 #define WANDERER_ROLES \
 	/datum/job/roguetown/pilgrim,\
 	/datum/job/roguetown/adventurer,\
-	/datum/job/roguetown/mercenary/desert_rider,\
-	/datum/job/roguetown/mercenary/grenzelhoft,\
-	/datum/job/roguetown/mercenary/seelie
+	/datum/job/roguetown/mercenary
 
 #define GARRISON_ROLES \
 	/datum/job/roguetown/bogguardsman,\

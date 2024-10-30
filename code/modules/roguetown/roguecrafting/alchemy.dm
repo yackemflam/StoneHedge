@@ -95,6 +95,15 @@
 		/obj/item/reagent_containers/food/snacks/fish = 2)
 	craftdiff = 2
 
+//fuck fish
+/datum/crafting_recipe/roguetown/alchemy/healthpot3xalt
+	name = "3x Health Potion (Honey)"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/food/snacks/rogue/honey = 2)
+	craftdiff = 3
+
 /datum/crafting_recipe/roguetown/alchemy/majorhealthpot
 	name = "Major Health Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot)
@@ -175,6 +184,14 @@
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1,
 		/datum/reagent/water = 99) // 45 and 90 u allows for bottle duping. This requires 33oz containers, preventing the dupe.
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/alchemy/bmilk2milk
+	name = "transmute breastmilk to generic milk"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/milk = 1)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 1,
+		/datum/reagent/consumable/breastmilk = 45) // they said shit about bottle duping but nobody aint gonna have 99 breastmilk i dont know.
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/alchemy/w2w

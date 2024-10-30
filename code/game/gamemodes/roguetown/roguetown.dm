@@ -63,7 +63,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 
 	if(ttime >= GLOB.round_timer)
 		if(roundvoteend)
-			if(ttime >= (GLOB.round_timer + ROUND_END_TIME) )
+			if(ttime >= (GLOB.round_timer + 15 MINUTES) )
 				for(var/mob/living/carbon/human/H in GLOB.human_list)
 					if(H.stat != DEAD)
 						if(H.allmig_reward)
@@ -412,9 +412,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Hedgemaster",
 	"Knight",
 	"Gravesinger",
-	"Desert Rider",
-	"Desert Rider Mercenary",
-	"Grenzelhoft Mercenary",
+	"Mercenary",
 	"Sellsword"
 	)
 

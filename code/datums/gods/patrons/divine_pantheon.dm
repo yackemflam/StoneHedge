@@ -24,7 +24,7 @@
 	domain = "Intellect, Study, Divination, Introspection. Rivers, Moons, Reflections. (Passive Energies)"
 	desc = "Lune, the Silver Dragon. Twin of Elysius, symbolized by the moon. She is Patron of wisdom."
 	worshippers = "Wizards, Scholars, Wisened Folk,"
-	mob_traits = list(TRAIT_NOCSIGHT)
+	mob_traits = list(TRAIT_NOCSNEAK, TRAIT_NIGHT_OWL)
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness
 	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
 	confess_lines = list(
@@ -83,7 +83,7 @@
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
 	t3 = /obj/effect/proc_holder/spell/targeted/soulspeak
-	t4 = /obj/effect/proc_holder/spell/invoked/revive
+	t4 = /obj/effect/proc_holder/spell/invoked/revive/shaman
 	confess_lines = list(
 		"ALL SOULS FIND THEIR WAY TO YAMAIS!",
 		"THE TOLLKEEPER IS OUR FINAL JUDGE!",
@@ -120,6 +120,7 @@
 	t1 = /obj/effect/proc_holder/spell/invoked/heal
 	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
 	t3 = /obj/effect/proc_holder/spell/invoked/cure_rot
+	t4 = /obj/effect/proc_holder/spell/invoked/revive/shaman
 	confess_lines = list(
 		"Hermeir will guide all formula!",
 		"The Wheel turns, I am but a part of it all!",

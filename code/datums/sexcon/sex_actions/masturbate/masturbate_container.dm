@@ -1,7 +1,12 @@
+/* we got a way of milking filling organs on our own -vide
 /datum/sex_action/masturbate_container
 	name = "Masturbate into container"
 
-/datum/sex_action/masturbate_container/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/masturbate_container/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.erpable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user != target)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
@@ -14,8 +19,13 @@
 		return FALSE
 	if(user != target)
 		return FALSE
-	if(!get_location_accessible(user, BODY_ZONE_PRECISE_GROIN))
-		return FALSE
+	if(ishuman(user))
+		var/mob/living/carbon/human/userhuman = user
+		if(userhuman.wear_pants)
+			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
+			if(pantsies.flags_inv & HIDECROTCH) 
+				if(!pantsies.genitalaccess) 
+					return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
 	if(!user.sexcon.can_use_penis())
@@ -43,3 +53,4 @@
 		return TRUE
 	return FALSE
 // WIP, UNFINISHED, I JUST WANT PEOPLE TO SEE. if you want to help feel free to review and add code or whatever. i am a slopcoder so i need it <3
+*/

@@ -1,5 +1,5 @@
 /datum/job/roguetown/prisonerb
-	title = "Prisoner (Bog)"
+	title = "Prisoner (Underdark)"
 	flag = PRISONERB
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -48,4 +48,4 @@
 		pants = /obj/item/clothing/under/roguetown/tights/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 		armor = /obj/item/clothing/suit/roguetown/shirt/tunic/random
-		
+

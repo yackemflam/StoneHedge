@@ -187,13 +187,13 @@
 	name = "Surgery tools set (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = list(/obj/item/rogueweapon/surgery/scalpel, /obj/item/rogueweapon/surgery/saw, /obj/item/rogueweapon/surgery/hemostat, /obj/item/rogueweapon/surgery/retractor, /obj/item/rogueweapon/surgery/bonesetter, /obj/item/rogueweapon/surgery/cautery, /obj/item/reagent_containers/syringe)
+	created_item = list(/obj/item/rogueweapon/surgery/scalpel, /obj/item/rogueweapon/surgery/saw, /obj/item/rogueweapon/surgery/hemostat, /obj/item/rogueweapon/surgery/retractor, /obj/item/rogueweapon/surgery/bonesetter, /obj/item/rogueweapon/surgery/cautery, /obj/item/reagent_containers/syringe/steel)
 	i_type = "Tools"
 
 /datum/anvil_recipe/tools/surgery/syringes
 	name = "Syringes x5"
 	req_bar = /obj/item/ingot/steel
-	created_item = list(/obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe)
+	created_item = list(/obj/item/reagent_containers/syringe/steel, /obj/item/reagent_containers/syringe/steel, /obj/item/reagent_containers/syringe/steel, /obj/item/reagent_containers/syringe/steel, /obj/item/reagent_containers/syringe/steel)
 	i_type = "Tools"
 
 /*
@@ -317,10 +317,3 @@
 	req_bar = /obj/item/ingot/gold
 	created_item = /obj/item/bodypart/r_leg/rprosthetic/clock
 	additional_items = list(/obj/item/roguegear,/obj/item/roguegear,/obj/item/roguegear)
-// --------- GLASS -----------
-
-/datum/anvil_recipe/tools/glassbottle
-	name = "Glass bottle"
-	req_bar = /obj/item/ingot/glass
-	created_item = /obj/item/reagent_containers/glass/bottle
-	i_type = "General"

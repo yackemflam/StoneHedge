@@ -9,6 +9,7 @@
 	var/help_verb
 	var/allow_temp_override = TRUE //if this martial art can be overridden by temporary martial arts
 	var/smashes_tables = FALSE //If the martial art smashes tables when performing table slams and head smashes
+	var/projectile_deflect = FALSE //If the martial art smashes tables when performing table slams and head smashes
 
 /datum/martial_art/proc/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	return FALSE
@@ -74,4 +75,8 @@
 
 ///Gets called when a projectile hits the owner. Returning anything other than BULLET_ACT_HIT will stop the projectile from hitting the mob.
 /datum/martial_art/proc/on_projectile_hit(mob/living/carbon/human/A, obj/projectile/P, def_zone)
+	var/prob2defend = A.defprob + (A.STASPD * 15)
+	var/chance = prob(prob2defend)
+	if(HAS_TRAIT(A, TRAIT_MISSILESNARING) && chance)
+		return null
 	return BULLET_ACT_HIT

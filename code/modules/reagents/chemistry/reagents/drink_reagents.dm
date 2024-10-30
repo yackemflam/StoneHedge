@@ -201,36 +201,34 @@
 
 /datum/reagent/consumable/cum
 	name = "Semen"
-	description = "An opaque white liquid produced by testicles of males..."
-	color = "#DFDFDF" // rgb: 223, 223, 223
+	description = "A strange white liquid produced by testicles..."
+	color = "#c6c6c6"
 	taste_description = "salty slime"
 	glass_icon_state = "glass_white"
 	glass_name = "glass of semen"
 	glass_desc = ""
-	var/nearegg = FALSE
 	var/virile = TRUE
 
+//may need to go back on this autistic fluid based pregnancy to old one where its based on vaginal sex since it may not be working.
 /datum/reagent/consumable/cum/on_transfer(atom/A, method, trans_volume)
 	. = ..()
-	if(istype(holder, /obj/item/organ/filling_organ) && virile)
-		var/obj/item/organ/filling_organ/forgan = holder
+	if(istype(A, /obj/item/organ/filling_organ) && virile)
+		var/obj/item/organ/filling_organ/forgan = A
 		if(forgan.fertility && !forgan.pregnant)
-			nearegg = TRUE //bomb ready.
+			if(prob(trans_volume/3)) //i was gonna make it have a chance each tick but couldnt, this works somewhat same ig
+				forgan.be_impregnated() //boom
 
 /datum/reagent/consumable/cum/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
-		. = 1
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/filling_organ/forgan = holder
-		if(prob(1) && nearegg && virile) //bomb has been planted
-			forgan.be_impregnated(H) //boom
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
 			H.adjust_hydration(5)
 			H.adjust_nutrition(5)
 		if(H.blood_volume < BLOOD_VOLUME_NORMAL)
 			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
+	. = 1
 	..()
 
 /datum/reagent/consumable/cum/sterile
@@ -242,7 +240,7 @@
 	color = "#DFDFDF" // rgb: 223, 223, 223
 	taste_description = "cloyingly sweet milk"
 	glass_icon_state = "glass_white"
-	glass_name = "glass of mothers' milk"
+	glass_name = "glass of breast milk"
 	glass_desc = "Milk derived from a humanoid source. Some Eorans might swear by its use in rituals of fertility or as a private indulgence between partners, but honest merchants refuse to deal in the substance or products made from it."
 
 /datum/reagent/consumable/breastmilk/on_mob_life(mob/living/carbon/M)

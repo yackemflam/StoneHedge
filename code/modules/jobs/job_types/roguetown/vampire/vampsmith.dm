@@ -1,5 +1,5 @@
 /datum/job/roguetown/vampire/vampsmith
-	title = "Vampire Smith"
+	title = "Underdark Smithy"
 	flag = VAMPSMITH
 	department_flag = VAMPIRE
 	faction = "Station"
@@ -33,7 +33,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		
+
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather

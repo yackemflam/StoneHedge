@@ -11,11 +11,10 @@
 
 	display_order = JDO_DUNGEONEER
 
-	tutorial = "The elven kingdom has been good to you. Your pets have fed well, and you've never wanted for coin or company in those creetures they permit you. This place has changed you. You're wild - and you yearn for the hunt."
-
+	tutorial = "The Elven kingdom has been good to you. Your pets have fed well, and you've never wanted for coin or company in those creetures they permit you. This place has changed you. You're wild - and you yearn for the hunt."
 	outfit = /datum/outfit/job/roguetown/dungeoneer
-	give_bank_account = 5
-	min_pq = 0
+	give_bank_account = 50
+	min_pq = 1
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_weird.ogg'
@@ -23,6 +22,7 @@
 /datum/outfit/job/roguetown/dungeoneer/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/menacing
+	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	pants = /obj/item/clothing/under/roguetown/trou
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather

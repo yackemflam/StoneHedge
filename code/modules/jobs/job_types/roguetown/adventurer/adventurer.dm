@@ -11,7 +11,7 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 	total_positions = -1
 	spawn_positions = -1
 	allowed_races = RACES_ALL_KINDSPLUS
-	tutorial = "Hero of nothing, adventurer by trade. Whatever led you to this fate is up to the wind to decide, and you've never fancied yourself for much other than the thrill. Someday your pride is going to catch up to you, and you're going to find out why most men don't end up in the annals of history."
+	tutorial = "Hero of nothing, or some things perhaps. You are the Lifeblood of this Adventurer-City. No matter whom or what it is you serve; The Dream-Hold has respected those who fight the darkness since as long as any can remember."
 
 
 	outfit = null

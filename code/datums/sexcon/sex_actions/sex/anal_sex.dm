@@ -80,19 +80,24 @@
 		target.apply_damage(10, BRUTE, target.get_bodypart(BODY_ZONE_CHEST))
 		target.apply_damage(3, BRUTE, target.get_bodypart(BODY_ZONE_PRECISE_GROIN))
 
-	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
+	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
+		user.sexcon.try_pelvis_crush(target)
+
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s butt!"))
 		user.sexcon.cum_into(anal = TRUE)
 		user.virginity = FALSE
 
 	if(user.sexcon.considered_limp())
+		user.sexcon.perform_sex_action(user, 1.2, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 1.2, 4, FALSE)
 	//else if((HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))
 	//	user.sexcon.perform_sex_action(target, 0.2, 0, FALSE)
 	else
+		user.sexcon.perform_sex_action(user, 2.4, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 2.4, 9, FALSE)
 	target.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/anal_sex/on_finish(mob/living/user, mob/living/target)
 	..()

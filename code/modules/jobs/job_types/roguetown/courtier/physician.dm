@@ -12,7 +12,7 @@
 	tutorial = "You were a child born into good wealth - But poor health. \
 		Perhaps in another life, you would have turned out to be a powerful mage, wise archivist or a shrewd steward, \
 		but leprosy took away your younger years. \
-		Out of desperation, you followed the ways of Pestra and managed to be cured."
+		Out of desperation, you followed the ways of Hermeir and managed to be cured."
 	outfit = /datum/outfit/job/roguetown/physician
 	whitelist_req = FALSE
 

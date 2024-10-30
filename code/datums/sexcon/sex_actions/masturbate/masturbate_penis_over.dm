@@ -2,7 +2,11 @@
 	name = "Jerk over them"
 	check_same_tile = FALSE
 
-/datum/sex_action/masturbate_penis_over/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/masturbate_penis_over/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.erpable && issimple(target))
+		return FALSE
+	if(user.client.prefs.defiant && issimple(target))
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
@@ -12,15 +16,20 @@
 /datum/sex_action/masturbate_penis_over/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!get_location_accessible(user, BODY_ZONE_PRECISE_GROIN))
-		return FALSE
+	if(ishuman(user))
+		var/mob/living/carbon/human/userhuman = user
+		if(userhuman.wear_pants)
+			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
+			if(pantsies.flags_inv & HIDECROTCH) 
+				if(!pantsies.genitalaccess) 
+					return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
 	if(!user.sexcon.can_use_penis())
 		return
 	return TRUE
 
-/datum/sex_action/masturbate_penis_over/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/masturbate_penis_over/on_start(mob/living/user, mob/living/target)
 	..()
 	user.visible_message(span_warning("[user] starts jerking over [target]..."))
 
@@ -36,7 +45,7 @@
 		user.visible_message(span_lovebold("[user] cums over [target]'s body!"))
 		user.sexcon.cum_onto()
 
-/datum/sex_action/masturbate_penis_over/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/masturbate_penis_over/on_finish(mob/living/user, mob/living/target)
 	..()
 	user.visible_message(span_warning("[user] stops jerking off."))
 

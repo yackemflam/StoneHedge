@@ -65,7 +65,7 @@
 
 /datum/quirk/monsterhunter
 	name = "Monster \"Hunter\""
-	desc = "Allows targeting by specific monsters for something more than just killing. May be unfair to you in combat."
+	desc = "Allows targeting by specific monsters for something very lewd. May be unfair to you in combat."
 	value = 0
 	gain_text = span_notice("I want to feel a monster inside.. or inside a monster.")
 	lose_text = span_notice("I no longer am a degenerate.")
@@ -73,4 +73,10 @@
 /datum/quirk/selfawaregeni
 	name = "Sensitiveness"
 	desc = "I can tell more about my private bits (may be spammy, exact liquid information and alerts etc.)"
+	value = 0
+
+//damn snowflakes.
+/datum/quirk/weirdo
+	name = "Freeky"
+	desc = "I can use my 'orifices' and do more strange sexual things that wouldn't come to sane mind."
 	value = 0

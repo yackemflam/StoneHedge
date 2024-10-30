@@ -245,7 +245,7 @@
 	seed = /obj/item/seeds/poppy
 	name = "poppy flower"
 	desc = "a flower known for its use in ozium creation"
-	icon = 'icons/obj/flora/wildflora.dmi'
+	icon = 'modular_Stonehedge/icons/obj/flora/wildflora.dmi'
 	icon_state = "Poppy Flower"
 	filling_color = "#008000"
 	bitesize_mod = 2
@@ -258,7 +258,7 @@
 /obj/item/reagent_containers/food/snacks/grown/herbs
 	seed = /obj/item/seeds/herbs
 	name = "wild herbs"
-	icon = 'icons/obj/flora/wildflora.dmi'
+	icon = 'modular_Stonehedge/icons/obj/flora/wildflora.dmi'
 	desc = "an assortment of herbs known to sooth pain"
 	icon_state = "Herbs"
 	filling_color = "#008000"
@@ -331,6 +331,7 @@
 	foodtype = SUGAR
 	tastes = list("sugar" = 1)
 	grind_results = list(/datum/reagent/sugar = 10)
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/rum
 
 /obj/item/reagent_containers/food/snacks/grown/pumpkin
 	seed = /obj/item/seeds/pumpkin
@@ -644,3 +645,56 @@
 	tastes = list("numb" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/amanitin = 3)
 	grind_results = list(/datum/reagent/toxin/amanitin = 6)
+
+
+/obj/item/reagent_containers/food/snacks/grown/banana
+	name = "banana"
+	desc = ""
+	icon_state = "banana"
+	filling_color = "#fbff00"
+	bitesize = 3
+	foodtype = FRUIT
+	tastes = list("banana" = 1)
+	trash = /obj/item/trash/bananapeel
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD
+	worn_x_dimension = 64
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	worn_y_dimension = 64
+	rotprocess = 20 MINUTES
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/banana
+
+
+/obj/item/reagent_containers/food/snacks/grown/cactus
+	name = "cactus"
+	desc = ""
+	icon_state = "cactus"
+	color = "#00c000"
+	filling_color = "#039111"
+	bitesize = 3
+	foodtype = FRUIT
+	tastes = list("cactus" = 1)
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD
+	worn_x_dimension = 64
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/water = 5)
+	worn_y_dimension = 64
+	rotprocess = 20 MINUTES
+
+
+/obj/item/reagent_containers/food/snacks/grown/coconut
+	name = "coconut"
+	desc = ""
+	icon_state = "coconut"
+	filling_color = "#fbff00"
+	bitesize = 3
+	foodtype = FRUIT
+	tastes = list("coconut" = 1,"coconut meat" = 1)
+	trash = /obj/item/trash/coconutshell
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD
+	worn_x_dimension = 64
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/water = 10)
+	worn_y_dimension = 64
+	rotprocess = 20 MINUTES

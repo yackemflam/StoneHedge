@@ -1,6 +1,6 @@
 /datum/job/roguetown/nightmaiden
-	title = "Nightswain"
-	f_title = "Nightmaiden"
+	title = "Courtesan"
+	f_title = "Courtsean"
 	flag = WENCH
 	department_flag = PEASANTS
 	faction = "Station"
@@ -11,7 +11,7 @@
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 
-	tutorial = "Nobody would envy your lot in life, for the role of bath-servant is not something so idly taken. Such folk often come from a place of desperation, 'least usually: for any with true compassion or skill would seek position with a nunnery or the medical trade. Launder clothes and soothe wounds, that is your loathsome creed."
+	tutorial = "The Courtesans of the wood are renowned across the land. Such grace and Charisma coupled with beauty has inspired many bards and adventurers alike. You work for the Spymaster; attending to clientele from across the realms needs -- for a price. The information you gather for your Boss keeps this city safe, veiled in shadows."
 
 	outfit = /datum/outfit/job/roguetown/nightmaiden
 	display_order = JDO_WENCH
@@ -42,16 +42,17 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	if(isseelie(H))
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/seelie_dust)

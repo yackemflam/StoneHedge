@@ -1,7 +1,8 @@
 /mob/living/carbon/human/species/goblin
 	name = "goblin"
+
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
-	icon_state = "blank"
+	icon_state = "goblin"
 	race = /datum/species/goblin
 	gender = MALE
 	bodyparts = list(/obj/item/bodypart/chest/goblin, /obj/item/bodypart/head/goblin, /obj/item/bodypart/l_arm/goblin,
@@ -99,7 +100,7 @@
 /obj/item/bodypart/head/goblin/update_icon_dropped()
 	return
 
-/obj/item/bodypart/head/goblin/get_limb_icon()
+/obj/item/bodypart/head/goblin/get_limb_icon(dropped, hideaux = FALSE)
 	return
 
 /obj/item/bodypart/head/goblin/skeletonize()
@@ -113,9 +114,10 @@
 	name = "goblin"
 	id = "goblin"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
-	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_NOEMBED)
+	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_CRITICAL_WEAKNESS)
 	nojumpsuit = 1
 	sexes = 1
+	offset_features = list(OFFSET_HANDS = list(0,-4), OFFSET_HANDS_F = list(0,-4))
 	damage_overlay_type = ""
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
@@ -248,8 +250,11 @@
 		QDEL_NULL(src.charflaw)
 	update_body()
 	faction = list("orcs")
+	name = "goblin"
+	real_name = "goblin"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 //	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
 //	blue breathes underwater, need a new specific one for this maybe organ cheque
 //	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
@@ -315,8 +320,6 @@
 	else
 		H.STAINT = 4
 	var/loadout = rand(1,6)
-	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
-	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	switch(loadout)
 		if(1) //tribal spear
 			r_hand = /obj/item/rogueweapon/spear/stone

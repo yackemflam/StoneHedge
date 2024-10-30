@@ -1,5 +1,5 @@
 /obj/item/flashlight/lantern/shrunken
-	name = "shrunken lamp"
+	name = "Soul Lamp"
 	desc = "A beacon."
 	icon_state = "shrunkenlamp"
 	item_state = "shrunkenlamp"
@@ -64,6 +64,35 @@
 	density = TRUE
 	anchored = TRUE
 
+/obj/structure/underworld/carriage_normal
+	name = "Carriage"
+	desc = "Places to go, people to see."
+	icon = 'icons/roguetown/underworld/enigma_carriage.dmi'
+	icon_state = "carriage_normal"
+	layer = BELOW_MOB_LAYER
+	plane = GAME_PLANE_UPPER
+	anchored = TRUE
+	density = TRUE
+	pixel_x = -64
+	pixel_y = -16
+
+/obj/structure/underworld/carriage_normal/Initialize()
+	..()
+	set_light(5, 30, LIGHT_COLOR_BLUE)
+
+/obj/structure/underworld/carriage_normal/attack_hand(mob/living/carbon/user)
+	if(user)
+		switch(alert("Are you ready to go home?",,"Yes","No"))
+			if("Yes")
+				playsound(user, 'sound/misc/deadbell.ogg', 50, TRUE, -2, ignore_walls = TRUE)
+				user.returntolobby()
+			if("No")
+				usr << "You delay fate."
+	else
+		to_chat(user, "<B><font size=3 color=red>It's LOCKED.</font></B>")
+
+
+
 /obj/structure/underworld/carriage
 	name = "Carriage"
 	desc = "The Undermaiden awaits."
@@ -93,8 +122,8 @@
 GLOBAL_VAR_INIT(underworld_coins, 0)
 
 /obj/item/underworld/coin
-	name = "The Toll"
-	desc = "This is more than just a coin."
+	name = "Soulcoin"
+	desc = "This is more than just a coin.. it's.. screaming?"
 	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
 	icon_state = "soultoken_floor"
 	var/should_track = TRUE
