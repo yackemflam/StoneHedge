@@ -300,10 +300,7 @@
 /obj/item/natural/bundle/silk,
 /obj/item/natural/bundle/silk,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "aqb" = (
 /obj/effect/spawner/roguemap/tree,
 /turf/open/floor/rogue/grass,
@@ -449,10 +446,7 @@
 "auF" = (
 /obj/structure/roguemachine/scomm,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "auW" = (
 /obj/machinery/gear_painter{
 	icon_state = "shitportal";
@@ -529,10 +523,7 @@
 "ayr" = (
 /obj/effect/landmark/start/shophand,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "ayN" = (
 /turf/closed/wall/mineral/rogue/wooddark{
 	icon_state = "wooddark-k"
@@ -597,10 +588,7 @@
 	icon_state = "washbin1"
 	},
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "aCv" = (
 /obj/structure/fluff/statue/tdummy2,
 /turf/open/floor/rogue/grass,
@@ -753,10 +741,7 @@
 	},
 /obj/item/lockpick,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "aII" = (
 /obj/structure/table/wood,
 /obj/structure/mirror/fancy,
@@ -765,13 +750,6 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
-"aIJ" = (
-/obj/structure/roguewindow/openclose,
-/turf/closed,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
 "aIU" = (
 /obj/structure/mineral_door/wood/fancywood,
 /turf/open/floor/rogue/greenstone,
@@ -1570,10 +1548,7 @@
 /turf/closed/wall/mineral/rogue/wooddark{
 	icon_state = "wooddark-k"
 	},
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "brE" = (
 /obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush3"
@@ -2138,9 +2113,7 @@
 "bQI" = (
 /obj/structure/roguemachine/stockpile,
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "bQP" = (
 /obj/structure/table/wood{
 	icon_state = "largetable";
@@ -2579,9 +2552,8 @@
 "cmM" = (
 /obj/structure/roguemachine/atm,
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
 	})
 "cnu" = (
 /obj/structure/table/wood{
@@ -2595,10 +2567,7 @@
 "cnB" = (
 /obj/machinery/light/rogue/torchholder,
 /turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "cnP" = (
 /obj/structure/spacevine,
 /turf/open/floor/rogue/dirt,
@@ -2727,10 +2696,7 @@
 "ctQ" = (
 /obj/machinery/anvil,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "ctS" = (
 /obj/effect/landmark/events/haunts,
 /turf/open/floor/rogue/dirt,
@@ -2948,10 +2914,7 @@
 	})
 "cDr" = (
 /turf/closed/wall/mineral/rogue/wooddark,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "cDv" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
@@ -2969,10 +2932,7 @@
 /obj/item/natural/bundle/cloth,
 /obj/item/natural/bundle/cloth,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "cEl" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/spider,
 /turf/open/water/swamp/deep,
@@ -3425,10 +3385,13 @@
 /turf/open/floor/rogue/grass,
 /area/rogue)
 "cYb" = (
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 26
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
 	})
 "cYn" = (
 /obj/structure/flora/roguegrass,
@@ -3538,10 +3501,7 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/green,
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "dcx" = (
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/garrison)
@@ -3739,11 +3699,10 @@
 /turf/open/transparent/openspace,
 /area/rogue)
 "djY" = (
-/obj/structure/roguemachine/atm,
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
+/obj/effect/landmark/latejoin,
+/turf/open/floor/rogue/ruinedwood/herringbone,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
 	})
 "dky" = (
 /obj/structure/table/wood{
@@ -4221,10 +4180,7 @@
 "dGO" = (
 /obj/structure/roguewindow/openclose,
 /turf/closed,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "dGZ" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/herringbone,
@@ -4317,9 +4273,7 @@
 	icon_state = "barsbent"
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "dJY" = (
 /obj/structure/flora/roguegrass/water/reeds,
 /turf/open/water/swamp,
@@ -4786,10 +4740,7 @@
 	pixel_y = -1
 	},
 /turf/open/transparent/openspace,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "ecF" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -5412,19 +5363,13 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods)
 "eCs" = (
-/turf/closed/wall/mineral/rogue/wooddark{
-	icon_state = "wooddark-k"
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
 	},
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
-"eCu" = (
-/obj/structure/mineral_door/wood/fancywood,
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
+/turf/open/floor/carpet/stellar,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
 	})
 "eDd" = (
 /obj/structure/flora/grass/jungle/b,
@@ -5482,9 +5427,7 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "eFn" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1";
@@ -5601,15 +5544,11 @@
 	name = "Trading Blimp"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "eIN" = (
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "eIU" = (
 /obj/effect/landmark/start/vampirespawn,
 /turf/open/floor/rogue/cobble,
@@ -5620,9 +5559,7 @@
 /area/rogue/under/cavewet)
 "eKF" = (
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "eLn" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -5632,10 +5569,7 @@
 /obj/item/natural/bundle/cloth,
 /obj/item/natural/bundle/cloth,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "eLo" = (
 /obj/structure/bookcase,
 /obj/item/book/granter/spell/spells5e/createbonfire5e,
@@ -5774,9 +5708,7 @@
 "eUO" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "eVi" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/outdoors/caves)
@@ -6045,10 +5977,7 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "fgk" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
@@ -6395,10 +6324,7 @@
 	pixel_y = -1
 	},
 /turf/open/transparent/openspace,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "fxd" = (
 /obj/item/dmusicbox,
 /obj/structure/closet/crate/chest,
@@ -6469,16 +6395,6 @@
 "fze" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/caves)
-"fzE" = (
-/obj/structure/fluff/railing/wood{
-	dir = 2;
-	pixel_y = -1
-	},
-/turf/open/transparent/openspace,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
 "fzP" = (
 /obj/structure/flora/newtree,
 /obj/structure/flora/newtree,
@@ -6644,9 +6560,7 @@
 	locked = 1
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "fHA" = (
 /obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t6";
@@ -6851,10 +6765,7 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "fSf" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/newtree,
@@ -6888,9 +6799,7 @@
 /area/rogue/under/cavewet)
 "fSK" = (
 /turf/open/floor/rogue/ruinedwood/platform,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "fSQ" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue)
@@ -7035,9 +6944,7 @@
 "fZQ" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "fZX" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/junglebush/large,
@@ -7749,10 +7656,7 @@
 "gEB" = (
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "gEL" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/grass,
@@ -7947,9 +7851,7 @@
 	})
 "gRT" = (
 /turf/closed/wall/mineral/rogue/wooddark/window,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "gRX" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/rogue/dirt,
@@ -8102,9 +8004,7 @@
 	})
 "gXV" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "gYg" = (
 /obj/structure/pillory,
 /obj/structure/flora/grass/jungle/b,
@@ -9333,10 +9233,7 @@
 /obj/item/ingot/steel,
 /obj/item/ingot/steel,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "icP" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/grass,
@@ -9677,10 +9574,7 @@
 /obj/effect/landmark/start/tailor,
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "irD" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 8
@@ -9958,10 +9852,7 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "iDE" = (
 /turf/closed/wall/shroud,
 /area/rogue/outdoors/exposed/church{
@@ -9980,10 +9871,7 @@
 	icon_state = "longtable"
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "iES" = (
 /obj/machinery/light/rogue/torchholder,
 /turf/closed/wall/mineral/rogue/stone,
@@ -10959,12 +10847,6 @@
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet)
-"jxn" = (
-/turf/closed/wall/mineral/rogue/wooddark,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
 "jxD" = (
 /obj/machinery/light/rogue/lanternpost,
 /turf/open/transparent/openspace,
@@ -11418,10 +11300,7 @@
 /obj/item/natural/bundle/fibers/full,
 /obj/item/natural/bundle/fibers/full,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "jUG" = (
 /obj/structure/roguemachine/scomm,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -11673,10 +11552,7 @@
 /obj/structure/bed/rogue/inn/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "kgt" = (
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/grass,
@@ -11864,10 +11740,7 @@
 "koY" = (
 /obj/structure/mineral_door/wood/fancywood,
 /turf/open/floor/rogue/grass,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "kpP" = (
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/rogue/greenstone,
@@ -12367,10 +12240,7 @@
 /obj/item/customblank,
 /obj/item/customblank,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "kMV" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/water/river{
@@ -12552,10 +12422,7 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "kXu" = (
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "cobweb2"
@@ -13016,9 +12883,7 @@
 /obj/structure/chair/stool/rogue,
 /obj/effect/decal/border/stone/inverted,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "ltr" = (
 /turf/closed/mineral/rogue,
 /area/rogue)
@@ -13058,10 +12923,7 @@
 "luC" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "luP" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
@@ -13520,10 +13382,7 @@
 /obj/effect/landmark/start/blacksmith,
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "lSd" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -13886,10 +13745,7 @@
 	})
 "mgj" = (
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "mgq" = (
 /obj/structure/bars/grille,
 /turf/open/transparent/openspace,
@@ -14475,10 +14331,7 @@
 "mCA" = (
 /obj/machinery/light/rogue/smelter/great,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "mCJ" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -14559,9 +14412,8 @@
 	pixel_y = 26
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
 	})
 "mET" = (
 /obj/structure/flora/roguegrass/water/reeds,
@@ -14647,12 +14499,6 @@
 "mLd" = (
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue)
-"mLG" = (
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
 "mLN" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor1-old"
@@ -14719,19 +14565,14 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "mPE" = (
 /obj/structure/mineral_door/wood{
 	lockid = "dungeon";
 	name = "Tradepost"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "mPT" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/rogue/grass,
@@ -14780,10 +14621,7 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/grass,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "mRo" = (
 /obj/item/chair/stool/bar/rogue/crafted,
 /obj/item/chair/stool/bar/rogue/crafted,
@@ -14942,9 +14780,7 @@
 "mZO" = (
 /obj/structure/handcart,
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "nab" = (
 /obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t9";
@@ -15105,10 +14941,7 @@
 /obj/item/natural/bundle/cloth,
 /obj/structure/fluff/wallclock,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "nhP" = (
 /obj/machinery/light/rogue/oven/south,
 /turf/open/floor/rogue/blocks/stonered/tiny,
@@ -15267,9 +15100,7 @@
 	icon_state = "barsbent"
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "nqo" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1";
@@ -15325,10 +15156,7 @@
 	icon_state = "barsbent"
 	},
 /turf/closed,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "nsg" = (
 /turf/closed/wall/mineral/rogue/stone/red_moss,
 /area/rogue)
@@ -15361,10 +15189,7 @@
 "nsQ" = (
 /obj/structure/closet/crate/drawer,
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "nsS" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/exposed/magiciantower{
@@ -15495,10 +15320,7 @@
 "nAu" = (
 /obj/structure/closet/crate/roguecloset,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "nAE" = (
 /obj/structure/flora/newtree,
 /turf/open/water/river,
@@ -15894,10 +15716,7 @@
 	icon_state = "tablewood1"
 	},
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "nRY" = (
 /obj/structure/roguemachine/scomm,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -16602,10 +16421,7 @@
 /area/rogue/under/cavewet)
 "oyp" = (
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "oyw" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/rogue/dirt,
@@ -17295,13 +17111,11 @@
 	name = "Silver Dragon"
 	})
 "pfl" = (
-/obj/machinery/light/rogue/torchholder{
-	pixel_y = 26
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
+/obj/machinery/light/rogue/torchholder,
+/turf/closed/wall/mineral/rogue/decowood,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
 	})
 "pfn" = (
 /turf/open/transparent/openspace,
@@ -17589,13 +17403,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
-"prk" = (
-/obj/structure/roguewindow,
-/turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
 "prw" = (
 /obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
@@ -17682,11 +17489,8 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cavewet)
 "puU" = (
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/indoors/shelter/town)
 "puV" = (
 /obj/structure/flora/newleaf{
 	icon_state = "branch-end1";
@@ -18009,17 +17813,13 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods)
 "pHX" = (
-/obj/structure/table/wood{
-	icon_state = "longtable_mid";
-	dir = 1
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
 	},
-/obj/structure/bars{
-	icon_state = "barsbent"
-	},
-/turf/closed,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
 	})
 "pIe" = (
 /obj/item/reagent_containers/glass/cup/steel,
@@ -18575,10 +18375,7 @@
 "qgP" = (
 /obj/machinery/light/rogue/torchholder,
 /turf/closed/wall/mineral/rogue/wooddark,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "qhd" = (
 /obj/effect/mist,
 /turf/open/water/river{
@@ -18603,10 +18400,7 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "qhX" = (
 /obj/item/natural/rock,
 /turf/open/water/swamp,
@@ -18732,10 +18526,7 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/grass,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "qmD" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/cobblerock,
@@ -18961,9 +18752,7 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "qyQ" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/spider,
 /turf/open/floor/rogue/dirt/ambush,
@@ -19182,10 +18971,7 @@
 /area/rogue)
 "qHi" = (
 /turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "qIc" = (
 /obj/structure/fluff/railing/wood,
 /obj/structure/fluff/railing/wood,
@@ -19313,11 +19099,13 @@
 	})
 "qNc" = (
 /obj/machinery/light/rogue/torchholder{
-	dir = 4
+	pixel_y = 26;
+	dir = 1
 	},
-/turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
+/turf/closed/wall/mineral/rogue/decowood,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
 	})
 "qNt" = (
 /obj/item/natural/stone,
@@ -19415,10 +19203,7 @@
 "qRQ" = (
 /obj/item/roguebin/water,
 /turf/open/floor/rogue/metal,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "qRR" = (
 /obj/structure/flora/newbranch{
 	dir = 8
@@ -19556,9 +19341,7 @@
 "qYq" = (
 /obj/effect/decal/border/stone/stonepattern1,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "qYD" = (
 /turf/open/water/swamp,
 /area/rogue/under/cave)
@@ -20225,10 +20008,7 @@
 /obj/structure/handcart,
 /obj/item/rogueweapon/pick/steel,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "rAo" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/grass,
@@ -20877,10 +20657,7 @@
 	pixel_y = -1
 	},
 /turf/open/transparent/openspace,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "siR" = (
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/outdoors{
@@ -21028,10 +20805,7 @@
 	},
 /obj/item/needle,
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "srB" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/rogue/rooftop{
@@ -22419,10 +22193,7 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "tDM" = (
 /obj/structure/flora/roguegrass/bush{
 	icon_state = "bush3"
@@ -23532,10 +23303,7 @@
 "uAh" = (
 /obj/machinery/light/rogue/forge,
 /turf/open/floor/rogue/metal,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "uAj" = (
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/rogue/dirt/road,
@@ -23553,10 +23321,7 @@
 /area/rogue/under/cavewet)
 "uAO" = (
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "uAS" = (
 /obj/structure/rack/rogue/shelf/big,
 /obj/item/grown/log/tree/small,
@@ -23967,10 +23732,7 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "uTr" = (
 /obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love."
@@ -24089,10 +23851,7 @@
 	dir = 1
 	},
 /turf/closed,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "uWS" = (
 /obj/structure/spacevine,
 /turf/open/floor/rogue/dirt,
@@ -24193,10 +23952,7 @@
 	pixel_y = -1
 	},
 /turf/open/transparent/openspace,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "vbo" = (
 /obj/item/natural/rock/iron,
 /turf/open/floor/rogue/dirt,
@@ -24394,9 +24150,7 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "vkp" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border{
@@ -24607,9 +24361,7 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "vud" = (
 /obj/structure/closet/crate/chest,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
@@ -24834,10 +24586,7 @@
 /obj/structure/bed/rogue/inn/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "vFu" = (
 /obj/structure/spacevine,
 /mob/living/simple_animal/hostile/retaliate/rogue/spider,
@@ -25125,12 +24874,6 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
-"vRf" = (
-/turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
 "vRh" = (
 /obj/structure/flora/grass/jungle,
 /turf/closed/wall/mineral/rogue/decowood,
@@ -25165,10 +24908,7 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/red,
 /obj/structure/closet/crate/roguecloset,
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "vSY" = (
 /turf/open/transparent/openspace,
 /area/rogue)
@@ -26596,10 +26336,7 @@
 /obj/structure/roguemachine/scomm,
 /obj/effect/landmark/start/shophand,
 /turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Seamsters Shoppe";
-	first_time_text = "Seamsters Shoppe"
-	})
+/area/rogue/indoors/shelter/town)
 "wZZ" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/road,
@@ -26846,9 +26583,7 @@
 "xjS" = (
 /obj/structure/roguemachine/atm,
 /turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "xjX" = (
 /obj/structure/flora/newtree,
 /turf/closed/mineral/rogue/bedrock,
@@ -27108,10 +26843,7 @@
 /obj/item/ingot/iron,
 /obj/item/ingot/iron,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "xvU" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -27274,10 +27006,7 @@
 "xCp" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town{
-	name = "Blacksmithy";
-	first_time_text = "Blacksmiths Shop"
-	})
+/area/rogue/indoors/shelter/town)
 "xCL" = (
 /obj/structure/table/wood{
 	icon_state = "longtable";
@@ -27608,9 +27337,7 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
+/area/rogue/indoors/shelter/town)
 "xPY" = (
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2"
@@ -302018,6 +301745,7 @@ svO
 qkz
 rzI
 hSz
+eCs
 hSz
 hSz
 hSz
@@ -302025,8 +301753,7 @@ hSz
 hSz
 hSz
 hSz
-hSz
-hSz
+eCs
 hSz
 pWZ
 qkz
@@ -303784,7 +303511,7 @@ iaw
 hSz
 hSz
 hSz
-qkz
+qNc
 iRm
 hlY
 hSz
@@ -304127,7 +303854,7 @@ eqw
 gWb
 acp
 svO
-qkz
+pfl
 hlY
 hlY
 hlY
@@ -304141,7 +303868,7 @@ hlY
 hlY
 hlY
 hlY
-qkz
+qNc
 jun
 svO
 bOe
@@ -407621,11 +407348,11 @@ nBn
 nBn
 equ
 oBN
-oBN
+pHX
 qzw
 gXA
 sPD
-oBN
+pHX
 oBN
 oBN
 eGO
@@ -409381,12 +409108,12 @@ xZm
 oBN
 oBN
 oBN
-qkz
+qNc
 cwH
 cwH
 cwH
 qkz
-oBN
+cYb
 oBN
 oBN
 bej
@@ -411139,7 +410866,7 @@ nsS
 qkz
 qkz
 qdu
-qkz
+qNc
 qkz
 nsS
 nsS
@@ -411149,7 +410876,7 @@ nsS
 qkz
 qkz
 qdu
-qkz
+qNc
 qkz
 nsS
 nsS
@@ -429378,7 +429105,7 @@ qHi
 rAi
 fge
 koY
-cYb
+irU
 irU
 irU
 bEs
@@ -429730,7 +429457,7 @@ qHi
 ayr
 oyp
 qHi
-cYb
+irU
 irU
 irU
 kDZ
@@ -430434,7 +430161,7 @@ brD
 auF
 xCp
 nrZ
-cYb
+irU
 irU
 irU
 mbW
@@ -430786,7 +430513,7 @@ mRk
 oyp
 lRP
 kXn
-cYb
+irU
 irU
 irU
 irU
@@ -431138,7 +430865,7 @@ oyp
 oyp
 iDB
 qHi
-cYb
+irU
 irU
 irU
 bPx
@@ -431831,7 +431558,7 @@ sTn
 qfJ
 qfJ
 qfJ
-puU
+qHi
 eLn
 uSl
 uAO
@@ -431841,8 +431568,8 @@ uAO
 uAO
 uAO
 uSl
-puU
-mLG
+qHi
+irU
 irU
 irU
 eQB
@@ -432183,18 +431910,18 @@ sTn
 qfJ
 qfJ
 qfJ
-puU
+qHi
 ngZ
 uAO
 uAO
 uAO
 uAO
-puU
+qHi
 qms
 uAO
 irA
 fSa
-mLG
+irU
 irU
 irU
 gCR
@@ -432535,18 +432262,18 @@ sTn
 qfJ
 qfJ
 qfJ
-puU
+qHi
 cDI
 luC
 jUu
 uAO
 aCn
-puU
-eCs
+qHi
+brD
 uAO
 luC
-pHX
-mLG
+nrZ
+irU
 irU
 irU
 sUc
@@ -432888,17 +432615,17 @@ qfJ
 qfJ
 qfJ
 qfJ
-jxn
-puU
-prk
-prk
-puU
-jxn
-eCs
+cDr
+qHi
+gEB
+gEB
+qHi
+cDr
+brD
 dcm
 uAO
-puU
-mLG
+qHi
+irU
 irU
 irU
 eQB
@@ -433246,11 +432973,11 @@ qfJ
 qfJ
 uNQ
 uNQ
-puU
+qHi
 app
 uAO
-puU
-djY
+qHi
+cmM
 irU
 irU
 irU
@@ -433598,11 +433325,11 @@ qfJ
 qfJ
 qfJ
 uNQ
-puU
+qHi
 wZS
 mOS
-eCu
-mLG
+koY
+irU
 irU
 irU
 irU
@@ -433950,11 +433677,11 @@ qfJ
 qfJ
 qfJ
 rUo
-jxn
-puU
-puU
-jxn
-pfl
+cDr
+qHi
+qHi
+cDr
+mEQ
 irU
 irU
 irU
@@ -436066,14 +435793,14 @@ qfJ
 qfJ
 qfJ
 qfJ
-iHP
-iHP
-fDu
-fDu
-fDu
-fDu
-iHP
-iHP
+cDr
+cDr
+puU
+puU
+puU
+puU
+cDr
+cDr
 qfJ
 qfJ
 qfJ
@@ -436418,14 +436145,14 @@ qfJ
 qfJ
 qfJ
 qfJ
-tAw
+qHi
 xjS
 qyL
-oGs
-oGs
+mgj
+mgj
 qyL
-oGs
-tAw
+mgj
+qHi
 qfJ
 qfJ
 qfJ
@@ -436768,18 +436495,18 @@ qfJ
 qfJ
 qfJ
 qfJ
-iHP
-tAw
-iHP
-oGs
-iHP
+cDr
+qHi
+cDr
+mgj
+cDr
 npZ
 dJF
-iHP
-oGs
-iHP
-tAw
-iHP
+cDr
+mgj
+cDr
+qHi
+cDr
 qfJ
 qfJ
 qfJ
@@ -437120,18 +436847,18 @@ qfJ
 qfJ
 qfJ
 qfJ
-tAw
+qHi
 mZO
-oGs
-oGs
+mgj
+mgj
 npZ
 ltp
 eFf
 npZ
-oGs
-oGs
+mgj
+mgj
 mZO
-tAw
+qHi
 qfJ
 qfJ
 qfJ
@@ -437472,18 +437199,18 @@ sYa
 iNG
 iNG
 iNG
-iHP
-oGs
-oGs
-oGs
-iHP
+cDr
+mgj
+mgj
+mgj
+cDr
 vtS
 qYq
-iHP
-oGs
-oGs
-oGs
-iHP
+cDr
+mgj
+mgj
+mgj
+cDr
 wZe
 wZe
 wZe
@@ -437825,16 +437552,16 @@ oGs
 oGs
 oGs
 fSK
-oGs
-oGs
-oGs
+mgj
+mgj
+mgj
 npZ
 xPQ
 vko
 npZ
-oGs
-oGs
-oGs
+mgj
+mgj
+mgj
 fSK
 oGs
 oGs
@@ -438177,16 +437904,16 @@ hHY
 hHY
 hHY
 fSK
-oGs
-oGs
-oGs
-iHP
+mgj
+mgj
+mgj
+cDr
 fHt
 npZ
-iHP
-oGs
-oGs
-oGs
+cDr
+mgj
+mgj
+mgj
 fSK
 iPi
 iPi
@@ -438528,18 +438255,18 @@ sYa
 qfJ
 qfJ
 qfJ
-iHP
-tAw
-tAw
+cDr
+qHi
+qHi
 bQI
-qNc
-oGs
-oGs
-qNc
-oGs
-tAw
-tAw
-iHP
+qhI
+mgj
+mgj
+qhI
+mgj
+qHi
+qHi
+cDr
 qfJ
 qfJ
 qfJ
@@ -438882,14 +438609,14 @@ qfJ
 qfJ
 qfJ
 qfJ
-tAw
-tAw
-oGs
-oGs
-oGs
-oGs
-tAw
-tAw
+qHi
+qHi
+mgj
+mgj
+mgj
+mgj
+qHi
+qHi
 qfJ
 qfJ
 qfJ
@@ -439235,12 +438962,12 @@ qfJ
 qfJ
 qfJ
 qfJ
-iHP
-fDu
-fDu
-iHP
+cDr
+puU
+puU
+cDr
 eIN
-iHP
+cDr
 qfJ
 qfJ
 qfJ
@@ -441349,7 +441076,7 @@ fZQ
 gRT
 qfJ
 aYx
-oGs
+djY
 pPE
 qfJ
 qfJ
@@ -534977,7 +534704,7 @@ vSY
 vSY
 qHi
 nAu
-vRf
+uAO
 qHi
 vSY
 vSY
@@ -535329,7 +535056,7 @@ vSY
 cDr
 qHi
 kMP
-vRf
+uAO
 tDB
 vSY
 vSY
@@ -535679,9 +535406,9 @@ pDV
 pDV
 pDV
 qgP
-vRf
-vRf
-vRf
+uAO
+uAO
+uAO
 qHi
 vSY
 vSY
@@ -536032,8 +535759,8 @@ tXi
 tXi
 qHi
 ecD
-vRf
-vRf
+uAO
+uAO
 qHi
 vSY
 vSY
@@ -536382,10 +536109,10 @@ tXi
 tXi
 tXi
 tXi
-aIJ
+dGO
 siG
-vRf
-vRf
+uAO
+uAO
 tDB
 vSY
 vSY
@@ -537086,11 +536813,11 @@ tXi
 tXi
 tXi
 tXi
-jxn
-puU
-puU
-puU
-jxn
+cDr
+qHi
+qHi
+qHi
+cDr
 vSY
 vSY
 vSY
@@ -537438,11 +537165,11 @@ tXi
 tXi
 tXi
 tXi
-puU
-fzE
+qHi
+siG
 vSR
 qhI
-puU
+qHi
 vSY
 vSY
 vSY
@@ -538142,11 +537869,11 @@ tXi
 tXi
 tXi
 tXi
-puU
+qHi
 vbk
 iEF
 mgj
-puU
+qHi
 vSY
 vSY
 vSY
@@ -538494,11 +538221,11 @@ jtd
 jtd
 jtd
 jtd
-jxn
+cDr
 mgj
 mgj
 mgj
-puU
+qHi
 vSY
 vSY
 vSY
@@ -538846,7 +538573,7 @@ vSY
 vSY
 vSY
 vSY
-jxn
+cDr
 cnB
 mgj
 mgj
@@ -539199,10 +538926,10 @@ vSY
 vSY
 vSY
 vSY
-puU
+qHi
 kgj
 nsQ
-puU
+qHi
 vSY
 vSY
 vSY
@@ -539551,10 +539278,10 @@ vSY
 vSY
 vSY
 vSY
-jxn
-puU
-puU
-jxn
+cDr
+qHi
+qHi
+cDr
 vSY
 vSY
 vSY
