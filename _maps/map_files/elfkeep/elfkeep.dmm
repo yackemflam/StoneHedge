@@ -750,6 +750,10 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
+"aIJ" = (
+/obj/structure/roguewindow/openclose,
+/turf/closed,
+/area/rogue/indoors/shelter/town)
 "aIU" = (
 /obj/structure/mineral_door/wood/fancywood,
 /turf/open/floor/rogue/greenstone,
@@ -859,12 +863,13 @@
 	first_time_text = "The Deepwoods"
 	})
 "aOR" = (
-/obj/machinery/light/rogue/lanternpost{
-	dir = 1
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
 	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
 	})
 "aOV" = (
 /obj/structure/flora/roguetree/happyrandom{
@@ -2549,12 +2554,6 @@
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cavewet)
-"cmM" = (
-/obj/structure/roguemachine/atm,
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
 "cnu" = (
 /obj/structure/table/wood{
 	icon_state = "longtable_mid";
@@ -3699,8 +3698,8 @@
 /turf/open/transparent/openspace,
 /area/rogue)
 "djY" = (
-/obj/effect/landmark/latejoin,
-/turf/open/floor/rogue/ruinedwood/herringbone,
+/obj/structure/roguemachine/atm,
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
@@ -4178,9 +4177,12 @@
 	},
 /area/rogue/outdoors/caves)
 "dGO" = (
-/obj/structure/roguewindow/openclose,
-/turf/closed,
-/area/rogue/indoors/shelter/town)
+/obj/machinery/light/rogue/torchholder,
+/turf/closed/wall/mineral/rogue/decowood,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "dGZ" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/herringbone,
@@ -5362,15 +5364,10 @@
 /obj/structure/flora/roguegrass/maneater/real,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods)
-"eCs" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 4
-	},
-/turf/open/floor/carpet/stellar,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
+"eCu" = (
+/obj/structure/mineral_door/wood/fancywood,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/shelter/town)
 "eDd" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/grass/jungle/b,
@@ -6395,6 +6392,13 @@
 "fze" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/caves)
+"fzE" = (
+/obj/structure/fluff/railing/wood{
+	dir = 2;
+	pixel_y = -1
+	},
+/turf/open/transparent/openspace,
+/area/rogue/indoors/shelter/town)
 "fzP" = (
 /obj/structure/flora/newtree,
 /obj/structure/flora/newtree,
@@ -7377,7 +7381,7 @@
 /obj/structure/stairs{
 	dir = 4
 	},
-/turf/open/floor/rogue/twig/platform,
+/turf/open/transparent/openspace,
 /area/rogue)
 "gtI" = (
 /obj/machinery/light/rogue/firebowl/stump,
@@ -7654,9 +7658,14 @@
 	name = "Adventurers Guild"
 	})
 "gEB" = (
-/obj/structure/roguewindow,
-/turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/shelter/town)
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
+	},
+/turf/open/floor/carpet/stellar,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "gEL" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/grass,
@@ -11737,10 +11746,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
-"koY" = (
-/obj/structure/mineral_door/wood/fancywood,
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors/shelter/town)
 "kpP" = (
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/rogue/greenstone,
@@ -17111,11 +17116,10 @@
 	name = "Silver Dragon"
 	})
 "pfl" = (
-/obj/machinery/light/rogue/torchholder,
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
+/obj/effect/landmark/latejoin,
+/turf/open/floor/rogue/ruinedwood/herringbone,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
 	})
 "pfn" = (
 /turf/open/transparent/openspace,
@@ -17403,6 +17407,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"prk" = (
+/obj/structure/roguewindow,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/shelter/town)
 "prw" = (
 /obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t5";
@@ -17489,7 +17497,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cavewet)
 "puU" = (
-/turf/open/floor/rogue/ruinedwood/turned,
+/turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/shelter/town)
 "puV" = (
 /obj/structure/flora/newleaf{
@@ -17814,9 +17822,10 @@
 /area/rogue/indoors/shelter/woods)
 "pHX" = (
 /obj/machinery/light/rogue/torchholder{
-	dir = 4
+	pixel_y = 26;
+	dir = 1
 	},
-/turf/open/floor/rogue/ruinedwood/spiral,
+/turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
@@ -18970,8 +18979,12 @@
 /turf/open/transparent/openspace,
 /area/rogue)
 "qHi" = (
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/shelter/town)
+/obj/effect/landmark/mapGenerator/sunlights{
+	endTurfX = 300;
+	endTurfY = 350
+	},
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue)
 "qIc" = (
 /obj/structure/fluff/railing/wood,
 /obj/structure/fluff/railing/wood,
@@ -19099,14 +19112,13 @@
 	})
 "qNc" = (
 /obj/machinery/light/rogue/torchholder{
-	pixel_y = 26;
-	dir = 1
+	dir = 8
 	},
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
+/obj/structure/stairs{
+	dir = 4
+	},
+/turf/open/floor/rogue/twig/platform,
+/area/rogue)
 "qNt" = (
 /obj/item/natural/stone,
 /obj/structure/flora/wildplant/wild_poppy,
@@ -20651,13 +20663,6 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
-"siG" = (
-/obj/structure/fluff/railing/wood{
-	dir = 2;
-	pixel_y = -1
-	},
-/turf/open/transparent/openspace,
-/area/rogue/indoors/shelter/town)
 "siR" = (
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/outdoors{
@@ -23320,7 +23325,7 @@
 	},
 /area/rogue/under/cavewet)
 "uAO" = (
-/turf/open/floor/rogue/wood/herringbone,
+/turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/shelter/town)
 "uAS" = (
 /obj/structure/rack/rogue/shelf/big,
@@ -24874,6 +24879,9 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
+"vRf" = (
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/shelter/town)
 "vRh" = (
 /obj/structure/flora/grass/jungle,
 /turf/closed/wall/mineral/rogue/decowood,
@@ -25772,7 +25780,7 @@
 	pixel_x = 1;
 	layer = 2.7
 	},
-/turf/open/floor/rogue/twig,
+/turf/open/transparent/openspace,
 /area/rogue)
 "wEK" = (
 /obj/structure/flora/grass/jungle,
@@ -239340,7 +239348,7 @@ sTn
 sTn
 sTn
 sTn
-sTn
+qHi
 "}
 (2,1,3) = {"
 sTn
@@ -301745,7 +301753,7 @@ svO
 qkz
 rzI
 hSz
-eCs
+gEB
 hSz
 hSz
 hSz
@@ -301753,7 +301761,7 @@ hSz
 hSz
 hSz
 hSz
-eCs
+gEB
 hSz
 pWZ
 qkz
@@ -303511,7 +303519,7 @@ iaw
 hSz
 hSz
 hSz
-qNc
+pHX
 iRm
 hlY
 hSz
@@ -303854,7 +303862,7 @@ eqw
 gWb
 acp
 svO
-pfl
+dGO
 hlY
 hlY
 hlY
@@ -303868,7 +303876,7 @@ hlY
 hlY
 hlY
 hlY
-qNc
+pHX
 jun
 svO
 bOe
@@ -326703,7 +326711,7 @@ tdH
 dEU
 dht
 irU
-bKe
+irU
 mpt
 wXu
 wXu
@@ -327055,7 +327063,7 @@ vrX
 pRw
 irU
 irU
-who
+bKe
 umd
 umd
 uNQ
@@ -327407,7 +327415,7 @@ irU
 irU
 irU
 irU
-cDn
+who
 cDn
 umd
 uNQ
@@ -328455,13 +328463,13 @@ kuF
 mmp
 mmp
 mmp
-mmp
-kuF
+bKe
 irU
 irU
 irU
-aOR
-iYB
+irU
+irU
+bKe
 who
 xOF
 cDn
@@ -336204,11 +336212,11 @@ xck
 vUj
 aMz
 siz
-mmp
+iHP
 wyl
 mmp
 cAh
-mmp
+iHP
 wLo
 mmp
 mmp
@@ -336558,7 +336566,7 @@ iYB
 aMz
 mmp
 mmp
-mmp
+iHP
 bgR
 bgR
 bgR
@@ -407348,11 +407356,11 @@ nBn
 nBn
 equ
 oBN
-pHX
+aOR
 qzw
 gXA
 sPD
-pHX
+aOR
 oBN
 oBN
 eGO
@@ -409108,7 +409116,7 @@ xZm
 oBN
 oBN
 oBN
-qNc
+pHX
 cwH
 cwH
 cwH
@@ -410866,7 +410874,7 @@ nsS
 qkz
 qkz
 qdu
-qNc
+pHX
 qkz
 nsS
 nsS
@@ -410876,7 +410884,7 @@ nsS
 qkz
 qkz
 qdu
-qNc
+pHX
 qkz
 nsS
 nsS
@@ -428750,8 +428758,8 @@ qfJ
 aMz
 aMz
 cDr
-qHi
-qHi
+puU
+puU
 cDr
 mEQ
 irU
@@ -429101,10 +429109,10 @@ qfJ
 qfJ
 uNQ
 mmp
-qHi
+puU
 rAi
 fge
-koY
+eCu
 irU
 irU
 irU
@@ -429453,10 +429461,10 @@ qfJ
 qfJ
 uNQ
 mmp
-qHi
+puU
 ayr
 oyp
-qHi
+puU
 irU
 irU
 irU
@@ -429800,16 +429808,16 @@ sTn
 qfJ
 qfJ
 cDr
-qHi
-gEB
-gEB
-qHi
+puU
+prk
+prk
+puU
 cDr
 brD
 oyp
 oyp
-qHi
-cmM
+puU
+djY
 irU
 irU
 shi
@@ -430150,13 +430158,13 @@ vSY
 qfJ
 qfJ
 qfJ
-qHi
+puU
 xvK
 oyp
 nRW
 oyp
 qRQ
-qHi
+puU
 brD
 auF
 xCp
@@ -430502,13 +430510,13 @@ vSY
 qfJ
 qfJ
 qfJ
-gEB
+prk
 icO
 oyp
 ctQ
 oyp
 uAh
-qHi
+puU
 mRk
 oyp
 lRP
@@ -430854,7 +430862,7 @@ sTn
 qfJ
 qfJ
 qfJ
-qHi
+puU
 mCA
 iDB
 oyp
@@ -430864,7 +430872,7 @@ oyp
 oyp
 oyp
 iDB
-qHi
+puU
 irU
 irU
 irU
@@ -431208,14 +431216,14 @@ qfJ
 qfJ
 qfJ
 cDr
-qHi
+puU
 brD
 brD
-qHi
+puU
 cDr
-qHi
-qHi
-qHi
+puU
+puU
+puU
 cDr
 mEQ
 irU
@@ -431558,17 +431566,17 @@ sTn
 qfJ
 qfJ
 qfJ
-qHi
+puU
 eLn
 uSl
-uAO
-uAO
-uAO
-uAO
-uAO
-uAO
+vRf
+vRf
+vRf
+vRf
+vRf
+vRf
 uSl
-qHi
+puU
 irU
 irU
 irU
@@ -431910,15 +431918,15 @@ sTn
 qfJ
 qfJ
 qfJ
-qHi
+puU
 ngZ
-uAO
-uAO
-uAO
-uAO
-qHi
+vRf
+vRf
+vRf
+vRf
+puU
 qms
-uAO
+vRf
 irA
 fSa
 irU
@@ -432262,15 +432270,15 @@ sTn
 qfJ
 qfJ
 qfJ
-qHi
+puU
 cDI
 luC
 jUu
-uAO
+vRf
 aCn
-qHi
+puU
 brD
-uAO
+vRf
 luC
 nrZ
 irU
@@ -432616,15 +432624,15 @@ qfJ
 qfJ
 qfJ
 cDr
-qHi
-gEB
-gEB
-qHi
+puU
+prk
+prk
+puU
 cDr
 brD
 dcm
-uAO
-qHi
+vRf
+puU
 irU
 irU
 irU
@@ -432973,11 +432981,11 @@ qfJ
 qfJ
 uNQ
 uNQ
-qHi
+puU
 app
-uAO
-qHi
-cmM
+vRf
+puU
+djY
 irU
 irU
 irU
@@ -433325,10 +433333,10 @@ qfJ
 qfJ
 qfJ
 uNQ
-qHi
+puU
 wZS
 mOS
-koY
+eCu
 irU
 irU
 irU
@@ -433678,8 +433686,8 @@ qfJ
 qfJ
 rUo
 cDr
-qHi
-qHi
+puU
+puU
 cDr
 mEQ
 irU
@@ -435795,10 +435803,10 @@ qfJ
 qfJ
 cDr
 cDr
-puU
-puU
-puU
-puU
+uAO
+uAO
+uAO
+uAO
 cDr
 cDr
 qfJ
@@ -436145,14 +436153,14 @@ qfJ
 qfJ
 qfJ
 qfJ
-qHi
+puU
 xjS
 qyL
 mgj
 mgj
 qyL
 mgj
-qHi
+puU
 qfJ
 qfJ
 qfJ
@@ -436496,7 +436504,7 @@ qfJ
 qfJ
 qfJ
 cDr
-qHi
+puU
 cDr
 mgj
 cDr
@@ -436505,7 +436513,7 @@ dJF
 cDr
 mgj
 cDr
-qHi
+puU
 cDr
 qfJ
 qfJ
@@ -436847,7 +436855,7 @@ qfJ
 qfJ
 qfJ
 qfJ
-qHi
+puU
 mZO
 mgj
 mgj
@@ -436858,7 +436866,7 @@ npZ
 mgj
 mgj
 mZO
-qHi
+puU
 qfJ
 qfJ
 qfJ
@@ -438256,16 +438264,16 @@ qfJ
 qfJ
 qfJ
 cDr
-qHi
-qHi
+puU
+puU
 bQI
 qhI
 mgj
 mgj
 qhI
 mgj
-qHi
-qHi
+puU
+puU
 cDr
 qfJ
 qfJ
@@ -438609,14 +438617,14 @@ qfJ
 qfJ
 qfJ
 qfJ
-qHi
-qHi
+puU
+puU
 mgj
 mgj
 mgj
 mgj
-qHi
-qHi
+puU
+puU
 qfJ
 qfJ
 qfJ
@@ -438963,8 +438971,8 @@ qfJ
 qfJ
 qfJ
 cDr
-puU
-puU
+uAO
+uAO
 cDr
 eIN
 cDr
@@ -441076,7 +441084,7 @@ fZQ
 gRT
 qfJ
 aYx
-djY
+pfl
 pPE
 qfJ
 qfJ
@@ -534351,8 +534359,8 @@ vSY
 vSY
 vSY
 cDr
-qHi
-qHi
+puU
+puU
 cDr
 vSY
 vSY
@@ -534702,10 +534710,10 @@ vSY
 vSY
 vSY
 vSY
-qHi
+puU
 nAu
-uAO
-qHi
+vRf
+puU
 vSY
 vSY
 oDZ
@@ -535054,9 +535062,9 @@ vSY
 vSY
 vSY
 cDr
-qHi
+puU
 kMP
-uAO
+vRf
 tDB
 vSY
 vSY
@@ -535406,10 +535414,10 @@ pDV
 pDV
 pDV
 qgP
-uAO
-uAO
-uAO
-qHi
+vRf
+vRf
+vRf
+puU
 vSY
 vSY
 vSY
@@ -535757,11 +535765,11 @@ oFJ
 tXi
 tXi
 tXi
-qHi
+puU
 ecD
-uAO
-uAO
-qHi
+vRf
+vRf
+puU
 vSY
 vSY
 vSY
@@ -536109,10 +536117,10 @@ tXi
 tXi
 tXi
 tXi
-dGO
-siG
-uAO
-uAO
+aIJ
+fzE
+vRf
+vRf
 tDB
 vSY
 vSY
@@ -536461,11 +536469,11 @@ tXi
 tXi
 oFJ
 tXi
-qHi
-siG
+puU
+fzE
 aIt
 vFa
-qHi
+puU
 vSY
 vSY
 vSY
@@ -536814,9 +536822,9 @@ tXi
 tXi
 tXi
 cDr
-qHi
-qHi
-qHi
+puU
+puU
+puU
 cDr
 vSY
 vSY
@@ -537165,11 +537173,11 @@ tXi
 tXi
 tXi
 tXi
-qHi
-siG
+puU
+fzE
 vSR
 qhI
-qHi
+puU
 vSY
 vSY
 vSY
@@ -537517,7 +537525,7 @@ oFJ
 tXi
 tXi
 tXi
-dGO
+aIJ
 fwV
 srp
 mgj
@@ -537869,11 +537877,11 @@ tXi
 tXi
 tXi
 tXi
-qHi
+puU
 vbk
 iEF
 mgj
-qHi
+puU
 vSY
 vSY
 vSY
@@ -538225,7 +538233,7 @@ cDr
 mgj
 mgj
 mgj
-qHi
+puU
 vSY
 vSY
 vSY
@@ -538926,10 +538934,10 @@ vSY
 vSY
 vSY
 vSY
-qHi
+puU
 kgj
 nsQ
-qHi
+puU
 vSY
 vSY
 vSY
@@ -539279,8 +539287,8 @@ vSY
 vSY
 vSY
 cDr
-qHi
-qHi
+puU
+puU
 cDr
 vSY
 vSY
@@ -541082,7 +541090,7 @@ vSY
 pBD
 qDO
 clV
-paj
+goL
 wiD
 vSY
 vSY
@@ -541434,7 +541442,7 @@ waa
 waa
 bYD
 waa
-goL
+sHC
 vSY
 vSY
 vSY
@@ -544973,7 +544981,7 @@ vSY
 kxD
 paj
 paj
-paj
+goL
 xQJ
 paj
 paj
@@ -546355,7 +546363,7 @@ paj
 irD
 paj
 paj
-irD
+qNc
 paj
 paj
 wiD
