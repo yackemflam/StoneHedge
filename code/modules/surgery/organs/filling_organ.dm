@@ -19,7 +19,7 @@
 	var/driprate = 0.1
 	var/spiller = FALSE //toggles if it will spill its contents when not plugged.
 	var/blocker = ITEM_SLOT_SHIRT //pick an item slot
-	var/processspeed = 3 SECONDS//will apply the said seconds cooldown each time before any spill or absorb happens.
+	var/processspeed = 5 SECONDS//will apply the said seconds cooldown each time before any spill or absorb happens.
 
 	//pregnancy vars
 	var/fertility = FALSE //can it be impregnated
@@ -101,8 +101,8 @@
 		var/tempdriprate = driprate
 		if((reagents.total_volume && spiller) || (reagents.total_volume > reagents.maximum_volume)) //spiller or above it's capacity to leak.
 			var/obj/item/clothing/blockingitem = H.mob_slot_wearing(blocker)
-			if(blockingitem && !blockingitem.genitalaccess) //if worn slot cover it, drip less.
-				tempdriprate *= 0.5
+			if(blockingitem && !blockingitem.genitalaccess) //if worn slot cover it, drip nearly nothing.
+				tempdriprate *= 0.1
 				if(H.has_quirk(/datum/quirk/selfawaregeni))
 					if(prob(5))
 						to_chat(H, pick(span_info("A little bit of [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [blockingitem.name]..."),
