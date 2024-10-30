@@ -309,7 +309,7 @@
 	})
 "aqh" = (
 /obj/structure/closet/crate/drawer,
-/turf/open/floor/rogue/cobble/mossy,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
@@ -993,18 +993,11 @@
 	name = "Shrine of Natures"
 	})
 "aUC" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	pixel_y = 7;
-	pixel_x = 1;
-	layer = 2.7
-	},
-/turf/closed/wall/mineral/rogue/wooddark{
-	icon_state = "wooddark-k"
-	},
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
+/obj/structure/roguetent,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
 	})
 "aVP" = (
 /obj/structure/flora/newtree,
@@ -14234,7 +14227,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 8
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
@@ -16874,7 +16867,8 @@
 	})
 "oPz" = (
 /obj/structure/bed/rogue/inn/wooldouble,
-/turf/open/floor/rogue/cobble/mossy,
+/obj/item/bedsheet/rogue/double_pelt,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
@@ -22793,6 +22787,7 @@
 	})
 "tZF" = (
 /obj/structure/table/vtable/v2,
+/obj/item/candle/skull/lit,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
@@ -23322,6 +23317,7 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
+/obj/item/candle/skull/lit,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
@@ -25621,15 +25617,13 @@
 	first_time_text = "The Dreamers Demesne.."
 	})
 "wuS" = (
-/obj/structure/fluff/railing/wood{
-	dir = 4;
-	layer = 2.8;
-	pixel_x = 8
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
 	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
 	})
 "wvk" = (
 /obj/structure/table/wood,
@@ -26269,16 +26263,6 @@
 /obj/effect/decal/remains/saiga,
 /turf/open/water/swamp,
 /area/rogue/under/cavewet)
-"wVZ" = (
-/obj/structure/fluff/railing/wood{
-	dir = 8;
-	pixel_y = -1
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
-	})
 "wWk" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/rogue/dirt,
@@ -27249,7 +27233,7 @@
 "xHZ" = (
 /obj/structure/closet/crate/drawer,
 /obj/structure/roguemachine/scomm,
-/turf/open/floor/rogue/cobble/mossy,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
@@ -316270,7 +316254,7 @@ ptS
 rWh
 fEP
 jyE
-bUj
+jUG
 bUj
 bUj
 mXO
@@ -318030,7 +318014,7 @@ ptS
 jyE
 jyE
 jyE
-jUG
+bUj
 bUj
 jyE
 jyE
@@ -429204,7 +429188,7 @@ boe
 gvb
 eGe
 xQd
-xQd
+gvb
 aux
 okU
 xQd
@@ -514091,9 +514075,9 @@ vEZ
 rAx
 rAx
 rAx
+wuS
 rAx
-rAx
-rAx
+wuS
 rAx
 rAx
 rAx
@@ -514442,11 +514426,11 @@ qkz
 tZF
 loJ
 rAx
-rAx
-rAx
-rAx
-rAx
-rAx
+cLK
+qkz
+aUC
+qkz
+cLK
 rAx
 rAx
 uwZ
@@ -514794,11 +514778,11 @@ qkz
 fgk
 rAx
 spI
-rAx
-rAx
-rAx
-rAx
-rAx
+qkz
+oBN
+oBN
+oBN
+qkz
 rAx
 rAx
 xRU
@@ -532691,7 +532675,7 @@ xQd
 xQd
 xQd
 gvb
-vHN
+wli
 vHN
 vHN
 vHN
@@ -533043,9 +533027,9 @@ dVb
 gvb
 gvb
 paJ
+wli
 vHN
 igk
-vHN
 vHN
 gvb
 bKp
@@ -533393,9 +533377,9 @@ gvb
 oHd
 xQd
 xQd
+eLH
 xQd
 wli
-vHN
 vHN
 vHN
 vHN
@@ -533745,9 +533729,9 @@ gvb
 iHk
 xQd
 jGK
-wuS
+xQd
+xQd
 poT
-vHN
 vHN
 gvb
 gvb
@@ -534097,8 +534081,8 @@ gvb
 ipM
 xQd
 jGK
-aUC
-vHN
+xQd
+ugu
 vHN
 vHN
 vHN
@@ -534806,7 +534790,7 @@ biQ
 vHN
 vHN
 gvb
-vHN
+gvb
 tEr
 xQd
 jGK
@@ -535153,8 +535137,8 @@ gvb
 twA
 xQd
 jGK
-aUC
-vHN
+xQd
+ugu
 vHN
 vHN
 vHN
@@ -535505,8 +535489,8 @@ uYQ
 gvb
 xQd
 jGK
-wVZ
-lOA
+xQd
+xQd
 lOA
 lOA
 lOA
