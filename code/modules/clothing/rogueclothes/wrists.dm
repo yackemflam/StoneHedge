@@ -6,15 +6,6 @@
 	sleevetype = "shirt"
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/clothing/wrists/roguetown/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		STR.max_w_class = WEIGHT_CLASS_SMALL
-		STR.max_items = 1
-		STR.rustle_sound = FALSE
-		STR.quickdraw = TRUE
-
 /obj/item/clothing/wrists/roguetown/bracers
 	name = "bracers"
 	desc = "Steel bracers to protect the forearm."
