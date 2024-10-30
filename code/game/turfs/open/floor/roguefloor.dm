@@ -140,7 +140,8 @@
 
 /turf/open/floor/rogue/grass
 	name = "grass"
-	desc = "Grass, sodden with mud and bogwater."
+	desc = "Grass, green and lush."
+	icon = 'modular_stonehedge/icons/turf/roguefloor.dmi'
 	icon_state = "grass"
 	layer = MID_TURF_LAYER
 	footstep = FOOTSTEP_GRASS
