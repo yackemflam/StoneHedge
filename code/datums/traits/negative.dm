@@ -354,7 +354,7 @@
 */
 /datum/quirk/nyctophobia
 	name = "Nyctophobia"
-	desc = ""
+	desc = "I fear the dark..."
 	value = -1
 	medical_record_text = "Patient demonstrates a fear of the dark. (Seriously?)"
 
@@ -366,16 +366,16 @@
 	var/lums = T.get_lumcount()
 	if(lums <= 0.2)
 		if(quirk_holder.m_intent == MOVE_INTENT_RUN)
-			to_chat(quirk_holder, span_warning("Easy, easy, take it slow... you're in the dark..."))
+			to_chat(quirk_holder, span_warning("Easy, easy, I need to take it slow... I am in the dark..."))
 			quirk_holder.toggle_move_intent(MOVE_INTENT_WALK)
 
 /datum/quirk/nonviolent
 	name = "Pacifist"
-	desc = ""
+	desc = "I can not get myself to harm a thing."
 	value = -6
 	mob_trait = TRAIT_PACIFISM
 	gain_text = span_danger("I feel repulsed by the thought of violence!")
-	lose_text = span_notice("I think you can defend myself again.")
+	lose_text = span_notice("I think I can defend myself again.")
 	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
 /*
 /datum/quirk/paraplegic

@@ -303,14 +303,10 @@
 		hand.bodypart = bodypart
 		hand.forceMove(target)
 		bodypart.add_embedded_object(hand, silent = TRUE, crit_message = FALSE)
-		if(user.zone_selected == BODY_ZONE_CHEST && !target.cmode) //must be out of combat mode and have erp panel allowed for this prompt to appear
-			target.visible_message(span_warning("A skeletal hand grips [target]'s [bodypart]!"), span_danger("A skeletal hand grips me [bodypart]!"))
-		//	var/choice = alert(target, "A skeletal hand attempts to grapple your private parts!", "", "Accept it!", "Fight it!")
-		//	switch(choice)
-		//	//IF YOU CHOOSE Accept it! - YOU RECIEVE PLEASURE
-		//		if("Accept it!")
-		//			hand.pleasureaccepted = TRUE
-		//		if("Fight it!")
+		target.visible_message(span_warning("A skeletal hand grips [target]'s [bodypart]!"), span_danger("A skeletal hand grips me [bodypart]!"))
+		if(user.zone_selected == BODY_ZONE_CHEST && !user.cmode && !target.cmode) //must be out of combat mode and have erp panel allowed for this prompt to appear
+			hand.pleasureaccepted = TRUE
+		else 
 			hand.pleasureaccepted = FALSE
 	return FALSE
 
