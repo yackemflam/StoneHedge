@@ -1,152 +1,168 @@
-"ag" = (/obj/effect/landmark/underworldsafe,/turf/open/floor/fakespace,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"an" = (/obj/effect/wisp,/obj/structure/spacevine,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"as" = (/obj/structure/flora/roguetree/happyrandom{icon_state = "t6"; desc = "An old, beloved tree that even elves could love."},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"aY" = (/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"bn" = (/obj/structure/underworld/carriage{pixel_x = -100},/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"bC" = (/turf/closed/wall/mineral/rogue/stone/moss,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"bL" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"ds" = (/obj/machinery/light/rogue/wallfire/candle/blue/l,/obj/structure/spacevine,/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"dw" = (/obj/structure/flora/grass/jungle/b,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"dx" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"dA" = (/obj/structure/spacevine,/obj/structure/closet/crate/chest,/obj/item/natural/feather,/obj/item/natural/feather,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"dO" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"dP" = (/obj/structure/flora/roguetree/happyrandom{icon_state = "t3"; desc = "An old, beloved tree that even elves could love."},/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"fa" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"ft" = (/obj/structure/flora/roguetree/underworld,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"fA" = (/obj/structure/flora/junglebush/c,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"gB" = (/obj/effect/landmark/underworldcoin,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"gD" = (/turf/open/floor/fakespace,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"hX" = (/obj/effect/wisp,/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"hZ" = (/obj/structure/underworld/barrier,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"iu" = (/obj/machinery/light/rogue/wallfire/candle/blue,/obj/structure/closet/crate/roguecloset/lord,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"iN" = (/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"jd" = (/obj/effect/landmark/underworld,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"jh" = (/obj/structure/chair/bench{dir = 8},/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"jC" = (/obj/effect/wisp,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"kj" = (/obj/structure/flora/roguetree/burnt,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"kO" = (/obj/structure/flora/roguetree/happyrandom,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"kP" = (/obj/structure/spacevine,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"li" = (/turf/closed/wall/mineral/rogue/wooddark,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"nd" = (/obj/structure/flora/roguetree/underworld,/obj/structure/flora/roguetree/underworld,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"np" = (/obj/structure/flora/grass/jungle/b,/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"nV" = (/obj/machinery/light/rogue/wallfire/candle/blue/l,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"pu" = (/obj/structure/flora/grass/jungle/b,/obj/effect/wisp,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"pD" = (/obj/structure/flora/grass/jungle/b,/obj/effect/wisp,/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"pN" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"qk" = (/obj/structure/flora/grass/jungle,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"qH" = (/obj/effect/landmark/underworldsafe,/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"qI" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"qK" = (/obj/effect/landmark/underworldsafe,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"qT" = (/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"rr" = (/obj/item/reagent_containers/glass/cup/skull,/obj/item/reagent_containers/glass/cup/skull,/obj/item/reagent_containers/glass/cup/skull,/obj/item/reagent_containers/glass/cup/skull,/obj/item/reagent_containers/glass/cup/skull,/obj/structure/table/wood,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"rM" = (/obj/machinery/light/rogue/wallfire/candle/blue/r,/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"rU" = (/obj/structure/mineral_door/wood/fancywood,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"sp" = (/obj/effect/wisp,/obj/structure/flora/grass/jungle,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"st" = (/obj/effect/wisp,/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"td" = (/obj/structure/flora/roguetree/underworld,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"uE" = (/obj/effect/wisp,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"wc" = (/obj/machinery/light/rogue/wallfire/candle/blue,/obj/structure/closet/crate/roguecloset/lord,/obj/item/reagent_containers/glass/bottle/rogue/milk,/obj/item/reagent_containers/glass/bottle/rogue/milk,/obj/structure/flora/grass/jungle/b,/obj/item/reagent_containers/glass/bottle/rogue/milk,/obj/item/reagent_containers/glass/bottle/rogue/milk,/obj/item/reagent_containers/glass/bottle/rogue/milk,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"wp" = (/obj/structure/flora/roguetree/underworld,/obj/structure/spacevine,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"wx" = (/turf/closed/wall/mineral/rogue/wooddark/window,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"xa" = (/obj/structure/flora/roguetree/underworld,/obj/structure/spacevine,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"xZ" = (/obj/structure/flora/roguetree/stump/log,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"yr" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"yA" = (/obj/effect/wisp,/obj/structure/flora/grass/jungle/b,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"yL" = (/obj/structure/flora/grass/jungle{icon_state = "grassa2"},/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"yN" = (/obj/structure/underworld/carriageman{pixel_x = -15; pixel_y = -20},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"za" = (/obj/structure/flora/grass/jungle{icon_state = "grassa1"},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"zp" = (/obj/effect/wisp,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"zA" = (/obj/effect/wisp,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"At" = (/obj/effect/wisp,/turf/open/floor/fakespace,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"AA" = (/obj/effect/landmark/underworldsafe,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"AE" = (/turf/closed/wall/shroud,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"AW" = (/obj/structure/flora/roguetree/underworld,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Bn" = (/turf/closed/wall/mineral/rogue/wooddark/horizontal,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Bt" = (/obj/effect/landmark/underworldcoin,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"BZ" = (/obj/structure/flora/roguetree/happyrandom{icon_state = "t3"; desc = "An old, beloved tree that even elves could love."},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"CN" = (/obj/structure/chair/stool/rogue,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"DH" = (/obj/structure/underworld/barrier,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Ee" = (/obj/structure/spacevine,/turf/open/floor/fakespace,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"EY" = (/obj/effect/landmark/underworldsafe,/obj/structure/spacevine,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Fy" = (/obj/structure/portal,/turf/open/floor/rogue/blocks/stone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"FE" = (/obj/structure/flora/roguetree/happyrandom{icon_state = "t8"; desc = "An old, beloved tree that even elves could love."},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"FV" = (/turf/closed/wall/mineral/rogue/wooddark/vertical,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"HD" = (/obj/effect/landmark/underworldcoin,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"IQ" = (/obj/structure/table/wood{icon_state = "tablewood1"; dir = 1},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"JD" = (/obj/structure/spacevine,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"JZ" = (/turf/closed/wall/mineral/rogue/decostone/mossy/cand,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Ks" = (/obj/structure/spacevine,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"KH" = (/obj/structure/flora/ausbushes/ppflowers,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"KQ" = (/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Lb" = (/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Ln" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/blocks/stone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"MU" = (/obj/structure/flora/roguetree/happyrandom{icon_state = "t12"; desc = "An old, beloved tree that even elves could love."},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Np" = (/turf/open/floor/rogue/blocks/stone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Nt" = (/obj/machinery/light/rogue/wallfire/candle/blue/r,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Pb" = (/obj/structure/flora/grass/jungle,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"PP" = (/obj/structure/underworld/barrier,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Rc" = (/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"RT" = (/obj/structure/flora/roguetree/burnt,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Sw" = (/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"SQ" = (/obj/structure/flora/grass/jungle/b,/obj/effect/wisp,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Tb" = (/obj/structure/flora/junglebush/b,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"TV" = (/obj/effect/wisp,/obj/structure/chair/bench,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Uy" = (/obj/structure/flora/roguetree/happyrandom,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"UP" = (/obj/effect/landmark/underworldsafe,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"VR" = (/obj/structure/flora/grass/jungle{icon_state = "grassa2"},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Wa" = (/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"Yt" = (/obj/structure/chair/bench{dir = 8},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
-"YT" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"ax" = (/obj/structure/underworld/barrier,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"aS" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"bf" = (/obj/structure/flora/grass/jungle{icon_state = "grassa1"},/mob/living/simple_animal/butterfly,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"bu" = (/obj/effect/wisp,/turf/open/floor/fakespace,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"bG" = (/turf/closed/wall/mineral/rogue/wooddark,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"bK" = (/obj/structure/flora/roguetree/underworld,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"dn" = (/obj/structure/flora/grass/jungle/b,/obj/effect/wisp,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"ds" = (/obj/effect/landmark/underworldsafe,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"dH" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"em" = (/obj/structure/flora/grass/jungle/b,/obj/effect/landmark/underworldsafe,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"ew" = (/obj/structure/chair/bench{dir = 8},/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"eW" = (/obj/structure/flora/ausbushes/ppflowers,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"gh" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"gD" = (/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"ha" = (/obj/structure/flora/roguetree/underworld,/obj/structure/spacevine,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"hm" = (/obj/structure/portal,/turf/open/floor/rogue/blocks/stone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"ht" = (/turf/closed/wall/mineral/rogue/wooddark/vertical,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"hU" = (/obj/structure/table/wood{icon_state = "tablewood1"; dir = 1},/turf/open/floor/rogue/hexstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"iH" = (/turf/closed/wall/mineral/rogue/wooddark/window,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"iL" = (/obj/effect/landmark/underworldsafe,/turf/open/floor/rogue/blocks/stone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"iV" = (/obj/structure/fluff/statue/gargoyle/moss,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"jQ" = (/obj/effect/wisp,/obj/structure/flora/grass/jungle,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"lA" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/blocks/stone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"lF" = (/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"lU" = (/obj/effect/wisp,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"mO" = (/mob/living/carbon/spirit,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"mW" = (/obj/structure/spacevine,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"no" = (/turf/closed/wall/mineral/rogue/decostone/mossy/cand,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"nP" = (/obj/structure/flora/roguetree/underworld,/obj/structure/flora/roguetree/underworld,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"oj" = (/obj/structure/flora/roguetree/burnt,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"pi" = (/obj/machinery/light/rogue/wallfire/candle/blue/l,/obj/structure/spacevine,/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"pu" = (/obj/structure/spacevine,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"px" = (/obj/structure/flora/roguetree/happyrandom,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"pz" = (/obj/effect/wisp,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"ri" = (/obj/structure/flora/grass/jungle{icon_state = "grassa2"},/obj/structure/flora/grass/jungle/b,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"rR" = (/obj/effect/landmark/underworldsafe,/turf/open/floor/fakespace,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"sc" = (/obj/structure/flora/roguetree/happyrandom{icon_state = "t8"; desc = "An old, beloved tree that even elves could love."},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"sZ" = (/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"tC" = (/obj/item/reagent_containers/glass/cup/skull,/obj/item/reagent_containers/glass/cup/skull,/obj/item/reagent_containers/glass/cup/skull,/obj/item/reagent_containers/glass/cup/skull,/obj/item/reagent_containers/glass/cup/skull,/obj/structure/table/wood,/turf/open/floor/rogue/hexstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"uS" = (/turf/closed/wall/shroud,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"vG" = (/obj/structure/flora/grass/jungle/b,/mob/living/carbon/spirit,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"wt" = (/obj/structure/underworld/carriage{pixel_x = -100},/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"wO" = (/obj/effect/wisp,/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"xc" = (/obj/structure/flora/grass/jungle{icon_state = "grassa2"},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"yv" = (/obj/structure/spacevine,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"zb" = (/obj/structure/chair/stool/rogue,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"zx" = (/obj/structure/flora/roguetree/underworld,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"zU" = (/obj/machinery/light/rogue/wallfire/candle/blue,/obj/structure/closet/crate/roguecloset/lord,/obj/item/reagent_containers/glass/bottle/rogue/milk,/obj/item/reagent_containers/glass/bottle/rogue/milk,/obj/structure/flora/grass/jungle/b,/obj/item/reagent_containers/glass/bottle/rogue/milk,/obj/item/reagent_containers/glass/bottle/rogue/milk,/obj/item/reagent_containers/glass/bottle/rogue/milk,/turf/open/floor/rogue/hexstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"zY" = (/mob/living/simple_animal/butterfly,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Be" = (/obj/effect/landmark/underworldsafe,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Bw" = (/obj/structure/flora/junglebush/b,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Bx" = (/turf/open/floor/rogue/blocks/stone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"By" = (/obj/effect/wisp,/obj/structure/spacevine,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"BC" = (/obj/effect/landmark/underworldcoin,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"BP" = (/obj/effect/wisp,/obj/structure/flora/grass/jungle{icon_state = "grassa2"},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"BV" = (/obj/structure/spacevine,/obj/structure/closet/crate/chest,/obj/item/natural/feather,/obj/item/natural/feather,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/obj/item/paper/scroll,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Cj" = (/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Ct" = (/obj/effect/landmark/underworldsafe,/obj/structure/spacevine,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"CR" = (/obj/machinery/light/rogue/wallfire/candle/blue,/obj/structure/closet/crate/roguecloset/lord,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/turf/open/floor/rogue/hexstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"CV" = (/obj/structure/flora/roguetree/happyrandom{icon_state = "t3"; desc = "An old, beloved tree that even elves could love."},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Dh" = (/obj/machinery/light/rogue/wallfire/candle/blue/l,/turf/open/floor/rogue/hexstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"DE" = (/obj/effect/landmark/underworldcoin,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"EF" = (/obj/structure/flora/grass/jungle/b,/mob/living/simple_animal/butterfly,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"EU" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"EX" = (/obj/structure/flora/grass/jungle/b,/obj/structure/fluff/statue/gargoyle/moss,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Fu" = (/obj/effect/landmark/underworldcoin,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Gc" = (/obj/structure/flora/grass/jungle,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Gf" = (/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Gp" = (/obj/machinery/light/rogue/wallfire/candle/blue/r,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"HB" = (/turf/closed/wall/mineral/rogue/stone/moss,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"In" = (/turf/open/floor/rogue/hexstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Jj" = (/obj/structure/spacevine,/turf/open/floor/fakespace,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"JO" = (/obj/structure/flora/grass/jungle/b,/obj/effect/wisp,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Kj" = (/obj/effect/wisp,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Kn" = (/obj/structure/flora/grass/jungle{icon_state = "grassa1"},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"KE" = (/turf/closed/wall/mineral/rogue/wooddark/horizontal,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Ll" = (/obj/structure/flora/roguetree/happyrandom{icon_state = "t6"; desc = "An old, beloved tree that even elves could love."},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Ln" = (/obj/machinery/light/rogue/wallfire/candle/blue/r,/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"LR" = (/obj/structure/flora/grass/jungle/b,/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Mq" = (/obj/structure/flora/grass/jungle{icon_state = "grassa2"},/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Nb" = (/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Np" = (/mob/living/simple_animal/butterfly,/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Ox" = (/obj/effect/wisp,/obj/structure/chair/bench,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"PG" = (/obj/effect/landmark/underworldsafe,/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"PX" = (/obj/effect/landmark/underworld,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Qd" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Qj" = (/obj/effect/landmark/underworldsafe,/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"QB" = (/obj/structure/mineral_door/wood/fancywood,/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"QL" = (/obj/structure/flora/grass/jungle/b,/obj/effect/wisp,/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Rn" = (/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Sb" = (/obj/effect/wisp,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Sc" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/blocks/stone/stonepattern3,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Sg" = (/obj/structure/table/wood{icon_state = "tablewood1"; dir = 1},/turf/open/floor/rogue/ruinedwood/spiral,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Sw" = (/obj/structure/underworld/carriageman{pixel_x = -15; pixel_y = -20},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Uo" = (/obj/structure/flora/roguetree/happyrandom,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Uv" = (/mob/living/simple_animal/butterfly,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"UB" = (/obj/structure/flora/roguetree/stump/log,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"UU" = (/turf/open/floor/fakespace,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"VQ" = (/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"VX" = (/obj/effect/landmark/underworldsafe,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Wb" = (/obj/structure/underworld/barrier,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Wn" = (/obj/structure/flora/grass/jungle,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Wx" = (/obj/structure/flora/junglebush/c,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"WU" = (/obj/structure/flora/roguetree/underworld,/obj/structure/spacevine,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"WV" = (/obj/structure/flora/roguetree/underworld,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Xl" = (/obj/effect/wisp,/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Xm" = (/obj/structure/flora/roguetree/happyrandom{icon_state = "t3"; desc = "An old, beloved tree that even elves could love."},/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Xv" = (/obj/structure/flora/grass/jungle{icon_state = "grassa2"},/mob/living/carbon/spirit,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"XT" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"XZ" = (/obj/structure/flora/roguetree/burnt,/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Yh" = (/obj/structure/chair/bench{dir = 8},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Yq" = (/obj/structure/underworld/barrier,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Yx" = (/obj/structure/flora/roguetree/happyrandom{icon_state = "t12"; desc = "An old, beloved tree that even elves could love."},/turf/open/floor/grass,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"YW" = (/obj/structure/flora/grass/jungle/b,/turf/open/water/cleanshallow,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
+"Zr" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/rogue/dirt,/area/rogue/under/cavewet/bogcaves/sunkencity/psydon{first_time_text = "Twilight Shores"; name = "Twilight Shores"})
 
 (1,1,1) = {"
-gDgDgDgDiNiNiNiNiNiNiNiNiNiNgDgDgDiNgDgDgDgDgDgDgDgDdPiNiNiNiNiNgDgDgDgDgDgDgDiNiNKsKsiNiNKsiNiNiNgD
-gDgDiNiNiNiNiNiNdPiNiNdPAAAAAAAAagagagagagagagagagagAAAAAAAAdPiNiNgDgDgDgDiNiNiNiNiNiNKsKsKsKsKsiNgD
-gDiNiNiNftKsiNiNiNiNiNAAiNiNiNiNiNdPgDgDgDiNiNdPiNiNiNiNiNiNAAiNiNgDgDiNiNiNiNiNiNiNiNiNiNiNdPiNgDgD
-gDiNiNiNftwpKsiNiNiNiNAAdPiNiNdPiNiNiNiNiNiNiNiNiNdPiNdPiNiNAAiNiNiNiNiNiNiNftiNiNiNiNiNiNiNiNgDgDgD
-iNiNiNiNiNftKsiNiNdPiNAAiNiNiNiNiNiNiNDHDHDHDHDHiNiNiNiNiNdPAAiNiNiNiNiNdPiNftftndndftftiNiNiNiNgDgD
-iNiNdPiNgDftiNiNiNiNiNAAiNiNiNiNiNiNiNDHhZbnDHiNiNkjiNKsKsiNAAiNiNiNiNiNiNiNiNKsKsftftftftiNiNiNiNgD
-iNiNiNgDgDiNiNdPiNiNiNqKRcRcRciNiNkjiNiNLbKQiNiNiNiNiNJDRcRcEYKsiNiNiNiNiNiNiNiNiNKsftndndftftftiNiN
-iNKsKsiNgDgDiNiNiNiNiNAWAWAWRcAWAWAWUyRcLbLbRcRcRcAWAWJDAWAWxaRcRcRcSwSwSwiNiNiNiNiNiNftftKsiNiNKsiN
-iNiNKswpiNiNiNSwSwRcUyJDAWRcasRcxZdxpNRcKQLbRcpNUyJDRcRcAWAWJDRcRcUyRcRcRcSwaYaYRTuEtdtdkPiNiNKsKsiN
-gDiNftftKsiNiNSwSwRcRcJDAWRcRcdxzaVRdxRcKQLbPPRcRcKHRcUyAWAWJDUydxRcRcRcRcuERcRcRcRcRcRcSwiNiNKsKsiN
-gDgDiNftwpiNiNSwUyRcRcRcAWRcRchXVRVRRcRcLbLbyNRcRcuERcRcAWRcRcRcSQdxRcRcRcAEAEAEAERcRcRcSwiNiNiNKsgD
-gDiNiNiNwpKsSwSwJDRcUyRcAWUyRcRcRczadxKQLbLbRcRcRcRcAWRcAWRcRcRcRcdxRcUyAEbCbCbCbCAERcRcSwiNiNiNiNgD
-iNiNKswpiNiNSwRcRcJDRcRcAWAWAWRcRcRcdxLbLbKQRcRcRciNAWRcRcUyRcUyRcRcbCbCbCbCbCbCbCbCbCUyaYaYiNiNgDgD
-iNiNiNwpftiNSwuERcJDJDUyRcJDAWRTiNiNRcLbKQdxRcRciNiNAWUyRcRcRTRcRcRcbCAEAEFyNpKQKQbCbCbCRctdftftiNgD
-iNiNiNKsKsiNSwRcRcRcJDJDRcJDAWRcRciNRcLbYTdxdxRciNRTAWRcRcRcRcuERcRcbCAEstKQKQKQfapDNpAERcSwiNftiNiN
-iNgDiNiNiNiNSwRcAWRcRcRcRcRcAWAWRTRcpNLbLbpNAWRcAWAWAWdxdxUyRcRcRcUybCfaKQKQKQKQNpfaNpAERcSwiNiNftiN
-iNgDgDiNiNSwSwAWRcRcRcRcUyRcAWAWAWRcRcLbLbRcRcUyRcAWAWRcdxRcdxdxRcRcbCLnfaKQKQKQNpKQAEbCRcSwSwiNftiN
-iNiNgDgDiNSwSwRcRcRcuERcRcRcJDAWAWUydxKQLbKQRcRcRTJDAWRcdxRcRcdxdxRcbCNpKQKQKQKQfafaAEbCUyuESwiNiNiN
-iNiNgDgDiNSwSwRcRcRcRcRcRcRcRcAWRcRcdxfaLbLbRcRcRcRcAWUyuERcRcRcdxRcJZKQKQKQKQKQuEdxdxJZRcRcSwiNiNiN
-dPiNiNgDiNSwkPRcRcRcRcRcRcRcRcAWRcdxRcKQjdLbdxRcRcRcRcRcRcRcRcRcRcRcRcKQKQNpNpRcRcRcdxdxRcRcaYiNKsiN
-iNiNiNiNiNSwJDAWJDRcRcRcRcRcuEAWUyRcdxRcLbLbdxdxFERcUyRcRcdxRcRcRcRcRcRcdxdxRcRcRcRcRcRcdxpuSwiNKsiN
-iNiNiNiNiNkPRcAWRcuERcRcRcRcRcRcqKqTdxdxLbLbRcdxdxRcqKRcRcRcdxdxRcRcRcRcRcdxqkRciNiNiNRcRcyrbLiNKsKs
-iNiNiNiNiNkPAWAWAWRcRcRcRcRcRcRcqKRcRcRcKQLbRcRcKHRcqKRcRcRcRcdxRcRcRcdxdxqkPbdwdwiNiNRcRcRcbLdwKsKs
-iNiNdPiNiNkPtdJDJDRcRcRcAWRcRcRcqKRcRcRcLbLbRcRcRcRcqKRcRcuERcRcRcRcRcTbdwPbyLiNdwiNiNRcRcRcSwdwdwiN
-iNiNiNiNiNKsSwSwSwSwSwkPkPAWRcRcRcqKqKqHUPUPqHqKqKqKRcRcRcRcRcdxRcRcRciNiNyLyLiNiNiNfARcJDSwiNiNiNiN
-iNiNiNiNftiNiNiNiNiNSwSwkPSwRcRTzadxRcdxLbKQRcRcRcRcRTRcJDRcRcdxSQRcRciNiNyLdwiNiNRcRcRcAWkPiNiNiNiN
-iNiNKsftftKsiNiNiNiNiNSwSwJDRcdxzaVRdxRcYTLbKQRcRcRcRcRcJDJDUyAWdxRcRcRciNiNdwdxRcuERckPtdndiNiNiNiN
-iNKsKsiNftiNiNiNiNiNiNSwRcRcRcdxVRVRdxRcKQLbLbYTdxRcRcRcRcJDiNAWJDJDUyRcRcRcRcRcRcRcRckPiNftiNiNdPiN
-iNiNftftiNiNiNiNiNiNiNSwRcRcBZdxVRzazaKHRcKQLbLbYTpNMUJDasJDiNftftftkPzpRcRcdxRcRcaYSwiNftftiNiNiNiN
-iNftiNiNiNgDiNdPiNiNRcRcRcRcRcyAVRVRzadxRcRcKQLbLbLbTVJDJDJDBZiNftiNKsiNSwSwbLbLaYSwiNiNftftKsKsKsiN
-iNiNiNiNgDgDiNiNiNRcRcRcUyRcRcRcdxVRdxdxdxRcKQLbKQLbKQqkzaJDRcRciNftftKsKsiNiNiNiNiNiNKsiNftftftKsiN
-iNiNiNiNgDgDiNiNiNRcBZRcuERcBZdxliwxliliuEKQqILbLbLbLbKQnpzaRcBZiNiNftftiNiNiNiNiNiNiNiNKsKsiNftKsiN
-iNiNiNdPgDiNiNiNiNRcRcRcRcRcRcwxwcrriuliBnwxliLbLbLbLbzALbRczaqTRciNiNftftiNiNiNiNdPiNiNiNiNftftiNiN
-iNKsiNiNiNiNiNiNiNBZRcRcBZRcRclinVWaWaIQCNrMliLbKQLbKQLbjhBZzaRcRciNiNiNiNiNiNiNiNiNiNiNiNiNiNiNiNiN
-iNKsKsiNiNiNdPiNiNRcRcUyRcuERcFVWaIQIQIQCNWawxLbKQLbLbLbfaqkspRcRcSwiNiNdPiNiNiNiNiNiNiNiNiNiNiNiNgD
-iNKsiNiNiNiNiNiNiNRcJDJDRcanRcwxWaCNCNCNWaWarULbLbLbLbLbpNVRdxRcUySwiNiNiNiNiNgDgDiNiNiNiNiNiNgDgDgD
-iNiNiNiNiNiNiNiNiNBZRcJDRcRcJDFVWaWaWaWaWaWarULbLbLbLbKQRcRcdxdxRcRciNiNiNiNgDgDgDgDiNiNiNiNKsiNgDgD
-iNiNiNiNiNiNiNiNiNRcRcJDJDBZJDlidsWaWaWaWaWawxKQLbLbKQYtBZRcRcRcRcBZiNiNiNiNiNiNgDgDgDiNdPiNKsiNgDgD
-iNiNiNdPiNiNiNftftiNBZRcJDRcRcwxdAdOCNIQCNNtliLbLbKQLbpNRcRcuERcRcaYiNdPiNiNiNiNiNgDgDgDiNiNKsiNiNiN
-iNiNiNiNiNiNiNftftftRcRcUyRcuERcliwxBnwxBnwxliLbYTKQRcRcRcuERcRcSwiNiNiNiNiNiNiNiNgDgDgDiNiNKsKsiNiN
-iNKsiNiNiNiNiNftndiNiNBZRcRcRcRcRcJDJDKHSQRcpNLbfadxRcRcRcRcRcRcSwiNiNiNgDiNiNiNdPgDgDiNiNiNiNKsiNgD
-iNKsiNiNiNiNiNndndiNiNSwaYRcRcRcRcRcJDRcRcdxRcLbRcRcRcRcRcRcRckOiNdPiNiNgDiNiNiNiNgDgDftiNiNiNiNiNgD
-KsKsiNiNiNiNftftftiNiNSwSwBZRcRcRcRcRcRcRcRcRcKQRcRcRcRcRcBZaYiNiNiNiNgDgDftftiNiNiNiNftiNiNiNiNgDgD
-iNKsKsiNftftndftiNiNiNiNiNSwaYRcgBRcRcRcRcgBRcRcRcRcRcRcqTSwSwiNiNiNiNiNgDgDftiNKsiNiNftftftftiNiNiN
-iNKsiNftndftftiNiNiNiNiNiNiNSwSwSwRcSwSwRcRcSwSwzpRcRcSwBtSwiNjCiNiNKsiNgDiNftiNKsKsKsiNiNftndftiNiN
-iNiNiNftftiNiNiNiNiNiNiNjCiNiNiNSwSwiNiNSwSwiNiNiNSwSwiNiNiNiNiNiNKsKsiNndftiNiNiNiNKsKsiNiNftftftft
-iNiNiNiNiNiNKsiNiNiNdPiNiNHDiNiNiNiNiNHDiNiNiNiNHDiNiNiNiNiNiNHDiNKsiNftndiNiNiNiNiNiNKsiNiNftftiNiN
-gDiNiNiNiNiNKsKsiNiNiNiNiNiNiNiNHDiNiNiNiNiNiNiNiNiNiNHDiNiNiNiNiNiNftftftiNiNiNiNdPiNiNiNiNiNftiNgD
-gDgDiNiNdPiNgDKsEegDjCiNgDgDgDiNiNgDgDAtiNiNgDgDiNjCiNgDgDgDjCiNiNftgDgDftftiNiNiNiNiNiNiNgDiNiNgDgD
-gDgDgDiNiNgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDgDiNgDgDgDgDiNiNiNiNiNiNgDgDgDgDgDgDgD
+UUUUUUUURnRnRnRnRnRnRnRnRnRnUUUUUURnUUUUUUUUUUUUUUUUXmRnRnRnRnRnUUUUUUUUUUUUUURnRnmWmWRnRnmWRnRnRnUU
+UUUURnRnRnRnRnRnXmRnRnXmdsdsdsdsrRrRrRrRrRrRrRrRrRrRdsdsdsdsXmRnRnUUUUUUUURnRnRnRnRnRnmWmWmWmWmWRnUU
+UURnRnRnzxmWRnRnRnRnRndsRnRnRnRnRnXmUUUUUURnRnXmRnRnRnRnRnRndsRnRnUUUURnRnRnRnRnRnRnRnRnRnRnXmRnUUUU
+UURnRnRnzxWUmWRnRnRnRndsXmRnRnXmRnRnRnRnRnRnRnRnRnXmRnXmRnRndsRnRnRnRnRnRnRnzxRnRnRnRnRnRnRnRnUUUUUU
+RnRnRnRnRnzxmWRnRnXmRndsRnRnRnRnRnRnRnYqYqYqYqYqRnRnRnRnRnXmdsRnRnRnRnRnXmRnzxzxnPnPzxzxRnRnRnRnUUUU
+RnRnXmRnUUzxRnRnRnRnRndsRnRnRnRnRnRnRnYqaxwtYqRnRnojRnmWmWRndsRnRnRnRnRnRnRnRnmWmWzxzxzxzxRnRnRnRnUU
+RnRnRnUUUURnRnXmRnRnRnBeCjCjCjRnRnojRnRnNbGfRnRnRnRnRnpuCjCjCtmWRnRnRnRnRnRnRnRnRnmWzxnPnPzxzxzxRnRn
+RnmWmWRnUUUURnRnRnRnRnWVWVWVCjWVWVWVpxiVNbNbiVCjCjWVWVpuWVWVhaCjCjCjsZsZsZRnRnRnRnRnRnzxzxmWRnRnmWRn
+RnRnmWWURnRnRnsZsZCjpxpuWVCjLlCjUBdHQdCjGfNbCjQdpxpuCjCjWVWVpuCjCjpxCjCjCjsZlFlFXZlUbKbKyvRnRnmWmWRn
+UURnzxzxmWRnRnsZsZCjCjpuWVCjzYdHKnxcdHCjGfNbWbCjCjeWCjpxWVWVpupxdHCjCjCjCjlUCjCjCjCjCjCjsZRnRnmWmWRn
+UUUURnzxWURnRnsZpxCjCjCjWVCjCjXlxcCjCjCjNbNbSwCjCjlUCjCjWVCjCjCjdndHCjCjCjuSuSuSuSCjCjCjsZRnRnRnmWUU
+UURnRnRnWUmWsZsZpuCjpxCjWVpxCjCjCjKndHGfPXNbCjCjCjCjWVCjWVCjCjCjCjdHCjpxuSHBHBHBHBuSCjCjsZRnRnRnRnUU
+RnRnmWWURnRnsZCjCjpuCjCjWVWVWVCjCjCjdHNbNbGfCjzYCjRnWVCjCjpxCjpxCjCjHBHBHBHBHBHBHBHBHBpxlFlFRnRnUUUU
+RnRnRnWUzxRnsZlUCjpupupxCjpuWVXZRnRniVNbGfEXCjCjRnRnWVpxCjCjXZmOCjCjHBuSuShmBxGfGfHBHBHBCjbKzxzxRnUU
+RnRnRnmWmWRnsZCjCjmOpupuCjpuWVCjCjRnCjNbaSdHdHCjRnXZWVCjCjCjCjlUCjCjHBuSwOGfGfGfScQLBxuSCjsZRnzxRnRn
+RnUURnRnRnRnsZCjWVCjCjCjCjCjWVWVXZCjQdNbNbQdWVCjWVWVWVdHdHpxCjCjCjpxHBScGfGfNpGfBxScBxuSCjsZRnRnzxRn
+RnUUUURnRnsZsZWVCjCjzYCjpxCjWVWVWVCjCjNbNbCjCjpxCjWVWVCjdHCjdHdHCjCjHBlAScGfGfGfBxGfuSHBCjsZsZRnzxRn
+RnRnUUUURnsZsZdHCjdHlUCjxcCjpuWVWVpxdHGfNbGfCjCjXZpuWVCjdHCjCjdHdHCjHBBxGfGfGfGfScScuSHBpxlUsZRnRnRn
+RnRnUUUURnsZsZdHdHKndHxcxcCjCjWVCjCjdHScNbNbCjCjCjCjWVpxlUCjCjCjdHCjnoGfGfGfGfGflUdHdHnoCjCjsZRnRnRn
+XmRnRnUURnsZyvCjdHdHKnridHCjCjWVCjdHCjGfNbNbdHCjCjCjCjCjCjCjCjCjCjCjCjPGPGiLiLBeBeBeemdHCjCjlFRnmWRn
+RnRnRnRnRnsZpuWVpuCjxcKndHzYlUWVpxCjdHCjNbNbdHdHscCjpxCjCjdHCjCjCjCjCjCjdHdHCjCjCjCjCjCjdHJOsZRnmWRn
+RnRnRnRnRnyvCjWVCjBPxcKnKndHCjCjBeVQdHdHNbNbCjdHdHCjBeCjCjCjdHdHCjzYCjCjCjdHWnCjRnRnRnzYCjEUZrRnmWmW
+RnRnRnRnRnyvWVWVWVridHCjCjCjdHCjBeCjCjiVGfNbiVCjeWCjBeCjCjCjCjdHCjCjCjdHdHWnGcYWYWRnRnCjCjCjZrYWmWmW
+RnRnXmRnRnyvbKpupuCjCjdHWVCjCjCjBeCjCjCjNbNbCjCjCjCjBeCjCjlUCjCjCjCjCjBwYWGcMqRnYWRnRnCjCjCjsZYWYWRn
+RnRnRnRnRnmWsZsZsZsZsZyvyvWVCjCjCjBeBeQjVXVXQjBeBeBeCjCjCjCjCjdHCjCjCjRnRnMqMqRnRnRnWxCjpusZRnRnRnRn
+RnRnRnRnzxRnRnRnRnRnsZsZyvsZCjXZKndHCjdHNbGfCjCjCjCjXZCjpuCjCjdHdnCjCjRnRnMqYWRnRnCjCjCjWVyvRnRnRnRn
+RnRnmWzxzxmWRnRnRnRnRnsZsZpuCjdHKnxcdHCjaSNbGfCjCjCjCjCjpupupxWVdHCjCjCjRnRnEFdHCjlUCjyvbKnPRnRnRnRn
+RnmWmWRnzxRnRnRnRnRnRnsZCjCjCjdHxcxcdHCjGfNbNbaSEXCjCjCjCjpuRnWVpupupxCjCjCjCjCjCjCjCjyvRnzxRnRnXmRn
+RnRnzxzxRnRnRnRnRnRnRnsZCjCjCVdHXvbfKneWCjGfNbNbaSQdYxpuLlpuRnzxzxzxyvpzCjCjdHCjCjlFsZRnzxzxRnRnRnRn
+RnzxRnRnRnUURnXmRnRnCjCjCjCjCjdHxcxcKndHCjCjGfNbNbNbOxpupupuCVRnzxRnmWRnsZsZZrZrlFsZRnRnzxzxmWmWmWRn
+RnRnRnRnUUUURnRnRnCjCjCjpxCjCjCjdHxcdHdHdHiVGfNbGfNbGfWnKnpuCjCjRnzxzxmWmWRnRnRnRnRnRnmWRnzxzxzxmWRn
+RnRnRnRnUUUURnRnRnCjCVCjlUCjCVdHbGiHbGbGlUGfXTNbNbNbNbGfLRKnCjCVRnRnzxzxRnRnRnRnRnRnRnRnmWmWRnzxmWRn
+RnRnRnXmUURnRnRnRnCjCjCjCjCjCjiHzUtCCRbGKEiHbGNbNbNbNbKjNbCjKnVQCjRnRnzxzxRnRnRnRnXmRnRnRnRnzxzxRnRn
+RnmWRnRnRnRnRnRnRnCVCjCjCVCjCjbGDhInInhUzbLnbGNbGfNbGfNbewCVKnCjCjRnRnRnRnRnRnRnRnRnRnRnRnRnRnRnRnRn
+RnmWmWRnRnRnXmRnRnCjCjpxCjlUCjhtInhUhUhUzbgDiHNbGfNbNbNbScWnjQCjCjsZRnRnXmRnRnRnRnRnRnRnRnRnRnRnRnUU
+RnmWRnRnRnRnRnRnRnCjpupuCjByCjiHgDzbzbzbgDgDQBVXNbNbNbNbQdxcdHCjpxsZRnRnRnRnRnUUUURnRnRnRnRnRnUUUUUU
+RnRnRnRnRnRnRnRnRnCVCjpuCjCjpuhtgDgDgDgDgDgDQBVXNbNbNbGfCjCjdHvGCjCjRnRnRnRnUUUUUUUURnRnRnRnmWRnUUUU
+RnRnRnRnRnRnRnRnRnCjCjpupuCVpubGpigDgDgDgDgDiHGfNbNbGfYhCVCjzYCjCjCVRnRnRnRnRnRnUUUUUURnXmRnmWRnUUUU
+RnRnRnXmRnRnRnzxzxRnCVCjpuCjCjiHBVghzbSgzbGpbGNbNbGfNbQdCjCjlUCjCjlFRnXmRnRnRnRnRnUUUUUURnRnmWRnRnRn
+RnRnRnRnRnRnRnzxzxzxCjCjpxCjlUCjbGiHKEiHKEiHbGNbaSGfCjCjCjlUCjCjsZRnRnRnRnRnRnRnRnUUUUUURnRnmWmWRnRn
+RnmWRnRnRnRnRnzxnPRnRnCVCjCjCjCjCjpupueWdnCjQdNbScdHCjCjCjCjCjCjsZRnRnRnUURnRnRnXmUUUURnRnRnRnmWRnUU
+RnmWRnRnRnRnRnnPnPRnRnsZlFCjzYCjCjCjpuCjCjdHCjNbCjCjCjCjCjCjCjUoRnXmRnRnUURnRnRnRnUUUUzxRnRnRnRnRnUU
+mWmWRnRnRnRnzxzxzxRnRnsZsZCVCjCjCjCjCjCjCjCjCjGfCjCjCjCjCjCVlFRnRnRnRnUUUUzxzxRnRnRnRnzxRnRnRnRnUUUU
+RnmWmWRnzxzxnPzxRnRnRnRnRnsZlFCjFuzYCjCjCjFuCjCjCjCjCjCjVQsZsZRnRnRnRnRnUUUUzxRnmWRnRnzxzxzxzxRnRnRn
+RnmWRnzxnPzxzxRnRnRnRnRnRnRnsZsZsZCjsZsZCjCjsZsZpzCjCjsZBCsZRnSbRnRnmWRnUURnzxRnmWmWmWRnRnzxnPzxRnRn
+RnRnRnzxzxRnRnRnRnRnRnRnSbRnRnRnsZsZRnRnsZsZRnRnRnsZUvRnRnRnRnRnRnmWmWRnnPzxRnRnRnRnmWmWRnRnzxzxzxzx
+RnRnRnRnRnRnmWRnRnRnXmRnRnDERnRnRnRnRnDERnRnRnRnDERnRnRnRnRnRnDERnmWRnzxnPRnRnRnRnRnRnmWRnRnzxzxRnRn
+UURnRnRnRnRnmWmWRnRnRnRnRnRnRnRnDERnRnRnRnRnRnRnRnRnRnDERnRnRnRnRnRnzxzxzxRnRnRnRnXmRnRnRnRnRnzxRnUU
+UUUURnRnXmRnUUmWJjUUSbRnUUUUUURnRnUUUUbuRnRnUUUURnSbRnUUUUUUSbRnRnzxUUUUzxzxRnRnRnRnRnRnRnUURnRnUUUU
+UUUUUURnRnUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUURnUUUUUUUURnRnRnRnRnRnUUUUUUUUUUUUUU
 "}
