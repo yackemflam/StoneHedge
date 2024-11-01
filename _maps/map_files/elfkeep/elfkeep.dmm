@@ -538,12 +538,12 @@
 	first_time_text = "The Deepwoods"
 	})
 "avN" = (
-/obj/machinery/light/rogue/wallfire/candle/l,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/obj/structure/fluff/statue/knight,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "avQ" = (
-/obj/structure/fluff/statue/myth,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/obj/structure/bearpelt,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "avX" = (
 /obj/effect/overlay/water,
@@ -840,7 +840,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 6
 	},
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "aHx" = (
 /obj/structure/flora/newbranch/connector{
@@ -1501,6 +1501,12 @@
 	first_time_text = "Underkeep";
 	name = "Underkeep"
 	})
+"bgt" = (
+/obj/structure/table/church{
+	icon_state = "churchtable_end_alt"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/shelter/town/dwarf)
 "bgv" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
@@ -1786,8 +1792,8 @@
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
 "bss" = (
-/obj/machinery/light/rogue/hearth,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/obj/machinery/light/rogue/oven/east,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "bsw" = (
 /obj/machinery/light/rogue/smelter/great,
@@ -2709,7 +2715,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 4
 	},
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "ccM" = (
 /obj/item/natural/rock,
@@ -3719,7 +3725,7 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_mid"
 	},
-/turf/open/floor/rogue/metal,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "cPb" = (
 /turf/open/floor/rogue/grass,
@@ -5603,7 +5609,7 @@
 	pixel_x = 8
 	},
 /obj/machinery/light/rogue/hearth,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
 "egK" = (
 /obj/structure/flora/grass/jungle/b,
@@ -9396,9 +9402,7 @@
 	name = "Underkeep"
 	})
 "hfG" = (
-/obj/structure/chair/wood/rogue/throne,
-/obj/item/clothing/head/roguetown/helmet/winged,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "hfQ" = (
 /obj/structure/flora/newbranch/connector{
@@ -11843,7 +11847,7 @@
 	})
 "iWp" = (
 /obj/machinery/light/rogue/firebowl/stump,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "iWO" = (
 /obj/item/natural/stone,
@@ -12684,7 +12688,7 @@
 /obj/item/bodypart/r_arm/rprosthetic/iron,
 /obj/item/bodypart/l_arm/rprosthetic/iron,
 /obj/item/bodypart/r_arm/rprosthetic/steel,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "jCq" = (
 /obj/effect/mist,
@@ -12805,8 +12809,8 @@
 	name = "Wood elf Tribes"
 	})
 "jIA" = (
-/obj/structure/fluff/psycross/copper,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/obj/machinery/light/rogue/firebowl/church,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "jIR" = (
 /obj/structure/fluff/railing/border{
@@ -12861,7 +12865,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 10
 	},
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "jNI" = (
 /obj/structure/well/fountain,
@@ -14370,7 +14374,7 @@
 	redstone_id = "Dwarfgate1";
 	gid = "Dwarfgate1"
 	},
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "kZk" = (
 /obj/structure/fluff/statue/gargoyle/moss/candles,
@@ -15366,7 +15370,7 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_end"
 	},
-/turf/open/floor/rogue/metal,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "lPr" = (
 /obj/structure/fluff/railing/wood{
@@ -16700,8 +16704,8 @@
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/shelter/town)
 "mPu" = (
-/obj/structure/fluff/railing/border,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/obj/structure/fluff/statue/knight/r,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "mPE" = (
 /obj/structure/mineral_door/wood{
@@ -17468,9 +17472,10 @@
 	first_time_text = "The Twilight Woods"
 	})
 "nvh" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/glass/cup/golden,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/obj/structure/table/church{
+	icon_state = "churchtable_end_alt"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
 "nvr" = (
 /obj/structure/chair/wood/rogue{
@@ -17947,7 +17952,10 @@
 /area/rogue/under/cavewet)
 "nOO" = (
 /obj/structure/fluff/psycross/copper,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/obj/structure/table/church{
+	icon_state = "churchtable_mid_alt"
+	},
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "nPc" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
@@ -27300,7 +27308,7 @@
 "uUT" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/cup/golden,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "uVc" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy,
@@ -27327,7 +27335,7 @@
 	})
 "uVQ" = (
 /obj/structure/fluff/railing/border,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "uWb" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -27536,7 +27544,7 @@
 /area/rogue)
 "vcf" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "vci" = (
 /obj/structure/flora/roguetree/happyrandom{
@@ -27558,7 +27566,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 8
 	},
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "vcK" = (
 /obj/structure/flora/grass/jungle/b,
@@ -28075,7 +28083,7 @@
 "vzA" = (
 /obj/structure/chair/wood/rogue/throne,
 /obj/item/clothing/head/roguetown/helmet/winged,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "vzE" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -28630,7 +28638,7 @@
 	})
 "vWI" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "vWS" = (
 /obj/structure/flora/roguegrass/water,
@@ -31223,7 +31231,7 @@
 /area/rogue/outdoors/river)
 "xOl" = (
 /obj/structure/fluff/statue/myth,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "xOm" = (
 /obj/structure/flora/grass/jungle/b,
@@ -53821,12 +53829,12 @@ gMP
 thJ
 nnN
 gGl
-nfR
+bss
 faS
 nfR
 faS
 nfR
-boo
+hfG
 thJ
 gdN
 utS
@@ -54164,7 +54172,7 @@ oER
 oER
 oER
 kzb
-tfc
+hfG
 boo
 boo
 boo
@@ -55933,7 +55941,7 @@ gCm
 tfc
 nnN
 qlS
-boo
+hfG
 boo
 boo
 boo
@@ -57332,13 +57340,13 @@ grF
 iwu
 utS
 kzb
-cqy
-boo
+jIA
+hfG
 gjb
-boo
-boo
+hfG
+hfG
 gjb
-boo
+hfG
 kzb
 pJv
 boo
@@ -57684,13 +57692,13 @@ utS
 grF
 grF
 nnN
-boo
+hfG
 tfc
 lyy
 tfc
 boo
 lyy
-boo
+hfG
 pBA
 tfc
 boo
@@ -58037,7 +58045,7 @@ grF
 grF
 thJ
 nOO
-tfc
+bgt
 boo
 tfc
 tfc
@@ -58388,7 +58396,7 @@ grF
 grF
 grF
 thJ
-aIy
+jvG
 aIy
 hDP
 boo
@@ -58739,8 +58747,8 @@ utS
 utS
 grF
 grF
-thJ
-jvG
+nnN
+aIy
 aIy
 cOX
 boo
@@ -59091,8 +59099,8 @@ grF
 utS
 grF
 grF
-thJ
-jvG
+nnN
+aIy
 aIy
 lPe
 boo
@@ -59444,7 +59452,7 @@ utS
 grF
 grF
 thJ
-aIy
+jvG
 aIy
 lhL
 boo
@@ -59796,8 +59804,8 @@ grF
 grF
 grF
 thJ
-jIA
-boo
+nOO
+nvh
 boo
 boo
 tfc
@@ -60148,13 +60156,13 @@ grF
 grF
 grF
 nnN
-boo
+hfG
 tfc
 lyy
 boo
 tfc
 lyy
-boo
+hfG
 pBA
 boo
 boo
@@ -60500,13 +60508,13 @@ utS
 grF
 grF
 kzb
-cqy
-boo
+jIA
+hfG
 gjb
-boo
-boo
+hfG
+hfG
 gjb
-boo
+hfG
 kzb
 boo
 boo
@@ -61204,15 +61212,15 @@ grF
 ogt
 duc
 cgy
-avN
-boo
-avQ
+vcf
+hfG
+xOl
 vcf
 afd
-lhL
+avN
 boo
 boo
-lhL
+avN
 tfc
 boo
 boo
@@ -61557,9 +61565,9 @@ oER
 nXg
 aIy
 xOl
-boo
+hfG
 uUT
-tfc
+hfG
 htV
 boo
 tfc
@@ -61908,10 +61916,10 @@ oER
 oER
 nXg
 aIy
-nvh
-boo
+uUT
+hfG
 vzA
-boo
+hfG
 pZp
 boo
 boo
@@ -62259,7 +62267,7 @@ oER
 oER
 oER
 gMP
-tfc
+hfG
 vzA
 aGX
 ccA
@@ -62612,7 +62620,7 @@ oER
 oER
 nXg
 aIy
-boo
+avQ
 uVQ
 eYH
 upO
@@ -62964,8 +62972,8 @@ oER
 oER
 nXg
 aIy
-tfc
-mPu
+hfG
+uVQ
 eYH
 qir
 qaA
@@ -63315,11 +63323,11 @@ oER
 oER
 oER
 gMP
-tfc
 hfG
+vzA
 jNE
 vcG
-bss
+uuW
 pZp
 ayY
 boo
@@ -63669,9 +63677,9 @@ oER
 nXg
 aIy
 uUT
-tfc
 hfG
-boo
+vzA
+hfG
 pZp
 lUF
 boo
@@ -64020,10 +64028,10 @@ oER
 oER
 nXg
 aIy
-avQ
-tfc
-nvh
-tfc
+xOl
+hfG
+uUT
+hfG
 htV
 eUe
 boo
@@ -64373,18 +64381,18 @@ oER
 duc
 mLQ
 vWI
-boo
-avQ
+hfG
+xOl
 vWI
 afd
-hDP
+mPu
 eUe
 eUe
-hDP
+mPu
 boo
 boo
 boo
-ayY
+iWp
 kzb
 tdq
 iwu
