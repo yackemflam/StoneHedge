@@ -68,18 +68,22 @@
 	var/mob/living/carbon/human/H = described
 	var/obj/item/organ/penis/penis = H.getorganslot(ORGAN_SLOT_PENIS)
 	var/adjective
-	switch(penis.penis_size)
+	switch(penis.organ_size)
 		if(1)
 			adjective = "a small"
 		if(2)
 			adjective = "an average"
 		if(3)
 			adjective = "a large"
+		if(4)
+			adjective = "a massive"
+		if(5)
+			adjective = "a colossal"
 	var/used_name
 	if(penis.erect_state != ERECT_STATE_HARD && penis.sheath_type != SHEATH_TYPE_NONE)
 		switch(penis.sheath_type)
 			if(SHEATH_TYPE_NORMAL)
-				if(penis.penis_size == 3)
+				if(penis.organ_size == 3)
 					used_name = "a fat sheath"
 				else
 					used_name = "a sheath"
@@ -122,7 +126,47 @@
 			adjective = "an average"
 		if(3)
 			adjective = "a large"
+		if(3)
+			adjective = "a massive"
+		if(3)
+			adjective = "a gigantic"
 	return "[adjective] pair of balls"
+
+/datum/mob_descriptor/butt
+	name = "balls"
+	slot = MOB_DESCRIPTOR_SLOT_BUTT
+	verbage = "has"
+	show_obscured = TRUE
+
+/datum/mob_descriptor/butt/can_describe(mob/living/described)
+	if(!ishuman(described))
+		return FALSE
+	var/mob/living/carbon/human/H = described
+	var/obj/item/organ/butt/buttie = H.getorganslot(ORGAN_SLOT_BUTT)
+	if(!buttie)
+		return FALSE
+	if(H.underwear)
+		return FALSE
+	if(!get_location_accessible(H, BODY_ZONE_PRECISE_GROIN))
+		return FALSE
+	return TRUE
+
+/datum/mob_descriptor/butt/get_description(mob/living/described)
+	var/mob/living/carbon/human/H = described
+	var/obj/item/organ/butt/buttie = H.getorganslot(ORGAN_SLOT_BUTT)
+	var/adjective
+	switch(buttie.organ_size)
+		if(1)
+			adjective = "a small"
+		if(2)
+			adjective = "an average"
+		if(3)
+			adjective = "a large"
+		if(4)
+			adjective = "a massive"
+		if(5)
+			adjective = "a colossal"
+	return "[adjective] ass"
 
 /datum/mob_descriptor/vagina
 	name = "vagina"
@@ -198,4 +242,6 @@
 			adjective = "a large"
 		if(5)
 			adjective = "an enormous"
+	if(breasts.organ_size >= 6) //lazy
+		adjective = "a colossal"
 	return "[adjective] pair of breasts"

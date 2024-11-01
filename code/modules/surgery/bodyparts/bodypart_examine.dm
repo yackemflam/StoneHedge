@@ -129,10 +129,10 @@
 			if(owner.has_penis() || salami)
 				var/obj/item/organ/penis/ownerpenis = owner.getorgan(/obj/item/organ/penis)
 				if (ownerpenis)
-					if (ownerpenis.penis_size == 3 && salami)
+					if (ownerpenis.organ_size == 3 && salami)
 						bodypart_status += "[owner] has an emormous penis."
 					else
-						bodypart_status += "[owner] has a [find_key_by_value(GLOB.named_penis_sizes, ownerpenis.penis_size+penisAdd)] penis."
+						bodypart_status += "[owner] has a [find_key_by_value(GLOB.named_penis_sizes, ownerpenis.organ_size+penisAdd)] penis."
 				else
 					bodypart_status += "[owner] has a [find_key_by_value(GLOB.named_penis_sizes, 1)] penis."
 			if(owner.has_testicles())

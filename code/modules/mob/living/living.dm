@@ -215,6 +215,7 @@
 	if(!(M.status_flags & CANPUSH))
 		return TRUE
 	if(isliving(M))
+		M.mob_timers[MT_SNEAKATTACK] = world.time //Why shouldn't you know you're walking into someone stealthed? You JUST bumped into them.
 		var/mob/living/L = M
 		if(HAS_TRAIT(L, TRAIT_PUSHIMMUNE))
 			return TRUE
@@ -679,7 +680,7 @@
 			var/obj/item/organ/wings/Wing = src.getorganslot(ORGAN_SLOT_WINGS)
 			if(Wing == null)
 				to_chat(src, span_warning("I can't stand without my wings!"))
-				return
+				return FALSE
 		if(!IsKnockdown() && !IsStun() && !IsParalyzed())
 			src.visible_message(span_notice("[src] stands up."))
 			if(move_after(src, 10, target = src))
@@ -1901,8 +1902,8 @@
 		for(var/mob/living/M in view(7,src))
 			if(M == src)
 				continue
-			if(see_invisible < M.invisibility)
-				continue
+			//if(see_invisible < M.invisibility)
+				//continue
 			if(M.mob_timers[MT_INVISIBILITY] > world.time) // Check if the mob is affected by the invisibility spell
 				continue
 			var/probby = 3 * STAPER
@@ -2019,7 +2020,7 @@
 	if(!istype(T))
 		return
 	changeNext_move(CLICK_CD_MELEE)
-
+	
 	var/_x = T.x-loc.x
 	var/_y = T.y-loc.y
 	var/dist = get_dist(src, T)

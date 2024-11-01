@@ -2,6 +2,8 @@ GLOBAL_LIST_INIT(named_penis_sizes, list(
 	"small" = 1,
 	"average" = 2,
 	"large" = 3,
+	"massive" = 4,
+	"enormous" = 5,
 ))
 
 GLOBAL_LIST_INIT(named_ball_sizes, list(
@@ -10,19 +12,35 @@ GLOBAL_LIST_INIT(named_ball_sizes, list(
 	"large" = 3,
 ))
 
+//hyper ball sizes, unselectable.
+/*
+	"massive" = 4,
+	"enormous" = 5,
+*/
+
 GLOBAL_LIST_INIT(named_breast_sizes, list(
 	"flat" = 0,
 	"very small" = 1,
 	"small" = 2,
 	"normal" = 3,
 	"large" = 4,
-	"enormous" = 5,
-	"towering" = 6,
-	"gigantic" = 7,
-	"gargantuan" = 8,
-	"colossal" = 9,
-	"ungodly big" = 10,
+	"extra large" = 5,
+	"massive" = 6,
+	"enormous" = 7,
+	"towering" = 8,
+	"gigantic" = 9,
+	"titanic" = 10,
+	"gargantuan" = 11,
+	"gigantic" = 12,
+	"colossal" = 13,
 ))
+
+//hyper tit sizes
+/*
+	"unbelieveably big" = 14,
+	"godly big" = 15,
+	"ungodly big" = 16,
+*/
 
 GLOBAL_LIST_INIT(named_belly_sizes, list(
 	"flat" = 0,
@@ -30,6 +48,16 @@ GLOBAL_LIST_INIT(named_belly_sizes, list(
 	"medium" = 2,
 	"large" = 3,
 ))
+
+GLOBAL_LIST_INIT(named_butt_sizes, list(
+	"flat" = 0,
+	"small" = 1,
+	"medium" = 2,
+	"large" = 3,
+	"massive" = 4,
+	"enormous" = 5,
+))
+
 
 GLOBAL_LIST_INIT(customizer_choices, build_customizer_choices())
 GLOBAL_LIST_INIT(customizers, build_customizers())

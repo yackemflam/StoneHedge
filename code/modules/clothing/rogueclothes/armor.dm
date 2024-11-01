@@ -450,6 +450,22 @@
 	w_class = WEIGHT_CLASS_BULKY
 	clothing_flags = CANT_SLEEP_IN
 
+/obj/item/clothing/suit/roguetown/armor/brigandine/attack_right(mob/user)
+	if(detail_tag)
+		return
+	var/the_time = world.time
+	var/pickedcolor = input(user, "Select a color.","Brigandine Color") as null|anything in CLOTHING_COLOR_NAMES
+	if(!pickedcolor)
+		return
+	if(world.time > (the_time + 30 SECONDS))
+		return
+	detail_tag = "_det"
+	detail_color = clothing_color2hex(pickedcolor)
+	update_icon()
+	if(ismob(loc))
+		var/mob/L = loc
+		L.update_inv_armor()
+
 /obj/item/clothing/suit/roguetown/armor/brigandine/Initialize()
 	. = ..()
 	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/coatplates (1).ogg',\
@@ -478,7 +494,7 @@
 	update_icon()
 	if(ismob(loc))
 		var/mob/L = loc
-		L.update_inv_cloak()
+		L.update_inv_armor()
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/sheriff/Destroy()
 	GLOB.lordcolor -= src

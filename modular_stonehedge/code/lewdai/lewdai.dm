@@ -426,7 +426,7 @@
 				penis = new /obj/item/organ/penis/internal
 			else
 				penis = new /obj/item/organ/penis
-			penis.penis_size = rand(3)
+			penis.organ_size = rand(3)
 			penis.Insert(src)
 		if(gender == FEMALE)
 			var/obj/item/organ/filling_organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
@@ -455,6 +455,6 @@
 					penis = new /obj/item/organ/penis/internal
 				else
 					penis = new /obj/item/organ/penis
-				penis.penis_size = rand(3)
+				penis.organ_size = rand(3)
 				penis.Insert(src)
 	src.sexcon.manual_arousal = 4

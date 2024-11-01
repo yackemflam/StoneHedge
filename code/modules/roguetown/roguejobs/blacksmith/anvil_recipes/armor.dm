@@ -142,7 +142,7 @@
 /datum/anvil_recipe/armor/goldmask
 	name = "Gold Mask"
 	req_bar = /obj/item/ingot/gold
-	created_item = /obj/item/clothing/mask/rogue/goldmask
+	created_item = /obj/item/clothing/mask/rogue/facemask/gold
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/goldarmor
