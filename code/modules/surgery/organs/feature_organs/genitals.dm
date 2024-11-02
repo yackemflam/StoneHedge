@@ -14,9 +14,6 @@
 	var/always_hard = FALSE
 	var/strapon = FALSE
 
-/obj/item/organ/penis/Initialize()
-	. = ..()
-
 /obj/item/organ/penis/proc/update_erect_state()
 	var/oldstate = erect_state
 	var/new_state = ERECT_STATE_NONE
@@ -40,7 +37,7 @@
 	icon_state = "knotpenis"
 
 /obj/item/organ/penis/knotted/big
-	organ_size = 3
+	organ_size = 5
 
 /obj/item/organ/penis/equine
 	name = "equine penis"

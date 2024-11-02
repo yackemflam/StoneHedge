@@ -186,6 +186,6 @@
 #define MAX_BREASTS_SIZE 16 //above 13 is not selectable but used for potion effect.
 #define DEFAULT_BREASTS_SIZE 3
 
-#define DEFAULT_BUTT_SIZE 2
+#define DEFAULT_BUTT_SIZE 0
 #define MIN_BUTT_SIZE 0
 #define MAX_BUTT_SIZE 5
