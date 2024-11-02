@@ -326,8 +326,8 @@
 	icon_state = "plate"
 	max_integrity = 700
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
-	equip_delay_self = 1200
-	unequip_delay_self = 1200
+	equip_delay_self = 400
+	unequip_delay_self = 200
 	equip_delay_other = 80
 	strip_delay = 60
 	armor_class = ARMOR_CLASS_HEAVY

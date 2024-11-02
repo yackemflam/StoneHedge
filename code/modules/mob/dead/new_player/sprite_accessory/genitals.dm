@@ -1,5 +1,5 @@
 //fucking annoying -vide
-
+//cock and ball torture from wikipedie the free encylopedia https://www.youtube.com/watch?v=nOPIu7isD3s
 /datum/sprite_accessory/penis
 	icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/penis.dmi'
 	color_keys = 2
@@ -227,7 +227,7 @@
 	relevant_layers = list(BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/butt/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_SHIRT, OFFSET_SHIRT_F)
+	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_PANTS, OFFSET_PANTS_F)
 
 /datum/sprite_accessory/butt/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/butt/buttie = organ
