@@ -4,11 +4,11 @@
 	flag = DRUID
 	department_flag = CHURCHMEN
 	faction = "Station"
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 10
+	spawn_positions = 10
 
 	allowed_sexes = list(MALE, FEMALE)
-	spells = list (/obj/effect/proc_holder/spell/targeted/shapeshift,/obj/effect/proc_holder/spell/aoe_turf/conjure/Wolf)
+	spells = list (/obj/effect/proc_holder/spell/targeted/shapeshift,/obj/effect/proc_holder/spell/aoe_turf/conjure/Wolf,/obj/effect/proc_holder/spell/invoked/decompose5e,/obj/effect/proc_holder/spell/invoked/infestation5e,/obj/effect/proc_holder/spell/self/primalsavagery5e,)
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = ALL_DIVINE_PATRONS //gets set to dendor on the outfit anyways lol
 	outfit = /datum/outfit/job/roguetown/druid
@@ -26,13 +26,17 @@
 
 /datum/outfit/job/roguetown/druid/pre_equip(mob/living/carbon/human/H)
 	..()
+	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+	beltl = /obj/item/rogueweapon/sickle
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backl = /obj/item/storage/backpack/rogue/satchel
-	head = /obj/item/clothing/head/roguetown/dendormask
+	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
-	armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+	gloves = /obj/item/clothing/gloves/roguetown/forestergauntlets
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
+	cloak = /obj/item/clothing/cloak/raincloak/green
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	backpack_contents = list(
 		/obj/item/seeds/wheat = 1,
 		/obj/item/seeds/apple = 1,
@@ -63,7 +67,7 @@
 	if(isseelie(H))
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/seelie_dust)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/summon_rat)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/strip)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/conjure_vines)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/seelie_kiss)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/splash)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/roustame)

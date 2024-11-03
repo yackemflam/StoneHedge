@@ -5,7 +5,7 @@
 */
 /datum/advclass/bandit
 	name = "Bandit"
-	tutorial = "A person living in service of the god Matthios, through theft and social woes can ones suffering be alleviated."
+	tutorial = "A person living in service of coin and brutality, through theft and social woes can ones suffering be alleviated."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_VERY_SHUNNED_UP
 	outfit = /datum/outfit/job/roguetown/adventurer/bandit
@@ -21,4 +21,4 @@
 	. = ..()
 	var/datum/antagonist/new_antag = new /datum/antagonist/bandit()
 	H.mind.add_antag_datum(new_antag)
-	
+

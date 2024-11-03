@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 0
-	spawn_positions = 1
+	spawn_positions = 0
 	selection_color = JCOLOR_NOBLE
 	allowed_races = list(
 		/datum/species/elf/dark,

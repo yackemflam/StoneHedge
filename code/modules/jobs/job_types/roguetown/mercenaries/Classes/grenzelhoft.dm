@@ -19,7 +19,7 @@
 	switch(classchoice)
 		if("Doppelsoldner")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You are a Doppelsoldner of Grenzelhoft, a swordsman experienced with long-length blades."))
+			to_chat(H, span_warning("You are a Doppelsoldner of Rossevell, a swordsman experienced with long-length blades."))
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
@@ -46,7 +46,7 @@
 			r_hand = /obj/item/rogueweapon/greatsword/zwei
 		if("Halberdier")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You are a Halberdier from Grenzelhoft, a skilled user of poleamrs and axes. Though you prefer them combined.."))
+			to_chat(H, span_warning("You are a Halberdier from Rossevell, a skilled user of poleamrs and axes. Though you prefer them combined.."))
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)

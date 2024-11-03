@@ -3,8 +3,8 @@
 	flag = VETERAN
 	department_flag = MERCENARIES
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 3
+	spawn_positions = 3
 
 	allowed_sexes = list(MALE, FEMALE) //same as town guard
 	allowed_races = RACES_ALL_KINDS // same as town guard

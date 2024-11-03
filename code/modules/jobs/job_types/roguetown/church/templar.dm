@@ -1,10 +1,10 @@
 //shield flail or longsword, tief can be this with red cross
 
 /datum/job/roguetown/templar
-	title = "Templar"
+	title = "Paladin"
 	department_flag = CHURCHMEN
 	faction = "Station"
-	tutorial = "Templars are warriors who have forsaken wealth and title in lieu of service to their god. They guard the temple and its priests, while keeping a watchful eye against disorder and nite-creechers. Within troubled dreams, they wonder if the blood they shed makes them holy or stained."
+	tutorial = "Templars are warriors who have forsaken wealth and title in lieu of service to their god, swearing oaths in their service to the divine. They guard the temples and uphold their sense of divine order - while keeping a watchful eye against evil's ploy and dangerous nite-creechers. Within troubled dreams, they seek divine guidance.."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_CLERIC_PATRONS
@@ -23,7 +23,7 @@
 	..()
 	H.virginity = TRUE
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
-	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+	neck = /obj/item/clothing/neck/roguetown/psicross/silver
 	cloak = /obj/item/clothing/cloak/templar/psydon
 	switch(H.patron.name)
 		if("Astrata")

@@ -803,7 +803,7 @@
 //adapted from forcefields.dm, this needs to be destructible
 /obj/structure/forcefield_weak
 	desc = "A wall of pure arcyne force."
-	name = "Arcyne Wall"
+	name = "Arcayne Wall"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "forcefield"
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
@@ -854,8 +854,8 @@
 
 // no slowdown status effect defined, so this just immobilizes for now
 /obj/effect/proc_holder/spell/invoked/slowdown_spell_aoe
-	name = "Ensnare"
-	desc = "Tendrils of arcyne force hold anyone in a small area in place for a short while."
+	name = "Black Tentacles"
+	desc = "Tendrils of arcayne force hold anyone in a small area in place for a short while."
 	cost = 3
 	xp_gain = TRUE
 	releasedrain = 20
@@ -963,7 +963,7 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	var/stun_amt = 5
-	var/maxthrow = 3
+	var/maxthrow = 1
 	var/sparkle_path = /obj/effect/temp_visual/gravpush
 	var/repulse_force = MOVE_FORCE_EXTREMELY_STRONG
 	var/push_range = 1

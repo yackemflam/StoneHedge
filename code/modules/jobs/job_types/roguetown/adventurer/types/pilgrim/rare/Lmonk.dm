@@ -1,7 +1,7 @@
 //human, monk of the closed palm
 
 /datum/advclass/rare
-	name = "Monk of the North"
+	name = "Monk of the Gentle Palm"
 	tutorial = "Since birth your mind, spirit, and fists have been honed until perfection. You are a pacifist by nature, and enforce peace onto all others, as well."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
@@ -22,24 +22,24 @@
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
-		if(/datum/patron/divine/noc) 
+		if(/datum/patron/divine/noc)
 			head = /obj/item/clothing/head/roguetown/roguehood/nochood
 			neck = /obj/item/clothing/neck/roguetown/psicross/noc
 			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-		if(/datum/patron/divine/dendor) 
+		if(/datum/patron/divine/dendor)
 			head = /obj/item/clothing/head/roguetown/dendormask
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
-		if(/datum/patron/divine/necra) 
+		if(/datum/patron/divine/necra)
 			head = /obj/item/clothing/head/roguetown/necrahood
 			neck = /obj/item/clothing/neck/roguetown/psicross/necra
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
-		if(/datum/patron/divine/pestra) 
+		if(/datum/patron/divine/pestra)
 			head = /obj/item/clothing/head/roguetown/necrahood
 			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
 			shoes = /obj/item/clothing/shoes/roguetown/boots

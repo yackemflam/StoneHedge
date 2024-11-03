@@ -1,7 +1,7 @@
 
 /datum/advclass/vaquero
 	name = "Vaquero"
-	tutorial = "Vaquero are Tieberian swashbucklers who have their origins as skilled horse-tamers of Asturia. It's hard to find horses these days..."
+	tutorial = "Vaquero are tiefling swashbucklers who have their origins as skilled horse-tamers of and pistoliers. It's hard to find horses these days..."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(/datum/species/tieberian)
 	outfit = /datum/outfit/job/roguetown/adventurer/vaquero
@@ -44,7 +44,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/sword/rapier
 	backr = /obj/item/rogue/instrument/guitar
-	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor = 1, /obj/item/rogueweapon/huntingknife/idagger/steel = 1)
+	backpack_contents = list(/obj/item/ammo_casing/caseless/rogue/bullet = 3, /obj/item/gun/ballistic/revolver/grenadelauncher/matchlock = 1)
 	H.change_stat("intelligence", 2)
 	H.change_stat("endurance", 2)
 	H.change_stat("speed", 2)

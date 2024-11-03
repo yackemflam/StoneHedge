@@ -60,6 +60,7 @@
 		H.change_stat("speed", -1)
 		H.cmode_music = 'sound/music/combat_clergy.ogg'
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/guidance5e)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron) // This creates the cleric holder used for devotion spells
 	C.grant_spells_priest(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
@@ -75,7 +76,7 @@
 	if(!mind)
 		return
 	if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
-		to_chat(src, span_warning("I need to do this in the chapel."))
+		to_chat(src, span_warning("I need to do this in a temple.. if we even have one."))
 		return FALSE
 	for(var/mob/living/carbon/human/HU in get_step(src, src.dir))
 		if(!HU.mind)
@@ -112,7 +113,7 @@
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		removeomen(OMEN_NOLORD)
-		say("By the authority of the gods, I pronounce you Ruler of all StoneHedge!")
+		say("By the authority of the gods, I pronounce you Ruler of all Stone Hedge!")
 		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of STONEHEDGE!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
 
 /mob/living/carbon/human/proc/churchexcommunicate()
@@ -127,7 +128,7 @@
 			return FALSE
 		if(inputty in GLOB.excommunicated_players)
 			GLOB.excommunicated_players -= inputty
-			priority_announce("[real_name] has forgiven [inputty]. Once more walk in the light!", title = "Hail the Ten!", sound = 'sound/misc/bell.ogg')
+			priority_announce("[real_name] has forgiven [inputty]. Once more walk in the divine!", title = "Hail the Gods!", sound = 'sound/misc/bell.ogg')
 			for(var/mob/living/carbon/human/H in GLOB.player_list)
 				if(H.real_name == inputty)
 					H.remove_stress(/datum/stressevent/psycurse)
@@ -142,7 +143,7 @@
 		if(!found)
 			return FALSE
 		GLOB.excommunicated_players += inputty
-		priority_announce("[real_name] has put Xylix's curse of woe on [inputty] for offending the church! They are excommunicated and ought to be presented before the Lord of the Land!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
+		priority_announce("[real_name] has put a curse of woe on [inputty] for offending the faith! They are to be denied healing and ought to be presented before the divine for penance!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
 
 /mob/living/carbon/human
 	COOLDOWN_DECLARE(church_announcement)
@@ -163,7 +164,7 @@
 		return FALSE
 
 	if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
-		to_chat(src, span_warning("I need to do this from the chapel."))
+		to_chat(src, span_warning("I need to do this from the Temple or shrine, if I know where those are..."))
 		return FALSE
 
 	priority_announce("[inputty]", title = "The Prophet Speaks", sound = 'sound/misc/bell.ogg')
@@ -181,6 +182,6 @@
 	name = "Recruit Acolyte"
 	new_role = "Priest"
 	recruitment_faction = "Church"
-	recruitment_message = "Serve the ten, %RECRUIT!"
-	accept_message = "FOR THE TEN!"
+	recruitment_message = "Serve the divine, %RECRUIT!"
+	accept_message = "FOR THE DIVINE!"
 	refuse_message = "I refuse."

@@ -1,17 +1,17 @@
 
 /datum/job/roguetown/highking
-	title = "Northmen King"
-	f_title = "Northmen Queen"
+	title = "Dwarf Artificer"
+	f_title = "Dwarf Artificer"
 	flag = HIGHKING
 	department_flag = VIKING
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 4
+	spawn_positions = 4
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = list(/datum/species/dwarf/mountain)
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/viking)
-	tutorial = "Hailing from the freezing cold Frost Lands, you have come to know Graggar, and though you may worship gods foreign to these lands, it was he who showed the Northmen to sail to other lands. And it is in his name that you will lead your men to conquer the new world."
+	tutorial = "Hailing from a Dwarf Fortress, you are one of the Artificers who came to occupy this Forge-Chapel of Svaeryog for many years, now. You and your fellow Artificers rule this slice of the underdark in relative safety; free to craft and venture forth however you please."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/highking
 
@@ -64,11 +64,11 @@
 		H.change_stat("intelligence", -2)
 		H.change_stat("constitution", 5)	//They will likely have the entire town fighting them.
 		H.change_stat("endurance", 5)
-	
+
 /obj/effect/proc_holder/spell/self/convertrole/viking
 	name = "Recruit Clanshield"
-	new_role = "Viking Clanshield"
+	new_role = "Dwarf Clanshield"
 	recruitment_faction = "Viking"
 	recruitment_message = "Serve the clan, %RECRUIT!"
-	accept_message = "FOR THE CLAN!"
+	accept_message = "FOR SVAERYOG!"
 	refuse_message = "I refuse."

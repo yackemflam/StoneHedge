@@ -95,7 +95,7 @@
 //Assassin, nearly same as rogue but less versatile in weapon skills yet specialized in knives and good at swords and crossbow.
 /datum/outfit/job/roguetown/adventurer/rogue/proc/assassinarch(mob/living/carbon/human/H)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rogue_vanish)
-	shoes = /obj/item/clothing/shoes/roguetown/boots
+	shoes = /obj/item/clothing/shoes/roguetown/boots/hidden/poison
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
@@ -117,6 +117,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
+	wrists = /obj/item/clothing/wrists/roguetown/hiddenblade
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
 	if(H.gender == FEMALE) //funny

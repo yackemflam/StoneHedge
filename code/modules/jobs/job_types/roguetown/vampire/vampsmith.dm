@@ -3,8 +3,8 @@
 	flag = VAMPSMITH
 	department_flag = VAMPIRE
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 2
+	spawn_positions = 2
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.

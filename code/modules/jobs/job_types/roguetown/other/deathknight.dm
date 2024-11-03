@@ -3,8 +3,8 @@
 	flag = DEATHKNIGHT
 	department_flag = SLOP
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 10
+	spawn_positions = 10
 	min_pq = null //no pq
 	max_pq = null
 
