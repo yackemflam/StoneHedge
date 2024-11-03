@@ -352,7 +352,7 @@
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
 		return
-	ADD_TRAIT(user, TRAIT_ENDOWMENT_CURSE, id)
+	ADD_TRAIT(user, TRAIT_ENDOWMENT, id)
 	to_chat(user, span_warning("Gah! my [user.gender == FEMALE ? "TITS" : "JUNK"] expand to impossible sizes!"))
 	//max them out.
 	for(var/obj/item/organ/forgan as anything in user.internal_organs) //as anything cause i either do this or use for() twice which is i guess worse.
@@ -392,7 +392,7 @@
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
 		return
-	REMOVE_TRAIT(user, TRAIT_ENDOWMENT_CURSE, id)
+	REMOVE_TRAIT(user, TRAIT_ENDOWMENT, id)
 	to_chat(user, span_notice("Phew, My bits shrunk back to the way they were."))
 	//return to pref sizes.
 	for(var/obj/item/organ/forgan as anything in user.internal_organs)

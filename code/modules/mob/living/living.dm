@@ -682,7 +682,7 @@
 				to_chat(src, span_warning("I can't stand without my wings!"))
 				return FALSE
 		if(!IsKnockdown() && !IsStun() && !IsParalyzed())
-			if(HAS_TRAIT(src, TRAIT_ENDOWMENT_CURSE))
+			if(HAS_TRAIT(src, TRAIT_ENDOWMENT))
 				src.visible_message(span_notice("[src] stands up, struggling because of THEIR [src.gender == FEMALE ? "TITS" : "JUNK"]'s weight."))
 				if(move_after(src, 30, target = src))
 					set_resting(FALSE, FALSE)
@@ -718,7 +718,7 @@
 				to_chat(src, span_warning("I can't stand without my wings!"))
 				return
 		if(!IsKnockdown() && !IsStun() && !IsParalyzed())
-			if(HAS_TRAIT(src, TRAIT_ENDOWMENT_CURSE))
+			if(HAS_TRAIT(src, TRAIT_ENDOWMENT))
 				src.visible_message(span_notice("[src] begins to stand up, struggling because of THEIR weight."))
 				if(move_after(src, 30, target = src))
 					set_resting(FALSE, FALSE)

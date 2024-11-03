@@ -52,7 +52,7 @@
 		return FALSE
 	if(user.get_inactive_held_item())
 		return FALSE
-	if(HAS_TRAIT(user, TRAIT_ENDOWMENT_CURSE))
+	if(HAS_TRAIT(user, TRAIT_ENDOWMENT))
 		to_chat(user, span_warning("MY [src.gender == FEMALE ? "TITS" : "COCK"] prevent me from aiming my bow!.."))
 		return FALSE
 	if(user.client)
@@ -105,7 +105,7 @@
 			return FALSE
 		if(mastermob.get_inactive_held_item())
 			return FALSE
-		if(HAS_TRAIT(mastermob, TRAIT_ENDOWMENT_CURSE))
+		if(HAS_TRAIT(mastermob, TRAIT_ENDOWMENT))
 			to_chat(mastermob, span_warning("MY [mastermob.gender == FEMALE ? "TITS" : "COCK"] prevent me from drawing my bowstring!.."))
 			return FALSE
 	return TRUE
