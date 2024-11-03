@@ -133,7 +133,7 @@
 	return "[adjective] pair of balls"
 
 /datum/mob_descriptor/butt
-	name = "balls"
+	name = "butt"
 	slot = MOB_DESCRIPTOR_SLOT_BUTT
 	verbage = "has"
 	show_obscured = TRUE
