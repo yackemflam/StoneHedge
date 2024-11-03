@@ -682,17 +682,22 @@
 				to_chat(src, span_warning("I can't stand without my wings!"))
 				return FALSE
 		if(!IsKnockdown() && !IsStun() && !IsParalyzed())
-			src.visible_message(span_notice("[src] stands up."))
-			if(move_after(src, 10, target = src))
-				set_resting(FALSE, FALSE)
-				if(resting)
-					src.visible_message(span_warning("[src] tries to stand up."))
-					return FALSE // workaround for broken legs and stuff
-				src.visible_message(span_notice("[src] stands up."))
-				return TRUE
+			if(HAS_TRAIT(src, TRAIT_ENDOWMENT_CURSE))
+				src.visible_message(span_notice("[src] stands up, struggling because of THEIR [src.gender == FEMALE ? "TITS" : "JUNK"]'s weight."))
+				if(move_after(src, 30, target = src))
+					set_resting(FALSE, FALSE)
 			else
-				src.visible_message(span_warning("[src] tries to stand up."))
-				return FALSE
+				src.visible_message(span_notice("[src] stands up."))
+				if(move_after(src, 10, target = src))
+					set_resting(FALSE, FALSE)
+					if(resting)
+						src.visible_message(span_warning("[src] tries to stand up."))
+						return FALSE // workaround for broken legs and stuff
+					src.visible_message(span_notice("[src] stands up."))
+					return TRUE
+				else
+					src.visible_message(span_warning("[src] tries to stand up."))
+					return FALSE
 		else
 			src.visible_message(span_warning("[src] tries to stand up."))
 			return FALSE
@@ -713,9 +718,14 @@
 				to_chat(src, span_warning("I can't stand without my wings!"))
 				return
 		if(!IsKnockdown() && !IsStun() && !IsParalyzed())
-			src.visible_message(span_info("[src] begins to stand up."))
-			if(move_after(src, 10, target = src))
-				set_resting(FALSE, FALSE)
+			if(HAS_TRAIT(src, TRAIT_ENDOWMENT_CURSE))
+				src.visible_message(span_notice("[src] begins to stand up, struggling because of THEIR weight."))
+				if(move_after(src, 30, target = src))
+					set_resting(FALSE, FALSE)
+			else
+				src.visible_message(span_info("[src] begins to stand up."))
+				if(move_after(src, 10, target = src))
+					set_resting(FALSE, FALSE)
 		else
 			src.visible_message(span_warning("[src] struggles to stand up."))
 	else

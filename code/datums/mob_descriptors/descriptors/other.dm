@@ -83,7 +83,7 @@
 	if(penis.erect_state != ERECT_STATE_HARD && penis.sheath_type != SHEATH_TYPE_NONE)
 		switch(penis.sheath_type)
 			if(SHEATH_TYPE_NORMAL)
-				if(penis.organ_size == 3)
+				if(penis.organ_size >= 3)
 					used_name = "a fat sheath"
 				else
 					used_name = "a sheath"
@@ -126,9 +126,9 @@
 			adjective = "an average"
 		if(3)
 			adjective = "a large"
-		if(3)
+		if(4)
 			adjective = "a massive"
-		if(3)
+		if(5)
 			adjective = "a gigantic"
 	return "[adjective] pair of balls"
 
@@ -196,6 +196,8 @@
 			vagina_type = "plain vagina"
 		if(/datum/sprite_accessory/vagina/hairy)
 			vagina_type = "hairy vagina"
+		if(/datum/sprite_accessory/vagina/extrahairy)
+			vagina_type = "very hairy vagina"
 		if(/datum/sprite_accessory/vagina/spade)
 			vagina_type = "spade vagina"
 		if(/datum/sprite_accessory/vagina/furred)
@@ -241,7 +243,27 @@
 		if(4)
 			adjective = "a large"
 		if(5)
+			adjective = "an extra large"
+		if(6)
+			adjective = "a massive"
+		if(7)
 			adjective = "an enormous"
-	if(breasts.organ_size >= 6) //lazy
-		adjective = "a colossal"
+		if(8)
+			adjective = "a magnificent"
+		if(9)
+			adjective = "a towering"
+		if(10)
+			adjective = "a gigantic"
+		if(11)
+			adjective = "a titanic"
+		if(12)
+			adjective = "a gargantuan"
+		if(13)
+			adjective = "a colossal"
+		if(14)
+			adjective = "a unbelieveably big"
+		if(15)
+			adjective = "a godly gib"
+		if(16)
+			adjective = "a ungodly big"
 	return "[adjective] pair of breasts"

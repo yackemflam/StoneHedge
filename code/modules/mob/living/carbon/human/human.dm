@@ -1059,7 +1059,7 @@
 	return ..()
 
 /mob/living/carbon/human/species
-	var/race = null
+	var/datum/species/race = null
 
 /mob/living/carbon/human/species/Initialize()
 	. = ..()
@@ -1248,6 +1248,9 @@
 
 /mob/living/carbon/human/proc/has_belly()
 	return getorganslot(ORGAN_SLOT_BELLY)
+
+/mob/living/carbon/human/proc/has_butt()
+	return getorganslot(ORGAN_SLOT_BUTT)
 
 /mob/living/carbon/human/proc/is_fertile()
 	return getorganslot(ORGAN_SLOT_VAGINA).fertility

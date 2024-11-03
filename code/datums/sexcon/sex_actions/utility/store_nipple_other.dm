@@ -1,5 +1,5 @@
 /datum/sex_action/store_nipple_other
-	name = "Store/remove object in their breasts"
+	name = "Store/remove object in their nipple"
 
 /datum/sex_action/store_nipple_other/shows_on_menu(mob/living/user, mob/living/target)
 	if(issimple(target)) //will not work on simple mobs

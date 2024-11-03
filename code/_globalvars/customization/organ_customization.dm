@@ -2,21 +2,33 @@ GLOBAL_LIST_INIT(named_penis_sizes, list(
 	"small" = 1,
 	"average" = 2,
 	"large" = 3,
+))
+
+//unselectables included.
+GLOBAL_LIST_INIT(uns_named_penis_sizes, list(
+	"small" = 1,
+	"average" = 2,
+	"large" = 3,
 	"massive" = 4,
 	"enormous" = 5,
 ))
 
+//6 cant be selected, dont have sprite but used when you put salami in your pants.
 GLOBAL_LIST_INIT(named_ball_sizes, list(
 	"small" = 1,
 	"average" = 2,
 	"large" = 3,
 ))
 
-//hyper ball sizes, unselectable.
-/*
+//unselectables included.
+GLOBAL_LIST_INIT(uns_named_ball_sizes, list(
+	"small" = 1,
+	"average" = 2,
+	"large" = 3,
 	"massive" = 4,
 	"enormous" = 5,
-*/
+	"gigantic" = 6,
+))
 
 GLOBAL_LIST_INIT(named_breast_sizes, list(
 	"flat" = 0,
@@ -28,19 +40,34 @@ GLOBAL_LIST_INIT(named_breast_sizes, list(
 	"massive" = 6,
 	"enormous" = 7,
 	"towering" = 8,
-	"gigantic" = 9,
-	"titanic" = 10,
-	"gargantuan" = 11,
-	"gigantic" = 12,
+	"magnificent" = 9,
+	"gigantic" = 10,
+	"titanic" = 11,
+	"gargantuan" = 12,
 	"colossal" = 13,
 ))
 
-//hyper tit sizes
-/*
+//unselectables included.
+GLOBAL_LIST_INIT(uns_named_breast_sizes, list(
+	"flat" = 0,
+	"very small" = 1,
+	"small" = 2,
+	"normal" = 3,
+	"large" = 4,
+	"extra large" = 5,
+	"massive" = 6,
+	"enormous" = 7,
+	"towering" = 8,
+	"magnificent" = 9,
+	"gigantic" = 10,
+	"titanic" = 11,
+	"gargantuan" = 12,
+	"colossal" = 13,
 	"unbelieveably big" = 14,
 	"godly big" = 15,
 	"ungodly big" = 16,
-*/
+))
+
 
 GLOBAL_LIST_INIT(named_belly_sizes, list(
 	"flat" = 0,
@@ -50,6 +77,15 @@ GLOBAL_LIST_INIT(named_belly_sizes, list(
 ))
 
 GLOBAL_LIST_INIT(named_butt_sizes, list(
+	"flat" = 0,
+	"small" = 1,
+	"medium" = 2,
+	"large" = 3,
+	"massive" = 4,
+))
+
+//unselectables included.
+GLOBAL_LIST_INIT(uns_named_butt_sizes, list(
 	"flat" = 0,
 	"small" = 1,
 	"medium" = 2,

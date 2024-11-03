@@ -65,6 +65,7 @@
 /mob/living
 	var/tempatarget = null
 	var/mouth_blocked = FALSE
+	var/show_genitals = FALSE
 
 /obj/item/proc/attack(mob/living/M, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)

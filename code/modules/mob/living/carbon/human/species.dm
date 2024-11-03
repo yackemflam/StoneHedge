@@ -609,6 +609,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/is_nudist = HAS_TRAIT(H, TRAIT_NUDIST)
 	var/is_retarded = HAS_TRAIT(H, TRAIT_RETARD_ANATOMY)
+	var/is_BOOBS = HAS_TRAIT(H, TRAIT_ENDOWMENT_CURSE)
 	var/num_arms = H.get_num_arms(FALSE)
 	var/num_legs = H.get_num_legs(FALSE)
 
@@ -667,6 +668,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(H.wear_armor)
 				return FALSE
 			if(is_nudist)
+				return FALSE
+			if(is_BOOBS && !I.can_hold_endowed && H.gender == FEMALE)
+				if(!disable_warning)
+					to_chat(H, span_warning("I can't squeeze MY TITS in!.."))
 				return FALSE
 			if(I.blocking_behavior & BULKYBLOCKS)
 				if(H.cloak)
@@ -744,6 +749,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(H.wear_pants)
 				return FALSE
 			if(is_nudist)
+				return FALSE
+			if(is_BOOBS && !I.can_hold_endowed && H.gender == MALE)
+				if(!disable_warning)
+					to_chat(H, span_warning("I can't squeeze MY JUNK in!.."))
 				return FALSE
 			if( !(I.slot_flags & ITEM_SLOT_PANTS) )
 				return FALSE

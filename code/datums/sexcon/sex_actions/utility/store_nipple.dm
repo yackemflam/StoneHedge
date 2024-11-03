@@ -1,5 +1,5 @@
 /datum/sex_action/store_nipple
-	name = "Store/remove object in breasts"
+	name = "Store/remove object in nipple"
 
 /datum/sex_action/store_nipple/shows_on_menu(mob/living/user, mob/living/target)
 	if(user != target)

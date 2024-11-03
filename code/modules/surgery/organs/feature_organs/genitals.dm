@@ -132,7 +132,7 @@
 	organ_dna_type = /datum/organ_dna/breasts
 	accessory_type = /datum/sprite_accessory/breasts/pair
 	organ_size = DEFAULT_BREASTS_SIZE
-	reagent_to_make = /datum/reagent/consumable/breastmilk
+	reagent_to_make = /datum/reagent/consumable/milk
 	hungerhelp = TRUE
 	organ_sizeable = TRUE
 	absorbing = FALSE //funny liquid tanks
