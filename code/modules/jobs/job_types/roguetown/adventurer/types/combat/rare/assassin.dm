@@ -7,7 +7,8 @@
 	allowed_races = RACES_ALL_KINDS
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_DODGEEXPERT)
 	outfit = /datum/outfit/job/roguetown/adventurer/assassin
-	category_tags = list(CTAG_CONTRIBUTOR) //cant find a way to make it work for only contributors, so it can just be disabled for now.
+	maximum_possible_slots = 1
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/assassin/pre_equip(mob/living/carbon/human/H)
 	..()
