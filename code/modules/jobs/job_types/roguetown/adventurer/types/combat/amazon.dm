@@ -1,6 +1,6 @@
 /datum/advclass/amazon
 	name = "Amazon"
-	tutorial = "Amazons are warrior-women from the mysterious isle of Issa."
+	tutorial = "Amazons are warrior-women from the deep jungles of an unknown continent."
 	allowed_sexes = list(FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/amazon

@@ -1,6 +1,6 @@
 /datum/advclass/necromancer
 	name = "Necromancer"
-	tutorial = "Ostracized and hunted by society for their mastery over death magicks; Necromancers have been known to summon ghosts, ghouls, and zombies; A rare few using their powers to fight undeath from a different side."
+	tutorial = "Ostracized and hunted by society for their mastery over death magicks in most realms; Necromancers have been known to summon ghosts, ghouls, and zombies; A rare few using their powers to fight undeath from a different side."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/necromancer
@@ -32,6 +32,8 @@
 	H.change_stat("endurance", -1)
 	H.change_stat("speed", -1)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/bonechill)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/rayoffrost5e)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/chilltouch5e)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/raise_undead)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/sickness)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/eyebite)

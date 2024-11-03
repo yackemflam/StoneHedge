@@ -415,7 +415,10 @@
 "asl" = (
 /obj/structure/bed/rogue,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "asq" = (
 /obj/structure/flora/roguegrass,
 /obj/structure/flora/newtree,
@@ -471,7 +474,10 @@
 /area/rogue/outdoors/caves)
 "ats" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy/cand,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "atH" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/rogue/dirt,
@@ -1342,7 +1348,10 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "baV" = (
 /obj/structure/glowshroom{
 	icon_state = "glowshroom2"
@@ -1372,7 +1381,10 @@
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "bbO" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/roguegrass/maneater/real,
@@ -1505,6 +1517,7 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_end_alt"
 	},
+/obj/item/roguegem/yellow,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/shelter/town/dwarf)
 "bgv" = (
@@ -1543,7 +1556,10 @@
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "bhy" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/newtree,
@@ -1775,7 +1791,10 @@
 /obj/item/flashlight/flare/torch/lantern,
 /obj/item/flashlight/flare/torch/lantern,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "brN" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -1831,7 +1850,10 @@
 "btC" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "btQ" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/water/bath,
@@ -1962,12 +1984,9 @@
 	name = "Wood elf Tribes"
 	})
 "bAv" = (
-/obj/effect/mob_spawn/human/golem/adamantine,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge Borders";
-	name = "far stonehedge"
-	})
+/obj/structure/closet/crate/chest/gold/lootbox/trait,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/cavewet)
 "bAI" = (
 /obj/structure/chair/wood/rogue,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -1994,7 +2013,10 @@
 "bBC" = (
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "bCb" = (
 /obj/item/grown/log/tree/stick,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -2069,7 +2091,10 @@
 /area/rogue/under/cavewet)
 "bFm" = (
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "bFn" = (
 /obj/structure/chair/bench{
 	dir = 8
@@ -2450,7 +2475,10 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "bRp" = (
 /obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/naturalstone,
@@ -2554,7 +2582,10 @@
 "bXb" = (
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "bXi" = (
 /obj/structure/flora/roguegrass/bush,
 /turf/open/floor/rogue/dirt,
@@ -2841,7 +2872,10 @@
 	icon_state = "wcr"
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "chK" = (
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2"
@@ -2900,7 +2934,10 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "cjq" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/rogue/rooftop{
@@ -2913,6 +2950,7 @@
 /obj/structure/fluff/walldeco/chains{
 	icon_state = "chains7"
 	},
+/obj/machinery/light/rogue/oven,
 /turf/open/floor/rogue/metal,
 /area/rogue/indoors/shelter/town/dwarf)
 "cjY" = (
@@ -3725,6 +3763,8 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_mid"
 	},
+/obj/item/roguegem,
+/obj/item/roguegem/violet,
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "cPb" = (
@@ -3748,6 +3788,15 @@
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
 	})
+"cQR" = (
+/obj/structure/fluff/psycross/copper,
+/obj/structure/table/church{
+	icon_state = "churchtable_mid_alt"
+	},
+/obj/item/roguegem/diamond,
+/obj/item/roguegem/green,
+/turf/open/floor/bronze,
+/area/rogue/indoors/shelter/town/dwarf)
 "cRm" = (
 /obj/effect/overlay/water{
 	icon_state = "top3"
@@ -4874,7 +4923,10 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "dHZ" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
@@ -5173,7 +5225,10 @@
 "dQD" = (
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "dQM" = (
 /obj/structure/bars/cemetery,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
@@ -5430,7 +5485,10 @@
 "ebl" = (
 /obj/machinery/light/rogue/torchholder,
 /turf/closed/wall/mineral/rogue/decostone/mossy/cand,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "ebC" = (
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2";
@@ -5508,7 +5566,10 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "edy" = (
 /obj/structure/spacevine,
 /obj/structure/flora/roguetree/happyrandom{
@@ -5644,7 +5705,10 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "eio" = (
 /obj/structure/flora/newbranch/connector{
 	icon_state = "center-leaf1"
@@ -6100,7 +6164,10 @@
 "eAi" = (
 /obj/structure/fermenting_barrel/random/beer,
 /turf/open/floor/rogue/tile,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "eAk" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors{
@@ -6152,7 +6219,10 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/roguegrass/maneater/real,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "eCs" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
@@ -6271,7 +6341,10 @@
 /obj/item/reagent_containers/glass/cup/silver,
 /obj/item/reagent_containers/glass/cup/steel,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "eGe" = (
 /obj/structure/stairs{
 	dir = 1
@@ -6309,7 +6382,10 @@
 /obj/structure/flora/roguegrass/maneater/real,
 /obj/structure/flora/grass/jungle,
 /turf/closed/wall/shroud,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "eHm" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
 /obj/structure/flora/roguegrass,
@@ -6690,7 +6766,10 @@
 "eYL" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/closed/wall/shroud,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "eYS" = (
 /obj/structure/roguewindow/openclose{
 	dir = 4
@@ -7185,6 +7264,11 @@
 /obj/structure/flora/roguegrass/thorn_bush,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/caves)
+"frR" = (
+/obj/effect/mob_spawn/human/golem,
+/obj/machinery/light/rogue/oven,
+/turf/open/floor/rogue/metal,
+/area/rogue/indoors/shelter/town/dwarf)
 "frS" = (
 /obj/effect/landmark/start/seelielate,
 /turf/open/floor/rogue/grass,
@@ -7324,7 +7408,10 @@
 "fyp" = (
 /obj/structure/fluff/statue/knight/interior/r,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "fyC" = (
 /obj/structure/fluff/railing/border{
 	dir = 6
@@ -7337,7 +7424,10 @@
 	dir = 4
 	},
 /turf/open/transparent/openspace,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "fyI" = (
 /obj/structure/fluff/walldeco/chains{
 	icon_state = "chains3"
@@ -8220,7 +8310,10 @@
 "gjv" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/tile,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "gjH" = (
 /obj/machinery/light/rogue/oven/south,
 /turf/open/floor/rogue/twig,
@@ -8269,7 +8362,10 @@
 "gkQ" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "gls" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/tribalfort{
@@ -8455,7 +8551,10 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/roguegrass/maneater/real,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "grF" = (
 /turf/closed/mineral/random/rogue,
 /area/rogue/under/cavewet)
@@ -8470,13 +8569,19 @@
 /area/rogue/outdoors/caves)
 "gsU" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "gts" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "gtB" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -8670,7 +8775,10 @@
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "gzl" = (
 /obj/structure/pillory,
 /turf/open/floor/rogue/dirt/road,
@@ -8683,7 +8791,6 @@
 /turf/open/floor/rogue/rooftop,
 /area/rogue)
 "gzV" = (
-/obj/item/clothing/shoes/roguetown/boots,
 /obj/item/clothing/shoes/roguetown/boots,
 /turf/open/water/swamp,
 /area/rogue/under/cavewet)
@@ -8711,7 +8818,10 @@
 /area/rogue/outdoors/caves)
 "gAW" = (
 /turf/closed/wall/mineral/rogue/wooddark/window,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "gAZ" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -8751,6 +8861,16 @@
 	})
 "gCm" = (
 /obj/structure/rack/rogue,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
 /turf/open/floor/rogue/metal,
 /area/rogue/indoors/shelter/town/dwarf)
 "gCp" = (
@@ -8758,7 +8878,10 @@
 	pixel_y = 26
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "gCR" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -8813,6 +8936,7 @@
 /obj/structure/fluff/walldeco/chains{
 	icon_state = "chains4"
 	},
+/obj/machinery/light/rogue/oven,
 /turf/open/floor/rogue/metal,
 /area/rogue/indoors/shelter/town/dwarf)
 "gGY" = (
@@ -9199,7 +9323,10 @@
 /obj/structure/pillory,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "gYu" = (
 /obj/structure/closet/crate/chest,
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
@@ -9415,7 +9542,10 @@
 	opacity = 0
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "hgq" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -10121,7 +10251,10 @@
 	icon_state = "goblin"
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "hHY" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -10242,7 +10375,10 @@
 /obj/structure/closet/crate/chest,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/medical,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "hOG" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -10802,7 +10938,10 @@
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "ijr" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/water/swamp,
@@ -11220,7 +11359,10 @@
 /obj/structure/bed/rogue,
 /obj/structure/loot/pile/gear,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "iAX" = (
 /obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush2"
@@ -11334,7 +11476,10 @@
 	icon_state = "goblin"
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "iEF" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -11721,7 +11866,10 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "iRE" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/fluff/statue/knight/interior,
@@ -11758,7 +11906,10 @@
 	icon_state = "goblin"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "iTu" = (
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern{
@@ -12087,7 +12238,10 @@
 /area/rogue)
 "jfQ" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "jgd" = (
 /obj/structure/roguewindow/openclose{
 	dir = 1
@@ -12259,7 +12413,10 @@
 "jnl" = (
 /obj/machinery/light/rogue/torchholder,
 /turf/closed/wall/mineral/rogue/stone/moss,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "jpe" = (
 /mob/living/carbon/human/species/goblin/npc/cave{
 	icon_state = "goblin_cave"
@@ -12438,7 +12595,10 @@
 /obj/item/reagent_containers/glass/cup/silver,
 /obj/item/clothing/neck/roguetown/psicross/dendor,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "jvG" = (
 /obj/machinery/light/rogue/smelter/great,
 /turf/open/floor/rogue/metal,
@@ -12525,7 +12685,10 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/loot/pile/gear,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "jyc" = (
 /obj/structure/flora/roguegrass,
 /obj/structure/flora/wildplant/wild_herbs,
@@ -12661,7 +12824,10 @@
 	})
 "jCd" = (
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "jCg" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/wildplant/wild_poppy,
@@ -13261,6 +13427,10 @@
 	dir = 4
 	},
 /area/rogue/under/cavewet)
+"kcT" = (
+/mob/living/carbon/human/species/skeleton/npc/dungeon/boss,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/cavewet)
 "kdd" = (
 /obj/structure/flora/roguegrass/bush/wall,
 /turf/open/floor/rogue/grass,
@@ -13517,7 +13687,10 @@
 	})
 "knB" = (
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "kow" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf,
 /turf/open/floor/rogue/dirt,
@@ -13642,7 +13815,10 @@
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "kuz" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/bath)
@@ -13905,6 +14081,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue)
+"kEt" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/medical,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/spells,
+/obj/structure/closet/crate/chest,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavewet)
 "kEH" = (
 /obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
@@ -13937,7 +14120,10 @@
 "kGe" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "kGu" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -14144,7 +14330,10 @@
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "kNA" = (
 /obj/structure/chair/bench/couchablack/r,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -14371,8 +14560,8 @@
 "kYT" = (
 /obj/structure/lever/wall{
 	pixel_x = 32;
-	redstone_id = "Dwarfgate1";
-	gid = "Dwarfgate1"
+	redstone_id = "dwarfgate1";
+	gid = "dwarfgate1"
 	},
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -14388,9 +14577,12 @@
 	first_time_text = "The Dreamers Demesne.."
 	})
 "kZH" = (
-/mob/living/carbon/human/species/skeleton/npc/dungeon/boss,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/under/cavewet)
+/obj/structure/bars/passage{
+	redstone_id = "dwarfinner2";
+	name = "Inner Workshop"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/shelter/town/dwarf)
 "kZL" = (
 /obj/structure/flora/rogueshroom,
 /turf/open/floor/rogue/dirt/road,
@@ -15208,10 +15400,10 @@
 "lGp" = (
 /obj/structure/gate{
 	name = "Dwarven Gate";
-	redstone_id = "Dwarfgate1";
-	gid = "Dwarfgate1"
+	redstone_id = "dwarfgate1";
+	gid = "dwarfgate1"
 	},
-/turf/open/floor/rogue/cobblerock,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/under/cavewet)
 "lGK" = (
 /mob/living/simple_animal/hostile/rogue/ghost/wraith,
@@ -15370,6 +15562,7 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_end"
 	},
+/obj/item/storage/backpack/rogue/backpack/surgery,
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "lPr" = (
@@ -15590,11 +15783,9 @@
 	first_time_text = "The Dreamers Demesne.."
 	})
 "lWT" = (
-/obj/structure/flora/rogueshroom/happyrandom{
-	icon_state = "mush4"
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/cavewet)
+/obj/item/clothing/suit/roguetown/armor/leather/hide,
+/turf/closed/wall/mineral/rogue/stone/window,
+/area/rogue/indoors/shelter/town/dwarf)
 "lWV" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/water/swamp,
@@ -15788,7 +15979,10 @@
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "mga" = (
 /obj/structure/ladder,
 /turf/open/floor/rogue/hexstone,
@@ -15927,7 +16121,10 @@
 	icon_state = "goblin"
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "mls" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 1
@@ -16860,7 +17057,10 @@
 	pixel_y = 32
 	},
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "mXm" = (
 /obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/cobblerock,
@@ -17127,7 +17327,10 @@
 /obj/item/flashlight/flare/torch/lantern,
 /obj/item/flashlight/flare/torch/lantern,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "ngZ" = (
 /obj/structure/table/wood{
 	icon_state = "longtable_mid";
@@ -17188,7 +17391,10 @@
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "njs" = (
 /obj/machinery/light/rogue/firebowl/church,
 /turf/open/floor/rogue/naturalstone,
@@ -17311,7 +17517,10 @@
 	icon_state = "goblin"
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "noG" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 8
@@ -17475,6 +17684,7 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_end_alt"
 	},
+/obj/item/roguegem/green,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
 "nvr" = (
@@ -17686,7 +17896,10 @@
 /area/rogue)
 "nEn" = (
 /turf/closed/mineral/rogue/bedrock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "nEB" = (
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
@@ -17886,7 +18099,10 @@
 	},
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "nNh" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -17955,6 +18171,8 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_mid_alt"
 	},
+/obj/item/roguegem/yellow,
+/obj/item/roguegem/violet,
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "nPc" = (
@@ -18017,7 +18235,10 @@
 	icon_state = "goblin"
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "nRW" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -18404,7 +18625,10 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "ohI" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -18512,7 +18736,10 @@
 /obj/structure/closet/crate/chest,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/food,
 /turf/open/floor/rogue/tile,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "omm" = (
 /obj/structure/chair/wood,
 /obj/effect/landmark/start/nightman,
@@ -18894,7 +19121,10 @@
 /obj/structure/flora/roguegrass/maneater/real,
 /obj/effect/wisp,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "ozJ" = (
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried,
@@ -19272,7 +19502,10 @@
 /obj/machinery/light/rogue/oven/south,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/tile,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "oNi" = (
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue)
@@ -19291,7 +19524,10 @@
 "oOi" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "oOq" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/fluff/statue/gargoyle/moss,
@@ -19383,7 +19619,10 @@
 "oSn" = (
 /obj/structure/fermenting_barrel/beer,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "oSw" = (
 /obj/structure/flora/newleaf,
 /obj/structure/flora/newleaf,
@@ -20047,7 +20286,10 @@
 /obj/effect/spawner/lootdrop/roguetown/dungeon/tools,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "prI" = (
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/outdoors{
@@ -20533,7 +20775,10 @@
 	icon_state = "goblin"
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "pHX" = (
 /obj/structure/table/wood{
 	icon_state = "longtable_mid";
@@ -21061,6 +21306,24 @@
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue)
+"qca" = (
+/obj/structure/rack/rogue,
+/obj/item/gun/ballistic/revolver/grenadelauncher/matchlock,
+/obj/item/gun/ballistic/revolver/grenadelauncher/matchlock,
+/obj/item/gun/ballistic/revolver/grenadelauncher/matchlock,
+/obj/item/gun/ballistic/revolver/grenadelauncher/matchlock,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/obj/item/ammo_casing/caseless/rogue/bullet,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/shelter/town/dwarf)
 "qcz" = (
 /obj/machinery/light/rogue/wallfire,
 /turf/closed/wall/mineral/rogue/decowood,
@@ -21289,7 +21552,10 @@
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "qiG" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
 /obj/structure/flora/grass/jungle,
@@ -21407,6 +21673,7 @@
 /obj/structure/fluff/walldeco/chains{
 	icon_state = "chains5"
 	},
+/obj/machinery/light/rogue/oven,
 /turf/open/floor/rogue/metal,
 /area/rogue/indoors/shelter/town/dwarf)
 "qlY" = (
@@ -21660,7 +21927,10 @@
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "qwV" = (
 /obj/structure/table/vtable/v2,
 /obj/item/natural/feather,
@@ -21768,7 +22038,10 @@
 "qAs" = (
 /obj/machinery/light/rogue/hearth,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "qAW" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/rtfield{
@@ -21886,7 +22159,10 @@
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "qEX" = (
 /obj/structure/healingfountain,
 /turf/open/floor/rogue/grass,
@@ -22831,7 +23107,10 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/fluff/statue/knight/interior/r,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "rsd" = (
 /obj/effect/landmark/start/barkeep,
 /mob/living/simple_animal/pet/cat{
@@ -22866,7 +23145,10 @@
 	})
 "rsv" = (
 /turf/open/floor/rogue/tile,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "rsL" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/roguegrass/maneater/real,
@@ -24009,7 +24291,10 @@
 	redstone_id = "forestgate1"
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "ssF" = (
 /obj/structure/spacevine,
 /turf/open/water{
@@ -24188,7 +24473,10 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "sBQ" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -24281,7 +24569,10 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "sFc" = (
 /obj/machinery/light/rogue/hearth,
 /turf/open/floor/rogue/cobble/mossy,
@@ -24380,7 +24671,10 @@
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "sIN" = (
 /obj/structure/fluff/railing/border{
 	dir = 5
@@ -24388,7 +24682,10 @@
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "sJn" = (
 /obj/structure/fluff/railing/border{
 	dir = 6
@@ -24725,7 +25022,10 @@
 "sVN" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "sVP" = (
 /obj/structure/flora/roguegrass,
 /obj/structure/flora/roguegrass,
@@ -24824,7 +25124,10 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "tbf" = (
 /turf/closed/wall/shroud{
 	opacity = 0
@@ -24917,7 +25220,10 @@
 /obj/item/roguekey/custom,
 /obj/item/roguekey/custom,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "tdH" = (
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
@@ -25227,7 +25533,10 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/tile,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "tsn" = (
 /obj/structure/flora/roguegrass/maneater/real,
 /turf/open/water/swamp/deep,
@@ -25310,7 +25619,10 @@
 "tvx" = (
 /obj/structure/fluff/statue/knight/interior,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "tvC" = (
 /obj/structure/flora/grass/jungle{
 	icon_state = "grassa1"
@@ -25366,7 +25678,10 @@
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "txQ" = (
 /obj/structure/flora/roguegrass/thorn_bush,
 /turf/open/water/river{
@@ -25804,7 +26119,10 @@
 "tNx" = (
 /obj/machinery/light/rogue/hearth,
 /turf/open/floor/rogue/tile,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "tNL" = (
 /turf/open/floor/rogue/dirt/ambush,
 /area/rogue/under/cavewet)
@@ -25876,10 +26194,8 @@
 	first_time_text = "The Twilight Woods"
 	})
 "tPC" = (
-/obj/structure/closet/crate/chest,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/medical,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,
-/turf/open/floor/rogue/dirt/road,
+/obj/structure/flora/roguegrass/maneater/real,
+/turf/open/water/swamp,
 /area/rogue/under/cavewet)
 "tPZ" = (
 /obj/structure/chair/wood/rogue{
@@ -25946,7 +26262,10 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/roguegrass/maneater/real,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "tTf" = (
 /obj/structure/flora/grass/jungle,
 /turf/closed/mineral/rogue/bedrock,
@@ -26014,7 +26333,10 @@
 "tVV" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "tWp" = (
 /obj/structure/rack/rogue,
 /obj/item/quiver/Parrows,
@@ -26155,7 +26477,10 @@
 "uco" = (
 /obj/structure/fluff/statue/knight/interior,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "ucw" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/decal/cleanable/blood/old,
@@ -26369,7 +26694,10 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "ulc" = (
 /obj/structure/flora/roguetree/burnt,
 /turf/open/floor/rogue/dirt/road,
@@ -26912,7 +27240,10 @@
 	locked = 1
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "uHX" = (
 /obj/structure/flora/roguegrass/water,
 /obj/structure/flora/roguegrass/water/reeds,
@@ -27037,7 +27368,10 @@
 /obj/item/reagent_containers/glass/cup/silver,
 /obj/item/clothing/neck/roguetown/psicross/dendor,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "uLb" = (
 /obj/structure/stairs/stone{
 	dir = 8
@@ -27965,7 +28299,10 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/closet/crate/chest/dungeon/mimic,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "vtS" = (
 /obj/structure/roguemachine/scomm,
 /obj/effect/decal/border/stone/stonepattern1{
@@ -28083,6 +28420,8 @@
 "vzA" = (
 /obj/structure/chair/wood/rogue/throne,
 /obj/item/clothing/head/roguetown/helmet/winged,
+/obj/effect/landmark/start/highking,
+/obj/effect/landmark/start/highkinglate,
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "vzE" = (
@@ -28286,7 +28625,10 @@
 /obj/effect/spawner/lootdrop/roguetown/dungeon/food,
 /obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "vIx" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/twig/platform,
@@ -28416,7 +28758,10 @@
 /obj/structure/fluff/psycross,
 /obj/effect/wisp,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "vNy" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1";
@@ -28983,16 +29328,20 @@
 /turf/closed/wall/shroud,
 /area/rogue/under/cavewet)
 "wjb" = (
-/obj/structure/closet/crate/chest/gold/lootbox/trait,
-/obj/item/book/granter/trait/war,
-/turf/open/floor/rogue/dirt/road,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/spells,
+/obj/structure/closet/crate/chest,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/under/cavewet)
 "wjl" = (
 /obj/structure/bed/rogue/inn/hay,
 /obj/item/bedsheet/rogue/cloth,
 /mob/living/simple_animal/hostile/rogue/skeleton/axe,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "wkj" = (
 /obj/structure/table/wood{
 	icon_state = "largetable";
@@ -29172,7 +29521,10 @@
 	layer = 2.81
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "wpT" = (
 /turf/closed/wall/mineral/rogue/decostone/end{
 	dir = 1
@@ -29298,6 +29650,10 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
+"wum" = (
+/obj/structure/loot/pile/coins,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavewet)
 "wup" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
@@ -29398,7 +29754,10 @@
 	redstone_id = "bogguardjail"
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "wxH" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/roguegrass/water/reeds,
@@ -29670,7 +30029,10 @@
 	redstone_id = "forestgate2"
 	},
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "wKd" = (
 /obj/item/natural/rock,
 /turf/open/floor/rogue/grass,
@@ -30076,7 +30438,10 @@
 "wYs" = (
 /obj/structure/bars,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "wYx" = (
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/cleanshallow,
@@ -30145,7 +30510,10 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/roguegrass/maneater/real,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "wZS" = (
 /obj/structure/roguemachine/scomm,
 /obj/effect/landmark/start/shophand,
@@ -30178,7 +30546,10 @@
 "xaI" = (
 /obj/structure/fermenting_barrel/random/water,
 /turf/open/floor/rogue/tile,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "xaS" = (
 /obj/structure/roguewindow/openclose{
 	dir = 4
@@ -30310,7 +30681,10 @@
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "xfC" = (
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2";
@@ -30339,7 +30713,10 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "xgA" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -30626,7 +31003,10 @@
 /obj/structure/closet/crate/chest,
 /obj/item/rope/chain,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "xsD" = (
 /obj/structure/stairs/stone{
 	dir = 8
@@ -30651,10 +31031,7 @@
 	first_time_text = "The Deepwoods"
 	})
 "xtk" = (
-/obj/structure/closet/crate/chest,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/spells,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,
-/turf/open/floor/rogue/dirt/road,
+/turf/open/floor/bronze,
 /area/rogue/under/cavewet)
 "xtw" = (
 /obj/structure/flora/roguegrass/water/reeds,
@@ -31196,7 +31573,10 @@
 /obj/item/reagent_containers/glass/cup/silver,
 /obj/item/clothing/neck/roguetown/psicross/dendor,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "xNd" = (
 /obj/structure/long_sleep/mushroom,
 /turf/open/floor/rogue/dirt/road,
@@ -31332,7 +31712,10 @@
 /obj/structure/flora/grass/jungle,
 /obj/effect/wisp,
 /turf/closed/wall/shroud,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "xRK" = (
 /obj/structure/flora/roguegrass/bush,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -31545,14 +31928,20 @@
 "xZq" = (
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "xZF" = (
 /obj/structure/mineral_door/wood{
 	icon_state = "wcr"
 	},
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "xZJ" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
@@ -31765,7 +32154,10 @@
 	},
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods)
+/area/rogue/indoors/shelter/woods{
+	name = "Overgrown Fortress";
+	first_time_text = "Overgrown Fortress"
+	})
 "ykA" = (
 /obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush5"
@@ -53825,9 +54217,9 @@ gMP
 kzb
 gMP
 kzb
-gMP
+lWT
 thJ
-nnN
+thJ
 gGl
 bss
 faS
@@ -54179,7 +54571,7 @@ boo
 boo
 uVj
 jCn
-nnN
+thJ
 cjB
 boo
 boo
@@ -54194,11 +54586,11 @@ gdN
 kfg
 rrf
 iwu
-utS
-lWT
+iwu
+iwu
+rrf
 ogt
-ogt
-blc
+rrf
 blc
 blc
 blc
@@ -54541,15 +54933,15 @@ bIy
 tfc
 thJ
 pBA
-rrf
-lGp
-rrf
 iwu
+lGp
+iwu
+iwu
+xtk
 ogt
-utS
-cEW
-ogt
-lUU
+xtk
+iwu
+rrf
 blc
 blc
 blc
@@ -54883,7 +55275,7 @@ boo
 boo
 tfc
 boo
-boo
+kZH
 tfc
 cfc
 boo
@@ -54900,12 +55292,12 @@ iwu
 ogt
 ogt
 ogt
-lUU
+iwu
 blc
 blc
 blc
 blc
-lUU
+blc
 blc
 pZt
 ogt
@@ -55245,15 +55637,15 @@ bIy
 tfc
 thJ
 pBA
-rrf
-rrf
-ogt
 iwu
+iwu
+iwu
+iwu
+xtk
 ogt
-ogt
-ogt
-blc
-blc
+xtk
+iwu
+rrf
 pZt
 blc
 blc
@@ -55587,8 +55979,8 @@ boo
 boo
 boo
 boo
-nnN
-iLP
+thJ
+frR
 boo
 boo
 xls
@@ -55600,12 +55992,12 @@ gdN
 gdN
 gdN
 rrf
-ogt
+rrf
 iwu
-ogt
-ogt
-blc
-blc
+iwu
+iwu
+rrf
+rrf
 blc
 blc
 pZt
@@ -55939,7 +56331,7 @@ tfc
 fBc
 gCm
 tfc
-nnN
+thJ
 qlS
 hfG
 boo
@@ -55955,8 +56347,8 @@ utS
 mIw
 lAI
 ogt
-utS
-lQm
+rrf
+ogt
 blc
 blc
 dhd
@@ -56292,10 +56684,10 @@ boo
 boo
 tfc
 kzb
-boo
-boo
-tfc
-hlC
+thJ
+thJ
+oTm
+thJ
 kzb
 thJ
 thJ
@@ -56309,9 +56701,9 @@ utS
 utS
 utS
 lQm
-lUU
 blc
-dhd
+rrf
+blc
 blc
 blc
 dhd
@@ -57351,7 +57743,7 @@ kzb
 pJv
 boo
 boo
-nGc
+boo
 gMP
 oER
 oER
@@ -57725,7 +58117,7 @@ blc
 blc
 lUU
 ecM
-lQm
+ogt
 ogt
 oER
 oER
@@ -58044,7 +58436,7 @@ utS
 grF
 grF
 thJ
-nOO
+cQR
 bgt
 boo
 tfc
@@ -59111,7 +59503,7 @@ aIy
 boo
 tfc
 boo
-gHF
+qca
 thJ
 grF
 utS
@@ -60199,7 +60591,7 @@ rrf
 rrf
 wyR
 ogt
-oER
+rrf
 oER
 oER
 oER
@@ -60547,7 +60939,7 @@ grF
 grF
 grF
 grF
-utS
+rrf
 rrf
 wyR
 wyR
@@ -60900,7 +61292,7 @@ grF
 grF
 utS
 utS
-utS
+rrf
 rrf
 wyR
 wyR
@@ -61253,7 +61645,7 @@ utS
 utS
 grF
 grF
-grF
+rrf
 rrf
 wyR
 wyR
@@ -61606,8 +61998,8 @@ utS
 utS
 grF
 grF
-grF
-utS
+rrf
+rrf
 wyR
 gwE
 gwE
@@ -63371,7 +63763,7 @@ grF
 utS
 utS
 utS
-utS
+rrf
 rrf
 gwE
 gwE
@@ -63724,7 +64116,7 @@ grF
 utS
 grF
 utS
-utS
+rrf
 wyR
 gwE
 gwE
@@ -64783,7 +65175,7 @@ utS
 utS
 utS
 grF
-grF
+rrf
 gwE
 wyR
 rrf
@@ -65136,7 +65528,7 @@ utS
 utS
 utS
 utS
-utS
+rrf
 wyR
 gwE
 gwE
@@ -65489,12 +65881,12 @@ utS
 utS
 utS
 grF
-grF
+rrf
 rrf
 wyR
 gwE
 rrf
-gZA
+rrf
 gZA
 gZA
 gZA
@@ -65847,7 +66239,7 @@ fIW
 rrf
 gwE
 gwE
-gZA
+rrf
 gZA
 gZA
 gZA
@@ -66195,12 +66587,12 @@ utS
 grF
 grF
 grF
-gZA
+rrf
 wyR
 rrf
 gwE
 gwE
-gZA
+rrf
 gZA
 gZA
 gZA
@@ -66903,11 +67295,11 @@ gZA
 gZA
 wyR
 rrf
-gwE
-gwE
+kbx
+kbx
 rrf
-wjb
-xtk
+wyR
+wyR
 wyR
 wyR
 rrf
@@ -67258,8 +67650,8 @@ rrf
 wyR
 rrf
 gwE
-tPC
-kZH
+aAG
+wyR
 wyR
 wyR
 aAG
@@ -67608,10 +68000,10 @@ gZA
 gZA
 rrf
 rrf
-lxw
-kbx
+tPC
+gwE
 wyR
-wyR
+wum
 wyR
 rrf
 rrf
@@ -67959,10 +68351,10 @@ gZA
 gZA
 gZA
 aAG
+wjb
+gwE
 rrf
-kbx
 rrf
-aAG
 wyR
 rrf
 rrf
@@ -68311,13 +68703,13 @@ gZA
 gZA
 gZA
 aAG
-rrf
+bAv
 kbx
-rrf
+kcT
 rrf
 rrf
 gwE
-ufU
+rrf
 rrf
 rrf
 rrf
@@ -68663,7 +69055,7 @@ gZA
 gZA
 gZA
 aAG
-wyR
+kEt
 nbX
 gwE
 gwE
@@ -69018,7 +69410,7 @@ aAG
 rrf
 aAG
 rrf
-gwE
+kbx
 gwE
 wyR
 gwE
@@ -71484,7 +71876,7 @@ wVQ
 kbx
 aKQ
 gwE
-cCq
+gwE
 gwE
 aAG
 rrf
@@ -71832,7 +72224,7 @@ gZA
 gZA
 cCq
 tHQ
-gwE
+gzV
 gwE
 gwE
 gwE
@@ -72893,7 +73285,7 @@ nbX
 gwE
 gwE
 gwE
-cCq
+gwE
 cCq
 wyR
 rrf
@@ -163308,7 +163700,7 @@ grF
 grF
 grF
 grF
-grF
+gZA
 gZA
 grF
 grF
@@ -163660,7 +164052,7 @@ grF
 grF
 grF
 grF
-grF
+gZA
 gZA
 gZA
 grF
@@ -164012,8 +164404,8 @@ grF
 grF
 grF
 grF
-grF
-grF
+gZA
+gZA
 gZA
 gZA
 gZA
@@ -164364,10 +164756,10 @@ grF
 grF
 grF
 grF
-grF
-grF
-grF
-grF
+gZA
+gZA
+gZA
+gZA
 gZA
 gZA
 gZA
@@ -164716,14 +165108,14 @@ grF
 grF
 grF
 grF
-grF
-grF
-grF
-grF
-grF
-grF
-grF
-grF
+gZA
+gZA
+gZA
+gZA
+gZA
+gZA
+gZA
+gZA
 gZA
 xbe
 xbe
@@ -165068,14 +165460,14 @@ grF
 grF
 grF
 grF
+gZA
+gZA
+gZA
 grF
 grF
 grF
-grF
-grF
-grF
-grF
-grF
+gZA
+gZA
 gZA
 xbe
 xbe
@@ -165420,8 +165812,8 @@ grF
 grF
 grF
 grF
-grF
-grF
+gZA
+gZA
 grF
 grF
 grF
@@ -165772,8 +166164,8 @@ grF
 grF
 grF
 grF
-grF
-grF
+gZA
+gZA
 grF
 grF
 grF
@@ -166124,7 +166516,7 @@ grF
 grF
 grF
 grF
-grF
+gZA
 grF
 grF
 grF
@@ -166476,7 +166868,7 @@ grF
 grF
 grF
 grF
-grF
+gZA
 grF
 grF
 grF
@@ -166827,8 +167219,8 @@ grF
 grF
 grF
 grF
-grF
-grF
+gZA
+gZA
 grF
 grF
 grF
@@ -167179,7 +167571,7 @@ grF
 grF
 grF
 grF
-grF
+gZA
 grF
 grF
 grF
@@ -167531,7 +167923,7 @@ grF
 grF
 grF
 grF
-grF
+gZA
 grF
 grF
 grF
@@ -167882,8 +168274,8 @@ grF
 grF
 grF
 grF
-grF
-grF
+gZA
+gZA
 grF
 grF
 grF
@@ -168234,8 +168626,8 @@ grF
 grF
 grF
 grF
-grF
-grF
+gZA
+gZA
 grF
 grF
 grF
@@ -168586,8 +168978,8 @@ grF
 grF
 grF
 grF
-grF
-grF
+gZA
+gZA
 grF
 grF
 grF
@@ -168938,7 +169330,7 @@ grF
 grF
 grF
 grF
-grF
+gZA
 grF
 grF
 grF
@@ -169289,8 +169681,8 @@ grF
 grF
 grF
 grF
-grF
-grF
+gZA
+gZA
 grF
 grF
 grF
@@ -169641,7 +170033,7 @@ grF
 grF
 grF
 grF
-grF
+gZA
 grF
 grF
 grF
@@ -169993,7 +170385,7 @@ grF
 grF
 grF
 grF
-grF
+gZA
 grF
 grF
 grF
@@ -170344,8 +170736,8 @@ grF
 grF
 grF
 grF
-grF
-grF
+gZA
+gZA
 grF
 grF
 grF
@@ -170696,7 +171088,7 @@ grF
 grF
 grF
 grF
-grF
+gZA
 grF
 grF
 grF
@@ -171047,8 +171439,8 @@ grF
 grF
 grF
 grF
-grF
-grF
+gZA
+gZA
 grF
 grF
 grF
@@ -176382,7 +176774,7 @@ xbe
 xbe
 blL
 xbe
-cCq
+rrf
 rrf
 gwE
 rrf
@@ -177793,7 +178185,7 @@ xKY
 wyR
 rrf
 rYD
-cCq
+rrf
 rYD
 psN
 gZA
@@ -325809,7 +326201,7 @@ eAk
 kcs
 kcs
 eAk
-bAv
+eAk
 eAk
 uWb
 lkw

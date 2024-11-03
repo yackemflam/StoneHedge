@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = " You are one of the most experienced members of the Elven Guard. You have the experience of a Ranger and the Strategum of a Wizard - the Respect of the Kingdom and Keep to boot. Your purpose is to protect the borders of the realm and handle the threats within it, with your trusty Hedge Knights."
+	tutorial = " You are one of the most experienced members of the Elven Forest-Guard. You have the experience of a Ranger and the Strategum of a Wizard - the Respect of the Nation to boot. Your purpose is to protect the borders of the realm and handle the threats within it, with your trusty Hedge Knights - and those good adventurefolk you can trust."
 	display_order = JDO_BOGMASTER
 	whitelist_req = FALSE
 
@@ -45,23 +45,23 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	beltl = /obj/item/storage/keyring/guardcastle
+	beltl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	beltr = /obj/item/rogueweapon/sword/silver/sabre/elf
 	belt = /obj/item/storage/belt/rogue/leather
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backl = /obj/item/rogueweapon/shield/tower
+	backl = /obj/item/quiver/Parrows
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
@@ -86,7 +86,7 @@
 	name = "Recruit Hedgeknight"
 	new_role = "Hedge Knight"
 	recruitment_faction = "Hedge Knight"
-	recruitment_message = "Serve the bog, %RECRUIT!"
+	recruitment_message = "Serve the Forest, %RECRUIT!"
 	accept_message = "FOR THE HEDGE!"
 	refuse_message = "I refuse."
 

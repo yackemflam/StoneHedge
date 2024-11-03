@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = " You decided to protect the Dream Dales oneday, and you joined the Hedgecademy. Learning from the best you can muster, you're a certified monster hunter as much as you are a ranger and guard. Stone Hedge is your Duty."
+	tutorial = " You decided to protect the dream dales oneday, and you joined the hedgecademy within the rangers keep. Learning from the best you can muster, you're a certified monster hunter as much as you are a ranger and guard. Keeping these woodlands safe is your duty."
 	display_order = JDO_TOWNGUARD
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/bogguardsman
@@ -43,7 +43,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/bog
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	beltl = /obj/item/storage/keyring/guard
+	beltl = /obj/item/flashlight/flare/torch/lantern
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/sword/silver/sabre/elf
 	backr = /obj/item/storage/backpack/rogue/satchel

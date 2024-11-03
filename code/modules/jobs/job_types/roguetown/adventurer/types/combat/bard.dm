@@ -2,7 +2,7 @@
 /datum/advclass/bard
 	name = "Bard"
 	tutorial = "Bards make up one of the largest populations of \
-	registered adventurers in Enigma, mostly because they are \
+	registered adventurers in Astralith, mostly because they are \
 	the last ones in a party to die. Their wish is to experience \
 	the greatest adventures of the age and write amazing songs about them."
 	allowed_sexes = list(MALE, FEMALE)
@@ -115,7 +115,7 @@
 			H.change_stat("intelligence", 1)
 			H.change_stat("perception", 2)
 			H.change_stat("endurance", 1)
-			H.change_stat("speed", 2)		
+			H.change_stat("speed", 2)
 			H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 
 	var/colleges = list(
@@ -123,7 +123,7 @@
 		"College of Eloquence",
 		"College of Spirits",
 		"College of Swords",
-		"College of Whispers")			
+		"College of Whispers")
 	var/collegechoice = input("Choose your college", "Available colleges") as anything in colleges
 	switch(collegechoice)
 		if("College of Lore")
@@ -141,7 +141,7 @@
 		if("College of Swords")
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-			H.give_fightingstyle() //gives one fighting style 
+			H.give_fightingstyle() //gives one fighting style
 
 		if("College of Whispers")
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
