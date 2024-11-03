@@ -233,6 +233,8 @@
 		if(R != src)
 			M.reagents.remove_reagent(R.type,0.5)
 	M.adjustToxLoss(-0.5*REM, 0)
+	if(M.has_status_effect(STATUS_EFFECT_ENDOWED))
+		M.remove_status_effect(STATUS_EFFECT_ENDOWED)
 	..()
 	. = 1
 
@@ -265,11 +267,3 @@
 		M.add_nausea(9)
 		M.adjustToxLoss(3, 0)
 	return ..()
-
-/datum/reagent/erpjuice/cum
-	name = "Erotic Fluid"
-	description = "A thick, sticky, cream like fluid. produced during an orgasm."
-	reagent_state = LIQUID
-	color = "#ebebeb"
-	taste_description = "salty and tangy"
-	metabolization_rate = 0.1

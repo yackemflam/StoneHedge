@@ -150,7 +150,6 @@
 			continue
 		if(doctor.mind)
 			var/amt2raise = doctor.STAINT *5
-			doctor.mind.add_sleep_experience(/datum/skill/misc/medicine, amt2raise)
 			doctor.mind.adjust_experience(/datum/skill/misc/medicine, amt2raise * boon)
 		use(1)
 		target_wound.sew_wound()

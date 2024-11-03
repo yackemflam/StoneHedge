@@ -342,7 +342,7 @@
 	var/initialbreasts
 
 /atom/movable/screen/alert/status_effect/debuff/bigboobs
-	name = "Curse of Endowment"
+	name = "Enchanted Endowment" //was gonna name it a curse but it isn't a technically one.
 	desc = "They feel as heavy as gold and are massive... My back hurts."
 	icon = 'modular_stonehedge/icons/mob/screen_alert.dmi'
 	icon_state = "bigboobs"

@@ -76,6 +76,18 @@
 			return 0
 	return 1
 
+/proc/playerless_in_area(area/the_area, mob/must_be_alone, check_type = /mob/living/carbon)
+	var/area/our_area = get_area(the_area)
+	for(var/C in GLOB.player_list)
+		if(!istype(C, check_type))
+			continue
+		if(C == must_be_alone)
+			continue
+		if(our_area == get_area(C))
+			return 0
+	return 1
+
+
 //We used to use linear regression to approximate the answer, but Mloc realized this was actually faster.
 //And lo and behold, it is, and it's more accurate to boot.
 /proc/cheap_hypotenuse(Ax,Ay,Bx,By)

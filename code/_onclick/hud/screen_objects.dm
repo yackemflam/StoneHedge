@@ -1926,6 +1926,7 @@
 	screen_loc = rogueui_fat
 	layer = HUD_LAYER+0.1
 
+/*
 /atom/movable/screen/grain
 	icon = 'icons/grain.dmi'
 	icon_state = "grain"
@@ -1949,6 +1950,7 @@
 	layer = 24
 	plane = 24
 	blend_mode = BLEND_MULTIPLY
+*/
 
 /atom/movable/screen/char_preview
 	name = "Me."

@@ -48,7 +48,6 @@
 	if(!produce_ready)
 		return
 	apply_farming_fatigue(user, 5)
-	add_sleep_experience(user, /datum/skill/labor/farming, user.STAINT * 2)
 	adjust_experience(user, /datum/skill/labor/farming, user.STAINT * 2)
 
 	var/farming_skill = user.mind.get_skill_level(/datum/skill/labor/farming)

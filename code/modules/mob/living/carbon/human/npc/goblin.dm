@@ -153,6 +153,7 @@
 	use_f = TRUE
 	clothes_id = "dwarf"
 
+
 /datum/species/goblin/regenerate_icons(mob/living/carbon/human/H)
 //	H.cut_overlays()
 	H.icon_state = ""

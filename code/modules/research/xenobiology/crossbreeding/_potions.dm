@@ -104,7 +104,7 @@ Slimecrossing Potions
 
 /obj/item/slimepotion/endowpotion
 	name = "endowment potion"
-	desc = "said to make one uncomfortably endowed for about ten minutes."
+	desc = "Makes one uncomfortably endowed for about 10 minutes. It has <b>3 uses</b> left."
 	icon = 'modular_stonehedge/icons/roguetown/items/cooking.dmi'
 	icon_state = "endowbottle"
 	var/uses = 3
@@ -115,22 +115,19 @@ Slimecrossing Potions
 		return ..()
 
 	if(M.has_status_effect(STATUS_EFFECT_ENDOWED))
-		to_chat(user, span_warning("[M] is already endowed! This will undo the effects..."))
-		M.remove_status_effect(STATUS_EFFECT_ENDOWED)
-		uses--
-		if(uses <= 0)
-			to_chat(M, span_notice("The potion is useless now."))
-			qdel(src)
-		return ..()
+		to_chat(user, span_warning("[M] is already endowed! This will reset the duration..."))
 	M.visible_message(span_danger("[user] starts to feed [M] an endowment potion!"),
 		span_danger("[user] starts to feed you an endowment potion!"))
 	if(!do_after(user, 25, target = M))
 		return
 	uses--
+	desc = "Makes one uncomfortably endowed for about 10 minutes.  It has <b>[uses] uses</b> left."
 	if(uses <= 0)
 		to_chat(M, span_notice("The potion is useless now."))
 		qdel(src)
 	to_chat(user, span_notice("I feed [M] the love potion!"))
+	if(M.has_status_effect(STATUS_EFFECT_ENDOWED))
+		M.remove_status_effect(STATUS_EFFECT_ENDOWED)
 	M.apply_status_effect(STATUS_EFFECT_ENDOWED)
 
 //Pressure potion - Charged Dark Blue
