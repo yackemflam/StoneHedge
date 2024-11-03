@@ -2,7 +2,6 @@
 //Chests that are meant to make a replayable dungeon experience for long rounds.
 
 //stole the loot lists from dungeon_chest
-GLOBAL_LIST_EMPTY(refilling_chests)
 
 /obj/effect/spawner/lootdrop/roguetown/dungeon/refilling_chest
 	name = "refilling_chest"
@@ -27,38 +26,36 @@ GLOBAL_LIST_EMPTY(refilling_chests)
 	base_icon_state = "dungeon_chest_1"
 	anchored = TRUE //bet some dude would try to take this home.
 	var/found = FALSE
-	var/timetoreset = 30 MINUTES
-	var/resettimer
+	var/time_to_reset = 30 MINUTES
+	var/reset_timer
 	var/max_loot_num_to_spawn = 3
-	var/loottype = "generic"
+	var/loot_type = "generic"
 	var/loot_num_to_spawn = 3
 
 /obj/structure/closet/crate/chest/refilling/generic //because i know mappers wont take refilling base.
-	loottype = "generic"
+	loot_type = "generic"
 
 /obj/structure/closet/crate/chest/refilling/treasure
-	loottype = "treasure"
+	loot_type = "treasure"
 
 /obj/structure/closet/crate/chest/refilling/medicine
-	loottype = "medicine"
+	loot_type = "medicine"
 
 /obj/structure/closet/crate/chest/refilling/materials
-	loottype = "materials"
+	loot_type = "materials"
 
 /obj/structure/closet/crate/chest/refilling/weapon
-	loottype = "weapon"
+	loot_type = "weapon"
 
 /obj/structure/closet/crate/chest/refilling/armor
-	loottype = "armor"
+	loot_type = "armor"
 
 /obj/structure/closet/crate/chest/refilling/Initialize()
 	. = ..()
 	loot_num_to_spawn = rand(max_loot_num_to_spawn)
-	GLOB.refilling_chests += src
 
 /obj/structure/closet/crate/chest/refilling/Destroy()
 	. = ..()
-	GLOB.refilling_chests -= src
 
 /obj/structure/closet/crate/chest/refilling/proc/try_reset_chest()
 	//if its found before and area has no players when timer expire.
@@ -70,18 +67,19 @@ GLOBAL_LIST_EMPTY(refilling_chests)
 		loot_num_to_spawn = rand(max_loot_num_to_spawn)
 		update_icon()
 		PopulateContents()
-		if(resettimer)
-			deltimer(resettimer)
+		if(reset_timer)
+			deltimer(reset_timer)
 	else
 		//quarter the time to check again because we really want to reset this chest soon at this point.
-		resettimer = addtimer(CALLBACK(src, PROC_REF(try_reset_chest), timetoreset/4, TIMER_STOPPABLE))
+		var/fast_time = time_to_reset/4
+		reset_timer = addtimer(CALLBACK(src, PROC_REF(try_reset_chest)), fast_time, TIMER_STOPPABLE)
 
 
 /obj/structure/closet/crate/chest/refilling/PopulateContents()
 	for(var/obj/item/olditem in contents)
 		qdel(olditem) //fresh start babehhh
 	var/list/loot
-	switch(loottype)
+	switch(loot_type)
 		if("generic")
 			loot = list(/obj/item/cooking/pan=33,
 				/obj/item/bomb=6,
@@ -279,7 +277,7 @@ GLOBAL_LIST_EMPTY(refilling_chests)
 				/obj/item/clothing/shoes/roguetown/boots/footmangreaves = 30
 				)
 	if(loot == null)
-		log_runtime("Some stupid RETARD put the loottype of [src] wrong at [get_area(src)], x[src.x], y[src.y], z[src.z]") //must keep the roguetown tradition.
+		log_runtime("Some stupid RETARD put the loot_type of [src] wrong at [get_area(src)], x[src.x], y[src.y], z[src.z]") //must keep the roguetown tradition.
 		return
 	for(var/damn in 1 to loot_num_to_spawn)
 		var/I = pickweight(loot)
@@ -292,7 +290,7 @@ GLOBAL_LIST_EMPTY(refilling_chests)
 		icon_state = "dungeon_chest_0"
 		base_icon_state = "dungeon_chest_0"
 		update_icon()
-		resettimer = addtimer(CALLBACK(src, PROC_REF(try_reset_chest), timetoreset, TIMER_STOPPABLE)) //start a timer to reset this chest later.
+		reset_timer = addtimer(CALLBACK(src, PROC_REF(try_reset_chest), time_to_reset), TIMER_STOPPABLE) //start a timer to reset this chest later.
 
 /obj/structure/closet/crate/chest/refilling/mimic
 	icon_state = "dungeon_chest_1"
@@ -300,8 +298,9 @@ GLOBAL_LIST_EMPTY(refilling_chests)
 
 /obj/structure/closet/crate/chest/refilling/mimic/attack_hand(mob/living/user)
 	. = ..()
-	playsound(src.loc, 'modular_stonehedge/sound/mgsalert.ogg', 100, TRUE)
-	//need to make overhead effects.
+	playsound(src.loc, 'sound/vo/mobs/mimic/surprise.ogg', 100, TRUE)
+	//playsound(src.loc, 'modular_stonehedge/sound/mgsalert.ogg', 100, TRUE)
+	//need to make overhead effects, and lewd mimic when someone makes it.
 	visible_message(span_danger("The [src] is a mimic!"))
 	new	/mob/living/simple_animal/hostile/rogue/mimic (get_turf(src))
 	qdel(src)
