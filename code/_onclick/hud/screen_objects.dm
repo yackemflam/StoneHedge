@@ -1860,6 +1860,25 @@
 				hud_used.rmb_intent.update_icon()
 				hud_used.rmb_intent.collapse_intents()
 
+/mob/living/proc/cycle_rmb_intent()
+    if(!possible_rmb_intents?.len)
+        return
+
+    // Find the index of the current intent
+    var/index = possible_rmb_intents.Find(rmb_intent)
+
+    if(index == -1)
+        rmb_intent = possible_rmb_intents[1]
+    else
+        // Calculate the next index, wrapping around if at the end
+        index = (index % possible_rmb_intents.len) + 1
+        rmb_intent = possible_rmb_intents[index]
+
+    if(hud_used?.rmb_intent)
+    {
+        hud_used.rmb_intent.update_icon()
+        hud_used.rmb_intent.collapse_intents()
+    }
 
 /atom/movable/screen/time
 	name = "Sir Sun"
@@ -1907,6 +1926,7 @@
 	screen_loc = rogueui_fat
 	layer = HUD_LAYER+0.1
 
+/*
 /atom/movable/screen/grain
 	icon = 'icons/grain.dmi'
 	icon_state = "grain"
@@ -1930,6 +1950,7 @@
 	layer = 24
 	plane = 24
 	blend_mode = BLEND_MULTIPLY
+*/
 
 /atom/movable/screen/char_preview
 	name = "Me."

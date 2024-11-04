@@ -596,6 +596,8 @@
 		rogue_sneaking = TRUE
 		return
 	var/turf/T = get_turf(src)
+	if(!T) //for runtimes.
+		return
 	var/light_amount = T.get_lumcount()
 	var/used_time = 50
 	if(mind)

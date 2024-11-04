@@ -109,6 +109,7 @@
 	blade_dulling = DULLING_BASHCHOP
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
+	can_hold_endowed = TRUE
 
 /obj/item/clothing/under/roguetown/trou/leather
 	name = "leather trousers"
@@ -188,6 +189,7 @@
 	l_sleeve_status = SLEEVE_NOMOD
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FIRE_PROOF
+	can_hold_endowed = TRUE
 
 /obj/item/clothing/under/roguetown/brayette
 	name = "brayette"

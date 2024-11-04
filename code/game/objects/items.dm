@@ -167,6 +167,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/bloody_icon = 'icons/effects/blood.dmi'
 	var/bloody_icon_state = "itemblood"
 	var/boobed = FALSE
+	var/can_hold_endowed = FALSE
 
 	var/firefuel = 0 //add this idiot
 

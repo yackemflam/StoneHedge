@@ -176,7 +176,8 @@
 	name = "steel parrying dagger"
 	desc = "This is a parrying dagger made of solid steel, used to catch opponent's weapons in the handguard, even more durable."
 	icon_state = "spdagger"
-	max_integrity = 200
+	force = 18
+	max_integrity = 225 //this shit costs 2 steel, more than a rapier somehow.
 	smeltresult = /obj/item/ingot/steel
 	wdefense = 6
 

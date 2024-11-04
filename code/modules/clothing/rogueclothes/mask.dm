@@ -110,6 +110,13 @@
 		return
 	qdel(src)
 
+/obj/item/clothing/mask/rogue/facemask/gold
+	name = "gold mask"
+	desc = "A golden mask commonly found in the Zybantine Empire, worn by nobles. Gold is softer than iron therefore it is easier to break than iron masks."
+	icon_state = "goldmask"
+	max_integrity = 75
+	smeltresult = /obj/item/ingot/gold
+
 /obj/item/clothing/mask/rogue/facemask/steel
 	name = "steel mask"
 	desc = "A mask of steel which protects the eyes, nose and mouth while also obscuring the face."
@@ -233,15 +240,6 @@
 	desc = "Masks often worn by Pestran acolytes. It is similar in design to the mask worn by plague doctors, only modified in such a way to feature three bird's heads instead of one. One for the cure. One for the disease. And one for the compassion towards those who suffer with illness as Pestra does."
 	icon_state = "pestramask"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
-	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
-	sewrepair = TRUE
-
-/obj/item/clothing/mask/rogue/goldmask
-	name = "gold mask"
-	desc = "A golden mask commonly found in the Zybantine Empire, worn by nobles."
-	icon_state = "goldmask"
-	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	sewrepair = TRUE

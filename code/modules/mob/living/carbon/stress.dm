@@ -82,6 +82,13 @@
 	var/old_threshold = get_stress_threshold(oldstress)
 	var/new_threshold = get_stress_threshold(new_stress)
 	if(old_threshold != new_threshold)
+		if(ascending)
+			if(!rogue_sneaking || alpha >= 100)
+				play_stress_indicator()
+		else
+			if(!rogue_sneaking || alpha >= 100)
+				play_relief_indicator()
+
 		switch(new_threshold)
 			if(STRESS_THRESHOLD_NICE)
 				to_chat(src, span_green("I feel good"))
@@ -117,9 +124,11 @@
 /mob/living/carbon/proc/update_stress_visual(new_stress)
 	if(!client)
 		return
+/*
 	/// Update grain alpha
 	var/atom/movable/screen/grain_obj = hud_used.grain
 	grain_obj.alpha = 55 + (new_stress * 1.5)
+*/
 
 	var/fade_progress = 0
 	if(new_stress < 5)

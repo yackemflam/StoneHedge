@@ -17,6 +17,9 @@
 	//If someone ends up writing custom messages for goblins, lewd talk could be used ig -vide
 	//lewd_talk = TRUE
 	//skin color is "e8b59b"
+	show_genitals = FALSE  //would be good but colors just wont work.
+	skin_tone = "e8b59b"
+	hair_color = "291e01"
 
 /mob/living/carbon/human/species/goblin/unarmed
 	gob_outfit = null
@@ -129,6 +132,7 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+//		ORGAN_SLOT_BUTT = /obj/item/organ/butt,
 		ORGAN_SLOT_ANUS = /obj/item/organ/filling_organ/anus,
 		)
 	offset_features = list(
@@ -144,6 +148,11 @@
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
 	var/raceicon = "goblin"
+	fixed_mut_color = "e8b59b"
+	custom_clothes = TRUE
+	use_f = TRUE
+	clothes_id = "dwarf"
+
 
 /datum/species/goblin/regenerate_icons(mob/living/carbon/human/H)
 //	H.cut_overlays()
@@ -218,6 +227,8 @@
 	return
 
 /mob/living/carbon/human/species/goblin/Initialize()
+	if(prob(50))
+		gender = FEMALE
 	. = ..()
 	spawn(10)
 		after_creation()

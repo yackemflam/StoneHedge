@@ -13,7 +13,6 @@
 		organnum++
 	return (armorval/max(organnum, 1))
 
-
 /mob/living/carbon/human/proc/checkarmor(def_zone, d_type, damage, armor_penetration, blade_dulling)
 	if(!d_type)
 		return 0
@@ -22,7 +21,7 @@
 		def_zone = CBP.body_zone
 	var/protection = 0
 	var/obj/item/clothing/used
-	var/list/body_parts = list(skin_armor, head, wear_mask, wear_wrists, wear_shirt, wear_neck, cloak, wear_armor, wear_pants, backr, backl, gloves, shoes, belt, s_store, glasses, ears, wear_ring) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor)
+	var/list/body_parts = list(skin_armor, head, wear_mask, wear_wrists, gloves, wear_neck, cloak, wear_armor, wear_shirt, shoes, wear_pants, backr, backl, belt, s_store, glasses, ears, wear_ring) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor)
 	for(var/bp in body_parts)
 		if(!bp)
 			continue
@@ -33,26 +32,10 @@
 					if(C.obj_integrity <= 0)
 						continue
 				var/val = C.armor.getRating(d_type)
-				// The code below finally fixes the targetting order of armor > shirt > flesh. - Foxtrot (#gundamtanaka) <- Fix from Stonekeep, Furries are too busy to fix.
-				var/armorworn = src.get_item_by_slot(SLOT_ARMOR) // The armor we're wearing
-				var/shirtworn = src.get_item_by_slot(SLOT_SHIRT) // The shirt we're wearing
-				if(bp == armorworn) // If the targeted bodypart has an armor...
-					if(val > 0) // ...and it's an actual armor with armor values...
-						if(val > protection)
-							protection = val
-							used = armorworn // ...force us to use it above all!
-				// If we don't have armor equipped or the one we have is broken...
-				else if(bp == shirtworn && wear_armor?.obj_integrity <= 0 || armorworn == null)
-					if(val > 0) // ...and it's not just a linen shirt...
-						if(val > protection)
-							protection = val
-							used = shirtworn //  ...skip straight to the shirt slot, and target it!
-				// Otherwise, proceed with normal assignment of bodypart protected by armor that isn't armor or shirt
-				else if(!istype(bp, wear_armor) && !istype(bp, wear_shirt))
-					if(val > 0)
-						if(val > protection)
-							protection = val
-							used = C
+				if(val > 0)
+					if(val > protection)
+						protection = val
+						used = C
 	if(used)
 		if(!blade_dulling)
 			blade_dulling = BCLASS_BLUNT
@@ -824,7 +807,7 @@
 			examination += span_danger("[m1] TETRAPLEGIC!")
 	else if(HAS_TRAIT(src, TRAIT_PARALYSIS_R_LEG) && HAS_TRAIT(src, TRAIT_PARALYSIS_L_LEG))
 		examination += span_warning("[m1] PARAPLEGIC!")
-	
+
 	var/static/list/body_zones = list(
 		BODY_ZONE_HEAD,
 		BODY_ZONE_CHEST,
@@ -874,7 +857,7 @@
 		examination += span_notice("Let's see how [src]'s [parse_zone(choice)] is doing.")
 		if(!user.stat && !silent)
 			visible_message(span_notice("[user] examines [src]'s [parse_zone(choice)]."))
-	
+
 	var/obj/item/bodypart/examined_part = get_bodypart(choice)
 	if(examined_part)
 		examination += examined_part.check_for_injuries(user, advanced)
