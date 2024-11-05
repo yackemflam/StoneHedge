@@ -174,7 +174,7 @@
 	breakoutextra = 10 MINUTES
 	buckleverb = "tie"
 
-/obj/structure/flora/roguegrass/maneater/real/user_unbuckle_mob(mob/living/M, mob/user)
+/obj/structure/fluff/walldeco/user_unbuckle_mob(mob/living/M, mob/user)
 	if(obj_broken)
 		..()
 		return
