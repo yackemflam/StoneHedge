@@ -153,7 +153,7 @@
 	body_parts_covered = NECK
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
-	clothing_flags = CANT_SLEEP_IN
+	clothing_flags = CANT_SLEEP_IN|CURSED
 
 /obj/item/clothing/neck/roguetown/gorget/prisoner/Initialize()
 	. = ..()
@@ -166,6 +166,15 @@
 	if(QDELETED(src))
 		return
 	qdel(src)
+
+/obj/item/clothing/neck/roguetown/gorget/prisoner/servant
+	name = "cursed obedience collar"
+	desc = "This collar makes me obligated to heed to orders of others. And prevents me from running away..."
+
+/obj/item/clothing/neck/roguetown/gorget/prisoner/servant/equipped(mob/user, slot)
+	. = ..()
+	to_chat(user, span_warning("This collar makes me heed to orders of others, unless it includes self harm or orders that will indirectly or directly harm to town and its population... And also it prevents me from running away..."))
+	to_chat(user, span_alert("Roleplay accordingly to your collar's effects."))
 
 /obj/item/clothing/neck/roguetown/psicross
 	name = "divine Symbol"

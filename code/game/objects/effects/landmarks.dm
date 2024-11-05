@@ -108,6 +108,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Beggar")
 	delete_after_roundstart = FALSE
 
+/obj/effect/landmark/start/vagrantlate
+	name = "Beggarlate"
+	icon_state = "arrow"
+	jobspawn_override = list("Beggar")
+	delete_after_roundstart = FALSE
+
+
 /obj/effect/landmark/start/vagabondlate
 	name = "Vagabondlate"
 	icon_state = "arrow"
@@ -451,7 +458,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/triballate
 	name = "triballate"
 	icon_state = "arrow"
-	jobspawn_override = list("Tribal Cook", "Tribal Guard", "Chieftain", "Tribal Smith", "Tribal Shaman", "Tribal Villager"/*, "Tribal Slave"*/)
+	jobspawn_override = list("Tribal Cook", "Tribal Guard", "Chieftain", "Tribal Smith", "Tribal Shaman", "Tribal Villager", "Tribal Slave")
 	delete_after_roundstart = FALSE
 
 //Hearthstone Additions

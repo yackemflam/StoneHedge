@@ -117,7 +117,7 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Soilson",
 	"Butcher",
 	"Cook",
-	"Lunatic",
+	"Shunned Slave,
 	"Miner",
 	"Hunter",
 	"Fisher",

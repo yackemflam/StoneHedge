@@ -111,6 +111,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Strapless Dress"
 	path = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless
 
+/datum/loadout_item/straplessdress
+	name = "Strapless Dress, alt"
+	path = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/alt
+
 /datum/loadout_item/belldresblue
 	name = "Blue bell dress"
 	path = /obj/item/clothing/suit/roguetown/shirt/belldress
