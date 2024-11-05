@@ -2380,6 +2380,7 @@
 #include "code\modules\jobs\job_types\roguetown\peasants\prisoner.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\seelie.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\soilson.dm"
+#include "code\modules\jobs\job_types\roguetown\peasants\town slave.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\vagabond.dm"
 #include "code\modules\jobs\job_types\roguetown\vampire\vampsmith.dm"
 #include "code\modules\jobs\job_types\roguetown\vampire\vampthrall.dm"
@@ -3728,9 +3729,9 @@
 #include "modular_hearthstone\statpacks\wildcard.dm"
 #include "modular_stonehedge\code\datums\traits\unspecial.dm"
 #include "modular_stonehedge\code\game\objects\items\war_horn.dm"
+#include "modular_stonehedge\code\game\objects\structures\dungeon\lewd_statues.dm"
 #include "modular_stonehedge\code\game\objects\structures\dungeon\loot_generators\dungeon_chest.dm"
 #include "modular_stonehedge\code\lewdai\lewdai.dm"
 #include "modular_stonehedge\code\modules\datums\accents.dm"
 #include "modular_stonehedge\code\modules\mob\living\overhead_effects.dm"
-#include "code\modules\jobs\job_types\roguetown\peasants\town slave.dm"
 // END_INCLUDE

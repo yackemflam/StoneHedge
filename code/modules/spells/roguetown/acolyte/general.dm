@@ -28,6 +28,7 @@
 			target.fire_act(1,10)
 			return TRUE
 		var/conditional_buff = FALSE
+		var/situational_bonus = 1
 		if(HAS_TRAIT(target, TRAIT_ASTRATA_CURSE))
 			target.visible_message(span_danger("[target] recoils in pain!"), span_userdanger("Divine healing shuns me!"))
 			target.cursed_freak_out()

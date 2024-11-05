@@ -234,6 +234,31 @@
 /datum/reagent/consumable/cum/sterile
 	virile = FALSE
 
+/datum/reagent/consumable/cum/sterile/old //used in statue fountain.
+	name = "Old Semen"
+	description = "Disgusting... smelly slime... And somewhat yellow. This was magically, barely preserved through decades... It used to be fine, even clear as water until I severed it from it's home."
+	color = "#c7c49e"
+	taste_description = "salty, disgusting moldy slime"
+	glass_icon_state = "glass_white"
+	glass_name = "glass of old semen"
+
+/datum/reagent/consumable/cum/sterile/old/on_mob_life(mob/living/carbon/M)
+	if(M.getBruteLoss() && prob(20))
+		M.heal_bodypart_damage(1,0, 0)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
+			H.adjust_hydration(5)
+			H.adjust_nutrition(5)
+		if(!HAS_TRAIT(H, TRAIT_ROT_EATER))
+			H.adjustToxLoss(3, TRUE) //this shit is toxic.
+			H.add_nausea(10)
+			if(prob(5))
+				to_chat(M, span_notice("[pick("God, I am going to puke...","My stomach is crying for help...","I feel sick...","That was disgusting... I feel sick...")]"))
+
+	. = 1
+	..()
+
 /datum/reagent/consumable/milk/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)

@@ -1,5 +1,5 @@
 /datum/job/roguetown/lunatic
-	title = "Shunned Slave
+	title = "Shunned Slave"
 	flag = LUNATIC
 	department_flag = PEASANTS
 	faction = "Station"

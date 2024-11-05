@@ -42,7 +42,7 @@ GLOBAL_LIST_EMPTY_TYPED(schizohelps, /datum/schizohelp)
 		"Fool",
 		"Madman",
 		"Nimrod",
-		"Shunned Slave,
+		"Lunatic",
 		"Imbecile",
 		"Simpleton",
 	)
