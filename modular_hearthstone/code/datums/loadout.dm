@@ -176,7 +176,6 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Divine symbol"
 	path = /obj/item/clothing/neck/roguetown/psicross
 
-/obj/item/clothing/neck/roguetown/psicross
 //ARMOR
 /datum/loadout_item/ironmask
 	name = "Iron Mask"
@@ -189,3 +188,7 @@ GLOBAL_LIST_EMPTY(loadout_items)
 /datum/loadout_item/lbracers
 	name = "Leather Bracers"
 	path = /obj/item/clothing/wrists/roguetown/bracers/leather
+
+/datum/loadout_item/istockings
+	name = "Iron fishnets"
+	path = /obj/item/clothing/under/roguetown/chainlegs/iron/fishnet

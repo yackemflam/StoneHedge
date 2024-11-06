@@ -21,13 +21,11 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/under/roguetown/AdjustClothes(mob/user)
-#ifdef MATURESERVER
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
 			icon_state = "[initial(icon_state)]_t"
-			body_parts_covered = null
-			slowdown += 2
+			flags_inv = null
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
 				H.update_inv_pants()
@@ -37,9 +35,7 @@
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
 					H.update_inv_pants()
-#else
 	return
-#endif
 
 /obj/item/clothing/under/roguetown/tights
 	name = "tights"

@@ -120,6 +120,7 @@
 	altnames = list("vagina", "cunt", "womb", "pussy", "slit", "kitty", "snatch") //used in thought messages.
 	spiller = TRUE
 	blocker = ITEM_SLOT_PANTS
+	bloatable = TRUE
 
 /obj/item/organ/filling_organ/breasts
 	name = "breasts"
