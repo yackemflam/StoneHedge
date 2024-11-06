@@ -1,5 +1,5 @@
 /datum/job/roguetown/beggar
-	title = "Beggar"
+	title = "Low-life"
 	flag = BEGGAR
 	department_flag = PEASANTS
 	faction = "Station"
@@ -130,7 +130,7 @@
 	H.grant_language(/datum/language/thievescant)
 
 /datum/outfit/job/roguetown/vagrant
-	name = "Beggar"
+	name = "Low Life"
 	/// Whether or not we get wise gear and stats
 	var/is_wise = FALSE
 

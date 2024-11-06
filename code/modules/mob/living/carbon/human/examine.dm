@@ -123,6 +123,9 @@
 		if(name in GLOB.outlawed_players)
 			. += span_userdanger("OUTLAW!")
 
+		if(has_status_effect(/datum/status_effect/leash_target))
+			. += span_notice("[used_name] is a slave.")
+
 		var/commie_text
 		if(mind)
 			if(mind.special_role == "Bandit")
@@ -132,8 +135,6 @@
 					commie_text = span_userdanger("BANDIT!")
 			if(mind.special_role == "Vampire Lord" && !mind.has_antag_datum(/datum/antagonist/vampirelord/).disguised)
 				. += span_userdanger("A MONSTER!")
-			if(mind.assigned_role == "Shunned Slave")
-				. += span_userdanger("LUNATIC!")
 			if(HAS_TRAIT(src, TRAIT_PUNISHMENT_CURSE))
 				. += span_userdanger("CURSED!")
 

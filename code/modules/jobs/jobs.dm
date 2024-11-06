@@ -85,7 +85,7 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 	"Royal Guard",
 	"Beastmaster",
 	"Gatemaster",
-	"Town Sheriff",
+	"Watchmen Captain",
 ))
 
 GLOBAL_LIST_INIT(church_positions, list(
@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(church_positions, list(
 ))
 
 GLOBAL_LIST_INIT(yeoman_positions, list(
-	"Merchant",
+	"Merchant Prince",
 	"Innkeep",
 	"Archivist",
 	"Armorer",
@@ -125,11 +125,11 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Lumberjack",
 	"Towner",
 	"Grabber",
-	"Nightmaster",
-	"Nightswain",
+	"Spymaster",
+	"Courtesan",
 	"Docker",
 	"Prisoner",
-	"Beggar",
+	"Low Life",
 	"Forest Seelie",
 	"Adventurer",
 	"Pilgrim",

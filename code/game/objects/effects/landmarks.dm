@@ -105,7 +105,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/vagrantlate
 	name = "Beggarlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Beggar")
+	jobspawn_override = list("Low-life")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vagrantlate
@@ -344,7 +344,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/vagrant
-	name = "Beggar"
+	name = "Low-life"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/lady
@@ -466,7 +466,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/ladylate
 	name = "ladylate"
 	icon_state = "arrow"
-	jobspawn_override = list("Consort Candidate")
+	jobspawn_override = list("Consort")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/noblelate
