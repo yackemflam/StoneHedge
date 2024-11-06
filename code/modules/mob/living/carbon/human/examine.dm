@@ -123,8 +123,8 @@
 		if(name in GLOB.outlawed_players)
 			. += span_userdanger("OUTLAW!")
 
-		if(has_status_effect(/datum/status_effect/leash_target))
-			. += span_notice("[used_name] is a slave.")
+		if(istype(get_item_by_slot(SLOT_NECK), /obj/item/clothing/neck/roguetown/slavecollar)||istype(get_item_by_slot(SLOT_NECK), /obj/item/clothing/neck/roguetown/gorget/prisoner/servant))
+			. += span_notice("It's a slave.")
 
 		var/commie_text
 		if(mind)
