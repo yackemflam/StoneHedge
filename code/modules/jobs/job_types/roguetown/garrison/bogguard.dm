@@ -48,6 +48,7 @@
 	beltr = /obj/item/rogueweapon/sword/silver/sabre/elf
 	backr = /obj/item/storage/backpack/rogue/satchel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	id = /obj/item/scomstone
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		assign_skills(H)
@@ -78,9 +79,9 @@ Also given some non-combat skills that a peasent would have, just to support the
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)	//Peasent levy, so some skill
 	H.mind.adjust_skillrank(/datum/skill/labor/farming, pick(1,2,2), TRUE)		//Peasent levy, so some skill
-	H.mind.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE) //Hearthstone change.
-	H.change_stat("strength", 2)
+	H.mind.adjust_skillrank(/datum/skill/misc/tracking, 4, TRUE) //Hearthstone change.
+	H.change_stat("strength", 3)
 	H.change_stat("perception", 2)
-	H.change_stat("constitution", 1)
+	H.change_stat("constitution", 2)
 	H.change_stat("endurance", 2)
 	H.change_stat("speed", 1)

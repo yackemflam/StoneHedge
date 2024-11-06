@@ -86,6 +86,28 @@
 	reqs = list(/obj/item/clothing/under/roguetown/loincloth/brown = 1)
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/sewing/ropecollar
+	name = "rope collar"
+	result = list(/obj/item/clothing/neck/roguetown/slavecollar = 1)
+	reqs = list(/obj/item/rope = 1)
+	craftdiff = 0
+/datum/crafting_recipe/roguetown/sewing/untie_ropecollar
+	name = "untie rope collar"
+	result = list(/obj/item/rope = 1)
+	reqs = list(/obj/item/clothing/neck/roguetown/slavecollar = 1)
+	craftdiff = 0
+/datum/crafting_recipe/roguetown/sewing/leash
+	name = "rope leash"
+	result = list(/obj/item/leash = 1)
+	reqs = list(/obj/item/rope = 1)
+	craftdiff = 0
+/datum/crafting_recipe/roguetown/sewing/untie_leash
+	name = "untie rope leash"
+	result = list(/obj/item/rope = 1)
+	reqs = list(/obj/item/leash = 1)
+	craftdiff = 0
+
+
 
 
 /* craftdif of 1 */
@@ -199,6 +221,12 @@
 	craftdiff = 1
 
 /* craftdif of 2+ */
+/datum/crafting_recipe/roguetown/sewing/rope
+	name = "rope"
+	result = list(/obj/item/rope = 1)
+	reqs = list(/obj/item/natural/cloth = 4,
+	/obj/item/natural/fibers = 1)
+	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/sewing/sleepingbag
 	name = "sleepcloth"

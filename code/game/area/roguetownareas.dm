@@ -200,7 +200,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30,
 				/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 50,
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf/gator = 50)
-	first_time_text = "THE TERRORBOG"
+	first_time_text = "THE FOREST"
 	converted_type = /area/rogue/indoors/shelter/bog
 
 /area/rogue/outdoors/goblinfort
@@ -253,12 +253,21 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/outdoors/bog/dense
 	name = "dense bog"
 
-/area/rogue/outdoors/beach
-	name = "sophia's cry"
+/area/rogue/outdoors/beachreal
+	name = "coast"
 	icon_state = "beach"
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
-	droning_sound = 'sound/music/area/townstreets.ogg'
+	droning_sound = 'sound/music/area/beach.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
+
+/area/rogue/outdoors/beach
+	name = "shipyard"
+	icon_state = "beach"
+	ambientsounds = AMB_BEACH
+	ambientnight = AMB_BEACH
+	droning_sound = 'sound/music/area/beach.ogg'
 	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
 	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 
@@ -309,7 +318,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/cavewet
 	name = "cavewet"
 	icon_state = "cavewet"
-	first_time_text = "The Undersea"
+	first_time_text = "MOUNTAIN CAVES"
 	ambientsounds = AMB_CAVEWATER
 	ambientnight = AMB_CAVEWATER
 	spookysounds = SPOOKY_CAVE

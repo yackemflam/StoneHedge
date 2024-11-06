@@ -92,7 +92,7 @@
 	antimagic_allowed = TRUE
 	charge_max = 100
 	/// Role given if recruitment is accepted
-	var/new_role = "Beggar"
+	var/new_role = "Low Life"
 	/// Faction shown to the user in the recruitment prompt
 	var/recruitment_faction = "Beggars"
 	/// Message the recruiter gives
@@ -161,11 +161,11 @@
 	return TRUE
 
 /obj/effect/proc_holder/spell/self/convertrole/guard
-	name = "Recruit Guardsmen"
+	name = "Recruit Neighborhood Watch"
 	new_role = "Watchman"
 	recruitment_faction = "Watchman"
-	recruitment_message = "Serve the town guard, %RECRUIT!"
-	accept_message = "FOR THE KING!"
+	recruitment_message = "Serve the town watch, %RECRUIT!"
+	accept_message = "I STAND GUARD!"
 	refuse_message = "I refuse."
 
 /obj/effect/proc_holder/spell/self/convertrole/guard/convert(mob/living/carbon/human/recruit, mob/living/carbon/human/recruiter)
