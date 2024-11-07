@@ -1,1 +1,1 @@
-#define FORCE_MAP "_maps/Dreamhold.json"
+#define FORCE_MAP "_maps/dreamhold.json"
