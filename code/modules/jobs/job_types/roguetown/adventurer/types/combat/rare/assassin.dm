@@ -1,4 +1,4 @@
-//unused
+//unused, no.
 
 /datum/advclass/assassin
 	name = "Master Assassin"
@@ -7,8 +7,8 @@
 	allowed_races = RACES_ALL_KINDS
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_DODGEEXPERT)
 	outfit = /datum/outfit/job/roguetown/adventurer/assassin
-	maximum_possible_slots = 1
-	category_tags = list(CTAG_ADVENTURER)
+	maximum_possible_slots = 0
+	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/roguetown/adventurer/assassin/pre_equip(mob/living/carbon/human/H)
 	..()
