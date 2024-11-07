@@ -1,7 +1,7 @@
 /datum/job/roguetown/deathknight
 	title = "Death Knight"
 	flag = DEATHKNIGHT
-	department_flag = SLOP
+	department_flag = VAMPIRE
 	faction = "Station"
 	total_positions = 10
 	spawn_positions = 10

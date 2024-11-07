@@ -42,7 +42,7 @@
 		/obj/item/seeds/apple = 1,
 		/obj/item/seeds/shroom = 1,
 		/obj/item/seeds/sweetleaf = 1,
-		/obj/item/roguekey/church = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot = 1,
 	)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
