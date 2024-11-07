@@ -17905,6 +17905,17 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"pDS" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/natural/feather,
+/obj/item/candle/yellow/lit,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "pDV" = (
 /turf/open/floor/rogue/rooftop{
 	dir = 8
@@ -21848,9 +21859,13 @@
 /turf/open/transparent/openspace,
 /area/rogue)
 "tdk" = (
-/obj/structure/chair/wood/rogue/chair3{
-	icon_state = "0,0"
-	},
+/obj/structure/closet/crate/chest,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -25550,6 +25565,13 @@
 /area/rogue/under/cavewet)
 "wkw" = (
 /obj/structure/closet/crate/chest,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -314694,7 +314716,7 @@ fEP
 rWh
 jyE
 mXO
-bUj
+mXO
 bUj
 bUj
 oUB
@@ -315045,7 +315067,7 @@ qdN
 fEP
 fEP
 weG
-bUj
+nkY
 bUj
 bUj
 bUj
@@ -315399,8 +315421,8 @@ fEP
 uat
 bUj
 bUj
+dOT
 bUj
-nkY
 oUB
 dFw
 itb
@@ -315751,8 +315773,8 @@ fEP
 uat
 bUj
 bUj
-bUj
 dOT
+bUj
 jyE
 rlL
 itb
@@ -316103,8 +316125,8 @@ fEP
 weG
 bUj
 bUj
+dOT
 bUj
-tdk
 jyE
 upv
 itb
@@ -316455,8 +316477,8 @@ fEP
 jyE
 bUj
 bUj
-bUj
-mXO
+pDS
+tdk
 jyE
 gEf
 qQu
