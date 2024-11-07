@@ -3729,6 +3729,7 @@
 #include "modular_hearthstone\statpacks\mental.dm"
 #include "modular_hearthstone\statpacks\physical.dm"
 #include "modular_hearthstone\statpacks\wildcard.dm"
+#include "modular_stonehedge\code\datums\status_effects\debuffs.dm"
 #include "modular_stonehedge\code\datums\traits\unspecial.dm"
 #include "modular_stonehedge\code\game\objects\items\war_horn.dm"
 #include "modular_stonehedge\code\game\objects\structures\dungeon\lewd_statues.dm"
@@ -3736,5 +3737,4 @@
 #include "modular_stonehedge\code\lewdai\lewdai.dm"
 #include "modular_stonehedge\code\modules\datums\accents.dm"
 #include "modular_stonehedge\code\modules\mob\living\overhead_effects.dm"
-#include "modular_stonehedge\code\datums\status_effects\debuffs.dm"
 // END_INCLUDE
