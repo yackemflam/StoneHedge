@@ -103,6 +103,7 @@
 	altnames = list("ass", "asshole", "butt", "butthole", "guts") //used in thought messages.
 	spiller = TRUE
 	blocker = ITEM_SLOT_PANTS
+	bloatable = TRUE
 
 /obj/item/organ/filling_organ/vagina
 	name = "vagina"
@@ -173,7 +174,6 @@
 	hungerhelp = FALSE //balls dont be dry if you starve
 	reagent_generate_rate = 0.2
 	organ_sizeable = TRUE
-	storage_per_size = 6
 	altnames = list("balls", "testicles", "testes", "orbs", "cum tanks", "seed tanks") //used in thought messages.
 	startsfilled = TRUE
 	blocker = ITEM_SLOT_PANTS

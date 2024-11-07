@@ -76,10 +76,12 @@
 		if(diff_abs > 1)
 			if(ascending)
 				to_chat(src, span_smallred("I feel less at peace."))
-				play_stress_indicator()
+				if(!rogue_sneaking || alpha >= 100)
+					play_stress_indicator()
 			else
 				to_chat(src, span_smallgreen("I feel more at peace."))
-				play_relief_indicator()
+				if(!rogue_sneaking || alpha >= 100)
+					play_relief_indicator()
 
 	var/old_threshold = get_stress_threshold(oldstress)
 	var/new_threshold = get_stress_threshold(new_stress)

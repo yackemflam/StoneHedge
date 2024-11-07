@@ -173,7 +173,7 @@
 /turf/open
 	var/water_level = 0
 	var/last_water_update
-	var/max_water = 500
+	var/max_water = 15
 
 /turf/open/proc/add_water(amt)
 	if(!amt)

@@ -44,7 +44,7 @@
 	icon_state = "stick1"
 	desc = "A dry stick from a tree branch."
 	blade_dulling = 0
-	max_integrity = 20
+	max_integrity = 5
 	static_debris = null
 	firefuel = 5 MINUTES
 	obj_flags = null
