@@ -29,8 +29,8 @@
 
 /mob/living/proc/play_stress_indicator()
 	play_overhead_indicator('modular_stonehedge/icons/mob/overhead_effects.dmi', "stress", 10, OBJ_LAYER)
-	playsound(src, 'modular_stonehedge/sound/ddstress.ogg', 75, FALSE, ignore_walls = FALSE)
+	playsound(src, 'modular_stonehedge/sound/ddstress.ogg', 100, FALSE, ignore_walls = FALSE)
 
 /mob/living/proc/play_relief_indicator()
 	play_overhead_indicator('modular_stonehedge/icons/mob/overhead_effects.dmi', "relief", 10, OBJ_LAYER)
-	playsound(src, 'modular_stonehedge/sound/ddrelief.ogg', 75, FALSE, ignore_walls = FALSE)
+	playsound(src, 'modular_stonehedge/sound/ddrelief.ogg', 100, FALSE, ignore_walls = FALSE)
