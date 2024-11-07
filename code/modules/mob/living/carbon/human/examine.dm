@@ -123,6 +123,8 @@
 		if(name in GLOB.outlawed_players)
 			. += span_userdanger("OUTLAW!")
 
+		if(istype(get_item_by_slot(SLOT_NECK), /obj/item/clothing/neck/roguetown/slavecollar)||istype(get_item_by_slot(SLOT_NECK), /obj/item/clothing/neck/roguetown/gorget/prisoner/servant))
+			. += span_notice("It's a slave.")
 
 		var/commie_text
 		if(mind)
@@ -133,8 +135,6 @@
 					commie_text = span_userdanger("BANDIT!")
 			if(mind.special_role == "Vampire Lord" && !mind.has_antag_datum(/datum/antagonist/vampirelord/).disguised)
 				. += span_userdanger("A MONSTER!")
-			if(mind.assigned_role == "Lunatic")
-				. += span_userdanger("LUNATIC!")
 			if(HAS_TRAIT(src, TRAIT_PUNISHMENT_CURSE))
 				. += span_userdanger("CURSED!")
 
@@ -484,6 +484,33 @@
 				. += span_warning("[t_He] look[p_s()] weaker than I.")
 			if(-INFINITY to -5)
 				. += span_warning("<B>[t_He] look[p_s()] much weaker than I.</B>")
+
+		//The Nymphomaniac Underground
+		if((!appears_dead) && stat == CONSCIOUS && src.has_flaw(/datum/charflaw/addiction/lovefiend))
+			var/datum/charflaw/addiction/bonercheck = src.charflaw
+			if((bonercheck) && (bonercheck.sated == 0))
+				if(user.has_flaw(/datum/charflaw/addiction/lovefiend)) //Takes one to know one
+					switch(rand(1,5))
+						if(1)
+							. += span_love("I can sense [m2] <B>need</B> for fun...")
+						if(2)
+							. += span_love("[m1] <B>aching</B> for a release.")
+						if(3)
+							. += span_love("A carnal need <B>stirs</B> within [m2] core.")
+						if(4)
+							. += span_love("I can practically feel [m2] <B>horniness</B>...")
+						if(5)
+							. += span_love("Embers of desire <B>smolder</B> within [m2].")
+				else if(Adjacent(user)) //No nympho, but close enough to notice.
+					switch(rand(1,4))
+						if(1)
+							. += span_love("[m1] shifting their legs quite a bit...")
+						if(2)
+							. += span_love("I can see [m2] is a bit restless...")
+						if(3)
+							. += span_love("[m2] seem distracted...")
+						if(4)
+							. += span_love("[m1] restless, for some reason.")
 
 	if(maniac)
 		var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)

@@ -179,7 +179,9 @@
 	return 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/stoppedfucking(mob/living/carbon/target, timedout = FALSE)
-	walk_away(src, get_turf(src.loc), 4, move_to_delay)
+	walk_away(src, get_turf(src.loc), 1, move_to_delay)
+	if(gender == MALE) //put that weapon down soldier.
+		sexcon.manual_arousal = SEX_MANUAL_AROUSAL_DEFAULT
 	isfucking = FALSE
 	chasesfuck = FALSE
 	seekboredom = 0
@@ -373,7 +375,7 @@
 			target.adjustStaminaLoss(25, TRUE)
 			src.adjustStaminaLoss(25, TRUE)
 	else if(target)
-		walk_away(src, get_turf(src.loc), 4, 1)
+		walk_away(src, get_turf(src.loc), 1, 1)
 	isfucking = FALSE
 	chasesfuck = FALSE
 	seekboredom = 0
@@ -406,55 +408,65 @@
 //internal organs so sixtuplet or whatever the fuck breasts etc shouldnt matter probably, no graphic. Maybe can use for monstergirls or something too.
 //Call this proc to give genitals automatically where needed.
 //hidden organs are on by default due to coloring issues.
-/mob/living/proc/give_genitals(hidden_organs = TRUE)
+/mob/living/proc/give_genitals()
 	defiant = 0
 	erpable = TRUE
 	if(sexcon == null)
 		sexcon = new /datum/sex_controller(src)
 	if(!issimple(src))
-		if(!src.getorganslot(ORGAN_SLOT_ANUS))
-			var/obj/item/organ/filling_organ/anus/ass = src.getorganslot(ORGAN_SLOT_ANUS)
+		var/mob/living/carbon/human/species/user = src
+		if(!user.getorganslot(ORGAN_SLOT_ANUS))
+			var/obj/item/organ/filling_organ/anus/ass = user.getorganslot(ORGAN_SLOT_ANUS)
 			ass = new /obj/item/organ/filling_organ/anus
-			ass.Insert(src)
+			ass.Insert(user)
 		if(gender == MALE)
-			var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
-			testicles = new /obj/item/organ/filling_organ/testicles/internal
-			testicles.organ_size = rand(3)
-			testicles.Insert(src)
-			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
-			if(hidden_organs)
+			var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
+			if(!show_genitals)
+				testicles = new /obj/item/organ/filling_organ/testicles/internal
+			else
+				testicles = new /obj/item/organ/filling_organ/testicles
+			testicles.organ_size = rand(MAX_TESTICLES_SIZE)
+			testicles.Insert(user)
+			var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
+			if(!show_genitals)
 				penis = new /obj/item/organ/penis/internal
 			else
 				penis = new /obj/item/organ/penis
-			penis.penis_size = rand(3)
-			penis.Insert(src)
+			penis.organ_size = rand(MAX_PENIS_SIZE)
+			penis.Insert(user)
 		if(gender == FEMALE)
-			var/obj/item/organ/filling_organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
-			if(hidden_organs)
+			var/obj/item/organ/butt/buttie = user.getorganslot(ORGAN_SLOT_BUTT)
+			if(buttie)
+				buttie.organ_size = rand(MAX_BUTT_SIZE)
+				buttie.Insert(user)
+			var/obj/item/organ/filling_organ/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
+			if(!show_genitals)
 				breasts = new /obj/item/organ/filling_organ/breasts/internal
 			else
 				breasts = new /obj/item/organ/filling_organ/breasts
-			breasts.organ_size = rand(10)
-			breasts.Insert(src)
-			var/obj/item/organ/filling_organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
-			if(hidden_organs)
+			breasts.organ_size = rand(MAX_BREASTS_SIZE)
+			breasts.Insert(user)
+			var/obj/item/organ/filling_organ/vagina/vagina = user.getorganslot(ORGAN_SLOT_VAGINA)
+			if(!show_genitals)
 				vagina = new /obj/item/organ/filling_organ/vagina/internal
 			else
 				vagina = new /obj/item/organ/filling_organ/vagina
-			vagina.Insert(src)
+				//only goblins use this for now and to be fair if we are using this proc its usually uncivilized things n whatever.
+				vagina.accessory_type = /datum/sprite_accessory/vagina/extrahairy
+			vagina.Insert(user)
 			if(prob(3)) //3 chance to be dickgirl.
-				var/obj/item/organ/filling_organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
-				if(hidden_organs)
+				var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
+				if(!show_genitals)
 					testicles = new /obj/item/organ/filling_organ/testicles/internal
 				else
 					testicles = new /obj/item/organ/filling_organ/testicles
-				testicles.organ_size = rand(3)
-				testicles.Insert(src)
-				var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
-				if(hidden_organs)
+				testicles.organ_size = rand(MAX_TESTICLES_SIZE)
+				testicles.Insert(user)
+				var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
+				if(!show_genitals)
 					penis = new /obj/item/organ/penis/internal
 				else
 					penis = new /obj/item/organ/penis
-				penis.penis_size = rand(3)
-				penis.Insert(src)
-	src.sexcon.manual_arousal = 4
+				penis.organ_size = rand(MAX_PENIS_SIZE)
+				penis.Insert(user)
+//	src.sexcon.manual_arousal = SEX_MANUAL_AROUSAL_MAX

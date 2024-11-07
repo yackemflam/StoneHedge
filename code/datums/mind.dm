@@ -274,6 +274,7 @@
 	///Adjust experience of a specific skill
 /datum/mind/proc/adjust_experience(skill, amt, silent = FALSE)
 	var/datum/skill/S = GetSkillRef(skill)
+	amt *= 0.5 //halve the amount, other half goes to eepy time experience.
 	skill_experience[S] = max(0, skill_experience[S] + amt) //Prevent going below 0
 	var/old_level = known_skills[S]
 	switch(skill_experience[S])
@@ -305,11 +306,13 @@
 	// ratio = round(skill_experience[S]/limit,1) * 100
 	// to_chat(current, "<span class='nicegreen'> My [S.name] is around [ratio]% of the way there.")
 	//TODO add some bar hud or something, i think i seen a request like that somewhere
+	add_sleep_experience(skill, amt, TRUE) //adds half of the experience to your eepytime.
 	if(known_skills[S] >= old_level)
 		if(known_skills[S] > old_level)
 			to_chat(current, span_nicegreen("My [S.name] grows to [SSskills.level_names[known_skills[S]]]!"))
 		if(skill == /datum/skill/magic/arcane)
 			adjust_spellpoints(1)
+			current.calculate_attunement_points()
 	else
 		to_chat(current, span_warning("My [S.name] has weakened to [SSskills.level_names[known_skills[S]]]!"))
 
@@ -330,6 +333,7 @@
 	var/amt2gain = 0
 	if(skill == /datum/skill/magic/arcane)
 		adjust_spellpoints(amt)
+		current.calculate_attunement_points()
 	if(amt > 0) //positive at
 		for(var/i in 1 to amt)
 			switch(skill_experience[S])

@@ -1078,8 +1078,7 @@
 	icon_state = "center-leaf2"
 	},
 /obj/structure/flora/newleaf{
-	icon_state = "branch-extend";
-	dir = 2
+	icon_state = "branch-extend"
 	},
 /turf/open/transparent/openspace,
 /area/rogue)
@@ -4427,9 +4426,16 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue)
 "dOn" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
-	},
+/obj/structure/closet/crate/roguecloset/inn/south,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/glass/bottle/rogue/water,
+/obj/item/reagent_containers/glass/bottle/rogue/water,
+/obj/item/reagent_containers/glass/bottle/waterskin,
+/obj/item/reagent_containers/glass/bottle/waterskin,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -4760,9 +4766,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/caves)
 "ebS" = (
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods{
@@ -4782,7 +4786,6 @@
 	dir = 8
 	},
 /obj/structure/fluff/railing/wood{
-	dir = 2;
 	pixel_y = -1
 	},
 /turf/open/transparent/openspace,
@@ -6387,11 +6390,9 @@
 	})
 "fwV" = (
 /obj/structure/fluff/railing/wood{
-	dir = 2;
 	pixel_y = -1
 	},
 /obj/structure/fluff/railing/wood{
-	dir = 2;
 	pixel_y = -1
 	},
 /turf/open/transparent/openspace,
@@ -6471,7 +6472,6 @@
 /area/rogue/outdoors/caves)
 "fzE" = (
 /obj/structure/fluff/railing/wood{
-	dir = 2;
 	pixel_y = -1
 	},
 /turf/open/transparent/openspace,
@@ -7768,9 +7768,7 @@
 /area/rogue/under/cavewet)
 "gIg" = (
 /obj/structure/fluff/statue/gargoyle/moss/candles,
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
@@ -8888,9 +8886,7 @@
 	})
 "hHQ" = (
 /obj/structure/fluff/statue/knight/interior,
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods)
 "hHY" = (
@@ -9812,8 +9808,7 @@
 	icon_state = "center-leaf2"
 	},
 /obj/structure/flora/newleaf{
-	icon_state = "branch-end1";
-	dir = 2
+	icon_state = "branch-end1"
 	},
 /turf/open/transparent/openspace,
 /area/rogue)
@@ -9969,9 +9964,7 @@
 	name = "Shrine of Natures"
 	})
 "iDM" = (
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods)
 "iEF" = (
@@ -10317,9 +10310,7 @@
 /area/rogue)
 "iSe" = (
 /obj/structure/chair/stool/rogue,
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/woods)
 "iTu" = (
@@ -10590,9 +10581,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet)
 "jff" = (
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
@@ -12917,9 +12906,7 @@
 	name = "Wood elf Tribes"
 	})
 "lnw" = (
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -13106,7 +13093,7 @@
 /obj/item/clothing/under/roguetown/loincloth/pink,
 /obj/item/clothing/under/roguetown/tights/stockings/fishnet/black,
 /obj/item/clothing/under/roguetown/tights/stockings/fishnet/black,
-/obj/item/clothing/under/roguetown/tights/stockings/fishnet/chain/iron,
+/obj/item/clothing/under/roguetown/chainlegs/iron/fishnet,
 /obj/item/clothing/suit/roguetown/shirt/slave/purple,
 /obj/item/clothing/suit/roguetown/shirt/slave/blue,
 /turf/open/floor/rogue/blocks,
@@ -13757,6 +13744,13 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
+"mci" = (
+/obj/machinery/light/rogue/oven/south,
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "mcB" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -13786,9 +13780,7 @@
 /obj/machinery/light/rogue/wallfire{
 	pixel_y = 32
 	},
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods)
 "meh" = (
@@ -14000,9 +13992,7 @@
 /area/rogue)
 "mkP" = (
 /obj/structure/fluff/statue/knight/interior/r,
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods)
 "mls" = (
@@ -15161,9 +15151,7 @@
 	layer = 2.8;
 	pixel_x = 8
 	},
-/obj/structure/stairs/stone{
-	dir = 2
-	},
+/obj/structure/stairs/stone,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/bath{
 	first_time_text = "The Dreamers Demesne.."
@@ -15240,9 +15228,7 @@
 /obj/machinery/light/rogue/torchholder{
 	pixel_y = 26
 	},
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/shelter/woods)
 "noG" = (
@@ -15884,9 +15870,7 @@
 	})
 "nQV" = (
 /obj/structure/bed/rogue,
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/shelter/woods)
 "nRW" = (
@@ -17921,6 +17905,17 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"pDS" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/natural/feather,
+/obj/item/candle/yellow/lit,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "pDV" = (
 /turf/open/floor/rogue/rooftop{
 	dir = 8
@@ -18003,9 +17998,7 @@
 /obj/structure/chair/wood{
 	dir = 4
 	},
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods)
 "pHX" = (
@@ -18330,6 +18323,12 @@
 /area/rogue/outdoors/tribalfort{
 	first_time_text = "The Woodland Tribe";
 	name = "Wood elf Tribes"
+	})
+"pWm" = (
+/obj/effect/landmark/start/villagerlate,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
 	})
 "pWo" = (
 /obj/structure/flora/roguegrass/water,
@@ -20290,9 +20289,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/caves)
 "rDE" = (
-/mob/living/carbon/human/species/goblin/npc/ambush/cave{
-	icon_state = "goblin"
-	},
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
@@ -20873,7 +20870,6 @@
 	})
 "siG" = (
 /obj/structure/fluff/railing/wood{
-	dir = 2;
 	pixel_y = -1
 	},
 /turf/open/transparent/openspace,
@@ -21863,9 +21859,13 @@
 /turf/open/transparent/openspace,
 /area/rogue)
 "tdk" = (
-/obj/structure/chair/wood/rogue/chair3{
-	icon_state = "0,0"
-	},
+/obj/structure/closet/crate/chest,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -22253,6 +22253,12 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
+"twr" = (
+/obj/effect/landmark/start/noblelate,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
+	})
 "twA" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -22633,6 +22639,13 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
+	})
+"tKX" = (
+/obj/structure/fermenting_barrel/beer,
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
 	})
 "tKZ" = (
 /obj/machinery/light/rogue/torchholder{
@@ -24189,7 +24202,6 @@
 	dir = 4
 	},
 /obj/structure/fluff/railing/wood{
-	dir = 2;
 	pixel_y = -1
 	},
 /turf/open/transparent/openspace,
@@ -24324,9 +24336,7 @@
 	name = "Tavern Stables"
 	})
 "vhN" = (
-/obj/structure/stairs/stone{
-	dir = 2
-	},
+/obj/structure/stairs/stone,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/bath{
 	first_time_text = "The Dreamers Demesne.."
@@ -25555,6 +25565,13 @@
 /area/rogue/under/cavewet)
 "wkw" = (
 /obj/structure/closet/crate/chest,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -312936,7 +312953,7 @@ eqw
 rCE
 ptS
 nmO
-rXC
+tKX
 mJs
 mJs
 qdf
@@ -313640,7 +313657,7 @@ eqw
 rCE
 nif
 jyE
-dOn
+mci
 pfS
 mJs
 pwy
@@ -314699,7 +314716,7 @@ fEP
 rWh
 jyE
 mXO
-bUj
+mXO
 bUj
 bUj
 oUB
@@ -315050,7 +315067,7 @@ qdN
 fEP
 fEP
 weG
-bUj
+nkY
 bUj
 bUj
 bUj
@@ -315404,8 +315421,8 @@ fEP
 uat
 bUj
 bUj
+dOT
 bUj
-nkY
 oUB
 dFw
 itb
@@ -315756,8 +315773,8 @@ fEP
 uat
 bUj
 bUj
-bUj
 dOT
+bUj
 jyE
 rlL
 itb
@@ -316108,8 +316125,8 @@ fEP
 weG
 bUj
 bUj
+dOT
 bUj
-tdk
 jyE
 upv
 itb
@@ -316460,8 +316477,8 @@ fEP
 jyE
 bUj
 bUj
-bUj
-mXO
+pDS
+tdk
 jyE
 gEf
 qQu
@@ -327667,11 +327684,11 @@ pXR
 irU
 gBN
 irU
+pWm
+pWm
 irU
-irU
-irU
-irU
-irU
+pWm
+pWm
 irU
 irU
 pXR
@@ -328371,11 +328388,11 @@ irU
 irU
 irU
 irU
+twr
+twr
 irU
-irU
-irU
-irU
-irU
+twr
+twr
 irU
 irU
 irU

@@ -51,3 +51,8 @@
 		H.change_stat("endurance", 2)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
+
+/mob/proc/haltyell()
+	set name = "HALT!"
+	set category = "Noises"
+	emote("haltyell")

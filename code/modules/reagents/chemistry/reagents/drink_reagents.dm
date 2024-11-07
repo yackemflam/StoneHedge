@@ -234,27 +234,29 @@
 /datum/reagent/consumable/cum/sterile
 	virile = FALSE
 
-/datum/reagent/consumable/breastmilk
-	name = "Breast Milk"
-	description = "An opaque white liquid produced by the mammary glands of humanoids. In brief, breastmilk."
-	color = "#DFDFDF" // rgb: 223, 223, 223
-	taste_description = "cloyingly sweet milk"
+/datum/reagent/consumable/cum/sterile/old //used in statue fountain.
+	name = "Old Semen"
+	description = "Disgusting... smelly slime... And somewhat yellow. This was magically, barely preserved through decades... It used to be fine, even clear as water until I severed it from it's home."
+	color = "#c7c49e"
+	taste_description = "salty, disgusting moldy slime"
 	glass_icon_state = "glass_white"
-	glass_name = "glass of breast milk"
-	glass_desc = "Milk derived from a humanoid source. Some Eorans might swear by its use in rituals of fertility or as a private indulgence between partners, but honest merchants refuse to deal in the substance or products made from it."
+	glass_name = "glass of old semen"
 
-/datum/reagent/consumable/breastmilk/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/cum/sterile/old/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
-		. = 1
-	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
-		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
-			H.adjust_hydration(10)
-		if(H.blood_volume < BLOOD_VOLUME_NORMAL)
-			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
+			H.adjust_hydration(5)
+			H.adjust_nutrition(5)
+		if(!HAS_TRAIT(H, TRAIT_ROT_EATER))
+			H.adjustToxLoss(3, TRUE) //this shit is toxic.
+			H.add_nausea(10)
+			if(prob(5))
+				to_chat(M, span_notice("[pick("God, I am going to puke...","My stomach is crying for help...","I feel sick...","That was disgusting... I feel sick...")]"))
+
+	. = 1
 	..()
 
 /datum/reagent/consumable/milk/on_mob_life(mob/living/carbon/M)

@@ -202,7 +202,7 @@
 	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
 		
 	head = /obj/item/clothing/head/roguetown/roguehood/red
-	mask = /obj/item/clothing/mask/rogue/goldmask
+	mask = /obj/item/clothing/mask/rogue/facemask/gold
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/magered
 	back = /obj/item/clothing/cloak/raincloak/red
 	r_hand = /obj/item/rogueweapon/woodstaff
@@ -515,6 +515,7 @@
 		
 	var/obj/item/item
 	item = new item_type
+	item.infusable = FALSE
 	item.AddComponent(/datum/component/pact_weapon, H, patronchoice)
 	item.AddComponent(/datum/component/singing_item, H)
 	item.AddComponent(/datum/component/spirit_holding, null, null)

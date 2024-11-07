@@ -98,6 +98,7 @@
 #define TRAIT_PUNISHMENT_CURSE "PunishmentCurse"
 #define TRAIT_LEPROSY "Leprosy"
 #define TRAIT_NUDE_SLEEPER "Picky Sleeper"
+#define TRAIT_ENDOWMENT "Enchanted Endowment" // should apply +3 CON -2 END -1 SPD, restricts most armor and using bows/crossbows, slows getting up.
 
 // PATRON CURSE TRAITS
 #define TRAIT_CURSE "Curse" //source

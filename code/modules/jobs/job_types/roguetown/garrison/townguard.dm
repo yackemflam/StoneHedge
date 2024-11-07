@@ -128,7 +128,3 @@
 	guard.change_stat("constitution", 1)
 	guard.change_stat("speed", 2)
 
-/mob/proc/haltyell()
-	set name = "HALT!"
-	set category = "Noises"
-	emote("haltyell")

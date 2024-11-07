@@ -308,9 +308,9 @@
 			if(!muddy)
 				become_muddy()
 			return TRUE //stop processing
-	if(water_level > 10) //this would be a switch on normal tiles
+/*	if(water_level > 10) //this would be a switch on normal tiles
 		if(!muddy)
-			become_muddy()
+			become_muddy()*/
 //flood process goes here to spread to other turfs etc
 //	if(water_level > 250)
 //		return FALSE

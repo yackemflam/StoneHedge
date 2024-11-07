@@ -21,13 +21,11 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/under/roguetown/AdjustClothes(mob/user)
-#ifdef MATURESERVER
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
 			icon_state = "[initial(icon_state)]_t"
-			body_parts_covered = null
-			slowdown += 2
+			flags_inv = null
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
 				H.update_inv_pants()
@@ -37,9 +35,7 @@
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
 					H.update_inv_pants()
-#else
 	return
-#endif
 
 /obj/item/clothing/under/roguetown/tights
 	name = "tights"
@@ -109,6 +105,7 @@
 	blade_dulling = DULLING_BASHCHOP
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
+	can_hold_endowed = TRUE
 
 /obj/item/clothing/under/roguetown/trou/leather
 	name = "leather trousers"
@@ -188,6 +185,7 @@
 	l_sleeve_status = SLEEVE_NOMOD
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FIRE_PROOF
+	can_hold_endowed = TRUE
 
 /obj/item/clothing/under/roguetown/brayette
 	name = "brayette"

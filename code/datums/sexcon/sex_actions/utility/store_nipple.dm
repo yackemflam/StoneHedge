@@ -1,5 +1,5 @@
 /datum/sex_action/store_nipple
-	name = "Store/remove object in breasts"
+	name = "Store/remove object in nipple"
 
 /datum/sex_action/store_nipple/shows_on_menu(mob/living/user, mob/living/target)
 	if(user != target)
@@ -83,8 +83,8 @@
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/breasts/userbreasts = user.getorgan(/obj/item/organ/filling_organ/breasts)
 	var/mob/living/carbon/human/userussy = user
-	var/stealskill =  min(1,user.mind.get_skill_level(/datum/skill/misc/stealing))
-	var/medicineskill =  min(1,user.mind.get_skill_level(/datum/skill/misc/medicine))
+	var/stealskill =  max(1,user.mind.get_skill_level(/datum/skill/misc/stealing))
+	var/medicineskill =  max(1,user.mind.get_skill_level(/datum/skill/misc/medicine))
 	var/flubchance = 100
 	if(stealskill > medicineskill) //medicine or stealth, taken higher and used to divide the flubbing chance, if you got neither skill its 100 odds, go home bro.
 		flubchance = flubchance/stealskill

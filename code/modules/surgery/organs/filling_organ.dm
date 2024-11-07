@@ -15,11 +15,12 @@
 	//absorbing etc content liquid stuff, non self generated.
 	var/absorbing = FALSE //absorbs liquids within slowly. Wont absorb reagent_to_make type, refilling and hungerhelp are irrelevant to this.
 	var/absorbrate = 1 //refilling and hungerhelp are irrelevant to this, each life tick. NO LESS THAN 1 DIGESTS RIGHT.
-	var/absorbmult = 1.25 //for a longer absorbtion time it's probably fine to have more.
-	var/driprate = 0.1
+	var/absorbmult = 1.25 //for a longer absorbtion time it's probably fine to have more out of each.
+	var/driprate = 0.3
 	var/spiller = FALSE //toggles if it will spill its contents when not plugged.
 	var/blocker = ITEM_SLOT_SHIRT //pick an item slot
 	var/processspeed = 5 SECONDS//will apply the said seconds cooldown each time before any spill or absorb happens.
+	var/bloatable = FALSE //will it give bloat debuffs when filled, not good to use with refilling organs.
 
 	//pregnancy vars
 	var/fertility = FALSE //can it be impregnated
@@ -30,6 +31,7 @@
 
 	//misc
 	var/list/altnames = list("bugged place", "bugged organ") //used in thought messages.
+
 	COOLDOWN_DECLARE(liquidcd)
 
 /obj/item/organ/filling_organ/Insert(mob/living/carbon/M, special, drop_if_replaced) //update size cap n shit on insert
@@ -64,7 +66,26 @@
 			if(H.has_quirk(/datum/quirk/selfawaregeni))
 				to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
 
-	if(reagents.total_volume > reagents.maximum_volume + 5) //lil allowance
+	//debuff checks
+	if(reagents.maximum_volume > 40 && bloatable) //if there is space to bloat to begin with, and its bloatable.
+		if(reagents.total_volume > ((reagents.maximum_volume/3) + storage_per_size)) //more than 1/3 full, light bloat.
+			if(!reagents.total_volume > ((reagents.maximum_volume/2) + (storage_per_size*2))) //more than half full, heavy bloat.
+				if(!owner.has_status_effect(/datum/status_effect/debuff/bloatone))
+					owner.apply_status_effect(/datum/status_effect/debuff/bloatone)
+				if(owner.has_status_effect(/datum/status_effect/debuff/bloattwo))
+					owner.remove_status_effect(/datum/status_effect/debuff/bloattwo)
+			else
+				if(owner.has_status_effect(/datum/status_effect/debuff/bloatone))
+					owner.remove_status_effect(/datum/status_effect/debuff/bloatone)
+				if(!owner.has_status_effect(/datum/status_effect/debuff/bloattwo))
+					owner.apply_status_effect(/datum/status_effect/debuff/bloattwo)
+		else //im free madafakaaa
+			if(owner.has_status_effect(/datum/status_effect/debuff/bloattwo))
+				owner.remove_status_effect(/datum/status_effect/debuff/bloattwo)
+			if(owner.has_status_effect(/datum/status_effect/debuff/bloatone))
+				owner.remove_status_effect(/datum/status_effect/debuff/bloatone)
+
+	if(reagents.total_volume > reagents.maximum_volume) //lil allowance
 		visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents with the pressure on it!"),span_info("My [pick(altnames)] spill it's excesss contents with the pressure built up on it!"),span_unconscious("I hear a splash."))
 		reagents.remove_all(reagents.total_volume - reagents.maximum_volume)
 		playsound(owner, 'sound/foley/waterenter.ogg', 15)
@@ -101,22 +122,39 @@
 		var/tempdriprate = driprate
 		if((reagents.total_volume && spiller) || (reagents.total_volume > reagents.maximum_volume)) //spiller or above it's capacity to leak.
 			var/obj/item/clothing/blockingitem = H.mob_slot_wearing(blocker)
-			if(blockingitem && !blockingitem.genitalaccess) //if worn slot cover it, drip nearly nothing.
-				tempdriprate *= 0.1
-				if(H.has_quirk(/datum/quirk/selfawaregeni))
+			if(blockingitem && !blockingitem.genitalaccess) //we aint dripping a drop.
+				
+			/*
+				tempdriprate = 0.1 //if worn slot cover it, drip nearly nothing.
+				if(owner.has_quirk(/datum/quirk/selfawaregeni))
 					if(prob(5))
 						to_chat(H, pick(span_info("A little bit of [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [blockingitem.name]..."),
 						span_info("Some liquid drips from my [pick(altnames)] to my [blockingitem.name]."),
 						span_info("My [pick(altnames)] spills some liquid to my [blockingitem.name]."),
 						span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [blockingitem.name].")))
-			else
-				if(H.has_quirk(/datum/quirk/selfawaregeni))
-					if(prob(5))
+			*/
+			else //we drippin
+				if(owner.has_quirk(/datum/quirk/selfawaregeni))
+					if(prob(5)) //with selfawaregeni quirk you got some chance to see what type of liquid is dripping from you.
 						to_chat(H, pick(span_info("A little bit of [english_list(reagents.reagent_list)] drips from my [pick(altnames)]..."),
 						span_info("Some liquid drips from my [pick(altnames)]."),
 						span_info("My [pick(altnames)] spills some liquid."),
 						span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)].")))
-			reagents.remove_all(tempdriprate)
+				var/obj/item/reagent_containers/glass/the_bottle
+				if((owner.mobility_flags & MOBILITY_STAND))
+					for(var/obj/item/reagent_containers/glass/bottle in range(0,H)) //having a bottle under us speed up leak greatly and transfer the leak there instead.
+						if(bottle.reagents.total_volume >= bottle.reagents.maximum_volume)
+							continue
+						if(bottle.reagents.flags & REFILLABLE)
+							the_bottle = bottle
+							break
+				if(!the_bottle) //no bottle so just spill
+					reagents.remove_all(tempdriprate)
+				else
+					var/avlspace = the_bottle.reagents.maximum_volume - the_bottle.reagents.total_volume
+					tempdriprate *= 50 //since default values are basically decimals.
+					reagents.trans_to(the_bottle, min(tempdriprate, avlspace))
+					to_chat(owner, span_info("I collect the fluids in \the [the_bottle] beneath me."))
 	COOLDOWN_START(src, liquidcd, processspeed)
 
 /obj/item/organ/filling_organ/proc/organ_jumped()

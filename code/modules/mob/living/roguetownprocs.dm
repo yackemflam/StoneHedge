@@ -213,7 +213,6 @@
 			if(weapon_parry == TRUE)
 				if(do_parry(used_weapon, drained, user)) //show message
 					if((mobility_flags & MOBILITY_STAND) && can_train_combat_skill(src, used_weapon.associated_skill, attacker_skill - SKILL_LEVEL_NOVICE))
-						mind.add_sleep_experience(used_weapon.associated_skill, max(round(STAINT/2), 0), FALSE)
 						mind.adjust_experience(used_weapon.associated_skill, max(round(STAINT/2), 0), FALSE)
 					// defender skill gain
 					if((mobility_flags & MOBILITY_STAND) && attacker_skill && (defender_skill < attacker_skill - SKILL_LEVEL_NOVICE))
@@ -235,7 +234,6 @@
 						else
 							attacker_skill_type = /datum/skill/combat/unarmed
 						if((U.mobility_flags & MOBILITY_STAND) && can_train_combat_skill(U, attacker_skill_type, defender_skill - SKILL_LEVEL_NOVICE))
-							U.mind.add_sleep_experience(attacker_skill_type, max(round(STAINT/2), 0), FALSE)
 							U.mind.adjust_experience(attacker_skill_type, max(round(STAINT/2), 0), FALSE)
 						if((U.mobility_flags & MOBILITY_STAND) && defender_skill && (attacker_skill < defender_skill - SKILL_LEVEL_NOVICE))
 							if(AB)
@@ -266,7 +264,6 @@
 			if(weapon_parry == FALSE)
 				if(do_unarmed_parry(drained, user))
 					if((mobility_flags & MOBILITY_STAND) && can_train_combat_skill(H, /datum/skill/combat/unarmed, attacker_skill - SKILL_LEVEL_NOVICE))
-						H.mind?.add_sleep_experience(/datum/skill/combat/unarmed, max(round(STAINT/2), 0), FALSE)
 						H.mind?.adjust_experience(/datum/skill/combat/unarmed, max(round(STAINT/2), 0), FALSE)
 					if((mobility_flags & MOBILITY_STAND) && attacker_skill && (defender_skill < attacker_skill - SKILL_LEVEL_NOVICE))
 						H.mind?.adjust_experience(/datum/skill/combat/unarmed, max(round(STAINT), 0), FALSE)

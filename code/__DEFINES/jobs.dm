@@ -171,6 +171,7 @@
 #define LUNATIC		(1<<18)
 #define MIGRANT (1<<19)
 #define SEELIE		(1<<20)
+#define PRISONERD	(1<<21)
 
 #define APPRENTICES	(1<<6)
 
@@ -302,6 +303,7 @@
 #define JDO_PRISONERC 35.2
 #define JDO_HOSTAGE 35.3
 #define JDO_LUNATIC 35.4
+#define JDO_PRISONERD 35.5
 
 #define JDO_CHIEFTAIN 36
 #define JDO_TRIBALCOOK 37

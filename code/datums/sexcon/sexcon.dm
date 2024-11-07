@@ -449,7 +449,7 @@
 				if(user.gender == FEMALE && prob(50))
 					chosen_emote = "whimper"
 				else
-					chosen_emote = "cry"
+					chosen_emote = "groan"
 
 	last_moan = world.time
 	user.emote(chosen_emote, forced = TRUE)
@@ -704,6 +704,8 @@
 	while(TRUE)
 		if(!user.rogfat_add(action.stamina_cost * get_stamina_cost_multiplier()))
 			break
+		if(user.mind)
+			user.mind.adjust_experience(/datum/skill/misc/athletics, (user.STAINT*0.04)*get_stamina_cost_multiplier()) //endurance training boiii
 		if(!do_after(user, (action.do_time / get_speed_multiplier()), target = target))
 			break
 		if(current_action == null || performed_action_type != current_action)

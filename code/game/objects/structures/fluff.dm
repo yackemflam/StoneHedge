@@ -873,6 +873,45 @@
 	desc = "An ornamental stone statue of the sun Goddess Astrata, decorated with golden jewelry. Bless."
 	icon_state = "astrata_bling"
 
+/obj/structure/fluff/statue/xylix
+	name = "ornamental astrata statue"
+	desc = "An ornamental stone statue of the God Xylix."
+	icon = 'icons/roguetown/misc/ay.dmi'
+	icon_state = "xylix"
+	pixel_x = -32
+/obj/structure/fluff/statue/noc
+	name = "ornamental astrata statue"
+	desc = "An ornamental stone statue of the Goddess Noc."
+	icon = 'icons/roguetown/misc/ay.dmi'
+	icon_state = "2"
+	pixel_x = -32
+/obj/structure/fluff/statue/eora
+	name = "ornamental eora statue"
+	desc = "An ornamental stone statue of the Goddess Eora."
+	icon = 'icons/roguetown/misc/ay.dmi'
+	icon_state = "5"
+	pixel_x = -32
+
+/obj/structure/fluff/statue/dragonr
+	name = "ornamental dragon statue"
+	desc = "An ornamental stone statue of a dragon."
+	icon = 'modular_hearthstone/icons/obj/dragon_statue.dmi'
+	icon_state = "1"
+	pixel_x = -32
+/obj/structure/fluff/statue/dragonl
+	name = "ornamental dragon statue"
+	desc = "An ornamental stone statue of a dragon."
+	icon = 'modular_hearthstone/icons/obj/dragon_statue.dmi'
+	icon_state = "2"
+	pixel_x = -32
+
+/obj/structure/fluff/statue/hay
+	name = "pile of hay"
+	desc = "A massive pile of hay."
+	icon = 'modular_hearthstone/icons/obj/hay.dmi'
+	icon_state = "haybale"
+	pixel_x = -32
+
 /obj/structure/fluff/statue/knight/r
 	icon_state = "knightstatue_r"
 
@@ -918,6 +957,12 @@
 	M.Scale(0.7,0.7)
 	src.transform = M
 
+/obj/structure/fluff/statue/femalestatue2
+	icon = 'icons/roguetown/misc/ay.dmi'
+	icon_state = "4"
+	pixel_x = -32
+	pixel_y = -16
+
 /obj/structure/fluff/statue/scare
 	name = "scarecrow"
 	icon_state = "td"
@@ -957,7 +1002,6 @@
 							to_chat(user, span_warning("I've learned all I can from doing this, it's time for the real thing."))
 							amt2raise = 0
 						if(amt2raise > 0)
-							user.mind.add_sleep_experience(W.associated_skill, amt2raise * boon, FALSE)
 							user.mind.adjust_experience(W.associated_skill, amt2raise * boon, FALSE)
 						playsound(loc,pick('sound/combat/hits/onwood/education1.ogg','sound/combat/hits/onwood/education2.ogg','sound/combat/hits/onwood/education3.ogg'), rand(50,100), FALSE)
 					else

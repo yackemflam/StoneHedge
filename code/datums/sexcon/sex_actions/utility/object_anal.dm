@@ -77,7 +77,7 @@
 		if(user.lying) //less odds if laying
 			cutchance *= 0.5
 		if(wdildo.sharpness >= IS_SHARP && sc.speed > SEX_SPEED_LOW && prob(cutchance))
-			ouchietext = pick("OUCH! \the [wdildo] cuts my insides!", "ACK! \the [wdildo] poked my guts!", "OW! \the [wdildo] cut my lower lips!", "ACK! \the [wdildo] stabs my guts!")
+			ouchietext = pick("OUCH! \the [wdildo] cuts my insides!", "ACK! \the [wdildo] poked my guts!", "OW! \the [wdildo] cut my asshole!", "ACK! \the [wdildo] stabs my guts!")
 			to_chat(user, span_userdanger(ouchietext))
 			user.apply_damage(rand(10,20), BRUTE, BODY_ZONE_PRECISE_GROIN)
 			pain_amt *= 2

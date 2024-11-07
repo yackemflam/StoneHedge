@@ -167,6 +167,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/bloody_icon = 'icons/effects/blood.dmi'
 	var/bloody_icon_state = "itemblood"
 	var/boobed = FALSE
+	var/can_hold_endowed = FALSE
 
 	var/firefuel = 0 //add this idiot
 
@@ -210,6 +211,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	//can you infuse this item magically?
 	var/infusable = TRUE
+
+	var/attunement_cost = 0
 
 /obj/item/Initialize()
 	. = ..()

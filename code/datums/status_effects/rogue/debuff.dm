@@ -329,3 +329,84 @@
 	name = "Curse of the Seelie"
 	desc = "I've been cursed for my horrific deed..."
 	icon_state = "stressb"
+
+/datum/status_effect/debuff/bigboobs
+	id = "bigboobs"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/bigboobs
+	examine_text = span_notice("They have massive GOODS!")
+	effectedstats = list("constitution" = 3,"endurance" = -2, "speed" = -1)
+	duration = 10 MINUTES
+	var/initialpenis
+	var/initialbutt
+	var/initialball
+	var/initialbreasts
+
+/atom/movable/screen/alert/status_effect/debuff/bigboobs
+	name = "Enchanted Endowment" //was gonna name it a curse but it isn't a technically one.
+	desc = "They feel as heavy as gold and are massive... My back hurts."
+	icon = 'modular_stonehedge/icons/mob/screen_alert.dmi'
+	icon_state = "bigboobs"
+
+/datum/status_effect/debuff/bigboobs/on_apply()
+	. = ..()
+	var/mob/living/carbon/human/species/user = owner
+	if(!user)
+		return
+	ADD_TRAIT(user, TRAIT_ENDOWMENT, id)
+	to_chat(user, span_warning("Gah! my [user.gender == FEMALE ? "TITS" : "JUNK"] expand to impossible sizes!"))
+	//max them out.
+	for(var/obj/item/organ/forgan as anything in user.internal_organs) //as anything cause i either do this or use for() twice which is i guess worse.
+		if(istype(forgan, /obj/item/organ/penis))
+			initialpenis = forgan.organ_size
+			forgan.organ_size = TOTAL_PENIS_SIZE
+			continue
+		if(istype(forgan, /obj/item/organ/butt))
+			initialbutt = forgan.organ_size
+			forgan.organ_size = TOTAL_BUTT_SIZE
+			continue
+		if(istype(forgan, /obj/item/organ/filling_organ/testicles))
+			initialball = forgan.organ_size
+			forgan.organ_size = TOTAL_TESTICLES_SIZE
+			continue
+		if(istype(forgan, /obj/item/organ/filling_organ/breasts))
+			initialbreasts = forgan.organ_size
+			forgan.organ_size = TOTAL_BREASTS_SIZE
+			continue
+		continue
+	user.update_body_parts(TRUE)
+	//drop our unwearable equipment to the floor.
+	if(user.gender == MALE)
+		var/obj/item/clothing/thepants = user.wear_pants
+		if(thepants && !thepants?.can_hold_endowed)
+			user.dropItemToGround(thepants)
+	else
+		var/obj/item/clothing/theshirt = user.wear_shirt
+		var/obj/item/clothing/thearmor = user.wear_armor
+		if(theshirt && !theshirt?.can_hold_endowed)
+			user.dropItemToGround(theshirt)
+		if(thearmor && !thearmor?.can_hold_endowed)
+			user.dropItemToGround(thearmor)
+
+/datum/status_effect/debuff/bigboobs/on_remove()
+	. = ..()
+	var/mob/living/carbon/human/species/user = owner
+	if(!user)
+		return
+	REMOVE_TRAIT(user, TRAIT_ENDOWMENT, id)
+	to_chat(user, span_notice("Phew, My bits shrunk back to the way they were."))
+	//return to pref sizes.
+	for(var/obj/item/organ/forgan as anything in user.internal_organs)
+		if(istype(forgan, /obj/item/organ/penis))
+			forgan.organ_size = initialpenis
+			continue
+		if(istype(forgan, /obj/item/organ/butt))
+			forgan.organ_size = initialbutt
+			continue
+		if(istype(forgan, /obj/item/organ/filling_organ/testicles))
+			forgan.organ_size = initialball
+			continue
+		if(istype(forgan, /obj/item/organ/filling_organ/breasts))
+			forgan.organ_size = initialbreasts
+			continue
+		continue
+	user.update_body_parts(TRUE)

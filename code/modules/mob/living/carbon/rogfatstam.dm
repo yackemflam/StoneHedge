@@ -1,7 +1,5 @@
 /mob/living/proc/update_rogfat() //update hud and regen after last_fatigued delay on taking
-//	maxrogfat = round(100 * (rogstam/maxrogstam))
-//	if(maxrogfat < 5)
-//		maxrogfat = 5
+	maxrogfat = maxrogstam / 10
 
 	if(world.time > last_fatigued + 50) //regen fatigue
 		var/added = rogstam / maxrogstam
@@ -31,7 +29,6 @@
 	if(HAS_TRAIT(src, TRAIT_NOROGSTAM) || HAS_TRAIT(src, TRAIT_ZOMBIE_SPEECH))
 		return TRUE
 	if(m_intent == MOVE_INTENT_RUN)
-		mind.add_sleep_experience(/datum/skill/misc/athletics, (STAINT*0.08))
 		mind.adjust_experience(/datum/skill/misc/athletics, (STAINT*0.08))
 	rogstam += added
 	if(rogstam > maxrogstam)
