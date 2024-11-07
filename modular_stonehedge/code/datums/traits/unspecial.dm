@@ -424,6 +424,7 @@
 
 /datum/antagonist/vampirelord/lesser/secret
 	ashes = FALSE
+	is_solo = TRUE
 
 /datum/antagonist/vampirelord/lesser/secret/roundend_report()
 	return
