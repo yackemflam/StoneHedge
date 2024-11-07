@@ -419,12 +419,16 @@
 
 /datum/quirk/vampire/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/antagonist/vampire/new_antag = new /datum/antagonist/vampirelord/lesser/secret()
+	var/datum/antagonist/vampirelord/lesser/secret = new ()
 	H.mind.add_antag_datum(new_antag)
 
 /datum/antagonist/vampirelord/lesser/secret
 	ashes = FALSE
 	is_solo = TRUE
+
+/datum/antagonist/vampirelord/lesser/secret/on_gain()
+	. = ..()
+	owner.current.verbs -= /mob/living/carbon/human/proc/vampire_telepathy
 
 /datum/antagonist/vampirelord/lesser/secret/roundend_report()
 	return
