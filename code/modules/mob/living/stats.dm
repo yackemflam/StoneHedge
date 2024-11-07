@@ -32,6 +32,8 @@
 	var/magic_sickness = FALSE
 
 /mob/living/proc/calculate_attunement_points()
+	if(!mind)
+		return
 	attunement_points_max = STAINT - 4 + mind.get_skill_level(/datum/skill/magic/arcane) + attunement_points_bonus
 
 /mob/living/proc/check_attunement_points()
