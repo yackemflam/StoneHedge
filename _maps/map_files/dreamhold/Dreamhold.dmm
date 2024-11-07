@@ -4426,9 +4426,16 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue)
 "dOn" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
-	},
+/obj/structure/closet/crate/roguecloset/inn/south,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/glass/bottle/rogue/water,
+/obj/item/reagent_containers/glass/bottle/rogue/water,
+/obj/item/reagent_containers/glass/bottle/waterskin,
+/obj/item/reagent_containers/glass/bottle/waterskin,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -13737,6 +13744,13 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
+"mci" = (
+/obj/machinery/light/rogue/oven/south,
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "mcB" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -22610,6 +22624,13 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
+	})
+"tKX" = (
+/obj/structure/fermenting_barrel/beer,
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
 	})
 "tKZ" = (
 /obj/machinery/light/rogue/torchholder{
@@ -312910,7 +312931,7 @@ eqw
 rCE
 ptS
 nmO
-rXC
+tKX
 mJs
 mJs
 qdf
@@ -313614,7 +313635,7 @@ eqw
 rCE
 nif
 jyE
-dOn
+mci
 pfS
 mJs
 pwy

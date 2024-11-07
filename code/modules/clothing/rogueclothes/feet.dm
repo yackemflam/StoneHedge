@@ -12,6 +12,15 @@
 	equip_delay_self = 30
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/clothing/shoes/roguetown/boots/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/storage/concrete)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_combined_w_class = 3
+		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_items = 1
+
 /obj/item/clothing/shoes/roguetown/boots
 	name = "dark boots"
 	//dropshrink = 0.75
@@ -369,25 +378,6 @@
 
 /obj/item/clothing/shoes/roguetown/boots/hidden
 	desc = "A fine set of dark boots with a hidden compartment."
-
-/obj/item/clothing/shoes/roguetown/boots/hidden/poison
-
-/obj/item/clothing/shoes/roguetown/boots/hidden/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/storage/concrete)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		STR.max_combined_w_class = 3
-		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 1
-
-/obj/item/clothing/shoes/roguetown/boots/hidden/dropped(mob/living/carbon/human/user)
-	..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		var/list/things = STR.contents()
-		for(var/obj/item/I in things)
-			STR.remove_from_storage(I, get_turf(src))
 
 /obj/item/clothing/shoes/roguetown/boots/hidden/poison/Initialize()
 	. = ..()
