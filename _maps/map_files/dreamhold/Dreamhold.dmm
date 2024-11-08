@@ -8174,6 +8174,17 @@
 /area/rogue/indoors/town/bath{
 	first_time_text = "The Dreamers Demesne.."
 	})
+"haI" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "haL" = (
 /obj/structure/bed/rogue/inn/hay,
 /turf/open/floor/rogue/naturalstone,
@@ -10411,6 +10422,16 @@
 	},
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
+	})
+"iYf" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/candle/yellow/lit,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
 	})
 "iYn" = (
 /obj/structure/spider/stickyweb,
@@ -17910,7 +17931,6 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/natural/feather,
-/obj/item/candle/yellow/lit,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -18463,6 +18483,8 @@
 /obj/structure/table/wood{
 	icon_state = "longtable"
 	},
+/obj/item/reagent_containers/glass/mortar,
+/obj/item/pestle,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -18954,6 +18976,13 @@
 /area/rogue/outdoors/tribalfort{
 	first_time_text = "The Woodland Tribe";
 	name = "Wood elf Tribes"
+	})
+"qyI" = (
+/obj/machinery/anvil,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
 	})
 "qyL" = (
 /obj/machinery/light/rogue/torchholder{
@@ -22323,6 +22352,13 @@
 /obj/structure/flora/roguegrass/maneater/real,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavewet)
+"tyG" = (
+/obj/structure/fluff/grindwheel,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "tzg" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/spider,
 /obj/structure/spider/stickyweb{
@@ -314716,9 +314752,9 @@ fEP
 rWh
 jyE
 mXO
-mXO
 bUj
 bUj
+tyG
 oUB
 ptS
 itb
@@ -315070,7 +315106,7 @@ weG
 nkY
 bUj
 bUj
-bUj
+qyI
 vFw
 ptS
 itb
@@ -315421,7 +315457,7 @@ fEP
 uat
 bUj
 bUj
-dOT
+bUj
 bUj
 oUB
 dFw
@@ -315773,7 +315809,7 @@ fEP
 uat
 bUj
 bUj
-dOT
+iYf
 bUj
 jyE
 rlL
@@ -318942,7 +318978,7 @@ bUj
 jyE
 jyE
 uiT
-bUj
+dOT
 jyE
 ptS
 hFc
@@ -319294,7 +319330,7 @@ bUj
 vFw
 rgw
 bUj
-bUj
+haI
 jyE
 kdd
 hmB
@@ -319646,7 +319682,7 @@ bUj
 jyE
 rgw
 bUj
-bUj
+pDS
 vFw
 kdd
 hmB
