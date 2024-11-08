@@ -17,7 +17,7 @@
 	outfit = /datum/outfit/job/roguetown/magician
 	whitelist_req = FALSE
 	give_bank_account = 47
-	min_pq = 2
+	min_pq = 10
 	max_pq = null
 
 /datum/outfit/job/roguetown/magician

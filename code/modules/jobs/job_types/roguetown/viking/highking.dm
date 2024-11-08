@@ -16,7 +16,7 @@
 	outfit = /datum/outfit/job/roguetown/highking
 
 	display_order = JDO_HIGHKING
-	min_pq = 2
+	min_pq = 5
 	max_pq = null
 	cmode_music = 'sound/music/combat_viking.ogg'
 

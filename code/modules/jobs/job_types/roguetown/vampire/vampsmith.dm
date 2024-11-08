@@ -14,7 +14,7 @@
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/vampsmith
 	display_order = JDO_VAMPSMITH
-	min_pq = 0
+	min_pq = 5
 	max_pq = null
 	cmode_music = 'sound/music/combat_vamp.ogg'
 

@@ -16,8 +16,8 @@
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/bog)
 	outfit = /datum/outfit/job/roguetown/bogmaster
 
-	give_bank_account = 35
-	min_pq = 0
+	give_bank_account = 350
+	min_pq = 15
 	max_pq = null
 	cmode_music = 'sound/music/combat_bog.ogg'
 
@@ -36,7 +36,7 @@
 
 /datum/outfit/job/roguetown/bogmaster/pre_equip(mob/living/carbon/human/H)
 	. = ..()
-	head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
+	head = /obj/item/clothing/head/roguetown/helmet/leather
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	cloak = /obj/item/clothing/cloak/raincloak/green
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
