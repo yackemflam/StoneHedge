@@ -12,7 +12,7 @@
 
 	outfit = /datum/outfit/job/roguetown/armorsmith
 	display_order = JDO_ARMORER
-	give_bank_account = 11
+	give_bank_account = 1100
 	min_pq = 5
 	max_pq = null
 

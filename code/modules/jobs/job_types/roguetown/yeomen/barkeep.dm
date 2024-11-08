@@ -13,7 +13,7 @@
 
 	outfit = /datum/outfit/job/roguetown/barkeep
 	display_order = JDO_BARKEEP
-	give_bank_account = 43
+	give_bank_account = 500
 	min_pq = 5
 	max_pq = null
 

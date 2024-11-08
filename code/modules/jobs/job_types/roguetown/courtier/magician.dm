@@ -16,7 +16,7 @@
 		It took you years to become so esteemed that you could teach at Ravenloft Academy of Magickal Arts. Your Arcane Mastery Garners respect here."
 	outfit = /datum/outfit/job/roguetown/magician
 	whitelist_req = FALSE
-	give_bank_account = 47
+	give_bank_account = 500
 	min_pq = 10
 	max_pq = null
 

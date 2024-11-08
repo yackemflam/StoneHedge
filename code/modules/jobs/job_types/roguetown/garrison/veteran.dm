@@ -3,8 +3,8 @@
 	flag = VETERAN
 	department_flag = MERCENARIES
 	faction = "Station"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 1
+	spawn_positions = 1
 
 	allowed_sexes = list(MALE, FEMALE) //same as town guard
 	allowed_races = RACES_ALL_KINDS // same as town guard
@@ -13,8 +13,8 @@
 	whitelist_req = FALSE
 
 	outfit = /datum/outfit/job/roguetown/veteran
-	give_bank_account = 35
-	min_pq = 4
+	give_bank_account = 1500
+	min_pq = 15
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard.ogg'

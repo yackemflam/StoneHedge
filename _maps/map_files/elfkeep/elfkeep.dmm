@@ -7289,6 +7289,7 @@
 /area/rogue)
 "fka" = (
 /obj/structure/chair/wood/rogue/fancy,
+/obj/effect/landmark/start/veteran,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -13047,11 +13048,13 @@
 /turf/open/floor/rogue/ruinedwood/platform,
 /area/rogue/indoors/shelter/town)
 "jxD" = (
-/obj/machinery/light/rogue/lanternpost,
-/turf/open/transparent/openspace,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge Borders";
-	name = "far stonehedge"
+/obj/structure/mineral_door/wood/fancywood{
+	name = "Guild Leaders Office"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
 	})
 "jxO" = (
 /obj/structure/table/vtable/v2,
@@ -15603,7 +15606,6 @@
 /obj/item/clothing/under/roguetown/loincloth/pink,
 /obj/item/clothing/under/roguetown/tights/stockings/fishnet/black,
 /obj/item/clothing/under/roguetown/tights/stockings/fishnet/black,
-/obj/item/clothing/under/roguetown/tights/stockings/fishnet/chain/iron,
 /obj/item/clothing/suit/roguetown/shirt/slave/purple,
 /obj/item/clothing/suit/roguetown/shirt/slave/blue,
 /turf/open/floor/rogue/blocks,
@@ -15722,6 +15724,18 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
+	})
+"lBk" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	pixel_y = 7;
+	pixel_x = 2;
+	layer = 2.7
+	},
+/obj/effect/landmark/start/noblelate,
+/turf/open/floor/rogue/ruinedwood/herringbone,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
 	})
 "lBo" = (
 /obj/structure/flora/newleaf,
@@ -20255,8 +20269,6 @@
 	})
 "oVY" = (
 /obj/structure/closet/crate/chest,
-/obj/item/reagent_containers/food/snacks/rogue/mothercheese/wheel/aged,
-/obj/item/reagent_containers/food/snacks/rogue/mothercheese/wheel,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/under/cavewet)
 "oWx" = (
@@ -422397,7 +422409,7 @@ jdk
 jdk
 jdk
 jdk
-jxD
+jdk
 jdk
 jdk
 jdk
@@ -423454,7 +423466,7 @@ nmO
 kDA
 fWC
 wOV
-iyc
+jxD
 bUj
 bUj
 jyE
@@ -423806,7 +423818,7 @@ nmO
 fka
 pkh
 wOV
-iyc
+jxD
 bUj
 aPO
 oUB
@@ -442732,7 +442744,7 @@ qfJ
 qfJ
 qfJ
 qfJ
-aYx
+lBk
 oGs
 oGs
 oGs
@@ -519897,9 +519909,9 @@ fgk
 rAx
 spI
 qkz
-klb
 oBN
-klb
+oBN
+oBN
 iaw
 rAx
 rAx
