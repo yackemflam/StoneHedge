@@ -136,7 +136,7 @@
 	name = "butt"
 	slot = MOB_DESCRIPTOR_SLOT_BUTT
 	verbage = "has"
-	show_obscured = TRUE
+	show_obscured = FALSE
 
 /datum/mob_descriptor/butt/can_describe(mob/living/described)
 	if(!ishuman(described))
@@ -212,7 +212,7 @@
 	name = "breasts"
 	slot = MOB_DESCRIPTOR_SLOT_BREASTS
 	verbage = "has"
-	show_obscured = TRUE
+	show_obscured = FALSE
 
 /datum/mob_descriptor/breasts/can_describe(mob/living/described)
 	if(!ishuman(described))
