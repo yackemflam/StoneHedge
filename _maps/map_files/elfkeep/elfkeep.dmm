@@ -16149,6 +16149,7 @@
 /obj/structure/chair/wood{
 	dir = 1
 	},
+/obj/effect/landmark/start/alchemist,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/outdoors/caves)
 "lAx" = (
@@ -29721,6 +29722,7 @@
 /area/rogue/outdoors/river)
 "vji" = (
 /obj/structure/bed/rogue/inn,
+/obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -31184,6 +31186,13 @@
 	first_time_text = "Underkeep";
 	name = "Underkeep"
 	})
+"wkq" = (
+/obj/effect/landmark/start/alchemist,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "wkw" = (
 /obj/structure/closet/crate/chest,
 /obj/item/cooking/pan,
@@ -32260,6 +32269,13 @@
 /obj/effect/decal/remains/saiga,
 /turf/open/water/swamp,
 /area/rogue/under/cavewet)
+"wVS" = (
+/obj/effect/landmark/start/adventurerlate,
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "wWk" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/rogue/dirt,
@@ -220129,7 +220145,7 @@ kiF
 kiF
 lqc
 dOT
-bUj
+wkq
 dOT
 aJs
 bUj
@@ -320807,7 +320823,7 @@ jyE
 mXO
 bUj
 bUj
-dOT
+bUj
 jnQ
 oNu
 gzD
@@ -321159,7 +321175,7 @@ weG
 tdk
 bUj
 bUj
-dOT
+bUj
 jnQ
 kcS
 pKG
@@ -321862,7 +321878,7 @@ fEP
 uat
 bUj
 bUj
-bUj
+dOT
 bUj
 jyE
 oRP
@@ -425000,7 +425016,7 @@ pkh
 wOV
 jxD
 bUj
-aPO
+oOT
 oUB
 jdk
 vSY
@@ -425704,7 +425720,7 @@ jyE
 jyE
 jyE
 bUj
-aPO
+oOT
 oUB
 tXi
 vSY
@@ -426050,14 +426066,14 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
 jyE
-mJs
+wVS
 sOd
+wAh
 bUj
 bUj
-jyE
+bUj
+vFw
 tXi
 paF
 vSY
@@ -426402,13 +426418,13 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
 nmO
 vji
 jyE
 bUj
-aPO
+bUj
+bUj
+bUj
 oUB
 tXi
 paF
@@ -426754,13 +426770,13 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
 jyE
 jyE
 jyE
 uiT
-dOT
+bUj
+jyE
+jyE
 jyE
 tXi
 paF
@@ -427106,13 +427122,13 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
 jyE
-mJs
+wVS
 sOd
 bUj
-aPO
+bUj
+iyc
+wVS
 oUB
 tXi
 paF
@@ -427458,14 +427474,14 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
 nmO
 vji
 jyE
 bUj
 bUj
-vFw
+jyE
+vji
+jyE
 tXi
 paF
 vSY
@@ -427810,13 +427826,13 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
 jyE
 jyE
 jyE
 uiT
 bUj
+jyE
+jyE
 jyE
 tXi
 vSY
@@ -428162,14 +428178,14 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
 jyE
-wAh
+wVS
+iyc
 bUj
 bUj
-qjj
-jyE
+iyc
+wVS
+oUB
 tXi
 vSY
 vSY
@@ -428514,13 +428530,13 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
+nmO
+vji
 jyE
 uiT
 bUj
 jyE
-jyE
+vji
 jyE
 tXi
 paF
@@ -428866,14 +428882,14 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
-nmO
+jyE
+jyE
+jyE
 bUj
 bUj
-oUB
-tXi
-tXi
+jyE
+jyE
+jyE
 tXi
 paF
 vSY
@@ -429218,14 +429234,14 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
-nmO
+jyE
+wVS
+iyc
 bUj
 bUj
+iyc
+wVS
 oUB
-tXi
-tXi
 tXi
 paF
 vSY
@@ -429570,14 +429586,14 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
 nmO
+vji
+jyE
 bUj
 bUj
-oUB
-tXi
-tXi
+jyE
+vji
+jyE
 tXi
 paF
 vSY
