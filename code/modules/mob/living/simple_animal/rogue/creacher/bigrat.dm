@@ -182,4 +182,4 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/shapeshift
-	eprable = TRUE
+	erpable = TRUE
