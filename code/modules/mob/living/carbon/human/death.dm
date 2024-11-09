@@ -85,11 +85,13 @@
 				if(real_name in GLOB.outlawed_players)
 					yeae = FALSE
 
+/*
 		if(get_triumphs() > 0)
 			if(tris2take)
 				adjust_triumphs(tris2take)
 			else
 				adjust_triumphs(-1)
+*/
 
 		switch(job)
 			if("Monarch")

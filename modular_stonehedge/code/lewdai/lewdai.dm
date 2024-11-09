@@ -82,6 +82,8 @@
 		stoppedfucking(timedout = TRUE)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/seeklewd()
+	if(!erpable)
+		return
 	var/mob/living/carbon/human/L
 	var/list/around = view(aggro_vision_range, src)
 	var/list/foundfuckmeat = list()
