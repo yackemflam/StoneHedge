@@ -145,6 +145,7 @@
 	associated_skill = /datum/skill/combat/whipsflails
 	sewrepair = TRUE
 	embedding = list("embedded_pain_multiplier" = 0, "embed_chance" = 0, "embedded_fall_chance" = 0)
+	anvilrepair = /datum/skill/craft/hunting
 	parrysound = list('sound/combat/parry/parrygen.ogg')
 	swingsound = WHIPWOOSH
 	throwforce = 5

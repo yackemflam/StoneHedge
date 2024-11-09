@@ -589,7 +589,7 @@
 	body_parts_covered = CHEST|GROIN
 	armor = list("blunt" = 25, "slash" = 5, "stab" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 24, "acid" = 0)
 	boobed = TRUE
-	salvage_result = /obj/item/natural/hide
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/cloak/apron/brown
 	color = CLOTHING_BROWN
@@ -652,6 +652,7 @@
 	toggle_icon_state = FALSE
 	flags_inv = HIDEBOOB
 	salvage_result = /obj/item/natural/hide
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/wash_act(clean)
 	. = ..()

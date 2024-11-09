@@ -425,7 +425,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			if((butcher_results || guaranteed_butcher_results) && held_item.get_sharpness() && held_item.wlength == WLENGTH_SHORT)
 				var/used_time = 210
 				if(user.mind)
-					used_time -= (user.mind.get_skill_level(/datum/skill/labor/butchering) * 30)
+					used_time -= (user.mind.get_skill_level(/datum/skill/craft/hunting) * 30)
 				visible_message("[user] begins to butcher [src].")
 				playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
 				if(do_after(user, used_time, target = src))
