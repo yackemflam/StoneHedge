@@ -5171,7 +5171,7 @@
 	})
 "dIj" = (
 /obj/effect/landmark/start/delf,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
 "dIp" = (
 /obj/structure/table/wood{
@@ -15098,10 +15098,6 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
-"kRZ" = (
-/obj/effect/landmark/start/delf,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/under/cavewet)
 "kSn" = (
 /obj/machinery/light/rogue/hearth,
 /turf/open/floor/rogue/hexstone,
@@ -15783,6 +15779,10 @@
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/bath)
+"lrT" = (
+/obj/effect/landmark/start/delf,
+/turf/open/transparent/openspace,
+/area/rogue/under/cavewet)
 "lrV" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/caves)
@@ -21604,6 +21604,10 @@
 	first_time_text = "Demi Planes";
 	name = "Demi Planes"
 	})
+"pyM" = (
+/obj/effect/landmark/start/delf,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/cavewet)
 "pyO" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
@@ -95391,7 +95395,7 @@ ogt
 ogt
 ogt
 ogt
-ogt
+dIj
 ogt
 ogt
 ogt
@@ -95742,9 +95746,9 @@ ogt
 ogt
 ogt
 ogt
+dIj
 ogt
-ogt
-ogt
+dIj
 ogt
 ogt
 ogt
@@ -96093,9 +96097,9 @@ gZA
 fIW
 rrf
 rrf
+dIj
 ogt
-ogt
-ogt
+dIj
 ogt
 ogt
 ogt
@@ -96446,7 +96450,7 @@ iPL
 wyR
 iPL
 ogt
-ogt
+dIj
 ogt
 ogt
 ogt
@@ -122947,7 +122951,7 @@ wyR
 fIW
 rrf
 rrf
-rrf
+pyM
 iwu
 piT
 piT
@@ -126094,7 +126098,7 @@ wyR
 wyR
 wyR
 wyR
-kRZ
+piT
 piT
 piT
 iwu
@@ -127162,7 +127166,7 @@ piT
 piT
 piT
 piT
-dIj
+iwu
 nzk
 fMX
 nzk
@@ -128914,7 +128918,7 @@ wyR
 wyR
 piT
 piT
-dIj
+iwu
 iwu
 piT
 piT
@@ -201344,7 +201348,7 @@ xbe
 xbe
 xbe
 xbe
-xbe
+lrT
 xbe
 xbe
 xbe
