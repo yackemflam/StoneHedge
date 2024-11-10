@@ -243,7 +243,7 @@
 		return FALSE
 	if(!buttie.visible_organ)
 		return FALSE
-	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
+	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH|HIDEBUTT)
 
 /datum/sprite_accessory/butt/pair
 	name = "Pair"
