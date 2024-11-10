@@ -422,7 +422,7 @@
 	I.funny_attack_effects(src, user)
 	if(I.force)
 		var/newforce = get_complex_damage(I, user)
-		if(from_behind && user.mind && !HAS_TRAIT(src, TRAIT_BLINDFIGHTING) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))//Backstabs do increased damage; Sneak attacks have a higher crit chance. Combined, a stealthy backstab should be very damaging.
+		if(from_behind && user.mind && !(HAS_TRAIT(src, TRAIT_BLINDFIGHTING) && cmode) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))//Backstabs do increased damage; Sneak attacks have a higher crit chance. Combined, a stealthy backstab should be very damaging.
 			var/sneakmult = 2 + (user.mind.get_skill_level(/datum/skill/misc/sneaking))
 			newforce *= sneakmult
 			user.apply_status_effect(/datum/status_effect/debuff/stealthcd)

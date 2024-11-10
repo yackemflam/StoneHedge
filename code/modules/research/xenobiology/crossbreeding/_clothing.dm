@@ -110,6 +110,7 @@ Slimecrossing Armor
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 1
 	throw_range = 3
+	equip_delay_other = 100 //no tactical putting easily.
 
 /obj/item/clothing/head/peaceflower/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
@@ -123,7 +124,7 @@ Slimecrossing Armor
 /obj/item/clothing/head/peaceflower/attack_hand(mob/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
-		if(src == C.head && )
+		if(src == C.head)
 			to_chat(user, "<span class='warning'>I feel at peace. <b style='color:pink'>Why would you want anything else?</b></span>")
 			return
 	return ..()
