@@ -41,7 +41,7 @@
 	if(mind)
 		if(!gibbed)
 			var/datum/antagonist/vampirelord/VD = mind.has_antag_datum(/datum/antagonist/vampirelord)
-			if(VD)
+			if(VD && VD.ashes)
 				dust(just_ash=TRUE,drop_items=TRUE)
 				return
 
@@ -85,11 +85,13 @@
 				if(real_name in GLOB.outlawed_players)
 					yeae = FALSE
 
+/*
 		if(get_triumphs() > 0)
 			if(tris2take)
 				adjust_triumphs(tris2take)
 			else
 				adjust_triumphs(-1)
+*/
 
 		switch(job)
 			if("Monarch")

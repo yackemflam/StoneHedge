@@ -2524,7 +2524,7 @@ Slots: [job.spawn_positions]</span>
 		reset_all_customizer_accessory_colors()
 
 /proc/valid_headshot_link(mob/user, value, silent = FALSE)
-	var/static/link_regex = regex("i.gyazo.com|a.l3n.co|b.l3n.co|c.l3n.co|images2.imgbox.com|thumbs2.imgbox.com|files.catbox.moe") //gyazo, lensdump, imgbox, catbox
+	var/static/link_regex = regex("i.gyazo.com|a.l3n.co|b.l3n.co|cdn.discordapp.com|c.l3n.co|images2.imgbox.com|thumbs2.imgbox.com|files.catbox.moe") //gyazo, lensdump, imgbox, catbox
 	var/static/list/valid_extensions = list("jpg", "png", "jpeg") // Regex works fine, if you know how it works
 
 	if(!length(value))
@@ -2590,7 +2590,7 @@ Slots: [job.spawn_positions]</span>
 	// return TRUE
 
 /proc/valid_background_image(mob/user, value, silent = FALSE)
-	var/static/link_regex = regex("i.gyazo.com|a.l3n.co|b.l3n.co|c.l3n.co|images2.imgbox.com|thumbs2.imgbox.com|files.catbox.moe") //gyazo, lensdump, imgbox, catbox
+	var/static/link_regex = regex("i.gyazo.com|a.l3n.co|b.l3n.co|cdn.discordapp.com|c.l3n.co|images2.imgbox.com|thumbs2.imgbox.com|files.catbox.moe") //gyazo, lensdump, imgbox, catbox
 	var/static/list/valid_extensions = list("jpg", "png", "jpeg") // Regex works fine, if you know how it works
 
 	if(!length(value))
