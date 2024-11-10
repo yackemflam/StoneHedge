@@ -214,7 +214,7 @@
 		next_attack_msg.Cut()
 		affecting.bodypart_attacked_by(user.used_intent.blade_class, statforce, crit_message = TRUE)
 		if(!can_see_cone(user) || user.alpha < 15)//Dreamkeep change -- Attacks from
-			if(user.mind && !(HAS_TRAIT(src, TRAIT_BLINDFIGHTING) && cmode) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))
+			if(user.mind && !HAS_TRAIT(src, TRAIT_BLINDFIGHTING) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))
 				var/sneakmult = 2 + (user.mind.get_skill_level(/datum/skill/misc/sneaking))
 				user.used_intent.penfactor = 100
 				statforce *= sneakmult
