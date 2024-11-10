@@ -485,6 +485,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		"MY MASTER COMMANDS",
 		"THE SUN IS ENEMY!",
 	)
+	rogue_enabled = TRUE
 	isspawn = TRUE
 
 /datum/antagonist/vampirelord/lesser/move_to_spawnpoint()
