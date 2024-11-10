@@ -71,3 +71,5 @@
 	H.change_stat("constitution", -10)
 	H.change_stat("endurance", -10)
 	H.change_stat("speed", -10)
+	if(H.client.prefs.defiant)
+		H.client.prefs.defiant = FALSE
