@@ -70,6 +70,7 @@
 	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	gloves = /obj/item/clothing/gloves/roguetown/leather

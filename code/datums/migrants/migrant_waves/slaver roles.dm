@@ -1,5 +1,5 @@
 /datum/migrant_role/slaver/master
-	name = "Drow Slaver Raid Party"
+	name = "Underdark Slave-Master"
 	greet_text = "You are here to collect permanent residents for the Underdark. You and your fellow slavers have spent a long time within the underdark; twisted by cruelty and the harshness of the sunless realm. Your Masters in the Underkeep demand fresh blood for their own devices. Take the unwilling and bring them to the underkeep to work. Break them in however is needed."
 	outfit = /datum/outfit/job/roguetown/slaver/master
 	allowed_sexes = list(MALE, FEMALE)
@@ -100,7 +100,7 @@
 
 /datum/migrant_role/slaver/slavemercwhip
 	name = "Underdark Slave-Driver"
-	greet_text = "In the underdark, you are known as the Taskmaster. Your skills with the whip are unmatched; beasts and mortals alike will submit."
+	greet_text = "In the underdark, you are known as one of the finest taskmasters. Your skills with the whip are unmatched; beasts and mortals alike will submit."
 	outfit = /datum/outfit/job/roguetown/slaver/slavemercwhip
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_TOLERATED_UP
