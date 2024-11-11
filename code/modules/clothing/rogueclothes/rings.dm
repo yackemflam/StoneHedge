@@ -86,32 +86,32 @@
 
 //gold rings
 /obj/item/clothing/ring/emerald
-    name = "gemerald ring"
+    name = "emerald ring"
     icon_state = "g_ring_emerald"
     sellprice = 195
 
 /obj/item/clothing/ring/ruby
-    name = "rontz ring"
+    name = "ruby ring"
     icon_state = "g_ring_ruby"
     sellprice = 255
 
 /obj/item/clothing/ring/topaz
-    name = "toper ring"
+    name = "topaz ring"
     icon_state = "g_ring_topaz"
     sellprice = 120
 
 /obj/item/clothing/ring/quartz
-    name = "blortz ring"
+    name = "quartz ring"
     icon_state = "g_ring_quartz"
     sellprice = 245
 
 /obj/item/clothing/ring/sapphire
-    name = "saffira ring"
+    name = "sapphire ring"
     icon_state = "g_ring_sapphire"
     sellprice = 200
 
 /obj/item/clothing/ring/diamond
-    name = "dorpel ring"
+    name = "diamond ring"
     icon_state = "g_ring_diamond"
     sellprice = 270
 
@@ -122,32 +122,32 @@
 
 //steel rings
 /obj/item/clothing/ring/emeralds
-    name = "gemerald ring"
+    name = "emerald ring"
     icon_state = "s_ring_emerald"
     sellprice = 80
 
 /obj/item/clothing/ring/rubys
-    name = "rontz ring"
+    name = "ruby ring"
     icon_state = "s_ring_ruby"
     sellprice = 130
 
 /obj/item/clothing/ring/topazs
-    name = "toper ring"
+    name = "topaz ring"
     icon_state = "s_ring_topaz"
     sellprice = 45
 
 /obj/item/clothing/ring/quartzs
-    name = "blortz ring"
+    name = "quartz ring"
     icon_state = "s_ring_quartz"
     sellprice = 110
 
 /obj/item/clothing/ring/sapphires
-    name = "saffira ring"
+    name = "sapphire ring"
     icon_state = "s_ring_sapphire"
     sellprice = 95
 
 /obj/item/clothing/ring/diamonds
-    name = "dorpel ring"
+    name = "diamond ring"
     icon_state = "s_ring_diamond"
     sellprice = 140
 

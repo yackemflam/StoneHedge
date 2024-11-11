@@ -128,13 +128,20 @@
 	toggleblades(user)
 
 /obj/item/clothing/wrists/roguetown/hiddenblade/attackby(obj/A, mob/living/carbon/human/user, params)
-	if(istype(A, /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden) && extended && src == user.get_item_by_slot(SLOT_WRISTS))
+	if(src == user.get_item_by_slot(SLOT_WRISTS))
 		toggleblades(user)
 		return ..()
 
+/obj/item/clothing/wrists/roguetown/hiddenblade/proc/get_hblade_in_either_hand(mob/living/user)
+	for(var/obj/item/thing in user.held_items)
+		if(thing == null)
+			continue
+		if(istype(thing, /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden))
+			return TRUE
+
 /obj/item/clothing/wrists/roguetown/hiddenblade/proc/toggleblades(mob/user)
 	hid = user.get_active_held_item()
-	if(!user.held_items.len && extended) //reset if we somehow lost the blade while its extended.
+	if(!get_hblade_in_either_hand() && extended) //reset if we somehow lost the blade while its extended.
 		extended = FALSE
 		user.visible_message("<span class='info'>A blade retracts into [user]'s bracer.</span>", "<span class='notice'>My hidden blade retracts into my bracer.</span>")
 		REMOVE_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
@@ -161,5 +168,4 @@
 	name = "hidden blade"
 	desc = ""
 	embedding = list("embedded_pain_multiplier" = 0, "embed_chance" = 0, "embedded_fall_chance" = 0)
-	item_flags = DROPDEL
 	slot_flags = null

@@ -25,6 +25,7 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 	advclass_cat_rolls = list(CTAG_ADVENTURER = 30)
 	PQ_boost_divider = 10
 
+	give_bank_account = TRUE
 	wanderer_examine = FALSE
 	advjob_examine = TRUE
 	always_show_on_latechoices = TRUE

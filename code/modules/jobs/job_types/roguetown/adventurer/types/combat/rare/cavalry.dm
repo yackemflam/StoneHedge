@@ -6,7 +6,6 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/roguetown/adventurer/cavalry
 	maximum_possible_slots = 4 // Seems like an OK number??? May remove cap otherwise but lower pick prob too
-	pickprob = 50 // might as well bring it down to KE
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_STEELHEARTED)
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_cavalry.ogg' // Spanish guitars fuck, don't @ me

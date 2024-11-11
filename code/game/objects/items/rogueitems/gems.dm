@@ -1,6 +1,6 @@
 
 /obj/item/roguegem
-	name = "rontz"
+	name = "ruby"
 	icon_state = "ruby_cut"
 	icon = 'icons/roguetown/items/gems.dmi'
 	desc = "Its facets shine so brightly.."
@@ -28,7 +28,7 @@
 	..()
 
 /obj/item/reagent_containers/powder/rontz
-	name = "rontz dust"
+	name = "ruby dust"
 	desc = ""
 	gender = PLURAL
 	icon = 'icons/roguetown/items/gems.dmi'
@@ -68,14 +68,14 @@
 	..()
 
 /obj/item/roguegem/green
-	name = "gemerald"
+	name = "emerald"
 	icon_state = "emerald_cut"
 	sellprice = 42
 	desc = "Glints with verdant brilliance."
 	mill_result = /obj/item/reagent_containers/powder/gemerald
 
 /obj/item/reagent_containers/powder/gemerald
-	name = "gemerald dust"
+	name = "emerald dust"
 	desc = ""
 	gender = PLURAL
 	icon = 'icons/roguetown/items/gems.dmi'
@@ -86,14 +86,14 @@
 	sellprice = 33
 
 /obj/item/roguegem/blue
-	name = "blortz"
+	name = "quartz"
 	icon_state = "quartz_cut"
 	sellprice = 88
 	desc = "Pale blue, like a frozen tear." // i am not sure if this is really quartz.
 	mill_result = /obj/item/reagent_containers/powder/blortz
 
 /obj/item/reagent_containers/powder/blortz
-	name = "blortz dust"
+	name = "quartz dust"
 	desc = ""
 	gender = PLURAL
 	icon = 'icons/roguetown/items/gems.dmi'
@@ -104,14 +104,14 @@
 	sellprice = 70
 
 /obj/item/roguegem/yellow
-	name = "toper"
+	name = "topaz"
 	icon_state = "topaz_cut"
 	sellprice = 20
 	desc = "Its amber hues remind you of the sunset."
 	mill_result = /obj/item/reagent_containers/powder/toper
 
 /obj/item/reagent_containers/powder/toper
-	name = "toper dust"
+	name = "topaz dust"
 	desc = ""
 	gender = PLURAL
 	icon = 'icons/roguetown/items/gems.dmi'
@@ -122,14 +122,14 @@
 	sellprice = 16
 
 /obj/item/roguegem/violet
-	name = "saffira"
+	name = "sapphire"
 	icon_state = "sapphire_cut"
 	sellprice = 56
 	desc = "This gem is admired by many wizards."
 	mill_result = /obj/item/reagent_containers/powder/saffira
 
 /obj/item/reagent_containers/powder/saffira
-	name = "saffira dust"
+	name = "sapphire dust"
 	desc = ""
 	gender = PLURAL
 	icon = 'icons/roguetown/items/gems.dmi'
@@ -140,14 +140,14 @@
 	sellprice = 44
 
 /obj/item/roguegem/diamond
-	name = "dorpel"
+	name = "diamond"
 	icon_state = "diamond_cut"
 	sellprice = 121
 	desc = "Beautifully clear, it demands respect."
 	mill_result = /obj/item/reagent_containers/powder/dorpel
 
 /obj/item/reagent_containers/powder/dorpel
-	name = "dorpel dust"
+	name = "diamond dust"
 	desc = ""
 	gender = PLURAL
 	icon = 'icons/roguetown/items/gems.dmi'

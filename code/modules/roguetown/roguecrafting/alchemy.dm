@@ -249,7 +249,7 @@
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/i2top // Keep topers and their trinkets cheap to prevent wealth creep. Cheap means of getting gem dust, for potions.
-	name = "transmute iron to toper"
+	name = "transmute iron to topaz"
 	result = list(/obj/item/roguegem/yellow = 1)
 	reqs = list(
 		/obj/item/rogueore/iron = 1,
@@ -257,7 +257,7 @@
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/t2gem
-	name = "transmute toper to gemerald"
+	name = "transmute topaz to emerald"
 	result = list(/obj/item/roguegem/green = 1)
 	reqs = list(
 		/obj/item/roguegem/yellow = 1,
@@ -265,7 +265,7 @@
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/g2saf
-	name = "transmute gemerald to saffira"
+	name = "transmute emerald to sapphire"
 	result = list(/obj/item/roguegem/violet = 1)
 	reqs = list(
 		/obj/item/roguegem/green = 1,
@@ -273,7 +273,7 @@
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/s2blo
-	name = "transmute saffira to blortz"
+	name = "transmute sapphire to quartz"
 	result = list(/obj/item/roguegem/blue = 1)
 	reqs = list(
 		/obj/item/roguegem/violet = 1,
@@ -281,7 +281,7 @@
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/r2dia
-	name = "transmute blortz to dorpel"
+	name = "transmute quartz to diamond"
 	result = list(/obj/item/roguegem/diamond = 1)
 	reqs = list(
 		/obj/item/roguegem/blue = 2,
@@ -289,7 +289,7 @@
 	craftdiff = 5
 
 /datum/crafting_recipe/roguetown/alchemy/d2ros
-	name = "transmute dorpels to riddle of steel" /// holy grail requires legendary. (sell price on average is 350. rontz and diamond worth 100 each. you get to legndary you deserve 150-200 profit)
+	name = "transmute diamonds to riddle of steel" /// holy grail requires legendary. (sell price on average is 350. ruby and diamond worth 100 each. you get to legndary you deserve 150-200 profit)
 	result = list(/obj/item/riddleofsteel = 1)
 	reqs = list(
 		/obj/item/roguegem/diamond = 2,
@@ -312,7 +312,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/t2sub
-	name = "Sublimate Toper Dust"
+	name = "Sublimate Topaz Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
@@ -322,7 +322,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/g2sub
-	name = "Sublimate Gemerald Dust"
+	name = "Sublimate Emerald Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -333,7 +333,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/s2sub
-	name = "Sublimate Saffira Dust"
+	name = "Sublimate Sapphire Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -345,7 +345,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/b2sub
-	name = "Sublimate Blortz Dust"
+	name = "Sublimate Quartz Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -358,7 +358,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/r2sub
-	name = "Sublimate Rontz Dust"
+	name = "Sublimate Ruby Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -373,7 +373,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/d2sub
-	name = "Sublimate Dorpel Dust"
+	name = "Sublimate Diamond Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,

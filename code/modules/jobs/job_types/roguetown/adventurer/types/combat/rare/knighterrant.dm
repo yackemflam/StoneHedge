@@ -6,7 +6,6 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/roguetown/adventurer/knighterrant
 	maximum_possible_slots = 3		//For testing!
-	pickprob = 50
 	category_tags = list(CTAG_ADVENTURER)
 
 

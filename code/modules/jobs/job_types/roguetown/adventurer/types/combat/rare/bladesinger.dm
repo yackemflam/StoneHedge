@@ -6,7 +6,6 @@
 		/datum/species/elf/dark,
 		/datum/species/elf/wood,
 	)
-	pickprob = 25
 	maximum_possible_slots = 2
 	traits_applied = list(TRAIT_MEDIUMARMOR)
 	category_tags = list(CTAG_ADVENTURER)

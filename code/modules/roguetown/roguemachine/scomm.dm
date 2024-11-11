@@ -265,9 +265,9 @@
 	return
 //LISTENSTONE		LISTENSTONE
 /obj/item/listenstone
-	name = "gemerald choker"
+	name = "emerald choker"
 	icon_state = "listenstone"
-	desc = "A iron and gold choker with an gemerald gem."
+	desc = "A iron and gold choker with an emerald gem."
 	gripped_intents = null
 	//dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)

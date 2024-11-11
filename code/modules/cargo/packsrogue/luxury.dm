@@ -88,7 +88,7 @@
 	contains = list(/obj/item/scrying)
 
 /datum/supply_pack/rogue/luxury/listenst
-	name = "Gemerald Choker"
+	name = "Emerald Choker"
 	cost = 250
 	contains = list(/obj/item/listenstone)
 
