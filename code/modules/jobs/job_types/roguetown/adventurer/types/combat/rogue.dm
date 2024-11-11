@@ -78,7 +78,7 @@
 		gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
+	cloak = /obj/item/clothing/cloak/raincloak/rogue
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	beltr = /obj/item/quiver/bolts
@@ -125,7 +125,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini
 	else
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
+	cloak = /obj/item/clothing/cloak/raincloak/rogue
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
@@ -210,7 +210,7 @@
 		gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
+	cloak = /obj/item/clothing/cloak/raincloak/rogue
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
@@ -251,7 +251,7 @@
 		gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
+	cloak = /obj/item/clothing/cloak/raincloak/rogue
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	beltr = /obj/item/quiver/bolts

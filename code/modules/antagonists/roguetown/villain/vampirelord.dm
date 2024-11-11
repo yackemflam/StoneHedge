@@ -68,8 +68,10 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_TOLERANT, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_ZOMBIE_IMMUNE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOSLEEP, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
+	owner.current.faction = list("undead")
 	for(var/obj/structure/fluff/traveltile/vampire/tile in GLOB.traveltiles)
 		tile.show_travel_tile(owner.current)
 	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
@@ -485,6 +487,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		"MY MASTER COMMANDS",
 		"THE SUN IS ENEMY!",
 	)
+	rogue_enabled = TRUE
 	isspawn = TRUE
 
 /datum/antagonist/vampirelord/lesser/move_to_spawnpoint()
