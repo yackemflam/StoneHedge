@@ -17,23 +17,27 @@
 	C.liches |= owner
 	. = ..()
 	owner.special_role = name
-	skele_look()
 	equip_lich()
 	greet()
 	return ..()
 
 /datum/antagonist/lich/greet()
-	to_chat(owner.current, span_userdanger("The secret of immortality is mine, but this is not enough. The Azurean lands need a new ruler. One that will reign eternal."))
+	to_chat(owner.current, span_userdanger("The secret of immortality is mine, but this is not enough. This land need a new ruler. One that will reign eternal."))
 	owner.announce_objectives()
 	..()
 
 /datum/antagonist/lich/proc/skele_look()
 	var/mob/living/carbon/human/L = owner.current
+	/* cooler to be white
 	L.hairstyle = "Bald"
 	L.facial_hairstyle = "Shaved"
+	*/
+	L.hair_color = "bababa"
 	L.update_body()
 	L.update_hair()
 	L.update_body_parts(redraw = TRUE)
+	for(var/obj/item/bodypart/B in L.bodyparts)
+		B.skeletonize(FALSE)
 
 /datum/antagonist/lich/proc/equip_lich()
 	owner.unknow_all_people()
@@ -52,6 +56,7 @@
 	ADD_TRAIT(L, TRAIT_NOMOOD, "[type]")
 	ADD_TRAIT(L, TRAIT_NOLIMBDISABLE, "[type]")
 	ADD_TRAIT(L, TRAIT_SHOCKIMMUNE, "[type]")
+	ADD_TRAIT(L, TRAIT_ZOMBIE_IMMUNE, "[type]")
 	ADD_TRAIT(L, TRAIT_LIMBATTACHMENT, "[type]")
 	ADD_TRAIT(L, TRAIT_SEEPRICES, "[type]")
 	L.cmode_music = 'sound/music/combat_cult.ogg'
@@ -65,8 +70,6 @@
 		QDEL_NULL(eyes)
 	eyes = new /obj/item/organ/eyes/night_vision/zombie
 	eyes.Insert(L)
-	for(var/obj/item/bodypart/B in L.bodyparts)
-		B.skeletonize(FALSE)
 	L.equipOutfit(/datum/outfit/job/roguetown/lich)
 	L.set_patron(/datum/patron/inhumen/zizo)
 
@@ -136,6 +139,7 @@
 /datum/antagonist/lich/proc/rise_anew()
 	var/mob/living/carbon/human/bigbad = owner.current
 	bigbad.revive(TRUE, TRUE)
+	skele_look()
 
 	for(var/obj/item/bodypart/B in bigbad.bodyparts)
 		B.skeletonize(FALSE)
