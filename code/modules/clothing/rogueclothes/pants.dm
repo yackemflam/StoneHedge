@@ -213,9 +213,10 @@
 /obj/item/clothing/under/roguetown/chainlegs/iron
 
 	name = "iron chain chausses"
-	icon = 'modular_stonehedge/icons/armor/pants.dmi'
+	icon = 'icons/armor/pants.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
-	icon_state = "ichain_legs"
+	icon_state = "chain_legs"
+	color = "#9EA48E"
 	armor = list("blunt" = 40, "slash" = 80, "stab" = 40, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
