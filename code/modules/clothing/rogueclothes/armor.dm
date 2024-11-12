@@ -302,7 +302,7 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/bikini
-	name = "plate bikini"
+	name = "half-plate bikini"
 	desc = "Half plate in bikini form, still just as protective somehow."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
@@ -313,7 +313,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/suit/roguetown/armor/plate/bikini/bra
-	name = "plate bra"
+	name = "half-plate bra"
 	icon_state = "halfplatebra"
 	item_state = "halfplatebra"
 	desc = "Half plate that's even half-er, still just as protective somehow."
@@ -322,7 +322,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/full
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "plate armor"
+	name = "fullplate armor"
 	desc = "Full plate. Leg protecting tassets, groin cup, armored vambraces."
 	icon_state = "plate"
 	max_integrity = 700
@@ -542,7 +542,7 @@
 	desc = "A large shirt meant to be worn below armor."
 	icon_state = "gambeson"
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
-	armor = list("blunt" = 60, "slash" = 40, "stab" = 50, "bullet" = 25, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 50, "slash" = 40, "stab" = 50, "bullet" = 25, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT,BCLASS_BLUNT)
 	blocksound = SOFTUNDERHIT
 	blade_dulling = DULLING_BASHCHOP
@@ -568,11 +568,11 @@
 /obj/item/clothing/suit/roguetown/armor/leather
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "leather armor"
-	desc = "Flexible cowhide armor. Lightweight, better than nothing."
+	desc = "Flexible leather armor. Lightweight, better than nothing."
 	icon_state = "leather"
 //	color = "#514339"
-	body_parts_covered = CHEST|GROIN|VITALS
-	armor = list("blunt" = 50, "slash" = 25, "stab" = 40, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	armor = list("blunt" = 60, "slash" = 50, "stab" = 40, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT,BCLASS_BLUNT)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
@@ -580,7 +580,7 @@
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	sewrepair = TRUE
 	nodismemsleeves = TRUE
-	max_integrity = 125
+	max_integrity = 200
 	sellprice = 20
 	armor_class = ARMOR_CLASS_LIGHT
 	can_hold_endowed = TRUE
@@ -589,7 +589,7 @@
 	name = "hide armor"
 	desc = "A light armor of wildbeast hide. More durable than leather."
 	icon_state = "hidearmor"
-	max_integrity = 175
+	max_integrity = 250
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded
@@ -598,11 +598,11 @@
 	icon_state = "studleather"
 	item_state = "studleather"
 	blocksound = SOFTHIT
-	armor = list("blunt" = 70, "slash" = 50, "stab" = 60, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 75, "slash" = 60, "stab" = 60, "bullet" = 25, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_CHOP)
 	nodismemsleeves = TRUE
-	body_parts_covered = CHEST|GROIN|VITALS
-	max_integrity = 250
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	max_integrity = 275
 	sellprice = 25
 	armor_class = ARMOR_CLASS_LIGHT
 
