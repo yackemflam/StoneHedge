@@ -213,7 +213,7 @@
 /obj/item/clothing/under/roguetown/chainlegs/iron
 
 	name = "iron chain chausses"
-	icon = 'icons/armor/pants.dmi'
+	icon = 'modular_stonehedge/icons/armor/pants.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
 	icon_state = "chain_legs"
 	color = "#9EA48E"
