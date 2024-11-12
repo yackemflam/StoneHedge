@@ -128,33 +128,20 @@
 	toggleblades(user)
 
 /obj/item/clothing/wrists/roguetown/hiddenblade/attackby(obj/A, mob/living/carbon/human/user, params)
-	if(src == user.get_item_by_slot(SLOT_WRISTS))
+	if(src == user.get_item_by_slot(SLOT_WRISTS) && (istype(A, /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden) || !A)) //blade or empty hand.
 		toggleblades(user)
 		return ..()
 
-/obj/item/clothing/wrists/roguetown/hiddenblade/proc/get_hblade_in_either_hand(mob/living/user)
-	for(var/obj/item/thing in user.held_items)
-		if(thing == null)
-			continue
-		if(istype(thing, /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden))
-			return TRUE
-
 /obj/item/clothing/wrists/roguetown/hiddenblade/proc/toggleblades(mob/user)
-	hid = user.get_active_held_item()
-	if(!get_hblade_in_either_hand() && extended) //reset if we somehow lost the blade while its extended.
-		extended = FALSE
-		user.visible_message("<span class='info'>A blade retracts into [user]'s bracer.</span>", "<span class='notice'>My hidden blade retracts into my bracer.</span>")
-		REMOVE_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
-		if(hid) //if blade still exists somewhere somehow.
-			qdel(hid)
 
 	if(extended)
 		if(istype(user.get_active_held_item(), /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden))
 			user.dropItemToGround(hid, TRUE)
 			user.visible_message("<span class='info'>A blade retracts into [user]'s bracer.</span>", "<span class='notice'>My hidden blade retracts into my bracer.</span>")
 			extended = FALSE
+			qdel(hid)
 			REMOVE_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
-	else
+	else if(!user.get_active_held_item()) //empty hand
 		hid = new(user,1)
 		ADD_TRAIT(hid, TRAIT_NODROP, TRAIT_GENERIC)
 		ADD_TRAIT(hid, TRAIT_NOEMBED, TRAIT_GENERIC)
