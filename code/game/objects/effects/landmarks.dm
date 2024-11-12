@@ -367,6 +367,18 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Tribal Slave"
 	icon_state = "arrow"
 
+/obj/effect/landmark/start/prisonerd
+	name = "Public Servant"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/griefer
+	name = "Dumb Whoreson"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/lunatic
+	name = "Shunned Slave"
+	icon_state = "arrow"
+
 /obj/effect/landmark/start/hostage
 	name = "Hostage"
 	icon_state = "arrow"

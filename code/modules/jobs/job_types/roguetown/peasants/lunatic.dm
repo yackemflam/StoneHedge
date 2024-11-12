@@ -66,10 +66,10 @@
 	ADD_TRAIT(H, TRAIT_ATHEISM_CURSE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_ENDOWMENT, TRAIT_GENERIC)
 	neck = /obj/item/clothing/neck/roguetown/gorget/prisoner
-	H.change_stat("strength", -10)
-	H.change_stat("intelligence", -10)
-	H.change_stat("constitution", -10)
-	H.change_stat("endurance", -10)
-	H.change_stat("speed", -10)
+	H.change_stat("strength", -20)
+	H.change_stat("intelligence", -20)
+	H.change_stat("constitution", -20)
+	H.change_stat("endurance", -20)
+	H.change_stat("speed", -20)
 	if(H.client.prefs.defiant)
 		H.client.prefs.defiant = FALSE
