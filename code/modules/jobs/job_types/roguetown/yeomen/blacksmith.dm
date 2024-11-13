@@ -105,7 +105,7 @@
 		backpack_contents = list(/obj/item/rogueweapon/hammer = 1, /obj/item/rogueweapon/tongs = 1)
 		belt = /obj/item/storage/belt/rogue/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/roguekey/blacksmith
+		beltr = /obj/item/roguekey/blacksmith/town
 		cloak = /obj/item/clothing/cloak/apron/blacksmith
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
