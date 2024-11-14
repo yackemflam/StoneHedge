@@ -14,7 +14,7 @@
 	H.adjust_blindness(-3)
 	H.mind.adjust_spellpoints(5)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/learnspell)
-	var/classes = list("Evoker","Arcanist","Enchanter","Spellblade")
+	var/classes = list("Elementalist","Arcanist","Enchanter","Spellblade")
 	var/classchoice = input("Choose your Specialization", "Available Specializations") as anything in classes
 	switch(classchoice)
 
