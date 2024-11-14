@@ -34,6 +34,7 @@
 		user.sexcon.perform_sex_action(target, 1.2, 4, TRUE)
 	else
 		user.sexcon.perform_sex_action(target, 2.4, 9, TRUE)
+	target.sexcon.handle_passive_ejaculation()
 	user.sexcon.handle_passive_ejaculation()
 
 	target.heal_overall_damage(3,3,0, updating_health = TRUE)

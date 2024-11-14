@@ -56,6 +56,7 @@
 	else
 		user.sexcon.perform_sex_action(target, 2.4, 7, FALSE)
 	target.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/npc_vaginal_sex/on_finish(mob/living/user, mob/living/target)
 	if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY)) //Male seelie trying to fuck normal size humen

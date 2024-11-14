@@ -73,7 +73,7 @@ Slimecrossing Potions
 	icon = 'icons/roguetown/items/cooking.dmi'
 	icon_state = "lovebottle"
 
-/obj/item/slimepotion/lovepotion/attack(mob/living/M, mob/user)
+/obj/item/slimepotion/lovepotion/attack(mob/living/carbon/human/M, mob/user)
 	if(!isliving(M) || M.stat == DEAD)
 		to_chat(user, span_warning("The love potion only works on living things, sicko!"))
 		return ..()
@@ -86,6 +86,7 @@ Slimecrossing Potions
 	if(M.has_status_effect(STATUS_EFFECT_INLOVE))
 		to_chat(user, span_warning("[M] is already lovestruck! This will undo the effects..."))
 		M.remove_status_effect(STATUS_EFFECT_INLOVE)
+		M.remove_curse(/datum/curse/baotha, TRUE)
 		M.faction = initial(M.faction)
 		to_chat(M, span_notice("I am freed of the effects of love potion."))
 		qdel(src)
@@ -100,6 +101,7 @@ Slimecrossing Potions
 	to_chat(M, span_notice("I develop feelings for [user], and anyone [user.p_they()] like."))
 	M.faction |= "[REF(user)]"
 	M.apply_status_effect(STATUS_EFFECT_INLOVE, user)
+	M.add_curse(/datum/curse/baotha, TRUE)
 	qdel(src)
 
 /obj/item/slimepotion/endowpotion

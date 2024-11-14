@@ -195,7 +195,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(!body_marking_sets)
 		return
 	if(!body_markings)
-		body_markings = list()
+		body_markings = list(
+		/datum/body_marking/flushed_cheeks,
+		/datum/body_marking/eyeliner,)
 	var/datum/body_marking_set/bodyset
 	for(var/set_type in body_marking_sets)
 		bodyset = GLOB.body_marking_sets_by_type[set_type]

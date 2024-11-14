@@ -24,6 +24,7 @@
 	user.sexcon.perform_sex_action(target, 2, 0, TRUE)
 	target.sexcon.handle_passive_ejaculation()
 
+
 /datum/sex_action/npc_rimming/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] stops rimming [target]'s butt ..."))
 	var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user

@@ -52,6 +52,7 @@
 	else
 		user.sexcon.perform_sex_action(target, 2.4, 9, FALSE)
 	target.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/npc_anal_sex/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] pulls their cock out of [target]'s butt."))

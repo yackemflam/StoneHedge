@@ -75,8 +75,14 @@
 //positive
 /datum/quirk/duelist
 	name = "Swordmaster"
-	desc = "I was the student of a legendary sword master, my skill is rivalled by few! I've also hidden a rapier."
+	desc = "I was the student of a sword master, I am agile and with practice! I've also hidden a rapier."
 	value = 4
+
+/datum/quirk/duelist/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.change_stat("speed", 2)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+	H.mind.special_items["Rapier"] = /obj/item/rogueweapon/sword/rapier
 
 /datum/quirk/greenthumb
 	name = "Green Thumb"
@@ -90,11 +96,6 @@
 	H.mind.special_items["Fertilizer 2"] = /obj/item/fertilizer
 	H.mind.special_items["Fertilizer 3"] = /obj/item/fertilizer
 
-/datum/quirk/duelist/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.change_stat("speed", 2)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
-	H.mind.special_items["Rapier"] = /obj/item/rogueweapon/sword/rapier
 
 /datum/quirk/eagle_eyed
 	name = "Eagle Eyed"
@@ -104,8 +105,8 @@
 /datum/quirk/eagle_eyed/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.change_stat("perception", 2)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 5, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 3, TRUE)
 	H.mind.special_items["Crossbow"] = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	H.mind.special_items["Bolts"] = /obj/item/quiver/bolts
 
@@ -149,7 +150,7 @@
 /datum/quirk/pineapple/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.special_items["Whip"] = /obj/item/rogueweapon/whip
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 3, TRUE)
 
 /datum/quirk/packed_lunch
 	name = "Packed Lunch"
@@ -312,6 +313,8 @@
 /datum/quirk/hussite/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	GLOB.excommunicated_players += H.real_name
+	H.add_stress(/datum/stressevent/psycurse)
+	H.devotion.excommunicate()
 
 /datum/quirk/bounty
 	name = "Hunted Man"
@@ -332,7 +335,7 @@
 	else
 		employer = pick(list("Duchess", "Lady", "Noblelady", "Princess"))
 	employer = "[employer] [random_human_name(employer_gender, FALSE, FALSE)]"
-	var/amount = rand(40,100)
+	var/amount = rand(150,300)
 	switch(rand(1,8))
 		if(1)
 			reason = "murder"
@@ -351,7 +354,7 @@
 		if(8)
 			reason = "burglary"
 	add_bounty(H.real_name, amount, FALSE, reason, employer)
-	to_chat(H, span_notice("Whether I done it or not, I have been accused of [reason], and the [employer] put a bounty on my head!"))
+	to_chat(H, span_notice("Whether I done it or not, I have been accused of [reason], and a [employer] put a bounty on my head!"))
 
 /datum/quirk/outlaw
 	name = "Known Outlaw"
@@ -452,3 +455,31 @@
 
 /datum/antagonist/vampirelord/lesser/secret/move_to_spawnpoint()
 	return
+
+/datum/quirk/nymphomaniac
+	name = "Nymphomaniac"
+	desc = "I'm in a constant state of arousal, and I cannot control my urges."
+	value = -3
+
+/datum/quirk/nymphomaniac/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.add_curse(/datum/curse/baotha, TRUE)
+	ADD_TRAIT(H, TRAIT_GOODLOVER, "[type]")
+
+/datum/quirk/loveless
+	name = "Loveless"
+	desc = "I am unable to show any kind of affection or love, whether carnal or platonic."
+	value = -3
+
+/datum/quirk/loveless/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.add_curse(/datum/curse/eora, TRUE)
+
+/datum/quirk/pacifist
+	name = "Pacifist"
+	desc = "Violence disgusts me. I cannot bring myself to wield any kind of weapon."
+	value = -6
+
+/datum/quirk/pacifist/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.add_curse(/datum/curse/ravox, TRUE)

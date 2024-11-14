@@ -385,3 +385,10 @@
 	if(istype(H))
 		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, H, null, TRUE, TRUE))
 			qdel(H)
+
+/obj/item/clothing/shoes/roguetown/boots/hidden/berrypoison/Initialize()
+	. = ..()
+	var/obj/item/reagent_containers/glass/bottle/rogue/berrypoison/H = new(loc)
+	if(istype(H))
+		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, H, null, TRUE, TRUE))
+			qdel(H)

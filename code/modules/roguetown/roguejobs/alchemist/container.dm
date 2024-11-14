@@ -22,6 +22,9 @@
 /obj/item/reagent_containers/glass/bottle/rogue/antipregnancy
 	list_reagents = list(/datum/reagent/medicine/antipregnancy = 45)
 
+/obj/item/reagent_containers/glass/bottle/rogue/berrypoison
+	list_reagents = list(/datum/reagent/berrypoison = 45)
+
 /obj/item/reagent_containers/glass/bottle/rogue/poison
 	list_reagents = list(/datum/reagent/toxin/killersice = 1)
 

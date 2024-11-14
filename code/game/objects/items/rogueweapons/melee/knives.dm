@@ -331,7 +331,7 @@
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
 	name = "drowish dagger"
 	desc = "This ominous, jeweled dagger was crafted by the assassin race of nite elves."
-	force = 25
+	force = 22
 	sellprice = 75
 	icon = 'modular_stonehedge/icons/roguetown/weapons/32.dmi'
 	icon_state = "drowdagger"
