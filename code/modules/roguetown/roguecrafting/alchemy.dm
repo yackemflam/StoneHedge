@@ -189,6 +189,12 @@
 	reqs = list(/obj/item/rogueweapon/huntingknife/stoneknife = 1, /obj/item/reagent_containers/powder/crystalglass = 1, /obj/item/reagent_containers/food/snacks/grown/poppy)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/alchemy/gunpowder
+	name = "firepowder"
+	result = list(/obj/item/reagent_containers/powder/gunpowder)
+	reqs = list(/obj/item/ash = 2, /obj/item/grown/log/tree/small = 1)
+	craftdiff = 2
+
 /// bottle craft
 
 

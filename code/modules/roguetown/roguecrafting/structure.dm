@@ -690,3 +690,35 @@
 	verbage = "constructs"
 	skillcraft = /datum/skill/misc/alchemy
 	craftdiff = 3
+
+//siege things
+
+/datum/crafting_recipe/roguetown/structure/catapult
+	name = "Catapult"
+	result = /obj/structure/catapult
+	reqs = list(/obj/item/grown/log/tree = 2,
+				/obj/item/grown/log/tree/small = 2,
+				/obj/item/rope = 2,
+				/obj/item/ingot/steel = 2,
+				/obj/item/roguegear = 3)
+	verbage_simple = "construct"
+	verbage = "constructs"
+	skillcraft = /datum/skill/craft/engineering
+	craftdiff = 4 //this thing is wild.
+
+/datum/crafting_recipe/roguetown/structure/woodspike
+	name = "spike barrier"
+	result = /obj/structure/barricade/wood_spike
+	reqs = list(/obj/item/grown/log/tree = 1)
+	verbage_simple = "construct"
+	verbage = "constructs"
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2 //good practice maybe.
+
+/datum/crafting_recipe/roguetown/structure/ladder
+	name = "ladder"
+	result = /obj/structure/ladder
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "construct"
+	verbage = "constructs"
+	skillcraft = /datum/skill/craft/carpentry

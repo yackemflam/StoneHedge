@@ -230,6 +230,17 @@
 	grind_results = list(/datum/reagent/ozium = 15)
 	sellprice = 5
 
+/obj/item/reagent_containers/powder/gunpowder
+	name = "firepowder"
+	desc = "Not so useful in this state."
+	icon = 'modular_stonehedge/icons/roguetown/items/produce.dmi'
+	icon_state = "gunpowder"
+	possible_transfer_amounts = list()
+	volume = 15
+	list_reagents = list(/datum/reagent/gunpowder = 15)
+	grind_results = list(/datum/reagent/gunpowder = 15)
+	sellprice = 25
+
 /obj/item/reagent_containers/powder/heal
 	name = "healing powder"
 	desc = ""

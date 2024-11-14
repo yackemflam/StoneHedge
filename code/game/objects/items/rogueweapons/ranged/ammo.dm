@@ -204,7 +204,8 @@
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, visible_message), span_danger("[M] appears greatly weakened by the poison!")), 10 SECONDS)
 
 /obj/projectile/bullet/reusable/bullet
-	name = "lead ball"
+	name = "iron ball"
+	desc = "I got balls of iron."
 	damage = 50		//Arrow-tier damage, so less than crossbow.
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -219,8 +220,8 @@
 	speed = 0.1		//ZOOM!!!!!
 
 /obj/item/ammo_casing/caseless/rogue/bullet
-	name = "lead sphere"
-	desc = "A small lead sphere. This should go well with gunpowder."
+	name = "iron sphere"
+	desc = "A small iron sphere. This should go well with firepowder."
 	projectile_type = /obj/projectile/bullet/reusable/bullet
 	caliber = "musketball"
 	icon = 'icons/roguetown/weapons/ammo.dmi'

@@ -521,7 +521,7 @@
 
 
 /obj/item/powderflask
-	name = "powderflask"
+	name = "firepowder flask"
 	icon = 'modular_helmsguard/icons/obj/items/arquebus_items.dmi'
 	desc = "A flask of gunpowder used for reloading a firearm."
 	icon_state = "powderflask"

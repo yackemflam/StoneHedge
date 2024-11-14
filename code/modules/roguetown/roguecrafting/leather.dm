@@ -450,3 +450,21 @@
 	name = "black leather belt"
 	result = /obj/item/storage/belt/rogue/leather/blackleather
 	reqs = list(/obj/item/natural/hide = 1)
+
+//firearm slop
+/datum/crafting_recipe/roguetown/leather/blackleatherbelt
+	name = "firepowder flask"
+	result = /obj/item/powderflask
+	reqs = list(/obj/item/natural/hide = 1,
+				/obj/item/natural/fibers = 1,
+				/obj/item/reagent_containers/powder/gunpowder = 1,
+				)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/leather/blackleatherbelt
+	name = "bullet pouch"
+	result = /obj/item/ammopouch/bullets
+	reqs = list(/obj/item/natural/hide = 1,
+				/obj/item/natural/fibers = 1,
+				)
+	craftdiff = 1
