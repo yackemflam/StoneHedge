@@ -17,6 +17,8 @@
 	swingsound = BLUNTWOOSH_MED
 	minstr = 5
 	blade_dulling = DULLING_BASHCHOP
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_blunt.ogg'
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'
 
 /datum/intent/lordbash
 	name = "bash"
@@ -54,7 +56,7 @@
 	. = ..()
 	if(get_dist(user, target) > 7)
 		return
-	
+
 	user.changeNext_move(CLICK_CD_MELEE)
 
 	if(ishuman(user))
@@ -72,7 +74,7 @@
 
 			if(H.anti_magic_check())
 				return
-		
+
 			if(!(H in SStreasury.bank_accounts))
 				return
 
