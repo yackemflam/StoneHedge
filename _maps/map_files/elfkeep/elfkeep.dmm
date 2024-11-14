@@ -234,13 +234,6 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
-"akO" = (
-/obj/machinery/light/rogue/wallfire/candle/blue/r,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
 "all" = (
 /obj/structure/flora/grass/jungle,
 /obj/machinery/light/rogue/firebowl,
@@ -592,6 +585,15 @@
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
+	})
+"auC" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
+	first_time_text = "Ravenloft Academy"
 	})
 "auF" = (
 /obj/structure/roguemachine/scomm,
@@ -1211,6 +1213,13 @@
 	icon_state = "rockwd"
 	},
 /area/rogue/outdoors/river)
+"aPv" = (
+/obj/structure/mineral_door/wood/window,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "aPO" = (
 /obj/structure/chair/stool/rogue,
 /obj/effect/landmark/start/adventurerlate,
@@ -1277,8 +1286,12 @@
 	first_time_text = "The Deepwoods"
 	})
 "aRX" = (
-/obj/structure/mineral_door/wood/window,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/obj/structure/fluff/statue/gargoyle/moss/candles,
+/obj/structure/fluff/railing/border{
+	icon_state = "border";
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
@@ -1711,7 +1724,6 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_end_alt"
 	},
-/obj/item/roguegem/yellow,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/shelter/town/dwarf)
 "bgv" = (
@@ -3961,6 +3973,13 @@
 /obj/structure/fluff/walldeco/maidensigil,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
+"cFr" = (
+/obj/structure/fluff/walldeco/stone,
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "cFt" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -4140,16 +4159,6 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
-"cKE" = (
-/obj/structure/bookcase,
-/obj/item/book/granter/spell_points,
-/obj/item/book/granter/spell_points,
-/obj/item/book/granter/spell_points,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
 "cKX" = (
 /obj/structure/flora/roguegrass/bush/wall/tall,
 /turf/open/floor/rogue/grass,
@@ -4260,15 +4269,11 @@
 	first_time_text = "The Twilight Woods"
 	})
 "cNF" = (
-/obj/structure/fluff/railing/wood{
-	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
-	},
+/obj/structure/spacevine,
 /turf/open/transparent/openspace,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
-	first_time_text = "Ravenloft Academy"
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge Borders";
+	name = "far stonehedge"
 	})
 "cNZ" = (
 /turf/closed/wall/shroud,
@@ -4298,7 +4303,7 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_mid"
 	},
-/obj/item/roguegem/violet,
+/obj/item/roguegem/yellow,
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "cPb" = (
@@ -4328,7 +4333,6 @@
 	icon_state = "churchtable_mid_alt"
 	},
 /obj/item/roguegem/diamond,
-/obj/item/roguegem/green,
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "cRm" = (
@@ -5141,15 +5145,6 @@
 "dsR" = (
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cavewet)
-"dsZ" = (
-/obj/structure/mineral_door/wood/window{
-	lockid = "tavern"
-	},
-/turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
-	})
 "dta" = (
 /obj/structure/bearpelt,
 /obj/structure/fluff/railing/border{
@@ -5297,6 +5292,14 @@
 /obj/structure/spacevine,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/cave)
+"dzH" = (
+/obj/structure/bookcase,
+/obj/item/book/granter/spell/spells5e/encodethoughts5e,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "dAl" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -6759,13 +6762,6 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/tavern)
-"eqt" = (
-/obj/structure/fluff/walldeco/stone,
-/turf/closed/wall/mineral/rogue/stone/moss,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
 "equ" = (
 /obj/structure/roguemachine/camera,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -6834,6 +6830,13 @@
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/river)
+"etk" = (
+/obj/structure/mineral_door/wood/fancywood{
+	name = "Merchants Room";
+	lockid = "merchant"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/shelter/town)
 "etq" = (
 /turf/closed/mineral/random/rogue/med,
 /area/rogue)
@@ -6881,11 +6884,16 @@
 	first_time_text = "The Twilight Woods"
 	})
 "evC" = (
-/obj/structure/spacevine,
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	pixel_y = 7;
+	pixel_x = 1;
+	layer = 2.7
+	},
 /turf/open/transparent/openspace,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge Borders";
-	name = "far stonehedge"
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
+	first_time_text = "Ravenloft Academy"
 	})
 "evI" = (
 /obj/item/natural/stone,
@@ -7104,9 +7112,11 @@
 	first_time_text = "Overgrown Fortress"
 	})
 "eCs" = (
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
+/obj/structure/bookcase,
+/obj/item/book/granter/spell_points,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
 	})
 "eCu" = (
@@ -7405,6 +7415,18 @@
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
+	})
+"eMa" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	pixel_y = 7;
+	pixel_x = 1;
+	layer = 2.7
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
+	first_time_text = "Ravenloft Academy"
 	})
 "eMk" = (
 /obj/effect/spawner/roguemap/hauntpile,
@@ -8207,14 +8229,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"fpp" = (
-/obj/structure/bookcase,
-/obj/item/book/granter/spell/spells5e/bladeward5e,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
 "fps" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -8307,10 +8321,12 @@
 	name = "Silver Dragon"
 	})
 "fst" = (
-/obj/structure/roguewindow/openclose{
-	dir = 8
+/obj/structure/fluff/railing/wood{
+	dir = 4;
+	pixel_x = 8;
+	layer = 2.8
 	},
-/turf/open/floor/rogue/ruinedwood/spiral,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/exposed/magiciantower{
 	name = "Schoolgrounds";
 	first_time_text = "Ravenloft Academy"
@@ -8750,6 +8766,13 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"fHT" = (
+/obj/structure/bars/steel,
+/turf/open/water/swamp,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "fHX" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -8927,6 +8950,12 @@
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
+	})
+"fPZ" = (
+/turf/closed/wall/mineral/rogue/decowood,
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
+	first_time_text = "Ravenloft Academy"
 	})
 "fQj" = (
 /obj/structure/mineral_door/wood/deadbolt{
@@ -9171,13 +9200,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cavewet)
-"fZp" = (
-/obj/structure/bookcase,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
 "fZu" = (
 /obj/structure/chair/wood/rogue{
 	dir = 1
@@ -10179,15 +10201,6 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
-"gEb" = (
-/obj/item/reagent_containers/food/snacks/crow,
-/turf/open/floor/rogue/rooftop{
-	dir = 8
-	},
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
-	first_time_text = "Ravenloft Academy"
-	})
 "gEf" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -10374,18 +10387,6 @@
 /area/rogue/indoors/town/manor{
 	first_time_text = "Underkeep";
 	name = "Underkeep"
-	})
-"gNF" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	pixel_y = 7;
-	pixel_x = 1;
-	layer = 2.7
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
-	first_time_text = "Ravenloft Academy"
 	})
 "gNG" = (
 /obj/structure/flora/grass/jungle{
@@ -10887,17 +10888,6 @@
 "hfG" = (
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
-"hfH" = (
-/obj/structure/fluff/statue/gargoyle/moss/candles,
-/obj/structure/fluff/railing/border{
-	icon_state = "border";
-	dir = 8
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
 "hfQ" = (
 /obj/structure/flora/newbranch/connector{
 	dir = 4
@@ -13606,6 +13596,17 @@
 /obj/structure/mineral_door/wood/window,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/entrance)
+"iSJ" = (
+/obj/item/book/granter/spell_points,
+/obj/item/book/granter/spell_points,
+/obj/item/book/granter/spell_points,
+/obj/item/book/granter/spell_points,
+/obj/item/book/granter/spell_points,
+/obj/item/book/granter/spell_points,
+/obj/structure/forcefield_weak,
+/obj/structure/trap/damage,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/library)
 "iTu" = (
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern{
@@ -13680,6 +13681,15 @@
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
+	})
+"iUp" = (
+/obj/structure/roguewindow/openclose{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
+	first_time_text = "Ravenloft Academy"
 	})
 "iUu" = (
 /obj/machinery/light/rogue/firebowl/stump{
@@ -13767,12 +13777,11 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
-"iXz" = (
-/obj/structure/bookcase,
-/obj/item/book/granter/spell/spells5e/encodethoughts5e,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
+"iXo" = (
+/obj/structure/flora/roguetree/wise,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
 	first_time_text = "Ravenloft Academy"
 	})
 "iXI" = (
@@ -14483,6 +14492,17 @@
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
+	})
+"jvY" = (
+/obj/item/reagent_containers/glass/bottle/waterskin,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
+/obj/item/reagent_containers/glass/bottle/rogue/manapot,
+/obj/item/reagent_containers/glass/bottle/rogue/manapot,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
 	})
 "jws" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -16672,17 +16692,6 @@
 /obj/structure/roguemachine/stockpile,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet)
-"kWp" = (
-/obj/item/reagent_containers/glass/bottle/waterskin,
-/obj/structure/table/wood,
-/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
-/obj/item/reagent_containers/glass/bottle/rogue/manapot,
-/obj/item/reagent_containers/glass/bottle/rogue/manapot,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
-	})
 "kWr" = (
 /obj/structure/stairs/stone{
 	dir = 8
@@ -17604,13 +17613,6 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
-"lBr" = (
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
-	first_time_text = "Ravenloft Academy"
-	})
 "lBJ" = (
 /obj/structure/stairs,
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -18089,6 +18091,15 @@
 /obj/structure/fermenting_barrel/beer,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/shelter/town/dwarf)
+"lUI" = (
+/obj/item/reagent_containers/food/snacks/crow,
+/turf/open/floor/rogue/rooftop{
+	dir = 8
+	},
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
+	first_time_text = "Ravenloft Academy"
+	})
 "lUJ" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/outdoors/tribalfort{
@@ -18830,6 +18841,13 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"msD" = (
+/obj/structure/fluff/walldeco/rpainting,
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "msO" = (
 /obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t12";
@@ -19028,9 +19046,11 @@
 	name = "Wood elf Tribes"
 	})
 "mzZ" = (
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
+/obj/structure/bookcase,
+/obj/item/book/granter/spell_points,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
 	})
 "mAb" = (
@@ -20064,9 +20084,14 @@
 	name = "far stonehedge"
 	})
 "nnN" = (
-/obj/machinery/light/rogue/oven,
-/turf/closed/wall/mineral/rogue/pipe,
-/area/rogue/indoors/shelter/town/dwarf)
+/obj/machinery/light/rogue/torchholder{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
+	first_time_text = "Ravenloft Academy"
+	})
 "noE" = (
 /obj/structure/bed/rogue,
 /obj/machinery/light/rogue/torchholder{
@@ -20262,7 +20287,6 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_end_alt"
 	},
-/obj/item/roguegem/green,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
 "nvr" = (
@@ -20794,8 +20818,6 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_mid_alt"
 	},
-/obj/item/roguegem/yellow,
-/obj/item/roguegem/violet,
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
 "nOT" = (
@@ -21141,15 +21163,6 @@
 	first_time_text = "The Woodland Tribe";
 	name = "Wood elf Tribes"
 	})
-"oai" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 4
-	},
-/turf/open/floor/carpet/stellar,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
 "oal" = (
 /obj/structure/table/church{
 	icon_state = "churchtable_mid_alt"
@@ -21214,13 +21227,6 @@
 /obj/structure/flora/roguegrass/fungus_bush,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavewet)
-"obP" = (
-/obj/structure/spacevine,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
-	first_time_text = "Ravenloft Academy"
-	})
 "obY" = (
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2";
@@ -21596,13 +21602,6 @@
 /obj/structure/spacevine,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/river)
-"opw" = (
-/obj/structure/bars/steel,
-/turf/open/water/swamp,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
 "opA" = (
 /obj/structure/chair/bench/church/smallbench{
 	dir = 4
@@ -21949,6 +21948,17 @@
 /obj/item/natural/rock,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/river)
+"oBr" = (
+/obj/structure/mineral_door/wood{
+	lockid = "roomhunt";
+	name = "Tavern Owners Room";
+	locked = 1
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
+	})
 "oBD" = (
 /obj/structure/flora/roguetree/happyrandom{
 	icon_state = "t9";
@@ -22068,6 +22078,8 @@
 /area/rogue/outdoors/caves)
 "oEg" = (
 /obj/structure/bookcase,
+/obj/item/book/granter/spell_points,
+/obj/item/book/granter/spell_points,
 /obj/item/book/granter/spell_points,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/magician{
@@ -22892,6 +22904,10 @@
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
+"pfg" = (
+/obj/machinery/light/rogue/oven/south,
+/turf/open/floor/bronze,
+/area/rogue/indoors/shelter/town/dwarf)
 "pfl" = (
 /obj/machinery/light/rogue/torchholder{
 	pixel_y = 26
@@ -22950,19 +22966,11 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
-"phQ" = (
-/obj/structure/fluff/walldeco/rpainting/forest,
-/turf/closed/wall/mineral/rogue/stone/moss,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
 "pig" = (
-/obj/structure/bookcase,
-/obj/item/book/granter/spell_points,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
+/obj/structure/spacevine,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
 	first_time_text = "Ravenloft Academy"
 	})
 "pit" = (
@@ -23412,6 +23420,16 @@
 /obj/structure/bars/tough,
 /turf/open/transparent/openspace,
 /area/rogue)
+"puN" = (
+/obj/structure/fluff/railing/border{
+	icon_state = "border";
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "puU" = (
 /obj/machinery/light/rogue/torchholder,
 /turf/closed/wall/mineral/rogue/wooddark,
@@ -23668,15 +23686,6 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
-	})
-"pBL" = (
-/obj/structure/bookcase,
-/obj/item/book/granter/spell_points,
-/obj/item/book/granter/spell_points,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
 	})
 "pCd" = (
 /obj/structure/flora/roguegrass/thorn_bush,
@@ -24302,15 +24311,10 @@
 	first_time_text = "The Twilight Woods"
 	})
 "pWZ" = (
-/obj/structure/mineral_door/wood{
-	lockid = "roomhunt";
-	name = "Tavern Owners Room";
-	locked = 1
-	},
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
+	first_time_text = "Ravenloft Academy"
 	})
 "pXR" = (
 /obj/machinery/light/rogue/torchholder{
@@ -24952,6 +24956,15 @@
 "qpR" = (
 /obj/structure/fluff/railing/border{
 	dir = 6
+	},
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
+	})
+"qqi" = (
+/obj/structure/mineral_door/wood/window{
+	lockid = "tavern"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern{
@@ -25993,17 +26006,9 @@
 /obj/effect/wisp,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/river)
-"qZq" = (
-/obj/structure/fluff/walldeco/rpainting,
-/turf/closed/wall/mineral/rogue/stone/moss,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
 "qZE" = (
-/turf/open/floor/rogue/rooftop{
-	dir = 8
-	},
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/exposed/magiciantower{
 	name = "Schoolgrounds";
 	first_time_text = "Ravenloft Academy"
@@ -26128,15 +26133,6 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
-	})
-"rdd" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
-	first_time_text = "Ravenloft Academy"
 	})
 "rdy" = (
 /obj/structure/mineral_door/swing_door,
@@ -27307,15 +27303,6 @@
 	first_time_text = "Underkeep";
 	name = "Underkeep"
 	})
-"rTb" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 8
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
-	first_time_text = "Ravenloft Academy"
-	})
 "rTn" = (
 /obj/structure/flora/grass/jungle{
 	icon_state = "grassa1"
@@ -27657,15 +27644,10 @@
 	name = "Shrine of Lune"
 	})
 "sfb" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	pixel_y = 7;
-	pixel_x = 1;
-	layer = 2.7
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
+/obj/structure/fluff/walldeco/rpainting/forest,
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
 	})
 "sfn" = (
@@ -28193,11 +28175,9 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
 "sAe" = (
-/obj/structure/fluff/railing/border{
-	icon_state = "border";
-	dir = 8
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
+/obj/structure/bookcase,
+/obj/item/book/granter/spell/spells5e/bladeward5e,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
@@ -28934,6 +28914,15 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
+"sYf" = (
+/obj/structure/bookcase,
+/obj/item/book/granter/spell_points,
+/obj/item/book/granter/spell_points,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "sYl" = (
 /obj/structure/stairs/stone{
 	dir = 8
@@ -29149,6 +29138,18 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
+	})
+"teX" = (
+/obj/effect/wisp,
+/obj/structure/fluff/railing/wood{
+	dir = 4;
+	pixel_x = 8;
+	layer = 2.8
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
+	first_time_text = "Ravenloft Academy"
 	})
 "tfc" = (
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
@@ -29453,10 +29454,8 @@
 	first_time_text = "The Mountain Passe"
 	})
 "tsN" = (
-/obj/structure/fluff/statue/gargoyle/moss/candles,
 /turf/open/floor/rogue/rooftop{
-	icon_state = "roof";
-	dir = 4
+	dir = 8
 	},
 /area/rogue/outdoors/exposed/magiciantower{
 	name = "Schoolgrounds";
@@ -29582,6 +29581,13 @@
 /obj/structure/fluff/littlebanners/bluewhite,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
+"twn" = (
+/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "tww" = (
 /obj/structure/flora/roguegrass/thorn_bush,
 /turf/open/water/cleanshallow,
@@ -31972,17 +31978,6 @@
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
 	})
-"uXf" = (
-/obj/item/book/granter/spell_points,
-/obj/item/book/granter/spell_points,
-/obj/item/book/granter/spell_points,
-/obj/item/book/granter/spell_points,
-/obj/item/book/granter/spell_points,
-/obj/item/book/granter/spell_points,
-/obj/structure/forcefield_weak,
-/obj/structure/trap/damage,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/indoors/town/library)
 "uXh" = (
 /obj/effect/landmark/start/seelielate,
 /turf/open/floor/rogue/twig/platform,
@@ -32098,6 +32093,16 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
+	})
+"vax" = (
+/obj/structure/fluff/statue/gargoyle/moss/candles,
+/turf/open/floor/rogue/rooftop{
+	icon_state = "roof";
+	dir = 4
+	},
+/area/rogue/outdoors/exposed/magiciantower{
+	name = "Schoolgrounds";
+	first_time_text = "Ravenloft Academy"
 	})
 "vaL" = (
 /obj/structure/table/vtable/v2,
@@ -32732,10 +32737,12 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/town)
 "vtX" = (
-/obj/structure/flora/roguetree/wise,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
+	},
+/turf/open/floor/carpet/stellar,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
 	})
 "vud" = (
@@ -34177,13 +34184,6 @@
 	name = "Overgrown Fortress";
 	first_time_text = "Overgrown Fortress"
 	})
-"wpF" = (
-/obj/structure/mineral_door/wood/fancywood{
-	name = "Merchants Room";
-	lockid = "merchant"
-	},
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
-/area/rogue/indoors/shelter/town)
 "wpT" = (
 /turf/closed/wall/mineral/rogue/decostone/end{
 	dir = 1
@@ -35749,6 +35749,13 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"xmL" = (
+/obj/structure/bookcase,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
+	})
 "xmN" = (
 /obj/structure/fluff/walldeco/chains{
 	icon_state = "chains2"
@@ -35825,18 +35832,6 @@
 /obj/structure/closet/crate/chest/gold/lootbox/trait,
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue)
-"xpH" = (
-/obj/effect/wisp,
-/obj/structure/fluff/railing/wood{
-	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/exposed/magiciantower{
-	name = "Schoolgrounds";
-	first_time_text = "Ravenloft Academy"
-	})
 "xpM" = (
 /turf/closed/wall/mineral/rogue/decostone/end{
 	dir = 4
@@ -37295,6 +37290,10 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
+"ylV" = (
+/obj/machinery/light/rogue/oven/south,
+/turf/open/floor/rogue/metal,
+/area/rogue/indoors/shelter/town/dwarf)
 "ymg" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/naturalstone,
@@ -63200,8 +63199,8 @@ iwu
 nOK
 grF
 grF
-nnN
-hfG
+thJ
+pfg
 tfc
 lyy
 tfc
@@ -64256,8 +64255,8 @@ lAx
 lAx
 grF
 grF
-nnN
-aIy
+thJ
+ylV
 aIy
 cOX
 boo
@@ -64608,8 +64607,8 @@ lAx
 lAx
 grF
 grF
-nnN
-aIy
+thJ
+ylV
 aIy
 lPe
 boo
@@ -65664,8 +65663,8 @@ lAx
 lAx
 grF
 grF
-nnN
-hfG
+thJ
+pfg
 tfc
 lyy
 boo
@@ -206008,7 +206007,7 @@ qjE
 qjE
 qjE
 qjE
-phQ
+sfb
 idX
 hlY
 hlY
@@ -206364,7 +206363,7 @@ jpo
 vle
 hlY
 hlY
-eqt
+cFr
 weH
 rik
 hlY
@@ -207068,7 +207067,7 @@ jpo
 vle
 hlY
 hlY
-eqt
+cFr
 hlY
 eny
 hlY
@@ -207416,7 +207415,7 @@ yfi
 xAd
 xAd
 uJN
-qZq
+msD
 idX
 hlY
 hlY
@@ -207777,7 +207776,7 @@ tpp
 hlY
 hlY
 weH
-akO
+twn
 jpo
 oSP
 hlY
@@ -208127,8 +208126,8 @@ jpo
 jpo
 jpo
 jpo
-opw
-opw
+fHT
+fHT
 jpo
 jpo
 jpo
@@ -308794,26 +308793,26 @@ pHG
 jdk
 jdk
 jdk
-evC
-evC
-evC
+cNF
+cNF
+cNF
 jdk
 jdk
-evC
-evC
-evC
-evC
+cNF
+cNF
+cNF
+cNF
 jdk
 jdk
 jdk
-evC
-evC
-evC
-evC
-evC
-evC
-evC
-evC
+cNF
+cNF
+cNF
+cNF
+cNF
+cNF
+cNF
+cNF
 fkx
 fkx
 tpW
@@ -309148,24 +309147,24 @@ jdk
 jdk
 jdk
 jdk
-evC
-evC
+cNF
+cNF
 jdk
 jdk
-evC
-evC
-evC
-evC
-evC
-evC
+cNF
+cNF
+cNF
+cNF
+cNF
+cNF
 jdk
 jdk
-evC
-evC
-evC
-evC
-evC
-evC
+cNF
+cNF
+cNF
+cNF
+cNF
+cNF
 fkx
 tpW
 tpW
@@ -309507,14 +309506,14 @@ acp
 acp
 acp
 jun
-obP
+pig
 jun
 cNZ
 cNZ
 jun
 jun
 cNZ
-evC
+cNF
 jdk
 jdk
 jdk
@@ -309856,10 +309855,10 @@ jun
 jun
 jun
 svO
-vtX
+iXo
 toi
 jun
-obP
+pig
 jun
 jun
 jun
@@ -310554,19 +310553,19 @@ gWb
 acp
 jun
 qkz
-oEg
+eCs
 hSz
-oai
-hSz
-hSz
+vtX
 hSz
 hSz
 hSz
 hSz
 hSz
-oai
 hSz
-fpp
+hSz
+vtX
+hSz
+sAe
 qkz
 jun
 toi
@@ -310906,7 +310905,7 @@ gWb
 acp
 rmI
 qkz
-oEg
+eCs
 hSz
 hSz
 hSz
@@ -311258,19 +311257,19 @@ gWb
 acp
 svO
 qkz
-cKE
+oEg
 hSz
-oEg
-iXz
-oEg
+eCs
+dzH
+eCs
 jvH
 aAm
 jvH
-oEg
-fZp
-oEg
+eCs
+xmL
+eCs
 hSz
-oEg
+eCs
 qkz
 svO
 svO
@@ -311610,19 +311609,19 @@ gWb
 acp
 rmI
 qkz
-oEg
+eCs
 hSz
 dVQ
-pig
+mzZ
 qkz
 dMX
-uXf
+iSJ
 dMX
 qkz
-oEg
+eCs
 hSz
 hSz
-oEg
+eCs
 qkz
 svO
 cNZ
@@ -311962,7 +311961,7 @@ gWb
 acp
 svO
 qkz
-oEg
+eCs
 hSz
 hSz
 jZi
@@ -312669,7 +312668,7 @@ qkz
 jWl
 hSz
 hSz
-pig
+mzZ
 qkz
 byQ
 byQ
@@ -313020,8 +313019,8 @@ rmI
 qkz
 vzR
 hSz
-pig
-pig
+mzZ
+mzZ
 qkz
 imY
 hSz
@@ -316198,7 +316197,7 @@ weH
 qkz
 jxO
 cQm
-pBL
+sYf
 qkz
 svO
 cNZ
@@ -341824,7 +341823,7 @@ qHi
 qHi
 qHi
 qHi
-wpF
+etk
 cDr
 utk
 duu
@@ -415450,21 +415449,21 @@ jdk
 jdk
 acp
 nsS
-cNF
-cNF
-cNF
-cNF
-cNF
-cNF
-xpH
-cNF
-cNF
-cNF
-cNF
-cNF
-cNF
-cNF
-cNF
+fst
+fst
+fst
+fst
+fst
+fst
+teX
+fst
+fst
+fst
+fst
+fst
+fst
+fst
+fst
 nsS
 acp
 nsS
@@ -415802,22 +415801,22 @@ jdk
 jdk
 acp
 nsS
-sfb
-lBr
-rdd
-lBr
-eCs
-eCs
-eCs
-eCs
-eCs
-eCs
-eCs
-lBr
-rdd
-lBr
-eCs
-gNF
+eMa
+qZE
+auC
+qZE
+pWZ
+pWZ
+pWZ
+pWZ
+pWZ
+pWZ
+pWZ
+qZE
+auC
+qZE
+pWZ
+evC
 acp
 nsS
 vSY
@@ -416154,22 +416153,22 @@ jdk
 jdk
 acp
 nsS
-sfb
-eCs
-eCs
-eCs
-eCs
-rTb
-lBr
-rdd
-lBr
-rTb
-eCs
-eCs
-eCs
-eCs
-eCs
-gNF
+eMa
+pWZ
+pWZ
+pWZ
+pWZ
+nnN
+qZE
+auC
+qZE
+nnN
+pWZ
+pWZ
+pWZ
+pWZ
+pWZ
+evC
 nsS
 nsS
 vSY
@@ -416510,13 +416509,13 @@ qkz
 qkz
 qkz
 eYS
-aRX
+aPv
 qkz
 qkz
 cLK
 qkz
 qkz
-aRX
+aPv
 eYS
 qkz
 qkz
@@ -419328,9 +419327,9 @@ gnJ
 qkz
 qkz
 qkz
-hfH
-sAe
-hfH
+aRX
+puN
+aRX
 qkz
 qkz
 qkz
@@ -419679,11 +419678,11 @@ msT
 oBN
 kST
 qkz
-mzZ
-fst
-fst
-fst
-mzZ
+fPZ
+iUp
+iUp
+iUp
+fPZ
 qkz
 tAq
 oBN
@@ -437573,7 +437572,7 @@ tvg
 hMS
 gvb
 gvb
-dsZ
+qqi
 gvb
 gvb
 gvb
@@ -521759,13 +521758,13 @@ nsS
 nsS
 nsS
 nsS
-qZE
-qZE
-qZE
-qZE
-qZE
-qZE
-qZE
+tsN
+tsN
+tsN
+tsN
+tsN
+tsN
+tsN
 nsS
 nsS
 nsS
@@ -522107,21 +522106,21 @@ jdk
 jdk
 vSY
 nsS
-qZE
-qZE
-qZE
-qZE
+tsN
+tsN
+tsN
+tsN
 fmt
 qkz
 qkz
 qkz
 qkz
 qkz
-qZE
-qZE
-qZE
-qZE
-gEb
+tsN
+tsN
+tsN
+tsN
+lUI
 nsS
 vSY
 vSY
@@ -527741,7 +527740,7 @@ vSY
 nsS
 fmt
 fmt
-tsN
+vax
 fmt
 gqz
 nsS
@@ -527751,7 +527750,7 @@ nsS
 nsS
 fmt
 fmt
-tsN
+vax
 fmt
 fmt
 nsS
@@ -540007,7 +540006,7 @@ dvf
 oNn
 xQd
 xQd
-kWp
+jvY
 paJ
 paJ
 evT
@@ -540357,7 +540356,7 @@ dNg
 dNg
 gvb
 gvb
-pWZ
+oBr
 gvb
 gvb
 gvb
@@ -542469,7 +542468,7 @@ dNg
 dNg
 uYQ
 gvb
-pWZ
+oBr
 gvb
 gvb
 paJ
