@@ -41,7 +41,6 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		backr = /obj/item/storage/backpack/rogue/satchel
-		backl =
 		belt = /obj/item/storage/belt/rogue/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		neck = /obj/item/storage/keyring/innkeep
