@@ -78,6 +78,18 @@
 	desc = "I was the student of a legendary sword master, my skill is rivalled by few! I've also hidden a rapier."
 	value = 4
 
+/datum/quirk/greenthumb
+	name = "Green Thumb"
+	desc = "I've always been rather good at tending to plants, and I have some powerful fertilizer stashed away."
+	value = 1
+
+/datum/quirk/greenthumb/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, 3, TRUE)
+	H.mind.special_items["Fertilizer 1"] = /obj/item/fertilizer
+	H.mind.special_items["Fertilizer 2"] = /obj/item/fertilizer
+	H.mind.special_items["Fertilizer 3"] = /obj/item/fertilizer
+
 /datum/quirk/duelist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.change_stat("speed", 2)
