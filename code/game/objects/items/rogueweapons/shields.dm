@@ -30,7 +30,8 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	COOLDOWN_DECLARE(shield_bang)
 	w_class = WEIGHT_CLASS_BULKY
-
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_shield.ogg'
+	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_shield.ogg'
 
 /obj/item/rogueweapon/shield/attackby(obj/item/attackby_item, mob/user, params)
 
