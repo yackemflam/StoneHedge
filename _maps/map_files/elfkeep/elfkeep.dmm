@@ -7680,13 +7680,6 @@
 /obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/town)
-"eOc" = (
-/obj/structure/fluff/alch,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/exposed/church{
-	first_time_text = "Druids Grove";
-	name = "Grove"
-	})
 "eOd" = (
 /obj/item/natural/rock/salt,
 /turf/open/floor/rogue/naturalstone,
@@ -8557,10 +8550,9 @@
 	first_time_text = "Ravenloft Academy"
 	})
 "ftD" = (
-/obj/structure/bed/rogue/inn/wooldouble,
-/obj/item/bedsheet/rogue/double_pelt,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/entrance)
+/obj/item/reagent_containers/hypospray/medipen/sealbottle/purify,
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/outdoors/river)
 "ftJ" = (
 /obj/structure/closet/crate/chest,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/medical,
@@ -9377,10 +9369,6 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
-"fWs" = (
-/obj/structure/closet/crate/roguecloset/dark,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/entrance)
 "fWu" = (
 /obj/effect/landmark/start/vagrantlate{
 	dir = 8
@@ -9398,7 +9386,8 @@
 	})
 "fWC" = (
 /obj/structure/table/vtable,
-/obj/item/paper/scroll,
+/obj/item/roguegem/green,
+/obj/item/natural/feather,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -11178,15 +11167,6 @@
 "hfG" = (
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
-"hfK" = (
-/obj/machinery/light/rogue/torchholder{
-	pixel_y = 26
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge Borders";
-	name = "far stonehedge"
-	})
 "hfQ" = (
 /obj/structure/flora/newbranch/connector{
 	dir = 4
@@ -12462,6 +12442,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"hXc" = (
+/obj/structure/closet/crate/roguecloset/dark,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/entrance)
 "hXe" = (
 /obj/structure/stairs/stone,
 /turf/closed/mineral/random/rogue,
@@ -12877,6 +12861,13 @@
 "ijG" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/outdoors/mountains)
+"ika" = (
+/obj/item/reagent_containers/hypospray/medipen/sealbottle/purify,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "ikp" = (
 /obj/effect/wisp,
 /turf/open/floor/rogue/twig,
@@ -16560,7 +16551,7 @@
 /obj/item/storage/backpack/rogue/backpack/surgery,
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
-/obj/item/roguegem/green,
+/obj/item/paper/scroll,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -19032,6 +19023,8 @@
 	},
 /obj/item/reagent_containers/glass/mortar,
 /obj/item/pestle,
+/obj/item/reagent_containers/pill/caffpill,
+/obj/item/reagent_containers/pill/pnkpill,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -19908,6 +19901,13 @@
 "mLR" = (
 /turf/open/water/swamp/deep,
 /area/rogue/under/cavewet)
+"mMh" = (
+/obj/structure/fluff/alch,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/church{
+	first_time_text = "Druids Grove";
+	name = "Grove"
+	})
 "mMs" = (
 /obj/structure/fluff/railing/border{
 	dir = 5
@@ -22714,6 +22714,11 @@
 "oFn" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy/cand,
 /area/rogue/indoors/town/bath)
+"oFr" = (
+/turf/closed/wall/shroud,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
+	})
 "oFD" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -23322,12 +23327,11 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cavewet)
 "oWX" = (
-/obj/structure/bed/rogue,
-/obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/garrison{
-	first_time_text = "Adventurers Guild";
-	name = "Adventurers Guild"
+/obj/structure/bed/rogue/inn/hay,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/church{
+	first_time_text = "Druids Grove";
+	name = "Grove"
 	})
 "oXc" = (
 /obj/structure/flora/newtree,
@@ -23681,8 +23685,7 @@
 /area/rogue/under/cavewet)
 "pkh" = (
 /obj/structure/table/vtable/v2,
-/obj/item/natural/feather,
-/obj/item/paper,
+/obj/item/clothing/mask/cigarette/pipe/westman,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -29249,6 +29252,15 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"sJI" = (
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 26
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge Borders";
+	name = "far stonehedge"
+	})
 "sJR" = (
 /obj/structure/closet/crate/drawer,
 /obj/item/clothing/head/roguetown/wizhat/red,
@@ -31643,15 +31655,6 @@
 /obj/item/book/granter/spell/spells5e/rayoffrost5e,
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/library)
-"uku" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 4
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge Borders";
-	name = "far stonehedge"
-	})
 "ukH" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
@@ -32196,6 +32199,15 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/exposed/tavern)
+"uCw" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge Borders";
+	name = "far stonehedge"
+	})
 "uCN" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/rogue/grass,
@@ -32656,6 +32668,15 @@
 /area/rogue/outdoors/tribalfort{
 	first_time_text = "The Woodland Tribe";
 	name = "Wood elf Tribes"
+	})
+"uQU" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge Borders";
+	name = "far stonehedge"
 	})
 "uQV" = (
 /obj/structure/closet/crate/chest,
@@ -33196,6 +33217,11 @@
 	first_time_text = "The Woodland Tribe";
 	name = "Wood elf Tribes"
 	})
+"vhw" = (
+/obj/structure/bed/rogue/inn/wooldouble,
+/obj/item/bedsheet/rogue/double_pelt,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/entrance)
 "vhx" = (
 /obj/structure/flora/newbranch,
 /turf/open/floor/rogue/rooftop,
@@ -33769,6 +33795,19 @@
 "vyr" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/river)
+"vyX" = (
+/obj/item/natural/bundle/cloth,
+/obj/item/natural/bundle/cloth,
+/obj/item/needle,
+/obj/item/needle,
+/obj/structure/rack/rogue/shelf/big,
+/obj/item/reagent_containers/hypospray/medipen/sealbottle/reju,
+/obj/item/reagent_containers/hypospray/medipen/sealbottle/purify,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "vyZ" = (
 /obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
@@ -34798,13 +34837,6 @@
 	icon_state = "rockwd"
 	},
 /area/rogue/outdoors/river)
-"whq" = (
-/obj/structure/bed/rogue/inn/hay,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/exposed/church{
-	first_time_text = "Druids Grove";
-	name = "Grove"
-	})
 "whr" = (
 /obj/structure/glowshroom{
 	icon_state = "glowshroom2"
@@ -37504,15 +37536,6 @@
 /area/rogue/outdoors/exposed/church{
 	first_time_text = "Shrine of Natures";
 	name = "Shrine of Natures"
-	})
-"xJK" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 8
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge Borders";
-	name = "far stonehedge"
 	})
 "xKY" = (
 /obj/structure/flora/roguegrass/water/reeds,
@@ -222500,7 +222523,7 @@ oJn
 oJn
 oJn
 rYj
-rYj
+ftD
 uyO
 uyO
 uyO
@@ -224608,7 +224631,7 @@ dEL
 bUj
 dEL
 bUj
-oWX
+dEL
 bUj
 bUj
 uQC
@@ -224956,11 +224979,11 @@ ezy
 qjE
 kiF
 oiS
-vLF
+vyX
 cqQ
 cqQ
 bUj
-bUj
+ika
 bUj
 bUj
 uQC
@@ -303045,7 +303068,7 @@ oKs
 oKs
 fnf
 kUy
-whq
+oWX
 hBF
 aFw
 sRS
@@ -303748,7 +303771,7 @@ fnf
 fnf
 kOM
 iPI
-whq
+oWX
 hBF
 aid
 hBF
@@ -304456,7 +304479,7 @@ hBF
 hBF
 aid
 hBF
-whq
+oWX
 sRS
 fnf
 oKs
@@ -305861,7 +305884,7 @@ oKs
 fnf
 oxN
 lSP
-eOc
+mMh
 tDM
 oKs
 fnf
@@ -347783,7 +347806,7 @@ mmp
 mmp
 dKi
 aMz
-mmp
+oFr
 dht
 dht
 hFc
@@ -348135,6 +348158,9 @@ hFc
 hFc
 hFc
 hFc
+itb
+itb
+itb
 hFc
 hFc
 hFc
@@ -348142,11 +348168,8 @@ hFc
 hFc
 hFc
 hFc
-hFc
-hFc
-hFc
-hFc
-hFc
+itb
+itb
 itb
 mYC
 mYC
@@ -348487,6 +348510,9 @@ hFc
 hFc
 hFc
 hFc
+itb
+itb
+itb
 hFc
 hFc
 hFc
@@ -348495,10 +348521,7 @@ hFc
 hFc
 hFc
 hFc
-hFc
-hFc
-hFc
-hFc
+itb
 itb
 itb
 mYC
@@ -348840,7 +348863,7 @@ qAW
 qAW
 qAW
 qAW
-qAW
+dHg
 qAW
 qAW
 qAW
@@ -349192,7 +349215,7 @@ qAW
 qAW
 qAW
 qAW
-qAW
+dHg
 qAW
 qAW
 qAW
@@ -441801,8 +441824,8 @@ jdk
 jdk
 jdk
 jdk
-jdk
-jdk
+uso
+uso
 vSY
 vSY
 vSY
@@ -442147,7 +442170,7 @@ jdk
 jdk
 jdk
 jdk
-jdk
+uso
 jdk
 jdk
 jdk
@@ -442501,7 +442524,7 @@ jdk
 jdk
 jdk
 jdk
-jdk
+uso
 jdk
 jdk
 jdk
@@ -442855,10 +442878,10 @@ jdk
 jdk
 jdk
 jdk
+uso
 jdk
 jdk
-jdk
-jdk
+uso
 vSY
 vSY
 vSY
@@ -443207,9 +443230,9 @@ jdk
 jdk
 jdk
 jdk
+uso
 jdk
-jdk
-jdk
+uso
 jdk
 vSY
 vSY
@@ -443554,7 +443577,7 @@ jdk
 jdk
 jdk
 jdk
-jdk
+uso
 jdk
 jdk
 jdk
@@ -443912,9 +443935,9 @@ jdk
 jdk
 hmi
 jdk
+uso
 jdk
-jdk
-jdk
+uso
 vSY
 vSY
 vSY
@@ -444964,7 +444987,7 @@ jdk
 jdk
 jdk
 jdk
-jdk
+uso
 jdk
 jdk
 jdk
@@ -445666,7 +445689,7 @@ jdk
 jdk
 jdk
 jdk
-jdk
+uso
 jdk
 jdk
 jdk
@@ -453062,8 +453085,8 @@ bOe
 bOe
 eCb
 eCb
-eCb
-eCb
+myx
+myx
 eCb
 eCb
 bOe
@@ -453072,7 +453095,7 @@ eCb
 eCb
 eCb
 eCb
-eCb
+myx
 eCb
 eCb
 oaG
@@ -453423,9 +453446,9 @@ kmA
 kmA
 eCb
 eCb
-eCb
-eCb
-eCb
+myx
+myx
+myx
 eCb
 eCb
 bbv
@@ -523784,7 +523807,7 @@ jdk
 jdk
 lEy
 bnK
-uku
+uCw
 gJH
 gBL
 gJH
@@ -525179,9 +525202,9 @@ jdk
 jdk
 jdk
 gJH
-ftD
+vhw
 rWX
-fWs
+hXc
 gJH
 uso
 bnK
@@ -525536,7 +525559,7 @@ iSI
 gJH
 gJH
 gJH
-hfK
+sJI
 bnK
 kcO
 hmi
@@ -528361,7 +528384,7 @@ mQz
 gJH
 bnK
 bnK
-xJK
+uQU
 kEm
 jdk
 jdk
@@ -547403,7 +547426,7 @@ kNl
 wvT
 wvT
 wvT
-jdk
+uso
 jdk
 jdk
 jdk
@@ -548456,10 +548479,10 @@ jdk
 jdk
 jdk
 jdk
-jdk
+uso
 wvT
 wvT
-jdk
+uso
 jdk
 jdk
 jdk
@@ -548808,7 +548831,7 @@ jdk
 jdk
 jdk
 jdk
-jdk
+uso
 wvT
 wvT
 kEm
@@ -549515,7 +549538,7 @@ jdk
 hmi
 kNl
 wvT
-jdk
+uso
 jdk
 jdk
 jdk
@@ -550565,7 +550588,7 @@ jdk
 jdk
 jdk
 jdk
-jdk
+uso
 jdk
 jdk
 jdk
@@ -551267,7 +551290,7 @@ jdk
 jdk
 jdk
 jdk
-jdk
+uso
 jdk
 jdk
 jdk
