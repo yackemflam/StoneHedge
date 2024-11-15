@@ -7,12 +7,10 @@
 	spawn_positions = 5
 	antag_job = TRUE
 	allowed_races = RACES_ALL_KINDS	//Begone foul seelies. Your age of banditry is gone
-	tutorial = "Long ago you did a crime worthy of your bounty being hung on the wall outside of the local inn. You now live with your fellow freemen in the bog, and generally get up to no good."
+	tutorial = "Long ago you did a crime worthy of your bounty being hung on the wall outside of the local inn. You now live with your fellow freemen in the bog, and generally get up to no good. (THIS IS NOT A FRAG ROLE, WORK ON MAKING GOOD ROLEPLAY.)"
 
 	outfit = null
 	outfit_female = null
-
-
 
 	display_order = JDO_BANDIT
 	show_in_credits = FALSE
@@ -23,13 +21,11 @@
 	advclass_cat_rolls = list(CTAG_BANDIT = 20)
 	PQ_boost_divider = 10
 
-	rogue_enabled = TRUE
 	wanderer_examine = TRUE
 	advjob_examine = TRUE
 	always_show_on_latechoices = TRUE
 	job_reopens_slots_on_death = FALSE //no endless stream of bandits, unless the migration waves deem it so
 	same_job_respawn_delay = 30 MINUTES
-
 
 	cmode_music = 'sound/music/combat_bandit2.ogg'
 

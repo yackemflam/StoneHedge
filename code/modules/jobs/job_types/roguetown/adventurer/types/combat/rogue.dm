@@ -119,22 +119,23 @@
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
+	wrists = /obj/item/clothing/wrists/roguetown/hiddenblade
 	if(H.gender == FEMALE) //funny
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini
 	else
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	cloak = /obj/item/clothing/cloak/raincloak/rogue
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
+	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	beltr = /obj/item/quiver/Pbolts
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) //they are killers
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.change_stat("perception", 1)
 	H.change_stat("speed", 4)
 	H.change_stat("intelligence", 2)
-	H.visible_message(span_info("I honed my skills as an assassin through the years."))
+	H.visible_message(span_info("I honed my skills as an assassin through the years. My bracers have a hidden blade, and my boots have a bottle of berry poison."))
 	backpack_contents = list(/obj/item/lockpickring/mundane, /obj/item/rogueweapon/huntingknife/idagger/steel)
 
 //Swashbuckler, Less thief-ish skills, but you have good sword skills plus shield skill and a parry dagger. And an actual str bonus wow.

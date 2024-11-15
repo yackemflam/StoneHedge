@@ -1921,12 +1921,9 @@ Slots: [job.spawn_positions]</span>
 							to_chat(user, "<span class='info'>[charflaw.desc]</span>")
 
 				if("char_accent")
-					var/list/accent = GLOB.character_accents.Copy()
-					var/result = input(user, "Select an accent", "Stonehedge") as null|anything in accent
-					if(result)
-						result = accent[result]
-						var/datum/char_accent/C = new result()
-						char_accent = C
+					var/selectedaccent = input(user, "Choose your character's accent:", "Character Preference") as null|anything in GLOB.character_accents
+					if(selectedaccent)
+						char_accent = selectedaccent
 
 				if("mutant_color")
 					var/new_mutantcolor = color_pick_sanitized_lumi(user, "Choose your character's mutant #1 color:", "Character Preference","#"+features["mcolor"])

@@ -74,7 +74,7 @@ SUBSYSTEM_DEF(maturity_guard)
 				user.client.CloseMaturityPrompt()
 				return TRUE
 	else
-		if(!(user.ckey in prompt_cache) && !user.ckey.check_rights(R_ADMIN)) //delays testing in local due lack of database therefore admins should pass this.
+		if(!(user.ckey in prompt_cache))
 			prompt_cache |= user_ckey
 			user.client.OpenMaturityPrompt()
 		else
