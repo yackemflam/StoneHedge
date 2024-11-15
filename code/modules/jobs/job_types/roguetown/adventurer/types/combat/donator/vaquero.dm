@@ -16,21 +16,21 @@
 
 /datum/outfit/job/roguetown/adventurer/vaquero/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/music, rand(1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)//because gun uses crossbow and we gave em' the license to shoot.
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, rand(1,2), TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 3, TRUE)//because gun uses crossbow and we gave em' the license to shoot.
 	head = /obj/item/clothing/head/roguetown/bardhat
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	pants = /obj/item/clothing/under/roguetown/tights/random

@@ -13,7 +13,7 @@
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
 	possible_rmb_intents = list()
 	erpable = TRUE
-	hornychance = 25
+	hornychance = 50
 	//If someone ends up writing custom messages for goblins, lewd talk could be used ig -vide
 	//lewd_talk = TRUE
 	//skin color is "e8b59b"

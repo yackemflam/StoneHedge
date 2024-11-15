@@ -35,11 +35,11 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/workervest
 		backr = /obj/item/storage/backpack/rogue/satchel
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_spellpoints(5)
 	H.change_stat("intelligence", 2)
 	H.change_stat("speed", -1)

@@ -27,26 +27,26 @@
 	l_hand = /obj/item/rogueweapon/shield/buckler
 	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE) //builders
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE) // builders
-		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE) //builders
-		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3 , TRUE) //builders
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE) // builders
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE) //builders
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
 	H.change_stat("endurance", 2)

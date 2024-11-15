@@ -18,19 +18,19 @@
 	pants = /obj/item/clothing/under/roguetown/trou
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	backl = /obj/item/storage/backpack/rogue/backpack/surgery
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/lumberjacking, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE) //needed for getting into hideout
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/lumberjacking, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE) //needed for getting into hideout
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) //Given for consistencysake as the idol still provides scalemail.
 	H.change_stat("strength", 3)
 	H.change_stat("endurance", 2)

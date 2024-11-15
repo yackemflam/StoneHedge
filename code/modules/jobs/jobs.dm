@@ -90,7 +90,7 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 
 GLOBAL_LIST_INIT(church_positions, list(
 	"Prophet",
-	"Witcher",
+	"Wytcher Captain",
 	"Confessor",
 	"Gravesinger",
 	"Paladin",
