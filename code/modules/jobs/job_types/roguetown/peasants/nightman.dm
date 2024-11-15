@@ -1,6 +1,6 @@
 /datum/job/roguetown/nightman
-	title = "Spymaster"
-	f_title = "Spymaster"
+	title = "Nightmaster"
+	f_title = "Nightmistress"
 	flag = NIGHTMASTER
 	department_flag = PEASANTS
 	faction = "Station"
@@ -10,9 +10,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 
-	tutorial = "You are renting out the bath-house in a joint operation with the barkeep. Providing security for the Courtesans and helping them find work and dealing in information and perhaps even assasination. \
-		\
-		This role allows for full customization."
+	tutorial = "You are renting out the bath-house in a joint operation with the barkeep. Providing security for the Courtesans and helping them find work... And deal in other shady businesses behind closed doors."
 
 	allowed_ages = ALL_AGES_LIST
 	outfit = /datum/outfit/job/roguetown/nightman

@@ -193,6 +193,7 @@
 	passive_progression_gain = 1
 	update_devotion(100, CLERIC_REQ_4, silent = TRUE)
 	START_PROCESSING(SSobj, src)
+
 /datum/devotion/proc/excommunicate(mob/living/carbon/human/H)
 	if(!devotion)
 		return

@@ -255,7 +255,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/grandtemplar
-	name = "Grandmaster"
+	name = "Grandmaster Templar"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/puritan
@@ -267,11 +267,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightman
-	name = "Spymaster"
+	name = "Nightmaster"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightmaiden
-	name = "Courtesan"
+	name = "Nightswain"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/merchant

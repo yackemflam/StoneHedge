@@ -558,8 +558,8 @@
 
 /obj/item/rogueweapon/sword/rapier/lord
 	force = 20
-	name = "sword of the Mad Duke"
-	desc = "Passed down through the ages, this decorative sword was recovered from the ashes of Roguetown when it was last destroyed... clutched in the bony fingers of the Mad Duke."
+	name = "sword of the Mad Lord"
+	desc = "Passed down through the ages, this decorative sword was recovered from the ashes of Roguetown when it was last destroyed... clutched in the bony fingers of the Mad Lord."
 	icon_state = "lordrap"
 	sellprice = 300
 	max_integrity = 300
