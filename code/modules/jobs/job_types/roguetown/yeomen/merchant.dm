@@ -12,7 +12,7 @@
 	display_order = JDO_MERCHANT
 
 	outfit = /datum/outfit/job/roguetown/merchant
-	give_bank_account = 22
+	give_bank_account = 800
 	min_pq = 1
 	max_pq = null
 	required = TRUE

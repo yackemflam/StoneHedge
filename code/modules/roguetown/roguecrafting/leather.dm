@@ -463,7 +463,7 @@
 
 /datum/crafting_recipe/roguetown/leather/bulletpouch
 	name = "bullet pouch"
-	result = /obj/item/ammopouch/bullets
+	result = /obj/item/ammopouch
 	reqs = list(/obj/item/natural/hide = 1,
 				/obj/item/natural/fibers = 1,
 				)
