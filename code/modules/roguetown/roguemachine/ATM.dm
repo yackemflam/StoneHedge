@@ -1,6 +1,6 @@
 /obj/structure/roguemachine/atm
 	name = "MEISTER"
-	desc = "Stores and withdraws currency for accounts managed by the Guildmaster of the Adventurer's Guild."
+	desc = "Stores and withdraws currency for accounts managed by the Kingdom of StoneHedge."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "atm"
 	density = FALSE

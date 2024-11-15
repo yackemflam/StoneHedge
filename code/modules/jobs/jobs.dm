@@ -92,9 +92,10 @@ GLOBAL_LIST_INIT(church_positions, list(
 	"Prophet",
 	"Witcher",
 	"Confessor",
+	"Priest",
 	"Gravesinger",
 	"Paladin",
-	"Grandmaster Paladin",
+	"Grandmaster",
 	"Druid",
 ))
 
@@ -133,7 +134,6 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Forest Seelie",
 	"Adventurer",
 	"Pilgrim",
-	"Bandit",
 ))
 
 GLOBAL_LIST_INIT(mercenary_positions, list(
