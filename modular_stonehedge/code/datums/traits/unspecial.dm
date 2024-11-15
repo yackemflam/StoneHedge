@@ -308,7 +308,7 @@
 /datum/quirk/hussite
 	name = "Known Heretic"
 	desc = "I've been denounced by the church for either reasons legitimate or not!"
-	value = -2
+	value = -1
 
 /datum/quirk/hussite/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -318,7 +318,7 @@
 /datum/quirk/bounty
 	name = "Hunted Man"
 	desc = "Someone put a bounty on my head whether for legitimate reasons or not, My life is in danger!"
-	value = -4
+	value = -3
 
 /datum/quirk/bounty/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -358,7 +358,7 @@
 /datum/quirk/outlaw
 	name = "Known Outlaw"
 	desc = "Whether for crimes I did or was accused of, I have been declared an outlaw!"
-	value = -2
+	value = -1
 
 /datum/quirk/outlaw/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder

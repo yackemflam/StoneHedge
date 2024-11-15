@@ -32,7 +32,7 @@
 		/obj/item/clothing/mask/rogue/physician = 1,
 		/obj/item/storage/box/matches = 1, /// for carterizer and lantern.
 		/obj/item/natural/cloth = 2,
-		/obj/item/storage/belt/rogue/pouch/skit = 1,
+		/obj/item/storage/fancy/skit = 1,
 	)
 	if(H.gender == MALE)
 		armor = /obj/item/clothing/suit/roguetown/shirt/robe/surgrobe

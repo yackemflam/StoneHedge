@@ -4,7 +4,7 @@
 	name = "Surgery Kit (+1 iron +1 cloth)"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron, /obj/item/natural/cloth)
-	created_item = /obj/item/storage/belt/rogue/pouch/skit
+	created_item = /obj/item/storage/fancy/skit
 	i_type = "Tools"
 
 /datum/anvil_recipe/tools/surgery/lpick

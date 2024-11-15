@@ -623,109 +623,105 @@
 
 /obj/item/reagent_containers/glass/mortar
 	name = "mortar"
-	desc = "A small, thick-walled stone bowl made for grinding things up inside."
-	icon_state = "mortar"
-	dropshrink = 0.75
-	amount_per_transfer_from_this = 9
+	desc = "A small, thick-walled wood bowl made for grinding things up inside.(mmd click it to grind)"
+	icon = 'icons/roguetown/items/surgery.dmi'
+	icon_state = "mortar_empty"
 	volume = 100
 	reagent_flags = OPENCONTAINER|REFILLABLE|DRAINABLE
-	spillable = TRUE
+	spillable = FALSE
 	var/obj/item/grinded
+	var/grinding_started = FALSE
 
 /obj/item/reagent_containers/glass/mortar/attack_self(mob/user)
+	if(grinding_started)
+		to_chat(user, "Grinding has started, you cannot remove items now.")
+		return TRUE
 	if(grinded)
 		grinded.forceMove(drop_location())
 		grinded = null
-		to_chat(user, span_notice("I eject the item inside."))
+		icon_state = "mortar_empty"
+		to_chat(user, "I eject the item inside.")
 
-/obj/item/reagent_containers/glass/mortar/attackby(obj/item/I, mob/living/carbon/human/user)
-	..()
-	if(istype(I,/obj/item/pestle))
-		if(grinded)
-			to_chat(user, span_notice("I start grinding..."))
-			if((do_after(user, 25, target = src)) && grinded)
-				user.mind.adjust_experience(/datum/skill/misc/alchemy, user.STAINT * 0.1) // Enough to get to novice with effort to make up for not actually making potions.
-				if(grinded.mill_result) // This goes first. Fewer items, more use than liquid.
-					new grinded.mill_result(get_turf(src))
-					QDEL_NULL(grinded)
-					return
-				if(grinded.juice_results) //prioritize juicing
-					grinded.on_juice()
-					reagents.add_reagent_list(grinded.juice_results)
-					to_chat(user, span_notice("I juice [grinded] into a fine liquid."))
-					if(grinded.reagents) //food and pills
-						grinded.reagents.trans_to(src, grinded.reagents.total_volume, transfered_by = user)
-					QDEL_NULL(grinded)
-					return
-				grinded.on_grind()
-				reagents.add_reagent_list(grinded.grind_results)
-				to_chat(user, span_notice("I break [grinded] into powder."))
+/obj/item/reagent_containers/glass/mortar/MiddleClick(mob/user, params)
+	if(grinded)
+		grinding_started = TRUE // Mark grinding as started
+		to_chat(user, "I start grinding...")
+		if((do_after(user, 25, target = src)) && grinded)
+			if(grinded.mill_result) // This goes first.
+				new grinded.mill_result(get_turf(src))
 				QDEL_NULL(grinded)
+				icon_state = reagents.total_volume > 0 ? "mortar_full" : "mortar_empty"
+				grinding_started = FALSE // Reset grinding status
 				return
+			if(grinded.juice_results)
+				grinded.on_juice()
+				reagents.add_reagent_list(grinded.juice_results)
+				to_chat(user, "I juice [grinded] into a fine liquid.")
+			if(grinded.reagents) // Food and pills.
+				grinded.reagents.trans_to(src, grinded.reagents.total_volume, transfered_by = user)
+				QDEL_NULL(grinded)
+				icon_state = reagents.total_volume > 0 ? "mortar_full" : "mortar_empty"
+				grinding_started = FALSE // Reset grinding status
+				return
+			grinded.on_grind()
+			reagents.add_reagent_list(grinded.grind_results)
+			to_chat(user, "I break [grinded] into powder.")
+			QDEL_NULL(grinded)
+			icon_state = reagents.total_volume > 0 ? "mortar_full" : "mortar_empty"
+			grinding_started = FALSE // Reset grinding status
 			return
 		else
-			to_chat(user, span_warning("There is nothing to grind!"))
+			to_chat(user, "There is nothing to grind!")
 			return
-	if(grinded)
-		to_chat(user, span_warning("There is something inside already!"))
-		return
-	if(istype(I ,/obj/item/reagent_containers/glass))
-		if(user.used_intent.type == INTENT_POUR) //Something like a glass. Player probably wants to transfer TO it.
-			testing("attackobj2")
-			if(!I.reagents.total_volume)
-				to_chat(user, span_warning("[I] is empty!"))
-				return
 
+/obj/item/reagent_containers/glass/mortar/attackby(obj/item/I, mob/living/carbon/human/user)
+	if(grinded)
+		to_chat(user, "There is something inside already!")
+		return TRUE
+	if(istype(I, /obj/item/reagent_containers/glass))
+		if(user.used_intent.type == INTENT_POUR)
+			if(!I.reagents.total_volume)
+				to_chat(user, "[I] is empty!")
+				return TRUE
 			if(reagents.holder_full())
-				to_chat(user, span_warning("[src] is full."))
-				return
-			user.visible_message(span_notice("[user] pours [I] into [src]."), \
-							span_notice("I pour [I] into [src]."))
+				to_chat(user, "[src] is full.")
+				return TRUE
+			user.visible_message(span_notice("Starting the transfer"), span_notice("Completing the transfer"))
 			if(user.m_intent != MOVE_INTENT_SNEAK)
 				if(poursounds)
-					playsound(user.loc,pick(poursounds), 100, TRUE)
+					playsound(user.loc, pick(poursounds), 100, TRUE)
 			for(var/i in 1 to 10)
 				if(do_after(user, 8, target = src))
-					if(!I.reagents.total_volume)
-						break
-					if(reagents.holder_full())
-						break
+					if(!I.reagents.total_volume) break
+					if(reagents.holder_full()) break
 					if(!I.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user))
 						reagents.reaction(src, TOUCH, amount_per_transfer_from_this)
-				else
-					break
+					else break
 			return
-
-		if(is_drainable() && (user.used_intent.type == INTENT_FILL)) //A dispenser. Transfer FROM it TO us.
-			testing("attackobj3")
+		if(is_drainable() && (user.used_intent.type == /datum/intent/fill))
 			if(!reagents.total_volume)
-				to_chat(user, span_warning("[src] is empty!"))
+				to_chat(user, "[src] is empty!")
 				return
-
 			if(I.reagents.holder_full())
-				to_chat(user, span_warning("[I] is full."))
+				to_chat(user, "[I] is full.")
 				return
 			if(user.m_intent != MOVE_INTENT_SNEAK)
 				if(fillsounds)
-					playsound(user.loc,pick(fillsounds), 100, TRUE)
-			user.visible_message(span_notice("[user] fills [I] with [src]."), \
-								span_notice("I fill [I] with [src]."))
+					playsound(user.loc, pick(fillsounds), 100, TRUE)
+			user.visible_message(span_notice("Starting the transfer"), span_notice("Completing the transfer"))
 			for(var/i in 1 to 10)
 				if(do_after(user, 8, target = src))
-					if(I.reagents.holder_full())
-						break
-					if(!reagents.total_volume)
-						break
+					if(I.reagents.holder_full()) break
+					if(!reagents.total_volume) break
 					reagents.trans_to(I, amount_per_transfer_from_this, transfered_by = user)
-				else
-					break
-
+				else break
 			return
 	if(I.juice_results || I.grind_results || I.mill_result)
 		I.forceMove(src)
 		grinded = I
+		icon_state = "mortar_grind"
 		return
-	to_chat(user, span_warning("I can't grind this!"))
+	to_chat(user, "I can't grind this!")
 
 /obj/item/reagent_containers/glass/saline
 	name = "saline canister"
