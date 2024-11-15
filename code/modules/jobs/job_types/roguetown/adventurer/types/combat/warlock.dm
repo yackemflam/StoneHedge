@@ -268,7 +268,7 @@
 	H.change_stat("constitution", 1)
 
 	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
-	H.mind.adjust_spellpoints(3)
+	H.mind.adjust_spellpoints(4)
 
 	H.visible_message(span_info("Most minds would fracture having spoken to the creecher I made a deal with..."))
 

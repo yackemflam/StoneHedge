@@ -14,7 +14,6 @@
 
 /datum/outfit/job/roguetown/adventurer/bladesinger/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_spellpoints(5)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	backr = /obj/item/storage/backpack/rogue/satchel
@@ -46,7 +45,7 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
-		H.mind.adjust_spellpoints(3)
+		H.mind.adjust_spellpoints(4)
 		H.change_stat("strength", 1)
 		H.change_stat("perception", 1)
 		H.change_stat("intelligence", 1)
