@@ -70,7 +70,7 @@ Also given some non-combat skills that a peasent would have, just to support the
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 2, TRUE)
