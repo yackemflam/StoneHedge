@@ -17,6 +17,8 @@
 	switch(H.patron?.type)
 		if(/datum/patron/divine/astrata)
 			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+		if(/datum/patron/inhumen/zizo)
+			neck = /obj/item/clothing/neck/roguetown/psicross/skull
 		if(/datum/patron/divine/noc)
 			neck = /obj/item/clothing/neck/roguetown/psicross/noc
 		if(/datum/patron/divine/dendor)
@@ -50,12 +52,11 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 4, TRUE)
 			H.change_stat("intelligence", 2)
-			H.change_stat("perception", 1) // More intelligence and no speed penalty for Life Clerics.
+			H.change_stat("speed", 1) // More intelligence and no speed penalty for Life Clerics.
 			H.change_stat("strength", 1)
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 2)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
-			H.mind.AddSpell(new	/obj/effect/proc_holder/spell/invoked/lesser_heal)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/guidance5e)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if("War Cleric")
@@ -82,7 +83,6 @@
 			H.change_stat("speed", -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
-			H.mind.AddSpell(new	/obj/effect/proc_holder/spell/invoked/lesser_heal)
 			H.mind.AddSpell(new	/obj/effect/proc_holder/spell/targeted/churn)
 		if("Nature Cleric")
 			H.set_blindness(0)

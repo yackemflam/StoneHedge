@@ -19,9 +19,6 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(HAS_TRAIT(target, TRAIT_FAITHLESS)) //being faithless means god doesnt really want to help you now, does it
-			to_chat(user, span_warning("My prayers reach deaf ears - the Gods refuse to aid a non-believer!"))
-			return FALSE
 		if(user.patron?.undead_hater && (target.mob_biotypes & MOB_UNDEAD)) //positive energy harms the undead
 			target.visible_message(span_danger("[target] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
 			target.adjustFireLoss(10)
@@ -113,37 +110,6 @@
 				if (HAS_TRAIT(user, TRAIT_PACIFISM))
 					conditional_buff = TRUE
 					situational_bonus += 1.5
-			if(/datum/patron/inhumen/zizo)
-				target.visible_message(span_info("shadow-like interwoven snakes lunge and dispere into [target]!"), span_notice("The shadows leave a chill, blood in my mouth -- yet I feel healed."))
-				// set up a ritual pile of bones (or just cast near a stack of bones whatever) around us for massive bonuses, cap at 50 for 75 healing total (wowie)
-				situational_bonus = 0
-				for (var/obj/item/stack/sheet/bone/O in oview(5, user))
-					situational_bonus += (O.amount * 0.5)
-				if (situational_bonus > 0)
-					conditional_buff = TRUE
-					situational_bonus = min(situational_bonus, 5)
-			if(/datum/patron/inhumen/graggar)
-				target.visible_message(span_info("Blue Phoenix-Fires Envelop [target]!"), span_notice("The life around me pales as manna and the phoenix roar fills me. I am restored!"))
-				// if you've got lingering toxin damage, you get healed more, but your bonus healing doesn't affect toxin
-				var/toxloss = target.getToxLoss()
-				if (toxloss >= 10)
-					conditional_buff = TRUE
-					situational_bonus = 2.5
-					target.adjustToxLoss(situational_bonus) // remember we do a global toxloss adjust down below so this is okay
-			if(/datum/patron/inhumen/matthios)
-				target.visible_message(span_info("Shadows unfurl outward and across [target] as their form is restored!"), span_notice("I'm bathed in a... strange holy light?"))
-				// COMRADES! WE MUST BAND TOGETHER!
-				if (HAS_TRAIT(target, TRAIT_COMMIE))
-					conditional_buff = TRUE
-					situational_bonus = 2.5
-			if(/datum/patron/inhumen/baotha)
-				target.visible_message(span_info("A wreath of... strange light passes over [target]?"), span_notice("Something feels taken.. but the pain subsides. I am whole again."))
-				// i wanted to do something with pain here but it doesn't seem like pain is actually parameterized anywhere so... better necra it is - if they're below 50% health, they get 25 extra healing
-				if (iscarbon(target))
-					var/mob/living/carbon/C = target
-					if (C.health <= (C.maxHealth * 0.5))
-						conditional_buff = TRUE
-						situational_bonus = 2.5
 			if(/datum/patron/godless)
 				target.visible_message(span_info("Raw energy in white and dark interwoven hews flow toward [target]."), span_notice("My wounds close without cause."))
 			else
@@ -189,9 +155,6 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(HAS_TRAIT(target, TRAIT_FAITHLESS)) //being faithless means god doesnt really want to help you now, does it
-			to_chat(user, span_warning("My prayers reach deaf ears - the Gods refuse to aid a non-believer!"))
-			return FALSE
 		if(user.patron?.undead_hater && (target.mob_biotypes & MOB_UNDEAD)) //positive energy harms the undead
 			target.visible_message(span_danger("[target] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
 			target.adjustFireLoss(25)

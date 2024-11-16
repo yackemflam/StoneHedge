@@ -118,9 +118,6 @@
 	. = ..()
 	if(ishuman(targets[1]))
 		var/mob/living/carbon/human/human_target = targets[1]
-		if(HAS_TRAIT(human_target, TRAIT_FAITHLESS)) //go find a surgeon, non-believer
-			to_chat(user, span_warning("Hermeir turns their faith from this one; they did not have any faith, or worse..."))
-			return FALSE
 		for(var/obj/item/bodypart/limb as anything in get_limbs(human_target, user))
 			if(human_target.get_bodypart(limb.body_zone) || !limb.attach_limb(human_target))
 				continue
@@ -164,9 +161,6 @@
 	if(isliving(targets[1]))
 		testing("curerot1")
 		var/mob/living/target = targets[1]
-		if(HAS_TRAIT(target, TRAIT_FAITHLESS))
-			to_chat(user, span_warning("Pestra's grace has no effect, they do not wish to aid a non-believer..."))
-			return FALSE
 		if(target == user)
 			return FALSE
 		var/datum/antagonist/zombie/was_zombie = target.mind?.has_antag_datum(/datum/antagonist/zombie)
