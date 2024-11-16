@@ -243,6 +243,8 @@
 /obj/item/clothing/head/roguetown/necromhood
 	name = "necromancers hood"
 	color = null
+	icon = 'modular_stonehedge/icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/roguetown/clothing/onmob/head.dmi'
 	icon_state = "necromhood"
 	item_state = "necromhood"
 	body_parts_covered = NECK

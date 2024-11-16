@@ -189,17 +189,14 @@
 
 
 /datum/quirk/eagle_eyed
-	name = "Eagle Eyed"
-	desc = "With my sharp aim I could always hit distant targets, I've also hidden a crossbow and some bolts."
-	value = 6
+	name = "Ranged Training"
+	desc = "I had ranged weapons training in the past, crossbow and bow. I am journeyman at them."
+	value = 2
 
 /datum/quirk/eagle_eyed/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.change_stat("perception", 2)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 5, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 5, TRUE)
-	H.mind.special_items["Crossbow"] = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-	H.mind.special_items["Bolts"] = /obj/item/quiver/bolts
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 3, TRUE)
 
 /datum/quirk/mule
 	name = "Mule"

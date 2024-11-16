@@ -12,6 +12,7 @@
 
 /datum/outfit/job/roguetown/adventurer/necromancer/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.mind.adjust_spellpoints(3)
 	head = /obj/item/clothing/head/roguetown/necromhood
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
@@ -22,19 +23,19 @@
 	beltr = /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	beltl = /obj/item/rogueweapon/huntingknife
 	r_hand = /obj/item/rogueweapon/woodstaff
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 4, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 5, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/magic/blood, 5, TRUE)
-	H.change_stat("strength", -1)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE) //sussy autopsy things probably
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/magic/blood, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
 	H.change_stat("intelligence", 3)
-	H.change_stat("constitution", -2)
-	H.change_stat("endurance", -1)
-	H.change_stat("speed", -1)
+	H.change_stat("speed", 1)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/strengthen_undead)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/rayoffrost5e)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/chilltouch5e)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/raise_undead)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/sickness)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/bloodlightning)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/bloodsteal)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lifesteal)
 	H.faction |= "undead"

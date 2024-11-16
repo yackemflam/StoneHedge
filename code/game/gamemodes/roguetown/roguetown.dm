@@ -35,7 +35,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	var/headrebdecree = FALSE
 	var/reb_end_time = 0
 
-	var/check_for_lord = TRUE
+	var/check_for_lord = FALSE
 	var/next_check_lord = 0
 	var/missing_lord_time = FALSE
 	var/roundvoteend = FALSE
@@ -167,11 +167,13 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	var/major_roll = rand(1,100)
 	switch(major_roll)
 		if(0 to 25)
+		/*
 			pick_rebels()
 			log_game("Major Antagonist: Rebellion")
+		*/
 		if(26 to 51)
 			pick_cultist()
-			log_game("Major Antagonist: Cultists")
+			log_game("Major Antagonist: Extended")
 		if(52 to 76)
 			//WWs and Vamps now normally roll together
 			// pick_vampires()
@@ -182,10 +184,11 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	
 	pick_bandits()
 	log_game("Minor Antagonist: Bandit")
+	/*
 	if(prob(45))
 		pick_aspirants()
 		log_game("Minor Antagonist: Aspirant")
-	
+	*/
 	if(prob(30))
 		pick_lich()
 		log_game("Minor Antagonist: Lich")
@@ -365,7 +368,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 /datum/game_mode/chaosmode/proc/pick_cultist()
 	var/remaining = 3 // 1 heresiarch, 2 cultists
 	restricted_jobs = list("Monarch",
-	"Duchess Courtier",
+	"Consort",
 	"Merchant",
 	"Priest",
 	"Bandit")
@@ -434,13 +437,11 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Monarch",
 	"Consort",
 	"Beastmaster",
-	"Witcher",
+	"Wytcher",
 	"Confessor",
 	"Watchman",
 	"Man at Arms",
 	"Prophet",
-	"Priest",
-	"Priest",
 	"Watchmen Captain",
 	"Magician",
 	"Paladin",
@@ -448,6 +449,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Hedge Knight",
 	"Hedgemaster",
 	"Knight",
+	"Mercenary",
+	"Sellsword",
 	"Bandit"
 	)
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
@@ -483,7 +486,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Monarch",
 	"Consort",
 	"Beastmaster",
-	"Witcher",
+	"Wytcher",
 	"Confessor",
 	"Watchman",
 	"Man at Arms",
@@ -495,7 +498,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Hedge Knight",
 	"Hedgemaster",
 	"Knight",
-	"Gravesinger",
 	"Mercenary",
 	"Sellsword",
 	"Bandit"
