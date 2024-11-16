@@ -25,6 +25,7 @@
 	remove_overlay(OBJ_LAYER)
 	cut_overlay(appearance, TRUE)
 	qdel(appearance)
+	update_icon()
 	return
 
 /mob/living/proc/play_stress_indicator()

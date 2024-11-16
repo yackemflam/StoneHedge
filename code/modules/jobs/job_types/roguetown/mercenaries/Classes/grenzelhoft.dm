@@ -20,24 +20,24 @@
 		if("Doppelsoldner")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a Doppelsoldner of Rossevell, a swordsman experienced with long-length blades."))
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)	//Won't be using normally with Zwiehander but useful.
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE) //builders
-			H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE) // builders
-			H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE) //builders
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)		//Trust me, they'll need it due to stamina drain on their base-sword.
-			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 1, TRUE)	//Won't be using normally with Zwiehander but useful.
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3 , TRUE) //builders
+			H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE) // builders
+			H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE) //builders
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)		//Trust me, they'll need it due to stamina drain on their base-sword.
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
 			H.change_stat("strength", 3)	//Should give minimum required stats to use Zweihander
 			H.change_stat("endurance", 2)
 			H.change_stat("constitution", 2)
@@ -47,20 +47,20 @@
 		if("Halberdier")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a Halberdier from Rossevell, a skilled user of poleamrs and axes. Though you prefer them combined.."))
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
 			H.change_stat("strength", 2)	//Less strength then sword-role but more speed; trade-off.
 			H.change_stat("endurance", 2)
 			H.change_stat("constitution", 2)

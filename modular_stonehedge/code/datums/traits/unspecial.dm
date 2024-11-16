@@ -302,16 +302,17 @@
 
 /datum/quirk/mastercraftsmen/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
 
 /datum/quirk/bleublood
 	name = "Noble Lineage"
@@ -342,7 +343,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, QUIRK_TRAIT)
 	ADD_TRAIT(H, TRAIT_GOODRUNNER, QUIRK_TRAIT)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 5, TRUE)
 	H.change_stat("speed", 3)
 
 /datum/quirk/gourmand

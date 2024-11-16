@@ -10,7 +10,7 @@
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/warlock
-	allowed_patrons = list(/datum/patron/godless)
+
 
 /datum/outfit/job/roguetown/adventurer/warlock/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -18,14 +18,14 @@
 	H.adjust_blindness(-3)
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, pick(0,1), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, pick(0,1), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3 , TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 1, TRUE)
 	backr = /obj/item/storage/backpack/rogue/satchel
 	neck = null
 	var/patrons = list( //who is your patron?
@@ -84,12 +84,12 @@
 		if("knowledge") //Pact of the Tome
 			H.put_in_hands(givebook(patronchoice), FALSE)
 			H.change_stat("intelligence", 1)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
 		if("power") //empowered eldritch blast
 			H.mind.RemoveSpell(/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e/empowered)
 			H.change_stat("intelligence", 1)
-			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 1, TRUE)
 		if("love") //ring of soulbinding
 			H.put_in_hands(givering(H))
 			ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
@@ -97,8 +97,8 @@
 		if("health") //make healthier
 			givehealing(H, patronchoice)
 			H.set_blindness(0)
-			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
 		if("wealth") //Pact of the Talisman			
 			H.put_in_hands(giveamulet(patronchoice), FALSE)
 			beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
@@ -111,9 +111,9 @@
 			H.set_blindness(0)
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/archfeypatron(mob/living/carbon/human/H, patronchoice)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 1, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/mage
@@ -138,7 +138,7 @@
 	H.visible_message(span_info("I made a deal with an archseelie from the wild."))
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/celestialpatron(mob/living/carbon/human/H, patronchoice)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
 
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
@@ -160,11 +160,11 @@
 	H.visible_message(span_info("I made a deal with a celestial being from the heavens."))
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/fathomlesspatron(mob/living/carbon/human/H, patronchoice) // a watery creature
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/fishing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/fishing, 3, TRUE)
 
 	backl = /obj/item/fishingrod
 	if(prob(50))
@@ -197,9 +197,9 @@
 	H.visible_message(span_info("I made a deal with a fathomless creecher of the sea."))
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/fiendpatron(mob/living/carbon/human/H, patronchoice) //hellish fiend
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 2, TRUE)
 		
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	mask = /obj/item/clothing/mask/rogue/facemask/gold
@@ -222,10 +222,10 @@
 	H.visible_message(span_info("I made a deal with a fiend from the hells."))
 	
 /datum/outfit/job/roguetown/adventurer/warlock/proc/geniepatron(mob/living/carbon/human/H, patronchoice) //a desert entity
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE) 
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 2, TRUE) 
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 1, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/roguehood/shalal
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
@@ -246,9 +246,9 @@
 	H.visible_message(span_info("I made a deal with a djinn from a magic lamptern."))
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/goopatron(mob/living/carbon/human/H, patronchoice)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 2, TRUE)
 	
 	head = /obj/item/clothing/head/roguetown/roguehood/mage
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
@@ -273,10 +273,10 @@
 	H.visible_message(span_info("Most minds would fracture having spoken to the creecher I made a deal with..."))
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/hexbladepatron(mob/living/carbon/human/H, patronchoice)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/axes, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 1, TRUE)
 
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	gloves = /obj/item/clothing/gloves/roguetown/leather
@@ -314,9 +314,9 @@
 	H.visible_message(span_info("I made a deal with a sentient weapon."))
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/undeadpatron(mob/living/carbon/human/H, patronchoice)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, rand(1,3), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, rand(1,3), TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, rand(1,3), TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, rand(1,3), TRUE)
 	if(prob(20))
 		head = /obj/item/clothing/head/roguetown/knitcap
 	else
@@ -484,34 +484,34 @@
 	switch(item_pick)
 		if(1)
 			item_type = /obj/item/rogueweapon/sword
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 2, TRUE)
 		if(2)
 			item_type = /obj/item/rogueweapon/greatsword
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 2, TRUE)
 		if(3)
 			item_type = /obj/item/rogueweapon/spear
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 2, TRUE)
 		if(4)
 			item_type = /obj/item/rogueweapon/halberd
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 2, TRUE)
 		if(5)
 			item_type = /obj/item/rogueweapon/stoneaxe
-			H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 2, TRUE)
 		if(6)
 			item_type = /obj/item/rogueweapon/stoneaxe/battle
-			H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 2, TRUE)
 		if(7)
 			item_type = /obj/item/rogueweapon/mace/steel
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
 		if(8)
 			item_type = /obj/item/rogueweapon/huntingknife/idagger/steel
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
 		if(9)
 			item_type = /obj/item/rogueweapon/flail
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 2, TRUE)
 		if(10)
 			item_type = /obj/item/rogueweapon/whip
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 2, TRUE)
 		
 	var/obj/item/item
 	item = new item_type

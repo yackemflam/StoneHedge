@@ -39,7 +39,7 @@
 	if(world.time > next_decree)
 		next_decree = world.time + rand(3 MINUTES, 8 MINUTES)
 		if(GLOB.lord_decrees.len)
-			say("The King Decrees: [pick(GLOB.lord_decrees)]", spans = list("info"))
+			say("The Monarch Decrees: [pick(GLOB.lord_decrees)]", spans = list("info"))
 
 /obj/structure/roguemachine/scomm/attack_hand(mob/living/user)
 	. = ..()
@@ -59,9 +59,9 @@
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/contents
 	if(SSticker.rulertype == "Monarch")
-		contents += "<center>KING'S DECREES<BR>"
+		contents += "<center>MONARCH'S DECREES<BR>"
 	else
-		contents += "<center>QUEEN'S DECREES<BR>"
+		contents += "<center>Duchess'S DECREES<BR>"
 	contents += "-----------<BR><BR></center>"
 	for(var/i = GLOB.lord_decrees.len to 1 step -1)
 		contents += "[i]. <span class='info'>[GLOB.lord_decrees[i]]</span><BR>"

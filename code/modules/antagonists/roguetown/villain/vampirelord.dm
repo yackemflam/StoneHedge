@@ -18,6 +18,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		"I AM THE LAND!",
 		"CHILD OF BLOOD!",
 	)
+	rogue_enabled = TRUE
 	var/isspawn = FALSE
 	var/disguised = FALSE
 	var/ascended = FALSE
@@ -165,15 +166,15 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/outfit/job/roguetown/vamplord/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/magic/blood, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/magic/blood, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 5, TRUE)
 	H.attunement_points_bonus = 7
 	H.calculate_attunement_points()
 	pants = /obj/item/clothing/under/roguetown/tights/black
@@ -1331,7 +1332,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				to_chat(L, "<font color='white'>The silver symbol shines and protect me from the enchantment magic.</font>")
 				to_chat(user, span_userdanger("[L] has my BANE!It causes me to fail to ensnare their mind!"))
 			else
-				L.drowsyness += min(L.drowsyness + 50, 150)
+				L.drowsyness = min(L.drowsyness + 50, 150)
 				switch(L.drowsyness)
 					if(0 to 50)
 						to_chat(L, "You feel like a curtain is coming over your mind.")
@@ -1408,7 +1409,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(L.cmode)
 			willroll += 15
 		if(bloodroll >= willroll)
-			L.drowsyness += min(L.drowsyness + 50, 150)
+			L.drowsyness = min(L.drowsyness + 50, 150)
 			switch(L.drowsyness)
 				if(0 to 50)
 					to_chat(L, "You feel like a curtain is coming over your mind.")
