@@ -237,8 +237,6 @@
 		if(isnull(bloody_wound.bleed_rate))
 			continue
 		qdel(bloody_wound)
-	for(var/obj/item/organ/filling_organ/forgan in src)
-		forgan.Destroy() //bye bye boobas n shit
 
 /obj/item/bodypart/chest/skeletonize(lethal = TRUE)
 	. = ..()
