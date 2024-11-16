@@ -16,6 +16,8 @@
 /datum/outfit/job/roguetown/adventurer/paladin/pre_equip(mob/living/carbon/human/H)
 	..()
 	switch(H.patron.name)
+		if("Zizo")
+			neck = /obj/item/clothing/neck/roguetown/psicross/skull
 		if("Astrata")
 			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
 		if("Dendor")

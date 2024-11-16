@@ -76,6 +76,7 @@
 #define TRAIT_ABYSSOR_SWIM "Blessing of Tides" //less base fatigue drain when swimming
 #define TRAIT_NORTHMAN "Worshipper of the Norse" //recognized by vikings and allies
 #define TRAIT_FAITHLESS "Ignorant" //being faithless means gods won't really help you, will they
+#define TRAIT_SNEK "Levishth's Resolve" //immune to infections of all types
 
 #define TRAIT_KNEESTINGER_IMMUNITY "Kneestinger Immunity"
 #define TRAIT_BASHDOORS "bashdoors"
@@ -161,6 +162,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SHOCKIMMUNE = "I am immune to electrical shocks.",
 	TRAIT_NOSLEEP = span_warning("I can't sleep."),
 	TRAIT_ROT_EATER = span_necrosis("I can eat rotten food."),
+	TRAIT_SNEK = span_necrosis("I heal from infections and am immune to them"),
 	TRAIT_ORGAN_EATER = span_bloody("I can eat organs and raw flesh."),
 	TRAIT_KNEESTINGER_IMMUNITY = "I am immune to the shock of kneestingers.",
 	TRAIT_VINE_WALKER = "I can gracefully cross through weepvines.",

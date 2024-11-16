@@ -8,7 +8,6 @@
 	domain = "Beginnings, Hope, Dawn. Setting the path. Flames, Sunlight, Illumination. (Active Energies)"
 	desc = "Elysius, The Golden Dragon."
 	worshippers = "The Noble Hearted, Zealots, Warriors and Healers."
-	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	t2 = /obj/effect/proc_holder/spell/invoked/heal
 	t3 = /obj/effect/proc_holder/spell/invoked/revive
@@ -79,7 +78,6 @@
 	desc = "Yamais is the guardian, the crypt-scribe, and the great remembrance. She who watches makes certain each soul reaches its owed afterlife. It is Yamais who remembers peoples actions and worth. Yamais does not take kindly to necromancy which goes against the natural cycle. Though she permits willing undead to return, and has even turned her gaze from liches such as the baelnornes of the elven kingdoms."
 	worshippers = "The Dead, Mourners, Gravekeepers"
 	mob_traits = list(TRAIT_SOUL_EXAMINE)
-	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
 	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
 	t2 = /obj/effect/proc_holder/spell/targeted/churn
 	t3 = /obj/effect/proc_holder/spell/targeted/soulspeak
