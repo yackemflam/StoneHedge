@@ -189,14 +189,13 @@
 
 
 /datum/quirk/eagle_eyed
-	name = "Ranged Training"
-	desc = "I had ranged weapons training in the past, crossbow and bow. I am journeyman at them."
+	name = "Eagle Eyed"
+	desc = "I have an increased perception, and could always see distant targets easily."
 	value = 2
 
 /datum/quirk/eagle_eyed/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 3, TRUE)
+	H.change_stat("perception", 2)
 
 /datum/quirk/mule
 	name = "Mule"
