@@ -41,8 +41,6 @@
 	L.update_body()
 	L.update_hair()
 	L.update_body_parts(redraw = TRUE)
-	for(var/obj/item/bodypart/B in L.bodyparts)
-		B.skeletonize(FALSE)
 
 /datum/antagonist/lich/proc/equip_lich()
 	owner.unknow_all_people()
