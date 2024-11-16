@@ -35,7 +35,6 @@
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/chilltouch5e)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/raise_undead)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/sickness)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/eyebite)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/bloodlightning)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/bloodsteal)
 	H.faction |= "undead"
