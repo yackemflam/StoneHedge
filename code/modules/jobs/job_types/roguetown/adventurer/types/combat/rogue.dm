@@ -93,7 +93,7 @@
 	H.change_stat("speed", 4)
 	H.change_stat("intelligence", 2)
 
-//Assassin, nearly same as rogue but not versatile in weapon skills yet specialized in knives and crossbows, can still use swords well as anyone else can.
+//Assassin, nearly same as rogue but not versatile in weapon skills yet specialized in knives.
 /datum/outfit/job/roguetown/adventurer/rogue/proc/assassinarch(mob/living/carbon/human/H)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rogue_vanish)
 	shoes = /obj/item/clothing/shoes/roguetown/boots/hidden/berrypoison

@@ -35,7 +35,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	var/headrebdecree = FALSE
 	var/reb_end_time = 0
 
-	var/check_for_lord = FALSE
+	var/needlord = FALSE
+	var/check_for_lord = TRUE
 	var/next_check_lord = 0
 	var/missing_lord_time = FALSE
 	var/roundvoteend = FALSE
@@ -86,7 +87,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 		if(ttime >= reb_end_time)
 			return TRUE
 
-	check_for_lord()
+	if(needlord)
+		check_for_lord()
 /*
 	if(ttime > 180 MINUTES) //3 hour cutoff
 		return TRUE*/
