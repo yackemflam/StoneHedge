@@ -81,13 +81,15 @@
 /turf/closed/wall/mineral/rogue/tent,
 /area/rogue/indoors/shelter)
 "n" = (
-/obj/structure/fans/tiny,
 /obj/structure/roguetent,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/shelter)
 "o" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors/shelter)
+"P" = (
+/turf/open/floor/rogue/twig,
+/area/rogue)
 
 (1,1,1) = {"
 o
@@ -123,4 +125,40 @@ j
 j
 j
 o
+"}
+
+(1,1,2) = {"
+P
+P
+P
+P
+P
+"}
+(2,1,2) = {"
+P
+P
+P
+P
+P
+"}
+(3,1,2) = {"
+P
+P
+P
+P
+P
+"}
+(4,1,2) = {"
+P
+P
+P
+P
+P
+"}
+(5,1,2) = {"
+P
+P
+P
+P
+P
 "}

@@ -148,6 +148,7 @@
 /obj/structure/sink/copper/crafted{
 	pixel_y = 21
 	},
+/obj/item/reagent_containers/glass/bucket/wooden,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors)
 "rF" = (
@@ -312,6 +313,9 @@
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
+"Rn" = (
+/turf/open/floor/rogue/greenstone,
+/area/rogue)
 "Rp" = (
 /obj/structure/roguetent,
 /turf/open/floor/carpet/royalblack,
@@ -356,10 +360,6 @@
 	pixel_y = -8;
 	pixel_x = -16
 	},
-/turf/open/floor/rogue/greenstone,
-/area/rogue/indoors)
-"Ve" = (
-/obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors)
 "VK" = (
@@ -437,7 +437,7 @@ FX
 (4,1,1) = {"
 FX
 at
-Ve
+rV
 FX
 WM
 SJ
@@ -537,4 +537,148 @@ sK
 FX
 HF
 FX
+"}
+
+(1,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+"}
+(2,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+"}
+(3,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+"}
+(4,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+"}
+(5,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+"}
+(6,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+"}
+(7,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+"}
+(8,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+"}
+(9,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+"}
+(10,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+"}
+(11,1,2) = {"
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
 "}
