@@ -4,7 +4,7 @@
 	gaining supernatural powers in exchange for their faith or other significant sacrifice. \
 	Their powers are derived from sources beyond mortal understanding and are often associated with dark magic and forbidden knowledge."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS	
+	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/warlock
 	//traits_applied = list(TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_ADVENTURER)
@@ -14,7 +14,7 @@
 
 /datum/outfit/job/roguetown/adventurer/warlock/pre_equip(mob/living/carbon/human/H)
 	..()
-	
+
 	H.adjust_blindness(-3)
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e)
@@ -34,7 +34,7 @@
 		"celestial", //a celestial being | utility | faithless healer
 		"fathomless", //a creecher from the depths of the sea | melee combat | medium armor | water themed
 		"fiend", //caster
-		"genie", //a spirit trapped in an item | utility | specialty gear 
+		"genie", //a spirit trapped in an item | utility | specialty gear
 		"great old one", //your typical lovecraftian creecher | caster | magic tab
 		"hexblade", //a sentient weapon | melee combat | medium armor | specialty gear
 		"undead" //a creecher from the grave | utility | heavy armor | tank
@@ -86,6 +86,7 @@
 			H.put_in_hands(givebook(patronchoice), FALSE)
 			H.change_stat("intelligence", 1)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/guidance5e)
 		if("power") //empowered eldritch blast
 			H.mind.RemoveSpell(/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e/empowered)
@@ -95,12 +96,14 @@
 			H.put_in_hands(givering(H))
 			ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 			H.set_blindness(0)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/eoracurse)
 		if("health") //make healthier
 			givehealing(H, patronchoice)
 			H.set_blindness(0)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		if("wealth") //Pact of the Talisman			
+		if("wealth") //Pact of the Talisman
+			ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 			H.put_in_hands(giveamulet(patronchoice), FALSE)
 			beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 			H.set_blindness(0)
@@ -122,7 +125,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/rogueweapon/huntingknife
-	
+
 	//caster stats (must be 5 stat point total)
 	H.change_stat("intelligence", 2)
 	H.change_stat("perception", 2)
@@ -150,7 +153,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/mace
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife)
-	
+
 	//caster stats (must be 5 stat point total)
 	H.change_stat("intelligence", 2)
 	H.change_stat("perception", 2)
@@ -207,7 +210,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
-	
+
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	mask = /obj/item/clothing/mask/rogue/facemask/gold
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/magered
@@ -217,7 +220,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/rogueweapon/huntingknife
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-	
+
 	//caster stats (must be 5 stat point total)
 	H.change_stat("intelligence", 2)
 	H.change_stat("perception", 2)
@@ -228,9 +231,9 @@
 	ADD_TRAIT(H, TRAIT_FIENDKISS, TRAIT_GENERIC)
 
 	H.visible_message(span_info("I made a deal with a fiend from the hells."))
-	
+
 /datum/outfit/job/roguetown/adventurer/warlock/proc/geniepatron(mob/living/carbon/human/H, patronchoice) //a desert entity
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE) 
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
@@ -246,7 +249,7 @@
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich)
 
 	//lucky stats (must be 5 stat point total)
-	H.change_stat("endurance", 1) // 
+	H.change_stat("endurance", 1) //
 	H.change_stat("speed", 2)
 	H.change_stat("fortune", 2)
 
@@ -261,7 +264,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
-	
+
 	head = /obj/item/clothing/head/roguetown/roguehood/mage
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	pants = /obj/item/clothing/under/roguetown/trou/leather
@@ -320,7 +323,7 @@
 	H.change_stat("speed", -1)
 
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/greenflameblade5e) // put that new weapon to work! martial focus means less magic
-	
+
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
@@ -413,7 +416,7 @@
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/givecurse(mob/living/carbon/human/H, patronname = "")
 	var/obj/effect/proc_holder/spell/invoked/eldritchcurse/curse = new /obj/effect/proc_holder/spell/invoked/eldritchcurse
-	
+
 	switch(patronname) //god damn put this in a datum or something....
 		if("archfey")
 			curse.curse = /datum/status_effect/buff/eldritchcurse/archfey
@@ -443,7 +446,7 @@
 	item = new item_type
 	item.name = "grimoire of the "+patronchoice
 	return item
-	
+
 /obj/item/book/rogue/eldritch
 	desc = "An earie book containing hidden knowledge."
 	icon_state = "ledger_0"
@@ -527,7 +530,7 @@
 		if(10)
 			item_type = /obj/item/rogueweapon/whip
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-		
+
 	var/obj/item/item
 	item = new item_type
 	item.infusable = FALSE
