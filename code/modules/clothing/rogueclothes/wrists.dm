@@ -114,7 +114,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	max_integrity = 150
-	anvilrepair = /datum/skill/craft/armorsmithing
+	sewrepair = TRUE
 	smeltresult = /obj/item/ingot/steel
 	var/extended = FALSE
 	var/obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden/hid
