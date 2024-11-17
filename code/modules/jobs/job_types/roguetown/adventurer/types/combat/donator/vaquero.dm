@@ -37,7 +37,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	belt = /obj/item/storage/belt/rogue/leather
-	belt l = /obj/item/ammopouch/bullets
+	beltl = /obj/item/ammopouch/bullets
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
 	cloak = /obj/item/clothing/cloak/half/red
 	if(prob(33))
