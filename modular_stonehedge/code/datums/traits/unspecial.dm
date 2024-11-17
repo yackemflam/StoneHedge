@@ -38,7 +38,7 @@
 
 /datum/quirk/deadened
 	name = "Deadened"
-	desc = "Ever since <b>it</b> happened, I've never been able to feel anything. Inside or out."
+	desc = "Ever since <b>it</b> happened, I've never been able to feel anything emotionally."
 	value = 2
 
 /datum/quirk/deadened/on_spawn()
@@ -546,12 +546,12 @@
 
 /datum/quirk/nymphomaniac
 	name = "Nymphomaniac"
-	desc = "I'm in a constant state of arousal, and I may end up embarrassing myself..."
+	desc = "I am so senstiive even my pants are enough to constantly arouse me... I must not wear pants or wear things that don't touch my groin. Atleast my experiences with certain things make me good in bed."
 	value = -3
 
 /datum/quirk/nymphomaniac/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.add_curse(/datum/curse/baotha, TRUE)
+	H.add_curse(/datum/curse/nympho, TRUE)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, QUIRK_TRAIT)
 
 /datum/quirk/loveless

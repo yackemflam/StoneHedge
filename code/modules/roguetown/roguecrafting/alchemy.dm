@@ -16,7 +16,7 @@
 /datum/crafting_recipe/roguetown/alchemy/bbomb
 	name = "Bottle bomb"
 	result = list(/obj/item/bomb)
-	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/ash = 2, /obj/item/rogueore/coal = 1, /obj/item/natural/cloth = 1)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1,/obj/item/reagent_containers/powder/gunpowder = 1, /obj/item/natural/cloth = 1)
 	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/alchemy/ozium
@@ -192,7 +192,7 @@
 /datum/crafting_recipe/roguetown/alchemy/gunpowder
 	name = "firepowder"
 	result = list(/obj/item/reagent_containers/powder/gunpowder)
-	reqs = list(/obj/item/ash = 2, /obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/ash = 2, /obj/item/rogueore/coal = 1)
 	craftdiff = 2
 
 /// bottle craft

@@ -3,9 +3,9 @@
 	flag = DEATHKNIGHT
 	department_flag = VAMPIRE
 	faction = "Station"
-	total_positions = 10
-	spawn_positions = 10
-	min_pq = 10 //no pq
+	total_positions = 0
+	spawn_positions = 0
+	min_pq = null //no pq
 	max_pq = null
 
 	allowed_sexes = list(MALE, FEMALE)

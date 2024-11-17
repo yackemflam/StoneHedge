@@ -818,6 +818,7 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue,/obj/item/reagent_containers/glass/bottle/rogue)
 	skillcraft = /datum/skill/craft/smelting
 	structurecraft = /obj/machinery/light/rogue/smelter
+	always_availible = FALSE
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/glasssyringe
@@ -826,6 +827,7 @@
 	result = list(/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/syringe)
 	skillcraft = /datum/skill/craft/smelting
 	structurecraft = /obj/machinery/light/rogue/smelter
+	always_availible = FALSE
 	craftdiff = 2 //small and more detailed in workings i guess.
 
 //gunmaking slop
