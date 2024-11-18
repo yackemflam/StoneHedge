@@ -168,11 +168,10 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 
 	var/major_roll = rand(1,100)
 	switch(major_roll)
+/*
 		if(0 to 25)
-		/*
 			pick_rebels()
 			log_game("Major Antagonist: Rebellion")
-		*/
 		if(26 to 51)
 			pick_cultist()
 			log_game("Major Antagonist: Extended")
@@ -183,7 +182,15 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 			log_game("Major Antagonist: Werewolves")
 		if(77 to 99)
 			log_game("Major Antagonist: Extended") //gotta put something here.
-	
+*/
+		if(0 to 25)
+			pick_cultist()
+			log_game("Major Antagonist: Cultists")
+		if(26 to 51)
+			pick_werewolves()
+			log_game("Major Antagonist: Werewolves and Vampires")
+		if(52 to 99)
+			log_game("Major Antagonist: Extended") //gotta put something here.
 	pick_bandits()
 	log_game("Minor Antagonist: Bandit")
 	/*
