@@ -133,7 +133,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/labor/lumberjacking, 3, TRUE)
-	H.mind.special_items["Hatchet"] = /obj/item/rogueweapon/stoneaxe/handaxe
+	H.mind.special_items["Axe"] = /obj/item/rogueweapon/stoneaxe/woodcut
 
 /datum/quirk/training7
 	name = "Firearms Training"
