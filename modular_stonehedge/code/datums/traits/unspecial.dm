@@ -156,7 +156,7 @@
 
 /datum/quirk/training9
 	name = "Unarmed Training"
-	desc = "I have unarmed training and stashed some dusters."
+	desc = "I have journeyman unarmed training and stashed some dusters."
 	value = 2
 
 /datum/quirk/training9/on_spawn()
@@ -167,7 +167,7 @@
 
 /datum/quirk/mtraining1
 	name = "Medical Training"
-	desc = "I have medical training and stashed some med supplies."
+	desc = "I have journeyman medical training and stashed some med supplies."
 	value = 3
 
 /datum/quirk/mtraining1/on_spawn()
@@ -178,7 +178,7 @@
 
 /datum/quirk/greenthumb
 	name = "Green Thumb"
-	desc = "I've always been rather good at tending to plants, and I have some powerful fertilizer stashed away and a women of ill repute."
+	desc = "I've always been rather good at tending to plants, and I have some powerful fertilizer stashed away and a women of ill repute. (Raises skill to journeyman)"
 	value = 1
 
 /datum/quirk/greenthumb/on_spawn()
@@ -191,10 +191,19 @@
 
 /datum/quirk/eagle_eyed
 	name = "Eagle Eyed"
-	desc = "I have bow training and stashed a bow."
+	desc = "I was always goot at spotting distant things.."
 	value = 2
 
 /datum/quirk/eagle_eyed/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.change_stat("perception", 2)
+
+/datum/quirk/training10
+	name = "Bow Training"
+	desc = "I have journeyman bow training and stashed a bow."
+	value = 2
+
+/datum/quirk/training10/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 3, TRUE)
 	H.mind.special_items["Bow"] = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
