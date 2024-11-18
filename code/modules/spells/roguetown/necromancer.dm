@@ -29,7 +29,7 @@
 		target.visible_message(span_info("Necrotic energy floods over [target]!"), span_userdanger("I feel colder as the dark energy floods into me!"))
 		if(iscarbon(target))
 			target.emote("scream")
-			target.Paralyze(50)
+			target.Stun(30)
 		else
 			target.adjustBruteLoss(20)
 		return TRUE
@@ -319,12 +319,12 @@
 		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
 			H.visible_message(span_danger("[target] has their life force ripped from their body!!"), \
-					span_userdanger("I feel freezing cold inside!"), \
+					span_userdanger("I feel like i lost a part of me within!"), \
 					span_hear("..."), COMBAT_MESSAGE_RANGE, target)
-			sender.heal_overall_damage(25)
+			sender.heal_overall_damage(25, 25)
 		var/list/wCount = sender.get_wounds()
 		if(wCount.len > 0)
-			sender.heal_wounds(5)
+			sender.heal_wounds(25)
 			sender.update_damage_overlays()
 			to_chat(sender, span_blue("I feel some of my wounds mend."))
 	qdel(src)
