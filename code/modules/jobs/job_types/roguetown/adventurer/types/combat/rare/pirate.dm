@@ -33,9 +33,10 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltr = /obj/item/rogueweapon/sword/cutlass
+	backr = /obj/item/rogueweapon/sword/cutlass
+	beltr = /obj/item/gun/ballistic/arquebus_pistol
 	beltl = /obj/item/ammopouch/bullets
-	backpack_contents = list(/obj/item/gun/ballistic/arquebus_pistol = 1, /obj/item/gun/ballistic/arquebus_pistol = 1, /obj/item/powderflask = 1, /obj/item/rogueweapon/huntingknife/idagger/steel)
+	backpack_contents = list(/obj/item/powderflask =1, /obj/item/rogueweapon/huntingknife/idagger/steel =1, /obj/item/toy/cards/deck =1,)
 
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
