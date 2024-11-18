@@ -336,14 +336,6 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/cavewet)
-"eH" = (
-/obj/structure/fluff/traveltile{
-	name = "travel to Ashlands";
-	aportalgoesto = "ashlandsout1";
-	aportalid = "ashlandsin1"
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/under/cavewet)
 "eK" = (
 /obj/structure/flora/roguegrass/bush{
 	icon_state = "bush3"
@@ -2431,14 +2423,6 @@
 	first_time_text = "Underkeep";
 	name = "Underkeep"
 	})
-"BX" = (
-/obj/structure/fluff/traveltile{
-	name = "travel to Ashlands";
-	aportalgoesto = "ashlandsout2";
-	aportalid = "ashlandsin2"
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/under/cavewet)
 "BZ" = (
 /mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith2,
 /turf/open/floor/rogue/dirt/road,
@@ -4396,7 +4380,7 @@ tG
 tG
 tG
 tG
-BX
+yR
 yR
 Eo
 Qm
@@ -4527,7 +4511,7 @@ tG
 tG
 tG
 tG
-eH
+yR
 Hy
 yR
 ue
@@ -4658,7 +4642,7 @@ tG
 (3,1,1) = {"
 tG
 tG
-dv
+QO
 Qm
 LC
 yR
@@ -4789,7 +4773,7 @@ Gr
 "}
 (4,1,1) = {"
 tG
-QO
+dv
 Qm
 Qm
 Qm
@@ -4920,7 +4904,7 @@ Gr
 Gr
 "}
 (5,1,1) = {"
-dv
+Qm
 Qm
 Qm
 Qm

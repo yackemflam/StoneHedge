@@ -174,8 +174,8 @@
 	flags_1 = HEAR_1
 	muteinmouth = TRUE
 	var/listening = TRUE
-	var/speaking = TRUE
-	sellprice = 200
+	var/speaking = FALSE //Start muted its weird.
+	sellprice = 50
 //wip
 /obj/item/scomstone/attack_right(mob/user)
     user.changeNext_move(CLICK_CD_MELEE)
