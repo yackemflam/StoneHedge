@@ -465,6 +465,13 @@
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/crafting
 
+/datum/crafting_recipe/roguetown/psteel
+	name = "pig iron mix"
+	result = /obj/item/rogueore/psteel
+	reqs = list(/obj/item/rogueore/coal = 1, /obj/item/ingot/iron = 2,)
+	craftdiff = 3
+	skillcraft = /datum/skill/craft/blacksmithing
+
 /datum/crafting_recipe/roguetown/whet
 	name = "whet stone"
 	result = /obj/item/natural/whet
