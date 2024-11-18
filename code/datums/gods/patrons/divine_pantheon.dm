@@ -8,6 +8,7 @@
 	domain = "Beginnings, Hope, Dawn. Setting the path. Flames, Sunlight, Illumination. (Active Energies)"
 	desc = "Elysius, The Golden Dragon."
 	worshippers = "The Noble Hearted, Zealots, Warriors and Healers."
+	mob_traits = list(TRAIT_EMPATH)
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	t2 = /obj/effect/proc_holder/spell/invoked/heal
 	t3 = /obj/effect/proc_holder/spell/invoked/revive
@@ -53,7 +54,7 @@
 	domain = "God of the Ocean, Storms and the Tide"
 	desc = "The Beloved Daughter of the Sea, gifted primordial kin food and water. She is said to be both cruel and calm, if her icey waters and wailing winds are heeded ahead of time. She is the warning and the Omen."
 	worshippers = "Men and Women of the Sea, Primitive Aquatics, Merfolk, Druids, Creatures of the Deep."
-	mob_traits = list (TRAIT_WATERBREATHING, TRAIT_ABYSSOR_SWIM,)
+	mob_traits = list (TRAIT_WATERBREATHING, TRAIT_ABYSSOR_SWIM)
 	confess_lines = list(
 		"ABYSSIA COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",
@@ -65,7 +66,7 @@
 	domain = "War, Dance, Tactic, Rejoice, Celebration."
 	desc = "The dervish of Blades, Minhur teaches that battle is like a dance; the duality between life/death and revelry. Minhur's followers prefer dexterity and tactful dancelike movements; encouraging mortals to act with decorum, etiquette and poise whenever possible."
 	worshippers = "Warriors, Sellswords & Fencers."
-	mob_traits = list (TRAIT_SHOCKIMMUNE, TRAIT_DODGEEXPERT)
+	mob_traits = list (TRAIT_CIVILIZEDBARBARIAN, TRAIT_DEATHBYSNOOSNOO) // "duality between life/death and revelry"
 	confess_lines = list(
 		"MINHUR'S WHIRLWIND!",
 		"THROUGH STRIFE, GRACE!",
@@ -93,7 +94,7 @@
 	domain = "Art, Beauty, Artisanry, Vanity, Poetry, Freedom and Luck."
 	desc = "Onder is said to be inspiration itself. The god of Stories, Music and Memory. Onder is worshipped by bards and rogues alike. Onder’s story of being a changeling bard who walked amidst many cultures, gathering their tales and impressive many beings alike made them the god of charisma and luck."
 	worshippers = "Bards, Gamblers, Poets, Musicians, Diplomats and Artists."
-	mob_traits = list(TRAIT_SOUL_EXAMINE)
+	mob_traits = list(TRAIT_BOG_TREKKING)
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness
 	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
 	confess_lines = list(
@@ -143,7 +144,7 @@
 /datum/patron/divine/eora
 	name = "Viiritri"
 	domain = "Feeling, Empathy, Passion.Hearts, Desires, Connection."
-	desc = "Viiritri is the god of emotions, the soul and the heart. Viiritri teaches the art of feeling, and their devoted are often spiritual healers and lovers of all walks. Viiritri is said to take the shape of songbirds and other mystical acts  of inspiration. Their realm known as Halceon is rumored to be full of song, dance and bliss to those who loved truly, purely and freely in her service."
+	desc = "Viiritri is the god of emotions, the soul and the heart. Viiritri teaches the art of feeling, and their devoted are often spiritual healers and lovers of all walks. Viiritri is said to take the shape of songbirds and other mystical acts of inspiration. Their realm known as Halceon is rumored to be full of song, dance and bliss to those who loved truly, purely and freely in her service."
 	worshippers = "Lovers, Healers, Adventurers, Poets, Families and Warriors."
 	mob_traits = list(TRAIT_SEXDEVO, TRAIT_SEEDKNOW)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
