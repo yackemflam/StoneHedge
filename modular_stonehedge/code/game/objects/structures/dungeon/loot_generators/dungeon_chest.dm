@@ -31,7 +31,7 @@
 	base_icon_state = "dungeon_chest_1"
 	anchored = TRUE //bet some dude would try to take this home.
 	var/found = FALSE
-	var/time_to_reset = 15 MINUTES
+	var/time_to_reset = 10 MINUTES
 	var/reset_timer
 	var/max_loot_num_to_spawn = 3
 	var/loot_type = "generic"
