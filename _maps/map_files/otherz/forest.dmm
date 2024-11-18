@@ -397,12 +397,6 @@
 /obj/structure/fluff/statue/knight/interior/r,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods/overgrownfort)
-"cm" = (
-/obj/effect/mobspawner/goblin_spawner,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/woods{
-	first_time_text = "The Deepwoods"
-	})
 "co" = (
 /obj/item/bodypart/l_arm/rprosthetic/clock,
 /obj/item/bodypart/r_arm/rprosthetic/clock,
@@ -504,8 +498,10 @@
 	},
 /area/rogue/outdoors/river)
 "cN" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
-/turf/open/floor/rogue/dirt/road,
+/obj/effect/mobspawner/goblin_spawner,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "cQ" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur/horny,
@@ -643,8 +639,9 @@
 	name = "Wood elf Tribes"
 	})
 "dx" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
-/turf/open/transparent/openspace,
+/obj/structure/chair/stool/rogue,
+/obj/effect/mobspawner/goblin_spawner,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "dz" = (
 /turf/open/water/river{
@@ -1204,7 +1201,6 @@
 	dir = 10
 	},
 /obj/item/reagent_containers/glass/cup/silver,
-/obj/structure/closet/crate/chest/refilling/treasure,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "hu" = (
@@ -1864,8 +1860,13 @@
 	first_time_text = "The Deepwoods"
 	})
 "ld" = (
-/obj/effect/spawner/lootdrop/roguetown/dungeon/armor,
-/turf/closed/wall/mineral/rogue/stone/moss,
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
+	},
+/obj/structure/closet/crate/chest/refilling/generic,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "lg" = (
 /obj/structure/flora/wildplant/wild_herbs,
@@ -2000,9 +2001,7 @@
 /obj/machinery/light/rogue/torchholder{
 	dir = 8
 	},
-/obj/structure/closet/crate/chest,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/armor,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/armor,
+/obj/structure/closet/crate/chest/refilling/armor,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -2053,9 +2052,7 @@
 /obj/machinery/light/rogue/torchholder{
 	pixel_y = 26
 	},
-/obj/structure/closet/crate/chest,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/armor,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/armor,
+/obj/structure/closet/crate/chest/refilling/armor,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -2947,7 +2944,11 @@
 	first_time_text = "The Mountain Passe"
 	})
 "rF" = (
-/obj/effect/mobspawner/goblin_spawner,
+/obj/effect/mobspawner/goblin_spawner{
+	min_mobs = 1;
+	max_mobs = 2;
+	mobs_to_spawn = 2
+	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "rH" = (
@@ -4561,8 +4562,9 @@
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/shelter/town/dwarf)
 "Bi" = (
-/obj/structure/closet/crate/chest/refilling/generic,
-/turf/closed/wall/mineral/rogue/wooddark/window,
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/closet/crate/chest/refilling/treasure,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "Bj" = (
 /obj/structure/fermenting_barrel/beer,
@@ -5223,7 +5225,6 @@
 	dir = 9
 	},
 /obj/item/reagent_containers/glass/cup/silver,
-/obj/structure/closet/crate/chest/refilling/treasure,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "EE" = (
@@ -5445,10 +5446,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavewet)
-"Ge" = (
-/obj/effect/mobspawner/goblin_spawner,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/shelter/woods/overgrownfort)
 "Gg" = (
 /obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner/undead,
 /turf/open/floor/rogue/dirt,
@@ -6880,9 +6877,8 @@
 /area/rogue/under/cavewet/spidermines)
 "Om" = (
 /obj/structure/closet/crate/chest/refilling/weapon,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/armor,
+/obj/structure/closet/crate/chest/refilling/armor,
 /obj/structure/closet/crate/chest/refilling/medicine,
-/obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/cave/minotaurcave)
 "On" = (
@@ -7512,8 +7508,8 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/cave/underdark)
 "Se" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
-/turf/open/floor/rogue/cobblerock,
+/obj/effect/mobspawner/hole/spiders/wall,
+/turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "Sh" = (
 /obj/structure/flora/roguetree/stump/log,
@@ -40100,9 +40096,9 @@ Ly
 Ly
 Ly
 BP
-cN
+bK
 BJ
-Se
+BJ
 BP
 Qq
 CO
@@ -40498,7 +40494,7 @@ wO
 Ly
 Ly
 Ly
-BP
+Se
 BJ
 bK
 BJ
@@ -40641,7 +40637,7 @@ bu
 Rj
 BP
 WP
-Se
+BJ
 iB
 BP
 Ly
@@ -40773,7 +40769,7 @@ BJ
 bK
 BJ
 uw
-Se
+BJ
 bX
 Tb
 BP
@@ -40900,7 +40896,7 @@ Ly
 BP
 bX
 BJ
-dx
+CM
 BJ
 BJ
 OO
@@ -41037,7 +41033,7 @@ CO
 bu
 BJ
 BJ
-cN
+bK
 BP
 bu
 BJ
@@ -58721,12 +58717,12 @@ Ng
 tS
 BP
 BP
-gW
+Bi
 ew
 ew
 ew
 ew
-RX
+EK
 BP
 xp
 RX
@@ -58857,7 +58853,7 @@ BP
 gW
 Cg
 Cg
-Ge
+ew
 ew
 PL
 BP
@@ -59134,7 +59130,7 @@ Cu
 AP
 vw
 Tt
-HH
+Xg
 gA
 Xg
 WN
@@ -59255,7 +59251,7 @@ BP
 BP
 lF
 Cg
-Cg
+dx
 ew
 Or
 iF
@@ -59932,7 +59928,7 @@ Ou
 BP
 Ja
 Ja
-Xg
+HH
 Xg
 Tt
 hi
@@ -61129,7 +61125,7 @@ Hr
 Hr
 Ng
 Ng
-cm
+Ng
 Lu
 PV
 hi
@@ -76164,9 +76160,9 @@ hi
 BP
 BP
 Wr
-Bi
+Wr
 BP
-ld
+BP
 qM
 Pc
 Pc
@@ -76298,7 +76294,7 @@ ui
 xt
 db
 db
-ZV
+ld
 BP
 qM
 Pc
@@ -76962,7 +76958,7 @@ Pc
 Tm
 db
 db
-db
+cN
 db
 BP
 Pc
