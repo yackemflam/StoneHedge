@@ -578,7 +578,7 @@
 	brew_reagent = /datum/reagent/alch/syrump
 	brew_amt = 24
 	can_brew = TRUE
-	list_reagents = null
+	list_reagents = list(/datum/reagent/berrypoison = 10)
 	grind_results = list(/datum/reagent/berrypoison = 10)
 	volume = 10
 
