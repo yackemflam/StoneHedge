@@ -382,7 +382,7 @@
 	craftdiff = 2
 	i_type = "Armor"
 
-/datum/anvil_recipe/armor/chainskirt
+/datum/anvil_recipe/armor/ichainskirt
 	name = "Iron Chain Skirt"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/under/roguetown/chainlegs/iron/skirt
