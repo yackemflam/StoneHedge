@@ -217,7 +217,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/veteran
-	name = "Guild Captain"
+	name = "Guildmaster"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/dungeoneer

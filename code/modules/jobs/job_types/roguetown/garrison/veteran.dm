@@ -1,5 +1,5 @@
 /datum/job/roguetown/veteran
-	title = "Guild Captain"
+	title = "Guildmaster"
 	flag = VETERAN
 	department_flag = MERCENARIES
 	faction = "Station"
@@ -30,7 +30,7 @@
 				index = copytext(H.real_name, 1,index)
 			if(!index)
 				index = H.real_name
-			S.name = "veteran cloak ([index])"
+			S.name = "Guildmaster cloak ([index])"
 
 /datum/outfit/job/roguetown/veteran/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -44,7 +44,7 @@
 	beltl = /obj/item/rogueweapon/sword/sabre
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	backr = /obj/item/storage/backpack/rogue/satchel/black
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/storage/keyring/veteran = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 6, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 6, TRUE)

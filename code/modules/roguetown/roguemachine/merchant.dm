@@ -124,6 +124,17 @@
 	var/current_cat = "1"
 	//Whether or not the hidden key is still present- Shophands can take it.
 	var/hidden_key_present = TRUE
+	var/price_multiplier = 1
+	var/is_public = FALSE
+
+/obj/structure/roguemachine/merchantvend/public
+	name = "SILVERFACE"
+	desc = "Gilded tombs do worms enfold."
+	icon = 'icons/roguetown/misc/machines.dmi'
+	icon_state = "streetvendor1"
+	price_multiplier = 1.3
+	is_public = TRUE
+	locked = FALSE
 
 /obj/structure/roguemachine/merchantvend/Initialize()
 	. = ..()
@@ -247,6 +258,9 @@
 				upgrade_flags &= ~UPGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 			if("Stop Paying Taxes")
+				if(is_public)
+					say("You can not.")
+					return
 				upgrade_flags |= UPGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 			if("Purchase Armors License (150)")
@@ -339,8 +353,10 @@
 			var/datum/supply_pack/PA = SSshuttle.supply_packs[pack]
 			if(PA.group == current_cat)
 				pax += PA
+		var/obj/structure/roguemachine/merchantvend/funnyvend = src
 		for(var/datum/supply_pack/PA in sortList(pax))
 			var/costy = PA.cost
+			costy *= funnyvend.price_multiplier
 			if(!(upgrade_flags & UPGRADE_NOTAX))
 				costy=round(costy+(SStreasury.tax_value * costy))
 			contents += "[PA.name] [PA.contains.len > 1?"x[PA.contains.len]":""] - ([costy])<a href='?src=[REF(src)];buy=[PA.type]'>BUY</a><BR>"

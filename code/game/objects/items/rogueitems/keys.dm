@@ -247,6 +247,12 @@
 	icon_state = "rustkey"
 	lockid = "farm"
 
+/obj/item/roguekey/veteran
+	name = "guildmaster key"
+	desc = "This key is for adventurer's guild."
+	icon_state = "ekey"
+	lockid = "veteran"
+
 /obj/item/roguekey/butcher
 	name = "butcher key"
 	desc = "This is a rusty key that'll open butcher doors."

@@ -1950,7 +1950,7 @@
 /area/rogue/indoors/town/library)
 "bCN" = (
 /obj/structure/mineral_door/bars{
-	lockid = "vault";
+	lockid = "vault key";
 	locked = 1
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -4209,15 +4209,6 @@
 	first_time_text = "Shrine of Natures";
 	name = "Shrine of Natures"
 	})
-"duR" = (
-/obj/structure/roguemachine/drugmachine{
-	icon_state = "submit_anim";
-	name = "Undermarket Vendor"
-	},
-/turf/closed/wall/mineral/rogue/stone/moss,
-/area/rogue/indoors/town/bath{
-	first_time_text = "The Dreamers Demesne.."
-	})
 "duS" = (
 /obj/machinery/light/rogue/hearth,
 /turf/open/floor/rogue/cobble,
@@ -4911,7 +4902,9 @@
 	name = "Silver Dragon"
 	})
 "dYz" = (
-/obj/structure/mineral_door/secret/vault,
+/obj/structure/mineral_door/secret/vault{
+	lockid = "vault key"
+	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "dYB" = (
@@ -7026,6 +7019,13 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"fEm" = (
+/obj/structure/roguemachine/bounty,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge Borders";
+	name = "far stonehedge"
+	})
 "fEp" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -8249,7 +8249,8 @@
 	})
 "gIu" = (
 /obj/structure/mineral_door/wood/fancywood{
-	name = "Guild Leaders Office"
+	name = "Guild Leaders Office";
+	lockid = "veteran"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
@@ -10557,13 +10558,11 @@
 /area/rogue/under/cavewet/bogcaves)
 "iGa" = (
 /obj/structure/roguemachine/drugmachine{
-	icon_state = "submit_anim";
-	name = "Undermarket Vendor"
+	icon_state = "submit_anim"
 	},
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/indoors/town/bath{
+	first_time_text = "The Dreamers Demesne.."
 	})
 "iGc" = (
 /obj/structure/spider/stickyweb{
@@ -11206,15 +11205,11 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
 "jlS" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
-	},
-/obj/structure/bars{
-	icon_state = "barsbent"
-	},
-/turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/indoors/shelter/town)
+/obj/structure/roguemachine/stockpile,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
+	})
 "jlY" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/beach{
@@ -12981,13 +12976,6 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
-"kEu" = (
-/obj/structure/roguemachine/vendor/inn,
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
-	})
 "kEE" = (
 /obj/structure/rack/rogue{
 	pixel_y = 2
@@ -14150,6 +14138,12 @@
 	},
 /turf/open/floor/rogue/twig/platform,
 /area/rogue/indoors/shelter/rtfield)
+"lCR" = (
+/obj/structure/roguemachine/merchantvend/public{
+	icon_state = "goldvendor"
+	},
+/turf/closed/wall/mineral/rogue/wooddark,
+/area/rogue/indoors/shelter/town)
 "lDA" = (
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town)
@@ -14635,7 +14629,8 @@
 	})
 "may" = (
 /obj/structure/mineral_door/bars{
-	locked = 1
+	locked = 1;
+	lockid = "vault key"
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/garrison{
@@ -19418,6 +19413,11 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"pXC" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/structure/roguemachine/camera/right,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/town/vault)
 "pYa" = (
 /obj/structure/flora/newtree,
 /obj/structure/flora/newtree,
@@ -24910,6 +24910,18 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"uoN" = (
+/obj/structure/bookcase,
+/obj/item/book/rogue/law,
+/obj/item/book/rogue/law,
+/obj/item/book/rogue/law,
+/obj/item/book/rogue/law,
+/obj/structure/roguemachine/camera/right,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "upr" = (
 /obj/machinery/light/rogue/chand,
 /turf/open/transparent/openspace,
@@ -26277,6 +26289,13 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"vwn" = (
+/obj/structure/roguemachine/mail/r,
+/turf/open/floor/carpet/royalblack,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "vwV" = (
 /obj/structure/bookcase,
 /obj/item/book/granter/spell/spells5e/bladeward5e,
@@ -26440,8 +26459,8 @@
 	name = "far stonehedge"
 	})
 "vFh" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 4
+/obj/structure/roguemachine/steward{
+	keycontrol = "veteran"
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison{
@@ -28225,10 +28244,12 @@
 /turf/closed/wall/mineral/rogue/stone/window/moss,
 /area/rogue/indoors/shelter/bog)
 "xkZ" = (
-/obj/structure/mineral_door/wood{
-	name = "Guild Treasury";
+/obj/structure/mineral_door/wood/donjon{
+	dir = 4;
 	lockid = "vault key";
-	locked = 1
+	locked = 1;
+	desc = "Treasury";
+	name = "Treasury"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
@@ -28420,6 +28441,13 @@
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
+	})
+"xuF" = (
+/obj/structure/roguemachine/camera/right,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
 	})
 "xuQ" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy/blue{
@@ -85341,7 +85369,7 @@ tcT
 hqX
 qHC
 qHC
-dYB
+xuF
 toi
 dYB
 dYB
@@ -86752,7 +86780,7 @@ ifi
 rxm
 rTO
 pKP
-vFo
+pXC
 sVs
 rTO
 lyF
@@ -86760,7 +86788,7 @@ lyF
 lyF
 vxU
 pOk
-pOk
+uoN
 pOk
 vxU
 nVt
@@ -114243,7 +114271,7 @@ aZy
 aZy
 cns
 eJD
-mVp
+jlS
 mVp
 mVp
 eHG
@@ -117657,7 +117685,7 @@ pOo
 kQG
 vmN
 ueO
-qJZ
+fEm
 beK
 beK
 beK
@@ -121653,7 +121681,7 @@ acu
 vUx
 vUx
 vUx
-acu
+iGa
 jsd
 jsd
 qiM
@@ -122667,7 +122695,7 @@ nXV
 jsd
 xtu
 xNt
-duR
+jsd
 clt
 pPc
 naI
@@ -151400,7 +151428,7 @@ aZy
 aZy
 hiA
 tZZ
-uhm
+vwn
 uhm
 pFc
 efY
@@ -157200,7 +157228,7 @@ uCM
 fSQ
 fZQ
 tJb
-kEu
+tJb
 iAf
 tRu
 tJb
@@ -157807,7 +157835,7 @@ enU
 tJb
 tJb
 tJb
-iGa
+fSQ
 tRu
 tJb
 tJb
@@ -161432,7 +161460,7 @@ ntP
 bnB
 xOB
 eFk
-jlS
+hkP
 xOB
 bnB
 xOB
@@ -161837,7 +161865,7 @@ bnB
 xOB
 kcG
 rhx
-hkP
+lCR
 bnB
 bnB
 bnB
@@ -162040,7 +162068,7 @@ xOB
 pbh
 qco
 xOB
-bnB
+fSV
 bnB
 bnB
 dNq
