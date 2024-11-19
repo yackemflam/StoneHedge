@@ -2,7 +2,7 @@
 
 /datum/advclass/sentinel
 	name = "Sentinel"
-	tutorial = "Elvish Sentinels are a specialized group of Rangers known for their mastery of bow and blade alike; their arrows are said to contain poisons from the native trees."
+	tutorial = "Elvish Sentinels are a specialized group of Rangers known for their mastery of bow and blade alike; their arrows are said to contain poisons from the native trees - the woodlands often do not seem to target them like most..."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		/datum/species/elf/dark,
@@ -49,4 +49,5 @@
 	beltl = /obj/item/quiver/arrows
 	H.change_stat("perception", 5)
 	H.change_stat("endurance", 2)
+	H.change_stat("speed", 1)
 	H.ambushable = FALSE

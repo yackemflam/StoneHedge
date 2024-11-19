@@ -179,7 +179,9 @@
 	icon_state = "harp"
 	song_list = list("Through Thine Window, He Glanced" = 'sound/music/instruments/harb (1).ogg',
 	"The Lady of Red Silks" = 'sound/music/instruments/harb (2).ogg',
-	"Eora Doth Watches" = 'sound/music/instruments/harb (3).ogg')
+	"The lover Doth Watch" = 'sound/music/instruments/harb (3).ogg'
+	"Gaias Enchantment" = 'sound/music/instruments/harb (4).ogg'
+	"Magic Leylines" = 'sound/music/instruments/harb (5).ogg')
 
 /obj/item/rogue/instrument/flute
 	name = "flute"

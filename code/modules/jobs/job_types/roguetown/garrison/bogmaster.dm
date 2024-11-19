@@ -45,7 +45,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	beltl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+	beltl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 	beltr = /obj/item/rogueweapon/sword/silver/sabre/elf
 	belt = /obj/item/storage/belt/rogue/leather
 	backr = /obj/item/storage/backpack/rogue/satchel

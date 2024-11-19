@@ -60,10 +60,11 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/druidic, 4, TRUE) //Allows you to craft briarmasks. Otherwise this does nothing, but maybe one day it will.
 		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)//wildman can ungah bungah better now
 		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/magic/druidic, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/magic/druidic, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 2, TRUE)
 		H.change_stat("intelligence", 4)
 		H.change_stat("endurance", 2)
 		H.change_stat("perception", 2)

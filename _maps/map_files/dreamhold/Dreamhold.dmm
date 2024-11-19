@@ -1277,7 +1277,9 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/caves)
 "aYk" = (
-/obj/structure/roguemachine/atm,
+/obj/structure/roguemachine/atm{
+	name = "GOLD-PACT"
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -4368,6 +4370,7 @@
 "dzN" = (
 /obj/item/roguegem/yellow,
 /obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner,
+/obj/structure/closet/crate/chest/dungeon/mimic,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "dzU" = (
@@ -4392,7 +4395,9 @@
 	name = "Shrine of Lune"
 	})
 "dAY" = (
-/obj/structure/roguemachine/atm,
+/obj/structure/roguemachine/atm{
+	name = "GOLD-PACT"
+	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/shelter/town)
 "dBe" = (
@@ -6499,7 +6504,9 @@
 	name = "far stonehedge"
 	})
 "fgk" = (
-/obj/structure/roguemachine/atm,
+/obj/structure/roguemachine/atm{
+	name = "GOLD-PACT"
+	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/town)
 "fgu" = (
@@ -8235,10 +8242,6 @@
 	dir = 1;
 	pixel_x = -8
 	},
-/obj/structure/roguemachine/atm{
-	pixel_x = -32;
-	pixel_y = 0
-	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/shelter/town)
 "gIm" = (
@@ -9003,7 +9006,9 @@
 	first_time_text = "The Deepwoods"
 	})
 "hvl" = (
-/obj/structure/roguemachine/atm,
+/obj/structure/roguemachine/atm{
+	name = "GOLD-PACT"
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -10556,10 +10561,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/cavewet/bogcaves)
 "iGa" = (
-/obj/structure/roguemachine/drugmachine{
-	icon_state = "submit_anim";
-	name = "Undermarket Vendor"
-	},
+/obj/structure/roguemachine/vendor,
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -14726,8 +14728,8 @@
 	name = "Silver Dragon"
 	})
 "mgS" = (
-/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /obj/machinery/light/rogue/wallfire/candle/blue,
+/obj/item/restraints/legcuffs/beartrap/armed,
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/caves)
 "mha" = (
@@ -20164,7 +20166,7 @@
 /area/rogue/under/cave)
 "qAU" = (
 /obj/item/roguegem/red,
-/obj/structure/closet/crate/chest/refilling/weapon,
+/obj/structure/closet/crate/chest/refilling/mimic,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "qBH" = (
@@ -20472,6 +20474,7 @@
 /obj/item/needle,
 /obj/item/natural/bundle/cloth,
 /obj/item/natural/bundle/fibers/full,
+/obj/item/natural/worms/leech,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/bog)
 "qOs" = (
@@ -20483,7 +20486,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
 "qOz" = (
-/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
+/obj/item/restraints/legcuffs/beartrap/armed,
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/caves)
 "qOE" = (
@@ -22107,6 +22110,16 @@
 	name = "Schoolgrounds";
 	first_time_text = "Ravenloft Academy"
 	})
+"saI" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1";
+	dir = 1
+	},
+/obj/structure/bars{
+	icon_state = "barsbent"
+	},
+/turf/open/floor/rogue/ruinedwood/herringbone,
+/area/rogue/indoors/shelter/town)
 "saY" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/nrich,
@@ -22141,7 +22154,9 @@
 	first_time_text = "Ravenloft Academy"
 	})
 "sdp" = (
-/obj/structure/roguemachine/atm,
+/obj/structure/roguemachine/atm{
+	name = "GOLD-PACT"
+	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/shelter/town)
 "sdE" = (
@@ -23244,7 +23259,7 @@
 	name = "Silver Dragon"
 	})
 "tav" = (
-/turf/open/floor/rogue/dirt/road,
+/turf/open/water/swamp,
 /area/rogue/indoors/shelter/bog)
 "taw" = (
 /obj/effect/decal/border{
@@ -25476,6 +25491,13 @@
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
 	})
+"uJq" = (
+/obj/structure/roguemachine/drugmachine{
+	icon_state = "submit_anim";
+	name = "Undermarket Vendor"
+	},
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/indoors/shelter/bog)
 "uJV" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/rooftop,
@@ -25594,6 +25616,11 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/caves)
+"uPg" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/structure/closet/crate/chest/refilling/mimic,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/town/vault)
 "uPR" = (
 /obj/effect/spawner/roguemap/tree,
 /turf/open/floor/rogue/dirt,
@@ -26241,6 +26268,11 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
+"vuG" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/structure/closet/crate/chest/dungeon/mimic,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/town/vault)
 "vvf" = (
 /obj/structure/flora/newbranch/connector{
 	dir = 8
@@ -26547,6 +26579,13 @@
 /obj/item/book/granter/spell/blackstone/invisibility,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/caves)
+"vKS" = (
+/obj/structure/roguemachine/drugmachine{
+	icon_state = "submit_anim";
+	name = "Undermarket Vendor"
+	},
+/turf/closed/wall/mineral/rogue/wooddark,
+/area/rogue/indoors/shelter/town)
 "vLn" = (
 /turf/closed/wall/mineral/rogue/roofwall/outercorner{
 	dir = 8
@@ -26998,7 +27037,9 @@
 /area/rogue/under/cave)
 "wfQ" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
-/obj/structure/roguemachine/atm,
+/obj/structure/roguemachine/atm{
+	name = "GOLD-PACT"
+	},
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/town/bath)
 "wgl" = (
@@ -27903,7 +27944,9 @@
 	first_time_text = "The Deepwoods"
 	})
 "wXL" = (
-/obj/structure/roguemachine/atm,
+/obj/structure/roguemachine/atm{
+	name = "GOLD-PACT"
+	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/outdoors/exposed/magiciantower{
 	name = "Schoolgrounds";
@@ -28177,6 +28220,10 @@
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/town)
+"xjY" = (
+/obj/structure/toilet,
+/turf/open/water/swamp,
+/area/rogue/indoors/shelter/bog)
 "xkh" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat,
 /turf/open/floor/rogue/cobble,
@@ -85742,7 +85789,7 @@ cgq
 rxm
 rTO
 ixC
-vFo
+uPg
 dzN
 rTO
 lXQ
@@ -86752,7 +86799,7 @@ ifi
 rxm
 rTO
 pKP
-vFo
+vuG
 sVs
 rTO
 lyF
@@ -125799,7 +125846,7 @@ oCe
 hcX
 xkX
 xkX
-hcX
+uJq
 iRs
 iRs
 foe
@@ -127295,7 +127342,7 @@ leL
 leL
 leL
 tvm
-xOB
+vKS
 ycM
 bjo
 leL
@@ -127826,7 +127873,7 @@ ajQ
 iRs
 iRs
 iRs
-hDX
+xjY
 hcX
 oCe
 oCe
@@ -128424,7 +128471,7 @@ sDr
 hcX
 dVE
 bRj
-bRj
+tav
 iRs
 hcX
 tyj
@@ -128627,7 +128674,7 @@ hcX
 iRs
 dVE
 dVE
-bRj
+tav
 hcX
 ude
 ulE
@@ -128765,8 +128812,8 @@ qMs
 ycO
 ktk
 qMs
-qJZ
-tHV
+ijB
+kbK
 qMs
 gTl
 ucZ
@@ -130039,9 +130086,9 @@ fMm
 fMm
 hcX
 iRs
+tav
 iRs
-iRs
-iRs
+tav
 hcX
 sDr
 tyj
@@ -130242,7 +130289,7 @@ tyj
 hcX
 dVE
 bRj
-iRs
+tav
 bRj
 hcX
 ilr
@@ -161632,7 +161679,7 @@ leL
 aaq
 bnB
 bnB
-xOB
+saI
 iqa
 fGs
 kRW
@@ -161834,7 +161881,7 @@ xOB
 bnB
 swb
 bnB
-xOB
+hkP
 kcG
 rhx
 hkP
