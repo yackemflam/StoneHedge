@@ -11,7 +11,7 @@
 	damtype = BURN
 	force = 15
 	hitsound = 'sound/blank.ogg'
-	sellprice = 900 //its bought for 1k so maybe its fine
+	sellprice = 200 //its bought for 1k so maybe its fine
 	dropshrink = 0.6
 
 	var/mob/current_owner
