@@ -51,7 +51,7 @@
 /datum/status_effect/buff/magic_sickness
 	id = "arcyne sickness"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/magic_sickness
-	effectedstats = list("strength" = -2, "perception" = -2, "constitution" = -2, "endurance" = -2, "speed" = -2, "fortune" = -2) //int is not effected because int effects attunement points themselves, that could trap you with arcyne sickness
+	effectedstats = list("strength" = -2, "constitution" = -2, "endurance" = -2) //int is not effected because int effects attunement points themselves, that could trap you with arcyne sickness
 	duration = -1
 
 /datum/status_effect/buff/magic_sickness/tick()
