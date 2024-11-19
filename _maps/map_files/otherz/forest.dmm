@@ -1859,6 +1859,12 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"kZ" = (
+/obj/effect/landmark/start/wandererlate,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Deepwoods"
+	})
 "ld" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
@@ -7297,6 +7303,12 @@
 /obj/item/candle/skull/lit,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
+"QE" = (
+/obj/effect/landmark/start/wandererlate,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Deepwoods"
+	})
 "QF" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/dirt/road,
@@ -44843,10 +44855,10 @@ NI
 EY
 AN
 AN
-uB
-Ja
-uB
-uB
+QE
+kZ
+QE
+QE
 hF
 NI
 NI
@@ -44976,10 +44988,10 @@ NI
 NI
 EY
 Ng
-Ja
-Ja
-Ja
-Ja
+kZ
+kZ
+kZ
+kZ
 hF
 NI
 QM
