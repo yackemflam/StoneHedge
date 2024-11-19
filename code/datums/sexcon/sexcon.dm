@@ -406,8 +406,8 @@
 	if(!user.cmode && prob(1)) //surprise heal burst at 1% chance
 		to_chat(user, span_greentextbig("I feel Viiritri smile at me."))
 		sexhealrand *= 5
-	user.adjustBruteLoss(-sexhealrand)
-	user.adjustFireLoss(-sexhealrand/2)
+	user.heal_wounds(sexhealrand)
+	user.heal_overall_damage(sexhealrand, sexhealrand/2, updating_health = TRUE)
 
 	//grant devotion through sex because who needs praying.
 	//not sure if it works right but i dont need to test cuz its asked to be commented out anyway, ffs.

@@ -22,7 +22,7 @@
 	user.make_sucking_noise()
 
 	target.heal_overall_damage(3,3,0, updating_health = TRUE)
-	user.sexcon.perform_sex_action(target, 2, 3, TRUE)
+	user.sexcon.perform_sex_action(target, 4, 3, TRUE)
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] ejaculates into [user]'s mouth!"))
 		target.sexcon.cum_into(oral = TRUE)

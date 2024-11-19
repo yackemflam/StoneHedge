@@ -21,7 +21,7 @@
 	user.make_sucking_noise()
 
 	target.heal_overall_damage(3,3,0, updating_health = TRUE)
-	user.sexcon.perform_sex_action(target, 2, 0, TRUE)
+	user.sexcon.perform_sex_action(target, 4, 0, TRUE)
 	target.sexcon.handle_passive_ejaculation()
 
 
