@@ -55,7 +55,7 @@
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 	H.verbs |= list(/mob/living/carbon/human/proc/request_outlaw, /mob/living/carbon/human/proc/request_law, /mob/living/carbon/human/proc/request_law_removal, /mob/living/carbon/human/proc/request_purge, /mob/living/carbon/human/proc/torture_victim)
-
+	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 /mob/living/carbon/human/proc/request_law()
 	set name = "Request Law"
 	set category = "Judge"
@@ -161,5 +161,3 @@
 			to_chat(span_warning("The lord has denied the request for declaring an outlaw!"))
 		return
 	make_outlaw(requested_outlaw)
-
-	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
