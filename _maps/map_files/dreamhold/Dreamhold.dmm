@@ -4048,6 +4048,10 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
+"dmR" = (
+/obj/structure/fluff/walldeco/wantedposter,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/indoors/shelter/bog)
 "dmS" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
@@ -8888,6 +8892,10 @@
 "hot" = (
 /turf/closed/wall/shroud,
 /area/rogue/outdoors/exposed/bath)
+"hoF" = (
+/obj/structure/fluff/walldeco/wantedposter,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/shelter/bog)
 "hoU" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
@@ -18327,6 +18335,10 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
+"oZJ" = (
+/obj/structure/roguemachine/bounty,
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/shelter/bog)
 "oZS" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
@@ -22643,6 +22655,16 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"szZ" = (
+/obj/structure/roguemachine/scomm{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "sAx" = (
 /obj/structure/spacevine,
 /turf/open/floor/rogue/grass,
@@ -24109,6 +24131,10 @@
 /obj/effect/mist,
 /turf/closed/wall/mineral/rogue/decostone/mossy,
 /area/rogue/outdoors/caves)
+"tKa" = (
+/obj/structure/fluff/walldeco/wantedposter,
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/shelter/bog)
 "tKd" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -27493,6 +27519,7 @@
 	})
 "wCp" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
+/obj/structure/roguemachine/bounty,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/bog)
 "wCG" = (
@@ -84572,7 +84599,7 @@ rxm
 iCo
 xQN
 dYB
-dYB
+szZ
 dYB
 dYB
 dYB
@@ -159371,7 +159398,7 @@ sib
 vlx
 vlx
 hcX
-wSW
+tKa
 wSW
 wSW
 wSW
@@ -162404,7 +162431,7 @@ hcX
 hcX
 hcX
 hcX
-giU
+dmR
 giU
 xkX
 hcX
@@ -162603,7 +162630,7 @@ pZa
 bFy
 giU
 hcX
-wSW
+oZJ
 wSW
 buH
 wSW
@@ -164007,7 +164034,7 @@ rjd
 oPy
 oPy
 hcX
-fMr
+hoF
 xnj
 fMr
 fMr
@@ -193398,11 +193425,11 @@ fSQ
 msK
 apk
 hnf
-fSQ
+oty
 msK
 apk
 hnf
-fSQ
+oty
 tKw
 cKB
 fSQ
