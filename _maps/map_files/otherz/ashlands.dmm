@@ -2114,7 +2114,7 @@
 	})
 "xP" = (
 /mob/living/simple_animal/hostile/morph,
-/turf/open/floor/rogue/dirt/road,
+/turf/open/water/swamp/deep,
 /area/rogue/under/cavewet)
 "xQ" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy/red/end,
@@ -3764,10 +3764,6 @@
 	first_time_text = "Underkeep";
 	name = "Underkeep"
 	})
-"SL" = (
-/mob/living/simple_animal/hostile/morph,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/cavewet)
 "SP" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/hexstone,
@@ -7376,7 +7372,7 @@ TY
 BM
 BM
 BM
-xP
+yR
 fg
 EW
 EW
@@ -7384,7 +7380,7 @@ BM
 BM
 EW
 EW
-EW
+xP
 Oq
 Oq
 EW
@@ -7504,7 +7500,7 @@ Ay
 tG
 kF
 Iw
-SL
+LC
 BM
 EW
 BM
