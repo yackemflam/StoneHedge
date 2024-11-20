@@ -33,7 +33,7 @@
 
 	// CLASS ARCHETYPES
 	H.adjust_blindness(-3)
-	var/classes = list("Life Cleric","War Cleric","Nature Cleric", "Cloistered Devout")
+	var/classes = list("Life Cleric","War Cleric","Nature Cleric", "Temple Devout")
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 
 	switch(classchoice)
@@ -84,6 +84,8 @@
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 			H.mind.AddSpell(new	/obj/effect/proc_holder/spell/targeted/churn)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/bladeward5e)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/conjure/createbonfire5e)
 		if("Nature Cleric")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a cleric of the nature domain."))
@@ -107,7 +109,7 @@
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/conjure_glowshroom)
 		// HEARTHSTONE ADD: cloistered cleric subclass (lighter armored and equipped)
-		if("Cloistered Devout")
+		if("Temple Devout")
 			// Devout start without the typical cleric medium/heavy armor shtick and without much in the way of weapons or skills to use them.
 			// They're better with miracles and regenerate devotion passively like the Priest does, however.
 			H.set_blindness(0)
@@ -118,12 +120,16 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 4, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 4, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 1, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
 			H.change_stat("intelligence", 4)
 			H.change_stat("strength", -2)
 			H.change_stat("perception", 2)
 			H.change_stat("speed", 1)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/guidance5e)
+			H.mind.AddSpell(new	/obj/effect/proc_holder/spell/targeted/churn)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/light5e)
 		// HEARTHSTONE ADDITION END
 
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
