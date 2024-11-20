@@ -47,7 +47,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/sword/silver/sabre/elf
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backl - /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
+	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	id = /obj/item/scomstone
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/signal_horn = 1)
