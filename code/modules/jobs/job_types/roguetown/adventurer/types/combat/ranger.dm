@@ -26,7 +26,7 @@
 			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 			cloak = /obj/item/clothing/cloak/raincloak/green
-			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltr = /obj/item/flashlight/flare/torch/lantern
 			backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1, /obj/item/reagent_containers/glass/bottle/rogue/trekkersdelight = 1)
@@ -34,7 +34,7 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 4, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, pick(4,5,5,6), TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 4, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)

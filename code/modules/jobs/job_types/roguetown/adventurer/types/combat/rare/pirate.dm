@@ -41,8 +41,8 @@
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 4, TRUE)
@@ -50,11 +50,12 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/labor/fishing, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/firearms, 3, TRUE)//YARR!
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/firearms, 4, TRUE)//YARR!
 	H.change_stat("strength", 2)
 	H.change_stat("constitution", -1)
 	H.change_stat("endurance", 1)
 	H.change_stat("speed", 2)
 	H.change_stat("fortune", 1)
+	H.change_stat("perception", 2)

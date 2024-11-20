@@ -19,8 +19,10 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	beltl = /obj/item/rogueweapon/huntingknife
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
+	neck = /obj/item/clothing/neck/roguetown/psicross/eora
 	r_hand = /obj/item/rogueweapon/woodstaff
+	backpack_contents = list(/obj/item/scrying =1, /obj/item/rogueweapon/huntingknife/idagger/steel =1, /obj/item/toy/cards/deck/tarot =1, /obj/item/slimepotion/lovepotion =1,)
+
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 4, TRUE)

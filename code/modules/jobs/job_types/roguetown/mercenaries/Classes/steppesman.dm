@@ -22,12 +22,12 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	backr = /obj/item/storage/backpack/rogue/satchel
 	l_hand = /obj/item/rogueweapon/shield/buckler
 	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
 	if(H.mind)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, pick(4,5,5,6), TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4, TRUE)
@@ -46,7 +46,7 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 3, TRUE) //Hearthstone change.
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
 	H.change_stat("endurance", 2)
