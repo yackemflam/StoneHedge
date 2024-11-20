@@ -467,7 +467,7 @@
 	})
 "auK" = (
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/obj/structure/roguemachine/camera/right,
+/obj/structure/closet/crate/chest/dungeon/mimic,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "auO" = (
@@ -977,7 +977,9 @@
 	first_time_text = "Stonehedge"
 	})
 "aNY" = (
-/obj/structure/fluff/walldeco/rpainting/crown,
+/obj/structure/roguemachine/drugmachine{
+	icon_state = "submit_anim"
+	},
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors/shelter/town)
 "aNZ" = (
@@ -1596,6 +1598,7 @@
 /obj/structure/ladder{
 	climb_time = 5
 	},
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/shelter/town)
 "bmm" = (
@@ -4364,6 +4367,7 @@
 "dzN" = (
 /obj/item/roguegem/yellow,
 /obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner,
+/obj/structure/closet/crate/chest/refilling/mimic,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "dzU" = (
@@ -5229,6 +5233,7 @@
 "ekG" = (
 /obj/item/roguegem/violet,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/structure/closet/crate/chest/refilling/mimic,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "ekU" = (
@@ -5688,8 +5693,10 @@
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/shelter/town)
 "eFh" = (
-/obj/structure/roguemachine/steward,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/item/bodypart/r_arm/rprosthetic/clock,
+/obj/item/bodypart/l_leg/rprosthetic/clock,
+/obj/item/bodypart/r_leg/rprosthetic/clock,
+/obj/item/bodypart/l_arm/rprosthetic/clock,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
@@ -10352,6 +10359,7 @@
 	icon_state = "glowshroom2"
 	},
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/structure/roguemachine/camera/right,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "ixO" = (
@@ -14372,11 +14380,6 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/shelter/town)
-"lMi" = (
-/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/town/vault)
 "lMT" = (
 /obj/effect/mist,
 /obj/effect/mist,
@@ -17002,7 +17005,6 @@
 /obj/item/scomstone,
 /obj/item/scomstone,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/obj/item/bodypart/r_leg/rprosthetic/clock,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "nPy" = (
@@ -19082,7 +19084,11 @@
 "pKP" = (
 /obj/item/roguegem/blue,
 /obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner,
-/obj/item/bodypart/r_arm/rprosthetic/clock,
+/obj/structure/roguemachine/steward{
+	keycontrol = "veteran";
+	locked = 1
+	},
+/obj/structure/roguemachine/camera/right,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "pKQ" = (
@@ -20194,6 +20200,7 @@
 "qAU" = (
 /obj/item/roguegem/red,
 /obj/structure/closet/crate/chest/refilling/weapon,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "qBH" = (
@@ -24859,7 +24866,7 @@
 "umc" = (
 /obj/item/roguekey/vault,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/obj/item/bodypart/l_leg/rprosthetic/clock,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "umj" = (
@@ -25057,9 +25064,11 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/exposed/tavern)
 "uuM" = (
-/obj/machinery/light/rogue/wallfire/candle/r,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/indoors/shelter/town)
+/obj/structure/closet/crate/chest/dungeon/mimic,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/structure/roguemachine/camera/right,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/town/vault)
 "uvi" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -26476,14 +26485,15 @@
 	name = "far stonehedge"
 	})
 "vFh" = (
-/obj/structure/roguemachine/steward{
-	keycontrol = "veteran"
+/obj/structure/table/wood{
+	icon_state = "tablewood1";
+	dir = 1
 	},
-/turf/open/floor/carpet/royalblack,
-/area/rogue/indoors/town/garrison{
-	first_time_text = "Adventurers Guild";
-	name = "Adventurers Guild"
-	})
+/obj/structure/bars{
+	icon_state = "barsbent"
+	},
+/turf/open/floor/rogue/ruinedwood/herringbone,
+/area/rogue/indoors/shelter/town)
 "vFo" = (
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /turf/open/floor/rogue/naturalstone,
@@ -27080,10 +27090,9 @@
 /turf/closed/wall/mineral/rogue/decostone,
 /area/rogue/outdoors/river)
 "wkE" = (
-/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/obj/item/bodypart/l_arm/rprosthetic/clock,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/town/vault)
+/obj/structure/fluff/walldeco/rpainting/crown,
+/turf/closed/wall/mineral/rogue/decowood,
+/area/rogue/indoors/shelter/town)
 "wkQ" = (
 /obj/item/roguebin/water,
 /turf/open/floor/rogue/cobble,
@@ -86386,8 +86395,8 @@ ifi
 rxm
 rTO
 jJW
-lMi
 vFo
+uuM
 rTO
 mgS
 bCN
@@ -86588,7 +86597,7 @@ ifi
 rxm
 rTO
 sJF
-wkE
+vFo
 qAU
 rTO
 stf
@@ -121691,7 +121700,7 @@ acu
 vUx
 vUx
 vUx
-iGa
+jsd
 jsd
 jsd
 qiM
@@ -122705,7 +122714,7 @@ nXV
 jsd
 xtu
 xNt
-jsd
+iGa
 clt
 pPc
 naI
@@ -127128,7 +127137,7 @@ gar
 qBY
 gar
 aNY
-uuM
+mtr
 blV
 jxO
 jxO
@@ -127330,7 +127339,7 @@ gar
 uXz
 leL
 leL
-leL
+wkE
 leL
 tvm
 xOB
@@ -150831,7 +150840,7 @@ aZy
 aZy
 aZy
 mJS
-vFh
+uhm
 uhm
 uhm
 pFc
@@ -161670,7 +161679,7 @@ leL
 aaq
 bnB
 bnB
-xOB
+vFh
 iqa
 fGs
 kRW
