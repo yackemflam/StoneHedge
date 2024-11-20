@@ -48,9 +48,9 @@
 
 	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	if(user.sexcon.considered_limp())
-		user.sexcon.perform_sex_action(target, 1.2, 4, FALSE)
+		user.sexcon.perform_sex_action(target, 2.4, 4, FALSE)
 	else
-		user.sexcon.perform_sex_action(target, 2.4, 9, FALSE)
+		user.sexcon.perform_sex_action(target, 4.8, 9, FALSE)
 	target.sexcon.handle_passive_ejaculation()
 	user.sexcon.handle_passive_ejaculation()
 

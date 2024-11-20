@@ -21,7 +21,7 @@
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s throat."))
 	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 
-	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
+	user.sexcon.perform_sex_action(user, 4, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s throat!"))
 		user.sexcon.cum_into(oral = TRUE)

@@ -139,7 +139,7 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 GLOBAL_LIST_INIT(mercenary_positions, list(
 	"Mercenary",
 	"Sellsword",
-	"Guild Captain",
+	"Guildmaster",
 ))
 
 GLOBAL_LIST_INIT(apprentices_positions, list(

@@ -277,6 +277,15 @@
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
 
+/obj/item/clothing/under/roguetown/chainlegs/iron/skirt
+	name = "iron chain skirt"
+	icon = 'modular_stonehedge/icons/armor/pants.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
+	icon_state = "chain_skirt"
+	item_state = "chain_skirt"
+	color = "#9EA48E"
+	genitalaccess = TRUE
+
 /obj/item/clothing/under/roguetown/chainlegs/skirt
 	name = "chain skirt"
 	icon = 'modular_stonehedge/icons/armor/pants.dmi'

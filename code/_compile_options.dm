@@ -12,8 +12,8 @@
 //0 test
 //12 minutes norma
 //#define ROUNDTIMERBOAT (300 MINUTES)
-#define INITIAL_ROUND_TIMER (180 MINUTES) //3 hours
-#define ROUND_EXTENSION_TIME (60 MINUTES)
+#define INITIAL_ROUND_TIMER (120 MINUTES) //2 hours
+#define ROUND_EXTENSION_TIME (30 MINUTES)
 
 #define MODE_RESTART
 //comment out if you want to restart the server instead of shutting down

@@ -31,9 +31,9 @@
 		playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 
 	if(target.sexcon.considered_limp())
-		user.sexcon.perform_sex_action(target, 1.2, 4, TRUE)
+		user.sexcon.perform_sex_action(target, 2.4, 4, TRUE)
 	else
-		user.sexcon.perform_sex_action(target, 2.4, 9, TRUE)
+		user.sexcon.perform_sex_action(target, 4.8, 9, TRUE)
 	target.sexcon.handle_passive_ejaculation()
 	user.sexcon.handle_passive_ejaculation()
 

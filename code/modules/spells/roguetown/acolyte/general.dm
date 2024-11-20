@@ -115,7 +115,7 @@
 			else
 				target.visible_message(span_info("A choral sound comes from above and [target] is healed!"), span_notice("I am bathed in healing choral hymns!"))
 
-		var/healing = 2.5
+		var/healing = 5
 		if (conditional_buff)
 			to_chat(user, "Channeling my patron's power is easier in these conditions!")
 			healing += situational_bonus
@@ -124,6 +124,7 @@
 			var/mob/living/carbon/C = target
 			var/datum/status_effect/buff/healing/heal_effect = C.apply_status_effect(/datum/status_effect/buff/healing)
 			heal_effect.healing_on_tick = healing
+			target.blood_volume += BLOOD_VOLUME_SURVIVE/4
 		else
 			target.adjustBruteLoss(-healing*10)
 			target.adjustFireLoss(-healing*10)
@@ -132,7 +133,7 @@
 
 // Miracle
 /obj/effect/proc_holder/spell/invoked/heal
-	name = "Fortify"
+	name = "Rejuvenate"
 	overlay_state = "astrata"
 	releasedrain = 30
 	chargedrain = 0
@@ -172,9 +173,18 @@
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
 			C.apply_status_effect(/datum/status_effect/buff/fortify)
+			var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(user.zone_selected))
+			if(affecting)
+				if(affecting.heal_damage(30, 30))
+					C.update_damage_overlays()
+				if(affecting.heal_wounds(30))
+					C.update_damage_overlays()
 		else
 			target.adjustBruteLoss(-50)
 			target.adjustFireLoss(-50)
+		target.adjustToxLoss(-30)
+		target.adjustOxyLoss(-30)
+		target.blood_volume += BLOOD_VOLUME_SURVIVE
 		return TRUE
 	return FALSE
 
