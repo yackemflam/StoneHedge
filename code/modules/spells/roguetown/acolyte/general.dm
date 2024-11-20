@@ -115,7 +115,7 @@
 			else
 				target.visible_message(span_info("A choral sound comes from above and [target] is healed!"), span_notice("I am bathed in healing choral hymns!"))
 
-		var/healing = 5
+		var/healing = 3
 		if (conditional_buff)
 			to_chat(user, "Channeling my patron's power is easier in these conditions!")
 			healing += situational_bonus
