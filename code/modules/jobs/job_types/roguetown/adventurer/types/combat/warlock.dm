@@ -18,7 +18,8 @@
 	H.adjust_blindness(-3)
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e)
-		H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn) // base arcane skill means all warlocks get 2 points to spend
+		H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
+		H.mind.adjust_spellpoints(1) // all warlocks get at least 3 points to spend
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
@@ -91,19 +92,22 @@
 			H.mind.RemoveSpell(/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e/empowered)
 			H.change_stat("intelligence", 1)
-			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+			H.mind.adjust_spellpoints(1)
 		if("love") //ring of soulbinding
 			H.put_in_hands(givering(H))
 			ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
+			H.change_stat("endurance", 1)
 			H.set_blindness(0)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/eoracurse)
 		if("health") //make healthier
 			givehealing(H, patronchoice)
+			H.change_stat("constitution", 1)
 			H.set_blindness(0)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		if("wealth") //Pact of the Talisman
 			ADD_TRAIT(H, TRAIT_SEEPRICES, type)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
 			H.put_in_hands(giveamulet(patronchoice), FALSE)
 			beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 			H.set_blindness(0)
@@ -112,6 +116,7 @@
 			H.set_blindness(0)
 		if("revenge") //give curse
 			givecurse(H, patronchoice)
+			H.change_stat("speed", 1)
 			H.set_blindness(0)
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/archfeypatron(mob/living/carbon/human/H, patronchoice)
@@ -512,6 +517,7 @@
 ///////////////////////////////
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/giveweapon(mob/living/carbon/human/H, patronchoice)
+	H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 3, TRUE)
 	var/item_pick = pick(1,2,3,4,5,6,7,8,9,10)
 	var/item_type
 	switch(item_pick)
