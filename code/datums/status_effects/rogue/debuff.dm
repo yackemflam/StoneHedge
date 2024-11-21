@@ -69,13 +69,13 @@
 
 /atom/movable/screen/alert/status_effect/debuff/stealthcd
 	name = "Stealth Broken"
-	desc = "I've recently dealt a sneak attack and can't sneak again for a short while"
+	desc = "I've either been found or recently dealt a sneak attack and can't sneak again for a short while"
 	icon = 'modular_stonehedge/icons/mob/screen_alert.dmi'
 	icon_state = "stealthcd"
 
 /datum/status_effect/debuff/stealthcd/on_apply()
 	if(owner.mind)
-		duration = duration - (owner.mind.get_skill_level(/datum/skill/misc/sneaking))
+		duration = duration - ((owner.mind.get_skill_level(/datum/skill/misc/sneaking)) SECONDS)
 	if(owner.m_intent == MOVE_INTENT_SNEAK)
 		owner.toggle_rogmove_intent(MOVE_INTENT_WALK)
 		owner.update_sneak_invis()

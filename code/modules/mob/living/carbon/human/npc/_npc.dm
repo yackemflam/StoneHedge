@@ -452,7 +452,7 @@
 /mob/living/proc/npc_detect_sneak(mob/living/target, extra_prob = 0)
 	if (target.alpha > 100)
 		return TRUE
-	var/probby = 4 * STAPER //this is 10 by default - npcs get an easier time to detect to slightly thwart cheese
+	var/probby = 3 * STAPER //this is 10 by default - npcs get an easier time to detect to slightly thwart cheese
 	probby += extra_prob
 	var/sneak_bonus = 0
 	if(target.mind)
@@ -474,9 +474,8 @@
 
 	if (prob(probby))
 		// whoops it saw us
-		target.mob_timers[MT_FOUNDSNEAK] = world.time
 		to_chat(target, span_danger("[src] sees me! I'm found!"))
-		target.update_sneak_invis(TRUE)
+		target.apply_status_effect(/datum/status_effect/debuff/stealthcd)
 		return TRUE
 	else
 		return FALSE

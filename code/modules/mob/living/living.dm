@@ -1925,7 +1925,7 @@
 				if(M.m_intent == MOVE_INTENT_SNEAK)
 					emote("huh")
 					to_chat(M, span_danger("[src] sees me! I'm found!"))
-					M.mob_timers[MT_FOUNDSNEAK] = world.time
+					M.apply_status_effect(/datum/status_effect/debuff/stealthcd)
 			else
 				if(M.m_intent == MOVE_INTENT_SNEAK)
 					if(M.client?.prefs.showrolls)
