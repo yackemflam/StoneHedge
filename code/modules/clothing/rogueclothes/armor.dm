@@ -137,6 +137,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini/bra
 	name = "iron chainmail bra"
+	icon = 'modular_stonehedge/icons/armor/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "chainbra"
 	item_state = "chainbra"
 	color = "#9EA48E"
