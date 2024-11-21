@@ -20,8 +20,6 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	density = TRUE
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	destroy_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
-	var/ready = FALSE
-	var/last_activated
 	var/detect_range = 6
 	var/spawn_range = 3
 	var/restart_time = 5 MINUTES
@@ -39,33 +37,28 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 
 /obj/structure/mobspawner/Initialize()
 	. = ..()
-	proximity_monitor = new(src, 6)
-	ready = TRUE
 	START_PROCESSING(SSobj, src)
-
+	addtimer(CALLBACK(src, PROC_REF(tryprocess)), rand(4 SECONDS, 8 SECONDS), TIMER_STOPPABLE)
 
 /obj/structure/mobspawner/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/structure/mobspawner/process()
-	if(world.time > last_activated + restart_time)
-		ready = TRUE
-	else
-		return
-	if(ready)
-		for(var/mob/living/M in view(detect_range, src))
+/obj/structure/mobspawner/proc/tryprocess()
+	for(var/mob/living/M in view(detect_range, src))
+		if(M)
 			if((objfaction[1] in M.faction) || M.incapacitated() || M.restrained() || M.IsSleeping() || (M.stat == DEAD) || M.InFullCritical())
 				continue
 			else
 				playsound(src, pick(spawn_sound), 100)
-//				shake_camera(M, 3, 1)
+	//			shake_camera(M, 3, 1)
 				M.visible_message("<span class='danger'>[text_faction] [spawn_text] [src]</span>")
 				activated = TRUE
 				break
 	if(activated)
 		activate()
 	else
+		addtimer(CALLBACK(src, PROC_REF(tryprocess)), rand(4 SECONDS, 8 SECONDS), TIMER_STOPPABLE)
 		return
 /*/obj/structure/mobspawner/HasProximity(atom/movable/AM)
 	if(ready)
@@ -78,8 +71,9 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 
 /obj/structure/mobspawner/proc/activate()
 	for(var/mob/living/M in view(detect_range, src))
-		shake_camera(M, 3, 1)
-	last_activated = world.time
+		if(M.mind)
+			shake_camera(M, 3, 1)
+	addtimer(CALLBACK(src, PROC_REF(tryprocess)), restart_time, TIMER_STOPPABLE)
 	mobs_to_spawn = rand(min_mobs, max_mobs)
 	while(mobs < mobs_to_spawn)
 		spawn_mob()
@@ -97,13 +91,12 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 		var/spawnmob = pickweight(mob_types)
 		mymobs += new spawnmob(spawning_turf)
 		mobs ++
-		for(var/mob/living/c in mymobs)
-			c.del_on_deaggro = (restart_time - 1 MINUTES)
+		for(var/mob/living/c in mymobs)	
 			c.faction = objfaction.Copy()
 			if(QDELETED(c))
-				mymobs.Remove(c)
+				mymobs -= c
 			else if(c.stat == DEAD)
-				mymobs.Remove(c)
+				mymobs -= c
 				qdel(c)
 	if(!spawning_turf)
 		return
@@ -111,7 +104,6 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 /obj/structure/mobspawner/proc/reset()
 	mobs_to_spawn = 3
 	mobs = 0
-	ready = FALSE
 	activated = FALSE
 
 
@@ -156,8 +148,6 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	desc = ""
 	anchored = TRUE
 	density = FALSE
-	var/ready = FALSE
-	var/last_activated
 	var/mobs = 0
 	var/detect_range = 6
 	var/spawn_range = 3
@@ -177,23 +167,18 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 
 /obj/effect/mobspawner/Initialize()
 	. = ..()
-	proximity_monitor = new(src, 6)
-	ready = TRUE
 	picked_string = pick(notification_strings)
 	START_PROCESSING(SSobj, src)
+	addtimer(CALLBACK(src, PROC_REF(tryprocess)), rand(4 SECONDS, 8 SECONDS), TIMER_STOPPABLE)
 
 /obj/effect/mobspawner/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/effect/mobspawner/process()
-	if(world.time > last_activated + restart_time)
-		ready = TRUE
-	else
-		return
-		picked_string = pick(notification_strings)
-	if(ready)
-		for(var/mob/living/M in view(detect_range, src))
+/obj/effect/mobspawner/proc/tryprocess()
+	picked_string = pick(notification_strings)
+	for(var/mob/living/M in view(detect_range, src))
+		if(M)
 			if((objfaction[1] in M.faction) || M.incapacitated() || M.restrained() || M.IsSleeping() || (M.stat == DEAD) || M.InFullCritical())
 				continue
 			else
@@ -204,11 +189,15 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 				break
 	if(activated)
 		activate()
+	else
+		addtimer(CALLBACK(src, PROC_REF(tryprocess)), rand(4 SECONDS, 8 SECONDS), TIMER_STOPPABLE)
+		return
 
 /obj/effect/mobspawner/proc/activate()
 	for(var/mob/living/M in view(detect_range, src))
-		shake_camera(M, 3, 1)
-	last_activated = world.time
+		if(M.mind)
+			shake_camera(M, 3, 1)
+	addtimer(CALLBACK(src, PROC_REF(tryprocess)), restart_time, TIMER_STOPPABLE)
 	mobs_to_spawn = rand(min_mobs, max_mobs)
 	while(mobs < mobs_to_spawn)
 		spawn_mob()
@@ -227,13 +216,12 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 		var/spawnmob = pickweight(mob_types)
 		mymobs += new spawnmob(spawning_turf)
 		mobs ++
-		for(var/mob/living/c in mymobs)
-			c.del_on_deaggro = (restart_time - 1 MINUTES)
+		for(var/mob/living/c in mymobs)	
 			c.faction = objfaction.Copy()
 			if(QDELETED(c))
-				mymobs.Remove(c)
+				mymobs -= c
 			else if(c.stat == DEAD)
-				mymobs.Remove(c)
+				mymobs -= c
 				qdel(c)
 		mobs ++
 	if(!spawning_turf)
@@ -242,7 +230,6 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 /obj/effect/mobspawner/proc/reset()
 	mobs_to_spawn = 3
 	mobs = 0
-	ready = FALSE
 	activated = FALSE
 
 
@@ -259,8 +246,6 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	icon_state = "hole"
 	anchored = TRUE
 	density = FALSE
-	ready = FALSE
-	last_activated
 	mobs = 0
 	detect_range = 6
 	spawn_range = null
@@ -282,10 +267,9 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 
 /obj/effect/mobspawner/hole/Initialize()
 	. = ..()
-	proximity_monitor = new(src, 6)
-	ready = TRUE
 	picked_string = pick(notification_strings)
 	START_PROCESSING(SSobj, src)
+	addtimer(CALLBACK(src, PROC_REF(tryprocess)), rand(4 SECONDS, 8 SECONDS), TIMER_STOPPABLE)
 
 /obj/effect/mobspawner/hole/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -301,12 +285,10 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 				new I (get_turf(src))
 	return ..()
 
-/obj/effect/mobspawner/hole/process()
-	if(world.time > last_activated + restart_time)
-		ready = TRUE
-		picked_string = pick(notification_strings)
-	if(ready)
-		for(var/mob/living/M in view(detect_range, src))
+/obj/effect/mobspawner/hole/tryprocess()
+	picked_string = pick(notification_strings)
+	for(var/mob/living/M in view(detect_range, src))
+		if(M)
 			if((objfaction[1] in M.faction) || M.incapacitated() || M.restrained() || M.IsSleeping() || (M.stat == DEAD) || M.InFullCritical())
 				continue
 			else
@@ -314,14 +296,16 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 				break
 	if(activated)
 		activate()
+	else
+		addtimer(CALLBACK(src, PROC_REF(tryprocess)), rand(4 SECONDS, 8 SECONDS), TIMER_STOPPABLE)
+		return
 
 /obj/effect/mobspawner/hole/activate()
-	last_activated = world.time
+	addtimer(CALLBACK(src, PROC_REF(tryprocess)), restart_time, TIMER_STOPPABLE)
 	mobs_to_spawn = rand(min_mobs, max_mobs)
 	while(mobs < mobs_to_spawn)
 		spawn_mob()
 		if(mobs >= mobs_to_spawn)
-			ready = FALSE
 			reset()
 			break
 
@@ -333,20 +317,17 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	mymobs += new spawnmob(get_turf(src))
 	mobs ++
 	for(var/mob/living/c in mymobs)
-		c.del_on_deaggro = (restart_time - 1 MINUTES)
 		c.faction = objfaction.Copy()
 		if(QDELETED(c))
-			mymobs.Remove(c)
+			mymobs -= c
 		else if(c.stat == DEAD)
-			mymobs.Remove(c)
+			mymobs -= c
 			qdel(c)
 
 /obj/effect/mobspawner/hole/reset()
 	mobs_to_spawn = 3
 	mobs = 0
-	ready = FALSE
 	activated = FALSE
-
 
 /obj/effect/mobspawner/hole/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/rogueweapon/shovel))
@@ -358,6 +339,7 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 			QDEL_NULL(attacking_shovel.heldclod)
 			src.visible_message("<span class='danger'>[user] shoveled some dirt clods into [src]!</span>")
 			fill ++
+			attacking_shovel.update_icon()
 			if(fill >= filltoseal)
 				playsound(loc,'sound/foley/break_stone.ogg', 100, TRUE)
 				src.visible_message("<span class='danger'>[user] seals [src] with dirts!</span>")

@@ -120,7 +120,6 @@
 	icon_state = "hole_spider"
 	anchored = TRUE
 	density = FALSE
-	ready = FALSE
 	last_activated
 	mobs = 0
 	detect_range = 6
@@ -172,8 +171,6 @@
 	icon_state = "hole_burrow"
 	anchored = TRUE
 	density = FALSE
-	ready = FALSE
-	last_activated
 	mobs = 0
 	detect_range = 6
 	spawn_range = null
