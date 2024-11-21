@@ -16,7 +16,7 @@
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/bog)
 	outfit = /datum/outfit/job/roguetown/bogmaster
 
-	give_bank_account = 350
+	give_bank_account = 2500
 	min_pq = 10
 	max_pq = null
 	cmode_music = 'sound/music/combat_bog.ogg'
