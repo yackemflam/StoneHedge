@@ -16,7 +16,7 @@
 
 	display_order = JDO_DRUID
 	give_bank_account = FALSE
-	min_pq = 10
+	min_pq = 15
 	max_pq = null
 
 /datum/outfit/job/roguetown/druid
