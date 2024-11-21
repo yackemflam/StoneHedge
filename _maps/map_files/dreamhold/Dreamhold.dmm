@@ -1494,15 +1494,6 @@
 /area/rogue/outdoors/exposed/tavern{
 	name = "Tavern Stables"
 	})
-"bfM" = (
-/obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/effect/mobspawner/monster_spawner_wolfs,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/woods{
-	first_time_text = "The Twilight Woods"
-	})
 "bgc" = (
 /obj/structure/stairs,
 /obj/structure/fluff/railing/wood{
@@ -3429,11 +3420,6 @@
 /obj/item/clothing/cloak/apron/blacksmith,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/shelter/town)
-"cQM" = (
-/obj/effect/mist,
-/obj/effect/mobspawner/monster_spawner_minotaurs,
-/turf/open/floor/rogue/dirt/ambush,
-/area/rogue/outdoors/caves)
 "cRk" = (
 /obj/structure/flora/roguetree/wise,
 /turf/open/floor/rogue/grass,
@@ -4660,11 +4646,6 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/water/swamp,
 /area/rogue/under/cavewet/bogcaves)
-"dMR" = (
-/obj/effect/mist,
-/obj/effect/mobspawner/monster_spawner_minotaurs,
-/turf/closed/wall/mineral/rogue/stone/moss,
-/area/rogue/outdoors/caves)
 "dNq" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
@@ -5755,10 +5736,6 @@
 "eCz" = (
 /turf/open/floor/rogue/twig/platform,
 /area/rogue/indoors/shelter/rtfield)
-"eDD" = (
-/obj/effect/mobspawner/skeleton_spawner_hard,
-/turf/open/floor/rogue/hexstone,
-/area/rogue/outdoors/caves)
 "eEn" = (
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/woods{
@@ -6859,10 +6836,6 @@
 "fro" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/indoors/shelter/town/roofs)
-"fsD" = (
-/obj/effect/mobspawner/monster_spawner_animals,
-/turf/open/floor/rogue/dirt,
-/area/rogue/under/cavewet/bogcaves)
 "fsH" = (
 /obj/structure/bearpelt,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -6999,10 +6972,6 @@
 /obj/item/bedsheet/rogue/wool,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/shelter/town)
-"fxR" = (
-/obj/effect/mobspawner/monster_spawner_animals,
-/turf/open/floor/rogue/grass,
-/area/rogue/under/cavewet/bogcaves)
 "fxW" = (
 /turf/closed/wall/shroud,
 /area/rogue)
@@ -8533,11 +8502,6 @@
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
 	})
-"gSE" = (
-/obj/effect/mist,
-/obj/effect/mobspawner/monster_spawner_minotaurs,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/caves)
 "gTg" = (
 /obj/effect/decal/border/ruinedwood/inverted,
 /turf/open/floor/rogue/tile,
@@ -11163,10 +11127,6 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/bath)
-"jbV" = (
-/obj/effect/mobspawner/skeleton_spawner_hard,
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/under/cavewet/bogcaves)
 "jcc" = (
 /obj/effect/spawner/roguemap/shroud,
 /obj/effect/spawner/roguemap/shroud,
@@ -16025,13 +15985,6 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/indoors/shelter/mountains)
-"mTA" = (
-/obj/structure/flora/grass/jungle/b,
-/obj/effect/mobspawner/monster_spawner_wolfs,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/woods{
-	first_time_text = "The Twilight Woods"
-	})
 "mUC" = (
 /obj/item/natural/rock/coal,
 /turf/open/floor/rogue/naturalstone,
@@ -17776,11 +17729,6 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
-"oqv" = (
-/obj/effect/mist,
-/obj/effect/mobspawner/monster_spawner_minotaurs,
-/turf/closed/mineral/rogue/bedrock,
-/area/rogue/outdoors/caves)
 "orv" = (
 /obj/effect/wisp,
 /obj/structure/spacevine,
@@ -22008,13 +21956,6 @@
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/library)
-"rHw" = (
-/obj/structure/flora/roguegrass,
-/obj/effect/mobspawner/monster_spawner_wolfs,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/woods{
-	first_time_text = "The Twilight Woods"
-	})
 "rHx" = (
 /obj/structure/bookcase,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
@@ -22925,12 +22866,6 @@
 	name = "Shores of the Emerald Coast";
 	first_time_text = "Emerald Shores"
 	})
-"swI" = (
-/obj/structure/flora/grass/jungle/b,
-/obj/effect/mist,
-/obj/effect/mobspawner/monster_spawner_minotaurs,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/outdoors/caves)
 "swR" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -26435,13 +26370,6 @@
 /area/rogue/outdoors/exposed/tavern{
 	name = "Tavern Stables"
 	})
-"vhh" = (
-/obj/effect/mobspawner/skeleton_spawner_hard,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/beach{
-	name = "Shores of the Emerald Coast";
-	first_time_text = "Emerald Shores"
-	})
 "vhv" = (
 /obj/structure/flora/newleaf{
 	icon_state = "center-leaf2"
@@ -29392,14 +29320,6 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
-	})
-"xMi" = (
-/obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/effect/mobspawner/monster_spawner_wolfs,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/woods{
-	first_time_text = "The Twilight Woods"
 	})
 "xMj" = (
 /obj/structure/spacevine/dendor,
@@ -40977,7 +40897,7 @@ rOl
 viu
 ndh
 viu
-fxR
+viu
 viu
 viu
 viu
@@ -40995,7 +40915,7 @@ viu
 tmR
 viu
 viu
-fxR
+viu
 viu
 rOl
 rOl
@@ -47456,7 +47376,7 @@ viu
 viu
 ewO
 ewO
-fsD
+rOl
 rOl
 qvi
 cCE
@@ -49668,7 +49588,7 @@ amU
 amU
 dCi
 ewO
-fsD
+rOl
 rOl
 rOl
 qvi
@@ -52508,7 +52428,7 @@ amU
 amU
 wSG
 rOl
-fsD
+rOl
 rOl
 amU
 pla
@@ -54305,7 +54225,7 @@ amU
 amU
 amU
 pPv
-fsD
+rOl
 rOl
 qvI
 pKp
@@ -55698,7 +55618,7 @@ oCe
 jQN
 toF
 vcQ
-jbV
+vcQ
 qvI
 qvI
 qvI
@@ -56544,7 +56464,7 @@ amU
 amU
 wSG
 rOl
-fsD
+rOl
 rOl
 viu
 bLQ
@@ -56719,7 +56639,7 @@ cvK
 irD
 vcQ
 vcQ
-jbV
+vcQ
 vcQ
 mWG
 qvI
@@ -58323,7 +58243,7 @@ oCe
 oCe
 qvI
 pgX
-jbV
+vcQ
 vMg
 vMg
 vMg
@@ -58343,7 +58263,7 @@ vMg
 vcQ
 qvI
 mWG
-jbV
+vcQ
 mWB
 vMg
 jAd
@@ -59548,7 +59468,7 @@ cvK
 irD
 irD
 vcQ
-jbV
+vcQ
 vcQ
 vcQ
 vMg
@@ -60149,7 +60069,7 @@ jQN
 jQN
 vMg
 jAd
-jbV
+vcQ
 qvI
 jAd
 vMg
@@ -82504,7 +82424,7 @@ rzL
 rzL
 hfS
 gEX
-oqv
+gEX
 owh
 gEX
 hfS
@@ -82711,7 +82631,7 @@ rzL
 hfS
 hfS
 gEX
-swI
+bTd
 owh
 owh
 rxm
@@ -83312,7 +83232,7 @@ owh
 rzL
 hfS
 bTd
-swI
+bTd
 owh
 hfS
 gEX
@@ -83507,7 +83427,7 @@ owh
 hfS
 gEX
 owh
-dMR
+owh
 owh
 gEX
 owh
@@ -91380,7 +91300,7 @@ vrx
 vrx
 vrx
 vrx
-gSE
+vrx
 nVt
 vrx
 nVt
@@ -92259,7 +92179,7 @@ rxm
 lyF
 aYY
 aoy
-eDD
+aoy
 aoy
 nVt
 lyF
@@ -92874,7 +92794,7 @@ aoy
 aoy
 aoy
 aoy
-eDD
+aoy
 aoy
 aoy
 sOW
@@ -92987,7 +92907,7 @@ vrx
 hfS
 nVt
 qXK
-cQM
+rer
 vrx
 vrx
 vbT
@@ -95496,7 +95416,7 @@ tde
 oAj
 dqn
 dqn
-vhh
+dqn
 mDF
 jmV
 tde
@@ -111351,7 +111271,7 @@ kHM
 mVp
 jsM
 gXZ
-xMi
+yeP
 kHM
 jsM
 tfW
@@ -112357,7 +112277,7 @@ mVp
 miB
 sAx
 eUf
-bfM
+rpv
 wtN
 oZS
 eVA
@@ -112365,7 +112285,7 @@ kbB
 eVA
 mET
 wtN
-rHw
+oZS
 qHb
 mdB
 mVp
@@ -113371,7 +113291,7 @@ kHM
 mVp
 jsM
 qHb
-mTA
+kHM
 kHM
 jsM
 qmk

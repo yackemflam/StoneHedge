@@ -4871,10 +4871,6 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods/overgrownfort)
-"CP" = (
-/obj/effect/mobspawner/skeleton_spawner_hard,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods/overgrownfort)
 "CR" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/roguegrass,
@@ -7232,10 +7228,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"Qm" = (
-/obj/effect/mobspawner/skeleton_spawner_simple,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods/overgrownfort)
 "Qo" = (
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2"
@@ -7435,10 +7427,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"RI" = (
-/obj/effect/mobspawner/skeleton_spawner_simple,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/woods/overgrownfort)
 "RK" = (
 /obj/structure/flora/roguegrass/maneater/real,
 /obj/structure/flora/newtree,
@@ -8319,10 +8307,6 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave/underdark)
-"Xx" = (
-/obj/effect/mobspawner/skeleton_spawner_hard,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/woods/overgrownfort)
 "Xz" = (
 /obj/structure/fluff/statue/myth,
 /turf/open/floor/bronze,
@@ -22148,7 +22132,7 @@ iB
 aZ
 bK
 bK
-Xx
+bK
 aZ
 hd
 wT
@@ -23075,7 +23059,7 @@ Ly
 aZ
 BJ
 BJ
-CP
+BJ
 iB
 iB
 eE
@@ -23480,7 +23464,7 @@ iB
 lC
 aZ
 BJ
-RI
+bK
 BJ
 wT
 aZ
@@ -24279,7 +24263,7 @@ iB
 iB
 Jt
 bK
-Qm
+BJ
 BJ
 aZ
 Ly
@@ -41304,7 +41288,7 @@ CM
 BP
 BJ
 BJ
-Qm
+BJ
 mD
 BP
 Ly
@@ -41837,7 +41821,7 @@ BJ
 BP
 wT
 bK
-Qm
+BJ
 BP
 BP
 Ud
