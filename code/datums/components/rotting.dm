@@ -120,7 +120,8 @@
 			T.add_pollutants(/datum/pollutant/rot, 5)
 	if(amount > 25 MINUTES)
 		visible_message(span_notice("[src] decomposes..."))
-		qdel(src)
+		qdel(L)
+		//qdel(src)
 		return L.dust(drop_items=TRUE)
 
 /datum/component/rot/gibs
