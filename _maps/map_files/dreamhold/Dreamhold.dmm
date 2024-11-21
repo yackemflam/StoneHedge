@@ -1494,6 +1494,15 @@
 /area/rogue/outdoors/exposed/tavern{
 	name = "Tavern Stables"
 	})
+"bfM" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/effect/mobspawner/monster_spawner_wolfs,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
+	})
 "bgc" = (
 /obj/structure/stairs,
 /obj/structure/fluff/railing/wood{
@@ -3422,7 +3431,8 @@
 /area/rogue/indoors/shelter/town)
 "cQM" = (
 /obj/effect/mist,
-/turf/closed,
+/obj/effect/mobspawner/monster_spawner_minotaurs,
+/turf/open/floor/rogue/dirt/ambush,
 /area/rogue/outdoors/caves)
 "cRk" = (
 /obj/structure/flora/roguetree/wise,
@@ -3610,6 +3620,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/town)
+"cWK" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/corpses,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/caves)
 "cWL" = (
 /obj/structure/roguemachine/money/r,
 /turf/open/floor/rogue/blocks/stonered/tiny,
@@ -4646,6 +4660,11 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/water/swamp,
 /area/rogue/under/cavewet/bogcaves)
+"dMR" = (
+/obj/effect/mist,
+/obj/effect/mobspawner/monster_spawner_minotaurs,
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/outdoors/caves)
 "dNq" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
@@ -6001,6 +6020,12 @@
 "eNF" = (
 /obj/item/natural/rock/iron,
 /turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"eNK" = (
+/obj/structure/closet/crate/chest/refilling/mimic,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/effect/mist,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/caves)
 "eOm" = (
 /obj/structure/fluff/statue/gargoyle/moss,
@@ -8508,6 +8533,11 @@
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
 	})
+"gSE" = (
+/obj/effect/mist,
+/obj/effect/mobspawner/monster_spawner_minotaurs,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/caves)
 "gTg" = (
 /obj/effect/decal/border/ruinedwood/inverted,
 /turf/open/floor/rogue/tile,
@@ -10128,6 +10158,11 @@
 	first_time_text = "Druids Grove";
 	name = "Grove"
 	})
+"ijZ" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/misc,
+/obj/effect/mist,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/caves)
 "ikf" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/reagent_containers/glass/bottle/rogue/manapot,
@@ -15990,6 +16025,13 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/indoors/shelter/mountains)
+"mTA" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/effect/mobspawner/monster_spawner_wolfs,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
+	})
 "mUC" = (
 /obj/item/natural/rock/coal,
 /turf/open/floor/rogue/naturalstone,
@@ -17734,6 +17776,11 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
+"oqv" = (
+/obj/effect/mist,
+/obj/effect/mobspawner/monster_spawner_minotaurs,
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/outdoors/caves)
 "orv" = (
 /obj/effect/wisp,
 /obj/structure/spacevine,
@@ -21961,6 +22008,13 @@
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/library)
+"rHw" = (
+/obj/structure/flora/roguegrass,
+/obj/effect/mobspawner/monster_spawner_wolfs,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
+	})
 "rHx" = (
 /obj/structure/bookcase,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
@@ -22871,6 +22925,12 @@
 	name = "Shores of the Emerald Coast";
 	first_time_text = "Emerald Shores"
 	})
+"swI" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/effect/mist,
+/obj/effect/mobspawner/monster_spawner_minotaurs,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
 "swR" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -27954,6 +28014,7 @@
 	name = "Shrine of Lune"
 	})
 "wFY" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/corpses,
 /obj/effect/mist,
 /obj/effect/mist,
 /turf/closed/wall/shroud,
@@ -28368,6 +28429,11 @@
 "wZG" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/indoors/cave)
+"wZK" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/corpses,
+/obj/effect/mist,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/caves)
 "wZO" = (
 /obj/structure/flora/roguegrass/maneater/real{
 	aggroed = 1
@@ -29326,6 +29392,14 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
+	})
+"xMi" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/effect/mobspawner/monster_spawner_wolfs,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
 	})
 "xMj" = (
 /obj/structure/spacevine/dendor,
@@ -82430,7 +82504,7 @@ rzL
 rzL
 hfS
 gEX
-gEX
+oqv
 owh
 gEX
 hfS
@@ -82637,7 +82711,7 @@ rzL
 hfS
 hfS
 gEX
-bTd
+swI
 owh
 owh
 rxm
@@ -83238,7 +83312,7 @@ owh
 rzL
 hfS
 bTd
-bTd
+swI
 owh
 hfS
 gEX
@@ -83433,7 +83507,7 @@ owh
 hfS
 gEX
 owh
-owh
+dMR
 owh
 gEX
 owh
@@ -91306,7 +91380,7 @@ vrx
 vrx
 vrx
 vrx
-vrx
+gSE
 nVt
 vrx
 nVt
@@ -93124,7 +93198,7 @@ vrx
 jhB
 vrx
 vrx
-vrx
+wZK
 nVt
 vrx
 nVt
@@ -93525,7 +93599,7 @@ nVt
 qXK
 vrx
 nVt
-vrx
+ijZ
 rer
 vrx
 vbT
@@ -93729,9 +93803,9 @@ vbT
 nVt
 ret
 vrx
-ifi
+cWK
 vrx
-vrx
+ijZ
 nVt
 vbT
 nVt
@@ -93930,7 +94004,7 @@ qXK
 vrx
 vrx
 nVt
-vrx
+eNK
 vrx
 rer
 nVt
@@ -111277,7 +111351,7 @@ kHM
 mVp
 jsM
 gXZ
-yeP
+xMi
 kHM
 jsM
 tfW
@@ -112283,7 +112357,7 @@ mVp
 miB
 sAx
 eUf
-rpv
+bfM
 wtN
 oZS
 eVA
@@ -112291,7 +112365,7 @@ kbB
 eVA
 mET
 wtN
-oZS
+rHw
 qHb
 mdB
 mVp
@@ -113297,7 +113371,7 @@ kHM
 mVp
 jsM
 qHb
-kHM
+mTA
 kHM
 jsM
 qmk
