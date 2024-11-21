@@ -134,4 +134,3 @@
 	else
 		departing_mob.visible_message("<span class='notice'>[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] teleports away using the Iodestone.</span>")
 	qdel(departing_mob)
-	departing_mob.returntolobby()
