@@ -98,12 +98,18 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 		for(var/mob/living/c in mymobs)
 			c.del_on_deaggro = (restart_time - 1 MINUTES)
 			c.faction = objfaction.Copy()
-			if(QDELETED(c) || c.stat == DEAD)
+			if(QDELETED(c))
 				mymobs.Remove(c)
+			else if(c.stat == DEAD)
+				mymobs.Remove(c)
+				qdel(c)
 	if(!spawning_turf)
 		return
 
 /obj/structure/mobspawner/proc/reset()
+	for(var/mob/living/c in mymobs)
+		mymobs.Remove(c)
+		qdel(c)
 	mobs_to_spawn = 3
 	mobs = 0
 	ready = FALSE
@@ -223,13 +229,19 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 		for(var/mob/living/c in mymobs)
 			c.del_on_deaggro = (restart_time - 1 MINUTES)
 			c.faction = objfaction.Copy()
-			if(QDELETED(c) || c.stat == DEAD)
+			if(QDELETED(c))
 				mymobs.Remove(c)
+			else if(c.stat == DEAD)
+				mymobs.Remove(c)
+				qdel(c)
 		mobs ++
 	if(!spawning_turf)
 		return
 
 /obj/effect/mobspawner/proc/reset()
+	for(var/mob/living/c in mymobs)
+		mymobs.Remove(c)
+		qdel(c)
 	mobs_to_spawn = 3
 	mobs = 0
 	ready = FALSE
@@ -325,10 +337,16 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	for(var/mob/living/c in mymobs)
 		c.del_on_deaggro = (restart_time - 1 MINUTES)
 		c.faction = objfaction.Copy()
-		if(QDELETED(c) || c.stat == DEAD)
+		if(QDELETED(c))
 			mymobs.Remove(c)
+		else if(c.stat == DEAD)
+			mymobs.Remove(c)
+			qdel(c)
 
 /obj/effect/mobspawner/hole/reset()
+	for(var/mob/living/c in mymobs)
+		mymobs.Remove(c)
+		qdel(c)
 	mobs_to_spawn = 3
 	mobs = 0
 	ready = FALSE
