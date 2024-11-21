@@ -29,6 +29,8 @@ GLOBAL_LIST_INIT(ghost_verbs, list(
 
 	switch(alert("Descend to the Underworld?",,"Yes","No"))
 		if("Yes")
+			returntolobby()
+/*
 			if(istype(mob, /mob/living/carbon/spirit))
 				//HONEYPOT CODE, REMOVE LATER
 				message_admins("RETARDED MOTHERFUCKER [key] IS TRYING TO CRASH THE SERVER BY SPAWNING 3 GORILLION SPIRITS!")
@@ -57,6 +59,7 @@ GLOBAL_LIST_INIT(ghost_verbs, list(
 				SSdroning.area_entered(get_area(O), O.client)
 				break
 			verbs -= GLOB.ghost_verbs
+*/
 		if("No")
 			usr << "You have second thoughts."	
 

@@ -118,7 +118,7 @@
 		var/turf/open/T = get_turf(L)
 		if(istype(T))
 			T.add_pollutants(/datum/pollutant/rot, 5)
-	if(amount > 25 MINUTES)
+	if(amount > 20 MINUTES)
 		L.visible_message(span_notice("[src] decomposes..."))
 		qdel(L)
 		//qdel(src)
