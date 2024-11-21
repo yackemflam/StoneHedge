@@ -51,6 +51,8 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 /obj/structure/mobspawner/process()
 	if(world.time > last_activated + restart_time)
 		ready = TRUE
+	else
+		return
 	if(ready)
 		for(var/mob/living/M in view(detect_range, src))
 			if((objfaction[1] in M.faction) || M.incapacitated() || M.restrained() || M.IsSleeping() || (M.stat == DEAD) || M.InFullCritical())
@@ -187,6 +189,8 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 /obj/effect/mobspawner/process()
 	if(world.time > last_activated + restart_time)
 		ready = TRUE
+	else
+		return
 		picked_string = pick(notification_strings)
 	if(ready)
 		for(var/mob/living/M in view(detect_range, src))

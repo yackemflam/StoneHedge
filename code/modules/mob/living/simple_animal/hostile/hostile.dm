@@ -228,7 +228,7 @@
 	return chosen_target
 
 // Please do not add one-off mob AIs here, but override this function for your mob
-/mob/living/simple_animal/hostile/CanAttack(atom/the_target)//Can we actually attack a possible target?
+/mob/living/simple_animal/hostile/CanAttack(atom/the_target, ignore_lying = TRUE)//Can we actually attack a possible target?
 	if(isturf(the_target) || !the_target || the_target.type == /atom/movable/lighting_object) // bail out on invalids
 		return FALSE
 
@@ -243,7 +243,7 @@
 		var/mob/living/carbon/human/th = the_target
 		if(th.sexcon.beingfucked) //dont touch the battlefucked
 			return FALSE
-		if(th.lying && !th.get_active_held_item()) //if is laying and holding nothing, and not in cmode. Ignore.
+		if(ignore_lying && th.lying && !th.get_active_held_item()) //if is laying and holding nothing, and not in cmode. Ignore.
 			if(prob(4) && th.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
 				fuckcd = 0
 			return FALSE

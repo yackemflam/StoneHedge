@@ -51,7 +51,7 @@
 			var/datum/sex_controller/sc = fucktarg.sexcon
 			if(!src.aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
 				continue
-			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && !sc.beingfucked && CanAttack(fucktarg))
+			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && !sc.beingfucked && CanAttack(fucktarg, FALSE))
 				chasesfuck = TRUE
 				if(src.gender == MALE)
 					src.visible_message(span_boldwarning("[src] has his eyes on [fucktarg], cock throbbing!"))
