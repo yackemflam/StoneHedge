@@ -397,7 +397,7 @@
 /datum/customizer/organ/belly
 	abstract_type = /datum/customizer/organ/belly
 	name = "Belly"
-	allows_disabling = FALSE
+	allows_disabling = TRUE
 	default_disabled = FALSE
 
 /datum/customizer/organ/belly/is_allowed(datum/preferences/prefs)
@@ -560,7 +560,7 @@
 /datum/customizer/organ/butt
 	abstract_type = /datum/customizer/organ/butt
 	name = "Butt"
-	allows_disabling = FALSE
+	allows_disabling = TRUE
 	default_disabled = FALSE
 
 /datum/customizer_choice/organ/butt

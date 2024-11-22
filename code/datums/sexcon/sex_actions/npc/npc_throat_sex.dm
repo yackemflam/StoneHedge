@@ -25,7 +25,6 @@
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s throat!"))
 		user.sexcon.cum_into(oral = TRUE)
-		user.virginity = FALSE
 
 	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	if(user.sexcon.considered_limp())
