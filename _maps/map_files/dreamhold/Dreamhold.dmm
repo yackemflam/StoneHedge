@@ -14892,10 +14892,6 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
-"lXQ" = (
-/obj/structure/glowshroom,
-/turf/open/water/swamp/deep,
-/area/rogue/outdoors/caves)
 "lXW" = (
 /obj/machinery/light/rogue/torchholder{
 	pixel_y = 26;
@@ -15081,9 +15077,8 @@
 	name = "Silver Dragon"
 	})
 "mgS" = (
-/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /obj/machinery/light/rogue/wallfire/candle/blue,
-/turf/open/water/swamp/deep,
+/turf/open/water/cleanshallow,
 /area/rogue/outdoors/caves)
 "mha" = (
 /obj/structure/roguewindow/stained/silver{
@@ -21018,10 +21013,6 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
-"qOz" = (
-/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
-/turf/open/water/swamp/deep,
-/area/rogue/outdoors/caves)
 "qOE" = (
 /obj/structure/glowshroom,
 /obj/structure/flora/roguegrass/water/reeds,
@@ -24803,10 +24794,6 @@
 	name = "Ravenloft Academy";
 	first_time_text = "Ravenloft Academy"
 	})
-"tMw" = (
-/obj/machinery/light/rogue/wallfire/candle/blue,
-/turf/open/water/swamp/deep,
-/area/rogue/outdoors/caves)
 "tMV" = (
 /obj/structure/glowshroom{
 	icon_state = "glowshroom3"
@@ -86529,7 +86516,7 @@ ixC
 vFo
 dzN
 rTO
-lXQ
+qWQ
 vxU
 wJA
 vxU
@@ -86731,9 +86718,9 @@ ekG
 nPq
 vFo
 rTO
-tMw
+mgS
 fSn
-stf
+tmk
 hCp
 dYB
 dYB
@@ -86933,9 +86920,9 @@ eFh
 umc
 vFo
 dYz
-stf
+tmk
 fSn
-qOz
+tmk
 may
 dYB
 dYB
@@ -87137,7 +87124,7 @@ uuM
 rTO
 mgS
 bCN
-stf
+tmk
 hCp
 dYB
 pFl
@@ -87337,9 +87324,9 @@ sJF
 vFo
 qAU
 rTO
-stf
+tmk
 fSn
-qUI
+gdR
 hCp
 dYB
 dYB
