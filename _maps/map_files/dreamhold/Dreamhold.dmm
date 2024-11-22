@@ -1990,7 +1990,7 @@
 /area/rogue/indoors/town/library)
 "bCN" = (
 /obj/structure/mineral_door/bars{
-	lockid = "vault key";
+	lockid = "vault";
 	locked = 1
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -5018,7 +5018,11 @@
 	})
 "dYz" = (
 /obj/structure/mineral_door/secret/vault{
-	lockid = "vault key"
+	lockid = "vault";
+	vip = list("Monarch","Consort","Guild Appraiser","Steward");
+	vipmessage = "Wood elf Monarchs or Magi Princes.";
+	name = "Magic Door";
+	icon_state = "timedoor"
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
@@ -14941,7 +14945,7 @@
 "may" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "vault key"
+	lockid = "vault"
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/garrison{
@@ -15359,10 +15363,11 @@
 	name = "Adventurers Guild"
 	})
 "msD" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 4
+/obj/structure/table/wood{
+	dir = 4;
+	icon_state = "longtable"
 	},
-/obj/structure/chair/stool/rogue,
+/obj/item/candle/skull,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach{
 	name = "Shores of the Emerald Coast";
@@ -15483,15 +15488,6 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/bath{
 	first_time_text = "The Dreamers Demesne.."
-	})
-"mws" = (
-/obj/structure/roguewindow/openclose{
-	dir = 1
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/outdoors/beach{
-	name = "Shores of the Emerald Coast";
-	first_time_text = "Emerald Shores"
 	})
 "mwA" = (
 /obj/item/natural/rock/coal,
@@ -19508,7 +19504,8 @@
 /obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner,
 /obj/structure/roguemachine/steward{
 	keycontrol = "veteran";
-	locked = 1
+	locked = 1;
+	lockid = "vault"
 	},
 /obj/structure/roguemachine/camera/right,
 /turf/open/floor/rogue/naturalstone,
@@ -28930,7 +28927,7 @@
 "xkZ" = (
 /obj/structure/mineral_door/wood/donjon{
 	dir = 4;
-	lockid = "vault key";
+	lockid = "vault";
 	locked = 1;
 	desc = "Treasury";
 	name = "Treasury"
@@ -96743,7 +96740,7 @@ fVN
 pec
 gHw
 mEw
-msD
+gHw
 mEw
 mBh
 dQI
@@ -97149,7 +97146,7 @@ bwF
 bwF
 bwF
 iPY
-mws
+hvP
 dQI
 iKA
 bkK
@@ -97351,7 +97348,7 @@ hgA
 uIC
 dUH
 gHw
-mws
+hvP
 dRE
 iKA
 bkK
@@ -97552,8 +97549,8 @@ dUH
 ihQ
 ihQ
 ihQ
-hgA
-vKK
+msD
+mBh
 aFE
 iKA
 tym
@@ -97956,7 +97953,7 @@ xbh
 ihQ
 xLz
 pKY
-tym
+ptO
 kfX
 bkK
 bkK
