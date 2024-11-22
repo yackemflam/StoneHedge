@@ -86,7 +86,7 @@
 				charflaw.flaw_on_life(src)
 			if(health <= 0)
 				adjustOxyLoss(0.3)
-			if(!client && !isfucking && !HAS_TRAIT(src, TRAIT_NOSLEEP))
+			if(!client && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 				if(mob_timers["slo"])
 					if(world.time > mob_timers["slo"] + 90 SECONDS)
 						Sleeping(100)

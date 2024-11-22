@@ -157,6 +157,16 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
+"ain" = (
+/obj/effect/decal/stone/blockedge,
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "aiC" = (
 /turf/closed/mineral/rogue,
 /area/rogue/indoors/cave)
@@ -195,6 +205,17 @@
 /obj/structure/spacevine,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/caves)
+"akM" = (
+/obj/structure/roguemachine/steward{
+	keycontrol = "veteran";
+	locked = 1;
+	lockid = "vault"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "akS" = (
 /obj/structure/stairs,
 /turf/open/floor/rogue/wood/nosmooth,
@@ -466,10 +487,21 @@
 	name = "Shores of the Emerald Coast"
 	})
 "auK" = (
-/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/obj/structure/closet/crate/chest/dungeon/mimic,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/town/vault)
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/natural/feather,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "auO" = (
 /obj/structure/flora/roguetree/burnt,
 /turf/open/floor/rogue/dirt/road,
@@ -1987,7 +2019,7 @@
 	locked = 1;
 	lockid = "vault"
 	},
-/turf/open/floor/rogue/naturalstone,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/caves)
 "bCX" = (
 /turf/closed/mineral/random/rogue,
@@ -4430,9 +4462,6 @@
 	name = "Ravenloft Academy"
 	})
 "dzN" = (
-/obj/item/roguegem/yellow,
-/obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner,
-/obj/structure/closet/crate/chest/refilling/mimic,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "dzU" = (
@@ -5008,12 +5037,11 @@
 	name = "Silver Dragon"
 	})
 "dYz" = (
-/obj/structure/mineral_door/secret/vault{
-	icon_state = "timedoor";
+/obj/structure/mineral_door/wood/donjon{
+	locked = 1;
 	lockid = "vault";
-	name = "Magic Door";
-	vip = list("Monarch","Consort","Guild Appraiser","Steward");
-	vipmessage = "Wood elf Monarchs or Magi Princes."
+	max_integrity = 4000;
+	name = "reinforced treasury door"
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
@@ -5340,11 +5368,8 @@
 	first_time_text = "The Twilight Woods"
 	})
 "ekG" = (
-/obj/item/roguegem/violet,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/obj/structure/closet/crate/chest/refilling/mimic,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/town/vault)
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/caves)
 "ekU" = (
 /obj/effect/mist,
 /obj/effect/mist,
@@ -7489,7 +7514,7 @@
 /area/rogue/indoors/shelter/town)
 "fSn" = (
 /obj/structure/bars/cemetery,
-/turf/open/floor/rogue/naturalstone,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/caves)
 "fSC" = (
 /obj/effect/decal/dirt{
@@ -7647,16 +7672,11 @@
 	first_time_text = "The Twilight Woods"
 	})
 "fZA" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
+/obj/structure/roguemachine/vendor{
+	keycontrol = "steward"
 	},
-/obj/item/paper/scroll,
-/obj/item/natural/feather,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
+/obj/effect/decal/stone/blockedge,
+/obj/effect/decal/stone/blockedge/blockedgeinvert,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -9397,7 +9417,7 @@
 /area/rogue/outdoors/river)
 "hCp" = (
 /obj/structure/bars/cemetery,
-/turf/open/floor/rogue/naturalstone,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -10567,11 +10587,15 @@
 	first_time_text = "Stonehedge"
 	})
 "ixC" = (
-/obj/structure/glowshroom{
-	icon_state = "glowshroom2"
-	},
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /obj/structure/roguemachine/camera/right,
+/obj/structure/closet/crate/chest,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "ixO" = (
@@ -12094,6 +12118,13 @@
 "jJW" = (
 /obj/structure/closet/crate/chest,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "jJX" = (
@@ -12311,6 +12342,15 @@
 	dir = 4
 	},
 /turf/open/transparent/openspace,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
+	})
+"jSo" = (
+/obj/structure/flora/roguegrass/bush{
+	icon_state = "bush3"
+	},
+/obj/structure/ladder/earth,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
@@ -14940,7 +14980,7 @@
 	locked = 1;
 	lockid = "vault"
 	},
-/turf/open/floor/rogue/naturalstone,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -15030,7 +15070,7 @@
 	})
 "mgS" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
-/turf/open/water/cleanshallow,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/caves)
 "mha" = (
 /obj/structure/roguewindow/stained/silver{
@@ -17313,6 +17353,7 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
 "nPq" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /obj/structure/closet/crate/chest,
 /obj/item/scomstone,
 /obj/item/scomstone,
@@ -17321,9 +17362,6 @@
 /obj/item/scomstone,
 /obj/item/scomstone,
 /obj/item/scomstone,
-/obj/item/scomstone,
-/obj/item/scomstone,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "nPy" = (
@@ -18777,6 +18815,10 @@
 /obj/machinery/light/rogue/lanternpost,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
+"pcO" = (
+/obj/structure/ladder/earth,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/caves)
 "pdF" = (
 /obj/structure/bars/passage{
 	redstone_id = "rangerback"
@@ -19493,13 +19535,8 @@
 	})
 "pKP" = (
 /obj/item/roguegem/blue,
-/obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner,
-/obj/structure/roguemachine/steward{
-	keycontrol = "veteran";
-	locked = 1;
-	lockid = "vault"
-	},
 /obj/structure/roguemachine/camera/right,
+/obj/structure/closet/crate/chest/dungeon/treasure,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "pKQ" = (
@@ -20631,9 +20668,8 @@
 /turf/open/water/cleanshallow,
 /area/rogue/under/cave)
 "qAU" = (
-/obj/item/roguegem/red,
-/obj/structure/closet/crate/chest/refilling/weapon,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/structure/closet/crate/chest/dungeon/treasure,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "qBH" = (
@@ -21374,9 +21410,6 @@
 	first_time_text = "Stonehedge"
 	})
 "rcU" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
 /obj/structure/roguemachine/scomm/r,
 /obj/effect/decal/stone/blockedge,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -23664,17 +23697,11 @@
 /area/rogue/outdoors/river)
 "sVs" = (
 /obj/structure/closet/crate/chest,
-/obj/item/scomstone,
-/obj/item/scomstone,
-/obj/item/scomstone,
-/obj/item/scomstone,
-/obj/item/scomstone,
-/obj/item/scomstone,
-/obj/item/scomstone,
-/obj/item/scomstone,
-/obj/item/scomstone,
-/obj/item/scomstone,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/item/roguegem/yellow,
+/obj/item/roguegem/violet,
+/obj/item/roguegem/red,
+/obj/item/scrying,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "sVJ" = (
@@ -25395,7 +25422,6 @@
 	first_time_text = "The Twilight Woods"
 	})
 "umc" = (
-/obj/item/roguekey/vault,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /turf/open/floor/rogue/naturalstone,
@@ -25601,7 +25627,6 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/exposed/tavern)
 "uuM" = (
-/obj/structure/closet/crate/chest/dungeon/mimic,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /obj/structure/roguemachine/camera/right,
 /turf/open/floor/rogue/naturalstone,
@@ -76753,7 +76778,7 @@ ifi
 ifi
 nVt
 rxm
-nVt
+ifi
 jlJ
 ifi
 nVt
@@ -77152,7 +77177,7 @@ nVt
 jlJ
 nVt
 ifi
-nVt
+ifi
 ifi
 ifi
 nVt
@@ -78756,11 +78781,11 @@ lyF
 lyF
 vVw
 vVw
-prw
-rxm
+fuN
+lyF
 nVt
 rxm
-rxm
+jlJ
 jlJ
 rxm
 ifi
@@ -78958,12 +78983,12 @@ rxm
 lyF
 vVw
 xbK
-prw
-rxm
-nVt
-oYs
+kqH
 ifi
-phX
+jlJ
+jlJ
+ifi
+pcO
 ifi
 ifi
 nVt
@@ -79160,10 +79185,10 @@ rxm
 lyF
 vVw
 xbK
-prw
-rxm
-nVt
-rxm
+kqH
+jlJ
+ifi
+jlJ
 rxm
 ifi
 rxm
@@ -79362,7 +79387,7 @@ rxm
 lyF
 vVw
 vVw
-prw
+kqH
 lyF
 nVt
 nVt
@@ -86419,7 +86444,7 @@ ixC
 vFo
 dzN
 rTO
-qWQ
+ekG
 vxU
 wJA
 vxU
@@ -86617,13 +86642,13 @@ ifi
 ifi
 rxm
 rTO
-ekG
-nPq
 vFo
+vFo
+nPq
 rTO
 mgS
 fSn
-tmk
+ekG
 hCp
 dYB
 dYB
@@ -86823,9 +86848,9 @@ eFh
 umc
 vFo
 dYz
-tmk
+ekG
 fSn
-tmk
+ekG
 may
 dYB
 dYB
@@ -87027,7 +87052,7 @@ uuM
 rTO
 mgS
 bCN
-tmk
+ekG
 hCp
 dYB
 pFl
@@ -87227,13 +87252,13 @@ sJF
 vFo
 qAU
 rTO
-tmk
+ekG
 fSn
-gdR
+ekG
 hCp
 dYB
 dYB
-dYB
+akM
 vxU
 nVt
 nVt
@@ -87426,7 +87451,7 @@ ifi
 rxm
 rTO
 pKP
-auK
+qAU
 sVs
 rTO
 lyF
@@ -113910,7 +113935,7 @@ mVp
 oxK
 miB
 mVp
-uwo
+jSo
 sAx
 mVp
 kHM
@@ -118544,8 +118569,8 @@ kXp
 ffo
 dYB
 nNz
-bUR
-rJG
+auK
+ain
 hiA
 iia
 xVJ

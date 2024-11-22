@@ -87,7 +87,7 @@
 
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_lovebold("[user] cums into [target]'s ass!"))
-		user.sexcon.cum_into(vaginal = TRUE)
+		user.sexcon.cum_into(anal = TRUE)
 //		user.try_impregnate(target)
 		user.virginity = FALSE
 		target.virginity = FALSE
@@ -99,7 +99,6 @@
 		user.sexcon.perform_sex_action(user, 2.4, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 2.4, 7, FALSE)
 	target.sexcon.handle_passive_ejaculation()
-	user.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/anal_sex/on_finish(mob/living/user, mob/living/target)
 	..()

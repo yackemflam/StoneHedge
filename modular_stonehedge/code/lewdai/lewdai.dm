@@ -23,7 +23,6 @@
 
 	//stuff related to auto sex stuff
 	///Dont touch or change those manually, those are set automatically with the process.
-	var/isfucking = FALSE
 	var/fuckcd = 0
 	var/chasesfuck = FALSE
 	var/seekboredom = 0
@@ -41,17 +40,16 @@
 		fuckcd -= 1
 	if(fuckcd)
 		return
-	if(isfucking)
+	if(sexcon?.current_action)
 		return
 	if(retreating)
 		return
 	if(sexcon && !chasesfuck)
 		var/list/around = view(aggro_vision_range, src)
 		for(var/mob/living/carbon/human/fucktarg in around)
-			var/datum/sex_controller/sc = fucktarg.sexcon
 			if(!src.aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
 				continue
-			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && !sc.beingfucked && CanAttack(fucktarg, FALSE))
+			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && CanAttack(fucktarg, FALSE))
 				chasesfuck = TRUE
 				if(src.gender == MALE)
 					src.visible_message(span_boldwarning("[src] has his eyes on [fucktarg], cock throbbing!"))
@@ -87,7 +85,7 @@
 	var/mob/living/carbon/human/L
 	var/list/around = view(aggro_vision_range, src)
 	var/list/foundfuckmeat = list()
-	if(isfucking && fuckcd > 0)
+	if(sexcon.current_action && fuckcd > 0)
 		return
 	for(var/mob/living/carbon/human/fucktarg in around)
 		if(!src.retreating && fucktarg.has_quirk(/datum/quirk/monsterhunter))
@@ -95,17 +93,16 @@
 			L = fucktarg
 			if(src.Adjacent(L))
 				if(iscarbon(L))
-					isfucking = TRUE
 					chasesfuck = FALSE
 					if(attack_sound)
 						playsound(src, pick(attack_sound), 100, TRUE, -1)
 					stop_automated_movement = TRUE
 					if(L.cmode)
-						L.SetImmobilized(20)
-						L.SetKnockdown(20)
+						L.SetImmobilized(40)
+						L.SetKnockdown(40)
 					else //sneak attacked i guess.
-						L.SetImmobilized(50)
-						L.SetKnockdown(50)
+						L.SetImmobilized(60)
+						L.SetKnockdown(60)
 					if(!L.lying)
 						L.emote("gasp")
 					if(!L.cmode && L.wear_pants) //pants off if not in cmode
@@ -119,40 +116,34 @@
 					target = null
 					approaching_target = FALSE
 					in_melee = FALSE
-					var/datum/sex_controller/sc = src.sexcon
 					toggle_ai(AI_OFF)
 					if(aggressive)
-						sc.force = SEX_FORCE_MAX
+						sexcon.force = SEX_FORCE_MAX
 					else
-						sc.force = SEX_FORCE_MID
-					src.throw_at(get_turf(L.loc), 3, 3, spin = FALSE)
-					if(!get_turf(src) == get_turf(L)) //are we at the same tile?
-						walk_to(src, get_turf(L.loc), 1, move_to_delay) //get on them.
+						sexcon.force = SEX_FORCE_MID
+					if(!Adjacent(L)) //are we at the same tile?
+						walk_to(src, get_turf(Adjacent(L)), 1, move_to_delay) //get on them.
 					src.visible_message(span_danger("[src] starts to breed [L]!"))
-					if(sc.force == SEX_FORCE_MAX)
+					if(sexcon.force == SEX_FORCE_MAX)
 						src.visible_message(span_danger("[src] pins [L] down for a savage fucking!"))
 					else
 						src.visible_message(span_info("[src] climbs on [L] to breed."))
-					sc.speed = SEX_SPEED_MAX
+					sexcon.speed = SEX_SPEED_MAX
 					if(gender == MALE)
-						sc.manual_arousal = SEX_MANUAL_AROUSAL_MAX
+						sexcon.manual_arousal = SEX_MANUAL_AROUSAL_MAX
 					log_admin("[src] is trying to init sex on [L]")
 					var/current_action = /datum/sex_action/npc_rimming
 					if(src.gender == FEMALE && L.gender == MALE)
-						switch(rand(3))
-							if(1) //oral
-								current_action = /datum/sex_action/npc_facesitting
+						switch(rand(2))
 							if(2) //anal
 								current_action = /datum/sex_action/npc_anal_ride_sex
 							if(3) //vaginal
 								current_action = /datum/sex_action/npc_vaginal_ride_sex
 					if(src.gender == MALE && L.gender == MALE)
-						switch(rand(3))
+						switch(rand(2))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_throat_sex
 							if(2) //anal
-								current_action = /datum/sex_action/npc_anal_sex
-							if(3) //vaginal
 								current_action = /datum/sex_action/npc_anal_sex
 					if(src.gender == MALE && L.gender == FEMALE)
 						switch(rand(3))
@@ -170,9 +161,9 @@
 								current_action = /datum/sex_action/npc_rimming
 							if(3) //vaginal
 								current_action = /datum/sex_action/npc_cunnilingus
-					sc.do_until_finished = TRUE
-					sc.target = L
-					sc.try_start_action(current_action)
+					sexcon.do_until_finished = TRUE
+					sexcon.target = L
+					sexcon.try_start_action(current_action)
 					return
 	for(var/mob/living/fucktarg in foundfuckmeat)
 		var/turf/T = get_turf(fucktarg)
@@ -184,12 +175,11 @@
 	walk_away(src, get_turf(src.loc), 1, move_to_delay)
 	if(gender == MALE) //put that weapon down soldier.
 		sexcon.manual_arousal = SEX_MANUAL_AROUSAL_DEFAULT
-	isfucking = FALSE
+	sexcon.current_action = null
 	chasesfuck = FALSE
 	seekboredom = 0
 	toggle_ai(AI_ON)
-	var/datum/sex_controller/sc = src.sexcon
-	if(sc.just_ejaculated() || timedout) //is it satisfied or given up
+	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
 		fuckcd = rand(50,350)
 	else
 		fuckcd = rand(20,80)
@@ -198,11 +188,6 @@
 			// and if they are taking turns with multiple seeksfuck mobs around this may help a bit.
 			fuckcd = rand(10,20)
 	stop_automated_movement = 0
-
-/mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()
-	. = ..()
-	if(isfucking)
-		stoppedfucking()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Life()
 	if(seeksfuck)
@@ -231,14 +216,15 @@
 		fuckcd -= 1
 	if(fuckcd)
 		return
-	if(isfucking)
+	var/datum/sex_controller/sc = src.sexcon
+	if(sexcon.current_action)
 		return
 	if(sexcon && !chasesfuck)
 		var/list/around = view(10, src)
 		for(var/mob/living/carbon/human/fucktarg in around)
 			if(!src.aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
 				continue
-			if(fucktarg.has_quirk(/datum/quirk/monsterhunter)) //normally checks !sc.beingfucked but carbon mobs arent directly on top of the mob to fuck so its probably fine to get ganged.
+			if(fucktarg.has_quirk(/datum/quirk/monsterhunter)) //normally checks !sexcon.beingfucked but carbon mobs arent directly on top of the mob to fuck so its probably fine to get ganged.
 				chasesfuck = TRUE
 				if(lewd_talk)
 					if(src.gender == MALE)
@@ -269,7 +255,7 @@
 	var/mob/living/carbon/human/L
 	var/list/around = view(10, src)
 	var/list/foundfuckmeat = list()
-	if(isfucking && fuckcd > 0)
+	if(sexcon.current_action && fuckcd > 0)
 		return
 	for(var/mob/living/carbon/human/fucktarg in around)
 		if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && should_target(fucktarg))
@@ -279,7 +265,6 @@
 			mode = AI_OFF
 			if(src.Adjacent(L))
 				if(iscarbon(L))
-					isfucking = TRUE
 					chasesfuck = FALSE
 					if(L.cmode)
 						L.SetImmobilized(40)
@@ -296,22 +281,21 @@
 						thepants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
 					else if(L.cmode && L.wear_pants)
 						src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
-					var/datum/sex_controller/sc = src.sexcon
 					if(aggressive)
-						sc.force = SEX_FORCE_MAX
+						sexcon.force = SEX_FORCE_MAX
 					else
-						sc.force = SEX_FORCE_MID
+						sexcon.force = SEX_FORCE_MID
 					if(!Adjacent(L)) //are we at the same tile?
 						walk2derpless(Adjacent(L)) //get next to them since it looks like shit tweaks out.
 					start_pulling(L)
 					src.visible_message(span_danger("[src] starts to breed [L]!"))
-					if(sc.force == SEX_FORCE_MAX)
+					if(sexcon.force == SEX_FORCE_MAX)
 						src.visible_message(span_danger("[src] pins [L] down for a savage fucking!"))
 					else
 						src.visible_message(span_info("[src] climbs on [L] to breed."))
-					sc.speed = SEX_SPEED_MAX
+					sexcon.speed = SEX_SPEED_MAX
 					if(gender == MALE)
-						sc.manual_arousal = SEX_MANUAL_AROUSAL_MAX
+						sexcon.manual_arousal = SEX_MANUAL_AROUSAL_MAX
 					log_admin("[src] is trying to init sex on [L]")
 					var/current_action = /datum/sex_action/npc_rimming
 					if(src.gender == FEMALE && L.gender == MALE)
@@ -342,9 +326,9 @@
 								current_action = /datum/sex_action/npc_rimming
 							if(3) //vaginal
 								current_action = /datum/sex_action/npc_cunnilingus
-					sc.do_until_finished = TRUE
-					sc.target = L
-					sc.try_start_action(current_action)
+					sexcon.do_until_finished = TRUE
+					sexcon.target = L
+					sexcon.try_start_action(current_action)
 					return
 	for(var/mob/living/carbon/human/fucktarg in foundfuckmeat)
 		var/turf/T = get_turf(fucktarg)
@@ -373,13 +357,12 @@
 			src.adjustStaminaLoss(25, TRUE)
 	else if(target)
 		walk_away(src, get_turf(src.loc), 1, 1)
-	isfucking = FALSE
+	sexcon.current_action = FALSE
 	chasesfuck = FALSE
 	seekboredom = 0
 	START_PROCESSING(SShumannpc,src)
 	mode = AI_IDLE
-	var/datum/sex_controller/sc = src.sexcon
-	if(sc.just_ejaculated() || timedout) //is it satisfied or given up
+	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
 		fuckcd = rand(50,350)
 	else
 		fuckcd = rand(20,80)

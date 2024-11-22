@@ -241,8 +241,6 @@
 
 	if(ishuman(the_target))
 		var/mob/living/carbon/human/th = the_target
-		if(th.sexcon.beingfucked) //dont touch the battlefucked
-			return FALSE
 		if(ignore_lying && th.lying && !th.get_active_held_item()) //if is laying and holding nothing, and not in cmode. Ignore.
 			if(prob(4) && th.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
 				fuckcd = 0
