@@ -133,7 +133,6 @@
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/mage
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/reagent_containers/glass/bottle/rogue/manapot
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/rogueweapon/huntingknife
 	backl = /obj/item/storage/backpack/rogue/satchel
 	r_hand = /obj/item/rogueweapon/woodstaff
@@ -148,5 +147,10 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/robe/abyssoracorobe
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		shoes = /obj/item/clothing/shoes/roguetown/shalal
+		neck = /obj/item/clothing/neck/roguetown/psicross/eora
+	if(classchoice == "Arcanist")
+		head = /obj/item/clothing/head/roguetown/roguehood/shalal
+		r_hand = /obj/item/scrying
+		neck = /obj/item/clothing/neck/roguetown/psicross/necra
 
 	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
