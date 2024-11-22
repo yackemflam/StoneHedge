@@ -190,6 +190,7 @@
 	woundclass = BCLASS_STAB
 	flag = "bullet"
 	speed = 2
+	max_integrity = 1 //hopefully they break
 
 /mob/living/simple_animal/hostile/retaliate/rogue/orc/ranged
 	name = "savage orc archer"
@@ -204,8 +205,7 @@
 	minimum_distance = 5
 	ranged_cooldown_time = 60
 	check_friendly_fire = 1
-	loot = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
-			/obj/item/quiver/arrows,
+	loot = list(
 			/obj/effect/decal/cleanable/blood)
 	maxHealth = 50
 	health = 50
@@ -258,8 +258,7 @@
 	defdrain = 20
 	obj_damage = 1
 	speak_emote = list("grunts")
-	loot = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
-			/obj/item/quiver/arrows,
+	loot = list(
 			/obj/effect/decal/cleanable/blood)
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -274,8 +273,7 @@
 	icon_state = "goblinarcher2"
 	icon_living = "goblinarcher2"
 	icon_dead = "goblinarcher2_dead"
-	loot = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
-			/obj/item/quiver/arrows,
+	loot = list(,
 			/obj/effect/decal/cleanable/blood)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goblin/simple_limb_hit(zone)
