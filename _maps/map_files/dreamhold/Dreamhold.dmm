@@ -4450,8 +4450,7 @@
 	})
 "dzN" = (
 /obj/item/roguegem/yellow,
-/obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner,
-/obj/structure/closet/crate/chest/refilling/mimic,
+/obj/structure/closet/crate/chest/dungeon/mimic,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "dzU" = (
@@ -5361,7 +5360,7 @@
 "ekG" = (
 /obj/item/roguegem/violet,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/obj/structure/closet/crate/chest/refilling/mimic,
+/obj/structure/closet/crate/chest/dungeon/mimic,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "ekU" = (
@@ -15078,7 +15077,7 @@
 	})
 "mgS" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
-/turf/open/water/cleanshallow,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/caves)
 "mha" = (
 /obj/structure/roguewindow/stained/silver{
@@ -15182,6 +15181,9 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue)
+"mlE" = (
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/caves)
 "mlM" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -17361,6 +17363,7 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town)
 "nPq" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /obj/structure/closet/crate/chest,
 /obj/item/scomstone,
 /obj/item/scomstone,
@@ -17371,7 +17374,6 @@
 /obj/item/scomstone,
 /obj/item/scomstone,
 /obj/item/scomstone,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "nPy" = (
@@ -19555,12 +19557,6 @@
 	})
 "pKP" = (
 /obj/item/roguegem/blue,
-/obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner,
-/obj/structure/roguemachine/steward{
-	keycontrol = "veteran";
-	locked = 1;
-	lockid = "vault"
-	},
 /obj/structure/roguemachine/camera/right,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
@@ -26889,6 +26885,17 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
+	})
+"vrH" = (
+/obj/structure/roguemachine/steward{
+	keycontrol = "veteran";
+	locked = 1;
+	lockid = "vault"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
 	})
 "vrX" = (
 /obj/structure/fluff/traveltile/vampire{
@@ -86516,7 +86523,7 @@ ixC
 vFo
 dzN
 rTO
-qWQ
+mlE
 vxU
 wJA
 vxU
@@ -86715,12 +86722,12 @@ ifi
 rxm
 rTO
 ekG
-nPq
 vFo
+nPq
 rTO
 mgS
 fSn
-tmk
+mlE
 hCp
 dYB
 dYB
@@ -86920,9 +86927,9 @@ eFh
 umc
 vFo
 dYz
-tmk
+mlE
 fSn
-tmk
+mlE
 may
 dYB
 dYB
@@ -87124,7 +87131,7 @@ uuM
 rTO
 mgS
 bCN
-tmk
+mlE
 hCp
 dYB
 pFl
@@ -87324,13 +87331,13 @@ sJF
 vFo
 qAU
 rTO
-tmk
+mlE
 fSn
-gdR
+mlE
 hCp
 dYB
 dYB
-dYB
+vrH
 vxU
 nVt
 nVt
