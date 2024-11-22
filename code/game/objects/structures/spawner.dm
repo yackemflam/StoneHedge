@@ -6,10 +6,10 @@
 
 	move_resist = MOVE_FORCE_EXTREMELY_STRONG
 	anchored = TRUE
-	density = TRUE
+	density = FALSE
 
 	var/max_mobs = 5
-	var/spawn_time = 300 //30 seconds default
+	var/spawn_time = 3000 //300 seconds default
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	var/spawn_text = "emerges from"
 	var/faction = list("hostile")
@@ -32,18 +32,6 @@
 	spawn_text = "warps in from"
 	mob_types = list(/mob/living/simple_animal/hostile/syndicate/ranged)
 	faction = list(ROLE_SYNDICATE)
-
-/obj/structure/spawner/skeleton
-	name = "bone pit"
-	desc = ""
-	icon_state = "hole"
-	icon = 'icons/mob/nest.dmi'
-	max_integrity = 150
-	max_mobs = 15
-	spawn_time = 150
-	mob_types = list(/mob/living/simple_animal/hostile/skeleton)
-	spawn_text = "climbs out of"
-	faction = list("skeleton")
 
 /obj/structure/spawner/clown
 	name = "Laughing Larry"
@@ -92,3 +80,232 @@
 	name = "wumborian fugu den"
 	desc = ""
 	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/fugu)
+
+/obj/structure/spawner/skeleton
+	name = "bone pit"
+	desc = ""
+	icon = 'icons/roguetown/mob/monster/wraith.dmi'
+	icon_state = "hauntpile"
+	max_integrity = 500
+	spawn_time = 600
+	max_mobs = 5
+	mob_types = list(
+	/mob/living/simple_animal/hostile/rogue/skeleton/axe = 6,
+	/mob/living/simple_animal/hostile/rogue/skeleton/spear = 6,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard = 5,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/spear = 5,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/shield = 4,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow = 3,
+	/mob/living/simple_animal/hostile/rogue/skeleton/bow = 4,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard = 2,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear = 2,
+	/mob/living/simple_animal/hostile/rogue/gravelord = 1)
+	spawn_text = "jumps out of"
+	faction = list("undead")
+
+/obj/structure/spawner/goblin
+	name = "hole"
+	desc = ""
+	icon_state = "hole"
+	icon = 'icons/mob/nest.dmi'
+	max_integrity = 500
+	spawn_time = 600
+	max_mobs = 3
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/goblin/cave = 3,		//archer
+	/mob/living/simple_animal/hostile/retaliate/rogue/goblin = 3)		//archer
+	spawn_text = "climbs out of"
+	faction = list("orc")
+
+/obj/structure/spawner/ghost
+	name = "bone pile"
+	desc = ""
+	icon = 'icons/roguetown/mob/monster/wraith.dmi'
+	icon_state = "hauntpile"
+	max_integrity = 500
+	spawn_time = 600
+	max_mobs = 3
+	mob_types = list(
+	/mob/living/simple_animal/hostile/rogue/ghost/cursed = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/cursed/cursed2 = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith2 = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith3 = 1)
+	spawn_text = "appears out of"
+	faction = list("undead")	
+
+/obj/structure/spawner/ghost/cursedsouls
+	max_mobs = 3
+	mob_types = list(
+	/mob/living/simple_animal/hostile/rogue/ghost/cursed = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/cursed/cursed2 = 1)
+	
+/obj/structure/spawner/ghost/wraiths
+	max_mobs = 3
+	mob_types = list(
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith2 = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith3 = 1)
+
+/obj/structure/spawner/monster
+	name = "monster hole"
+	desc = ""
+	icon_state = "hole"
+	icon = 'icons/mob/nest.dmi'
+	max_integrity = 500
+	spawn_time = 600
+	max_mobs = 3
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe = 3,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/female = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe/female = 3,
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf/poison = 5,
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 8,
+	/mob/living/simple_animal/hostile/retaliate/rogue/spider = 3,
+	/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated = 1,
+	/mob/living/simple_animal/hostile/retaliate/rogue/mossback = 6,
+	/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/cavetroll = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 7,
+	/mob/living/simple_animal/hostile/retaliate/rogue/mole = 6)
+	spawn_text = "climbs out of"
+	faction = list("caves")
+
+/obj/structure/spawner/monster/minotaur
+	max_mobs = 2
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe = 3,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/female = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe/female = 3)
+
+/obj/structure/spawner/monster/wolf
+	max_mobs = 3
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf/poison = 5,
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 8)
+
+/obj/structure/spawner/monster/mossback
+	max_mobs = 3
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/mossback = 6)
+
+/obj/structure/spawner/monster/spider
+	max_mobs = 3
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/spider = 3,
+	/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated = 1)
+
+/obj/structure/spawner/monster/troll
+	max_mobs = 2
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/cavetroll = 4)
+
+/obj/structure/spawner/invisible
+	name = ""
+	desc = ""
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF 
+	spawn_time = 3000
+	max_mobs = 1
+	mob_types = list(
+	/mob/living/simple_animal/hostile/rogue/gravelord = 1)
+	spawn_text = "jumps out in ambush!"
+	faction = list("undead")
+
+/obj/structure/spawner/invisible/skeleton
+	max_mobs = 2
+	mob_types = list(
+	/mob/living/simple_animal/hostile/rogue/skeleton/axe = 6,
+	/mob/living/simple_animal/hostile/rogue/skeleton/spear = 6,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard = 5,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/spear = 5,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/shield = 4,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow = 3,
+	/mob/living/simple_animal/hostile/rogue/skeleton/bow = 4,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard = 2,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear = 2,
+	/mob/living/simple_animal/hostile/rogue/gravelord = 1)
+	spawn_text = "jumps out in ambush!"
+	faction = list("undead")
+
+/obj/structure/spawner/invisible/ghost
+	max_mobs = 2
+	mob_types = list(
+	/mob/living/simple_animal/hostile/rogue/ghost/cursed = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/cursed/cursed2 = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith2 = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith3 = 1)
+	spawn_text = "appears out of thin air!"
+	faction = list("undead")	
+
+/obj/structure/spawner/invisible/ghost/cursedsouls
+	mob_types = list(
+	/mob/living/simple_animal/hostile/rogue/ghost/cursed = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/cursed/cursed2 = 1)
+	
+/obj/structure/spawner/invisible/ghost/wraiths
+	mob_types = list(
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith2 = 1,
+	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith3 = 1)
+
+/obj/structure/spawner/invisible/monster
+	max_mobs = 2
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe = 3,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/female = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe/female = 3,
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf/poison = 5,
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 8,
+	/mob/living/simple_animal/hostile/retaliate/rogue/spider = 3,
+	/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated = 1,
+	/mob/living/simple_animal/hostile/retaliate/rogue/mossback = 6,
+	/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/cavetroll = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 7,
+	/mob/living/simple_animal/hostile/retaliate/rogue/mole = 6)
+	spawn_text = "lunges from the shadows!"
+	faction = list("caves")
+
+/obj/structure/spawner/invisible/monster/minotaur
+	max_mobs = 1
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe = 3,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/female = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe/female = 3)
+
+/obj/structure/spawner/invisible/monster/wolf
+	max_mobs = 2
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf/poison = 5,
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 8)
+
+/obj/structure/spawner/invisible/monster/spider
+	max_mobs = 2
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/spider = 3,
+	/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated = 1)
+
+/obj/structure/spawner/invisible/monster/mossback
+	max_mobs = 1
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/mossback = 6)
+
+/obj/structure/spawner/invisible/monster/troll
+	max_mobs = 1
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 4,
+	/mob/living/simple_animal/hostile/retaliate/rogue/cavetroll = 4)
+
+/obj/structure/spawner/invisible/goblin
+	max_mobs = 2
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/goblin/cave = 3,		//archer
+	/mob/living/simple_animal/hostile/retaliate/rogue/goblin = 3)		//archer
+	spawn_text = "appears out of hiding!"
+	faction = list("orc")
