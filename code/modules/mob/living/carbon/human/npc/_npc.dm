@@ -243,8 +243,6 @@
 			if(prob(8) && lcarbon.has_quirk(/datum/quirk/monsterhunter) && erpable) //small chance to trigger abuss.
 				fuckcd = 0
 			return FALSE
-		if(lcarbon.sexcon.beingfucked) //dont touch the battlefucked
-			return FALSE
 
 	if(HAS_TRAIT(src, TRAIT_PACIFISM))
 		return FALSE

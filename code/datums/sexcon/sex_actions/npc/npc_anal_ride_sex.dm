@@ -14,8 +14,6 @@
 /datum/sex_action/npc_anal_ride_sex/on_start(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] gets on top of [target] and begins riding them with their ass!"))
 	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
-	var/datum/sex_controller/sc = target.sexcon
-	sc.beingfucked = TRUE
 
 
 /datum/sex_action/npc_anal_ride_sex/on_perform(mob/living/user, mob/living/target)
@@ -24,17 +22,20 @@
 	do_thrust_animate(user, target)
 
 	if(target.sexcon.considered_limp())
-		user.sexcon.perform_sex_action(user, 2.4, 0, TRUE)
-		user.sexcon.perform_sex_action(target, 1.2, 3, TRUE)
+		user.sexcon.perform_sex_action(user, 4, 0, TRUE)
+		user.sexcon.perform_sex_action(target, 2, 3, TRUE)
 	else
-		user.sexcon.perform_sex_action(user, 4.8, 0, TRUE)
-		user.sexcon.perform_sex_action(target, 2.4, 7, TRUE)
+		user.sexcon.perform_sex_action(user, 8, 0, TRUE)
+		user.sexcon.perform_sex_action(target, 4, 7, TRUE)
 	user.sexcon.handle_passive_ejaculation()
 
 	user.sexcon.perform_sex_action(target, 2, 4, FALSE)
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_lovebold("[target] cums into [user]'s ass!"))
-		target.sexcon.cum_into(vaginal = TRUE)
+		if(issimple(user))
+			target.sexcon.cum_into()
+		else
+			target.sexcon.cum_into(anal = TRUE)
 //		target.try_impregnate(user)
 		target.virginity = FALSE
 
@@ -42,8 +43,6 @@
 	user.visible_message(span_warning("[user] gets off [target]."))
 	var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
 	usermob.stoppedfucking(target)
-	var/datum/sex_controller/sc = target.sexcon
-	sc.beingfucked = FALSE
 
 /datum/sex_action/npc_anal_ride_sex/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())
@@ -53,7 +52,5 @@
 		else
 			var/mob/living/carbon/human/humanuser = user
 			humanuser.stoppedfucking(target)
-		var/datum/sex_controller/sc = target.sexcon
-		sc.beingfucked = FALSE
 		return TRUE
 	return FALSE

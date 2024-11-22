@@ -21,7 +21,6 @@
 	var/last_ejaculation_time = 0
 	var/last_moan = 0
 	var/last_pain = 0
-	var/beingfucked = FALSE //for npc stuff
 //	var/msg_signature = ""
 //	var/last_msg_signature = 0
 
@@ -65,8 +64,6 @@
 	return TRUE
 
 /datum/sex_controller/proc/finished_check()
-	if(arousal > 100 && issimple(user))
-		return TRUE
 	if(!do_until_finished)
 		return FALSE
 	if(!just_ejaculated())
