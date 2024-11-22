@@ -2041,6 +2041,17 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/river)
+"bGC" = (
+/obj/structure/table/wood{
+	dir = 4;
+	icon_state = "longtable"
+	},
+/obj/item/candle/skull,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/beach{
+	name = "Shores of the Emerald Coast";
+	first_time_text = "Emerald Shores"
+	})
 "bGK" = (
 /obj/structure/roguewindow/openclose{
 	dir = 1
@@ -3497,19 +3508,18 @@
 	first_time_text = "Emerald Shores"
 	})
 "cTx" = (
-/obj/structure/closet/crate/chest/crafted,
-/obj/item/customlock,
-/obj/item/customlock,
-/obj/item/customlock,
-/obj/item/roguekey/custom,
-/obj/item/roguekey/custom,
-/obj/item/roguekey/custom,
-/obj/item/rogueweapon/hammer,
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/town/magician{
-	name = "Ravenloft Academy";
-	first_time_text = "Ravenloft Academy"
-	})
+/obj/item/book/granter/spell/spells5e/mending5e,
+/obj/item/book/granter/spell/spells5e/mending5e,
+/obj/item/book/granter/spell/spells5e/infestation5e,
+/obj/item/book/granter/spell/spells5e/createbonfire5e,
+/obj/item/book/granter/spell/spells5e/acidsplash5e,
+/obj/item/book/granter/spell/spells5e/rayoffrost5e,
+/obj/item/book/granter/spell/spells5e/mindsliver5e,
+/obj/item/book/granter/spell/spells5e/boomingblade5e,
+/obj/item/book/granter/spell/spells5e/chilltouch5e,
+/obj/item/book/granter/spell/spells5e/bladeward5e,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/library)
 "cTJ" = (
 /obj/structure/closet/crate/chest,
 /obj/item/rogue/instrument/lute,
@@ -6454,7 +6464,6 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/reagent_containers/glass/mortar,
-/obj/item/pestle,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
@@ -7271,7 +7280,7 @@
 	})
 "fHg" = (
 /obj/structure/bookcase,
-/obj/item/book/granter/spell/spells5e/boomingblade5e,
+/obj/item/book/granter/spell/spells5e/light5e,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/library)
 "fHl" = (
@@ -7664,6 +7673,11 @@
 	},
 /obj/item/paper/scroll,
 /obj/item/natural/feather,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -9150,6 +9164,8 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/book/granter/spell/spells5e/mindsliver5e,
 /obj/item/book/granter/spell/spells5e/poisonspray5e,
+/obj/item/book/granter/spell/blackstone/lightning,
+/obj/item/book/granter/spell/blackstone/fireball,
 /turf/open/floor/bronze,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
@@ -9495,6 +9511,17 @@
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town)
+"hGD" = (
+/obj/structure/bookcase{
+	name = "Prospero Shelf"
+	},
+/obj/item/book/granter/spell/spells5e/mending5e,
+/obj/item/book/granter/spell/spells5e/bladeward5e,
+/obj/item/book/granter/spell/spells5e/mindsliver5e,
+/obj/item/book/granter/spell/spells5e/rayoffrost5e,
+/obj/item/book/granter/spell/spells5e/rayoffrost5e,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/library)
 "hGK" = (
 /obj/structure/spacevine,
 /turf/open/water/river{
@@ -9718,14 +9745,14 @@
 	first_time_text = "The Twilight Woods"
 	})
 "hQY" = (
-/obj/structure/bookcase{
-	name = "Prospero Shelf"
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/fluff/statue/pillar{
+	name = "Wooden Support"
 	},
-/obj/item/book/granter/spell/spells5e/boomingblade5e,
-/obj/item/book/granter/spell/spells5e/rayoffrost5e,
-/obj/item/book/granter/spell/spells5e/mending5e,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/indoors/town/library)
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/outdoors/rtfield{
+	first_time_text = null
+	})
 "hRq" = (
 /obj/structure/mineral_door/wood/fancywood,
 /turf/open/floor/rogue/wood/herringbone,
@@ -11428,10 +11455,6 @@
 /area/rogue/outdoors/river)
 "jlS" = (
 /obj/structure/bookcase,
-/obj/item/book/rogue/law,
-/obj/item/book/rogue/law,
-/obj/item/book/rogue/law,
-/obj/item/book/rogue/law,
 /obj/structure/roguemachine/camera/right,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
@@ -11801,6 +11824,20 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
+	})
+"jCp" = (
+/obj/item/customlock,
+/obj/item/customlock,
+/obj/item/customlock,
+/obj/item/roguekey/custom,
+/obj/item/roguekey/custom,
+/obj/item/roguekey/custom,
+/obj/item/rogueweapon/hammer,
+/obj/structure/closet/crate/chest/crafted,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/indoors/town/magician{
+	name = "Ravenloft Academy";
+	first_time_text = "Ravenloft Academy"
 	})
 "jCr" = (
 /obj/structure/flora/rogueshroom/happyrandom{
@@ -12468,6 +12505,14 @@
 	dir = 4
 	},
 /area/rogue/indoors/town)
+"jXx" = (
+/obj/structure/fluff/statue/pillar{
+	name = "Wooden Support"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/outdoors/rtfield{
+	first_time_text = null
+	})
 "jYV" = (
 /obj/structure/flora/roguegrass/water,
 /obj/item/natural/stone,
@@ -15363,16 +15408,10 @@
 	name = "Adventurers Guild"
 	})
 "msD" = (
-/obj/structure/table/wood{
-	dir = 4;
-	icon_state = "longtable"
-	},
-/obj/item/candle/skull,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/beach{
-	name = "Shores of the Emerald Coast";
-	first_time_text = "Emerald Shores"
-	})
+/obj/structure/bookcase,
+/obj/item/book/granter/spell/spells5e/createbonfire5e,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/library)
 "msJ" = (
 /obj/structure/table/wood{
 	icon_state = "largetable";
@@ -15489,19 +15528,36 @@
 /area/rogue/indoors/town/bath{
 	first_time_text = "The Dreamers Demesne.."
 	})
+"mws" = (
+/obj/structure/bookcase{
+	name = "Prospero Shelf"
+	},
+/obj/item/book/granter/spell/spells5e/boomingblade5e,
+/obj/item/book/granter/spell/spells5e/rayoffrost5e,
+/obj/item/book/granter/spell/spells5e/boomingblade5e,
+/obj/item/book/granter/spell/spells5e/chilltouch5e,
+/obj/item/book/granter/spell/spells5e/mending5e,
+/obj/item/book/granter/spell/spells5e/mending5e,
+/obj/item/book/granter/spell/spells5e/boomingblade5e,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/library)
 "mwA" = (
 /obj/item/natural/rock/coal,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/cave)
 "mwE" = (
-/obj/structure/bookcase{
-	name = "Prospero Shelf"
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
 	},
-/obj/item/book/granter/spell/spells5e/bladeward5e,
-/obj/item/book/granter/spell/spells5e/rayoffrost5e,
-/obj/item/book/granter/spell/spells5e/mending5e,
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/indoors/town/library)
+/obj/item/paper,
+/obj/item/paper,
+/obj/item/paper,
+/obj/item/paper,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "mwH" = (
 /obj/structure/roguewindow/openclose{
 	dir = 4
@@ -16218,10 +16274,7 @@
 	name = "Silver Dragon"
 	})
 "mXC" = (
-/obj/structure/bookcase{
-	name = "Prospero Shelf"
-	},
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/library)
 "mXE" = (
 /obj/effect/spawner/roguemap/shroud,
@@ -19411,6 +19464,12 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
+"pFU" = (
+/obj/structure/bookcase,
+/obj/item/book/granter/spell/spells5e/chilltouch5e,
+/obj/item/book/granter/spell/spells5e/guidance5e,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/library)
 "pGa" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/closed/wall/mineral/rogue/wooddark/slitted,
@@ -22697,6 +22756,10 @@
 "seH" = (
 /obj/structure/table/vtable/v2,
 /obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -23991,6 +24054,7 @@
 /obj/item/book/granter/spell/spells5e/eldritchblast5e,
 /obj/item/book/granter/spell/spells5e/lightninglure5e,
 /obj/item/book/granter/spell/spells5e/encodethoughts5e,
+/obj/item/book/granter/spell/blackstone/lightning,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
@@ -24334,6 +24398,8 @@
 /obj/structure/bookcase,
 /obj/item/book/granter/spell/spells5e/mindsliver5e,
 /obj/item/book/granter/spell/spells5e/primalsavagery5e,
+/obj/item/book/granter/spell/blackstone/lightning,
+/obj/item/book/granter/spell/blackstone/fireball,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/magician{
 	name = "Ravenloft Academy";
@@ -87477,7 +87543,7 @@ lyF
 lyF
 lyF
 vxU
-pOk
+kvH
 jlS
 pOk
 vxU
@@ -97549,7 +97615,7 @@ dUH
 ihQ
 ihQ
 ihQ
-msD
+bGC
 mBh
 aFE
 iKA
@@ -110092,7 +110158,7 @@ haD
 mYC
 ddS
 vLX
-oBc
+pFU
 eFM
 gJm
 eFM
@@ -110501,14 +110567,14 @@ eFM
 eFM
 aUk
 oBc
-mwE
 ivP
-hQY
+eIP
+ivP
 oBc
 cHn
 eFM
 eFM
-oBc
+msD
 vLX
 npG
 npG
@@ -110703,9 +110769,9 @@ eFM
 eFM
 rHx
 vLX
+mws
 mXC
-ivP
-mXC
+hGD
 vLX
 jAE
 eFM
@@ -110906,7 +110972,7 @@ eFM
 rHx
 vLX
 mXC
-eIP
+cTx
 mXC
 vLX
 hYR
@@ -117775,7 +117841,7 @@ beK
 beK
 mJe
 uCN
-kXp
+jXx
 pYW
 hiA
 kvH
@@ -118386,7 +118452,7 @@ kXp
 daC
 dYB
 nNz
-bUR
+mwE
 rJG
 hiA
 hiA
@@ -118785,7 +118851,7 @@ beK
 vIa
 mJe
 ucZ
-pYW
+hQY
 kXp
 oRk
 dYB
@@ -180601,7 +180667,7 @@ qGd
 pCG
 cDW
 vLX
-ePb
+jCp
 vBX
 hrX
 vLX
@@ -180803,7 +180869,7 @@ vLX
 aXd
 vLX
 vmg
-cTx
+ePb
 vBX
 eYT
 vLX
