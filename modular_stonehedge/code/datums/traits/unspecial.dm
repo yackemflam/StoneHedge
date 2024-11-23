@@ -168,7 +168,7 @@
 /datum/quirk/mtraining1
 	name = "Medical Training"
 	desc = "I have journeyman medical training and stashed some med supplies."
-	value = 3
+	value = 2
 
 /datum/quirk/mtraining1/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
