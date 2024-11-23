@@ -200,7 +200,7 @@
 	armor_penetration = 25
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "arrow_proj"
-	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/npc
 	range = 15
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	embedchance = 100

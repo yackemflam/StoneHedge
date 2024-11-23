@@ -179,6 +179,7 @@
 
 //hopefully no longer spams the shit out of em outta npcs since its not reusable.
 /obj/projectile/bullet/arrow/npc
+	name = "arrow"
 	damage = 20
 	damage_type = BRUTE
 	armor_penetration = 40
