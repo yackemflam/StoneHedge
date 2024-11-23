@@ -1980,7 +1980,7 @@
 /area/rogue/indoors/town/library)
 "bCN" = (
 /mob/living/simple_animal/hostile/rogue/skeleton/bow{
-	name = "El Turrrreto";
+	name = "Skellter";
 	faction = list("undead", "noble"ssssss)
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -6562,7 +6562,7 @@
 	})
 "fdl" = (
 /mob/living/simple_animal/hostile/rogue/skeleton/bow{
-	name = "El Diablo";
+	name = "Vint";
 	faction = list("undead", "noble"ssssss)
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -9222,7 +9222,7 @@
 /turf/open/water/swamp/deep,
 /area/rogue/under/cavewet/bogcaves)
 "huM" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/mossback,
+/obj/structure/spawner/invisible/monster/mossback,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/caves)
 "huR" = (
@@ -10009,6 +10009,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"ias" = (
+/obj/structure/spawner/invisible/monster/mossback,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/caves)
 "iaH" = (
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town)
@@ -16702,9 +16706,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
 "nqF" = (
-/obj/structure/flora/grass/jungle/b,
-/turf/open/floor/rogue/dirt/nrich,
-/area/rogue/outdoors/river)
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/structure/closet/crate/chest/dungeon/mimic,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/town/vault)
 "nqU" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -18231,6 +18236,12 @@
 	icon_state = "rockwd"
 	},
 /area/rogue/outdoors/river)
+"oGQ" = (
+/obj/effect/temp_visual/small_smoke,
+/obj/effect/mist,
+/obj/structure/spawner/invisible/monster/minotaur,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
 "oGU" = (
 /obj/structure/ladder,
 /turf/open/floor/rogue/cobblerock,
@@ -25909,6 +25920,10 @@
 /obj/structure/flora/roguetree/underworld,
 /obj/structure/flora/roguetree/burnt,
 /turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"uDn" = (
+/obj/structure/spawner/invisible/monster/mossback,
+/turf/open/water/swamp,
 /area/rogue/outdoors/caves)
 "uDp" = (
 /obj/machinery/light/rogue/torchholder{
@@ -76743,7 +76758,7 @@ xLb
 ifi
 stf
 jrB
-ifi
+ias
 jrB
 stf
 stf
@@ -77545,7 +77560,7 @@ cgq
 nVt
 nVt
 nVt
-jrB
+uDn
 jrB
 stf
 jrB
@@ -83686,7 +83701,7 @@ owh
 owh
 owh
 owh
-hfS
+hRB
 owh
 rzL
 gEX
@@ -85290,7 +85305,7 @@ rxm
 rxm
 jhB
 owh
-sZa
+oGQ
 rzL
 rxm
 rxm
@@ -86649,7 +86664,7 @@ ifi
 ifi
 rxm
 rTO
-vFo
+nqF
 vFo
 vFo
 rTO
@@ -86853,7 +86868,7 @@ rxm
 rTO
 eFh
 umc
-vFo
+nqF
 rTO
 ekG
 hCp
@@ -89264,7 +89279,7 @@ rxm
 cVH
 cVH
 tmk
-huM
+tmk
 tmk
 tmk
 cVH
@@ -89466,7 +89481,7 @@ rxm
 wdl
 tmk
 tmk
-tmk
+huM
 tmk
 tmk
 cVH
@@ -90881,7 +90896,7 @@ cVH
 tmk
 tmk
 tmk
-huM
+tmk
 tmk
 tmk
 cVH
@@ -91083,7 +91098,7 @@ tmk
 tmk
 cVH
 tmk
-tmk
+huM
 tmk
 tmk
 ifi
@@ -91879,8 +91894,8 @@ nVt
 nVt
 btg
 diU
-huM
 tmk
+huM
 tmk
 tmk
 tmk
@@ -92147,7 +92162,7 @@ rxm
 rxm
 qXK
 uPU
-vrx
+hyR
 hfS
 hfS
 qXK
@@ -93153,7 +93168,7 @@ nVt
 nVt
 vrx
 vrx
-vrx
+hyR
 vbT
 vrx
 hfS
@@ -93696,7 +93711,7 @@ xVg
 nVt
 btg
 tmk
-tmk
+huM
 wdl
 tmk
 qIX
@@ -116741,11 +116756,11 @@ oKu
 aBk
 lwK
 sDS
-kct
+qJZ
 kct
 kct
 tSN
-tSN
+tHV
 tLk
 qMs
 beK
@@ -117145,11 +117160,11 @@ xcU
 kqH
 wza
 doa
+qJZ
 kct
 kct
 kct
-kct
-kct
+qJZ
 vmN
 qMs
 beK
@@ -117549,11 +117564,11 @@ xDh
 kqH
 nqt
 tNb
-wPv
+tNb
 kct
 kct
 kct
-tSN
+tHV
 tHV
 tLk
 beK
@@ -117953,11 +117968,11 @@ xDh
 ndY
 aBk
 tNb
-nqF
+bjQ
 kct
 kct
 kct
-kct
+qJZ
 cqG
 qMs
 nFS
