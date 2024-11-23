@@ -79,9 +79,18 @@
 		if(amount > 35 MINUTES)
 			if(!is_zombie)
 				if(B.skeletonized)
-					dustme = TRUE
-
+					if(!B.owner.client) //so cliented mfers dont get dusted.
+						dustme = TRUE
 	if(dustme)
+		//stonehedge mob decomposition
+		C.visible_message(span_smallgreen("[C] decomposes..."))
+		var/datum/reagents/R = new/datum/reagents(20)
+		R.my_atom = src
+		R.add_reagent(/datum/pollutant/rot, 20)
+		var/datum/effect_system/smoke_spread/chem/smoke = new
+		smoke.set_up(R, 2, get_turf(C), FALSE)
+		smoke.start()
+		//stonehedge mob decomposition end
 		qdel(src)
 		return C.dust(drop_items=TRUE)
 
@@ -119,9 +128,16 @@
 		if(istype(T))
 			T.add_pollutants(/datum/pollutant/rot, 5)
 	if(amount > 20 MINUTES)
-		L.visible_message(span_notice("[src] decomposes..."))
-		qdel(L)
-		//qdel(src)
+		//stonehedge simple mob decomposition
+		L.visible_message(span_smallgreen("[L] decomposes..!"))
+		var/datum/reagents/R = new/datum/reagents(20)
+		R.my_atom = src
+		R.add_reagent(/datum/pollutant/rot, 20)
+		var/datum/effect_system/smoke_spread/chem/smoke = new
+		smoke.set_up(R, 2, get_turf(L), FALSE)
+		smoke.start()
+		//stonehedge simple mob decomposition end
+		qdel(src)
 		return L.dust(drop_items=TRUE)
 
 /datum/component/rot/gibs
@@ -130,5 +146,5 @@
 /datum/looping_sound/fliesloop
 	mid_sounds = list('sound/misc/fliesloop.ogg')
 	mid_length = 60
-	volume = 50
+	volume = 30
 	extra_range = 0

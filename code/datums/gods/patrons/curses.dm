@@ -230,7 +230,9 @@
 		if(world.time < owner.mob_timers["nympho_curse"] + rand(2,10)SECONDS)
 			return
 	owner.mob_timers["nympho_curse_passive"] = world.time
-	owner.sexcon.arousal += 1
+	if(owner.wear_pants)
+		if(owner.wear_pants.flags_inv & HIDECROTCH && !owner.wear_pants.genitalaccess)
+			owner.sexcon.arousal += 1
 	if(owner.mob_timers["nympho_curse"])
 		if(world.time < owner.mob_timers["nympho_curse"] + rand(15,90)SECONDS)
 			return
@@ -239,7 +241,7 @@
 		if(owner.wear_pants.flags_inv & HIDECROTCH && !owner.wear_pants.genitalaccess)
 			if(rand(5))
 				to_chat(owner, span_love("I feel my [owner.wear_pants] rub against me..."))
-			owner.sexcon.arousal += rand(1,30)
+			owner.sexcon.arousal += rand(5,50)
 
 /datum/curse/graggar/on_life(mob/living/carbon/human/owner)
 	. = ..()		

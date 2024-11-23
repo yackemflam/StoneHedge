@@ -57,7 +57,7 @@
 				H.change_stat("endurance", 2)
 			ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-			dressup(H)
+			dressup(H, inventory_items)
 		if("Rogue")
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rogue_vanish)
 			inventory_items = list(/obj/item/storage/belt/rogue/pouch/coins/rich,
@@ -112,7 +112,7 @@
 			H.change_stat("perception", 1)
 			H.change_stat("speed", 4)
 			H.change_stat("intelligence", 2)
-			dressup(H)
+			dressup(H, inventory_items)
 		if("Cleric")
 			inventory_items = list(
 				/obj/item/clothing/neck/roguetown/bervor,
@@ -174,11 +174,12 @@
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/bladeward5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/conjure/createbonfire5e)
 			H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-			dressup(H)
+			dressup(H, inventory_items)
 
-/obj/item/class_selector/proc/dressup(mob/living/carbon/human/H)
-	for(var/obj/item/invitem in inventory_items)
-		new invitem(get_turf(H))
-		H.equip_to_appropriate_slot(invitem)
+/obj/item/class_selector/proc/dressup(mob/living/carbon/human/H, list/inventory_items)
+	to_chat(H, span_warning("I shouldn't move until I am done dressing up."))
+	for(var/obj/item/invitem as anything in inventory_items)
+		var/spawneditem = new invitem(H.loc)
+		H.pickup_and_wear(spawneditem)
 	qdel(src)
 
