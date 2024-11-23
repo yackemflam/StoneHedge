@@ -177,20 +177,33 @@
 			return "foreleg"
 	return ..()
 
-/obj/projectile/bullet/reusable/arrow/orc
+//hopefully no longer spams the shit out of em outta npcs since its not reusable.
+/obj/projectile/bullet/arrow/npc
 	damage = 20
 	damage_type = BRUTE
 	armor_penetration = 40
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "arrow_proj"
-	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/npc
 	range = 15
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	embedchance = 100
 	woundclass = BCLASS_STAB
 	flag = "bullet"
 	speed = 2
-	max_integrity = 1 //hopefully they break
+
+/obj/item/ammo_casing/caseless/rogue/arrow/npc
+	name = "arrow"
+	desc = "A wooden shaft with a pointy iron end."
+	projectile_type = /obj/projectile/bullet/arrow/npc
+	caliber = "arrow"
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "arrow"
+	force = 7
+	dropshrink = 0.6
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	max_integrity = 1
+	w_class = WEIGHT_CLASS_SMALL
 
 /mob/living/simple_animal/hostile/retaliate/rogue/orc/ranged
 	name = "savage orc archer"
@@ -198,7 +211,7 @@
 	icon_state = "orcbow"
 	icon_living = "orcbow"
 	icon_dead = "orcbow"
-	projectiletype = /obj/projectile/bullet/reusable/arrow/orc
+	projectiletype = /obj/projectile/bullet/arrow/npc
 	projectilesound = 'sound/combat/Ranged/flatbow-shot-01.ogg'
 	ranged = 1
 	retreat_distance = 2
@@ -242,7 +255,7 @@
 	melee_damage_upper = 30
 	vision_range = 7
 	aggro_vision_range = 9
-	projectiletype = /obj/projectile/bullet/reusable/arrow/orc
+	projectiletype = /obj/projectile/bullet/arrow/npc
 	projectilesound = 'sound/combat/Ranged/flatbow-shot-01.ogg'
 	ranged = 1
 	retreat_distance = 2

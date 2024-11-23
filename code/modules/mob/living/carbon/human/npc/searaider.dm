@@ -174,7 +174,7 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	melee_damage_upper = 30
 	vision_range = 7
 	aggro_vision_range = 9
-	projectiletype = /obj/projectile/bullet/reusable/arrow/orc
+	projectiletype = /obj/projectile/bullet/arrow/npc
 	projectilesound = 'sound/combat/Ranged/flatbow-shot-01.ogg'
 	ranged = 1
 	retreat_distance = 2
