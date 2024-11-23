@@ -216,7 +216,6 @@
 		fuckcd -= 1
 	if(fuckcd)
 		return
-	var/datum/sex_controller/sc = src.sexcon
 	if(sexcon.current_action)
 		return
 	if(sexcon && !chasesfuck)
