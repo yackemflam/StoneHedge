@@ -194,7 +194,7 @@
 	name = "half-darksight eyes"
 	desc = ""
 	see_in_dark = 7
-	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 
 //
 

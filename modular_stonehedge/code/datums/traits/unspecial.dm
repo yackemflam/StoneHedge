@@ -13,7 +13,7 @@
 		return
 	eyes.see_in_dark = 14 // Same as full darksight eyes
 	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
-	eyes.Insert(H)
+	H.update_sight()
 
 /datum/quirk/thickskin
 	name = "Tough"
