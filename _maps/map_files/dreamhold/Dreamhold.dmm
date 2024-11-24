@@ -28847,6 +28847,13 @@
 /obj/effect/wisp,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/cavewet/bogcaves)
+"wZi" = (
+/obj/effect/landmark/start/monk,
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/church/chapel{
+	first_time_text = "Shrine of Lune";
+	name = "Shrine of Lune"
+	})
 "wZF" = (
 /obj/structure/flora/roguegrass/maneater/real{
 	aggroed = 1
@@ -29201,6 +29208,14 @@
 /obj/item/seeds/berryrogue/poison,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/bath)
+"xlt" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/effect/landmark/start/monk,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/town/church/chapel{
+	first_time_text = "Shrine of Lune";
+	name = "Shrine of Lune"
+	})
 "xlC" = (
 /obj/structure/chair/bench/church/smallbench,
 /turf/open/floor/rogue/ruinedwood/herringbone,
@@ -153983,8 +153998,8 @@ kan
 iYC
 kan
 dAL
-rsg
-rsg
+wZi
+wZi
 sfZ
 emy
 qgd
@@ -154387,8 +154402,8 @@ nfv
 ghn
 kan
 dAL
-sfZ
-sfZ
+xlt
+xlt
 kan
 wOd
 dAL
