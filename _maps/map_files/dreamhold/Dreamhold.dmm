@@ -5913,9 +5913,9 @@
 /area/rogue/under/cavewet/bogcaves)
 "eIP" = (
 /obj/structure/roguemachine/wizardvend{
+	density = 0;
 	icon_state = "camera";
-	pixel_x = 28;
-	density = 0
+	pixel_x = 28
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/library)
@@ -7524,9 +7524,9 @@
 /area/rogue/indoors/shelter/town)
 "fSn" = (
 /obj/structure/mineral_door/wood/fancywood{
+	locked = 1;
 	lockid = "mage";
-	name = "Magicians Quarters";
-	locked = 1
+	name = "Magicians Quarters"
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/magician{
@@ -11538,13 +11538,10 @@
 	name = "Shores of the Emerald Coast"
 	})
 "jmV" = (
-/obj/structure/closet/dirthole/closed/loot,
-/obj/structure/spacevine,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/beach{
-	first_time_text = "Emerald Shores";
-	name = "Shores of the Emerald Coast"
-	})
+/obj/effect/mist,
+/obj/structure/closet/crate/chest/refilling/trait,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/caves)
 "jna" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -11995,10 +11992,7 @@
 "jEw" = (
 /obj/structure/closet/crate/chest/refilling/trait,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/beach{
-	first_time_text = "Emerald Shores";
-	name = "Shores of the Emerald Coast"
-	})
+/area/rogue/outdoors/caves)
 "jEU" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/exposed/church{
@@ -12924,10 +12918,7 @@
 	},
 /obj/structure/spawner/invisible/ghost/cursedsouls,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/beach{
-	first_time_text = "Emerald Shores";
-	name = "Shores of the Emerald Coast"
-	})
+/area/rogue/outdoors/caves)
 "kms" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors{
@@ -18119,10 +18110,7 @@
 	icon_state = "chains8"
 	},
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/beach{
-	first_time_text = "Emerald Shores";
-	name = "Shores of the Emerald Coast"
-	})
+/area/rogue/outdoors/caves)
 "oAq" = (
 /obj/effect/decal/border/ruinedwood/inverted,
 /turf/open/floor/rogue/ruinedwood/herringbone,
@@ -27647,9 +27635,9 @@
 /area/rogue/outdoors/mountains)
 "vZW" = (
 /obj/structure/mineral_door/bars{
+	locked = 1;
 	lockid = "mage";
-	name = "Magic Academy Gates";
-	locked = 1
+	name = "Magic Academy Gates"
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/outdoors/exposed/magiciantower{
@@ -91873,8 +91861,8 @@ vrx
 vbT
 vrx
 nVt
+jmV
 vrx
-ret
 jhB
 nVt
 nKL
@@ -95787,11 +95775,11 @@ gho
 tde
 tde
 oAj
-dqn
-dqn
-dqn
-mDF
-jmV
+sNy
+sNy
+sNy
+sfF
+xYs
 tde
 tde
 tde
@@ -95988,12 +95976,12 @@ oCe
 gho
 gho
 tde
-tde
-tde
+nVt
+nVt
 kmg
 jEw
-tde
-tde
+nVt
+nVt
 tde
 tig
 tig
@@ -96190,12 +96178,12 @@ oCe
 gho
 gho
 tde
-tde
-tde
-tde
-tde
-tde
-iRz
+nVt
+nVt
+nVt
+nVt
+nVt
+ezL
 mDF
 dqn
 iRz
