@@ -97,7 +97,7 @@
 			soundloop.start()
 		for(var/mob/living/carbon/human/L in viewers(7))
 			L.add_stress(stressevent)
-			if(L.mind)
+			if(!issimple(L))
 				var/datum/status_effect/buff/healing/musicalhealing/heal_effect = L.apply_status_effect(/datum/status_effect/buff/healing/musicalhealing)
 				heal_effect.healing_on_tick = healthbonus
 	else
