@@ -50,7 +50,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/eorahelm
 			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
 			cloak = /obj/item/clothing/cloak/templar/eora
-		if("Ravox")
+		if("Minhur")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/ravoxhelm
 			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox
 			cloak = /obj/item/clothing/cloak/templar/ravox
