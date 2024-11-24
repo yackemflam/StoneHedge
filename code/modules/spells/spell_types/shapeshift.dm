@@ -172,8 +172,8 @@
 		//fuck you, now you cant be immortal.
 		source.charge_counter = 0
 		source.start_recharge()
-		if(action)
-			action.UpdateButtonIcon()
+		if(source.action)
+			source.action.UpdateButtonIcon()
 	qdel(shape)
 	qdel(src)
 
