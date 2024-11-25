@@ -227,8 +227,11 @@
 		else
 			target.add_stress(/datum/stressevent/cumok)
 	if(girljuice)
-		target.reagents.add_reagent(/datum/reagent/water/pussjuice, 10)
-		after_ejaculation()
+		if(!issimple(target))
+			target.reagents.add_reagent(/datum/reagent/water/pussjuice, 10)
+			after_ejaculation()
+		else
+			after_ejaculation()
 		return
 	if(issimple(target))
 		if(testes) //simple target just remove the coom.
