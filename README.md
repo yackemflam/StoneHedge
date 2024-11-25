@@ -1,5 +1,5 @@
 <p align="center">
- <img width="450px" src="https://images2.imgbox.com/ee/79/eFJUhh4w_o.png" align="center" alt="Dreamkeep Stats" />
+ <img width="600px" src="https://images2.imgbox.com/ee/79/eFJUhh4w_o.png" align="center" alt="Dreamkeep Stats" />
  <h1 align="center">DREAMKEEP</h1>
  <h2 align="center">M-RP / H-RP Medieval Fantasy</h2>
 </p>
@@ -38,7 +38,7 @@ All original code and assets of this repository are under the [GNU Affero Genera
 
 ## Dreamkeep - Proprietary
 
-The following code and assets are under a custom proprietary license as per original author's wishes.
+The following assets are under a custom license as per original author's wishes, assets authored by Dreamkeep indicate collaborative work among it's artists, and may be credited within files.
 
 | Reference                                    | Author        |   License  |
 |----------------------------------------------|---------------|------------|
