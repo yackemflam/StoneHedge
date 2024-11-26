@@ -1978,6 +1978,10 @@
 /area/rogue/under/cavewet/bogcaves)
 "bxo" = (
 /obj/structure/bars/steel,
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this."
+	},
 /turf/open/water/swamp/deep,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -2075,6 +2079,8 @@
 	})
 "bCD" = (
 /obj/structure/closet/crate/roguecloset,
+/obj/item/reagent_containers/glass/bottle/rogue/paralysispot,
+/obj/item/reagent_containers/glass/bottle/rogue/soporpot,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/library)
 "bCN" = (
@@ -3661,6 +3667,13 @@
 /obj/item/book/granter/spell/spells5e/boomingblade5e,
 /obj/item/book/granter/spell/spells5e/chilltouch5e,
 /obj/item/book/granter/spell/spells5e/bladeward5e,
+/obj/structure/trap/fire{
+	icon_state = "ward-red"
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this."
+	},
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/library)
 "cTJ" = (
@@ -3675,7 +3688,16 @@
 	})
 "cTS" = (
 /obj/structure/roguewindow/openclose,
-/obj/structure/bars/steel,
+/obj/effect/forcefield{
+	icon_state = "purplesparkles";
+	name = "Warding Spell";
+	desc = "It glimmers with potent magick!"
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
+	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -4074,6 +4096,16 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
+"dgn" = (
+/obj/structure/fluff/statue/gargoyle/moss,
+/obj/structure/fluff/railing/border{
+	dir = 8
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/town/church/chapel{
+	first_time_text = "Shrine of Lune";
+	name = "Shrine of Lune"
+	})
 "dgA" = (
 /obj/item/natural/rock/cinnabar,
 /turf/open/floor/rogue/naturalstone,
@@ -4200,6 +4232,9 @@
 	dir = 1;
 	icon_state = "longtable"
 	},
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/reagent_containers/glass/bowl,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -4385,7 +4420,16 @@
 /obj/structure/roguewindow/openclose{
 	dir = 4
 	},
-/obj/structure/bars/steel,
+/obj/effect/forcefield{
+	icon_state = "purplesparkles";
+	name = "Warding Spell";
+	desc = "It glimmers with potent magick!"
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
+	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -6364,6 +6408,11 @@
 "ePi" = (
 /obj/structure/roguewindow/stained/silver{
 	opacity = 0
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/outdoors/river)
@@ -9240,7 +9289,11 @@
 /obj/structure/roguewindow/stained/silver{
 	opacity = 0
 	},
-/obj/structure/bars/steel,
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
@@ -9288,7 +9341,16 @@
 /obj/structure/roguewindow/openclose{
 	dir = 1
 	},
-/obj/structure/bars/steel,
+/obj/effect/forcefield{
+	icon_state = "purplesparkles";
+	name = "Warding Spell";
+	desc = "It glimmers with potent magick!"
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
+	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -9889,6 +9951,8 @@
 "hGM" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/book/granter/spell/spells5e/mending5e,
+/obj/item/reagent_containers/food/snacks/store/cheesewheel,
+/obj/item/reagent_containers/food/snacks/rogue/cheddar/aged,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -11537,6 +11601,8 @@
 /obj/item/reagent_containers/glass/bottle/rogue/manapot,
 /obj/item/reagent_containers/glass/bottle/rogue/manapot,
 /obj/item/reagent_containers/glass/bottle/rogue/manapot,
+/obj/item/reagent_containers/glass/bottle/rogue/swiftnesspot,
+/obj/item/reagent_containers/glass/bottle/rogue/virilitypot,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/library)
 "iYe" = (
@@ -11992,6 +12058,25 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
+	})
+"jtN" = (
+/obj/structure/roguewindow/openclose{
+	dir = 4
+	},
+/obj/effect/forcefield{
+	icon_state = "purplesparkles";
+	name = "Warding Spell";
+	desc = "It glimmers with potent magick!"
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/magician{
+	first_time_text = "Ravenloft Academy";
+	name = "Ravenloft Academy"
 	})
 "jud" = (
 /obj/structure/flora/roguegrass/bush,
@@ -13045,7 +13130,16 @@
 /obj/structure/roguewindow/openclose{
 	dir = 8
 	},
-/obj/structure/bars/steel,
+/obj/effect/forcefield{
+	icon_state = "purplesparkles";
+	name = "Warding Spell";
+	desc = "It glimmers with potent magick!"
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/exposed/magiciantower{
 	first_time_text = "Ravenloft Academy";
@@ -13204,6 +13298,12 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"kiG" = (
+/obj/structure/trap/fire{
+	icon_state = "ward-red"
+	},
+/turf/open/water/swamp,
+/area/rogue/outdoors/caves)
 "kjh" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -13369,6 +13469,9 @@
 "kpm" = (
 /obj/structure/closet/crate/chest,
 /obj/item/cooking/pan,
+/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/huntingknife/stoneknife,
+/obj/item/rogueweapon/huntingknife/stoneknife,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -13829,6 +13932,8 @@
 	})
 "kHF" = (
 /obj/structure/closet/crate/chest,
+/obj/item/reagent_containers/glass/bottle/rogue/fortitudepot,
+/obj/item/reagent_containers/glass/bottle/rogue/luckpot,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/library)
 "kHH" = (
@@ -15550,6 +15655,11 @@
 "mha" = (
 /obj/structure/roguewindow/stained/silver{
 	opacity = 0
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/church/chapel{
@@ -17742,12 +17852,11 @@
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/outdoors/river)
 "nLN" = (
-/obj/structure/roguewindow/openclose,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
-/area/rogue/indoors/town/magician{
-	first_time_text = "Ravenloft Academy";
-	name = "Ravenloft Academy"
-	})
+/obj/structure/trap/fire{
+	icon_state = "ward-red"
+	},
+/turf/open/water/swamp/deep,
+/area/rogue/outdoors/caves)
 "nLS" = (
 /obj/structure/chair/bench/church/smallbench{
 	dir = 8
@@ -18551,6 +18660,10 @@
 /area/rogue/outdoors/river)
 "oxl" = (
 /obj/structure/bars/steel,
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this."
+	},
 /turf/open/water/swamp,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -22691,6 +22804,12 @@
 	name = "Seawater"
 	},
 /area/rogue)
+"rBs" = (
+/obj/structure/trap/fire{
+	icon_state = "ward-red"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/caves)
 "rCh" = (
 /obj/structure/closet/crate/roguecloset/inn/chest,
 /obj/item/storage/backpack/rogue/backpack/surgery,
@@ -22842,6 +22961,8 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
+/obj/item/paper/scroll,
+/obj/item/natural/feather,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/library)
 "rHx" = (
@@ -23167,10 +23288,20 @@
 	name = "far stonehedge"
 	})
 "rUO" = (
-/obj/structure/roguewindow/openclose{
-	dir = 1
+/obj/effect/forcefield{
+	icon_state = "purplesparkles";
+	name = "Warding Spell";
+	desc = "It glimmers with potent magick!"
 	},
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/obj/structure/roguewindow/openclose{
+	dir = 4
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
 	name = "Ravenloft Academy"
@@ -23354,6 +23485,16 @@
 /area/rogue/indoors/town/bath)
 "sdh" = (
 /obj/structure/roguewindow,
+/obj/effect/forcefield{
+	icon_state = "purplesparkles";
+	name = "Warding Spell";
+	desc = "It glimmers with potent magick!"
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
+	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -28283,6 +28424,16 @@
 	first_time_text = "Emerald Shores";
 	name = "Shores of the Emerald Coast"
 	})
+"vXN" = (
+/obj/structure/fluff/statue/gargoyle/moss,
+/obj/structure/fluff/railing/border{
+	dir = 4
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/town/church/chapel{
+	first_time_text = "Shrine of Lune";
+	name = "Shrine of Lune"
+	})
 "vYA" = (
 /obj/machinery/loom,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -29144,7 +29295,16 @@
 /obj/structure/roguewindow/openclose{
 	dir = 8
 	},
-/obj/structure/bars/steel,
+/obj/effect/forcefield{
+	icon_state = "purplesparkles";
+	name = "Warding Spell";
+	desc = "It glimmers with potent magick!"
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
+	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -29631,6 +29791,11 @@
 "xis" = (
 /obj/structure/roguewindow/stained/silver{
 	opacity = 0
+	},
+/obj/structure/projected_forcefield{
+	name = "Magick Barrier";
+	desc = "It glistens and humswith arcane energy. Powerful Magicks, this.";
+	icon_state = "purplesparkles"
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/church/chapel{
@@ -30502,14 +30667,13 @@
 	name = "Adventurers Guild"
 	})
 "xQn" = (
-/obj/structure/roguewindow/stained/silver{
-	opacity = 0
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
 	},
-/turf/open/water/cleanshallow,
-/area/rogue/indoors/town/church/chapel{
-	first_time_text = "Shrine of Lune";
-	name = "Shrine of Lune"
-	})
+/obj/item/natural/feather,
+/obj/item/paper/scroll,
+/turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/indoors/town/library)
 "xQE" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/fluff/statue/femalestatue{
@@ -75789,12 +75953,12 @@ rxm
 rxm
 cgq
 foa
-jrB
+kiG
 jrB
 uCB
 reE
 reV
-jrB
+kiG
 aby
 cgq
 lyF
@@ -75993,7 +76157,7 @@ cgq
 jrB
 uCB
 uCB
-stf
+nLN
 stf
 jrB
 jrB
@@ -78003,7 +78167,7 @@ dRe
 stf
 stf
 stf
-jrB
+kiG
 uCB
 vYC
 ifi
@@ -78203,17 +78367,17 @@ stf
 dRe
 ifa
 stf
-stf
+nLN
 jrB
 stf
 stf
-ifi
+rBs
 nVt
 nVt
 nVt
 nVt
 jrB
-jrB
+kiG
 nVt
 nVt
 nVt
@@ -78609,14 +78773,14 @@ stf
 jrB
 stf
 jrB
-ifi
+rBs
 rxm
 nVt
 nVt
 nVt
 nVt
 nVt
-jrB
+kiG
 jrB
 nVt
 nVt
@@ -78820,7 +78984,7 @@ nVt
 nVt
 rxm
 jrB
-jrB
+kiG
 jrB
 nVt
 nVt
@@ -110733,11 +110897,11 @@ vLX
 vLX
 vLX
 vLX
+jtN
 lVD
+jtN
 lVD
-lVD
-lVD
-lVD
+rUO
 rvO
 vLX
 vLX
@@ -119405,9 +119569,9 @@ tax
 sfZ
 kan
 icP
-xQn
+xis
 icP
-xQn
+xis
 tax
 wsc
 jLy
@@ -120213,9 +120377,9 @@ cal
 kan
 sfZ
 icP
-xQn
+xis
 icP
-xQn
+xis
 cal
 icP
 jLy
@@ -146698,7 +146862,7 @@ eFM
 eFM
 eFM
 iqN
-rHo
+xQn
 hjD
 egl
 egl
@@ -146899,7 +147063,7 @@ sOt
 rlO
 eFQ
 uHl
-iqN
+eFQ
 tIR
 vLX
 egl
@@ -147102,7 +147266,7 @@ oXq
 eFQ
 eFQ
 iqN
-rHo
+xQn
 hjD
 egl
 egl
@@ -148099,11 +148263,11 @@ aZy
 aZy
 mYC
 egl
-nLN
+cTS
 lwf
 lwi
 lwf
-rUO
+hjD
 egl
 egl
 egl
@@ -148705,11 +148869,11 @@ aZy
 aZy
 mYC
 egl
-nLN
+cTS
 lwf
 lwi
 lwf
-rUO
+hjD
 egl
 egl
 egl
@@ -154352,9 +154516,9 @@ mPW
 kan
 wFA
 icP
-mfc
+dgn
 icP
-mfc
+dgn
 iYC
 icP
 rsg
@@ -155160,9 +155324,9 @@ mPW
 rsg
 wFA
 icP
-mfc
+vXN
 icP
-mfc
+vXN
 ghn
 wsc
 sfZ
