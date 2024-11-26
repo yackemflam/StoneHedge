@@ -50,15 +50,14 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/quiver/Parrows
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver/elvish = 1, /obj/item/signal_horn = 1, /obj/item/rope/chain =1, /obj/item/flashlight/flare/torch/lantern =1,)
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 4, TRUE)
@@ -66,12 +65,13 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 4, TRUE) //Hearthstone change.
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)	//Peasent levy, so some skill
-		H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, pick(1,2,2), TRUE)		//Peasent levy, so some skill
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE) //Ranger background Flavor
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE) //Ranger Background Flavor
 		H.change_stat("strength", 3)
 		H.change_stat("constitution", 2)
 		H.change_stat("perception", 2)

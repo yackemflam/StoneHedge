@@ -40,27 +40,28 @@
 	cloak = /obj/item/clothing/cloak/raincloak/green
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	backpack_contents = list(
-		/obj/item/seeds/wheat = 1,
-		/obj/item/seeds/apple = 1,
-		/obj/item/seeds/shroom = 1,
-		/obj/item/seeds/sweetleaf = 1,
+		/obj/item/seeds/berryrogue = 1,
+		/obj/item/rogueweapon/whip = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue/manapot = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot = 1,
 	)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)//Druids making herbal medicine/magical remedies
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)//Added to represent survivalism skills. They can make hide goods enough to replenish their own armors.
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/druidic, 4, TRUE) //Allows you to craft briarmasks. Otherwise this does nothing, but maybe one day it will.
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/magic/druidic, 4, TRUE) //Allows you to craft Briarmasks. Otherwise this does nothing, but maybe one day it will. Wouldn't mind tieng this to additional stuff like leaf capes and Upgraded Forestor Armor.
 		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)//wildman can ungah bungah better now
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)//Wildman can ungah bungah better now
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/magic/druidic, 2, TRUE)

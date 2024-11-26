@@ -35,22 +35,22 @@
 /datum/outfit/job/roguetown/bogguardsman/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	head = /obj/item/clothing/head/roguetown/helmet/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/gambeson
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
 	cloak = /obj/item/clothing/cloak/raincloak/green
 	neck = /obj/item/clothing/neck/roguetown/bervor
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/bog
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	beltl = /obj/item/flashlight/flare/torch/lantern
+	beltl = /obj/item/quiver/arrows
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/sword/silver/sabre/elf
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	id = /obj/item/scomstone
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver/elvish = 1, /obj/item/signal_horn = 1, /obj/item/flashlight/flare/torch/lantern =1,)
 	if(H.mind)
 		assign_skills(H)
 	H.verbs |= /mob/proc/haltyell
@@ -58,21 +58,19 @@
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_WILD_EATER, TRAIT_GENERIC)
 
-/*Design philosophy: "Jack of all tades, master of.. few" - Peasent, so bow, axe, and polearm skill. Knows most combat skills, but other than those not great with them.
-Also given some non-combat skills that a peasent would have, just to support themselves, but not anything to replace soilsons with.*/
+/*Design philosophy: These are rangers and the closest concept to guards; Referred to as Hedge Knights for lore reason on dreamkeep. They can do medicine, archery and track the forests really well. They are also competent with daggers and swords and some wilderness skills to make use of aspects.*/
 /datum/outfit/job/roguetown/bogguardsman/proc/assign_skills(mob/living/carbon/human/H)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 4, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 4, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 4, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)
@@ -83,7 +81,9 @@ Also given some non-combat skills that a peasent would have, just to support the
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 4, TRUE) //Hearthstone change.
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE) //So they can make leather and gambeson armors and slight alterations on their own as ranger-types.
 	H.change_stat("strength", 3)
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 2)
