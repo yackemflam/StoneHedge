@@ -1,5 +1,5 @@
-//based on hearthstone sea raiders.
-//By Vide noir.
+//By Vide Noir https://github.com/EaglePhntm.
+//templated on hearthstone sea raiders.
 
 /mob/living/carbon/human/species/human/friendlynpc
 	aggressive=1
@@ -13,7 +13,7 @@
 	erpable = TRUE
 	wander = TRUE
 	show_genitals = TRUE
-	var/list/friendlyfactions = list("Station", "neutral")
+	var/list/friendlyfactions = list("Station", "neutral", "rogueanimal")
 	var/list/friendlyjobs
 	//quotes from skyrim cause we love skyrim.
 	var/list/calmmessages = list()
@@ -43,10 +43,10 @@
 				return FALSE
 	. = ..()
 
-/mob/living/carbon/human/species/human/friendlynpc/Bump(atom/A)
+/mob/living/carbon/human/species/human/friendlynpc/MobBump(mob/M)
 	. = ..()
-	if(ishuman(A))
-		var/mob/living/carbon/human/L = A
+	if(ishuman(M))
+		var/mob/living/carbon/human/L = M
 		if(lasthitter == L)
 			say("Wait, I know you..!")
 			if(L.alpha <= 100)
