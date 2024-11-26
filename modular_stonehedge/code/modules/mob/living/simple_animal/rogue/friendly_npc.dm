@@ -26,6 +26,17 @@
 		return FALSE
 	if(L.stat != CONSCIOUS)
 		return FALSE
+	if(L.lying && !L.get_active_held_item())
+		if(ishuman(L))
+			var/mob/living/carbon/human/badboi = L
+			if(badboi == lasthitter && Adjacent(badboi) && !badboi.handcuffed)
+				//untested but yeah.
+				say("I got you now, criminal scum.")
+				scom_announce("I caught the criminal scum [badboi.real_name] at [get_area(src)].")
+				var/obj/item/rope/ropey = new /obj/item/rope
+				ropey.apply_cuffs(badboi, src)
+				start_pulling(badboi)
+		return FALSE
 	if(L == lasthitter && L.alpha > 100)
 		return TRUE
 	if(ishuman(L))
@@ -44,7 +55,6 @@
 	. = ..()
 
 /mob/living/carbon/human/species/human/friendlynpc/MobBump(mob/M)
-	. = ..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/L = M
 		if(lasthitter == L)
@@ -57,6 +67,7 @@
 			emote(pick("turns to [L].", "faces [L]."))
 			if(prob(10))
 				say(pick(calmmessages))
+	. = ..()
 
 /mob/living/carbon/human/species/human/friendlynpc/townguard
 	friendlyfactions = list("Station", "neutral")
@@ -97,7 +108,10 @@
 	var/patrol = TRUE
 	var/lastpatroltime
 
+//this does not work for some reason unfortunately
+/*
 /mob/living/carbon/human/species/human/friendlynpc/townguard/npc_idle()
+	. = ..()
 	//im not smart enough to make a good patrol system but here.
 	if((mobility_flags & MOBILITY_MOVE) && isturf(loc) && patrol)
 		if(prob(20))
@@ -112,13 +126,13 @@
 					lastpatroltime = world.time
 			else
 				//make them randomly go to a distant tile thats not foilage, if there is no patrol landmark around
-				var/turf/open/T = oview(pick(7,13),src) //slightly more than half or full screen movement
+				var/turf/open/T = oview(pick(13,24),src)
 				if(!istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/floor/rogue/dirt) && !istype(T, /turf/open/floor/rogue/grass))
-					Move(T)
-	. = ..()
+					walk2derpless(T)
 
 /obj/effect/landmark/townpatrol
 	name = "patrol-point"
+*/
 
 /mob/living/carbon/human/species/human/friendlynpc/townguard/brute
 
@@ -133,7 +147,7 @@
 	if(target)
 		aggressive=1
 		wander = TRUE
-		if(target != newtarg)
+		if(target == newtarg)
 			say(pick(aggromessages))
 			linepoint(target)
 
@@ -151,8 +165,10 @@
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard)
-	var/obj/item/organ/eyes/organ_eyes = getorgan(/obj/item/organ/eyes)
+	var/obj/item/organ/eyes/organ_eyes = getorgan(/obj/item/organ/eyes/night_vision/full_darksight) //elf eyes
 	if(organ_eyes)
 		organ_eyes.eye_color = pick("27becc", "35cc27", "000000")
 	update_hair()
@@ -160,7 +176,7 @@
 
 /mob/living/carbon/human/species/human/friendlynpc/townguard/handle_combat()
 	if(mode == AI_HUNT)
-		if(prob(20))
+		if(prob(10))
 			emote("rage")
 	. = ..()
 
@@ -184,7 +200,7 @@
 		r_hand = /obj/item/rogueweapon/sword
 	else
 		r_hand = /obj/item/rogueweapon/mace
-	l_hand = /obj/item/rogueweapon/shield/tower/metal
+	l_hand = /obj/item/rogueweapon/shield/tower
 	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
 	if(prob(30))
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
@@ -217,7 +233,6 @@
 		r_hand = /obj/item/rogueweapon/halberd/bardiche
 	else
 		r_hand = /obj/item/rogueweapon/greatsword
-	l_hand = /obj/item/rogueweapon/shield/tower/metal
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(H.gender == MALE)

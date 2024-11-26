@@ -17,7 +17,7 @@
 
 	//gender = FEMALE
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)	//Default shit that ever race gets
-	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS)	//Use this to add custom Fae traits
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_ZJUMP, TRAIT_DODGEEXPERT)	//Use this to add custom Fae traits
 	default_features = MANDATORY_FEATURE_LIST
 	use_skintones = 1
 	skinned_type = /obj/item/stack/sheet/animalhide/human
@@ -98,7 +98,7 @@
 	C.transform = C.transform.Scale(0.5, 0.5)
 	C.update_transform()
 	C.pass_flags = PASSTABLE | PASSMOB
-	//C.movement_type = FLYING
+	C.movement_type = FLYING
 	C.set_mob_offsets("pixie_hover", _x = 0, _y = 10)
 	C.set_light(3, 1, "#d4fcac")
 
@@ -117,7 +117,7 @@
 	C.update_transform()
 	C.pass_flags = 0
 	C.reset_offsets("pixie_hover")
-	//C.movement_type = (C.movement_type | ~FLYING)
+	C.movement_type = (C.movement_type | ~FLYING)
 	//C.Jitter(0)
 	C.set_light(0, 0, null)
 
