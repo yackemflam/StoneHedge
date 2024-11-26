@@ -14,6 +14,13 @@
 	blade_dulling = DULLING_CUT
 	resistance_flags = FLAMMABLE
 
+/obj/structure/glowshroom/Initialize(mapload)
+	. = ..()
+	//50% chance on creation to be glowshroom instead of kneestinger
+	if(prob(50) && mapload)
+		new /obj/structure/safeglowshroom(src.loc)
+		qdel(src)
+
 /obj/structure/glowshroom/fire_act(added, maxstacks)
 	visible_message(span_warning("[src] catches fire!"))
 	var/turf/T = get_turf(src)
