@@ -870,7 +870,7 @@
 	desc = "Wooden armor worn by those who inhabit the forests."
 	icon_state = "foresterchestplate"
 	item_state = "foresterchestplate"
-	max_integrity = 100
+	max_integrity = 200
 	smeltresult = /obj/item/ash
 	armor_class = ARMOR_CLASS_MEDIUM
 
