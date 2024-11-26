@@ -328,7 +328,7 @@
 	name = "5x glass bottles" //more efficent cuz u smith em ig
 	created_item = /obj/item/reagent_containers/glass/bottle
 	additional_items = list(/obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/bottle)
-	reqs_bar = /obj/item/ingot/glass
+	req_bar = /obj/item/ingot/glass
 	craftdiff = 1
 	i_type = "General"
 
@@ -336,6 +336,6 @@
 	name = "5x glass syringes" //more efficent cuz u smith em ig
 	created_item = /obj/item/reagent_containers/syringe
 	additional_items = list(/obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/syringe)
-	reqs_bar = /obj/item/ingot/glass
+	req_bar = /obj/item/ingot/glass
 	craftdiff = 2
 	i_type = "General"
