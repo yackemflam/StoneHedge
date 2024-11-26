@@ -43,14 +43,8 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
-	specstats = list(
-		"perception" = 1,
-		"intelligence" = 2,
-		"constitution" = -1,
-		"strength" = -2,
-		"speed" = 2, // 7? are you absolutely fucking insane?
-		"fortune" = 1
-		)
+	race_bonus = list(STAT_SPEED = 1)
+
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,

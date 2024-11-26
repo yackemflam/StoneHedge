@@ -1,42 +1,65 @@
 //based on hearthstone sea raiders.
-//funny modifications By Vide noir.
+//By Vide noir.
 
 /mob/living/carbon/human/species/human/friendlynpc
 	aggressive=1
+	race = /datum/species/human/northern
 	mode = AI_IDLE
 	faction = list("Station")
-	bodyparts = list(/obj/item/bodypart/chest, /obj/item/bodypart/head, /obj/item/bodypart/l_arm,
-					 /obj/item/bodypart/r_arm, /obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg)
 	ambushable = FALSE
 	dodgetime = 30
 	flee_in_pain = TRUE
 	possible_rmb_intents = list()
-	wander = TRUE
 	erpable = TRUE
+	wander = TRUE
+	show_genitals = TRUE
 	var/list/friendlyfactions = list("Station", "neutral")
 	var/list/friendlyjobs
 	//quotes from skyrim cause we love skyrim.
 	var/list/calmmessages = list()
 	var/list/aggromessages = list()
+	var/mob/living/lasthitter = null
 
+//would be great if we could make them follow stone roads while idle.
 /mob/living/carbon/human/species/human/friendlynpc/should_target(mob/living/L)
+	if(L == src)
+		return FALSE
 	if(L.stat != CONSCIOUS)
 		return FALSE
+	if(L == lasthitter && L.alpha > 100)
+		return TRUE
 	if(ishuman(L))
 		var/mob/living/carbon/human/madafaka = L
-		if(friendlyfactions)
-			if(friendlyfactions)
-				if(madafaka.faction[1] in friendlyfactions && target != madafaka)
-					return FALSE
-		if(friendlyjobs)
-			if(madafaka.job in friendlyjobs && target != madafaka)
-				return FALSE
-		if(madafaka.Adjacent(src))
+		if(madafaka.Adjacent(src) && mode != AI_HUNT && madafaka.mind && madafaka.alpha > 100)
 			if(prob(10))
+				face_atom(madafaka)
+				emote(pick("turns to [madafaka].", "faces [madafaka]."))
 				say(pick(calmmessages))
+		if(friendlyfactions)
+			if(madafaka.faction |= friendlyfactions && target != lasthitter)
+				return FALSE
+		if(friendlyjobs)
+			if(madafaka.job |= friendlyjobs && target != lasthitter)
+				return FALSE
 	. = ..()
 
+/mob/living/carbon/human/species/human/friendlynpc/Bump(atom/A)
+	. = ..()
+	if(ishuman(A))
+		var/mob/living/carbon/human/L = A
+		if(lasthitter == L)
+			say("Wait, I know you..!")
+			if(L.alpha <= 100)
+				L.apply_status_effect(/datum/status_effect/debuff/stealthcd)
+			retaliate(L)
+		else
+			face_atom(L)
+			emote(pick("turns to [L].", "faces [L]."))
+			if(prob(10))
+				say(pick(calmmessages))
+
 /mob/living/carbon/human/species/human/friendlynpc/townguard
+	friendlyfactions = list("Station", "neutral")
 	calmmessages = list(
 		"Let me guess... someone stole your sweetroll.", 
 		"I used to be an adventurer like you. Then I took an arrow in the knee...", 
@@ -57,7 +80,6 @@
 		"I mostly deal with petty thievery and drunken brawls. Been too long since we've had a good bandit raid.",
 		"What is it? Dragons?",
 		"Watch the skies, traveler.",
-		"No matter what else happens, the guards will always be grateful for everything you've done.",
 		"I fear the night. Because the werewolves and vampires don't.",
 		"Just a few more hours and I can crawl under some furs...",
 		)
@@ -72,6 +94,31 @@
 		"Fool!",
 		"You will pay, with your blood!",
 		)
+	var/patrol = TRUE
+	var/lastpatroltime
+
+/mob/living/carbon/human/species/human/friendlynpc/townguard/npc_idle()
+	//im not smart enough to make a good patrol system but here.
+	if((mobility_flags & MOBILITY_MOVE) && isturf(loc) && patrol)
+		if(prob(20))
+			if(world.time > lastpatroltime + 10 SECONDS) //give em some time to reach and whatever
+			var/foundpatrolpoints
+			for(var/obj/effect/landmark/townpatrol/patrolpoint in orange(30,src))
+				foundpatrolpoints += patrolpoint
+			if(foundpatrolpoints)
+				var/pickedpoint = get_closest_atom(/obj/effect/landmark/townpatrol, foundpatrolpoints, src)
+				if(pickedpoint)
+					walk2derpless(pickedpoint)
+					lastpatroltime = world.time
+			else
+				//make them randomly go to a distant tile thats not foilage, if there is no patrol landmark around
+				var/turf/open/T = oview(pick(7,13),src) //slightly more than half or full screen movement
+				if(!istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/floor/rogue/dirt) && !istype(T, /turf/open/floor/rogue/grass))
+					Move(T)
+	. = ..()
+
+/obj/effect/landmark/townpatrol
+	name = "patrol-point"
 
 /mob/living/carbon/human/species/human/friendlynpc/townguard/brute
 
@@ -81,6 +128,7 @@
 
 /mob/living/carbon/human/species/human/friendlynpc/townguard/retaliate(mob/living/L)
 	var/newtarg = target
+	lasthitter = target
 	.=..()
 	if(target)
 		aggressive=1
@@ -90,8 +138,8 @@
 			linepoint(target)
 
 /mob/living/carbon/human/species/human/friendlynpc/townguard/Initialize()
+	gender = pick(MALE,FEMALE)
 	. = ..()
-	set_species(/datum/species/elf)
 	spawn(10)
 		after_creation()
 	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
@@ -128,7 +176,7 @@
 
 /mob/living/carbon/human/species/human/friendlynpc/townguard/handle_combat()
 	if(mode == AI_HUNT)
-		if(prob(50))
+		if(prob(20))
 			emote("rage")
 	. = ..()
 
@@ -140,19 +188,19 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/foresterarmor
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 	if(prob(50))
-		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic
+		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	pants = /obj/item/clothing/under/roguetown/tights
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	H.STASPD = 8
 	H.STACON = 4
 	H.STAEND = 15
-	H.STAINT = 1
+	H.STAINT = 5
 	H.STASTR = rand(11,16)
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/sword
 	else
-		r_hand = /obj/item/rogueweapon/stoneaxe/battle
-	l_hand = /obj/item/rogueweapon/shield/wood
+		r_hand = /obj/item/rogueweapon/mace
+	l_hand = /obj/item/rogueweapon/shield/tower/metal
 	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
 	if(prob(30))
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
@@ -169,8 +217,8 @@
 /datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard/brute/pre_equip(mob/living/carbon/human/H)
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	cloak = /obj/item/clothing/cloak/templar/dendor
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
-	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	head = /obj/item/clothing/head/roguetown/helmet/elfbarbutewings
 	if(prob(60))
@@ -179,12 +227,45 @@
 	H.STASPD = 9
 	H.STACON = 8
 	H.STAEND = 15
-	H.STAINT = 1
+	H.STAINT = 5
 	H.STASTR = rand(15,18)
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/halberd/bardiche
 	else
 		r_hand = /obj/item/rogueweapon/greatsword
+	l_hand = /obj/item/rogueweapon/shield/tower/metal
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	if(H.gender == MALE)
+		H.name = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		H.real_name = H.name
+	else
+		H.name = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+		H.real_name = H.name
+
+/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry
+	patrol = FALSE
+	wander = FALSE
+
+/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry/after_creation()
+	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard/sentry)
+
+/datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard/sentry/pre_equip(mob/living/carbon/human/H)
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	cloak = /obj/item/clothing/cloak/templar/dendor
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
+	pants = /obj/item/clothing/under/roguetown/chainlegs
+	head = /obj/item/clothing/head/roguetown/helmet/elfbarbutewings
+	if(prob(60))
+		mask = /obj/item/clothing/mask/rogue/facemask
+	gloves = /obj/item/clothing/gloves/roguetown/chain
+	H.STASPD = 9
+	H.STACON = 8
+	H.STAEND = 15
+	H.STAINT = 5
+	H.STASTR = rand(15,18)
+	r_hand = /obj/item/rogueweapon/halberd
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(H.gender == MALE)
