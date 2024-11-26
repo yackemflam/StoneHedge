@@ -46,6 +46,7 @@ The following assets are under a custom license as per original author's wishes,
 | [licensed-eaglephntm](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-eaglephntm)                   | EaglePhntm    | [License](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-eaglephntm/LICENSE.md)|
 | [licensed-feralope](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-feralope)                   | Feralope    | [License](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-feralope/LICENSE.md)|
 | [licensed-feralope (helmsguard)](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_helmsguard/licensed-feralope)                   | Feralope    | [License](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_helmsguard/licensed-feralope/LICENSE.md)|
+| [licensed-death-rattler](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_helmsguard/licensed-death-rattler)                   | Moribund/Luctus-Comptus    | [License](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_helmsguard/licensed-death-rattler/LICENSE.md)|
 
 ## TG
 
