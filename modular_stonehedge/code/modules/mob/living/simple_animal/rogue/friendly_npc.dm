@@ -3,7 +3,7 @@
 
 /mob/living/carbon/human/species/human/friendlynpc
 	aggressive=1
-	race = /datum/species/human/northern
+	race = /datum/species/elf/wood
 	mode = AI_IDLE
 	faction = list("Station")
 	ambushable = FALSE
@@ -192,10 +192,10 @@
 	H.hair_color = pick ("4f4f4f", "61310f", "faf6b9")
 	H.facial_hair_color = H.hair_color
 	if(H.gender == MALE)
-		H.name = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		H.name = pick( world.file2list("strings/rt/names/elf/elfwm.txt") )
 		H.real_name = H.name
 	else
-		H.name = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+		H.name = pick( world.file2list("strings/rt/names/elf/elfwf.txt") )
 		H.real_name = H.name
 
 /datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard/brute/pre_equip(mob/living/carbon/human/H)
@@ -221,10 +221,10 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(H.gender == MALE)
-		H.name = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		H.name = pick( world.file2list("strings/rt/names/elf/elfwm.txt") )
 		H.real_name = H.name
 	else
-		H.name = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+		H.name = pick( world.file2list("strings/rt/names/elf/elfwf.txt") )
 		H.real_name = H.name
 
 /mob/living/carbon/human/species/human/friendlynpc/townguard/sentry
@@ -253,8 +253,8 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(H.gender == MALE)
-		H.name = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		H.name = pick( world.file2list("strings/rt/names/elf/elfwm.txt") )
 		H.real_name = H.name
 	else
-		H.name = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+		H.name = pick( world.file2list("strings/rt/names/elf/elfwf.txt") )
 		H.real_name = H.name
