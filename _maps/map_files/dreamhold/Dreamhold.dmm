@@ -17199,8 +17199,10 @@
 	name = "Silver Dragon"
 	})
 "nmf" = (
-/obj/structure/winch{
-	redstone_id = "Advarmory"
+/obj/structure/lever/wall{
+	dir = 4;
+	redstone_id = "Advarmory";
+	name = "Armory"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/garrison{
