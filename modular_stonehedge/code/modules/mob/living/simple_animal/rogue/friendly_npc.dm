@@ -13,7 +13,7 @@
 	erpable = TRUE
 	wander = TRUE
 	show_genitals = TRUE
-	var/list/friendlyfactions = list("Station", "neutral", "rogueanimal")
+	var/list/friendlyfactions = list("Station", "neutral", "rogueanimal", "saiga", "chickens", "goats", "cows", "turtles", "rats", "crabs", "horse")
 	var/list/friendlyjobs
 	//quotes from skyrim cause we love skyrim.
 	var/list/calmmessages = list()
