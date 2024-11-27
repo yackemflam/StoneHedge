@@ -910,7 +910,7 @@
 /datum/sex_controller/proc/try_pelvis_crush(mob/living/carbon/human/target)
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 		if(!target.has_wound(/datum/wound/fracture/groin))
-			if(prob(10)){
+			if(prob(5)){
 				var/obj/item/bodypart/groin = target.get_bodypart(check_zone(BODY_ZONE_PRECISE_GROIN))
 				groin.add_wound(/datum/wound/fracture)
 			}

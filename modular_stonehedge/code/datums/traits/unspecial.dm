@@ -592,4 +592,4 @@
 
 /datum/quirk/pacifist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_ENDOWMENT, QUIRK_TRAIT)
+	H.apply_status_effect(/datum/status_effect/debuff/bigboobs/permanent)
