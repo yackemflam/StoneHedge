@@ -266,7 +266,7 @@
 	if(sexcon.current_action && fuckcd > 0)
 		return
 	for(var/mob/living/carbon/human/fucktarg in around)
-		if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && should_target(fucktarg))
+		if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && should_target(fucktarg, FALSE))
 			foundfuckmeat += fucktarg
 			L = fucktarg
 			STOP_PROCESSING(SShumannpc,src)
