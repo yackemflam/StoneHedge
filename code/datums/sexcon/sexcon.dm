@@ -238,6 +238,7 @@
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
 			testes.reagents.remove_reagent(testes.reagent_to_make, cum_to_take)
 			user.add_stress(/datum/stressevent/cumok)
+			after_ejaculation()
 			return
 	if(!issimple(target) && testes)
 		if(oral)

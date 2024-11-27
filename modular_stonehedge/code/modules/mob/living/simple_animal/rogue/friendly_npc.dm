@@ -19,6 +19,7 @@
 	var/list/calmmessages = list()
 	var/list/aggromessages = list()
 	var/mob/living/lasthitter = null
+	var/punish_attacking = FALSE
 
 //would be great if we could make them follow stone roads while idle.
 /mob/living/carbon/human/species/human/friendlynpc/should_target(mob/living/L)
@@ -150,6 +151,34 @@
 		if(target == newtarg)
 			say(pick(aggromessages))
 			linepoint(target)
+			if(target.mind && Adjacent(target))
+				//i really REALLY want to punish players who try to strip those guys for loot
+				if(prob(20) && !target.IsOffBalanced())
+					emote("feints an attack at [target]!")
+					target.OffBalance(30)
+				else if(prob(10))
+					emote("bashes [target]!")
+					playsound(src,"punch_hard",100,TRUE)
+					target.Knockdown(30)
+					target.throw_at(target, pick(1,2), 1, src, FALSE, TRUE)
+				else if(prob(5) && target.get_active_held_item())
+					var/obj/item/activeitem = target.get_active_held_item()
+					if(!HAS_TRAIT(activeitem, TRAIT_NODROP))
+						emote("disarms [target]!")
+						playsound(src,"bladedmedium",100,TRUE)
+						target.OffBalance(15)
+						target.throw_at(activeitem, get_step_away(activeitem, target, 3), 1, target, TRUE, FALSE)
+				if(punish_attacking)
+					var/bounty_exists = FALSE
+					for(var/datum/bounty/b in GLOB.head_bounties)
+						if(b.target == target.real_name)
+							bounty_exists = TRUE
+					if(bounty_exists)
+						add_bounty(L.real_name, 500, FALSE, "Attacking a town guardsman.", "Town of Stonehedge")
+						var/bounty_announcement = "[target] is accused of attacking a town guardsman, wanted with a bounty of 500 mammons."
+						say(bounty_announcement)
+						scom_announce(bounty_announcement)
+						to_chat(L, span_notice("I got a bounty on my head now!"))
 
 /mob/living/carbon/human/species/human/friendlynpc/townguard/Initialize()
 	gender = pick(MALE,FEMALE)
@@ -192,10 +221,11 @@
 	pants = /obj/item/clothing/under/roguetown/tights
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	H.STASPD = 8
-	H.STACON = 4
+	H.STAPER = 10
+	H.STACON = 14
 	H.STAEND = 15
-	H.STAINT = 5
-	H.STASTR = rand(11,16)
+	H.STAINT = 12
+	H.STASTR = rand(13,16)
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/sword
 	else
@@ -225,10 +255,11 @@
 		mask = /obj/item/clothing/mask/rogue/facemask
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	H.STASPD = 9
-	H.STACON = 8
-	H.STAEND = 15
-	H.STAINT = 5
-	H.STASTR = rand(15,18)
+	H.STAPER = 10
+	H.STACON = 16
+	H.STAEND = 16
+	H.STAINT = 14
+	H.STASTR = rand(14,16)
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/halberd/bardiche
 	else
@@ -260,10 +291,11 @@
 		mask = /obj/item/clothing/mask/rogue/facemask
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	H.STASPD = 9
-	H.STACON = 8
-	H.STAEND = 15
-	H.STAINT = 5
-	H.STASTR = rand(15,18)
+	H.STAPER = 10
+	H.STACON = 16
+	H.STAEND = 16
+	H.STAINT = 14
+	H.STASTR = rand(14,16)
 	r_hand = /obj/item/rogueweapon/halberd
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
