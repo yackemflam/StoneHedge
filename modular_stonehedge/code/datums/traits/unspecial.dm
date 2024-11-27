@@ -503,7 +503,6 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	var/turf/location = get_spawn_turf_for_job("Pilgrim")
 	H.forceMove(location)
-	grant_lit_torch(H)
 
 /datum/quirk/atrophy
 	name = "Atrophy"
