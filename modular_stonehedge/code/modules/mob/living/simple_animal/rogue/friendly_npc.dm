@@ -49,7 +49,7 @@
 		return FALSE
 
 	if(L.lying && !L.get_active_held_item())
-		if(ishuman(L))
+		if(ishuman(L) && L.mind)
 			var/mob/living/carbon/human/badboi = L
 			if(badboi == lasthitter && Adjacent(badboi) && !badboi.handcuffed)
 				//untested but yeah.
@@ -237,6 +237,7 @@ GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 	lasthitter = target
 	.=..()
 	if(target)
+		wander = TRUE
 		if(target == newtarg)
 			linepoint(target)
 			if(ishuman(target) && Adjacent(target))
@@ -249,9 +250,9 @@ GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 					say(pick("Sit the fuck down.", "Fuck away from me.", "Stay down."))
 					visible_message(span_emote("[src] bashes [target] away!"))
 					playsound(src,"punch_hard",100,TRUE)
+					target.throw_at(target, pick(1,3), 1, src, FALSE, TRUE)
 					target.Knockdown(25) //may end up getting you tied real fast.
-					target.throw_at(target, pick(2,3), 1, src, FALSE, TRUE)
-				else if(prob(5) && target.get_active_held_item())
+				else if(prob(5) && target.get_active_held_item() != null)
 					var/obj/item/activeitem = target.get_active_held_item()
 					if(!HAS_TRAIT(activeitem, TRAIT_NODROP))
 						say(pick("You are done.", "Ha! There goes your [activeitem.name]!", "You fucked up now!"))
@@ -259,7 +260,7 @@ GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 						playsound(src,"bladedmedium",100,TRUE)
 						target.OffBalance(15)
 						target.throw_at(activeitem, get_step_away(activeitem, target, 3), 1, target, TRUE, FALSE)
-				if(punish_attacking)
+				if(punish_attacking && target.mind)
 					var/bounty_exists = FALSE
 					for(var/datum/bounty/b in GLOB.head_bounties)
 						if(b.target == target.real_name)
