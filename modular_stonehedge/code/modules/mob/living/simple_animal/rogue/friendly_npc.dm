@@ -264,7 +264,7 @@ GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 						say("Stop right there, criminal scum!")
 						scom_announce(bounty_announcement)
 						to_chat(L, span_notice("I got a bounty on my head now!"))
-					else if(world.time > (last_report + 3 MINUTES))
+					else if(world.time > (last_report + 5 MINUTES))
 						last_report = world.time
 						scom_announce("the criminal [target.real_name] is reported attacking a townsguard at [get_area_name(get_area(src))].")
 
