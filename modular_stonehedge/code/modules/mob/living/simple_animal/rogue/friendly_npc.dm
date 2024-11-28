@@ -109,30 +109,18 @@
 /mob/living/carbon/human/species/human/smartnpc/townguard
 	friendlyfactions = list("Station", "neutral")
 	calmmessages = list(
-		"Let me guess... someone stole your sweetroll.", 
-		"I used to be an adventurer like you. Then I took an arrow in the knee...", 
-		"Disrespect the law, and you disrespect me.", 
 		"What do you need?", 
 		"Trouble?",
 		"What is it?",
 		"No lollygaggin'.",
-		"My cousin's out fighting dragons, and what do I get? Guard duty.",
-		"Gotta keep my eyes open. Damn dragons could swoop down at any time.",
-		"Fear not. Come dragon or giant, we'll be ready.",
-		"Brigands I can handle, but this talk of dragons? World's gone mad, I say.",
 		"Everything's in order.",
 		"Staying safe I hope.",
 		"Everything all right?",
 		"Could sure use a warm bed right about now...",
-		"I'd be a lot warmer and a lot happier with a bellyful of mead...",
-		"I mostly deal with petty thievery and drunken brawls. Been too long since we've had a good bandit raid.",
-		"What is it? Dragons?",
-		"Watch the skies, traveler.",
 		"I fear the night. Because the werewolves and vampires don't.",
 		"Just a few more hours and I can crawl under some furs...",
 		)
 	aggromessages = list(
-		"Never should have come here!",
 		"Then let me speed your passage to Yamais' hands!",
 		"Then pay with your blood!",
 		"That can be arranged!",
