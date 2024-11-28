@@ -119,6 +119,9 @@
 #define TRAIT_BAOTHA_CURSE "Baotha's Curse"
 #define TRAIT_NYMPHO_CURSE "Nympho Curse"
 
+//STONEHEDGE TRAITS
+#define TRAIT_USEMAGICITEM "Use Magic Item"
+
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEPROSY = span_necrosis("I'm a disgusting leper..."),
 	TRAIT_CHOSEN = "Elysius choose you to represent his glory.",
@@ -204,6 +207,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NIGHT_VISION = span_info("Whether because of my species, my career choice, or by some boon of my patron, my eyes have adapted to see well in the dark."),
 	TRAIT_SUPER_NV = span_info("My ability to see in the dark extends further than that of most others, and I can consciously control how bright my surroundings appear to me."),
 	TRAIT_BLINDFIGHTING = span_info("I have an incredible sense of awareness, allowing me to dodge and parry attacks even when I can't see them coming, If i am in high awareness, I can even prevent sneak attacks."),
+	TRAIT_SEESPIRITS = span_necrosis("My eyes peer beyond the veil of life and death, allowing me to perceive spirits."),
+	TRAIT_USEMAGICITEM = span_info("I know my way around magic items by legit means or trickery."),
 ))
 
 // trait accessor defines

@@ -180,6 +180,7 @@
 					H.mind.adjust_spellpoints(1)
 					H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 					H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+					ADD_TRAIT(H, TRAIT_USEMAGICITEM, TRAIT_GENERIC)
 
 			if(/datum/patron/divine/necra)
 				head = /obj/item/clothing/head/roguetown/necrahood
