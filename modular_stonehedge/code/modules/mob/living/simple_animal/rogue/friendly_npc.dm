@@ -11,7 +11,6 @@
 	possible_rmb_intents = list()
 	erpable = TRUE
 	wander = TRUE
-	d_intent = INTENT_DODGE
 	show_genitals = TRUE
 	var/list/friendlyfactions = list("Station", "neutral", "rogueanimal", "saiga", "chickens", "goats", "cows", "turtles", "rats", "crabs", "horse")
 	//using friendlyjobs will make this mob hostile to everyone not of those jobs, unless they are in friendlyfactions.
@@ -22,6 +21,8 @@
 	var/mob/living/lasthitter = null
 	var/punish_attacking = FALSE
 
+/mob/living/carbon/human/species/human/smartnpc/
+
 //would be great if we could make them follow stone roads while idle.
 /mob/living/carbon/human/species/human/smartnpc/should_target(mob/living/L)
 	if(!L)
@@ -29,6 +30,9 @@
 
 	if(L == src)
 		return FALSE
+
+	if(L.job in list("Hedge Knight", "Hedgemaster"))
+		return
 
 	if(HAS_TRAIT(src, TRAIT_PACIFISM))
 		return FALSE
@@ -54,10 +58,11 @@
 			if(badboi == lasthitter && Adjacent(badboi) && !badboi.handcuffed)
 				//untested but yeah.
 				say("I got you now, criminal scum.")
-				scom_announce("I caught the criminal scum [badboi.real_name] at [get_area_name(get_area(src))].")
-				var/obj/item/rope/ropey = new /obj/item/rope
-				ropey.apply_cuffs(badboi, src)
-				start_pulling(badboi, GRAB_AGGRESSIVE)
+				if(do_after_mob(src, badboi, 3 SECONDS, FALSE))
+					scom_announce("I caught the criminal scum [badboi.real_name] at [get_area_name(get_area(src))].")
+					var/obj/item/rope/ropey = new /obj/item/rope
+					ropey.apply_cuffs(badboi, src)
+					start_pulling(badboi)
 		return FALSE
 	if(L == lasthitter && L.alpha > 100)
 		return TRUE
@@ -140,6 +145,7 @@
 	punish_attacking = TRUE
 	var/patrol = TRUE
 	var/lastpatroltime
+	var/last_report
 
 
 // Custom idle behavior
@@ -230,7 +236,7 @@ GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 
 /mob/living/carbon/human/species/human/smartnpc/townguard/retaliate(mob/living/L)
 	var/newtarg = target
-	if(L.job in list("Hedgeknight", "Hedgemaster"))
+	if(L.job in list("Hedge Knight", "Hedgemaster"))
 		return
 	if(lasthitter != target)
 		say(pick(aggromessages))
@@ -244,6 +250,7 @@ GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 				//i really REALLY want to punish players who try to strip those guys for loot, also they can do those badass moves on goblins too ig.
 				if(prob(20) && !target.IsOffBalanced())
 					say(pick("Aha!", "Parry this!", "Ha-haa!"))
+					playsound(src, 'sound/combat/feint.ogg', 100, TRUE)
 					visible_message(span_emote("[src] feints an attack at [target]!"))
 					target.OffBalance(50) //since they cant defeat the parries might aswell give them a fat feint.
 				else if(prob(10))
@@ -266,13 +273,14 @@ GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 						if(b.target == target.real_name)
 							bounty_exists = TRUE
 					if(!bounty_exists)
-						add_bounty(L.real_name, 500, FALSE, "Attacking a town guardsman.", "Town of Stonehedge")
-						var/bounty_announcement = "[target] is accused of attacking a town guardsman at [get_area_name(get_area(src))], wanted with a bounty of 500 mammons."
+						add_bounty(L.real_name, 200, FALSE, "Attacking a town guardsman.", "Hedgeknights")
+						var/bounty_announcement = "[target.real_name] is accused of attacking a town guardsman at [get_area_name(get_area(src))], wanted with a bounty of 200 mammons."
 						say("Stop right there, criminal scum!")
 						scom_announce(bounty_announcement)
 						to_chat(L, span_notice("I got a bounty on my head now!"))
-					else
-						scom_announce("the criminal [target] is reported attacking a townsguard at [get_area_name(get_area(src))].")
+					else if(world.time > (last_report + 3 MINUTES))
+						last_report = world.time
+						scom_announce("the criminal [target.real_name] is reported attacking a townsguard at [get_area_name(get_area(src))].")
 
 /mob/living/carbon/human/species/human/smartnpc/townguard/Initialize()
 	gender = pick(MALE,FEMALE)
