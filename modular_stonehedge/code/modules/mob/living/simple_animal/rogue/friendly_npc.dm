@@ -138,7 +138,7 @@
 
 // Custom idle behavior
 /mob/living/carbon/human/species/human/smartnpc/townguard/npc_idle()
-	if(patrol)
+	if(wander)
 		if(world.time < next_idle + rand(30,50))
 			return
 		next_idle = world.time + rand(30,50)
@@ -147,8 +147,6 @@
 				var/turf/target_loc = find_suitable_location()
 				if(target_loc)
 					walk2derpless(target_loc)
-	else
-		. = ..()
 
 
 // Find a suitable location to move to
