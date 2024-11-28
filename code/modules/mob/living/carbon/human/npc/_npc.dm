@@ -237,10 +237,10 @@
 			fuckcd = 0
 		return FALSE
 
-	var/mob/living/carbon/lcarbon = L
-	if(istype(lcarbon, /mob/living/carbon)) //leave alone if handcuffed.
-		if(lcarbon.handcuffed)
-			if(prob(8) && lcarbon.has_quirk(/datum/quirk/monsterhunter) && erpable) //small chance to trigger abuss.
+	if(ishuman(L)) //leave alone if handcuffed.
+		var/mob/living/carbon/human/lhuman = L
+		if(lhuman.handcuffed)
+			if(prob(8) && lhuman.has_quirk(/datum/quirk/monsterhunter) && erpable) //small chance to trigger abuss.
 				fuckcd = 0
 			return FALSE
 

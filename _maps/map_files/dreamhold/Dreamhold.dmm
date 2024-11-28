@@ -648,7 +648,7 @@
 	name = "far stonehedge"
 	})
 "azG" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard,
+/mob/living/carbon/human/species/human/smartnpc/townguard,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/river)
 "azR" = (
@@ -2909,7 +2909,7 @@
 	dir = 1
 	},
 /obj/machinery/light/rogue/wallfire/candle/r,
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/bog)
 "cns" = (
@@ -2986,7 +2986,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/bath)
 "cpy" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard,
+/mob/living/carbon/human/species/human/smartnpc/townguard,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
@@ -5218,7 +5218,7 @@
 /turf/closed/wall/shroud,
 /area/rogue/indoors/shelter/bog)
 "dVP" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/twig/platform,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -6068,7 +6068,7 @@
 	name = "far stonehedge"
 	})
 "eCw" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/shelter/bog)
 "eCy" = (
@@ -9121,7 +9121,7 @@
 /obj/machinery/light/rogue/lanternpost{
 	dir = 1
 	},
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield{
 	first_time_text = null
@@ -9143,7 +9143,7 @@
 	})
 "hau" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
@@ -10466,7 +10466,7 @@
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
 	},
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -14107,7 +14107,7 @@
 	name = "Silver Dragon"
 	})
 "kOv" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard,
+/mob/living/carbon/human/species/human/smartnpc/townguard,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -14533,7 +14533,7 @@
 	name = "far stonehedge"
 	})
 "lfB" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard,
+/mob/living/carbon/human/species/human/smartnpc/townguard,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -15076,7 +15076,7 @@
 	first_time_text = "Stonehedge"
 	})
 "lCr" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -15617,7 +15617,7 @@
 	pixel_x = 2;
 	pixel_y = 7
 	},
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
@@ -16688,7 +16688,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/caves)
 "mOd" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard,
+/mob/living/carbon/human/species/human/smartnpc/townguard,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
@@ -17682,7 +17682,7 @@
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/shelter/town)
 "nBi" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -18336,7 +18336,7 @@
 	pixel_x = 2;
 	pixel_y = 7
 	},
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/river)
 "nYV" = (
@@ -20153,7 +20153,7 @@
 	pixel_x = 1;
 	pixel_y = 7
 	},
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/twig/platform,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -20287,7 +20287,7 @@
 	name = "Silver Dragon"
 	})
 "pIz" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
@@ -21431,7 +21431,7 @@
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
 	},
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -24182,7 +24182,7 @@
 	first_time_text = "The Twilight Woods"
 	})
 "sCW" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard/brute,
+/mob/living/carbon/human/species/human/smartnpc/townguard/brute,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
@@ -26565,7 +26565,7 @@
 	name = "Shores of the Emerald Coast"
 	})
 "usY" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -27916,7 +27916,7 @@
 /area/rogue/outdoors/river)
 "vwj" = (
 /obj/structure/flora/roguegrass,
-/mob/living/carbon/human/species/human/friendlynpc/townguard/brute,
+/mob/living/carbon/human/species/human/smartnpc/townguard/brute,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -29070,7 +29070,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "wxI" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
@@ -30637,7 +30637,7 @@
 	})
 "xKH" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
