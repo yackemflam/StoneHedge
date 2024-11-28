@@ -182,6 +182,7 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/shapeshift
+	faction = list("rats", "Station")
 	health = 200
 	maxHealth = 200
 	erpable = TRUE
