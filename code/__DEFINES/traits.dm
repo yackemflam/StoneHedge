@@ -41,6 +41,7 @@
 #define TRAIT_SEEDKNOW "Seed Knower"
 #define TRAIT_GOODRUNNER "Good Runner"
 #define TRAIT_TINY "Tiny"
+#define TRAIT_SEESPIRITS "Spectral Sight"
 // ROGUEspecialTRAITS (description when rmb skills button)
 #define TRAIT_CIVILIZEDBARBARIAN "Tavern Brawler"
 #define TRAIT_COMICSANS "Annoying Face"
@@ -198,7 +199,6 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_FIENDKISS = "When I cast projectile magic, the fiend also hurls a fire bolt at the same location.", // Hearthstone change
 	TRAIT_CHARGER = "I can charge into people like a ram.", // Hearthstone change
 	TRAIT_ARTIFICER = "I can use gems to improve items.", // Hearthstone change
-
 	TRAIT_BOG_TREKKING = "Expert in navigating these lands.", // Hearthstone change
 	TRAIT_GOODRUNNER = span_info("I can run without breaking a sweat!"),
 	TRAIT_NUDE_SLEEPER = span_warning("I can't fall asleep unless I'm nude and in bed."),

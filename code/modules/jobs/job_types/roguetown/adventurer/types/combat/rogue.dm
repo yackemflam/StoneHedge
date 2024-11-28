@@ -90,7 +90,7 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES_SHITTY, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_USEMAGICITEM, TRAIT_GENERIC)
 	H.change_stat("perception", 2)
-	H.change_stat("speed", 2)
+	H.change_stat("speed", 3)
 	H.change_stat("intelligence", 2)
 
 //Assassin, nearly same as rogue but not versatile in weapon skills yet specialized in knives.
@@ -134,7 +134,7 @@
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_USEMAGICITEM, TRAIT_GENERIC)
 	H.change_stat("perception", 2)
-	H.change_stat("speed", 2)
+	H.change_stat("speed", 3)
 	H.change_stat("intelligence", 2)
 	H.visible_message(span_info("I honed my skills as an assassin through the years. My bracers have a hidden blade, and my boots have a bottle of berry poison."))
 	backpack_contents = list(/obj/item/lockpickring/mundane, /obj/item/rogueweapon/huntingknife/idagger/steel)
@@ -185,7 +185,7 @@
 	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC) //funny nose grab.
 	ADD_TRAIT(H, TRAIT_USEMAGICITEM, TRAIT_GENERIC)
 	H.change_stat("strength", 1)
-	H.change_stat("speed", 2)
+	H.change_stat("speed", 3)
 	H.change_stat("perception", 1)
 	H.change_stat("intelligence", 2)
 	H.visible_message(span_info("I trained as a swashbuckler. I have some skills and tricks under my cape."))
@@ -226,7 +226,7 @@
 	ADD_TRAIT(H, TRAIT_USEMAGICITEM, TRAIT_GENERIC)
 	H.change_stat("strength", -1)
 	H.change_stat("perception", 2)
-	H.change_stat("speed", 2)
+	H.change_stat("speed", 3)
 	H.change_stat("intelligence", 3)
 	H.visible_message(span_info("I’m not just a thief. I'm a master of illusion and deception. One moment, I'm a harmless vagabond. The next, I'm a blur of motion, leaving my pursuers bewildered and outwitted."))
 	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
