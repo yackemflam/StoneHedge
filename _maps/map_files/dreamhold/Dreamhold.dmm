@@ -647,17 +647,6 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
-<<<<<<< Updated upstream
-=======
-"azG" = (
-/obj/machinery/light/rogue/wallfire/candle/blue/r,
-/obj/structure/closet/crate/coffin,
-/turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/church/chapel{
-	first_time_text = "Shrine of Lune";
-	name = "Shrine of Lune"
-	})
->>>>>>> Stashed changes
 "azR" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -1065,7 +1054,7 @@
 	dir = 1;
 	icon_state = "longtable"
 	},
-/turf/open/floor/rogue/cobblerock,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
@@ -2152,7 +2141,7 @@
 	name = "far stonehedge"
 	})
 "bFR" = (
-/obj/structure/stairs/stone,
+/obj/structure/ladder,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
@@ -2992,17 +2981,11 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/bath)
 "cpy" = (
-<<<<<<< Updated upstream
 /mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
-=======
-/obj/item/clothing/neck/roguetown/psicross/eora,
-/turf/open/water/bath,
-/area/rogue/indoors/town/bath)
->>>>>>> Stashed changes
 "cqm" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -3302,15 +3285,6 @@
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
-	})
-"cCv" = (
-/obj/structure/fluff/railing/border{
-	dir = 4
-	},
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
-/area/rogue/indoors/town/church/chapel{
-	first_time_text = "Shrine of Lune";
-	name = "Shrine of Lune"
 	})
 "cCy" = (
 /obj/structure/flora/roguegrass/water,
@@ -4194,16 +4168,11 @@
 	name = "Shrine of Lune"
 	})
 "dij" = (
-/obj/structure/projected_forcefield{
-	name = "Magick Barrier";
-	desc = "It glistens and hums with arcane energy. Powerful Magicks, this.";
-	icon_state = "purplesparkles"
-	},
-/obj/structure/roguewindow/openclose,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/magician{
-	first_time_text = "Ravenloft Academy";
-	name = "Ravenloft Academy"
+/obj/effect/decal/stone/blockedge/blockedgeinvert,
+/turf/open/floor/rogue/blocks/stone,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
 	})
 "diD" = (
 /obj/structure/fluff/statue/gargoyle/moss/candles,
@@ -4439,23 +4408,11 @@
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/shelter/town)
 "dpz" = (
-/obj/structure/roguewindow/openclose{
-	dir = 8
-	},
-/obj/effect/forcefield{
-	icon_state = "purplesparkles";
-	name = "Warding Spell";
-	desc = "It glimmers with potent magick!"
-	},
-/obj/structure/projected_forcefield{
-	name = "Magick Barrier";
-	desc = "It glistens and hums with arcane energy. Powerful Magicks, this.";
-	icon_state = "purplesparkles"
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/exposed/magiciantower{
-	first_time_text = "Ravenloft Academy";
-	name = "Schoolgrounds"
+/obj/structure/fluff/statue/knight/interior,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge Borders";
+	name = "far stonehedge"
 	})
 "dpW" = (
 /obj/effect/landmark/start/archivist,
@@ -4512,11 +4469,11 @@
 	first_time_text = null
 	})
 "dqW" = (
-/obj/structure/fluff/dryingrack,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge Borders";
-	name = "far stonehedge"
+/obj/structure/closet/crate/coffin,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town/church/chapel{
+	first_time_text = "Shrine of Lune";
+	name = "Shrine of Lune"
 	})
 "drI" = (
 /obj/effect/landmark/events/haunts,
@@ -4604,16 +4561,11 @@
 	first_time_text = "The Twilight Woods"
 	})
 "dvC" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	layer = 2.7;
-	pixel_x = 2;
-	pixel_y = 7
-	},
-/mob/living/carbon/human/species/human/friendlynpc/townguard/brute,
-/turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
+/obj/structure/safeglowshroom,
+/turf/open/water/cleanshallow,
+/area/rogue/indoors/town/church/chapel{
+	first_time_text = "Shrine of Lune";
+	name = "Shrine of Lune"
 	})
 "dvN" = (
 /obj/structure/closet/crate/roguecloset/inn/south,
@@ -6834,7 +6786,6 @@
 "eZV" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/spacevine,
-/obj/structure/fluff/statue/small,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
 "fah" = (
@@ -6901,20 +6852,6 @@
 /obj/structure/flora/roguegrass/water/reeds,
 /turf/open/water/swamp,
 /area/rogue/under/cavewet/bogcaves)
-"fcd" = (
-/obj/structure/projected_forcefield{
-	name = "Magick Barrier";
-	desc = "It glistens and hums with arcane energy. Powerful Magicks, this.";
-	icon_state = "purplesparkles"
-	},
-/obj/structure/roguewindow/openclose{
-	dir = 4
-	},
-/turf/open/floor/rogue/blocks/stone/stonepattern2,
-/area/rogue/indoors/town/magician{
-	first_time_text = "Ravenloft Academy";
-	name = "Ravenloft Academy"
-	})
 "fch" = (
 /obj/effect/decal/border{
 	dir = 10
@@ -7985,13 +7922,6 @@
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
 	})
-"fWh" = (
-/obj/structure/telescope,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/magician{
-	first_time_text = "Ravenloft Academy";
-	name = "Ravenloft Academy"
-	})
 "fXv" = (
 /obj/structure/flora/rogueshroom/happyrandom{
 	icon_state = "mush4"
@@ -8067,11 +7997,21 @@
 	first_time_text = "The Twilight Woods"
 	})
 "fZA" = (
-/obj/effect/decal/stone/blockedge,
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
+/obj/structure/roguemachine/vendor{
+	keycontrol = "steward"
 	},
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/obj/effect/decal/stone/blockedge,
+/obj/effect/decal/stone/blockedge/blockedgeinvert,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -8239,7 +8179,7 @@
 /obj/structure/flora/grass/jungle{
 	icon_state = "grassa1"
 	},
-/turf/closed/wall/mineral/rogue/decostone,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
@@ -9657,7 +9597,6 @@
 /obj/item/book/granter/spell/spells5e/poisonspray5e,
 /obj/item/book/granter/spell/blackstone/lightning,
 /obj/item/book/granter/spell/blackstone/fireball,
-/obj/item/scrying,
 /turf/open/floor/bronze,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -9819,7 +9758,9 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/river)
 "hzm" = (
-/obj/structure/chair/bench/coucha/r,
+/obj/structure/bookcase,
+/obj/item/book/granter/spell/spells5e/mending5e,
+/obj/item/book/granter/spell/spells5e/poisonspray5e,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -10416,13 +10357,6 @@
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/entrance)
-"hXg" = (
-/obj/machinery/light/rogue/wallfire/candle/blue/l,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/town/church/chapel{
-	first_time_text = "Shrine of Lune";
-	name = "Shrine of Lune"
-	})
 "hXl" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/stairs/stone{
@@ -11921,15 +11855,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/shelter/town)
-"jgy" = (
-/obj/structure/fluff/clock{
-	pixel_y = 20
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/garrison{
-	first_time_text = "Adventurers Guild";
-	name = "Adventurers Guild"
-	})
 "jhB" = (
 /obj/effect/mist,
 /turf/closed/wall/shroud,
@@ -11979,16 +11904,6 @@
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
-	})
-"jjp" = (
-/obj/structure/mineral_door/wood/window{
-	lockid = "mage";
-	locked = 1
-	},
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
-/area/rogue/indoors/town/magician{
-	first_time_text = "Ravenloft Academy";
-	name = "Ravenloft Academy"
 	})
 "jkg" = (
 /obj/machinery/light/rogue/oven/south,
@@ -12043,12 +11958,6 @@
 	first_time_text = "Emerald Shores";
 	name = "Shores of the Emerald Coast"
 	})
-"jmP" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 8
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/entrance)
 "jmV" = (
 /obj/effect/mist,
 /obj/structure/closet/crate/chest/refilling/trait,
@@ -13190,7 +13099,7 @@
 	first_time_text = "The Twilight Woods"
 	})
 "kcf" = (
-/obj/structure/fluff/statue/small,
+/obj/structure/fluff/statue/lewd/random,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
 "kct" = (
@@ -13677,7 +13586,6 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_end"
 	},
-/obj/item/clothing/neck/roguetown/psicross/silver,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
@@ -14149,13 +14057,9 @@
 	first_time_text = "Stonehedge"
 	})
 "kMT" = (
-/obj/structure/flora/grass/jungle/b,
-/mob/living/carbon/human/species/human/friendlynpc/townguard/brute,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge Borders";
-	name = "far stonehedge"
-	})
+/obj/structure/fluff/statue/small,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/town/bath)
 "kNb" = (
 /obj/structure/flora/newbranch/connector{
 	dir = 5;
@@ -14203,19 +14107,11 @@
 	name = "Silver Dragon"
 	})
 "kOv" = (
-<<<<<<< Updated upstream
 /mob/living/carbon/human/species/human/smartnpc/townguard,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
-=======
-/obj/machinery/light/rogue/wallfire/candle/blue/l,
-/turf/open/floor/rogue/cobble,
-/area/rogue/indoors/town/church/chapel{
-	first_time_text = "Shrine of Lune";
-	name = "Shrine of Lune"
->>>>>>> Stashed changes
 	})
 "kOC" = (
 /obj/structure/spacevine,
@@ -14430,13 +14326,6 @@
 /area/rogue/indoors/town/bath{
 	first_time_text = "The Dreamers Demesne.."
 	})
-"kUr" = (
-/obj/structure/table/church,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/town/church/chapel{
-	first_time_text = "Shrine of Lune";
-	name = "Shrine of Lune"
-	})
 "kUu" = (
 /obj/item/clothing/suit/roguetown/armor/leather/studded,
 /obj/item/clothing/suit/roguetown/armor/leather/studded,
@@ -14643,15 +14532,6 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
-<<<<<<< Updated upstream
-=======
-"lfB" = (
-/obj/structure/fluff/statue/tdummy,
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/rtfield{
-	first_time_text = null
-	})
->>>>>>> Stashed changes
 "lfC" = (
 /obj/structure/fluff/walldeco/maidensigil,
 /obj/item/roguestatue/silver,
@@ -15150,11 +15030,10 @@
 	first_time_text = "Stonehedge"
 	})
 "lyw" = (
-/obj/structure/chair/bench/couchablack,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/garrison{
-	first_time_text = "Adventurers Guild";
-	name = "Adventurers Guild"
+/turf/closed/wall/mineral/rogue/decostone/mossy/blue/end,
+/area/rogue/indoors/town/church/chapel{
+	first_time_text = "Shrine of Lune";
+	name = "Shrine of Lune"
 	})
 "lyF" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -15190,18 +15069,11 @@
 	first_time_text = "Stonehedge"
 	})
 "lCr" = (
-<<<<<<< Updated upstream
 /mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
-=======
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	first_time_text = null
->>>>>>> Stashed changes
 	})
 "lCH" = (
 /obj/machinery/light/rogue/torchholder{
@@ -15522,7 +15394,6 @@
 	})
 "lSz" = (
 /obj/structure/closet/crate/chest/refilling/medicine,
-/obj/item/clothing/neck/roguetown/psicross/pestra,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -15674,11 +15545,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 4
 	},
-/obj/structure/projected_forcefield{
-	name = "Magick Barrier";
-	desc = "It glistens and hums with arcane energy. Powerful Magicks, this.";
-	icon_state = "purplesparkles"
-	},
+/obj/structure/bars/steel,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -16097,7 +15964,6 @@
 	})
 "mpi" = (
 /obj/structure/fluff/walldeco/bigpainting/lake,
-/obj/structure/chair/bench/couchablack,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -16316,7 +16182,7 @@
 /obj/item/paper,
 /obj/item/paper,
 /obj/item/paper,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -16583,15 +16449,6 @@
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/town)
-"mGY" = (
-/obj/structure/fluff/railing/border{
-	dir = 8
-	},
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
-/area/rogue/indoors/town/church/chapel{
-	first_time_text = "Shrine of Lune";
-	name = "Shrine of Lune"
-	})
 "mHk" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -16813,20 +16670,10 @@
 /area/rogue/outdoors/caves)
 "mOd" = (
 /obj/structure/flora/grass/jungle/b,
-<<<<<<< Updated upstream
 /mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
-=======
-/obj/structure/fluff/railing/border{
-	dir = 8
-	},
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
-/area/rogue/indoors/town/church/chapel{
-	first_time_text = "Shrine of Lune";
-	name = "Shrine of Lune"
->>>>>>> Stashed changes
 	})
 "mOu" = (
 /obj/effect/decal/border/ruinedwood{
@@ -17817,18 +17664,10 @@
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/shelter/town)
 "nBi" = (
-<<<<<<< Updated upstream
 /mob/living/carbon/human/species/human/smartnpc/townguard/brute,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
-=======
-/obj/structure/fluff/statue/gargoyle/moss,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
-/area/rogue/indoors/town/church/chapel{
-	first_time_text = "Shrine of Lune";
-	name = "Shrine of Lune"
->>>>>>> Stashed changes
 	})
 "nBZ" = (
 /obj/structure/chair/wood/rogue{
@@ -18258,7 +18097,6 @@
 /obj/item/book/granter/spell/spells5e/rayoffrost5e,
 /obj/item/book/granter/spell/spells5e/boomingblade5e,
 /obj/item/book/granter/spell/spells5e/acidsplash5e,
-/obj/item/book/granter/spell/spells5e/poisonspray5e,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -18304,7 +18142,6 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
 /obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
-/obj/item/scrying,
 /turf/open/floor/bronze,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -18474,19 +18311,12 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/exposed/tavern)
 "nYE" = (
-<<<<<<< Updated upstream
 /obj/structure/flora/grass/jungle/b,
 /mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
-=======
-/obj/effect/mob_spawner/wilderness,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/woods{
-	first_time_text = "The Twilight Woods"
->>>>>>> Stashed changes
 	})
 "nYV" = (
 /obj/structure/flora/newleaf{
@@ -18595,7 +18425,6 @@
 	first_time_text = "Stonehedge"
 	})
 "oeB" = (
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/outdoors/river)
 "oeO" = (
@@ -18794,11 +18623,10 @@
 	name = "Adventurers Guild"
 	})
 "orU" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 4
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/entrance)
+/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/obj/structure/fluff/statue/small,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/town/bath)
 "osH" = (
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/river)
@@ -19303,11 +19131,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 8
 	},
-/obj/structure/projected_forcefield{
-	name = "Magick Barrier";
-	desc = "It glistens and hums with arcane energy. Powerful Magicks, this.";
-	icon_state = "purplesparkles"
-	},
+/obj/structure/bars/steel,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -19868,10 +19692,10 @@
 	name = "far stonehedge"
 	})
 "piY" = (
-/obj/structure/long_sleep/mushroom,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/woods{
-	first_time_text = "The Mountain Passe"
+/obj/structure/fluff/statue/lewd/random,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/bath{
+	first_time_text = "The Dreamers Demesne.."
 	})
 "pjg" = (
 /obj/structure/flora/grass/jungle/b,
@@ -20429,17 +20253,10 @@
 	name = "Silver Dragon"
 	})
 "pIz" = (
-<<<<<<< Updated upstream
 /mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
-=======
-/obj/effect/mob_spawner/wilderness,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/woods{
-	first_time_text = "The Twilight Woods"
->>>>>>> Stashed changes
 	})
 "pJt" = (
 /obj/structure/flora/grass/jungle/b,
@@ -20813,7 +20630,7 @@
 	})
 "pWc" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
-/turf/open/floor/rogue/cobble,
+/turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
@@ -21451,15 +21268,10 @@
 	},
 /area/rogue/under/cavewet)
 "qrG" = (
-/obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/newtree,
-/turf/open/floor/rogue/rooftop{
-	dir = 4;
-	icon_state = "roof"
-	},
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge Borders";
-	name = "far stonehedge"
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town/church/chapel{
+	first_time_text = "Shrine of Lune";
+	name = "Shrine of Lune"
 	})
 "qrP" = (
 /obj/structure/flora/rogueshroom/happyrandom,
@@ -21582,7 +21394,6 @@
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town)
 "qwx" = (
-<<<<<<< Updated upstream
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
 	},
@@ -21592,11 +21403,6 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
-=======
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/river)
->>>>>>> Stashed changes
 "qwU" = (
 /mob/living/carbon/human/species/skeleton/npc/dungeon/ambush,
 /turf/open/floor/rogue/naturalstone,
@@ -22448,16 +22254,6 @@
 "rcU" = (
 /obj/structure/roguemachine/scomm/r,
 /obj/effect/decal/stone/blockedge,
-/obj/structure/closet/crate/chest,
-/obj/item/scomstone/bad,
-/obj/item/scomstone/bad,
-/obj/item/scomstone/bad,
-/obj/item/scomstone/bad,
-/obj/item/scomstone/bad,
-/obj/item/scomstone/bad,
-/obj/item/scomstone/bad,
-/obj/item/scomstone/bad,
-/obj/item/scomstone/bad,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -23329,7 +23125,9 @@
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/indoors/town/tavern)
 "rLF" = (
-/obj/structure/fluff/statue/knight/interior,
+/obj/machinery/light/rogue/lanternpost{
+	dir = 1
+	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -23928,11 +23726,12 @@
 	name = "Adventurers Guild"
 	})
 "siA" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 4
-	},
-/turf/open/floor/rogue/twig/platform,
-/area/rogue/indoors/shelter/rtfield)
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/long_sleep/mushroom,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Mountain Passe"
+	})
 "siF" = (
 /obj/item/roguegem/diamond,
 /turf/open/floor/rogue/dirt,
@@ -23956,11 +23755,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 8
 	},
-/obj/structure/projected_forcefield{
-	name = "Magick Barrier";
-	desc = "It glistens and hums with arcane energy. Powerful Magicks, this.";
-	icon_state = "purplesparkles"
-	},
+/obj/structure/bars/steel,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -24315,7 +24110,7 @@
 	first_time_text = "The Twilight Woods"
 	})
 "sBl" = (
-/obj/structure/chair/bench/couchablack/r,
+/obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -24354,17 +24149,10 @@
 	})
 "sCW" = (
 /obj/structure/flora/grass/jungle/b,
-<<<<<<< Updated upstream
 /mob/living/carbon/human/species/human/smartnpc/townguard/sentry,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
-=======
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	first_time_text = null
->>>>>>> Stashed changes
 	})
 "sDr" = (
 /turf/closed/mineral/rogue/bedrock,
@@ -24378,7 +24166,6 @@
 	layer = 2.8;
 	pixel_x = 8
 	},
-/obj/structure/spacevine,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -24577,7 +24364,6 @@
 	})
 "sLW" = (
 /obj/effect/decal/border/stone/inverted,
-/obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -24728,8 +24514,7 @@
 	})
 "sPq" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
-/obj/structure/closet/crate/coffin,
-/turf/open/floor/rogue/cobble,
+/turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
@@ -24981,15 +24766,9 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavewet/bogcaves)
 "tbx" = (
-/obj/structure/flora/roguegrass,
-/obj/machinery/light/rogue/lanternpost{
-	dir = 1
-	},
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge Borders";
-	name = "far stonehedge"
-	})
+/obj/structure/bed/rogue/inn/wooldouble,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/entrance)
 "tbX" = (
 /obj/structure/chair/wood/rogue,
 /obj/structure/fluff/railing/wood{
@@ -25400,18 +25179,12 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/town/bath)
 "toi" = (
-/obj/structure/roguewindow/openclose{
-	dir = 1
-	},
-/obj/structure/projected_forcefield{
-	name = "Magick Barrier";
-	desc = "It glistens and hums with arcane energy. Powerful Magicks, this.";
-	icon_state = "purplesparkles"
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/magician{
-	first_time_text = "Ravenloft Academy";
-	name = "Ravenloft Academy"
+/obj/structure/well,
+/obj/structure/spacevine,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge Borders";
+	name = "far stonehedge"
 	})
 "top" = (
 /obj/structure/flora/grass/jungle/b,
@@ -25504,7 +25277,6 @@
 /obj/item/book/granter/spell/spells5e/primalsavagery5e,
 /obj/item/book/granter/spell/blackstone/lightning,
 /obj/item/book/granter/spell/blackstone/fireball,
-/obj/item/book/granter/spell/spells5e/mending5e,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -25523,7 +25295,6 @@
 /obj/structure/table/church{
 	icon_state = "churchtable_mid"
 	},
-/obj/item/clothing/neck/roguetown/psicross/silver,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
@@ -25877,7 +25648,7 @@
 /obj/structure/rack/rogue,
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
 /obj/item/rogueweapon/shovel,
-/turf/open/floor/rogue/cobblerock,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
@@ -27647,7 +27418,6 @@
 /obj/effect/decal/border/stone/inverted{
 	dir = 8
 	},
-/obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -27761,9 +27531,6 @@
 	})
 "vdK" = (
 /obj/structure/flora/grass/jungle,
-/obj/machinery/light/rogue/lanternpost{
-	dir = 1
-	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
@@ -28120,25 +27887,12 @@
 	},
 /area/rogue/outdoors/river)
 "vwj" = (
-<<<<<<< Updated upstream
 /obj/structure/flora/roguegrass,
 /mob/living/carbon/human/species/human/smartnpc/townguard/brute,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
-=======
-/obj/structure/roguewindow/openclose,
-/obj/structure/projected_forcefield{
-	name = "Magick Barrier";
-	desc = "It glistens and hums with arcane energy. Powerful Magicks, this.";
-	icon_state = "purplesparkles"
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/magician{
-	first_time_text = "Ravenloft Academy";
-	name = "Ravenloft Academy"
->>>>>>> Stashed changes
 	})
 "vwm" = (
 /obj/item/natural/stone,
@@ -28194,7 +27948,7 @@
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
 /obj/item/natural/feather,
-/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -29293,16 +29047,6 @@
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
-<<<<<<< Updated upstream
-=======
-"wxI" = (
-/obj/structure/flora/grass/jungle/b,
-/turf/closed/wall/mineral/rogue/decostone,
-/area/rogue/indoors/town/church/chapel{
-	first_time_text = "Shrine of Lune";
-	name = "Shrine of Lune"
-	})
->>>>>>> Stashed changes
 "wxO" = (
 /obj/structure/rack/rogue/shelf,
 /obj/structure/table/wood{
@@ -30737,7 +30481,7 @@
 	})
 "xDM" = (
 /obj/structure/fluff/statue/knight/interior/r,
-/turf/open/floor/rogue/cobblerock,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
@@ -77929,7 +77673,7 @@ ifi
 foa
 cgq
 cgq
-kiG
+jrB
 izZ
 fai
 pCG
@@ -78332,7 +78076,7 @@ stf
 jrB
 stf
 stf
-nLN
+stf
 stf
 ptG
 pmJ
@@ -84388,8 +84132,8 @@ rPi
 sZB
 sZB
 sZB
-cVO
-cVO
+kan
+kan
 sZB
 nVt
 nVt
@@ -84987,13 +84731,13 @@ xDh
 rPi
 nmp
 sPq
-rsg
-rsg
-rsg
+qrG
+qrG
+qrG
 nmp
 sZB
 sZB
-hXg
+fWg
 kan
 fWg
 kan
@@ -85188,11 +84932,11 @@ prw
 xDh
 oSM
 hio
-rsg
+dqW
 kan
 kan
 kan
-kOv
+sPq
 nmp
 fWg
 kan
@@ -85200,8 +84944,8 @@ kan
 gHx
 kan
 kan
-cVO
-kUr
+kan
+wgl
 sZB
 nVt
 rxm
@@ -85390,17 +85134,17 @@ xhl
 xDh
 xDh
 hio
-rsg
-cVO
+dqW
+kan
 bFR
-icP
-rsg
+kan
+qrG
 ayP
 kan
 ktL
-gIK
+kan
 gNI
-cVO
+kan
 ktL
 kan
 trL
@@ -85592,15 +85336,15 @@ xDh
 xDh
 xDh
 hio
-rsg
+dqW
 kan
 kan
-cVO
+kan
 pWc
 nmp
 kan
 kan
-cVO
+kan
 aMy
 kan
 kan
@@ -85794,10 +85538,10 @@ xDh
 xDh
 xcU
 nmp
-azG
-rsg
-rsg
-rsg
+pWc
+qrG
+qrG
+qrG
 nmp
 sZB
 sZB
@@ -86776,7 +86520,7 @@ gec
 mDb
 vTS
 vTS
-cpy
+vTS
 rsF
 gec
 nVt
@@ -87011,7 +86755,7 @@ nVt
 nVt
 sZB
 iDC
-eHD
+dvC
 ajF
 nvL
 tUh
@@ -88830,8 +88574,8 @@ nVt
 nVt
 sZB
 xWw
-eHD
-bRi
+kwu
+xjT
 otA
 kan
 cVO
@@ -88996,9 +88740,9 @@ gec
 evw
 evw
 kcf
-iOZ
+orU
 odP
-ixO
+kMT
 eZV
 evw
 cgq
@@ -89033,7 +88777,7 @@ cgq
 sZB
 sZB
 eHD
-xjT
+bRi
 syp
 eLM
 iDC
@@ -99762,10 +99506,10 @@ huM
 huM
 hgJ
 hgJ
-hgJ
-hgJ
-hgJ
-hgJ
+nhM
+nhM
+nhM
+nhM
 hgJ
 hgJ
 hgJ
@@ -99967,8 +99711,8 @@ nhM
 nhM
 hgJ
 hgJ
-hgJ
-hgJ
+nhM
+nhM
 hgJ
 gFw
 hgJ
@@ -100170,7 +99914,7 @@ hgJ
 hgJ
 hgJ
 hgJ
-hgJ
+nhM
 hgJ
 gFw
 gFw
@@ -100372,8 +100116,8 @@ hgJ
 huM
 huM
 hgJ
-hgJ
-hgJ
+nhM
+nhM
 hgJ
 huM
 huM
@@ -100575,7 +100319,7 @@ hgJ
 huM
 huM
 hgJ
-hgJ
+nhM
 hgJ
 hgJ
 huM
@@ -100777,8 +100521,8 @@ hgJ
 hgJ
 huM
 hgJ
-hgJ
-hgJ
+nhM
+nhM
 hgJ
 hgJ
 hgJ
@@ -101177,10 +100921,10 @@ nhM
 nhM
 hgJ
 hgJ
-hgJ
-hgJ
-hgJ
-hgJ
+nhM
+nhM
+nhM
+nhM
 hgJ
 hgJ
 hgJ
@@ -101377,16 +101121,16 @@ nhM
 nhM
 nhM
 nhM
-gRX
-gRX
-gRX
-gRX
-gRX
-gRX
-gRX
-gRX
-gRX
-gRX
+nhM
+nhM
+nhM
+nhM
+nhM
+nhM
+nhM
+nhM
+nhM
+nhM
 nhM
 nhM
 oCe
@@ -105415,7 +105159,7 @@ mVp
 mVp
 miB
 mVp
-pEJ
+mVp
 mVp
 mVp
 mVp
@@ -105817,7 +105561,7 @@ miB
 miB
 oZS
 mVp
-mVp
+pEJ
 aYm
 aYm
 mVp
@@ -106712,7 +106456,7 @@ oCe
 oCe
 shH
 shH
-piY
+gbC
 nxm
 qhN
 lvj
@@ -108127,7 +107871,7 @@ oCe
 shH
 shH
 shH
-tgA
+siA
 nxm
 lvj
 lvj
@@ -117923,7 +117667,7 @@ kqH
 lwK
 tLk
 qMs
-pkF
+toi
 lam
 vmN
 gTl
@@ -118781,7 +118525,7 @@ miB
 eUJ
 kHM
 xyW
-mVp
+pEJ
 eUJ
 mVp
 miB
@@ -119353,9 +119097,9 @@ kXp
 kXp
 ffo
 iXt
-dYB
-dYB
-dYB
+nNz
+dij
+rJG
 nNz
 wUD
 pFc
@@ -119526,7 +119270,7 @@ gdU
 kan
 kan
 kan
-wxI
+sfZ
 oTG
 eHD
 wsc
@@ -119543,7 +119287,7 @@ wza
 vmN
 qJZ
 gTl
-dqW
+qJZ
 qMs
 tLk
 vIa
@@ -119555,7 +119299,7 @@ kXp
 kXp
 daC
 dYB
-dYB
+nNz
 rvt
 rJG
 nNz
@@ -119739,9 +119483,9 @@ cal
 xDh
 xDh
 xDh
-xcU
-tNb
-pOo
+xDh
+bQq
+guW
 wsc
 pOo
 kQG
@@ -119757,7 +119501,7 @@ kXp
 kXp
 daC
 dYB
-dYB
+nNz
 mwE
 rJG
 hiA
@@ -119937,15 +119681,15 @@ cal
 tax
 sfZ
 kan
-kan
+icP
 xis
 icP
 xis
 tax
 wsc
 jLy
-kan
-hVW
+emy
+sfZ
 ycO
 qJZ
 vmN
@@ -119959,7 +119703,7 @@ kXp
 kXp
 ffo
 dYB
-dYB
+nNz
 vzt
 jlS
 hiA
@@ -120137,9 +119881,9 @@ mpx
 mpx
 xAN
 xis
-cCv
-cCv
-vcN
+kan
+kan
+kan
 kan
 pJt
 kan
@@ -120161,7 +119905,7 @@ hQY
 kXp
 oRk
 dYB
-dYB
+nNz
 fZA
 rcU
 pFc
@@ -120339,8 +120083,8 @@ eWu
 kvk
 mpx
 xis
-mfc
 bFR
+kan
 kan
 kan
 kan
@@ -120541,9 +120285,9 @@ eHD
 mpx
 eHD
 xis
-mOd
-mGY
-lXw
+sfZ
+kan
+kan
 kan
 eLJ
 kan
@@ -120745,15 +120489,15 @@ tax
 cal
 kan
 sfZ
-kan
+icP
 xis
 icP
 xis
 cal
 icP
 jLy
-sfZ
-emy
+hVW
+kan
 ycO
 qJZ
 qJZ
@@ -120953,7 +120697,7 @@ xDh
 xDh
 xDh
 tNb
-pOo
+lyw
 wsc
 pOo
 fpN
@@ -121142,7 +120886,7 @@ alQ
 kan
 kan
 kan
-icP
+kan
 oTG
 eOW
 wsc
@@ -121370,12 +121114,12 @@ beK
 haD
 uCN
 hiA
-dYB
+sBl
 dYB
 qKQ
 dYB
 dYB
-dYB
+tno
 hiA
 hHR
 jdj
@@ -121408,7 +121152,7 @@ eyG
 eHG
 eUJ
 eHG
-nYE
+ilr
 ilr
 fmt
 eHG
@@ -121572,7 +121316,7 @@ beK
 mJe
 uCN
 nWu
-lyw
+qFr
 dYB
 hiA
 hiA
@@ -121976,7 +121720,7 @@ nFS
 mJe
 ucZ
 hiA
-tno
+qFr
 dYB
 hiA
 tiA
@@ -122785,9 +122529,9 @@ rLF
 aeO
 avu
 elJ
+laG
 elJ
-elJ
-lfB
+avu
 pVI
 vQz
 nfU
@@ -122983,7 +122727,7 @@ qJZ
 beK
 beK
 beK
-beK
+dpz
 elJ
 gZN
 elJ
@@ -123393,8 +123137,8 @@ elJ
 elJ
 elJ
 elJ
-elJ
-lfB
+laG
+avu
 okm
 ucZ
 uCN
@@ -123994,12 +123738,12 @@ beK
 beK
 beK
 xhh
-elJ
+npg
 elJ
 elJ
 pMv
 pMv
-lfB
+avu
 ucZ
 dok
 uCN
@@ -124199,7 +123943,7 @@ gGI
 xKV
 laG
 avu
-elJ
+laG
 jql
 xKV
 jFL
@@ -124445,7 +124189,7 @@ cBD
 uMJ
 oZS
 eUJ
-pEJ
+mVp
 nEo
 dZZ
 mVp
@@ -124824,7 +124568,7 @@ oZS
 qRz
 miB
 tNE
-pIz
+eHG
 fMm
 oZS
 miB
@@ -125559,7 +125303,7 @@ nXV
 lss
 nXV
 jsd
-ptM
+piY
 jsd
 nXV
 jsd
@@ -127824,7 +127568,7 @@ tac
 nFT
 lvM
 ycO
-ijB
+kOv
 pTW
 qJZ
 qJZ
@@ -128225,7 +127969,7 @@ nze
 ufX
 voH
 ijB
-slN
+vwj
 ycO
 nWn
 qMs
@@ -128598,7 +128342,7 @@ aBk
 pcE
 oeB
 aBk
-qwx
+osH
 pcE
 tNb
 tlm
@@ -129223,8 +128967,8 @@ uxu
 ccn
 oea
 oea
-oea
-kMT
+dxy
+beK
 nFS
 beK
 beK
@@ -129422,7 +129166,7 @@ pFL
 uxu
 uxu
 uxu
-hGY
+pIz
 pwR
 oea
 pwR
@@ -129430,7 +129174,7 @@ beK
 beK
 beK
 beK
-qJZ
+tEM
 qJZ
 qJZ
 qJZ
@@ -130234,19 +129978,14 @@ qhI
 pwR
 oea
 pwR
-<<<<<<< Updated upstream
 nFS
 rLF
-=======
-usY
-beK
->>>>>>> Stashed changes
 nFS
 beK
 nFS
 ycO
 ijB
-tbx
+vmN
 qJZ
 qJZ
 qJZ
@@ -130644,7 +130383,7 @@ oea
 oea
 oea
 umo
-tbx
+vmN
 cns
 pTW
 nFS
@@ -131302,7 +131041,7 @@ fMm
 fMm
 eHG
 pan
-pEJ
+mVp
 ilr
 eHG
 eHG
@@ -131472,7 +131211,7 @@ ycO
 ycO
 xKV
 ucZ
-lCr
+ucZ
 uCN
 wyc
 wyc
@@ -132078,7 +131817,7 @@ qJZ
 qJZ
 ucZ
 ucZ
-sCW
+ucZ
 wyc
 wyc
 ubt
@@ -146627,7 +146366,7 @@ vLX
 lVD
 vLX
 vLX
-jjp
+dko
 dqk
 vLX
 vLX
@@ -148443,7 +148182,7 @@ vLX
 rZk
 kdu
 kdu
-dpz
+kdu
 rZk
 vLX
 mQc
@@ -154484,7 +154223,7 @@ ovd
 ovd
 sfZ
 sfZ
-nBi
+kan
 mha
 aZy
 aZy
@@ -156094,13 +155833,13 @@ fTn
 kan
 kan
 kan
-wxI
+sfZ
 ovd
 ovd
 ovd
 sfZ
 kan
-nBi
+kan
 mha
 aZy
 aZy
@@ -156726,7 +156465,7 @@ aZy
 aZy
 aZy
 nWu
-jgy
+dYB
 dYB
 tiA
 lhA
@@ -160104,7 +159843,7 @@ enU
 tJb
 tJb
 tJb
-dmS
+qwx
 tJb
 tJb
 tJb
@@ -161703,10 +161442,6 @@ xBY
 xBY
 qCV
 qCV
-<<<<<<< Updated upstream
-=======
-fqz
->>>>>>> Stashed changes
 fqz
 fqz
 fqz
@@ -162721,7 +162456,7 @@ bcc
 bcc
 bcc
 bcc
-dvC
+jCG
 vMS
 vMS
 vMS
@@ -165857,7 +165592,7 @@ gEU
 uCO
 wSd
 ijB
-rzN
+pAs
 ijB
 hcX
 rjd
@@ -166059,8 +165794,8 @@ gEU
 snY
 cSc
 ijB
-pAs
-beK
+rzN
+lCr
 hcX
 rjd
 oPy
@@ -181549,7 +181284,7 @@ aZy
 jHZ
 oTS
 xbp
-jmP
+xbp
 hvz
 xbp
 dDo
@@ -181575,7 +181310,7 @@ taL
 lbr
 vLX
 vLX
-fcd
+vLX
 vLX
 vLX
 taL
@@ -181955,7 +181690,7 @@ nyl
 amA
 rsv
 dDo
-hWG
+tbx
 dDo
 aZy
 aZy
@@ -182377,7 +182112,7 @@ aZy
 sib
 egl
 lbr
-dij
+vLX
 uij
 vBX
 vBX
@@ -182389,7 +182124,7 @@ aXd
 vBX
 vBX
 ePk
-toi
+vLX
 lbr
 egl
 egl
@@ -182549,7 +182284,7 @@ dDo
 xbp
 xbp
 xbp
-lXW
+dDo
 oZz
 itq
 itq
@@ -182579,7 +182314,7 @@ aZy
 sib
 egl
 lbr
-dij
+vLX
 cjY
 vBX
 nzB
@@ -182591,7 +182326,7 @@ vLX
 vLX
 vBX
 cqm
-toi
+vLX
 lbr
 egl
 egl
@@ -183154,7 +182889,7 @@ aZy
 jHZ
 xbp
 xbp
-orU
+xbp
 xbp
 hvz
 amA
@@ -183593,11 +183328,11 @@ teF
 lbr
 lbr
 lbr
-vwj
-fWh
+vLX
 lwi
 lwi
-toi
+lwi
+vLX
 lbr
 fJT
 teF
@@ -184981,7 +184716,7 @@ aZy
 jHZ
 oTS
 xbp
-orU
+xbp
 xbp
 xbp
 dDo
@@ -185185,7 +184920,7 @@ fnH
 oTS
 xbp
 xFY
-hWG
+tbx
 dDo
 aZy
 aZy
@@ -189633,7 +189368,7 @@ xSp
 htw
 xSp
 xSp
-qrG
+htw
 xDy
 xDy
 xSp
@@ -190844,7 +190579,7 @@ xSp
 xSp
 xSp
 xDy
-qrG
+htw
 htw
 xSp
 htw
@@ -199751,9 +199486,9 @@ jQX
 tDy
 itq
 dvV
-siA
 eCz
-wmj
+eCz
+eCz
 dvV
 vYE
 vYE
@@ -200761,7 +200496,7 @@ aZy
 vYE
 vYE
 dvV
-lCH
+wmj
 eCz
 wmj
 dvV
