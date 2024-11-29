@@ -246,7 +246,7 @@
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
 			testes.reagents.trans_to(target, cum_to_take, transfered_by = user)
 		else
-			var/cameloc
+			var/obj/item/organ/filling_organ/cameloc
 			if(vaginal)
 				cameloc = target.getorganslot(ORGAN_SLOT_VAGINA)
 			if(anal)
@@ -254,9 +254,8 @@
 			if(nipple)
 				cameloc = target.getorganslot(ORGAN_SLOT_BREASTS)
 			if(vaginal || anal || nipple)
-				var/obj/item/organ/cameorgan = cameloc
 				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, min(testes.reagents.total_volume, cameorgan.reagents.maximum_volume - cameorgan.reagents.total_volume))
-				testes.reagents.trans_to(cameorgan, cum_to_take, transfered_by = user)
+				testes.reagents.trans_to(cameloc, cum_to_take, transfered_by = user)
 			else
 				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, testes.reagents.total_volume)
 				testes.reagents.trans_to(target,  cum_to_take, transfered_by = user) //digest anyway if none of those.
