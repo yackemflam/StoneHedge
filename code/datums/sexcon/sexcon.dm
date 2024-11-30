@@ -254,7 +254,7 @@
 			if(nipple)
 				cameloc = target.getorganslot(ORGAN_SLOT_BREASTS)
 			if(vaginal || anal || nipple)
-				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, min(testes.reagents.total_volume, cameorgan.reagents.maximum_volume - cameorgan.reagents.total_volume))
+				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, min(testes.reagents.total_volume, cameloc.reagents.maximum_volume - cameloc.reagents.total_volume))
 				testes.reagents.trans_to(cameloc, cum_to_take, transfered_by = user)
 			else
 				var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, testes.reagents.total_volume)

@@ -26,7 +26,7 @@
 	outfit = /datum/outfit/job/roguetown/puritan
 	display_order = JDO_PURITAN
 	give_bank_account = 36
-	min_pq = 0
+	min_pq = 10
 	max_pq = null
 
 /datum/outfit/job/roguetown/puritan

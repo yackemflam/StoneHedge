@@ -156,7 +156,7 @@
 			if(H.patron?.type == /datum/patron/divine/noc)
 				C.grant_spells_devout_noc(H)
 			else
-				C.grant_spells_devout(H)
+				C.grant_spells_cleric(H)
 			if(H.mind)
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 4, TRUE)
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 2, TRUE)
