@@ -24663,6 +24663,13 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
+"sXG" = (
+/obj/effect/landmark/start/jester,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
+	})
 "sYg" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/under/roguetown/tights/stockings/purple,
@@ -159616,7 +159623,7 @@ fSQ
 tRu
 tJb
 tJb
-tJb
+sXG
 tJb
 fcI
 rlX
