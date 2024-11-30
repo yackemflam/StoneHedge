@@ -176,9 +176,6 @@
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 				pants = /obj/item/clothing/under/roguetown/tights/black
 				belt = /obj/item/storage/belt/rogue/leather/black
-				if (H.mind)
-					H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 1, TRUE)
-					H.mind.adjust_spellpoints(1)
 			if(/datum/patron/divine/necra)
 				head = /obj/item/clothing/head/roguetown/necrahood
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
@@ -196,6 +193,10 @@
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/psydonrobe
 			if(/datum/patron/divine/eora)
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
+			if(/datum/patron/inhumen/graggar)
+				if(H.mind)
+					H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 1, TRUE)
+					H.mind.adjust_spellpoints(1)
 	// HEARTHSTONE ADDITION END
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	// HEARTHSTONE ADDITION: cloistered devout devo regen & tier buff
