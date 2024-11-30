@@ -179,10 +179,6 @@
 				if (H.mind)
 					H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 1, TRUE)
 					H.mind.adjust_spellpoints(1)
-					H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
-					H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
-					ADD_TRAIT(H, TRAIT_USEMAGICITEM, TRAIT_GENERIC)
-
 			if(/datum/patron/divine/necra)
 				head = /obj/item/clothing/head/roguetown/necrahood
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
@@ -204,7 +200,12 @@
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	// HEARTHSTONE ADDITION: cloistered devout devo regen & tier buff
 	if (classchoice == "Temple Devout")
-		C.grant_spells_devout_noc(H)
+		C.grant_spells_devout(H)
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 1, TRUE)
+		H.mind.adjust_spellpoints(1)
+		H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+		ADD_TRAIT(H, TRAIT_USEMAGICITEM, TRAIT_GENERIC)
 	else
 		C.grant_spells_cleric(H)
 	// HEARTHSTONE ADDITION END
