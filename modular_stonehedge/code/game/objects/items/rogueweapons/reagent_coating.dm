@@ -24,13 +24,12 @@
 /obj/item/rogueweapon/proc/apply_reagents(obj/item/I, mob/living/user, mob/living/H)
 	//signals are fucking weird, the parameters above are all fucky weird.
 	SIGNAL_HANDLER
-	debug_admins("[I], [user], [H], [usr], [src]")
 	if(!H)
 		return
 	if(reagents.total_volume)
-		reagents.trans_to(H, reagent_apply_amt, 1, no_react = FALSE)
-		H.visible_message(span_green("[H] shudders with pain!"),span_boldgreen("I feel a burning pain on my wound!"))
-		log_admin("[H] was struck with [english_list(reagents.reagent_list)] using a poisoned weapon by [user].")
+		reagents.trans_to(user, reagent_apply_amt, 1, no_react = FALSE)
+		H.visible_message(span_green("[user] shudders with pain!"),span_boldgreen("I feel a burning pain on my wound!"))
+		log_admin("[user] was struck with [english_list(reagents.reagent_list)] using a poisoned weapon by [H].")
 
 /obj/item/rogueweapon/proc/clean_react()
 	SIGNAL_HANDLER

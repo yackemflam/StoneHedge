@@ -368,7 +368,7 @@
 			adjustStaminaLoss(25, TRUE)
 	else if(target)
 		walk_away(src, get_turf(loc), 1, 1)
-	sexcon.current_action = FALSE
+	sexcon.current_action = null
 	chasesfuck = FALSE
 	seekboredom = 0
 	START_PROCESSING(SShumannpc,src)
