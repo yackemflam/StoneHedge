@@ -75,7 +75,7 @@
 
 /datum/status_effect/debuff/stealthcd/on_apply()
 	if(owner.mind)
-		duration = duration - ((owner.mind.get_skill_level(/datum/skill/misc/sneaking)) SECONDS)
+		duration = duration - ((owner.mind.get_skill_level(/datum/skill/misc/sneaking)) SECONDS * 2)
 	if(owner.m_intent == MOVE_INTENT_SNEAK)
 		owner.toggle_rogmove_intent(MOVE_INTENT_WALK)
 		owner.update_sneak_invis()

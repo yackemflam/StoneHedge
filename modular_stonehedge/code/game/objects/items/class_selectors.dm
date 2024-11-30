@@ -157,7 +157,7 @@
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/pestra
 				if(/datum/patron/divine/eora) //Eora content from Stonekeep
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/eora
-				C.grant_spells_cleric(H)
+			C.grant_spells_cleric(H)
 			if(H.mind)
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 4, TRUE)
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 2, TRUE)

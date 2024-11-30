@@ -206,26 +206,28 @@
 
 /datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE, girljuice = FALSE)
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
-	if(!issimple(target) && target.mind)
-		log_combat(user, target, "Came inside [target]")
-		if(HAS_TRAIT(target, TRAIT_GOODLOVER))
-			if(!user.mob_timers["cumtri"])
-				user.mob_timers["cumtri"] = world.time
-				user.adjust_triumphs(1)
-				user.add_stress(/datum/stressevent/cummax)
-				to_chat(user, span_love("Our sex was a true TRIUMPH!"))
-	else
-		user.add_stress(/datum/stressevent/cumok)
-	if(!issimple(user) && user.mind)
-		log_combat(target, user, "Came inside [user]")
-		if(HAS_TRAIT(user, TRAIT_GOODLOVER))
-			if(!target.mob_timers["cumtri"])
-				target.mob_timers["cumtri"] = world.time
-				target.adjust_triumphs(1)
-				target.add_stress(/datum/stressevent/cummax)
-				to_chat(target, span_love("Our sex was a true TRIUMPH!"))
-		else
-			target.add_stress(/datum/stressevent/cumok)
+	if(target.mind)
+		if(!issimple(target))
+			log_combat(user, target, "Came inside [target]")
+			if(HAS_TRAIT(target, TRAIT_GOODLOVER))
+				if(!user.mob_timers["cumtri"])
+					user.mob_timers["cumtri"] = world.time
+					user.adjust_triumphs(1)
+					user.add_stress(/datum/stressevent/cummax)
+					to_chat(user, span_love("Our sex was a true TRIUMPH!"))
+			else
+				user.add_stress(/datum/stressevent/cumok)
+	if(user.mind)
+		if(!issimple(user))
+			log_combat(target, user, "Came inside [user]")
+			if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+				if(!target.mob_timers["cumtri"])
+					target.mob_timers["cumtri"] = world.time
+					target.adjust_triumphs(1)
+					target.add_stress(/datum/stressevent/cummax)
+					to_chat(target, span_love("Our sex was a true TRIUMPH!"))
+				else
+					target.add_stress(/datum/stressevent/cumok)
 	if(girljuice)
 		if(!issimple(target))
 			target.reagents.add_reagent(/datum/reagent/water/pussjuice, 10)

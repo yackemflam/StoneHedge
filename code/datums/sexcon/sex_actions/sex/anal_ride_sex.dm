@@ -53,11 +53,10 @@
 		playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
 /datum/sex_action/anal_ride_sex/on_perform(mob/living/user, mob/living/target)
+	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
+		user.sexcon.try_pelvis_crush(target)
 
-		if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
-			user.sexcon.try_pelvis_crush(target)
-
-		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] anally rides [target]."))
+	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] anally rides [target]."))
 	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
