@@ -17,7 +17,7 @@
 	. = ..()
 	if(sharpness != IS_BLUNT && !uncoatable)
 		create_reagents(w_class*5, REFILLABLE|DRAINABLE) //weapon size equals more coatable.
-		reagent_apply_amt = (5/w_class > 0) //smaller weapons will apply more poison at once.
+		reagent_apply_amt = max((5/w_class), 0.5) //smaller weapons will apply more poison at once.
 		RegisterSignal(src, COMSIG_APPLY_REAGENTS, PROC_REF(apply_reagents))
 		RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(clean_react))
 
@@ -28,7 +28,7 @@
 		return
 	if(reagents.total_volume)
 		reagents.trans_to(user, reagent_apply_amt, 1, no_react = FALSE)
-		H.visible_message(span_green("[user] shudders with pain!"),span_boldgreen("I feel a burning pain on my wound!"))
+		user.visible_message(span_green("[user] shudders with pain!"),span_boldgreen("I feel a burning pain on my wound!"))
 		log_admin("[user] was struck with [english_list(reagents.reagent_list)] using a poisoned weapon by [H].")
 
 /obj/item/rogueweapon/proc/clean_react()
@@ -38,7 +38,6 @@
 			reagents.remove_all(reagents.maximum_volume) //buh bye reagents water washes it
 
 /obj/item/rogueweapon/attackby(obj/item/reagent_containers/I, mob/living/user, params)
-	. = ..()
 	if(!istype(I, /obj/item/reagent_containers))
 		return
 	if(reagents)
@@ -51,6 +50,7 @@
 			I.reagents.trans_to(src, I.reagents.maximum_volume)
 		//we dont want water coated weapons so last failsafe
 		reagents.remove_all_type(/datum/reagent/water, reagents.total_volume)
+	. = ..()
 
 //custom reagent examine
 /obj/item/rogueweapon/examine(mob/user)

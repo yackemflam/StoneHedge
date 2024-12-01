@@ -28,13 +28,13 @@
 /datum/crafting_recipe/roguetown/alchemy/puremoon
 	name = "Purest Moondust"
 	result = list(/obj/item/reagent_containers/powder/moondust/purest)
-	reqs = list(/obj/item/reagent_containers/powder/moondust, /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 1, /datum/reagent/berrypoison = 5)
+	reqs = list(/obj/item/reagent_containers/powder/moondust, /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 1, /datum/reagent/toxin/berrypoison = 5)
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/alchemy/spice
 	name = "Spice Melange"
 	result = list(/obj/item/reagent_containers/powder/spice)
-	reqs = list(/obj/item/ash = 1, /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry = 1, /datum/reagent/berrypoison = 5)
+	reqs = list(/obj/item/ash = 1, /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry = 1, /datum/reagent/toxin/berrypoison = 5)
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/alchemy/salt
