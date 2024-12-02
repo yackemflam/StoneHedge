@@ -138,7 +138,7 @@
 	friendlyfactions = list("Station", "neutral")
 	dodgetime = 12
 	calmmessages = list(
-		"What do you need?", 
+		"What do you need?",
 		"Trouble?",
 		"What is it?",
 		"No lollygaggin'.",
@@ -250,8 +250,12 @@
 				say(pick(calmmessages))
 	. = ..()
 
-/mob/living/carbon/human/species/human/smartnpc/townguard/proc/feint_react(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/mob/living/carbon/human/species/human/smartnpc/townguard/proc/__feint_react(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	SIGNAL_HANDLER
+	SHOULD_NOT_OVERRIDE(TRUE) // override feint_react instead
+	INVOKE_ASYNC(src, PROC_REF(feint_react), user, target)
+
+/mob/living/carbon/human/species/human/smartnpc/townguard/proc/feint_react(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	visible_message("[src], [user], [target]")
 	say(pick("Yeah right.", "You are no match for me.", "Siddown."))
 	visible_message(span_emote("[src] smacks [target] across the face!"))
@@ -419,7 +423,7 @@ GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 	ADD_TRAIT(src, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_ROT_EATER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_WILD_EATER, TRAIT_GENERIC)
-	RegisterSignal(src, COMSIG_FEINT_REACT, PROC_REF(feint_react))
+	RegisterSignal(src, COMSIG_FEINT_REACT, PROC_REF(__feint_react))
 	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/smartnpc/townguard)
 	var/obj/item/organ/eyes/organ_eyes = getorgan(/obj/item/organ/eyes/night_vision/full_darksight) //elf eyes
 	if(organ_eyes)

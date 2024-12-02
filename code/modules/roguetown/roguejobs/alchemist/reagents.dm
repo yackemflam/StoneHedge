@@ -383,7 +383,7 @@
 				to_chat(M, "You feel the drugs burning intensely in [B.name].")
 
 			// Handle destruction of the wound
-			W.Destroy(0)
+			qdel(W)
 
 	M.update_damage_overlays()
 
@@ -401,7 +401,7 @@
 		M.blood_volume = min(M.blood_volume+200, BLOOD_VOLUME_MAXIMUM)
 	else
 		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
-	if(wCount.len > 0)	
+	if(wCount.len > 0)
 		M.heal_wounds(6)
 		M.update_damage_overlays()
 	M.adjustBruteLoss(-4.5, 0)

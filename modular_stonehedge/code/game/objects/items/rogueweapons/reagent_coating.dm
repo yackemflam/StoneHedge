@@ -18,12 +18,16 @@
 	if(sharpness != IS_BLUNT && !uncoatable)
 		create_reagents(w_class*5, REFILLABLE|DRAINABLE) //weapon size equals more coatable.
 		reagent_apply_amt = max((5/w_class), 0.5) //smaller weapons will apply more poison at once.
-		RegisterSignal(src, COMSIG_APPLY_REAGENTS, PROC_REF(apply_reagents))
-		RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(clean_react))
+		RegisterSignal(src, COMSIG_APPLY_REAGENTS, PROC_REF(__apply_reagents))
+		RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(__clean_react))
 
-/obj/item/rogueweapon/proc/apply_reagents(obj/item/I, mob/living/user, mob/living/H)
+/obj/item/rogueweapon/proc/__apply_reagents(obj/item/I, mob/living/user, mob/living/H)
 	//signals are fucking weird, the parameters above are all fucky weird.
 	SIGNAL_HANDLER
+	SHOULD_NOT_OVERRIDE(TRUE) // override on_apply_reagents instead
+	INVOKE_ASYNC(src, PROC_REF(apply_reagents), I, user, H)
+
+/obj/item/rogueweapon/proc/apply_reagents(obj/item/I, mob/living/user, mob/living/H)
 	if(!H)
 		return
 	if(reagents.total_volume)
@@ -31,11 +35,14 @@
 		user.visible_message(span_green("[user] shudders with pain!"),span_boldgreen("I feel a burning pain on my wound!"))
 		log_admin("[user] was struck with [english_list(reagents.reagent_list)] using a poisoned weapon by [H].")
 
-/obj/item/rogueweapon/proc/clean_react()
+/obj/item/rogueweapon/proc/__clean_react()
 	SIGNAL_HANDLER
-	if(reagents)
-		if(reagents.total_volume)
-			reagents.remove_all(reagents.maximum_volume) //buh bye reagents water washes it
+	SHOULD_NOT_OVERRIDE(TRUE) // override on_clean_react instead
+	INVOKE_ASYNC(src, PROC_REF(clean_react)) // don't cause signal sending to hang!
+
+/obj/item/rogueweapon/proc/clean_react()
+	if(reagents?.total_volume)
+		reagents.remove_all(reagents.maximum_volume) //buh bye reagents water washes it
 
 /obj/item/rogueweapon/attackby(obj/item/reagent_containers/I, mob/living/user, params)
 	if(!istype(I, /obj/item/reagent_containers))
