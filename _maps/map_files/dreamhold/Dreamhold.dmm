@@ -4632,6 +4632,15 @@
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
 	})
+"dvb" = (
+/obj/effect/landmark/mapGenerator/rogue/forest{
+	endTurfX = 173;
+	endTurfY = 200
+	},
+/turf/closed,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Deepwoods"
+	})
 "dvk" = (
 /obj/structure/glowshroom{
 	icon_state = "glowshroom3"
@@ -13810,6 +13819,13 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
+"krJ" = (
+/obj/effect/landmark/mapGenerator/rogue/cave{
+	endTurfX = 173;
+	endTurfY = 200
+	},
+/turf/closed,
+/area/rogue)
 "ksc" = (
 /obj/structure/fluff/walldeco/stone,
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -19274,7 +19290,6 @@
 	})
 "oGb" = (
 /obj/structure/flora/newbranch/connector{
-	dir = 2;
 	icon_state = "branch-end2"
 	},
 /turf/open/transparent/openspace,
@@ -28488,6 +28503,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"vwM" = (
+/obj/effect/landmark/mapGenerator/sunlights,
+/turf/closed,
+/area/rogue)
 "vwV" = (
 /obj/structure/bookcase,
 /obj/item/book/granter/spell/spells5e/bladeward5e,
@@ -30257,6 +30276,13 @@
 "wXu" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/outdoors/mountains)
+"wXF" = (
+/obj/effect/sunlight,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge Borders";
+	name = "far stonehedge"
+	})
 "wXH" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -31258,18 +31284,15 @@
 "xKI" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/hammer{
-	color = "gold"
-	desc = "A mastercrafted smith's hammer carrying the blessing of Malum.";
+	color = "gold"desc="A mastercrafted smith's hammer carrying the blessing of Malum.";
 	name = "Hammer of Malum"
 	},
 /obj/item/rogueweapon/hammer{
-	color = "gold"
-	desc = "A mastercrafted smith's hammer carrying the blessing of Malum.";
+	color = "gold"desc="A mastercrafted smith's hammer carrying the blessing of Malum.";
 	name = "Hammer of Malum"
 	},
 /obj/item/rogueweapon/hammer{
-	color = "gold"
-	desc = "A mastercrafted smith's hammer carrying the blessing of Malum.";
+	color = "gold"desc="A mastercrafted smith's hammer carrying the blessing of Malum.";
 	name = "Hammer of Malum"
 	},
 /obj/machinery/light/rogue/torchholder{
@@ -32172,7 +32195,7 @@ uUp
 uUp
 uUp
 uUp
-uUp
+krJ
 "}
 (2,1,1) = {"
 uUp
@@ -67119,7 +67142,7 @@ uUp
 uUp
 uUp
 uUp
-uUp
+krJ
 "}
 (2,1,2) = {"
 uUp
@@ -102066,7 +102089,7 @@ tzg
 tzg
 tzg
 tzg
-tzg
+dvb
 "}
 (2,1,3) = {"
 uUp
@@ -171960,7 +171983,7 @@ oCe
 oCe
 oCe
 uUp
-uUp
+vwM
 "}
 (2,1,5) = {"
 uUp
@@ -187403,7 +187426,7 @@ aZy
 aZy
 aZy
 aZy
-aZy
+wXF
 aZy
 aZy
 aZy

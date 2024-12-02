@@ -3202,6 +3202,13 @@
 "KR" = (
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue)
+"KY" = (
+/obj/effect/landmark/mapGenerator/rogue/cave/lava{
+	endTurfX = 118;
+	endTurfY = 130
+	},
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/under/cavewet)
 "La" = (
 /obj/structure/stairs/stone{
 	dir = 8
@@ -4536,7 +4543,7 @@ Gr
 tG
 tG
 tG
-tG
+KY
 "}
 (2,1,1) = {"
 tG
