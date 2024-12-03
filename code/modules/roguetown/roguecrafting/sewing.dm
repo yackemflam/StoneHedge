@@ -66,10 +66,10 @@
 	craftdiff = 0
 
 /// I am legally obligated to say these are a temporary fix until a more permanent solution is made
-/datum/crafting_recipe/roguetown/sewing/headscarf
+/datum/crafting_recipe/roguetown/sewing/untie_headscarf
 	name = "untie headscarf"
 	result = list(/obj/item/natural/cloth = 1)
-	reqs = list(/obj/item/clothing/head/roguetown/headscarf)
+	reqs = list(/obj/item/clothing/head/roguetown/headscarf = 1)
 	craftdiff = 0
 
 /// I am legally obligated to say these are a temporary fix until a more permanent solution is made
