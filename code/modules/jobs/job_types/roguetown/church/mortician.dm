@@ -1,4 +1,4 @@
-IUM/datum/job/roguetown/undertaker
+/datum/job/roguetown/undertaker
 	title = "Gravesinger"
 	flag = GRAVEDIGGER
 	department_flag = CHURCHMEN
