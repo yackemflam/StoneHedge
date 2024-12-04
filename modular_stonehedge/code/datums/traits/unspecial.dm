@@ -191,7 +191,7 @@
 	H.mind.special_items["Fertilizer 1"] = /obj/item/fertilizer
 	H.mind.special_items["Fertilizer 2"] = /obj/item/fertilizer
 	H.mind.special_items["Fertilizer 3"] = /obj/item/fertilizer
-	H.mind.special_items["Whore"] = /obj/item/rogueweapon/hoe // I too respect a humble farmer. 
+	H.mind.special_items["Whore"] = /obj/item/rogueweapon/hoe // I too respect a humble farmer.
 
 /datum/quirk/eagle_eyed
 	name = "Eagle Eyed"
@@ -275,7 +275,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 5, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/lockpicking, 3, TRUE)
 	H.mind.special_items["Lockpicks"] = /obj/item/lockpickring/mundane
-	
+
 
 /datum/quirk/languagesavant
 	name = "Polyglot"
@@ -310,15 +310,12 @@
 /datum/quirk/mastercraftsmen/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 3, TRUE) //lets be real you are taking this for smithing only.

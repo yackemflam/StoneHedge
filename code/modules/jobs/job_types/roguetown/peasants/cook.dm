@@ -23,10 +23,10 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 2, TRUE)
 		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/roguekey/tavern
 	if(H.gender == MALE)

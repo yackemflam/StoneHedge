@@ -21,7 +21,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 5, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)
@@ -29,7 +29,6 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 4, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 1, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 5, TRUE) //Hearthstone change.
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou/leather

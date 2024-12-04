@@ -11,7 +11,7 @@
 	icon_state = ""
 	slot_flags = ITEM_SLOT_RING
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 
 /obj/item/clothing/neck/roguetown/psicross/ringP  /////////////////////// cast focus ring for acolytes and shit.
 	name = "psi ring"

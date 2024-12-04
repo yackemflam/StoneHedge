@@ -68,7 +68,7 @@
 	var/do_sound = FALSE
 	max_integrity = 200
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_LIGHT
 	can_hold_endowed = TRUE
@@ -86,7 +86,7 @@
 	body_parts_covered = CHEST|GROIN|VITALS
 	icon_state = "ichainmail"
 	max_integrity = 125
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_LIGHT
 
@@ -98,7 +98,7 @@
 	item_state = "hauberk"
 	max_integrity = 220
 	armor = list("blunt" = 60, "slash" = 100, "stab" = 80, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	do_sound = TRUE
 	max_integrity = 350
@@ -114,7 +114,7 @@
 	item_state = "chainkini"
 	max_integrity = 225
 	allowed_sex = list(FEMALE)
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	flags_inv = HIDEBOOB|HIDECROTCH
 
 
@@ -225,7 +225,7 @@
 	allowed_sex = list(MALE, FEMALE)
 	var/do_sound = TRUE
 	max_integrity = 525	//3 steel, 3 difficulty.
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
 	unequip_delay_self = 40
@@ -254,7 +254,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 350
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 	flags_inv = HIDEBOOB
@@ -272,7 +272,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 600	//steel cuirass is 2 steel and 2 difficulty for 350, add 250 for Unique
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 	flags_inv = HIDEBOOB
@@ -290,7 +290,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 250
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -307,7 +307,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 675	//3 steel, 3 difficulty, and uncraftable
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -322,7 +322,7 @@
 	allowed_sex = list(FEMALE)
 	max_integrity = 550
 	flags_inv = HIDECROTCH|HIDEBOOB
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 
 /obj/item/clothing/suit/roguetown/armor/plate/bikini/bra
 	name = "half-plate bra"
@@ -406,7 +406,7 @@
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "lamellar"
 	max_integrity = 225
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
@@ -424,7 +424,7 @@
 	nodismemsleeves = TRUE
 	blocking_behavior = null
 	max_integrity = 475	//Coat of plates is 1 steel, 1 cloth, 2 difficulty, and Unique
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
@@ -443,7 +443,7 @@
 	nodismemsleeves = TRUE
 	blocking_behavior = null
 	max_integrity = 475	//Coat of plates is 1 steel, 1 cloth, 2 difficulty, and Unique
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
@@ -461,7 +461,7 @@
 	allowed_sex = list(MALE, FEMALE)
 	nodismemsleeves = TRUE
 	max_integrity = 425
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_HEAVY
@@ -906,7 +906,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 525
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 	flags_inv = HIDEBOOB
@@ -935,7 +935,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 350
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -953,7 +953,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 350
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -970,7 +970,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 525 //Might be studded with gems, but it has a difficulty of 3 and uses 3 steel to make.
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_LIGHT //Designed for the infirm.
 	var/active_item = FALSE //Prevents issues like dragon ring giving negative str instead
@@ -1019,7 +1019,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 500
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -1036,7 +1036,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 350
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -1068,7 +1068,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 350
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -1085,7 +1085,7 @@
 	do_sound = FALSE
 	blocking_behavior = null
 	max_integrity = 500
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_HEAVY
 
@@ -1113,7 +1113,7 @@
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "scale_armor"
 	max_integrity = 150
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/iron
 	equip_delay_self = 20
 	armor_class = ARMOR_CLASS_LIGHT
@@ -1127,7 +1127,7 @@
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "vikingbodyguardc" // No gendered/dwarf sprites
 	max_integrity = 350
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
@@ -1143,7 +1143,7 @@
 	allowed_race = CLOTHED_RACES_TYPES
 	blocking_behavior = null
 	max_integrity = 100	//2 gold
-	anvilrepair = /datum/skill/craft/armorsmithing
+	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/gold
 	armor_class = ARMOR_CLASS_MEDIUM
 	flags_inv = HIDEBOOB

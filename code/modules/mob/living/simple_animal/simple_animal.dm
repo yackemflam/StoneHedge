@@ -432,7 +432,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 					gib()
 					if(user.mind)
 						var/mob/living/carbon/userh = user
-						userh.mind.adjust_experience(/datum/skill/labor/butchering, userh.STAINT * 4)
+						userh.mind.adjust_experience(/datum/skill/craft/hunting, userh.STAINT * 4)
 	..()
 
 /mob/living/simple_animal/gib()
