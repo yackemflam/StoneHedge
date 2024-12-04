@@ -315,7 +315,7 @@
 	return TRUE
 
 /turf/open/floor/rogue/dirt/proc/update_muddy()
-	if(!muddy && water_level > 20)
+	if(!muddy && water_level > 25)
 		color = "#95776a"
 		muddy = TRUE
 		icon_state = "mud[rand (1,3)]"
@@ -326,7 +326,7 @@
 		heavyfootstep = FOOTSTEP_MUD
 		track_prob = 10 //Hearthstone change.
 		bloodiness = 20
-	else if(muddy && water_level <= 20)
+	else if(muddy && water_level <= 25)
 		color = null
 		muddy = FALSE
 		icon_state = initial(icon_state)
