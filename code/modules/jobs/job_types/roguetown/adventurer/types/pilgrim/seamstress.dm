@@ -1,6 +1,6 @@
 /datum/advclass/seamstress
 	name = "Seamster"
-	f_title "Seamstress"
+	f_title = "Seamstress"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/seamstress
