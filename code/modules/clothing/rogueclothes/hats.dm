@@ -1229,6 +1229,7 @@
 	blocksound = PLATEHIT
 	smeltresult = /obj/item/ash
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+
 /obj/item/clothing/head/roguetown/helmet/carapacehelm/dragon
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "dragonslayer full helm"
@@ -1240,21 +1241,6 @@
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 	max_integrity = 300
 	sellprice = 50
-
-/obj/item/clothing/head/roguetown/helmet/leather
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
-	name = "leather helmet"
-	desc = "A helmet made of leather."
-	body_parts_covered = HEAD|HAIR|EARS|NOSE
-	icon_state = "leatherhelm"
-	armor = list("blunt" = 47, "slash" = 27, "stab" = 37, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
-	anvilrepair = null
-	smeltresult = null
-	blocksound = SOFTHIT
-	clothing_flags = null
-	salvage_amount = 1
-	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
