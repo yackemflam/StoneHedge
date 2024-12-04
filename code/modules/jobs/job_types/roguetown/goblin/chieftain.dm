@@ -15,7 +15,7 @@
 	outfit = /datum/outfit/job/roguetown/chieftain
 
 	display_order = JDO_CHIEFTAIN
-	min_pq = 2
+	min_pq = 15
 	max_pq = null
 	cmode_music = 'sound/music/combat_gronn.ogg'
 
