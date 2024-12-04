@@ -23,7 +23,7 @@
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/rain)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)
-	weather_messages = list("The rain makes you shiver a little.")
+	weather_messages = list("The rain makes me shiver a little.")
 
 	minSeverity = 1
 	maxSeverity = 15
@@ -36,6 +36,7 @@
 //Makes you a little chilly
 /datum/particle_weather/rain_gentle/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(1,3))
+	wash_mob(L, CLEAN_WEAK)
 
 /datum/particle_weather/rain_storm
 	name = "Rain storm"
@@ -45,7 +46,7 @@
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/storm)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)
-	weather_messages = list("The rain makes you shiver a little.", "The storm is really picking up!")
+	weather_messages = list("The rain makes me shiver a little.", "The storm is really picking up!")
 
 	minSeverity = 4
 	maxSeverity = 100
@@ -55,6 +56,7 @@
 	probability = 1
 	target_trait = PARTICLEWEATHER_RAIN
 
-//Makes you a bit chilly
+//Makes you a bit chilly and washes
 /datum/particle_weather/rain_storm/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(3,5))
+	wash_mob(L, CLEAN_MEDIUM) //thats a whole shower
