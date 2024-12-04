@@ -11,7 +11,7 @@
 	display_order = JDO_TRIBALSHAMAN
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/tribal, /obj/effect/proc_holder/spell/invoked/cure_rot, /obj/effect/proc_holder/spell/invoked/heal/shaman, /obj/effect/proc_holder/spell/invoked/revive/shaman)
 	outfit = /datum/outfit/job/roguetown/tribalshaman
-	min_pq = 0
+	min_pq = 15
 	max_pq = null
 	cmode_music = 'sound/music/combat_gronn.ogg'
 
@@ -35,8 +35,9 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/clothing/mask/rogue/facemask
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
-	armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+	armor = /obj/item/clothing/suit/roguetown/armor/carapace
 	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	head = /obj/item/clothing/head/roguetown/tribalskull
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	r_hand = /obj/item/rogueweapon/woodstaff
@@ -53,9 +54,11 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/magic/druidic, 2, TRUE) //This does nothing, but maybe one day it will.
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/cure_rot)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/heal/shaman)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/revive/shaman)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 1, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/magic/druidic, 1, TRUE)
