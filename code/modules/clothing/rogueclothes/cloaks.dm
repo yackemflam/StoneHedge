@@ -589,6 +589,7 @@
 	body_parts_covered = CHEST|GROIN
 	armor = list("blunt" = 25, "slash" = 5, "stab" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 24, "acid" = 0)
 	boobed = TRUE
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/cloak/apron/brown
 	color = CLOTHING_BROWN
@@ -650,6 +651,8 @@
 	hoodtype = /obj/item/clothing/head/hooded/rainhood
 	toggle_icon_state = FALSE
 	flags_inv = HIDEBOOB
+	salvage_result = /obj/item/natural/hide
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/wash_act(clean)
 	. = ..()
@@ -719,6 +722,8 @@
 	icon_state = "furgrey"
 	inhand_mod = FALSE
 	hoodtype = /obj/item/clothing/head/hooded/rainhood/furhood
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/fur
 
 /obj/item/clothing/cloak/raincloak/furcloak/crafted/Initialize()
 	. = ..()
@@ -874,6 +879,7 @@
 	allowed_sex = list(MALE, FEMALE)
 	flags_inv = HIDEBOOB // Put this here, since the covered boob otherwise clips through
 	w_class = WEIGHT_CLASS_SMALL
+	salvage_amount = 1
 
 /obj/item/clothing/cloak/half/brown
 	color = CLOTHING_BROWN

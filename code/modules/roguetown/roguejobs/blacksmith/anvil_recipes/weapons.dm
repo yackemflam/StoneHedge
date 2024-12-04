@@ -1,5 +1,5 @@
 /datum/anvil_recipe/weapons
-	appro_skill = /datum/skill/craft/weaponsmithing  // inheritance yay !!
+	appro_skill = /datum/skill/craft/blacksmithing  // inheritance yay !!
 	craftdiff = 1
 
 /// BASIC IRON WEAPONS
@@ -306,7 +306,7 @@
 /// SHIELDS
 /datum/anvil_recipe/weapons/ironshield
 	name = "Tower Shield (+1 Small Log)"
-	appro_skill = /datum/skill/craft/armorsmithing
+	appro_skill = /datum/skill/craft/blacksmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/shield/tower
@@ -323,7 +323,7 @@
 
 /datum/anvil_recipe/weapons/steelshield
 	name = "Heraldic Shield (+1 Steel +1 Hide)"
-	appro_skill = /datum/skill/craft/armorsmithing
+	appro_skill = /datum/skill/craft/blacksmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/natural/hide)
 	created_item = /obj/item/rogueweapon/shield/tower/metal
@@ -429,6 +429,28 @@
 	name = "Elvish Dagger"
 	req_bar = /obj/item/ingot/silver
 	created_item = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
+
+/// SHIELDS
+/datum/anvil_recipe/weapons/steel/kiteshield
+	name = "Heraldic Shield (+1 Steel +1 Hide)"
+	appro_skill = /datum/skill/craft/blacksmithing
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/natural/hide/cured)
+	created_item = /obj/item/rogueweapon/shield/tower/metal
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/iron/towershield
+	name = "Tower Shield (+1 Small Log)"
+	appro_skill = /datum/skill/craft/blacksmithing
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/shield/tower
+
+/datum/anvil_recipe/weapons/steel/buckler
+	name = "Buckler Shield"
+	appro_skill = /datum/skill/craft/blacksmithing
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/shield/buckler
 	craftdiff = 3
 	i_type = "Weapons"
 

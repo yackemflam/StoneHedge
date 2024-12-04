@@ -82,8 +82,6 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 1, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 2, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 2, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 4, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
@@ -148,7 +146,7 @@
 		head = /obj/item/clothing/head/roguetown/wizhat
 		shirt = /obj/item/clothing/suit/roguetown/shirt/robe/abyssoracorobe
 		pants = /obj/item/clothing/under/roguetown/tights/black
-		shoes = /obj/item/clothing/shoes/roguetown/shalal
+		shoes = /obj/item/clothing/shoes/roguetown/armor/shalal
 		neck = /obj/item/clothing/neck/roguetown/psicross/eora
 		ADD_TRAIT(H, TRAIT_ARTIFICER, TRAIT_GENERIC)
 	if(classchoice == "Arcanist")

@@ -56,10 +56,8 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 2, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 2, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/firearms, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 2, TRUE)
 

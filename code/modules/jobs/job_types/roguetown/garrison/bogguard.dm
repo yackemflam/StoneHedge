@@ -75,7 +75,7 @@ While they are not as physically strong as more conventional warriors, they are 
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 6, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 4, TRUE)
