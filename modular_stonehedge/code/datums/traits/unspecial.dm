@@ -19,7 +19,7 @@
 
 /datum/quirk/thickskin
 	name = "Tough" //probably perfect for raw power classes, strange for unrelated ones but i guess.
-	desc = "I can take more beatings than others and my defensive stance will never make me tired!"
+	desc = "I can take more beatings than others and being on high alert does not tire me."
 	value = 4
 
 /datum/quirk/thickskin/on_spawn()
@@ -29,11 +29,11 @@
 
 /datum/quirk/charger
 	name = "Charger"
-	desc = "I am an unstoppable force, whoever gets on my way I will make them fall to me!"
+	desc = "I am like a raging bull, whoever gets in my way will fall."
 	value = 3
 
 /datum/quirk/charger/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder	
+	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_CHARGER, QUIRK_TRAIT)
 	H.change_stat("constitution", 1)
 
@@ -169,14 +169,24 @@
 
 /datum/quirk/training9
 	name = "Unarmed Training"
-	desc = "I have journeyman unarmed training and stashed some dusters. My punches also hit harder."
-	value = 4
+	desc = "I have journeyman unarmed training and stashed some dusters."
+	value = 2
 
 /datum/quirk/training9/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.special_items["Dusters"] = /obj/item/rogueweapon/duster
+
+/datum/quirk/pugilist
+	name = "Unarmed Training"
+	desc = "I have journeyman unarmed training and my punches also hit way harder."
+	value = 4
+
+/datum/quirk/training9/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
 	ADD_TRAIT(H, TRAIT_PUGILIST, QUIRK_TRAIT)
 
 /datum/quirk/mtraining1
