@@ -609,7 +609,6 @@
 	icon_state = "sallet_visor"
 	max_integrity = 275
 	adjustable = CAN_CADJUST
-	armor_class = ARMOR_CLASS_MEDIUM
 	block2add = FOV_BEHIND
 	max_integrity = 400
 
@@ -644,7 +643,6 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
-	armor_class = ARMOR_CLASS_MEDIUM
 	block2add = FOV_BEHIND
 
 /obj/item/clothing/head/roguetown/helmet/nochelm
@@ -656,7 +654,6 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
-	armor_class = ARMOR_CLASS_MEDIUM
 	block2add = FOV_BEHIND
 
 /obj/item/clothing/head/roguetown/helmet/necrahelm
@@ -668,7 +665,6 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
-	armor_class = ARMOR_CLASS_MEDIUM
 	block2add = FOV_BEHIND
 
 /obj/item/clothing/head/roguetown/helmet/dendorhelm
@@ -680,7 +676,6 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
-	armor_class = ARMOR_CLASS_MEDIUM
 	block2add = FOV_BEHIND
 
 /obj/item/clothing/head/roguetown/helmet/heavy
@@ -693,7 +688,6 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_SMASH, BCLASS_TWIST)
-	armor_class = ARMOR_CLASS_HEAVY
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 400
@@ -742,7 +736,6 @@
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_BEHIND
-	armor_class = ARMOR_CLASS_MEDIUM	//breaks the 'scheme' of armor class, because it's a unqiue helm, that can't be remade. Go forth, gatemaster.
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight
@@ -1061,7 +1054,6 @@
 	emote_environment = 3
 	body_parts_covered = HEAD|HAIR|EARS
 	flags_inv = HIDEHAIR
-	armor_class = ARMOR_CLASS_MEDIUM
 	block2add = FOV_BEHIND
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/helmetbars
