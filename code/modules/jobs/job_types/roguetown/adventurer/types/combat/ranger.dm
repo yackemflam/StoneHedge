@@ -31,6 +31,7 @@
 			beltr = /obj/item/flashlight/flare/torch/lantern
 			backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1, /obj/item/reagent_containers/glass/bottle/rogue/trekkersdelight = 1)
 			beltl = /obj/item/quiver/arrows
+			pants = /obj/item/clothing/under/roguetown/trou/leather/advanced
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 4, TRUE)
@@ -67,6 +68,7 @@
 			beltr = /obj/item/flashlight/flare/torch/lantern
 			backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/reagent_containers/glass/bottle/rogue/trekkersdelight = 1)
 			beltl = /obj/item/quiver/arrows
+			pants = /obj/item/clothing/under/roguetown/trou/leather/advanced
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 2, TRUE)
@@ -95,15 +97,6 @@
 			if(!HAS_TRAIT(H, TRAIT_NIGHT_VISION))
 				ADD_TRAIT(H, TRAIT_NIGHT_VISION, "[type]")
 				H.update_sight()
-
-	if(H.gender == MALE)
-		pants = /obj/item/clothing/under/roguetown/trou/leather
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	else
-		pants = /obj/item/clothing/under/roguetown/tights
-		if(prob(50))
-			pants = /obj/item/clothing/under/roguetown/tights/black
-			gloves = /obj/item/clothing/gloves/roguetown/fingerless
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

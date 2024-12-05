@@ -30,18 +30,20 @@
 	. = ..()
 	H.verbs |= /mob/living/carbon/human/proc/tribalannouncement
 	H.verbs |= /mob/living/carbon/human/proc/tribalopenslot
-	belt = /obj/item/storage/belt/rogue/leather/rope
+	belt = /obj/item/storage/belt/rogue/bone/skullbelt
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/clothing/mask/rogue/facemask
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/carapace
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
-	armor = /obj/item/clothing/suit/roguetown/armor/carapace
-	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
+	cloak = /obj/item/clothing/cloak/cape/tribalcloak
+	armor = /obj/item/clothing/suit/roguetown/armor/bone/chestplate
+	shoes = /obj/item/clothing/shoes/roguetown/boots/carapace
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
-	head = /obj/item/clothing/head/roguetown/tribalskull
-	pants = /obj/item/clothing/under/roguetown/loincloth/brown
+	head = /obj/item/clothing/head/roguetown/helmet/carapacecap
+	pants = /obj/item/clothing/under/roguetown/trou/leather/advanced
 	r_hand = /obj/item/rogueweapon/woodstaff
-	backpack_contents = list(/obj/item/roguekey/tribe = 1)
+	backpack_contents = list(/obj/item/roguekey/tribe = 1, /obj/item/reagent_containers/glass/mortar = 1, /obj/item/scrying = 1, /obj/item/rogueweapon/huntingknife/idagger/silver =1,)
 
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
