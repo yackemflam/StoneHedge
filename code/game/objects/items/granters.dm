@@ -54,7 +54,7 @@
 //	if(!user.can_read(src))
 //		return FALSE
 	if(user.STAINT < 8)
-		to_chat(user, span_warning("You can't make sense of the sprawling runes, you are just too dumb!"))
+		to_chat(user, span_warning("You can't make sense of the sprawling runes!"))
 		return FALSE
 	if(required_learn_trait)
 		if(!HAS_TRAIT(user, required_learn_trait))
@@ -109,8 +109,9 @@
 	playsound(user, pick('sound/vo/mobs/ghost/whisper (1).ogg','sound/vo/mobs/ghost/whisper (2).ogg','sound/vo/mobs/ghost/whisper (3).ogg'), 30, TRUE)
 
 /obj/item/book/granter/trait/on_reading_finished(mob/living/user)
-	if((user.attunement_points_max - user.attunement_points_used) + attunement_cost > 0)
+	if((user.attunement_points_max - user.attunement_points_used) + attunement_cost < 0)
 		. = ..()
+		var/mob/living/L = user
 		to_chat(user, "<span class='notice'>The shard dims, granting you knowledge of [traitname]!</span>")
 		if(!HAS_TRAIT(user, granted_trait))
 			ADD_TRAIT(user, granted_trait, SHARD_TRAIT)
@@ -270,36 +271,24 @@
 	var/spell_slot_cost = 1
 	//Can this be one-casted by non learnables?
 	var/castable = TRUE
-	var/usable_times = 3
 	required_trait = TRAIT_USEMAGIC
 	required_learn_trait = TRAIT_LEARNMAGIC
-	//should help us not remove spells from people that have em memorized.
-	var/user_has_spell_already = FALSE
-
-/obj/item/book/granter/spell/Initialize()
-	. = ..()
-	desc = "The arcyne ink on it is at pristine condition and may be cast off of [usable_times]."
 
 /obj/item/book/granter/spell/equipped(mob/user, slot, initial)
 	. = ..()
 	if(spell && castable && (HAS_TRAIT(user, TRAIT_USEMAGIC) || HAS_TRAIT(user, TRAIT_LEARNMAGIC)))
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
-			for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)
-				if(knownspell.type == spell)
-					user_has_spell_already = TRUE
-					return
 			if(H.mind)
 				H.mind.AddSpell(new spell)
 
 /obj/item/book/granter/spell/dropped(mob/user, silent)
 	. = ..()
-	if(spell && castable && (HAS_TRAIT(user, TRAIT_USEMAGIC) || HAS_TRAIT(user, TRAIT_LEARNMAGIC)) && !user_has_spell_already)
+	if(spell && castable && (HAS_TRAIT(user, TRAIT_USEMAGIC) || HAS_TRAIT(user, TRAIT_LEARNMAGIC)))
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			if(H.mind)
 				H.mind.RemoveSpell(spell)
-	user_has_spell_already = FALSE //reset
 
 /obj/item/book/granter/spell/already_known(mob/user)
 	if(!spell)
