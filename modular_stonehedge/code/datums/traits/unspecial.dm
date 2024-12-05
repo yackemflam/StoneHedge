@@ -179,8 +179,8 @@
 	H.mind.special_items["Dusters"] = /obj/item/rogueweapon/duster
 
 /datum/quirk/pugilist
-	name = "Unarmed Training"
-	desc = "I have journeyman unarmed training and my punches also hit way harder."
+	name = "Fists of iron"
+	desc = "I have journeyman unarmed training and my punches are hard as iron."
 	value = 4
 
 /datum/quirk/training9/on_spawn()
