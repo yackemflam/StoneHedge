@@ -276,7 +276,7 @@
 
 	///Adjust experience of a specific skill
 /datum/mind/proc/adjust_experience(skill, amt, silent = FALSE)
-	add_sleep_experience(skill, amt/2, FALSE) //adds half of the experience to your eepytime for free.
+	add_sleep_experience(skill, amt/2, silent) //adds half of the experience to your eepytime for free.
 	var/datum/skill/S = GetSkillRef(skill)
 	skill_experience[S] = max(0, skill_experience[S] + amt) //Prevent going below 0
 	var/old_level = known_skills[S]
