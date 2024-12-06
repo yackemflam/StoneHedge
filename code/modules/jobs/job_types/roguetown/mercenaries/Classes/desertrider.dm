@@ -23,22 +23,6 @@
 	pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 	neck = /obj/item/clothing/neck/roguetown/shalal
 
-	// A quick check to make sure the desert rider is canonical
-	var/static/list/canonical_heritage_check_list = list(
-	SKIN_COLOR_GIZA,
-	SKIN_COLOR_LALVESTINE,
-	SKIN_COLOR_SHALVISTINE,
-	SKIN_COLOR_EBON
-	)
-	if(ishumannorthern(H) && !(H.skin_tone in canonical_heritage_check_list))
-		H.skin_tone = pick(canonical_heritage_check_list)
-		H.update_body()
-
-	if(H.gender == FEMALE)
-		var/acceptable = list("Tomboy", "Bob", "Curly Short")
-		if(!(H.hairstyle in acceptable))
-			H.hairstyle = pick(acceptable)
-			H.update_hair()
 	backpack_contents = list(/obj/item/roguekey/mercenary)
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 2, TRUE)
@@ -52,6 +36,7 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
@@ -68,3 +53,4 @@
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)

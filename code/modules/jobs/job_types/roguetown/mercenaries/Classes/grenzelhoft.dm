@@ -30,6 +30,7 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 1, TRUE)	//Won't be using normally with Zwiehander but useful.
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
@@ -53,6 +54,7 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
@@ -83,3 +85,4 @@
 	backpack_contents = list(/obj/item/roguekey/mercenary)
 
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
