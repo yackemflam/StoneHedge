@@ -91,7 +91,7 @@
 	var/funeral = FALSE // used for tracking funeral status between living/dead mobs and underworld spirits
 
 	var/mugshot_set = FALSE
-	
+
 /datum/mind/New(key)
 	src.key = key
 	soulOwner = src
@@ -276,6 +276,7 @@
 
 	///Adjust experience of a specific skill
 /datum/mind/proc/adjust_experience(skill, amt, silent = FALSE)
+	add_sleep_experience(skill, amt/2, TRUE) //adds half of the experience to your eepytime for free.
 	var/datum/skill/S = GetSkillRef(skill)
 	skill_experience[S] = max(0, skill_experience[S] + amt) //Prevent going below 0
 	var/old_level = known_skills[S]
@@ -308,7 +309,6 @@
 	// ratio = round(skill_experience[S]/limit,1) * 100
 	// to_chat(current, "<span class='nicegreen'> My [S.name] is around [ratio]% of the way there.")
 	//TODO add some bar hud or something, i think i seen a request like that somewhere
-	add_sleep_experience(skill, amt, TRUE) //adds same of the experience to your eepytime.
 	if(known_skills[S] >= old_level)
 		if(known_skills[S] > old_level)
 			to_chat(current, span_nicegreen("My [S.name] grows to [SSskills.level_names[known_skills[S]]]!"))
