@@ -124,7 +124,7 @@
 	var/current_cat = "1"
 	//Whether or not the hidden key is still present- Shophands can take it.
 	var/hidden_key_present = TRUE
-	var/price_multiplier = 1
+	var/price_multiplier = 0.8
 	var/is_public = FALSE
 
 /obj/structure/roguemachine/merchantvend/public
@@ -132,7 +132,7 @@
 	desc = "Gilded tombs do worms enfold."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "streetvendor1"
-	price_multiplier = 1.3
+	price_multiplier = 1.4
 	is_public = TRUE
 	locked = FALSE
 
@@ -150,8 +150,8 @@
 
 /obj/structure/roguemachine/merchantvend/attack_right(mob/user)
 	if(user.mind.assigned_role == "Shophand")
-		if(hidden_key_present)		
-			for(var/mob/living/carbon/human/boss in GLOB.human_list)		
+		if(hidden_key_present)
+			for(var/mob/living/carbon/human/boss in GLOB.human_list)
 				if(boss.mind)
 					if(boss.mind.assigned_role == "Merchant")
 						if(boss in GLOB.alive_mob_list)
@@ -159,11 +159,11 @@
 								//to_chat(user, span_warning("MERCHANT FOUND ALIVE BUT DISCONNECTED"))
 							else
 								//to_chat(user, span_warning("The hidden compartment is sealed tightly."))
-								return		
+								return
 			var/alert = alert(user, "Thankfully, the hidden compartment with the spare key is still untouched.", "Spare key", "Take it", "Leave it")
 			if(alert != "Take it")
 				return
-			else		
+			else
 				var/obj/item/roguekey/key
 				key = new /obj/item/roguekey/merchant(get_turf(user))
 				user.put_in_hands(key)
@@ -259,12 +259,15 @@
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 			if("Stop Paying Taxes")
 				if(is_public)
-					say("You can not.")
+					say("You can not .")
 					return
 				upgrade_flags |= UPGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 			if("Purchase Armors License (150)")
 				if(upgrade_flags & UPGRADE_ARMOR)
+					return
+				if(is_public)
+					say("You can not.")
 					return
 				if(budget < 150)
 					say("Ask again when you're serious.")
@@ -275,6 +278,9 @@
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 			if("Purchase Weapons License (110)")
 				if(upgrade_flags & UPGRADE_WEAPONS)
+					return
+				if(is_public)
+					say("You can not.")
 					return
 				if(budget < 110)
 					say("Ask again when you're serious.")
@@ -318,7 +324,10 @@
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
 	var/contents
-	contents = "<center>GOLDFACE - In the name of greed.<BR>"
+	if(!is_public)
+		contents = "<center>GOLDFACE - In the name of greed.<BR>"
+	else
+		contents = "<center>SILVERFACE - In the name of self-reliance.<BR>"
 	contents += "<a href='?src=[REF(src)];change=1'>MAMMON LOADED:</a> [budget]<BR>"
 
 	var/mob/living/carbon/human/H = user
