@@ -4,8 +4,8 @@
 	department_flag = ACADEMY
 	selection_color = JCOLOR_ACADEMY
 	faction = "Station"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 5
+	spawn_positions = 5
 
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
@@ -26,6 +26,7 @@
 	give_bank_account = 2500
 	min_pq = 10
 	max_pq = null
+
 	cmode_music = 'sound/music/combat_bandit_mage.ogg'
 
 
@@ -44,8 +45,6 @@
 	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 	ADD_TRAIT(H, TRAIT_ANTISCRYING, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_LEARNMAGIC, TRAIT_GENERIC)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
 //		H.faction += "summoner" //can use this to enable summons to attack players. Probably better to keep the mobs for pve purposes for now.
 	if(H.age == AGE_OLD)
 		if(H.mind)
