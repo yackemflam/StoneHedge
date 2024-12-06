@@ -544,11 +544,10 @@
 	return ..()
 
 /datum/action/spell_action/Trigger()
+	if(!..())
+		return FALSE
 	if(target)
 		var/obj/effect/proc_holder/S = target
-		if(!..())
-			S.deactivate(usr)
-			return FALSE
 		S.Click()
 		return TRUE
 
