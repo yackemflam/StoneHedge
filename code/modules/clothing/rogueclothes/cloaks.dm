@@ -10,6 +10,14 @@
 	sewrepair = TRUE //Vrell - AFAIK, all cloaks are cloth ATM. Technically semi-less future-proof, but it removes a line of code from every subtype, which is worth it IMO.
 	w_class = WEIGHT_CLASS_NORMAL
 
+/obj/item/clothing/cloak/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/storage/concrete)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_combined_w_class = 3
+		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_items = 1
 
 //////////////////////////
 /// TABARD
@@ -549,16 +557,6 @@
 	GLOB.lordcolor -= src
 	return ..()
 
-
-/obj/item/clothing/cloak/lordcloak/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/storage/concrete)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		STR.max_combined_w_class = 4
-		STR.max_w_class = WEIGHT_CLASS_BULKY
-		STR.max_items = 1
-
 /obj/item/clothing/cloak/lordcloak/dropped(mob/living/carbon/human/user)
 	..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -651,23 +649,12 @@
 	hoodtype = /obj/item/clothing/head/hooded/rainhood
 	toggle_icon_state = FALSE
 	flags_inv = HIDEBOOB
-	salvage_result = /obj/item/natural/hide
 	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/wash_act(clean)
 	. = ..()
 	if(hood)
 		wash_atom(hood,clean)
-
-/obj/item/clothing/cloak/raincloak/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/storage/concrete)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		STR.max_combined_w_class = 3
-		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 1
-
 
 /obj/item/clothing/cloak/raincloak/red
 	color = CLOTHING_RED
@@ -1243,8 +1230,8 @@
 	icon_state = "crusader_cloak"
 	item_state = "crusader_cloak"
 
-/obj/item/clothing/cloak/cape/tribalcloak
-	name = "fur cloak"
+/obj/item/clothing/cloak/raincloak/furcloak/tribalcloak
+	name = "thick fur cloak"
 	desc = "A cloak made of thick fur which covers both the front and back for maximum warmth."
 	icon_state = "tribal"
 	item_state = "tribal"

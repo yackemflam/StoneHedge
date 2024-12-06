@@ -36,7 +36,7 @@
 	beltr = /obj/item/clothing/mask/rogue/facemask
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/carapace
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
-	cloak = /obj/item/clothing/cloak/cape/tribalcloak
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak/tribalcloak
 	armor = /obj/item/clothing/suit/roguetown/armor/bone/chestplate
 	shoes = /obj/item/clothing/shoes/roguetown/boots/carapace
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag

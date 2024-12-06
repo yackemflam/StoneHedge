@@ -303,7 +303,7 @@
 
 /datum/crafting_recipe/roguetown/leather/tribalcloak
 	name = "heavy fur cloak"
-	result = /obj/item/clothing/cloak/cape/tribalcloak
+	result = /obj/item/clothing/cloak/raincloak/furcloak/tribalcloak
 	reqs = list(/obj/item/natural/hide = 2,/obj/item/natural/fur = 1)
 
 /datum/crafting_recipe/roguetown/leather/saddle
@@ -355,7 +355,7 @@
 	name = "volf head"
 	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhead
 	reqs = list(/obj/item/natural/volf_head = 1, /obj/item/natural/hide = 1)
-	craftdiff = 1	
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/furlinedboots
 	name = "fur-lined boots"

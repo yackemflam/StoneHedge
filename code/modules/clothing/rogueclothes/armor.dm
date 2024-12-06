@@ -604,7 +604,6 @@
 	armor_class = ARMOR_CLASS_LIGHT
 	can_hold_endowed = TRUE
 	flags_inv = HIDECROTCH|HIDEBOOB
-	salvage_result = /obj/item/natural/hide
 	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/suit/roguetown/armor/leather/advanced
