@@ -7,14 +7,14 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/mage
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_bandit_mage.ogg'
-	traits_applied = list(TRAIT_USEMAGICITEM)
+	traits_applied = list(TRAIT_LEARNMAGIC)
 
 
 /datum/outfit/job/roguetown/adventurer/mage/pre_equip(mob/living/carbon/human/H)
 
 	// CLASS ARCHETYPES
 	H.adjust_blindness(-3)
-	H.mind.adjust_spellpoints(3)
+	H.mind.adjust_spellpoints(2) //they already get spells, so less points.
 	var/classes = list("Elementalist","Arcanist","Enchanter","Spellblade")
 	var/classchoice = input("Choose your Specialization", "Available Specializations") as anything in classes
 	switch(classchoice)
@@ -40,7 +40,6 @@
 			H.change_stat("intelligence", 3)
 			H.change_stat("perception", 1)
 			H.change_stat("constitution", 2)
-			H.change_stat("endurance", 2)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/acidsplash5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/rayoffrost5e)
@@ -86,10 +85,9 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 4, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 3, TRUE)
-			H.change_stat("intelligence", 2)
+			H.change_stat("intelligence", 3)
 			H.change_stat("perception", 2)
 			H.change_stat("constitution", 1)
-			H.change_stat("endurance", 2)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/magicstone5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/encodethoughts5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/invisibility)
