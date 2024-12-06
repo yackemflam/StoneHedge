@@ -57,7 +57,7 @@
 		else
 			user.visible_message(span_info("[user] fumbles trying to repair [attacked_item]!"))
 			//attacked_item.take_damage(5, BRUTE, "blunt")
-			user.mind.add_sleep_experience(/datum/skill/craft/blacksmithing, (user.STAINT) / 2) // We learn a bit from our failures.
+			user.mind.adjust_experience(/datum/skill/craft/blacksmithing, (user.STAINT) / 2) // We learn a bit from our failures.
 			return
 
 	if(isstructure(attacked_object) && !user.cmode)

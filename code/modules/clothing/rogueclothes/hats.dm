@@ -123,6 +123,7 @@
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
 				H.update_inv_head()
+				H.update_inv_wear_mask()
 			block2add = null
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
