@@ -109,7 +109,7 @@
 	playsound(user, pick('sound/vo/mobs/ghost/whisper (1).ogg','sound/vo/mobs/ghost/whisper (2).ogg','sound/vo/mobs/ghost/whisper (3).ogg'), 30, TRUE)
 
 /obj/item/book/granter/trait/on_reading_finished(mob/living/user)
-	if((user.attunement_points_max - user.attunement_points_used) + attunement_cost < 0)
+	if((user.attunement_points_max - user.attunement_points_used) + attunement_cost > 0)
 		. = ..()
 		to_chat(user, "<span class='notice'>The shard dims, granting you knowledge of [traitname]!</span>")
 		if(!HAS_TRAIT(user, granted_trait))
