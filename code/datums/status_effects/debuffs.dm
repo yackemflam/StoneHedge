@@ -359,7 +359,7 @@
 
 /datum/status_effect/necropolis_curse
 	id = "necrocurse"
-	duration = 6000 //you're cursed for 10 minutes have fun
+	duration = 6000 //i am cursed for 10 minutes have fun
 	tick_interval = 50
 	alert_type = null
 	var/curse_flags = NONE
@@ -485,7 +485,7 @@
 	ADD_TRAIT(owner, TRAIT_MUTE, "trance")
 	owner.add_client_colour(/datum/client_colour/monochrome/trance)
 	owner.visible_message("[stun ? span_warning("[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.") : ""]", \
-	span_warning("[pick("You feel my thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")]"))
+	span_warning("[pick("I feel my thoughts slow down...", "I suddenly feel extremely dizzy...", "I feel like i am in the middle of a dream...","I feel incredibly relaxed...")]"))
 	return TRUE
 
 /datum/status_effect/trance/on_creation(mob/living/new_owner, _duration, _stun = TRUE)
@@ -517,7 +517,19 @@
 	alert_type = null
 
 /datum/status_effect/spasms/tick()
-	if(prob(5))
+	if(prob(5)) //shit is spammy even like this.
+		if(ishuman(owner)) //leper slop to prevent involuntary movements
+			var/mob/living/carbon/human/humanboi = owner
+			if(istype(humanboi.wear_mask, /obj/item/clothing/mask/rogue/facemask/leper))
+				if(humanboi.wear_mask.obj_integrity > 0) //we dont use the lepermask effect for this reason.
+					to_chat(owner, span_warning("Agh, my mask stop my muscle spasms, but it hurts all the same."))
+					humanboi.flash_fullscreen("redflash1")
+					humanboi.add_stress(/datum/stressevent/lepermaskedpain)
+					return
+				else
+					to_chat(owner, span_warning("Ggh- My mask is broken, it can't do anything in this state!"))
+		owner.flash_fullscreen("redflash1")
+		owner.add_stress(/datum/stressevent/leprosypain)
 		switch(rand(1,5))
 			if(1)
 				if((owner.mobility_flags & MOBILITY_MOVE) && isturf(owner.loc))
@@ -627,25 +639,25 @@
 	switch(msg_stage)
 		if(0 to 300)
 			if(prob(1))
-				fake_msg = pick(span_warning("[pick("Your head hurts.", "Your head pounds.")]"),
-				span_warning("[pick("You're having difficulty breathing.", "Your breathing becomes heavy.")]"),
-				span_warning("[pick("You feel dizzy.", "Your head spins.")]"),
-				"<span notice='warning'>[pick("You swallow excess mucus.", "You lightly cough.")]</span>",
-				span_warning("[pick("Your head hurts.", "Your mind blanks for a moment.")]"),
-				span_warning("[pick("Your throat hurts.", "You clear my throat.")]"))
+				fake_msg = pick(span_warning("[pick("My head hurts.", "My head pounds.")]"),
+				span_warning("[pick("I am having difficulty breathing.", "My breathing becomes heavy.")]"),
+				span_warning("[pick("I feel dizzy.", "My head spins.")]"),
+				"<span notice='warning'>[pick("I swallow excess mucus.", "I lightly cough.")]</span>",
+				span_warning("[pick("My head hurts.", "My mind blanks for a moment.")]"),
+				span_warning("[pick("My throat hurts.", "I clear my throat.")]"))
 		if(301 to 600)
 			if(prob(2))
-				fake_msg = pick(span_warning("[pick("Your head hurts a lot.", "Your head pounds incessantly.")]"),
-				span_warning("[pick("Your windpipe feels like a straw.", "Your breathing becomes tremendously difficult.")]"),
+				fake_msg = pick(span_warning("[pick("My head hurts a lot.", "My head pounds incessantly.")]"),
+				span_warning("[pick("My windpipe feels like a straw.", "My breathing becomes tremendously difficult.")]"),
 				span_warning("I feel very [pick("dizzy","woozy","faint")]."),
-				span_warning("[pick("You hear a ringing in my ear.", "Your ears pop.")]"),
+				span_warning("[pick("I hear a ringing in my ear.", "My ears pop.")]"),
 				span_warning("I nod off for a moment."))
 		else
 			if(prob(3))
 				if(prob(50))// coin flip to throw a message or an emote
-					fake_msg = pick(span_danger("[pick("Your head hurts!", "You feel a burning knife inside my brain!", "A wave of pain fills my head!")]"),
-					span_danger("[pick("Your lungs hurt!", "It hurts to breathe!")]"),
-					span_warning("[pick("You feel nauseated.", "You feel like you're going to throw up!")]"))
+					fake_msg = pick(span_danger("[pick("My head hurts!", "I feel a burning knife inside my brain!", "A wave of pain fills my head!")]"),
+					span_danger("[pick("My lungs hurt!", "It hurts to breathe!")]"),
+					span_warning("[pick("I feel nauseated.", "I feel like i am going to throw up!")]"))
 				else
 					fake_emote = pick("cough", "sniff", "sneeze")
 

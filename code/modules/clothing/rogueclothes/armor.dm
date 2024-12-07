@@ -259,6 +259,13 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	flags_inv = HIDEBOOB
 
+//gold cuirass for leper, unique and cant be crafted.
+/obj/item/clothing/suit/roguetown/armor/plate/half/leper
+	color = "#ffee00"
+	name = "golden cuirass"
+	desc = "A cuirass of gold."
+	smeltresult = /obj/item/ingot/gold
+
 /obj/item/clothing/suit/roguetown/armor/plate/graggaritearmorleader
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "graggarite leader cuirass"
@@ -311,7 +318,7 @@
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
-/obj/item/clothing/suit/roguetown/armor/plate/half/bikini
+/obj/item/clothing/suit/roguetown/armor/plate/bikini
 	name = "half-plate bikini"
 	desc = "Half plate in bikini form, still just as protective somehow."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
