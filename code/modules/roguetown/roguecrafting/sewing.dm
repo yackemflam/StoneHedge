@@ -140,6 +140,17 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/sewing/tunic
+	name = "tunic (cloth) - (2 cloths, fiber; NOVICE)"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/tunic)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/sewing/burial_shroud
+	name = "winding sheet (2 cloths; NOVICE)"
+	result = list(/obj/item/burial_shroud)
+	reqs = list(/obj/item/natural/cloth = 2)
 /datum/crafting_recipe/roguetown/sewing/clothtrou
 	name = "cloth trousers"
 	result = list(/obj/item/clothing/under/roguetown/trou)
@@ -251,6 +262,25 @@
 /datum/crafting_recipe/roguetown/sewing/gambeson
 	name = "gambeson"
 	result = /obj/item/clothing/suit/roguetown/armor/gambeson
+
+/datum/crafting_recipe/roguetown/sewing/fauld
+	name = "fauld - (2 cloths, fiber; APPRENTICE)"
+	result = list(/obj/item/clothing/cloak/fauld)
+	reqs =  list(/obj/item/natural/cloth = 2,
+                /obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/sewing/skirt
+	name = "battle skirt - (2 cloths, fiber; APPRENTICE)"
+	result = list(/obj/item/clothing/cloak/fauld/battleskirt)
+	reqs =  list(/obj/item/natural/cloth = 2,
+                /obj/item/natural/fibers = 1)
+	craftdiff = 2
+/* craftdif of 3 = JOURNEYMAN */
+
+/datum/crafting_recipe/roguetown/sewing/armingjacket
+	name = "arming jacket (4 cloths, fiber; JOURNEYMAN)"
+	result = /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 2)
 	tools = list(/obj/item/needle)
