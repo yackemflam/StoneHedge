@@ -25,20 +25,6 @@
 				/obj/item/natural/fibers = 2)
 	craftdiff = 0
 
-/datum/crafting_recipe/roguetown/leather/satchel
-	name = "leather satchel"
-	result = /obj/item/storage/backpack/rogue/satchel
-	reqs = list(/obj/item/natural/hide = 2,
-				/obj/item/natural/fibers = 1)
-	sellprice = 17	//Costs about ~13 to make
-
-/datum/crafting_recipe/roguetown/leather/backpack
-	name = "leather backpack"
-	result = /obj/item/storage/backpack/rogue/backpack
-	reqs = list(/obj/item/natural/hide = 2,
-				/obj/item/natural/fibers = 1)
-	sellprice = 17	//Costs about ~13 to make. Same cost as satchel, so same sale price. Don't @ me.
-
 /datum/crafting_recipe/roguetown/leather/waterskin
 	name = "waterskin"
 	result = /obj/item/reagent_containers/glass/bottle/waterskin
@@ -138,7 +124,7 @@
 	sellprice = 8	//Costs about ~6 to make, doesn't sell great.
 
 /datum/crafting_recipe/roguetown/leather/vest
-	name = "leather vest"
+	name = "thick leather vest"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/vest
 	reqs = list(/obj/item/natural/hide = 2)
 	sellprice = 16	//Costs about ~12 to make.
@@ -176,6 +162,12 @@
 	sellprice = 28	//Costs about ~16 to make. So, HIGH resale.
 	craftdiff = 2	//Harder craft.
 
+/datum/crafting_recipe/roguetown/sewing/shoes
+	name = "simple shoes"
+	result = list(/obj/item/clothing/shoes/roguetown/simpleshoes)
+	reqs = list(/obj/item/natural/hide/cured = 1)
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/leather/bearfur
 	name = "bear fur"
 	result = /obj/item/clothing/suit/roguetown/armor/hide/bearfur
@@ -198,12 +190,6 @@
 				/obj/item/natural/fur = 1)
 	sellprice = 26
 
-
-/datum/crafting_recipe/roguetown/leather/cloak
-	name = "leather cloak"
-	result = /obj/item/clothing/cloak/raincloak/brown
-	reqs = list(/obj/item/natural/hide = 2)
-	sellprice = 18	//Costs about ~12 to make.
 /datum/crafting_recipe/roguetown/hunting
 	tools = list(/obj/item/rogueweapon/huntingknife)
 	skillcraft = /datum/skill/craft/hunting
@@ -215,6 +201,7 @@
 	name = "leather cloak"
 	result = /obj/item/clothing/cloak/raincloak/brown
 	reqs = list(/obj/item/natural/hide/cured = 2)
+	sellprice = 18	//Costs about ~12 to make.
 
 /datum/crafting_recipe/roguetown/hunting/belt
 	name = "leather belt"
@@ -513,11 +500,6 @@
 				/obj/item/natural/fibers = 2)
 	craftdiff = 2
 	sellprice = 20	//Costs about ~30 to make. Not great resale, though.. good armor.
-
-/datum/crafting_recipe/roguetown/leather/vest
-	name = "leather sea jacket"
-	result = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
-	reqs = list(/obj/item/natural/hide = 2)
 
 /datum/crafting_recipe/roguetown/leather/hidecloak
 	name = "hide cloak"
