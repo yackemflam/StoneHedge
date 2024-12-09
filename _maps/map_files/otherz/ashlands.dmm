@@ -552,6 +552,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/town)
+"hj" = (
+/obj/structure/bars/passage{
+	lockid = "keepgate"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/cavewet)
 "hn" = (
 /obj/structure/table/wood{
 	dir = 10;
@@ -1080,6 +1086,12 @@
 "nj" = (
 /obj/structure/healingfountain,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
+/area/rogue/under/cavewet)
+"no" = (
+/obj/structure/lever{
+	lockid = "keepgate"
+	},
+/turf/open/floor/rogue/cobble,
 /area/rogue/under/cavewet)
 "np" = (
 /obj/machinery/light/roguestreet,
@@ -3065,13 +3077,6 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/town)
-"Jn" = (
-/obj/structure/fluff/traveltile/bandit{
-	aportalgoesto = "banditin";
-	aportalid = "banditexit"
-	},
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/cavewet)
 "Jo" = (
 /obj/structure/roguewindow/stained/zizo,
 /turf/open/floor/rogue/dirt,
@@ -4015,6 +4020,13 @@
 	first_time_text = "Underkeep";
 	name = "Underkeep"
 	})
+"Va" = (
+/obj/structure/fluff/traveltile/bandit{
+	aportalgoesto = "banditin";
+	aportalid = "banditexit"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet)
 "Vd" = (
 /obj/machinery/light/rogue/torchholder{
 	pixel_y = 26
@@ -22728,7 +22740,7 @@ Ix
 im
 im
 im
-im
+hj
 im
 im
 im
@@ -22860,7 +22872,7 @@ Ix
 im
 im
 im
-im
+hj
 im
 im
 im
@@ -22992,9 +23004,9 @@ Ix
 im
 im
 im
+hj
 im
-im
-im
+no
 im
 im
 im
@@ -23124,7 +23136,7 @@ Ix
 im
 im
 im
-im
+hj
 im
 im
 im
@@ -23256,7 +23268,7 @@ Ix
 im
 im
 im
-im
+hj
 im
 im
 im
@@ -25568,7 +25580,7 @@ jX
 jX
 "}
 (43,1,2) = {"
-Jn
+Va
 Qm
 jX
 Qm
@@ -25700,7 +25712,7 @@ jX
 jX
 "}
 (44,1,2) = {"
-Jn
+Va
 Qm
 Qm
 Qm
@@ -25832,7 +25844,7 @@ jX
 jX
 "}
 (45,1,2) = {"
-Jn
+Va
 Qm
 Qm
 Qm
@@ -25964,7 +25976,7 @@ jX
 jX
 "}
 (46,1,2) = {"
-Jn
+Va
 Qm
 Qm
 Qm
@@ -26096,7 +26108,7 @@ jX
 jX
 "}
 (47,1,2) = {"
-Jn
+Va
 jX
 VG
 jX
