@@ -144,10 +144,10 @@
 	traitname = "the swamp"
 	remarks = list("<font color='#32CD32'>The forest will guide you.", "<font color='#32CD32'>March with haste, there is no fear.", "<font color='#32CD32'>Be one with your surroundings.", "<font color='#32CD32'>What are you doing in my swamp?", "<font color='#32CD32'>Step light, step quick.</font>",)
 /obj/item/book/granter/trait/mobility/kneestinger
-	name = "Fragment of Dendor"
+	name = "Fragment of Sylvarhn"
 	granted_trait = TRAIT_KNEESTINGER_IMMUNITY
 	traitname = "Dendor"
-	remarks = list("<font color='#32CD32'>Dendor guides me.", "<font color='#32CD32'>You feel a shiver up your spine.", "<font color='#32CD32'>Your feet go numb.", "<font color='#32CD32'>Dendor watches my path.", "<font color='#32CD32'>I walk without fear...</font>",)
+	remarks = list("<font color='#32CD32'>Nature guides me.", "<font color='#32CD32'>You feel a shiver up your spine.", "<font color='#32CD32'>Your feet go numb.", "<font color='#32CD32'>Dendor watches my path.", "<font color='#32CD32'>I walk without fear...</font>",)
 
 /obj/item/book/granter/trait/defense
 	light_color = "#4f83ff"
