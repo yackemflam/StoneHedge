@@ -7,11 +7,6 @@
 		return get_step(GET_TURF_BELOW(get_turf(ref)), dir)
 	return get_step(ref, dir)
 
-/proc/is_in_zweb(atom/my_atom, atom/compare_atom)
-	var/turf/my_turf = get_turf(my_atom)
-	var/turf/compare_turf = get_turf(compare_atom)
-	var/my_z = my_turf.z
-	var/compare_z = compare_turf.z
 /proc/get_multiz_accessible_levels(center_z)
 	. = list(center_z)
 	var/other_z = center_z
@@ -31,11 +26,15 @@
 /// A cache of stringified z-level zweb checks.
 /// GLOB.zweb_cache[num2text(my_z)][num2text(compare_z)] = TRUE/FALSE
 GLOBAL_LIST_EMPTY(zweb_cache)
-/proc/is_in_zweb(my_z, compare_z)
+/proc/is_in_zweb(atom/my_atom, atom/compare_atom)
 	if(!my_z || !compare_z)
 		return FALSE
 	if(my_z == compare_z)
 		return TRUE
+	var/turf/my_turf = get_turf(my_atom)
+	var/turf/compare_turf = get_turf(compare_atom)
+	var/my_z = my_turf.z
+	var/compare_z = compare_turf.z
 	var/my_text = num2text(my_z)
 	var/comp_text = num2text(compare_z)
 	if(isnull(GLOB.zweb_cache[my_text]?[comp_text]))

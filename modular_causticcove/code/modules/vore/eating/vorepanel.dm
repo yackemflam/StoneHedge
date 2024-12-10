@@ -53,6 +53,7 @@
 /datum/vore_look/Destroy()
 	loop = null
 	selected = null
+	. = ..()
 	return QDEL_HINT_HARDDEL
 
 /datum/vore_look/Topic(href,href_list[])

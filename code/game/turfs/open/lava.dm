@@ -318,6 +318,7 @@
 			if(L.health <= 0) //melt away once dead
 				L.dust(drop_items = TRUE)
 				playsound(src, 'modular_causticcove/sound/misc/deathdigest.ogg', 100, FALSE) //caustic cove edit end
+
 /turf/open/lava/acid/onbite(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user

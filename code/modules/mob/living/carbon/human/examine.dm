@@ -531,9 +531,11 @@
 
 	if(maniac)
 		var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
-		if(heart?.inscryption && (heart.inscryption_key in maniac.key_nums))
-			. += span_danger("[t_He] know[p_s()] [heart.inscryption_key], I AM SURE OF IT!")
-	
+		if(heart)
+			var/inscryption_key = LAZYACCESS(heart.inscryption_keys, maniac) // SPECIFICALLY the key that WE wrote
+			if(inscryption_key && (inscryption_key in maniac.key_nums))
+				. += span_danger("[t_He] know[p_s()] [inscryption_key], I AM SURE OF IT!")
+
 	var/cursed_stuff = examine_bellies() //vore Code
 	if(cursed_stuff)
 		. += cursed_stuff

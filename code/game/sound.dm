@@ -26,8 +26,8 @@
 	var/source_z = turf_source.z
 	var/list/listeners = SSmobs.clients_by_zlevel[source_z].Copy()
 
-	var/turf/above_turf = turf_source.above()
-	var/turf/below_turf = turf_source.below()
+	var/turf/above_turf = GET_TURF_ABOVE(turf_source)
+	var/turf/below_turf = GET_TURF_BELOW(turf_source)
 
 	if(above_turf)
 		if(!is_in_zweb(turf_source, above_turf))
@@ -56,7 +56,7 @@
 		if(below_turf)
 			listeners += SSmobs.clients_by_zlevel[below_turf.z]
 			listeners += SSmobs.dead_players_by_zlevel[below_turf.z]
-	
+
 	listeners += SSmobs.dead_players_by_zlevel[source_z]
 
 	. = list()
