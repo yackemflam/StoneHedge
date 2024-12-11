@@ -29937,10 +29937,9 @@
 	name = "Ravenloft Academy"
 	})
 "vrX" = (
-/obj/structure/fluff/traveltile/vampire{
-	aportalgoesto = "ashlandsin2";
-	aportalid = "ashlandsout2";
-	required_trait = null;
+/obj/structure/fluff/traveltile{
+	aportalgoesto = "ashlandsin";
+	aportalid = "ashlandsout";
 	name = "Travel to Underkeep"
 	},
 /turf/open/floor/rogue/cobblerock,
@@ -31437,6 +31436,10 @@
 /area/rogue/outdoors/rtfield{
 	first_time_text = null
 	})
+"wDO" = (
+/obj/structure/chair/arrestchair,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/indoors/shelter/bog)
 "wDP" = (
 /obj/structure/flora/roguegrass/thorn_bush,
 /turf/open/water/river{
@@ -129423,7 +129426,7 @@ aaM
 fxW
 hcX
 kuV
-iRs
+xWI
 bDX
 xWI
 oxU
@@ -129624,7 +129627,7 @@ gXN
 pBr
 oCe
 hcX
-xWI
+wDO
 iRs
 iRs
 iRs

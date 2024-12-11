@@ -151,10 +151,6 @@
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/skull
 				if(/datum/patron/divine/noc)
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/noc
-					H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 2, TRUE)
-					H.mind.adjust_spellpoints(2)
-					H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
-					H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 				if(/datum/patron/divine/dendor)
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/dendor
 					H.mind.adjust_skillrank_up_to(/datum/skill/magic/druidic, 2, TRUE) // enough to craft druid mask, at least
@@ -164,6 +160,12 @@
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/pestra
 				if(/datum/patron/divine/eora) //Eora content from Stonekeep
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/eora
+				if(/datum/patron/divine/jayx)
+					inventory_items += /obj/item/clothing/neck/roguetown/psicross
+					H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 2, TRUE)
+					H.mind.adjust_spellpoints(2)
+					H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
+					H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 			C.grant_spells_cleric(H)
 			if(H.mind)
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 4, TRUE)
@@ -574,3 +576,59 @@
         var/spawneditem = new invitem(H.loc)
         H.pickup_and_wear(spawneditem)
     qdel(src)
+
+
+//TEMPLE PALADIN
+/obj/item/class_selector/paladin/attack_self(mob/living/carbon/human/H)
+	classes = list( //what did you primarily train with?
+		"Swords",
+		"Axes",
+		"Maces",
+		"Polearms"
+	)
+
+	var/weaponschoice = input("What did train with the most?", "Available weapons") as anything in classes
+
+	switch(weaponschoice)
+		if("Swords")
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
+			if(H.age == AGE_OLD)
+				H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			var/I = new /obj/item/rogueweapon/sword/long(H.loc)
+			qdel(src)
+			H.put_in_hands(I)
+		if("Axes")
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 5, TRUE)
+			if(H.age == AGE_OLD)
+				H.mind.adjust_skillrank(/datum/skill/combat/axes, 1, TRUE)
+			var/I = new /obj/item/rogueweapon/stoneaxe/battle(H.loc)
+			qdel(src)
+			H.put_in_hands(I)
+		if("Maces & Flails")
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 5, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 5, TRUE)
+			if(H.age == AGE_OLD)
+				H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+			var/I = new /obj/item/rogueweapon/mace(H.loc)
+			qdel(src)
+			H.put_in_hands(I)
+		if("Polearms")
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 5, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
+			if(H.age == AGE_OLD)
+				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+			var/I = new /obj/item/rogueweapon/spear/billhook(H.loc)
+			qdel(src)
+			H.put_in_hands(I)

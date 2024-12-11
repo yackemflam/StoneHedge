@@ -1,7 +1,7 @@
 //shield flail or longsword, tief can be this with red cross
 
 /datum/job/roguetown/templar
-	title = "Paladin"
+	title = "Temple Paladin"
 	department_flag = CHURCHMEN
 	faction = "Station"
 	tutorial = "Templars are warriors who have forsaken wealth and title in lieu of service to their god, swearing oaths in their service to the divine. They guard the temples and uphold their sense of divine order - while keeping a watchful eye against evil's ploy and dangerous nite-creechers. Within troubled dreams, they seek divine guidance.."
@@ -9,7 +9,7 @@
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = ALL_CLERIC_PATRONS
 	outfit = /datum/outfit/job/roguetown/templar
-	min_pq = 1
+	min_pq = 0
 	max_pq = null
 	total_positions = 5
 	spawn_positions = 5
@@ -21,7 +21,7 @@
 
 /datum/outfit/job/roguetown/templar/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.virginity = TRUE
+
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 	neck = /obj/item/clothing/neck/roguetown/psicross/silver
 	cloak = /obj/item/clothing/cloak/templar/psydon
@@ -77,18 +77,17 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/roguekey/church = 1)
-	backr = /obj/item/rogueweapon/shield/tower/metal
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-	beltr = /obj/item/rogueweapon/sword/long
 	id = /obj/item/clothing/ring/silver
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	backr = /obj/item/rogueweapon/shield/tower/metal
+	r_hand = /obj/item/class_selector/paladin
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
