@@ -204,6 +204,7 @@
 /datum/migrant_role/slaver/slavez
 	name = "Slave"
 	greet_text = "An unlucky slave, captured and trained. The party of Slavers found you some time ago, and you've been brought with as they intend to capture more."
+	outfit = /datum/outfit/job/roguetown/slaver/slavez
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDSPLUS
 	grant_lit_torch = TRUE
