@@ -278,7 +278,7 @@
 
 /obj/item/book/granter/spell/Initialize()
 	. = ..()
-	desc = "The arcyne ink on it is at pristine condition and may be cast off of [usable_times]."
+	desc = "The arcyne ink on it is at pristine condition and may be cast off of [usable_times] times."
 
 /obj/item/book/granter/spell/equipped(mob/user, slot, initial)
 	. = ..()
