@@ -281,7 +281,7 @@
 				var/turf/target_loc = find_suitable_location()
 				if(target_loc)
 					walk2derpless(target_loc)
-	. = ..()
+		. = ..()
 
 
 // Find a suitable location to move to
