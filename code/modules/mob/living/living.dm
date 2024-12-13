@@ -1264,10 +1264,10 @@
 
 	if(isliving(who))
 		var/mob/living/L = who
-		if(L.cmode && L.mobility_flags & MOBILITY_STAND)
+		if(L.cmode && (L.mobility_flags & MOBILITY_STAND) && L.client) //cmode, standing and cliented mobs.
 			to_chat(src, span_warning("I can't take \the [what] off, they are too tense!"))
 			return
-		if(!L.key && mind && L.stat != DEAD) //basically ssd probably
+		if(L.ckey && !client && L.stat != DEAD) //basically ssd probably
 			to_chat(src, span_warning("The fog prevents me from taking \the [what]..."))
 			return
 		if(L.surrendering)
