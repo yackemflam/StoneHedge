@@ -12,7 +12,6 @@
 		/datum/patron/old_god,
 		/datum/patron/divine/astrata,
 		/datum/patron/divine/noc,
-		/datum/patron/divine/jayx,
 		/datum/patron/divine/dendor,
 		/datum/patron/divine/abyssor,
 		/datum/patron/divine/ravox,
@@ -20,7 +19,8 @@
 		/datum/patron/divine/xylix,
 		/datum/patron/divine/pestra,
 		/datum/patron/divine/malum,
-	) //gets set to old god anyways
+		/datum/patron/divine/jayx,
+	) //Used to get set to Seraph Iros. Not anymore. Part of ongoing modifications to allow more RP.
 	tutorial = "As a Witcher, you have been tasked with hunting the various monsters that haunt the dream dales. Using Magick; Divine Powers and your Arsenal of Tools; you are the stuff of legends which must fight the forces of darkness and deceipt."
 	whitelist_req = FALSE
 
@@ -33,8 +33,20 @@
 /datum/outfit/job/roguetown/puritan
 	name = "Witcher"
 	jobtype = /datum/job/roguetown/puritan
-	allowed_patrons = list(/datum/patron/old_god)
-
+	allowed_patrons = list(
+		/datum/patron/old_god,
+		/datum/patron/divine/astrata,
+		/datum/patron/divine/noc,
+		/datum/patron/divine/jayx,
+		/datum/patron/divine/dendor,
+		/datum/patron/divine/abyssor,
+		/datum/patron/divine/ravox,
+		/datum/patron/divine/necra,
+		/datum/patron/divine/xylix,
+		/datum/patron/divine/pestra,
+		/datum/patron/divine/malum,
+		/datum/patron/divine/jayx
+		)
 /datum/outfit/job/roguetown/puritan/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
