@@ -281,6 +281,7 @@
 				var/turf/target_loc = find_suitable_location()
 				if(target_loc)
 					walk2derpless(target_loc)
+	. = ..()
 
 
 // Find a suitable location to move to
@@ -437,7 +438,7 @@ GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 
 /mob/living/carbon/human/species/human/smartnpc/townguard/handle_combat()
 	if(mode == AI_HUNT)
-		if(prob(10))
+		if(prob(10) && target)
 			emote("rage")
 	. = ..()
 
