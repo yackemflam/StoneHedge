@@ -346,7 +346,7 @@
 
 /datum/quirk/masterbuilder
 	name = "Practiced Builder"
-	desc = "I have experience in putting up large structures and foundations for buildings. I can even use a sawmill if I can find one, and I have a handcart hidden away for transporting my construction materials."
+	desc = "I have experience in putting up large structures and foundations for buildings. I can even use a sawmill if I can find one, and I have a handcart and two sacks hidden away for transporting my construction materials."
 	value = 1 // I have a lot of respect for people who actually bother making buildings that will be deleted within an hour or two.
 
 /datum/quirk/masterbuilder/on_spawn()
@@ -356,6 +356,8 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE) // Needed to install things like levers in a house. This unfortunately means construction workers can make illegal firearms.
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE) // Pretty sure some crafting stations use this. Also stone axes and whatever other basic tools they need.
 	H.mind.special_items["Handcart"] = /obj/structure/handcart //TO-DO: Implement sawmill and the trait to use it. Giving them a handcart to move materials with.
+	H.mind.special_items["Sack 1"] = /obj/item/storage/roguebag
+	H.mind.special_items["Sack 2"] = /obj/item/storage/roguebag
 
 /datum/quirk/mastersmith
 	name = "Practiced Smith"
