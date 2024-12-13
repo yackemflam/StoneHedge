@@ -78,17 +78,17 @@
 
 /datum/curse/atheism
 	name = "Curse of Atheism"
-	description = "I cannot stand any mention of the divine, and I refuse to believe either the gods or miracles are real."
+	description = "I have lost the divine, and I refuse to follow them.."
 	trait = TRAIT_ATHEISM_CURSE
 	var/datum/patron/old_patron
 
 //////////////////////
-///   TEN CURSES   ///
+///   Common Curses   ///
 //////////////////////
 
-/datum/curse/astrata
-	name = "Astrata's Curse"
-	description = "I am forsaken by the Sun. Healing miracles have no effect on me."
+/datum/curse/healing
+	name = "Healer's Curse"
+	description = "Healing miracles have no effect on me."
 	trait = TRAIT_ASTRATA_CURSE
 
 /datum/curse/noc
@@ -97,32 +97,32 @@
 	trait = TRAIT_NOC_CURSE
 
 /datum/curse/ravox
-	name = "Ravox's Curse"
-	description = "Violence disgusts me. I cannot bring myself to wield any kind of weapon."
+	name = "Minhur's Curse"
+	description = "I'm tired. I cannot bring myself to wield any kind of weapon. What's the point?"
 	trait = TRAIT_RAVOX_CURSE
 
 /datum/curse/necra
-	name = "Necra's Curse"
-	description = "Necra has claimed my soul. No one will bring me back from the dead."
+	name = "Curse of final Reaping"
+	description = "No one will bring me back from the dead. Yamais has claimed me for good this time."
 	trait = TRAIT_NECRA_CURSE
 
 /datum/curse/xylix
-	name = "Xylix's Curse"
+	name = "Fortune's Woe"
 	description = "Fortune is no longer on my side."
 	trait = TRAIT_XYLIX_CURSE
 
 /datum/curse/pestra
-	name = "Pestra's Curse"
+	name = "The Rot"
 	description = "I feel sick to my stomach, and my skin is slowly starting to rot."
 	trait = TRAIT_PESTRA_CURSE
 
 /datum/curse/eora
-	name = "Eora's Curse"
+	name = "Curse of Apathy"
 	description = "I am unable to show any kind of affection or love, whether carnal or platonic."
 	trait = TRAIT_EORA_CURSE
 
 //////////////////////
-/// INHUMEN CURSES ///
+/// Uncommon Curses ///
 //////////////////////
 
 /datum/curse/zizo
@@ -132,7 +132,7 @@
 	var/atom/movable/screen/fullscreen/maniac/hallucinations
 
 /datum/curse/graggar
-	name = "Graggar's Curse"
+	name = "Curse of the Beast"
 	description = "I am engulfed by unspeakable rage. I cannot stop myself from harming others. When that's not an option, my rage is directed inward."
 	trait = TRAIT_GRAGGAR_CURSE
 
@@ -142,12 +142,12 @@
 	trait = TRAIT_MATTHIOS_CURSE
 
 /datum/curse/baotha
-	name = "Viivitri's Curse"
+	name = "Viriitri's Trial"
 	description = "I'm in a constant state of arousal, and I cannot control my urges."
 	trait = TRAIT_BAOTHA_CURSE
 
 /datum/curse/nympho
-	name = "Nympho Curse"
+	name = "Nymph's Curse"
 	description = "I'm in a constant state of arousal, and I cannot control my urges, even clothes get me off..."
 	trait = TRAIT_NYMPHO_CURSE
 
