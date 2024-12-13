@@ -36,7 +36,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
 	var/mob/living/carbon/human/H = owner.current
 	C.cultists |= owner
-	H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
+	H.patron = GLOB.patronlist[/datum/patron/inhumen/levishth]
 
 	owner.special_role = "Cultist"
 	H.cmode_music = 'sound/music/combatcult.ogg'
@@ -531,7 +531,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/simple/claw)
 		H.update_a_intents()
 		H.cmode_music = 'sound/music/combatcult.ogg'
-		H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
+		H.patron = GLOB.patronlist[/datum/patron/inhumen/levishth]
 		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 		if(eyes)
 			eyes.Remove(H,1)
@@ -956,7 +956,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		priority_announce("The Sun is torn from the sky!", "Terrible Omen", 'sound/misc/astratascream.ogg')
 		addomen(OMEN_SUNSTEAL)
 		for(var/mob/living/carbon/human/astrater in GLOB.human_list)
-			if(!istype(astrater.patron, /datum/patron/divine/astrata) || !length(astrater.mind?.antag_datums))
+			if(!istype(astrater.patron, /datum/patron/divine/elysius) || !length(astrater.mind?.antag_datums))
 				continue
 			to_chat(astrater, span_userdanger("You feel the pain of [astrater.patron.name]!"))
 			astrater.emote_scream()

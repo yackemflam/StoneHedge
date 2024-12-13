@@ -5,4 +5,4 @@
 	  long ago, or for many reasons. They are commonly worshipped by many due to their power and portfolios being\
 	   widely accepted, though many faiths beyond this pantheon are tolerated and oft embraced all the same."
 	worshippers = "Mortals."
-	godhead = /datum/patron/divine/astrata
+	godhead = /datum/patron/divine/elysius

@@ -203,7 +203,7 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/shoes/roguetown/boots/graggaritebootsleader
-	name = "graggarite leader boots"
+	name = "nyrnheite leader boots"
 	desc = "Boots worn by those who lead northmen warbands."
 	body_parts_covered = FEET
 	icon_state = "graggaritebootsleader"
@@ -276,7 +276,7 @@
 	smeltresult = /obj/item/ash
 
 /obj/item/clothing/shoes/roguetown/boots/graggariteboots
-	name = "graggarite boots"
+	name = "nyrnheite boots"
 	desc = "A pair of heavy boots worn by Graggarite fanatics."
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	body_parts_covered = FEET

@@ -154,21 +154,21 @@
 	/datum/species/anthromorphbig,\
 	/datum/species/demihuman,\
 )
-#define ALL_CLERIC_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/eora, /datum/patron/divine/xylix, /datum/patron/divine/ravox, /datum/patron/divine/malum, /datum/patron/divine/abyssor, /datum/patron/divine/jayx, /datum/patron/inhumen/zizo, /datum/patron/inhumen/graggar, /datum/patron/inhumen/matthios, /datum/patron/inhumen/baotha)
+#define ALL_CLERIC_PATRONS list(/datum/patron/divine/elysius, /datum/patron/divine/lune, /datum/patron/divine/sylvarn, /datum/patron/divine/yamais, /datum/patron/divine/hermeir, /datum/patron/divine/viiritri, /datum/patron/divine/onder, /datum/patron/divine/minhur, /datum/patron/divine/svaeryog, /datum/patron/divine/abyssia, /datum/patron/divine/jayx, /datum/patron/inhumen/levishth, /datum/patron/inhumen/nyrnhe, /datum/patron/inhumen/thief, /datum/patron/inhumen/sacrifice)
 
-#define ALL_ACOLYTE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/pestra, /datum/patron/divine/eora) // Currently unused.
+#define ALL_ACOLYTE_PATRONS list(/datum/patron/divine/elysius, /datum/patron/divine/lune, /datum/patron/divine/sylvarn, /datum/patron/divine/hermeir, /datum/patron/divine/viiritri) // Currently unused.
 
 #define ALL_DIVINE_PATRONS list(\
-	/datum/patron/divine/astrata,\
-	/datum/patron/divine/noc,\
-	/datum/patron/divine/dendor,\
-	/datum/patron/divine/abyssor,\
-	/datum/patron/divine/ravox,\
-	/datum/patron/divine/necra,\
-	/datum/patron/divine/xylix,\
-	/datum/patron/divine/pestra,\
-	/datum/patron/divine/malum,\
-	/datum/patron/divine/eora,\
+	/datum/patron/divine/elysius,\
+	/datum/patron/divine/lune,\
+	/datum/patron/divine/sylvarn,\
+	/datum/patron/divine/abyssia,\
+	/datum/patron/divine/minhur,\
+	/datum/patron/divine/yamais,\
+	/datum/patron/divine/onder,\
+	/datum/patron/divine/hermeir,\
+	/datum/patron/divine/svaeryog,\
+	/datum/patron/divine/viiritri,\
 	/datum/patron/divine/jayx\
 )
 
@@ -199,7 +199,7 @@
 	INHUMEN_CURSES\
 )
 
-#define ALL_NON_INHUMEN_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/divine/jayx, /datum/patron/old_god)
+#define ALL_NON_INHUMEN_PATRONS list(/datum/patron/divine/elysius, /datum/patron/divine/lune, /datum/patron/divine/sylvarn, /datum/patron/divine/abyssia, /datum/patron/divine/minhur, /datum/patron/divine/yamais, /datum/patron/divine/onder, /datum/patron/divine/hermeir, /datum/patron/divine/svaeryog, /datum/patron/divine/viiritri, /datum/patron/divine/jayx, /datum/patron/old_god)
 
 #define PLATEHIT "plate"
 #define CHAINHIT "chain"

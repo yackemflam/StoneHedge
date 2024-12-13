@@ -9,7 +9,7 @@
 	cmode_music = 'sound/music/combat_bandit_mage.ogg'
 
 /datum/outfit/job/roguetown/adventurer/sorceress
-	allowed_patrons = list(/datum/patron/divine/noc)
+	allowed_patrons = list(/datum/patron/divine/lune)
 
 /datum/outfit/job/roguetown/adventurer/sorceress/pre_equip(mob/living/carbon/human/H)
 	..()

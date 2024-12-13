@@ -16,20 +16,20 @@
 	..()
 	H.virginity = TRUE
 	switch(H.patron?.type)
-		if(/datum/patron/divine/astrata)
+		if(/datum/patron/divine/elysius)
 			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
-		if(/datum/patron/inhumen/zizo)
+		if(/datum/patron/inhumen/levishth)
 			neck = /obj/item/clothing/neck/roguetown/psicross/skull
-		if(/datum/patron/divine/noc)
+		if(/datum/patron/divine/lune)
 			neck = /obj/item/clothing/neck/roguetown/psicross/noc
-		if(/datum/patron/divine/dendor)
+		if(/datum/patron/divine/sylvarn)
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 			H.mind.adjust_skillrank_up_to(/datum/skill/magic/druidic, 2, TRUE) // enough to craft druid mask, at least
-		if(/datum/patron/divine/necra)
+		if(/datum/patron/divine/yamais)
 			neck = /obj/item/clothing/neck/roguetown/psicross/necra
-		if(/datum/patron/divine/pestra)
+		if(/datum/patron/divine/hermeir)
 			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
-		if(/datum/patron/divine/eora) //Eora content from Stonekeep
+		if(/datum/patron/divine/viiritri) //Eora content from Stonekeep
 			neck = /obj/item/clothing/neck/roguetown/psicross/eora
 
 	// CLASS ARCHETYPES
@@ -167,31 +167,31 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 		// apply patron-specific outfit alterations
 		switch(H.patron?.type)
-			if(/datum/patron/divine/astrata)
+			if(/datum/patron/divine/elysius)
 				head = /obj/item/clothing/head/roguetown/roguehood/astrata
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 				beltr = /obj/item/flashlight/flare/torch/lantern // you are the lightbringer
-			if(/datum/patron/divine/noc)
+			if(/datum/patron/divine/lune)
 				head =  /obj/item/clothing/head/roguetown/roguehood/nochood
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 				pants = /obj/item/clothing/under/roguetown/tights/black
 				belt = /obj/item/storage/belt/rogue/leather/black
-			if(/datum/patron/divine/necra)
+			if(/datum/patron/divine/yamais)
 				head = /obj/item/clothing/head/roguetown/necrahood
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
 				pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
-			if(/datum/patron/divine/dendor)
+			if(/datum/patron/divine/sylvarn)
 				head = /obj/item/clothing/head/roguetown/dendormask
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 				pants = /obj/item/clothing/under/roguetown/loincloth
 				belt = /obj/item/storage/belt/rogue/leather/rope
 				shoes = /obj/item/clothing/shoes/roguetown/sandals
-			if(/datum/patron/divine/xylix)
+			if(/datum/patron/divine/onder)
 				head = /obj/item/clothing/head/roguetown/roguehood/tricksterhood
 			if(/datum/patron/old_god)
 				head = /obj/item/clothing/head/roguetown/psydonhood
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/psydonrobe
-			if(/datum/patron/divine/eora)
+			if(/datum/patron/divine/viiritri)
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
 			if(/datum/patron/divine/jayx)
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe

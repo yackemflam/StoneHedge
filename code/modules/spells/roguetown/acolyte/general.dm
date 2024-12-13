@@ -39,17 +39,17 @@
 		switch(user.patron.type)
 			if(/datum/patron/old_god)
 				target.visible_message(span_info("A strange stirring feeling pours from [target]!"), span_notice("Sentimental thoughts drive away my pains!"))
-			if(/datum/patron/divine/astrata)
+			if(/datum/patron/divine/elysius)
 				target.visible_message(span_info("A wreath of gentle light passes over [target]!"), span_notice("I'm bathed in holy light!"))
 				// during the day, heal 1 more (basic as fuck)
 				if (GLOB.tod == "day")
 					conditional_buff = TRUE
-			if(/datum/patron/divine/noc)
+			if(/datum/patron/divine/lune)
 				target.visible_message(span_info("A shroud of soft moonlight falls upon [target]!"), span_notice("I'm shrouded in gentle moonlight!"))
 				// during the night, heal 1 more (i wish this was more interesting but they're twins so whatever)
 				if (GLOB.tod == "night")
 					conditional_buff = TRUE
-			if(/datum/patron/divine/dendor)
+			if(/datum/patron/divine/sylvarn)
 				target.visible_message(span_info("A rush of syvlan energy spirals about [target]!"), span_notice("I'm infused with syvlan energies, leaf and strange laughter swirl in my mind.!"))
 				var/list/natural_stuff = list(/obj/structure/flora/roguegrass, /obj/structure/flora/roguetree, /obj/structure/flora/rogueshroom, /obj/structure/soil, /turf/open/floor/rogue/dirt)
 				situational_bonus = 0
@@ -59,20 +59,20 @@
 						situational_bonus = min(situational_bonus + 0.1, 2)
 				if (situational_bonus > 0)
 					conditional_buff = TRUE
-			if(/datum/patron/divine/abyssor)
+			if(/datum/patron/divine/abyssia)
 				target.visible_message(span_info("A mist of salt-scented vapour settles on [target]!"), span_notice("I'm invigorated by healing vapours!"))
 				// if our target is standing in water, heal a flat amount extra
 				if (istype(get_turf(target), /turf/open/water))
 					conditional_buff = TRUE
 					situational_bonus = 1.5
-			if(/datum/patron/divine/ravox)
+			if(/datum/patron/divine/minhur)
 				target.visible_message(span_info("An air of righteous revelry and musical winds rises near [target]!"), span_notice("I'm filled with an urge to fight on and joyously!"))
 				situational_bonus = 0
 				// the bloodier the area around our target is, the more we heal
 				for (var/obj/effect/decal/cleanable/blood/O in oview(5, target))
 					situational_bonus = min(situational_bonus + 0.1, 2)
 				conditional_buff = TRUE
-			if(/datum/patron/divine/necra)
+			if(/datum/patron/divine/yamais)
 				target.visible_message(span_info("A sense of quiet respite radiates from [target]!"), span_notice("I feel the Undermaiden's gaze turn from me for now!"))
 				if (iscarbon(target))
 					var/mob/living/carbon/C = target
@@ -80,18 +80,18 @@
 					if (C.health <= (C.maxHealth * 0.25))
 						conditional_buff = TRUE
 						situational_bonus = 2.5
-			if(/datum/patron/divine/xylix)
+			if(/datum/patron/divine/onder)
 				target.visible_message(span_info("A fugue seems to manifest briefly across [target]!"), span_notice("My wounds vanish as if they had never been there! "))
 				// half of the time, heal a little (or a lot) more - flip the coin
 				if (prob(50))
 					conditional_buff = TRUE
 					situational_bonus = rand(1, 2.5)
-			if(/datum/patron/divine/pestra)
+			if(/datum/patron/divine/hermeir)
 				target.visible_message(span_info("A aura of green time-warping magick  encompasses [target]!"), span_notice("I'm sewn back together by sacred time medicine!"))
 				// pestra always heals a little more toxin damage and restores a bit more blood
 				target.adjustToxLoss(-situational_bonus)
 				target.blood_volume += BLOOD_VOLUME_SURVIVE/2
-			if(/datum/patron/divine/malum)
+			if(/datum/patron/divine/svaeryog)
 				target.visible_message("<span class='info'>A tempering heat is discharged out of [target]!</span>", "<span class='notice'>I feel the heat of a forge soothing my pains!</span>")
 				var/list/firey_stuff = list(/obj/machinery/light/rogue/torchholder, /obj/machinery/light/rogue/campfire, /obj/machinery/light/rogue/hearth, /obj/machinery/light/rogue/wallfire, /obj/machinery/light/rogue/wallfire/candle, /obj/machinery/light/rogue/forge)
 				// extra healing for every source of fire/light near us
@@ -101,7 +101,7 @@
 						situational_bonus = min(situational_bonus + 0.5, 2.5)
 				if (situational_bonus > 0)
 					conditional_buff = TRUE
-			if(/datum/patron/divine/eora)
+			if(/datum/patron/divine/viiritri)
 				target.visible_message("<span class='info'>An emanance of love blossoms around [target]!</span>", "<span class='notice'>I'm filled with the restorative warmth of love!</span>")
 				// if they're wearing an eoran bud (or are a pacifist), pretty much double the healing. if we're also wearing a bud at any point or a pacifist from any other source, apply another +15 bonus
 				situational_bonus = 0

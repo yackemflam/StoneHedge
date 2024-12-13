@@ -198,7 +198,7 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/natural/hide = 2, /obj/item/natural/bundle/bone/full = 1)
 	aggressive = 1
-	patron = /datum/patron/inhumen/graggar
+	patron = /datum/patron/inhumen/nyrnhe
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/searaider/simple_limb_hit(zone)

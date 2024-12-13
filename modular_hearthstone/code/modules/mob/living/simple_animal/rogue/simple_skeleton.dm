@@ -36,7 +36,7 @@
 	faction = list("undead")
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	del_on_death = TRUE
-	patron = /datum/patron/inhumen/zizo		//So they can be hurt by holy fire/healing
+	patron = /datum/patron/inhumen/levishth		//So they can be hurt by holy fire/healing
 
 /mob/living/simple_animal/hostile/rogue/skeleton/axe
 	name = "Skeleton"

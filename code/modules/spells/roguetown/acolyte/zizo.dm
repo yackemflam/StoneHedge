@@ -22,7 +22,7 @@
 		var/conditional_buff = FALSE
 		var/situational_bonus = 1
 		switch(user.patron.type)
-			if(/datum/patron/inhumen/zizo)
+			if(/datum/patron/inhumen/levishth)
 				target.visible_message(span_info("shadow-like interwoven snakes lunge and dispere into [target]!"), span_notice("The shadows leave a chill, blood in my mouth -- yet I feel healed."))
 				// set up a ritual pile of bones (or just cast near a stack of bones whatever) around us for massive bonuses, cap at 50 for 75 healing total (wowie)
 				situational_bonus = 0
@@ -39,13 +39,13 @@
 					conditional_buff = TRUE
 					situational_bonus = 2.5
 					target.adjustToxLoss(situational_bonus) // remember we do a global toxloss adjust down below so this is okay
-			if(/datum/patron/inhumen/matthios)
+			if(/datum/patron/inhumen/thief)
 				target.visible_message(span_info("Shadows unfurl outward and across [target] as their form is restored!"), span_notice("I'm bathed in a... strange holy light?"))
 				// COMRADES! WE MUST BAND TOGETHER!
 				if (HAS_TRAIT(target, TRAIT_COMMIE))
 					conditional_buff = TRUE
 					situational_bonus = 2.5
-			if(/datum/patron/inhumen/baotha)
+			if(/datum/patron/inhumen/sacrifice)
 				target.visible_message(span_info("A wreath of... strange light passes over [target]?"), span_notice("Something feels taken.. but the pain subsides. I am whole again."))
 				// i wanted to do something with pain here but it doesn't seem like pain is actually parameterized anywhere so... better necra it is - if they're below 50% health, they get 25 extra healing
 				if (iscarbon(target))

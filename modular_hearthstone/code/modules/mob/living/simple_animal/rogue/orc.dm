@@ -43,7 +43,7 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/natural/hide = 2, /obj/item/natural/bundle/bone/full = 1)
 	aggressive = 1
-	patron = /datum/patron/inhumen/graggar		//Flavor + recognized as hostile if preformed miracles on instead of as faithless.
+	patron = /datum/patron/inhumen/nyrnhe		//Flavor + recognized as hostile if preformed miracles on instead of as faithless.
 
 /mob/living/simple_animal/hostile/retaliate/rogue/orc/orc2
 	icon_state = "savageorc2"
@@ -278,7 +278,7 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/natural/hide = 2, /obj/item/natural/bundle/bone/full = 1)
 	aggressive = 1
-	patron = /datum/patron/inhumen/graggar
+	patron = /datum/patron/inhumen/nyrnhe
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goblin/cave

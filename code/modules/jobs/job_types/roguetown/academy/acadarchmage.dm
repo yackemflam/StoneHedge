@@ -57,10 +57,10 @@
 			H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
 
 	switch(H.patron?.type)
-		if(/datum/patron/divine/pestra)
+		if(/datum/patron/divine/hermeir)
 			if(H.mind)
 				H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
-		if(/datum/patron/divine/ravox, /datum/patron/inhumen/graggar)
+		if(/datum/patron/divine/minhur, /datum/patron/inhumen/nyrnhe)
 			if(H.mind)
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, max((2 - H.mind.get_skill_level(/datum/skill/combat/knives)), 0), TRUE)
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, max((2 - H.mind.get_skill_level(/datum/skill/combat/swords)), 0), TRUE)

@@ -7,16 +7,16 @@
 	spawn_positions = 0
 	allowed_patrons = list(
 		/datum/patron/old_god,
-		/datum/patron/divine/astrata,
-		/datum/patron/divine/noc,
+		/datum/patron/divine/elysius,
+		/datum/patron/divine/lune,
 		/datum/patron/divine/jayx,
-		/datum/patron/divine/dendor,
-		/datum/patron/divine/abyssor,
-		/datum/patron/divine/ravox,
-		/datum/patron/divine/necra,
-		/datum/patron/divine/xylix,
-		/datum/patron/divine/pestra,
-		/datum/patron/divine/malum,
+		/datum/patron/divine/sylvarn,
+		/datum/patron/divine/abyssia,
+		/datum/patron/divine/minhur,
+		/datum/patron/divine/yamais,
+		/datum/patron/divine/onder,
+		/datum/patron/divine/hermeir,
+		/datum/patron/divine/svaeryog,
 	)
 
 	allowed_races = RACES_ALL_KINDSPLUS

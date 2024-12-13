@@ -16,7 +16,7 @@ Will require a group to kill, recommend 5+ people.
 	icon = 'icons/mob/evilpope.dmi'
 	icon_state = "EvilPope"
 	wander = 0
-	vision_range = 8 
+	vision_range = 8
 	aggro_vision_range = 24
 	ranged = 1
 	rapid = 3
@@ -45,7 +45,7 @@ Will require a group to kill, recommend 5+ people.
 	projectiletype = /obj/projectile/magic
 	allowed_projectile_types = list(/obj/projectile/magic/sickness/lich, /obj/projectile/magic/lich/lightning, /obj/projectile/magic/arcane_barrage,
 	/obj/projectile/magic/eldritchblast5e/empowered, /obj/projectile/magic/rayoffrost5e, /obj/projectile/magic/acidsplash5e)
-	patron = /datum/patron/inhumen/zizo
+	patron = /datum/patron/inhumen/levishth
 	footstep_type = FOOTSTEP_MOB_SHOE
 	stat_attack = UNCONSCIOUS
 	attack_laying = TRUE
@@ -100,7 +100,7 @@ Will require a group to kill, recommend 5+ people.
 /datum/action/boss/lich_summon_minions/Trigger()
 	if(summoned_minions <= 6 && ..())
 		var/list/minions = list(
-		/mob/living/carbon/human/species/skeleton/npc/dungeon/lich = 30) 
+		/mob/living/carbon/human/species/skeleton/npc/dungeon/lich = 30)
 		var/list/directions = GLOB.cardinals.Copy()
 		for(var/i in 1 to 2)
 			var/minions_chosen = pickweight(minions)
@@ -390,7 +390,7 @@ Will require a group to kill, recommend 5+ people.
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
 
-	H.set_patron(/datum/patron/inhumen/zizo)
+	H.set_patron(/datum/patron/inhumen/levishth)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 
 	H.possible_rmb_intents = list(/datum/rmb_intent/feint,\

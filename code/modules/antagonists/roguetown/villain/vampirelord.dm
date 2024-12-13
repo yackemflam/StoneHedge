@@ -131,7 +131,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	eyes = new /obj/item/organ/eyes/night_vision/zombie
 	eyes.Insert(owner.current)
 	H.equipOutfit(/datum/outfit/job/roguetown/vamplord)
-	H.set_patron(/datum/patron/inhumen/zizo)
+	H.set_patron(/datum/patron/inhumen/levishth)
 
 	return TRUE
 
@@ -830,7 +830,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 						priority_announce("The Sun is torn from the sky!", "Terrible Omen", 'sound/misc/astratascream.ogg')
 						addomen(OMEN_SUNSTEAL)
 						for(var/mob/living/carbon/human/astrater in GLOB.human_list)
-							if(!istype(astrater.patron, /datum/patron/divine/astrata) || !length(astrater.mind?.antag_datums))
+							if(!istype(astrater.patron, /datum/patron/divine/elysius) || !length(astrater.mind?.antag_datums))
 								continue
 							to_chat(astrater, span_userdanger("You feel the pain of [astrater.patron.name]!"))
 							astrater.emote_scream()

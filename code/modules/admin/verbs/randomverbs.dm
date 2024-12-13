@@ -966,15 +966,15 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
 		return
 	var/static/list/punishment_list = list(
-		ADMIN_PUNISHMENT_LIGHTNING, 
-		ADMIN_PUNISHMENT_BRAINDAMAGE, 
-		ADMIN_PUNISHMENT_GIB, 
-		ADMIN_PUNISHMENT_BSA, 
-		ADMIN_PUNISHMENT_FIREBALL, 
-		ADMIN_PUNISHMENT_ROD, 
-		ADMIN_PUNISHMENT_SUPPLYPOD_QUICK, 
-		ADMIN_PUNISHMENT_SUPPLYPOD, 
-		ADMIN_PUNISHMENT_MAZING, 
+		ADMIN_PUNISHMENT_LIGHTNING,
+		ADMIN_PUNISHMENT_BRAINDAMAGE,
+		ADMIN_PUNISHMENT_GIB,
+		ADMIN_PUNISHMENT_BSA,
+		ADMIN_PUNISHMENT_FIREBALL,
+		ADMIN_PUNISHMENT_ROD,
+		ADMIN_PUNISHMENT_SUPPLYPOD_QUICK,
+		ADMIN_PUNISHMENT_SUPPLYPOD,
+		ADMIN_PUNISHMENT_MAZING,
 		ADMIN_PUNISHMENT_BRAZIL,
 		ADMIN_PUNISHMENT_CBT,
 		ADMIN_PUNISHMENT_NECKSNAP,
@@ -1044,7 +1044,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				return
 			var/mob/living/carbon/human/ligga = target
 			ligga.emote("painscream")
-			ligga.set_patron(GLOB.patronlist[/datum/patron/divine/dendor] || GLOB.patronlist[/datum/patron/godless])
+			ligga.set_patron(GLOB.patronlist[/datum/patron/divine/sylvarn] || GLOB.patronlist[/datum/patron/godless])
 			var/old_name = ligga.real_name
 			var/datum/species/lizard/brazil/brazil = new /datum/species/lizard/brazil
 			ligga.set_species(brazil)

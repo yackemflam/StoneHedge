@@ -29,32 +29,32 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/roguekey/church = 1, /obj/item/storage/fancy/skit =1,) // Doktor, HEAL me!
 	switch(H.patron?.type)
-		if(/datum/patron/divine/astrata)
+		if(/datum/patron/divine/elysius)
 			head = /obj/item/clothing/head/roguetown/roguehood/astrata
 			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
-		if(/datum/patron/divine/noc) //Nocalytes are real, don't let them tell you otherwise, we love casting spells. (Hearthstone edit: simply gives Noc Acolytes the love that the Noc Clerics got, access to pick spells)
+		if(/datum/patron/divine/lune) //Nocalytes are real, don't let them tell you otherwise, we love casting spells. (Hearthstone edit: simply gives Noc Acolytes the love that the Noc Clerics got, access to pick spells)
 			head = /obj/item/clothing/head/roguetown/roguehood/nochood
 			neck = /obj/item/clothing/neck/roguetown/psicross/noc
 			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-		if(/datum/patron/divine/dendor) //Dendorites all busted. Play Druid.
+		if(/datum/patron/divine/sylvarn) //Dendorites all busted. Play Druid.
 			head = /obj/item/clothing/head/roguetown/helmet/dendorculthelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 			H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/labor/taming, 3, TRUE)
-		if(/datum/patron/divine/necra) //disabled and moved unto gravedigger, but code supports it
+		if(/datum/patron/divine/yamais) //disabled and moved unto gravedigger, but code supports it
 			head = /obj/item/clothing/head/roguetown/roguehood/necracolytehood
 			neck = /obj/item/clothing/neck/roguetown/psicross/necra
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
-		if(/datum/patron/divine/pestra) //PLEASE add leper gear later, this SUCKS dude
+		if(/datum/patron/divine/hermeir) //PLEASE add leper gear later, this SUCKS dude
 			head = /obj/item/clothing/head/roguetown/roguehood
 			mask = /obj/item/clothing/mask/rogue/surgmask
 			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
@@ -62,13 +62,13 @@
 			pants = /obj/item/clothing/under/roguetown/tights/black
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 4, TRUE)
-		if(/datum/patron/divine/eora) //Eora content from Stonekeep
+		if(/datum/patron/divine/viiritri) //Eora content from Stonekeep
 			head = /obj/item/clothing/head/roguetown/eoramask
 			neck = /obj/item/clothing/neck/roguetown/psicross/eora
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
 			ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
-		if(/datum/patron/divine/xylix)
+		if(/datum/patron/divine/onder)
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/xylixcagehelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/xylix
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
@@ -77,7 +77,7 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 4, TRUE) // the eyes and ears of the Church
-		if(/datum/patron/divine/malum)
+		if(/datum/patron/divine/svaeryog)
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/malumhelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/malum
 			pants = /obj/item/clothing/under/roguetown/trou/leather
@@ -86,7 +86,7 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/labor/mining, 5, TRUE)
-		if(/datum/patron/divine/abyssor)
+		if(/datum/patron/divine/abyssia)
 			head = /obj/item/clothing/head/roguetown/helmet/abyssorhat
 			neck = /obj/item/clothing/neck/roguetown/psicross/abyssor
 			pants = /obj/item/clothing/under/roguetown/tights/purple
@@ -94,7 +94,7 @@
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			H.mind.adjust_skillrank_up_to(/datum/skill/labor/fishing, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 3, TRUE)
-		if(/datum/patron/divine/ravox)
+		if(/datum/patron/divine/minhur)
 			head = /obj/item/clothing/head/roguetown/roguehood/flagellanthood
 			neck = /obj/item/clothing/neck/roguetown/psicross/ravox
 			pants = /obj/item/clothing/under/roguetown/loincloth

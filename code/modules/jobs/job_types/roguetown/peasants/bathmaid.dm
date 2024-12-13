@@ -23,7 +23,7 @@
 /datum/outfit/job/roguetown/nightmaiden/pre_equip(mob/living/carbon/human/H)
 	..()
 	switch(H.patron?.type)
-		if(/datum/patron/divine/eora) //Eoran loadouts
+		if(/datum/patron/divine/viiritri) //Eoran loadouts
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/random
 			pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random

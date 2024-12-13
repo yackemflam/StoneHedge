@@ -75,7 +75,7 @@
 	eyes = new /obj/item/organ/eyes/night_vision/zombie
 	eyes.Insert(L)
 	L.equipOutfit(/datum/outfit/job/roguetown/lich)
-	L.set_patron(/datum/patron/inhumen/zizo)
+	L.set_patron(/datum/patron/inhumen/levishth)
 
 /datum/outfit/job/roguetown/lich/pre_equip(mob/living/carbon/human/H)
 	..()

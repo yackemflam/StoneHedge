@@ -37,7 +37,7 @@
 	/obj/item/soul_fragment, /obj/item/skull, /obj/item/skull, /obj/item/skull, /obj/item/skull)
 	dodgetime = 0
 //	stat_attack = UNCONSCIOUS
-	patron = /datum/patron/inhumen/zizo		//So they can be hurt by holy fire/healing
+	patron = /datum/patron/inhumen/levishth		//So they can be hurt by holy fire/healing
 
 
 /mob/living/simple_animal/hostile/rogue/gravelord/taunted(mob/user)

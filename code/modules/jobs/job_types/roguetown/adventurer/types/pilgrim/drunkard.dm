@@ -7,7 +7,7 @@
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 
 /datum/outfit/job/roguetown/adventurer/gambler
-	allowed_patrons = list(/datum/patron/inhumen/baotha, /datum/patron/divine/xylix)
+	allowed_patrons = list(/datum/patron/inhumen/sacrifice, /datum/patron/divine/onder)
 
 /datum/outfit/job/roguetown/adventurer/gambler/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -35,5 +35,5 @@
 		H.change_stat("constitution", 1)
 		H.change_stat("strength", 1)
 		H.change_stat("fortune", 2)
-		if(H.patron.type == /datum/patron/divine/xylix)
+		if(H.patron.type == /datum/patron/divine/onder)
 			ADD_TRAIT(H, TRAIT_CRACKHEAD, TRAIT_GENERIC)

@@ -55,7 +55,7 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	else
 		switch(H.patron?.type)
-			if(/datum/patron/divine/eora) //Eoran loadouts
+			if(/datum/patron/divine/viiritri) //Eoran loadouts
 				shoes = /obj/item/clothing/shoes/roguetown/sandals
 				armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/random
 				wrists = /obj/item/clothing/neck/roguetown/psicross/eora

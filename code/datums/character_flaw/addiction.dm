@@ -148,17 +148,17 @@
 	if(!H.wear_neck)
 		var/obj/item/clothing/neck/roguetown/psicross/crosstype
 		switch(H.patron)
-			if(/datum/patron/divine/astrata)
+			if(/datum/patron/divine/elysius)
 				crosstype = /obj/item/clothing/neck/roguetown/psicross/astrata
-			if(/datum/patron/divine/noc)
+			if(/datum/patron/divine/lune)
 				crosstype = /obj/item/clothing/neck/roguetown/psicross/noc
-			if(/datum/patron/divine/dendor)
+			if(/datum/patron/divine/sylvarn)
 				crosstype = /obj/item/clothing/neck/roguetown/psicross/dendor
-			if(/datum/patron/divine/necra)
+			if(/datum/patron/divine/yamais)
 				crosstype = /obj/item/clothing/neck/roguetown/psicross/necra
-			if(/datum/patron/divine/ravox)
+			if(/datum/patron/divine/minhur)
 				crosstype = /obj/item/clothing/neck/roguetown/psicross/ravox
-			if(/datum/patron/divine/eora)
+			if(/datum/patron/divine/viiritri)
 				crosstype = /obj/item/clothing/neck/roguetown/psicross/eora
 			else
 				if(prob(1))

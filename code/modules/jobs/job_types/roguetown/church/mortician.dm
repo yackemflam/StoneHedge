@@ -18,7 +18,7 @@
 	max_pq = null
 
 /datum/outfit/job/roguetown/undertaker
-	allowed_patrons = list(/datum/patron/divine/necra)
+	allowed_patrons = list(/datum/patron/divine/yamais)
 
 /datum/outfit/job/roguetown/undertaker/pre_equip(mob/living/carbon/human/H)//Updated to have medium armor, because they'll be at odds with Necromancers and likely be targeted by antags.
 	..()

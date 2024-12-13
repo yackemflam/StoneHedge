@@ -794,7 +794,7 @@
 	item_state = "graggarsword"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "graggar's sword"
+	name = "nyrnhe's sword"
 	desc = "A twisted sword cursed by Graggar, the tendrils running along its blade squirm in anticipation of bloodshed."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE

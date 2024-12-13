@@ -50,7 +50,7 @@
 		H.change_stat("perception", 1)
 	else
 		switch(H.patron?.type)
-			if(/datum/patron/divine/eora) //Eoran loadouts
+			if(/datum/patron/divine/viiritri) //Eoran loadouts
 				armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy/black
 				pants = pick(/obj/item/clothing/under/roguetown/tights/stockings/silk/black, /obj/item/clothing/under/roguetown/tights/stockings/fishnet/black)
 				head  = /obj/item/clothing/head/peaceflower

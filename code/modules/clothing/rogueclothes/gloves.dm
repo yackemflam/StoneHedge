@@ -127,7 +127,7 @@
 	sewrepair = FALSE
 
 /obj/item/clothing/gloves/roguetown/graggaritegauntletsleader
-	name = "graggarite leader gauntlets"
+	name = "nyrnheite leader gauntlets"
 	desc = "A heavy set of plate gauntlets which provide excellent protection. Sharp."
 	icon_state = "graggaritegauntletsleader"
 	item_state = "graggaritegauntletsleader"
@@ -176,7 +176,7 @@
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/gloves/roguetown/graggaritegauntlets
-	name = "graggarite gauntlets"
+	name = "nyrnheite gauntlets"
 	desc = "Gauntlets worn by Graggarite fanatics."
 	armor = list("blunt" = 60, "slash" = 100, "stab" = 80, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT)

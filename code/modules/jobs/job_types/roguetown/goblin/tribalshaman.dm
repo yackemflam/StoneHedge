@@ -18,7 +18,7 @@
 /datum/outfit/job/roguetown/tribalshaman
 	name = "Tribal Shaman"
 	jobtype = /datum/job/roguetown/tribalshaman
-	allowed_patrons = list(/datum/patron/divine/dendor)
+	allowed_patrons = list(/datum/patron/divine/sylvarn)
 
 /obj/effect/proc_holder/spell/invoked/heal/shaman
 	name = "Mend Wounds"

@@ -9,7 +9,7 @@
 	category_tags = list(CTAG_CHALLENGE)
 
 /datum/outfit/job/roguetown/adventurer/nudist
-	allowed_patrons = list(/datum/patron/divine/dendor)
+	allowed_patrons = list(/datum/patron/divine/sylvarn)
 
 /datum/outfit/job/roguetown/adventurer/nudist/pre_equip(mob/living/carbon/human/H)
 	..()

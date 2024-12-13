@@ -35,7 +35,7 @@
 	loot = list(/obj/item/organ/eyes/mimic, /obj/item/organ/tongue/mimic, /obj/effect/gibspawner/human/bodypartless, /obj/structure/closet/crate/chest/reward)
 	dodgetime = 0
 //	stat_attack = UNCONSCIOUS
-	patron = /datum/patron/inhumen/zizo		//So they can be hurt by holy fire/healing
+	patron = /datum/patron/inhumen/levishth		//So they can be hurt by holy fire/healing
 
 
 /obj/item/organ/eyes/mimic

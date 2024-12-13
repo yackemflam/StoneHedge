@@ -12,7 +12,7 @@
 	category_tags = list(CTAG_ANTAG, CTAG_BANDIT)
 
 /datum/outfit/job/roguetown/adventurer/bandit
-	allowed_patrons = list(/datum/patron/inhumen/matthios)
+	allowed_patrons = list(/datum/patron/inhumen/thief)
 
 /datum/outfit/job/roguetown/adventurer/bandit/pre_equip(mob/living/carbon/human/H)
 	..()

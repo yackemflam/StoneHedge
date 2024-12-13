@@ -8,7 +8,7 @@
 		"RAAAAAAAAAAAGH!!!!",
 	)
 
-/datum/patron/inhumen/zizo
+/datum/patron/inhumen/levishth
 	name = "Levishth"
 	domain = "God of Chaos and Lies; the great manipulator. He who covets power for the sake of power and nothing else."
 	desc = "Discovered long ago, Levisth gives power to the weak who do his bidding,elevating them in time. There are many tales of those who serve the greatsnake, all which eventuate with tales of how it yearns to gain power over all things, jealous of it's 'rivals' the other gods."
@@ -42,7 +42,7 @@
 		"Nyrnhe, witness my anguish! Witness my wounds!",
 	)
 
-/datum/patron/inhumen/matthios		// Removing 'class warfare' language in favor of 'uncivilized v civilized' language.
+/datum/patron/inhumen/thief		// Removing 'class warfare' language in favor of 'uncivilized v civilized' language.
 	name = "The Thief"
 	domain = "Thievery. Cunning. "
 	desc = "Man turned God, the 'Giver' 'The Thief' stole fire from 'Elysius' and gave it to primitive Mortal Kin huddled in darkness and demands the riches flame creates in sacrifice."
@@ -59,7 +59,7 @@
 		"FACELESS LORD, STEAL AWAY MY SORROWS!",
 	)
 
-/datum/patron/inhumen/baotha
+/datum/patron/inhumen/sacrifice
 	name = "The Sacrifice"
 	domain = "Void, Loss, Absence, Nihility."
 	desc = "The Sacrifice wishes to take from you, and for you to give it willingly. You will never get it back if you go too far. But you will always have the sacrifice."

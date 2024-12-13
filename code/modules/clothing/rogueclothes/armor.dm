@@ -268,7 +268,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/graggaritearmorleader
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "graggarite leader cuirass"
+	name = "nyrnheite leader cuirass"
 	desc = "Armor worn by leaders of northmen warbands. A status symbol if ever there was one."
 	body_parts_covered = CHEST|VITALS
 	icon_state = "graggaritechestplateleader"
@@ -664,7 +664,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/graggaritearmor
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "graggarite armor"
+	name = "nyrnheite armor"
 	desc = "Armor worn by Graggarite fanatics in battle."
 	icon_state = "graggaritechestplate"
 	item_state = "graggaritechestplate"

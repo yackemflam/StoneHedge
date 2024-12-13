@@ -15,7 +15,7 @@
 	..()
 	if(H.gender == MALE)
 		switch(H.patron?.type)
-			if(/datum/patron/divine/eora)
+			if(/datum/patron/divine/viiritri)
 				head  = /obj/item/clothing/head/peaceflower
 			else
 		pants = /obj/item/clothing/under/roguetown/trou
@@ -37,7 +37,7 @@
 
 	else
 		switch(H.patron?.type)
-			if(/datum/patron/divine/eora)
+			if(/datum/patron/divine/viiritri)
 				head  = /obj/item/clothing/head/peaceflower
 			else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen

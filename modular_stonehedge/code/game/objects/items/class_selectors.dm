@@ -145,20 +145,20 @@
 				inventory_items += /obj/item/clothing/under/roguetown/chainlegs
 			var/datum/devotion/C = new /datum/devotion(H, H.patron)
 			switch(H.patron?.type)
-				if(/datum/patron/divine/astrata)
+				if(/datum/patron/divine/elysius)
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/astrata
-				if(/datum/patron/inhumen/zizo)
+				if(/datum/patron/inhumen/levishth)
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/skull
-				if(/datum/patron/divine/noc)
+				if(/datum/patron/divine/lune)
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/noc
-				if(/datum/patron/divine/dendor)
+				if(/datum/patron/divine/sylvarn)
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/dendor
 					H.mind.adjust_skillrank_up_to(/datum/skill/magic/druidic, 2, TRUE) // enough to craft druid mask, at least
-				if(/datum/patron/divine/necra)
+				if(/datum/patron/divine/yamais)
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/necra
-				if(/datum/patron/divine/pestra)
+				if(/datum/patron/divine/hermeir)
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/pestra
-				if(/datum/patron/divine/eora) //Eora content from Stonekeep
+				if(/datum/patron/divine/viiritri) //Eora content from Stonekeep
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross/eora
 				if(/datum/patron/divine/jayx)
 					inventory_items += /obj/item/clothing/neck/roguetown/psicross
