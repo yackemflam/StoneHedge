@@ -69,21 +69,6 @@
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 
-
-/obj/item/clothing/gloves/roguetown/angle
-	name = "heavy leather gloves"
-	desc = "A thick pair of leather gloves."
-	icon_state = "angle"
-	armor = list("blunt" = 50, "slash" = 25, "stab" = 40, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT)
-	resistance_flags = null
-	blocksound = SOFTHIT
-	max_integrity = 100
-	blade_dulling = DULLING_BASHCHOP
-	break_sound = 'sound/foley/cloth_rip.ogg'
-	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	salvage_result = /obj/item/natural/fur
-
 /obj/item/clothing/gloves/roguetown/chain
 	name = "chain gauntlets"
 	desc = "Gauntlets made with steel interlinking rings, provides adequate protection against slashing attacks."

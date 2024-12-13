@@ -171,7 +171,7 @@
 			head = /obj/item/clothing/head/roguetown/bardhat
 			pants = /obj/item/clothing/under/roguetown/trou/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-			gloves = /obj/item/clothing/gloves/roguetown/angle
+			gloves = /obj/item/clothing/gloves/roguetown/leather/angle
 			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 			cloak = /obj/item/clothing/cloak/half

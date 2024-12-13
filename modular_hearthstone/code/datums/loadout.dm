@@ -237,7 +237,7 @@ GLOBAL_LIST_EMPTY(loadout_items)
 //HANDS
 /datum/loadout_item/lgloves
 	name = "Heavy Leather Gloves"
-	path = /obj/item/clothing/gloves/roguetown/angle
+	path = /obj/item/clothing/gloves/roguetown/leather/angle
 
 /datum/loadout_item/igloves
 	name = "Iron Chain Gloves"

@@ -48,5 +48,11 @@
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	salvage_result = /obj/item/natural/fur
 
+/obj/item/clothing/gloves/roguetown/leather/angle/advanced
+	name = "hardened heavy leather gloves"
+	desc = "A thick pair of leather gloves, with added protection."
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_SMASH)
+	armor = list("blunt" = 60, "slash" = 50, "stab" = 50, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 /obj/item/clothing/gloves/roguetown/leather/angle/leper
 	color = "#cf9100"
