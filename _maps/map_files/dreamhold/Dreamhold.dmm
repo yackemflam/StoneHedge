@@ -10289,6 +10289,8 @@
 /obj/item/signal_horn/blasting{
 	name = "Enchanted Horn"
 	},
+/obj/structure/closet/crate/chest/dungeon/mimic,
+/obj/effect/spawner/trap,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "htw" = (
@@ -12566,9 +12568,11 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/river)
 "jdv" = (
-/obj/item/clothing/head/roguetown/helmet/heavy/dwarfhelm,
-/turf/closed/mineral/random/rogue/high,
-/area/rogue/under/cavewet)
+/obj/structure/flora/roguegrass,
+/turf/open/water/swamp/deep,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
+	})
 "jdO" = (
 /obj/machinery/light/rogue/lanternpost,
 /turf/open/floor/rogue/grass,
@@ -12978,10 +12982,6 @@
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/shelter/town)
-"juB" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/playersentry,
-/turf/open/floor/rogue/greenstone,
-/area/rogue/under/cavewet)
 "juO" = (
 /obj/structure/closet/crate/roguecloset/inn/south,
 /obj/item/dildo/silver,
@@ -13460,6 +13460,7 @@
 /obj/item/scomstone/bad,
 /obj/item/scomstone/bad,
 /obj/item/scomstone/bad,
+/obj/effect/spawner/trap,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "jJX" = (
@@ -18479,10 +18480,10 @@
 	name = "Shrine of Lune"
 	})
 "nmt" = (
-/obj/effect/landmark/start/barkeep,
 /mob/living/simple_animal/pet/cat{
 	name = "Smudge"
 	},
+/obj/effect/landmark/start/barkeeper,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -19265,13 +19266,6 @@
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
 	name = "Ravenloft Academy"
-	})
-"nNj" = (
-/obj/effect/landmark/start/barkeeper,
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
 	})
 "nNz" = (
 /obj/effect/decal/border/stone/stonepattern1,
@@ -22032,7 +22026,7 @@
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/item/rogueweapon/sword/silver/sabre/elf,
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish,
-/obj/item/roguekey/roomhunt,
+/obj/item/reagent_containers/glass/bottle/rogue/manapot,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -22778,8 +22772,10 @@
 	first_time_text = "The Twilight Woods"
 	})
 "qmt" = (
+/obj/structure/bed/rogue/inn/double,
+/obj/item/bedsheet/rogue/fabric_double,
 /obj/effect/landmark/start/innkeep,
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
@@ -26565,6 +26561,7 @@
 /obj/item/roguegem/violet,
 /obj/item/roguegem/red,
 /obj/item/scrying,
+/obj/effect/spawner/trap,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "sVJ" = (
@@ -26844,8 +26841,11 @@
 	name = "Grove"
 	})
 "tfK" = (
-/turf/closed/wall/mineral/rogue/stone/moss,
-/area/rogue/under/cavewet)
+/obj/structure/flora/newtree,
+/turf/open/water/swamp/deep,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
+	})
 "tfW" = (
 /obj/effect/wisp,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -27271,7 +27271,7 @@
 	})
 "trT" = (
 /obj/machinery/light/rogue/torchholder/c,
-/obj/effect/landmark/start/innkeep,
+/obj/effect/landmark/start/barkeep,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -29605,8 +29605,7 @@
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/shelter/town)
 "vdm" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/playersentry,
-/turf/open/floor/rogue/greenstone,
+/turf/closed/mineral/rogue/bedrock,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -31237,7 +31236,9 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
 /obj/item/reagent_containers/glass/bottle/rogue/manapot,
-/obj/item/reagent_containers/glass/bottle/rogue/manapot,
+/obj/item/roguekey/roomhunt{
+	name = "Tavern Owner Key"
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -32670,6 +32671,7 @@
 /obj/structure/closet/crate/chest/dungeon/treasure,
 /obj/item/roguegem/blue,
 /obj/machinery/light/rogue/wallfire/candle/blue,
+/obj/effect/spawner/trap,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town/vault)
 "xAs" = (
@@ -54223,7 +54225,7 @@ nhM
 nhM
 nhM
 nhM
-jdv
+qMz
 qMz
 qMz
 qMz
@@ -54422,8 +54424,8 @@ nhM
 nhM
 nhM
 nhM
-tfK
-tfK
+nhM
+nhM
 nhM
 nhM
 nhM
@@ -54623,10 +54625,10 @@ gTO
 nhM
 nhM
 nhM
-tfK
-juB
-juB
-tfK
+nhM
+nhM
+nhM
+nhM
 nhM
 nhM
 nhM
@@ -56042,7 +56044,7 @@ vFo
 sVs
 tTg
 vdm
-vxU
+vdm
 nhM
 nhM
 nhM
@@ -56243,8 +56245,8 @@ rTO
 rTO
 rTO
 rTO
-vxU
-vxU
+vdm
+vdm
 nhM
 nhM
 nhM
@@ -104168,7 +104170,7 @@ sDr
 sDr
 sDr
 sDr
-xhU
+hhG
 eHG
 eHG
 ilr
@@ -104367,7 +104369,7 @@ sDr
 tyj
 tyj
 tyj
-xbF
+tfK
 hsV
 hhG
 hsV
@@ -105372,7 +105374,7 @@ gBs
 hhG
 hhG
 miB
-oZS
+jdv
 tNE
 tNE
 rJW
@@ -159818,7 +159820,7 @@ cWL
 fNk
 teJ
 fSQ
-kjo
+xSm
 xSm
 wnN
 tar
@@ -160222,7 +160224,7 @@ fNk
 hDC
 fSQ
 xBO
-qmt
+kjo
 xSm
 jcH
 tar
@@ -160626,7 +160628,7 @@ fNk
 cKA
 fSQ
 iMb
-nNj
+xSm
 xSm
 jcH
 tar
@@ -193950,7 +193952,7 @@ uMy
 wIe
 qnX
 bCp
-eHz
+qmt
 tJb
 tJb
 wva
