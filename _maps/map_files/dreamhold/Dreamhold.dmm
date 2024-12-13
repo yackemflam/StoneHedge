@@ -12568,11 +12568,9 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/river)
 "jdv" = (
-/obj/structure/flora/roguegrass,
-/turf/open/water/swamp/deep,
-/area/rogue/outdoors/woods{
-	first_time_text = "The Twilight Woods"
-	})
+/obj/effect/spawner/trap,
+/turf/closed/mineral/random/rogue/high,
+/area/rogue/under/cavewet/bogcaves)
 "jdO" = (
 /obj/machinery/light/rogue/lanternpost,
 /turf/open/floor/rogue/grass,
@@ -12982,6 +12980,14 @@
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/shelter/town)
+"juB" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/item/paper/quest/lich{
+	name = "paper- 'Treasury Notes'";
+	info = "The chests in the vault are warded, and some might be mimics. DO NOT OPEN THEM WITHOUT BODYGUARDS!"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/town/vault)
 "juO" = (
 /obj/structure/closet/crate/roguecloset/inn/south,
 /obj/item/dildo/silver,
@@ -19267,6 +19273,12 @@
 	first_time_text = "Ravenloft Academy";
 	name = "Ravenloft Academy"
 	})
+"nNj" = (
+/obj/structure/flora/newtree,
+/turf/open/water/swamp/deep,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
+	})
 "nNz" = (
 /obj/effect/decal/border/stone/stonepattern1,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -25445,11 +25457,6 @@
 /area/rogue/indoors/town/tavern)
 "seH" = (
 /obj/structure/table/vtable/v2,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -26841,7 +26848,7 @@
 	name = "Grove"
 	})
 "tfK" = (
-/obj/structure/flora/newtree,
+/obj/structure/flora/roguegrass,
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
@@ -45319,7 +45326,7 @@ amU
 bLQ
 amU
 amU
-cAf
+jdv
 cAf
 bLQ
 bLQ
@@ -55637,7 +55644,7 @@ nhM
 rTO
 jJW
 vFo
-vFo
+juB
 dYz
 kAr
 umc
@@ -104369,7 +104376,7 @@ sDr
 tyj
 tyj
 tyj
-tfK
+nNj
 hsV
 hhG
 hsV
@@ -105374,7 +105381,7 @@ gBs
 hhG
 hhG
 miB
-jdv
+tfK
 tNE
 tNE
 rJW
