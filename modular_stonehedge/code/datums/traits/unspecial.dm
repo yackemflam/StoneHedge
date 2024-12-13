@@ -331,16 +331,16 @@
 
 /datum/quirk/renaissanceman/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 3, TRUE)
 
 /datum/quirk/mastercraftsmen // Named this way to absorb the old quirk. Keeps old saves cleaner without them needing to reset quirks.
 	name = "Practiced Crafter"
