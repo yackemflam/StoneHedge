@@ -86,7 +86,7 @@
 ///   Common Curses   ///
 //////////////////////
 
-/datum/curse/healing
+/datum/curse/astrata
 	name = "Healer's Curse"
 	description = "Healing miracles have no effect on me."
 	trait = TRAIT_ASTRATA_CURSE
