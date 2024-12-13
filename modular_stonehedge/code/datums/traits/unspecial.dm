@@ -327,20 +327,20 @@
 /datum/quirk/renaissanceman
 	name = "Jack of All Trades" // Former equivalent used to give THREE. This means you never had to interact with anyone, EVER, with one cheap quirk. BAD for RP and interactions.
 	desc = "In my youth, I've decided I'd get a grasp on every trade, and pursued all 10 arts of craftsmanship. I have fundamental knowledge on all of them, but could use more practice..."
-	value = 3 // Instantly skip the annoying level 0 phase on all craftsmen. But you gotta grind to get "good".
+	value = 3 // Instantly skip the annoying level 0 phase on all craftsmen. But you gotta grind to get "good". 1 is awful so 2 is fine.
 
 /datum/quirk/renaissanceman/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 1, TRUE) // This should still be enough to not fumble gear repair. Find your own hammer; you're not a smith.
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 1, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 2, TRUE)
 
 /datum/quirk/mastercraftsmen // Named this way to absorb the old quirk. Keeps old saves cleaner without them needing to reset quirks.
 	name = "Practiced Crafter"
@@ -369,8 +369,8 @@
 
 /datum/quirk/mastersmith
 	name = "Practiced Smith"
-	desc = "I have a knack for tool, weapon, and armor smithing and maintenance. I've stashed some smithing supplies to get myself started."
-	value = 3 // Armor-making. Weapon-making. Everyone wants the gamer gear. Most desired, so costs the most. 4 would be funny, but a little too cruel.
+	desc = "I have a knack for tool, weapon, and armor smithing and maintenance." //play a proper smith if you want starting smith gear.
+	value = 2 // Armor-making. Weapon-making. Everyone wants the gamer gear.
 
 /datum/quirk/mastersmith/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -378,10 +378,6 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE)
-	H.mind.special_items["Hammer"] = /obj/item/rogueweapon/hammer/claw // works same as normal hammer.
-	H.mind.special_items["Tongs"] = /obj/item/rogueweapon/tongs
-	H.mind.special_items["Coal"] = /obj/item/rogueore/coal
-
 /datum/quirk/bleublood
 	name = "Noble Lineage"
 	desc = "I am of noble blood."
