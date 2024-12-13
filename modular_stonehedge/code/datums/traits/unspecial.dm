@@ -381,7 +381,7 @@
 
 /datum/quirk/mastersmith/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/sewing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)//Being skilled with a needle offers some overlap with stitching up peoples' wounds. Also, weaving isn't a skill anymore so...
 	H.mind.special_items["Scissors"] = /obj/item/rogueweapon/huntingknife/scissors/steel
