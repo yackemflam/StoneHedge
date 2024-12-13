@@ -329,7 +329,7 @@
 /datum/quirk/mastercraftsmen // Named this way to absorb the old quirk. Keeps old saves cleaner without them needing to reset quirks.
 	name = "Jack of All Trades"
 	desc = "I've always had steady hands. I'm experienced enough in most fine craftsmanship to make a career out of it, if I can procure my own tools."
-	value = 3 // 
+	value = 3 //
 
 /datum/quirk/mastercraftsmen/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -379,7 +379,7 @@
 	desc = "I'm particularly skilled in working with needle, thread, and loom, and I've got needle, thread, and scissors hidden away."
 	value = 1
 
-/datum/quirk/mastersmith/on_spawn()
+/datum/quirk/mastertailor/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
