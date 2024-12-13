@@ -71,6 +71,14 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Noble Guest",
 ))
 
+GLOBAL_LIST_INIT(grove_positions, list(
+	"Great Druid",
+	"Hedge Warden",
+	"Druid",
+	"Hedge Knight",
+	"Ovate",
+))
+
 GLOBAL_LIST_INIT(courtier_positions, list(
 	"Physician",
 	"Harlequin",
@@ -79,8 +87,6 @@ GLOBAL_LIST_INIT(courtier_positions, list(
 
 GLOBAL_LIST_INIT(garrison_positions, list(
 	"Watchman",
-	"Hedge Knight",
-	"Hedgemaster",
 	"Royal Guard",
 	"Beastmaster",
 	"Gatemaster",
@@ -94,7 +100,6 @@ GLOBAL_LIST_INIT(church_positions, list(
 	"Gravesinger",
 	"Temple Paladin",
 	"Grandmaster",
-	"Druid",
 ))
 
 GLOBAL_LIST_INIT(academy_positions, list(

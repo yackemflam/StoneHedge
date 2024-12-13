@@ -1,30 +1,29 @@
-/datum/job/roguetown/druid
-	title = "Druid"
-	f_title = "Druidess"
-	flag = DRUID
-	department_flag = CHURCHMEN
+/datum/job/roguetown/greatdruid
+	title = "Great Druid"
+	f_title = "Great Druidess"
+	flag = GREATDRUID
+	department_flag = GROVE
 	faction = "Station"
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 1
+	spawn_positions = 1
 
 	allowed_sexes = list(MALE, FEMALE)
 	spells = list (/obj/effect/proc_holder/spell/targeted/shapeshift,/obj/effect/proc_holder/spell/aoe_turf/conjure/Wolf,/obj/effect/proc_holder/spell/invoked/infestation5e,/obj/effect/proc_holder/spell/self/primalsavagery5e,)
 	allowed_races = RACES_ALL_KINDSPLUS
-	allowed_patrons = ALL_DIVINE_PATRONS //gets set to natureboi on the outfit anyways lol
-	outfit = /datum/outfit/job/roguetown/druid
-	tutorial = "You have always been drawn to the wild, and the wild drawn to you. When your calling came, it was from Nature and it's deities. You act as a medium between the natural and magickal worlds, often caught between it and the changing pace of society. The people still depend on you for wisdom and balance in this city; and it is often up to you and the various orders who survey the woodland realm to maintain any form of law: be it the lands or the peoples."
+	outfit = /datum/outfit/job/roguetown/greatdruid
+	tutorial = "As the leader of the Breuddwyd Grove, you are both a spiritual guide and the commander of its guardians. Your connection to Nature and Sylvarn has elevated you to this position of authority, where you maintain order through both mystical wisdom and martial force. You are responsible for defending the Town and enforcing its laws, leading the Grove's rangers and druids in protecting both the wilderness and civilization. While you bridge the gap between the natural and magical worlds, your primary duty is to ensure peace and justice prevail in both the town and the woodland paths."
 
-	display_order = JDO_DRUID
+	display_order = JDO_GREATDRUID
 	give_bank_account = FALSE
-	min_pq = 10
+	min_pq = 15
 	max_pq = null
 
-/datum/outfit/job/roguetown/druid
-	name = "Druid"
-	jobtype = /datum/job/roguetown/druid
+/datum/outfit/job/roguetown/greatdruid
+	name = "Great Druid"
+	jobtype = /datum/job/roguetown/greatdruid
 	allowed_patrons = list(/datum/patron/divine/sylvarn)
 
-/datum/outfit/job/roguetown/druid/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/greatdruid/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
