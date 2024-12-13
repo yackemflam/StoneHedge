@@ -41,14 +41,14 @@
 
 /datum/quirk/curseofcain
 	name = "Flawed Immortality"
-	desc = "I don't need to eat or sleep anymore... Is this normal?"
+	desc = "I don't need to eat, drink water, or breathe anymore, but I lack the endless stamina and bloodthirst of a true vampyre"
 	value = 4
 
 /datum/quirk/curseofcain/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NOHUNGER, QUIRK_TRAIT)
-	ADD_TRAIT(H, TRAIT_NOSLEEP, QUIRK_TRAIT)
-	H.change_stat("endurance", -1)
+	ADD_TRAIT(H, TRAIT_NOBREATH, QUIRK_TRAIT)
+	H.change_stat("endurance", 1)
 
 /datum/quirk/deadened
 	name = "Deadened"
@@ -249,12 +249,13 @@
 
 /datum/quirk/bookworm
 	name = "Bookworm"
-	desc = "I love books and I became quite skillfull at reading and writing."
-	value = 1
+	desc = "I love books and I became quite skillfull at reading and writing. What's more, my mind is much sharper for the experience."
+	value = 2
 
 /datum/quirk/bookworm/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 4, TRUE)
+	H.change_stat("intelligence", 2)
 
 /datum/quirk/arsonist
 	name = "Arsonist"
@@ -295,14 +296,14 @@
 /datum/quirk/thief/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 4, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/lockpicking, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/lockpicking, 4, TRUE)
 	H.mind.special_items["Lockpicks"] = /obj/item/lockpickring/mundane
 
 
 /datum/quirk/languagesavant
 	name = "Polyglot"
-	desc = "I have always picked up on languages easily, I know many languages."
-	value = 3
+	desc = "I have always picked up on languages easily. I know the languages of all the races found in this land, and my flexible tongue is certainly useful in the bedchamber."
+	value = 2//Believe it or not, this is a really niche quirk with very few actual use-cases.
 
 /datum/quirk/languagesavant/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -314,6 +315,7 @@
 	H.grant_language(/datum/language/beast)
 	H.grant_language(/datum/language/draconic)
 	H.grant_language(/datum/language/faexin)
+	ADD_TRAIT(H, TRAIT_GOODLOVER, QUIRK_TRAIT)
 
 /datum/quirk/civilizedbarbarian
 	name = "Tavern Brawler"
@@ -324,12 +326,12 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_CIVILIZEDBARBARIAN, TRAIT_GENERIC) //Need to make trait improve hitting people with chairs, mugs, goblets.
 
-/datum/quirk/renaissanceman
-	name = "Jack of All Trades" // Former equivalent used to give THREE. This means you never had to interact with anyone, EVER, with one cheap quirk. BAD for RP and interactions.
-	desc = "In my youth, I've decided I'd get a grasp on every trade, and pursued all 10 arts of craftsmanship. I have fundamental knowledge on all of them, but could use more practice..."
-	value = 3 // Instantly skip the annoying level 0 phase on all craftsmen. But you gotta grind to get "good". 1 is awful so 2 is fine.
+/datum/quirk/mastercraftsmen // Named this way to absorb the old quirk. Keeps old saves cleaner without them needing to reset quirks.
+	name = "Jack of All Trades"
+	desc = "I've always had steady hands. I'm experienced enough in most fine craftsmanship to make a career out of it, if I can procure my own tools."
+	value = 3 // 
 
-/datum/quirk/renaissanceman/on_spawn()
+/datum/quirk/mastercraftsmen/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 3, TRUE)
@@ -342,22 +344,9 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 3, TRUE)
 
-/datum/quirk/mastercraftsmen // Named this way to absorb the old quirk. Keeps old saves cleaner without them needing to reset quirks.
-	name = "Practiced Crafter"
-	desc = "I've always had steady hands. I'm experienced enough in most fine craftsmanship to make a career out of it."
-	value = 2 // Has the most skills (by a fair bit) but no ultra gamer options except arguably sewing.
-
-/datum/quirk/mastercraftsmen/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
-
 /datum/quirk/masterbuilder
 	name = "Practiced Builder"
-	desc = "I have experience in putting up large structures and foundations for buildings."
+	desc = "I have experience in putting up large structures and foundations for buildings. I can even use a sawmill if I can find one, and I have a handcart and two sacks hidden away for transporting my construction materials."
 	value = 1 // I have a lot of respect for people who actually bother making buildings that will be deleted within an hour or two.
 
 /datum/quirk/masterbuilder/on_spawn()
@@ -365,19 +354,40 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE) // Needed to install things like levers in a house. This unfortunately means construction workers can make illegal firearms.
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE) // Pretty sure some crafting stations use this. Also stone axes and whatever other basic tools they need.
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE) // Pretty sure some crafting stations use this. Also stone axes and whatever other basic tools they need.
+	H.mind.special_items["Handcart"] = /obj/structure/handcart //TO-DO: Implement sawmill and the trait to use it. Giving them a handcart to move materials with.
+	H.mind.special_items["Sack 1"] = /obj/item/storage/roguebag
+	H.mind.special_items["Sack 2"] = /obj/item/storage/roguebag
 
 /datum/quirk/mastersmith
 	name = "Practiced Smith"
-	desc = "I have a knack for tool, weapon, and armor smithing and maintenance." //play a proper smith if you want starting smith gear.
-	value = 2 // Armor-making. Weapon-making. Everyone wants the gamer gear.
+	desc = "I am a metalworker by trade, and I have the tools for my practice stashed away." //play a proper smith if you want starting smith gear.
+	value = 1 // Armor-making. Weapon-making. Everyone wants the gamer gear.
 
 /datum/quirk/mastersmith/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.special_items["Hammer"] = /obj/item/rogueweapon/hammer/claw // works same as normal hammer.
+	H.mind.special_items["Tongs"] = /obj/item/rogueweapon/tongs
+	H.mind.special_items["Coal"] = /obj/item/rogueore/coal
+
+/datum/quirk/mastertailor
+	name = "Practiced Tailor"
+	desc = "I'm particularly skilled in working with needle, thread, and loom, and I've got needle, thread, and scissors hidden away."
+	value = 1
+
+/datum/quirk/mastersmith/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)//Being skilled with a needle offers some overlap with stitching up peoples' wounds. Also, weaving isn't a skill anymore so...
+	H.mind.special_items["Scissors"] = /obj/item/rogueweapon/huntingknife/scissors/steel
+	H.mind.special_items["Needle"] = /obj/item/needle
+	H.mind.special_items["Thread"] = /obj/item/natural/bundle/fibers/full
+
 /datum/quirk/bleublood
 	name = "Noble Lineage"
 	desc = "I am of noble blood."
