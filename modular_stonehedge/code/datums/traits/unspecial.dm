@@ -324,26 +324,63 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_CIVILIZEDBARBARIAN, TRAIT_GENERIC) //Need to make trait improve hitting people with chairs, mugs, goblets.
 
-/datum/quirk/mastercraftsmen
-	name = "Master Craftsman"
-	desc = "In my youth, I've decided I'd get a grasp on every trade, and pursued the 10 arts of the craft. I am passable at each of them."
-	value = 3 // I want to keep this low even tho it is strong. but this will actually get people to smith, craft, fucking RP and HOPEFULLY do something besides spaceman sideways.
+/datum/quirk/renaissanceman
+	name = "Jack of All Trades" // Former equivalent used to give THREE. This means you never had to interact with anyone, EVER, with one cheap quirk. BAD for RP and interactions.
+	desc = "In my youth, I've decided I'd get a grasp on every trade, and pursued all 10 arts of craftsmanship. I have fundamental knowledge on all of them, but could use more practice..."
+	value = 3 // Instantly skip the annoying level 0 phase on all craftsmen. But you gotta grind to get "good".
+
+/datum/quirk/renaissanceman/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 1, TRUE) // This should still be enough to not fumble gear repair. Find your own hammer; you're not a smith.
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 1, TRUE)
+
+/datum/quirk/mastercraftsmen // Named this way to absorb the old quirk. Keeps old saves cleaner without them needing to reset quirks.
+	name = "Practiced Crafter"
+	desc = "I've always had steady hands. I'm experienced enough in most fine craftsmanship to make a career out of it."
+	value = 2 // Has the most skills (by a fair bit) but no ultra gamer options except arguably sewing.
 
 /datum/quirk/mastercraftsmen/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE) // these used to be 3, dear god why would you do that, makes all specialist roles redundant...
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 3, TRUE) //lets be real you are taking this for smithing only.
-	H.mind.special_items["Hammer"] = /obj/item/rogueweapon/hammer/claw //works same as normal hammer. for smithing
+
+/datum/quirk/masterbuilder
+	name = "Practiced Builder"
+	desc = "I have experience in putting up large structures and foundations for buildings."
+	value = 1 // I have a lot of respect for people who actually bother making buildings that will be deleted within an hour or two.
+
+/datum/quirk/masterbuilder/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE) // Needed to install things like levers in a house. This unfortunately means construction workers can make illegal firearms.
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE) // Pretty sure some crafting stations use this. Also stone axes and whatever other basic tools they need.
+
+/datum/quirk/mastersmith
+	name = "Practiced Smith"
+	desc = "I have a knack for tool, weapon, and armor smithing and maintenance. I've stashed some smithing supplies to get myself started."
+	value = 3 // Armor-making. Weapon-making. Everyone wants the gamer gear. Most desired, so costs the most. 4 would be funny, but a little too cruel.
+
+/datum/quirk/mastersmith/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE)
+	H.mind.special_items["Hammer"] = /obj/item/rogueweapon/hammer/claw // works same as normal hammer.
 	H.mind.special_items["Tongs"] = /obj/item/rogueweapon/tongs
-	H.mind.special_items["Coal"] = /obj/item/rogueore/coal // ya get one kid, make an ore furnace and smelt logs for the rest.
+	H.mind.special_items["Coal"] = /obj/item/rogueore/coal
 
 /datum/quirk/bleublood
 	name = "Noble Lineage"
