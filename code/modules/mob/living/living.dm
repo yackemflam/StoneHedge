@@ -187,13 +187,13 @@
 
 			var/mob/living/L = M
 
-			var/self_points = FLOOR((STACON + STASTR + mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
+			var/self_points = FLOOR((STAEND + STASTR + mind.get_skill_level(/datum/skill/misc/athletics))/2, 1) //Constitution had too many quirk bonuses associated.
 			var/target_points = FLOOR((L.STAEND + L.STASTR + L.mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
 
 			switch(sprint_distance)
 				// Point blank
 				if(0 to 1)
-					self_points -= 4
+					self_points -= 5
 				// One to two tiles between people - this is the main combat case.
 				if(2 to 3)
 					self_points -= 2
@@ -206,8 +206,11 @@
 				self_points += 2
 
 			// Ratwood does not have artificer, but we do. Numbers are basically the same so I'm keeping the old bonus.
+			// Being prone here gets you sneak attacked for 2x to 8x damage, so Charger is +2.
 			if(HAS_TRAIT(src, TRAIT_CHARGER))
-				self_points += 3
+				self_points += 2
+			if(HAS_TRAIT(L, TRAIT_CHARGER))
+				target_points += 2
 
 			// Ratwood has RNG here. No thanks.
 
@@ -1051,7 +1054,7 @@
 		log_combat(src, pulledby, "resisted grab")
 		resist_grab()
 		return
-	
+
 	// CIT CHANGE - climbing out of a gut.
 	if(vore_process_resist())
 		//Sure, give clickdelay for anti spam. shouldn't be combat voring anyways.
@@ -1261,10 +1264,10 @@
 
 	if(isliving(who))
 		var/mob/living/L = who
-		if(L.cmode && L.mobility_flags & MOBILITY_STAND)
+		if(L.cmode && (L.mobility_flags & MOBILITY_STAND) && L.client) //cmode, standing and cliented mobs.
 			to_chat(src, span_warning("I can't take \the [what] off, they are too tense!"))
 			return
-		if(!L.key && mind && L.stat != DEAD) //basically ssd probably
+		if(L.ckey && !client && L.stat != DEAD) //basically ssd probably
 			to_chat(src, span_warning("The fog prevents me from taking \the [what]..."))
 			return
 		if(L.surrendering)

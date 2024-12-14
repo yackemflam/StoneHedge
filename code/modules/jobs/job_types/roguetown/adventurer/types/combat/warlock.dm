@@ -258,7 +258,7 @@
 
 	head = /obj/item/clothing/head/roguetown/roguehood/shalal
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-	gloves = /obj/item/clothing/gloves/roguetown/angle
+	gloves = /obj/item/clothing/gloves/roguetown/leather/angle
 	beltr = /obj/item/wisp_lantern
 	beltl = /obj/item/rogueweapon/sword/sabre
 	belt = /obj/item/storage/belt/rogue/leather/shalal
@@ -356,7 +356,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 
 	cloak = /obj/item/clothing/cloak/raincloak/brown
-	gloves = /obj/item/clothing/gloves/roguetown/angle
+	gloves = /obj/item/clothing/gloves/roguetown/leather/angle
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random

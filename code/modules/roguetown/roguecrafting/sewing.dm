@@ -218,6 +218,13 @@
 	reqs = list(/obj/item/natural/cloth = 3,)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/sewing/banner
+	name = "battle standard"
+	result = /obj/item/rogueweapon/spear/banner
+	reqs = list(/obj/item/grown/log/tree/stick = 1,
+				/obj/item/grown/log/tree/small = 1)
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/sewing/fancycap
 	name = "fancy cap"
 	result = list(/obj/item/clothing/head/roguetown/fancycap)
@@ -423,6 +430,20 @@
 	reqs = list(/obj/item/natural/hide/cured = 2,
             	/obj/item/natural/fibers = 1)
 	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/sewing/heavygloves
+	name = "heavy leather gloves"
+	result = /obj/item/clothing/gloves/roguetown/leather/angle
+	reqs = list(/obj/item/natural/fur = 1)
+	craftdiff = 1	//Slightly harder craft.
+	sellprice = 15	//Costs about ~10 to make, sells well.
+
+/datum/crafting_recipe/roguetown/sewing/heavygloves/advanced
+	name = "hardened heavy leather gloves"
+	result = /obj/item/clothing/gloves/roguetown/leather/angle/advanced
+	reqs = list(/obj/item/natural/fur = 2)
+	craftdiff = 4
+	sellprice = 30
 
 /datum/crafting_recipe/roguetown/sewing/coif
 	name = "coif"
@@ -860,6 +881,14 @@
 	name = "hardened leather chausses"
 	result = /obj/item/clothing/under/roguetown/trou/leather/advanced
 	reqs = list(/obj/item/natural/hide/cured = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/sewing/leather/studhood
+	name = "leather padded hood"
+	result = /obj/item/clothing/head/roguetown/helmet/leather/armorhood
+	reqs = list(/obj/item/natural/hide/cured = 2,
+				/obj/item/natural/cured/essence = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
 

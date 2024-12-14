@@ -163,7 +163,7 @@
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/parrying)
-	gloves = /obj/item/clothing/gloves/roguetown/angle
+	gloves = /obj/item/clothing/gloves/roguetown/leather/angle
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	if(H.gender == FEMALE) //funny

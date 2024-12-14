@@ -49,10 +49,17 @@
 
 /datum/crafting_recipe/roguetown/leather/heavygloves
 	name = "heavy leather gloves"
-	result = /obj/item/clothing/gloves/roguetown/angle
+	result = /obj/item/clothing/gloves/roguetown/leather/angle
 	reqs = list(/obj/item/natural/fur = 1)
 	craftdiff = 1	//Slightly harder craft.
 	sellprice = 15	//Costs about ~10 to make, sells well.
+
+/datum/crafting_recipe/roguetown/leather/heavygloves/advanced
+	name = "hardened heavy leather gloves"
+	result = /obj/item/clothing/gloves/roguetown/leather/angle/advanced
+	reqs = list(/obj/item/natural/fur = 2)
+	craftdiff = 4
+	sellprice = 30
 
 /datum/crafting_recipe/roguetown/leather/bracers
 	name = "leather bracers (x2)"
