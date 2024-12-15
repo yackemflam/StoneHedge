@@ -211,11 +211,29 @@
 	icon_state = "brownkey"
 	lockid = "roomvi"
 
-/obj/item/roguekey/roomhunt
-	name = "room HUNT key"
-	desc = "This is the HUNT key!"
+/obj/item/roguekey/roomvii
+	name = "room VII key"
+	desc = "The key to the seventh room."
 	icon_state = "brownkey"
-	lockid = "roomhunt"
+	lockid = "roomvii"
+
+/obj/item/roguekey/roomviii
+	name = "room VIII key"
+	desc = "The key to the eighth room."
+	icon_state = "brownkey"
+	lockid = "roomviii"
+
+/obj/item/roguekey/roombard
+	name = "bard room key"
+	desc = "The key to the bard's room."
+	icon_state = "brownkey"
+	lockid = "roombard"
+
+/obj/item/roguekey/roominnkeep
+	name = "innkeeper room key"
+	desc = "The key to the innkeeper's room."
+	icon_state = "brownkey"
+	lockid = "roominnkeep"
 
 //vampire mansion//
 /obj/item/roguekey/vampire
