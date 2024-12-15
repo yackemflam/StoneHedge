@@ -113,7 +113,7 @@
 			switch(H.patron.name)
 				if("Levishth")
 					neck = /obj/item/clothing/neck/roguetown/psicross/skull
-					cloak = /obj/item/clothing/cloak/templar
+					cloak = /obj/item/clothing/cloak/tabard
 				if("Yamais")
 					wrists = /obj/item/clothing/neck/roguetown/psicross/necra
 					cloak = /obj/item/clothing/cloak/templar/necra
@@ -174,7 +174,7 @@
 			switch(H.patron.name)
 				if("Levishth")
 					neck = /obj/item/clothing/neck/roguetown/psicross/skull
-					cloak = /obj/item/clothing/cloak/templar
+					cloak = /obj/item/clothing/cloak/tabard
 				if("Yamais")
 					wrists = /obj/item/clothing/neck/roguetown/psicross/necra
 					cloak = /obj/item/clothing/cloak/templar/necra
