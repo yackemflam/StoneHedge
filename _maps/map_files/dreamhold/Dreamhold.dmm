@@ -140,15 +140,6 @@
 /area/rogue/outdoors/rtfield{
 	first_time_text = null
 	})
-"afk" = (
-/obj/structure/closet/crate/drawer,
-/turf/open/floor/rogue/blocks{
-	icon_state = "paving"
-	},
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
-	})
 "afp" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -1753,13 +1744,6 @@
 /obj/effect/wisp,
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/river)
-"bjm" = (
-/obj/item/roguebin/water,
-/turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
-	})
 "bjo" = (
 /obj/item/grown/log/tree/small,
 /obj/item/grown/log/tree/small,
@@ -2585,7 +2569,6 @@
 	dir = 1;
 	icon_state = "tablewood1"
 	},
-/obj/item/rogueweapon/huntingknife/cleaver,
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
@@ -2719,10 +2702,14 @@
 	name = "Shrine of Lune"
 	})
 "bWH" = (
-/obj/structure/chair/stool/rogue{
-	pixel_y = -2
+/obj/structure/mineral_door/wood{
+	name = "Butcher's Room";
+	lockid = "butcher";
+	locked = 1
 	},
-/turf/open/floor/rogue/blocks/stonered/tiny,
+/turf/open/floor/rogue/blocks{
+	icon_state = "paving"
+	},
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
@@ -4552,6 +4539,13 @@
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
+	})
+"dlC" = (
+/obj/item/roguebin/water,
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
 	})
 "dlN" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -7348,6 +7342,16 @@
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
+	})
+"fbF" = (
+/obj/structure/bed/rogue/bedroll,
+/obj/effect/landmark/start/beastmonger,
+/turf/open/floor/rogue/blocks{
+	icon_state = "paving"
+	},
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
 	})
 "fcc" = (
 /obj/structure/flora/roguegrass/water/reeds,
@@ -11018,12 +11022,6 @@
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
-	})
-"hTz" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/exposed/tavern{
-	name = "Tavern Stables"
 	})
 "hTL" = (
 /obj/machinery/light/rogue/torchholder{
@@ -15488,13 +15486,22 @@
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/shelter/town)
 "lbp" = (
-/obj/machinery/light/rogue/torchholder{
+/obj/structure/table/wood{
 	dir = 1;
-	pixel_y = 26
+	icon_state = "longtable"
 	},
-/turf/closed/wall/mineral/rogue/decostone/mossy/cand,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
+/obj/item/reagent_containers/glass/cup/wooden{
+	pixel_x = 8;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/glass/cup/wooden{
+	pixel_x = -6;
+	pixel_y = -1
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
 	})
 "lbr" = (
 /turf/open/floor/rogue/rooftop{
@@ -17040,6 +17047,15 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
+"mmU" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 1;
+	pixel_y = 26
+	},
+/turf/closed/wall/mineral/rogue/decostone/mossy/cand,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
+	})
 "mmX" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/roguegrass/water/reeds,
@@ -18891,6 +18907,12 @@
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
+	})
+"nyy" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/tavern{
+	name = "Tavern Stables"
 	})
 "nyC" = (
 /obj/effect/mob_spawner/wilderness/hostile,
@@ -20873,24 +20895,6 @@
 /obj/item/reagent_containers/food/snacks/rogue/cheddar/aged,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/tavern)
-"oWb" = (
-/obj/structure/table/wood{
-	dir = 1;
-	icon_state = "longtable"
-	},
-/obj/item/reagent_containers/glass/cup/wooden{
-	pixel_x = 8;
-	pixel_y = 11
-	},
-/obj/item/reagent_containers/glass/cup/wooden{
-	pixel_x = -6;
-	pixel_y = -1
-	},
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
-	})
 "oWd" = (
 /obj/structure/mirror/fancy,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
@@ -25783,16 +25787,6 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
-"snL" = (
-/obj/structure/bed/rogue/bedroll,
-/obj/effect/landmark/start/beastmonger,
-/turf/open/floor/rogue/blocks{
-	icon_state = "paving"
-	},
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
-	})
 "snY" = (
 /obj/structure/wallladder{
 	dir = 4
@@ -25851,14 +25845,10 @@
 	name = "Grove"
 	})
 "sqJ" = (
-/obj/structure/mineral_door/wood{
-	name = "Butcher's Room";
-	lockid = "butcher";
-	locked = 1
+/obj/structure/chair/stool/rogue{
+	pixel_y = -2
 	},
-/turf/open/floor/rogue/blocks{
-	icon_state = "paving"
-	},
+/turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
@@ -32423,6 +32413,15 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Mountain Passe"
+	})
+"xlS" = (
+/obj/structure/closet/crate/drawer,
+/turf/open/floor/rogue/blocks{
+	icon_state = "paving"
+	},
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
 	})
 "xlY" = (
 /obj/structure/flora/wildplant/wild_poppy,
@@ -128024,7 +128023,7 @@ oSV
 cCd
 cCd
 mtQ
-snL
+fbF
 bSG
 oea
 fqz
@@ -128225,10 +128224,10 @@ mtQ
 awD
 cCd
 cCd
-sqJ
+bWH
 cCd
 nuQ
-lbp
+mmU
 jEl
 vil
 vVw
@@ -128428,7 +128427,7 @@ gkk
 pYo
 cCd
 mtQ
-afk
+xlS
 cCd
 oea
 fqz
@@ -159925,7 +159924,7 @@ fSQ
 iiw
 fNk
 cWL
-bjm
+dlC
 teJ
 fSQ
 xSm
@@ -160530,10 +160529,10 @@ yls
 fSQ
 qUM
 fNk
-bWH
+sqJ
 uXe
 fSQ
-oWb
+lbp
 nmt
 xSm
 jcH
@@ -163151,7 +163150,7 @@ dKA
 dKA
 efn
 ilm
-hTz
+nyy
 pNl
 fky
 dXM

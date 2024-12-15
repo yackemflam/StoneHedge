@@ -29,6 +29,7 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 5, TRUE)
 	beltl = /obj/item/storage/keyring/butcher
+	belt2 = /obj/item/rogueweapon/huntingknife/cleaver
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
 	cloak = /obj/item/clothing/cloak/apron/waist
 	backl = /obj/item/storage/backpack/rogue/satchel
