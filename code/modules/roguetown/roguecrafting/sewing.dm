@@ -884,14 +884,6 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
 
-/datum/crafting_recipe/roguetown/sewing/leather/studhood
-	name = "leather padded hood"
-	result = /obj/item/clothing/head/roguetown/helmet/leather/armorhood
-	reqs = list(/obj/item/natural/hide/cured = 2,
-				/obj/item/natural/cured/essence = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 4
-
 /// MASTERWORK
 
 /datum/crafting_recipe/roguetown/sewing/leather/boots/masterwork
