@@ -3,8 +3,8 @@
 	flag = BARKEEP
 	department_flag = YEOMEN
 	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 
 	allowed_races = RACES_ALL_KINDSPLUS
 
@@ -48,22 +48,19 @@
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DRUNK_HEALING, TRAIT_GENERIC)
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots
+	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
+	backr = /obj/item/storage/backpack/rogue/satchel
+	beltl = /obj/item/storage/keyring/innkeep
+	id = /obj/item/scomstone
 	if(H.gender == MALE)
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
-		shoes = /obj/item/clothing/shoes/roguetown/shortboots
-		backr = /obj/item/storage/backpack/rogue/satchel
+		pants = /obj/item/clothing/under/roguetown/trou
 		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/storage/belt/rogue/pouch/coins/rich
-		neck = /obj/item/storage/keyring/innkeep
 		cloak = /obj/item/clothing/cloak/apron/waist
-		id = /obj/item/scomstone
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress
-		shoes = /obj/item/clothing/shoes/roguetown/shortboots
-		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		beltl = /obj/item/storage/keyring/innkeep
-		id = /obj/item/scomstone
 	H.change_stat("intelligence", 2)
 	H.change_stat("strength", 3)
 	H.change_stat("endurance", 2)

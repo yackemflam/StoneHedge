@@ -48,7 +48,7 @@
 		else
 			if(!locked)
 				insert(P, user)
-			else	
+			else
 				to_chat(user, span_warning("Wrong key."))
 				return
 	if(istype(P, /obj/item/storage/keyring))
@@ -264,9 +264,22 @@
 
 /obj/structure/roguemachine/vendor/inn/Initialize()
 	. = ..()
-	for(var/X in list(/obj/item/roguekey/roomi,/obj/item/roguekey/roomii,/obj/item/roguekey/roomiii,/obj/item/roguekey/roomiv,/obj/item/roguekey/roomv,/obj/item/roguekey/roomvi))
+	var/list/key_data = list(
+		/obj/item/roguekey/roomi = 10,
+		/obj/item/roguekey/roomii = 10,
+		/obj/item/roguekey/roomiii = 20,
+		/obj/item/roguekey/roombard = 20,
+		/obj/item/roguekey/roomiv = 10,
+		/obj/item/roguekey/roomv = 10,
+		/obj/item/roguekey/roomvi = 15,
+		/obj/item/roguekey/roomvii = 15,
+		/obj/item/roguekey/roomviii = 10
+	)
+	for(var/X in key_data)
 		var/obj/P = new X(src)
 		held_items[P] = list()
-		held_items[P]["NAME"] = P.name
-		held_items[P]["PRICE"] = 10
+		held_items[P]["NAME"] = (X == /obj/item/roguekey/roomviii) ? "Room VIII - Meeting hall" : P.name
+		held_items[P]["PRICE"] = key_data[X]
+
 	update_icon()
+
