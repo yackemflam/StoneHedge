@@ -603,6 +603,7 @@
 /area/rogue/outdoors/river)
 "awD" = (
 /obj/structure/fluff/walldeco/maidensigil,
+/obj/item/roguebin/water/gross,
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
@@ -1665,6 +1666,15 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
+"bgK" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 1;
+	pixel_y = 26
+	},
+/turf/closed/wall/mineral/rogue/decostone/mossy/cand,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
+	})
 "bgL" = (
 /obj/effect/landmark/events/haunts,
 /turf/open/floor/rogue/twig/platform,
@@ -2564,7 +2574,11 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "bSG" = (
-/obj/structure/fermenting_barrel/random/beer,
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "tablewood1"
+	},
+/obj/item/rogueweapon/huntingknife/cleaver,
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
@@ -2698,9 +2712,7 @@
 	name = "Shrine of Lune"
 	})
 "bWH" = (
-/obj/structure/chair/wood/rogue{
-	dir = 8
-	},
+/obj/item/roguebin/water,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -9677,6 +9689,15 @@
 	first_time_text = "Ravenloft Academy";
 	name = "Ravenloft Academy"
 	})
+"gVS" = (
+/obj/structure/chair/stool/rogue{
+	pixel_y = -2
+	},
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
+	})
 "gWx" = (
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/cavewet)
@@ -13382,12 +13403,6 @@
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/caves)
-"jHb" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/exposed/tavern{
-	name = "Tavern Stables"
-	})
 "jHM" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -15464,8 +15479,8 @@
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/shelter/town)
 "lbp" = (
-/obj/structure/fermenting_barrel/random/beer,
-/obj/structure/fermenting_barrel/random/beer,
+/obj/structure/bed/rogue/bedroll,
+/obj/effect/landmark/start/beastmonger,
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
@@ -17521,8 +17536,8 @@
 	first_time_text = "Stonehedge"
 	})
 "mDA" = (
-/obj/structure/chair/wood/rogue/chair3{
-	icon_state = "2,1"
+/obj/structure/chair/wood/rogue{
+	dir = 4
 	},
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
@@ -18752,7 +18767,9 @@
 	name = "Tavern Stables"
 	})
 "nuQ" = (
-/obj/item/reagent_containers/glass/bucket/wooden,
+/obj/structure/chair/stool/rogue{
+	pixel_x = -5
+	},
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
@@ -20537,7 +20554,11 @@
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/river)
 "oKI" = (
-/obj/structure/closet/crate/roguecloset/inn/south,
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "tablewood1"
+	},
+/obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
@@ -25794,14 +25815,17 @@
 	name = "Grove"
 	})
 "sqJ" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 8;
-	locked = 1;
-	lockid = "nightman"
+/obj/structure/mineral_door/wood{
+	name = "Butcher's Room";
+	lockid = "butcher";
+	locked = 1
 	},
-/turf/open/floor/rogue/hexstone,
-/area/rogue/indoors/town/bath{
-	first_time_text = "The Dreamers Demesne.."
+/turf/open/floor/rogue/blocks{
+	icon_state = "paving"
+	},
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
 	})
 "sqY" = (
 /obj/structure/spacevine,
@@ -28176,7 +28200,7 @@
 /area/rogue/indoors/town)
 "ucv" = (
 /obj/structure/chair/stool/rogue{
-	pixel_x = 5
+	pixel_x = -5
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/border{
@@ -31849,6 +31873,12 @@
 "wSG" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/under/cavewet/bogcaves)
+"wST" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/tavern{
+	name = "Tavern Stables"
+	})
 "wSW" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/bog)
@@ -32383,6 +32413,15 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	first_time_text = null
+	})
+"xnV" = (
+/obj/structure/closet/crate/drawer,
+/turf/open/floor/rogue/blocks{
+	icon_state = "paving"
+	},
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
 	})
 "xor" = (
 /obj/structure/feedinghole,
@@ -127549,7 +127588,7 @@ kkc
 jsd
 jsd
 jsd
-sqJ
+jsd
 jsd
 jsd
 jsd
@@ -127753,7 +127792,7 @@ mtQ
 oKI
 cCd
 mDA
-mDA
+mtQ
 mtQ
 mtQ
 kVJ
@@ -127955,8 +127994,8 @@ mtQ
 oSV
 cCd
 cCd
-cCd
-cCd
+mtQ
+lbp
 bSG
 oea
 fqz
@@ -128157,10 +128196,10 @@ mtQ
 awD
 cCd
 cCd
-cCd
+sqJ
 cCd
 nuQ
-pwR
+bgK
 jEl
 vil
 vVw
@@ -128359,9 +128398,9 @@ jsd
 gkk
 pYo
 cCd
+mtQ
+xnV
 cCd
-cCd
-lbp
 oea
 fqz
 vil
@@ -159654,7 +159693,7 @@ wLq
 fSQ
 fYf
 fNk
-bWH
+fNk
 fNk
 fNk
 jcA
@@ -159857,7 +159896,7 @@ fSQ
 iiw
 fNk
 cWL
-fNk
+bWH
 teJ
 fSQ
 xSm
@@ -160462,7 +160501,7 @@ yls
 fSQ
 qUM
 fNk
-fNk
+gVS
 uXe
 fSQ
 xSm
@@ -163083,7 +163122,7 @@ dKA
 dKA
 efn
 ilm
-jHb
+wST
 pNl
 fky
 dXM
