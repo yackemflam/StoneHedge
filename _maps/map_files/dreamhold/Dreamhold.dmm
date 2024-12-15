@@ -3662,9 +3662,6 @@
 	first_time_text = "The Dreamers Demesne.."
 	})
 "cKA" = (
-/obj/item/storage/bag/tray,
-/obj/item/storage/bag/tray,
-/obj/item/storage/bag/tray,
 /obj/item/reagent_containers/glass/bowl,
 /obj/structure/table/wood{
 	dir = 1;
@@ -5847,7 +5844,6 @@
 	pixel_y = 7
 	},
 /obj/structure/bed/rogue/shit,
-/mob/living/simple_animal/cow,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/tavern{
 	name = "Tavern Stables"
@@ -8843,6 +8839,7 @@
 /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry,
 /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry,
 /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry,
+/obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/tavern)
 "ggX" = (
@@ -10618,8 +10615,9 @@
 /obj/structure/table/wood{
 	icon_state = "longtable"
 	},
-/obj/item/reagent_containers/food/snacks/rogue/bread,
-/obj/item/reagent_containers/food/snacks/rogue/bread,
+/obj/item/storage/bag/tray,
+/obj/item/storage/bag/tray,
+/obj/item/storage/bag/tray,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -13384,6 +13382,12 @@
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/caves)
+"jHb" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/tavern{
+	name = "Tavern Stables"
+	})
 "jHM" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -19331,7 +19335,6 @@
 "nPd" = (
 /obj/structure/fluff/railing/wood,
 /obj/structure/bed/rogue/shit,
-/mob/living/simple_animal/cow,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/tavern{
 	name = "Tavern Stables"
@@ -20517,10 +20520,8 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/structure/table/wood{
-	dir = 1;
-	icon_state = "tablewood1"
-	},
+/obj/item/reagent_containers/food/snacks/rogue/bread,
+/obj/item/reagent_containers/food/snacks/rogue/bread,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -22608,7 +22609,7 @@
 	name = "Shores of the Emerald Coast"
 	})
 "qfk" = (
-/obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/tavern)
 "qfo" = (
@@ -26114,7 +26115,6 @@
 	dir = 9;
 	icon_state = "largetable"
 	},
-/obj/item/reagent_containers/food/condiment/peppermill,
 /obj/structure/fluff/millstone,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern{
@@ -29465,12 +29465,12 @@
 	first_time_text = "The Twilight Woods"
 	})
 "uXe" = (
-/obj/item/reagent_containers/food/snacks/store/cheesewheel,
 /obj/structure/table/wood{
 	dir = 1;
 	icon_state = "longtable_mid"
 	},
-/obj/item/reagent_containers/food/snacks/store/cheesewheel,
+/obj/item/reagent_containers/food/snacks/rogue/cheddar,
+/obj/item/reagent_containers/food/snacks/rogue/cheddar,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -162274,8 +162274,8 @@ fph
 fqz
 fqz
 fqz
-fqz
 lKF
+fqz
 fqz
 fSQ
 niT
@@ -163083,7 +163083,7 @@ dKA
 dKA
 efn
 ilm
-ilm
+jHb
 pNl
 fky
 dXM
