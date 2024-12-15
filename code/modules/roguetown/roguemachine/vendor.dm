@@ -264,7 +264,7 @@
 
 /obj/structure/roguemachine/vendor/inn/Initialize()
 	. = ..()
-		var/list/key_data = list(
+	var/list/key_data = list(
 		/obj/item/roguekey/roomi = 10,
 		/obj/item/roguekey/roomii = 10,
 		/obj/item/roguekey/roomiii = 20,
