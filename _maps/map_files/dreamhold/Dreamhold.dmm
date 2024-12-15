@@ -1666,15 +1666,6 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
-"bgK" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 1;
-	pixel_y = 26
-	},
-/turf/closed/wall/mineral/rogue/decostone/mossy/cand,
-/area/rogue/outdoors{
-	first_time_text = "Stonehedge"
-	})
 "bgL" = (
 /obj/effect/landmark/events/haunts,
 /turf/open/floor/rogue/twig/platform,
@@ -2151,6 +2142,15 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/town/bath{
 	first_time_text = "The Dreamers Demesne.."
+	})
+"bBs" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 1;
+	pixel_y = 26
+	},
+/turf/closed/wall/mineral/rogue/decostone/mossy/cand,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
 	})
 "bBE" = (
 /obj/item/bedsheet/rogue/wool,
@@ -9689,15 +9689,6 @@
 	first_time_text = "Ravenloft Academy";
 	name = "Ravenloft Academy"
 	})
-"gVS" = (
-/obj/structure/chair/stool/rogue{
-	pixel_y = -2
-	},
-/turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
-	})
 "gWx" = (
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/cavewet)
@@ -12945,6 +12936,12 @@
 /area/rogue/indoors/town/bath{
 	first_time_text = "The Dreamers Demesne.."
 	})
+"jsn" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/tavern{
+	name = "Tavern Stables"
+	})
 "jsC" = (
 /obj/structure/toilet,
 /obj/machinery/light/rogue/wallfire/candle,
@@ -15479,8 +15476,7 @@
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/shelter/town)
 "lbp" = (
-/obj/structure/bed/rogue/bedroll,
-/obj/effect/landmark/start/beastmonger,
+/obj/structure/closet/crate/drawer,
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
@@ -22852,6 +22848,19 @@
 "qmG" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/shelter/bog)
+"qns" = (
+/obj/structure/mineral_door/wood{
+	name = "Butcher's Room";
+	lockid = "butcher";
+	locked = 1
+	},
+/turf/open/floor/rogue/blocks{
+	icon_state = "paving"
+	},
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
+	})
 "qnE" = (
 /obj/structure/glowshroom,
 /obj/structure/flora/roguegrass/water/reeds,
@@ -25815,11 +25824,8 @@
 	name = "Grove"
 	})
 "sqJ" = (
-/obj/structure/mineral_door/wood{
-	name = "Butcher's Room";
-	lockid = "butcher";
-	locked = 1
-	},
+/obj/structure/bed/rogue/bedroll,
+/obj/effect/landmark/start/beastmonger,
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
@@ -26140,6 +26146,10 @@
 	icon_state = "largetable"
 	},
 /obj/structure/fluff/millstone,
+/obj/item/reagent_containers/peppermill{
+	pixel_x = 10;
+	pixel_y = -8
+	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/tavern{
 	first_time_text = "The Sylver Dragonne..";
@@ -27517,6 +27527,15 @@
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
 	name = "Ravenloft Academy"
+	})
+"tCr" = (
+/obj/structure/chair/stool/rogue{
+	pixel_y = -2
+	},
+/turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/tavern{
+	first_time_text = "The Sylver Dragonne..";
+	name = "Silver Dragon"
 	})
 "tDy" = (
 /obj/structure/fluff/railing/wood{
@@ -31873,12 +31892,6 @@
 "wSG" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/under/cavewet/bogcaves)
-"wST" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/exposed/tavern{
-	name = "Tavern Stables"
-	})
 "wSW" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/bog)
@@ -32413,15 +32426,6 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	first_time_text = null
-	})
-"xnV" = (
-/obj/structure/closet/crate/drawer,
-/turf/open/floor/rogue/blocks{
-	icon_state = "paving"
-	},
-/area/rogue/indoors/town/tavern{
-	first_time_text = "The Sylver Dragonne..";
-	name = "Silver Dragon"
 	})
 "xor" = (
 /obj/structure/feedinghole,
@@ -127995,7 +127999,7 @@ oSV
 cCd
 cCd
 mtQ
-lbp
+sqJ
 bSG
 oea
 fqz
@@ -128196,10 +128200,10 @@ mtQ
 awD
 cCd
 cCd
-sqJ
+qns
 cCd
 nuQ
-bgK
+bBs
 jEl
 vil
 vVw
@@ -128399,7 +128403,7 @@ gkk
 pYo
 cCd
 mtQ
-xnV
+lbp
 cCd
 oea
 fqz
@@ -160501,7 +160505,7 @@ yls
 fSQ
 qUM
 fNk
-gVS
+tCr
 uXe
 fSQ
 xSm
@@ -163122,7 +163126,7 @@ dKA
 dKA
 efn
 ilm
-wST
+jsn
 pNl
 fky
 dXM
