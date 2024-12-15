@@ -28,22 +28,18 @@
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	beltl = /obj/item/roguekey/tavern
+	beltl = /obj/item/storage/keyring/cook
+	backr = /obj/item/storage/backpack/rogue/satchel
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
+	head = /obj/item/clothing/head/roguetown/cookhat
+	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
+	cloak = /obj/item/clothing/cloak/apron/cook
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
-		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-		backr = /obj/item/storage/backpack/rogue/satchel
-		cloak = /obj/item/clothing/cloak/apron/cook
-		head = /obj/item/clothing/head/roguetown/cookhat
-		neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 		H.change_stat("constitution", 2)
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
-		cloak = /obj/item/clothing/cloak/apron/cook
-		head = /obj/item/clothing/head/roguetown/cookhat
-		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-		neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 		H.change_stat("constitution", 1)
 	if(isseelie(H))
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/seelie_dust)
