@@ -254,6 +254,12 @@
 
 	sleep(1 SECONDS)
 
+	if(M.stat == DEAD)
+		say("Yamais' hands are over this one, use the excidium.")
+		playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
+		unbuckle_all_mobs()
+		return
+
 	var/list/headcrush = list('sound/combat/fracture/headcrush (2).ogg', 'sound/combat/fracture/headcrush (3).ogg', 'sound/combat/fracture/headcrush (4).ogg')
 	playsound(src, pick_n_take(headcrush), 100, FALSE, -1)
 	M.emote("scream")
