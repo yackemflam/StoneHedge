@@ -56,6 +56,8 @@
 				if(H.age == AGE_OLD)
 					H.mind.adjust_skillrank(/datum/skill/combat/axes, 1, TRUE)
 				r_hand = /obj/item/rogueweapon/stoneaxe/battle
+				if(classchoice == "Duelist")
+					H.mind.adjust_skillrank(/datum/skill/combat/axes, 1, TRUE)
 			if("Maces")
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
@@ -64,6 +66,8 @@
 				if(H.age == AGE_OLD)
 					H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
 				r_hand = /obj/item/rogueweapon/mace
+				if(classchoice == "Duelist")
+					H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
 			if("Polearms")
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
@@ -72,6 +76,8 @@
 				if(H.age == AGE_OLD)
 					H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 				r_hand = /obj/item/rogueweapon/spear/billhook
+				if(classchoice == "Duelist")
+					H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 
 	switch(classchoice)
 
