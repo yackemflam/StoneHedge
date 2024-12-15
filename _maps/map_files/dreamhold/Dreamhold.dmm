@@ -12717,6 +12717,15 @@
 	first_time_text = "Shrine of Lune";
 	name = "Shrine of Lune"
 	})
+"jjd" = (
+/obj/structure/curtain/bounty{
+	color = "grey"
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/magician{
+	first_time_text = "Ravenloft Academy";
+	name = "Ravenloft Academy"
+	})
 "jkg" = (
 /obj/machinery/light/rogue/oven/south,
 /turf/open/floor/rogue/tile,
@@ -19831,6 +19840,9 @@
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
 /obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
+/obj/structure/curtain/bounty{
+	color = "grey"
+	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -29757,6 +29769,9 @@
 /obj/item/reagent_containers/glass/bottle/rogue/manapot,
 /obj/item/reagent_containers/glass/bottle/rogue/manapot,
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
+/obj/structure/curtain/bounty{
+	color = "grey"
+	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -150994,9 +151009,9 @@ qAk
 vLX
 eVn
 nTZ
-nTZ
-nTZ
 xgr
+nTZ
+iWs
 vLX
 nMZ
 mik
@@ -151198,7 +151213,7 @@ vKb
 nTZ
 nTZ
 nTZ
-iWs
+nLF
 vLX
 dyx
 rvO
@@ -151397,10 +151412,10 @@ ogX
 lwf
 vLX
 nTZ
+jjd
+jjd
+jjd
 nTZ
-nTZ
-nTZ
-nLF
 vLX
 nMZ
 prA
