@@ -46,10 +46,10 @@
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	beltl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
-	beltr = /obj/item/rogueweapon/mace/stunmace/hedgeknight/warden
 	belt = /obj/item/storage/belt/rogue/leather
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/quiver/Parrows
+	l_hand = /obj/item/rogueweapon/woodstaff/thornlash
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 4, TRUE)
@@ -83,11 +83,6 @@
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BLINDFIGHTING, TRAIT_GENERIC)
-
-	if(H.mind)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/vine_restraint)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/grove_growth)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/hedge_shield)
 
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 

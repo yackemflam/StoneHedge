@@ -350,3 +350,91 @@
 	name = "skinning knife"
 	desc = "More than one way to skin a seelie."
 	icon_state = "skinningknife"
+
+
+/obj/item/rogueweapon/woodstaff/thornlash
+	name = "thornlash staff"
+	desc = "A mystical wooden staff wrapped in enchanted thorny vines. The vines pulse with druidic energy, ready to inflict nature's judgment upon wrongdoers."
+	icon = 'icons/roguetown/weapons/32.dmi'
+	icon_state = "aries"
+	force = 20
+	force_wielded = 30
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	possible_item_intents = list(/datum/intent/staff/strike/thorn)
+	gripped_intents = list(/datum/intent/staff/strike/thorn, /datum/intent/staff/smash/thorn)
+	wlength = WLENGTH_LONG
+	wdefense = 3
+	wbalance = 0
+	minstr = 5
+	var/activated = FALSE
+	var/activation_cooldown = 300
+	var/last_activation = 0
+	var/base_force = 20
+	var/base_force_wielded = 30
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+
+/obj/item/rogueweapon/woodstaff/thornlash/attack_self(mob/user)
+	if(world.time < last_activation + activation_cooldown)
+		to_chat(user, "<span class='warning'>The thorns need time to regenerate their potency.</span>")
+		return
+
+	activated = !activated
+	last_activation = world.time
+
+	if(activated)
+		to_chat(user, "<span class='notice'>The thorns bristle with verdant energy, ready to deliver nature's judgment.</span>")
+		playsound(src, 'sound/magic/churn.ogg', 50, TRUE)
+		force = round(base_force * 0.4)
+		force_wielded = round(base_force_wielded * 0.4)
+		var/obj/effect/temp_visual/cult/sparks/S = new(get_turf(src))
+		S.color = "#45b726"
+	else
+		to_chat(user, "<span class='notice'>The thorns retract, becoming dormant once more.</span>")
+		force = base_force
+		force_wielded = base_force_wielded
+
+/obj/item/rogueweapon/woodstaff/thornlash/attack(mob/living/target, mob/living/user)
+	. = ..()
+	if(activated && isliving(target))
+		var/mob/living/L = target
+		var/pain_damage = wielded ? 40 : 25
+		L.adjustStaminaLoss(pain_damage)
+		L.confused = max(L.confused, 3)
+		if(prob(40))
+			L.Jitter(10)
+
+/datum/intent/staff/strike/thorn
+	name = "strike"
+	blade_class = BCLASS_BLUNT
+	attack_verb = list("whips", "lashes", "strikes")
+	hitsound = list('sound/combat/hits/blunt/woodblunt (1).ogg', 'sound/combat/hits/blunt/woodblunt (2).ogg')
+	penfactor = 20
+	damfactor = 1.0
+	item_d_type = "blunt"
+
+/datum/intent/staff/smash/thorn
+	name = "smash"
+	blade_class = BCLASS_SMASH
+	attack_verb = list("smashes", "impales")
+	hitsound = list('sound/combat/hits/blunt/woodblunt (1).ogg', 'sound/combat/hits/blunt/woodblunt (2).ogg')
+	penfactor = 40
+	damfactor = 1.2
+	item_d_type = "blunt"
+
+/obj/item/rogueweapon/woodstaff/thornlash/examine(mob/user)
+	. = ..()
+	if(activated)
+		. += "<span class='notice'>The thorns are bristling with verdant energy.</span>"
+	else
+		. += "<span class='notice'>The thorns are currently dormant. Use the staff in hand to activate them.</span>"
+
+/obj/item/rogueweapon/woodstaff/thornlash/Initialize()
+	. = ..()
+	pickup_sound = 'sound/items/wood_sharpen.ogg'
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'

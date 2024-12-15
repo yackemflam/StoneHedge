@@ -35,9 +35,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/sickle
-	beltr = /obj/item/rogueweapon/mace/stunmace/hedgeknight/ovate
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot = 1,

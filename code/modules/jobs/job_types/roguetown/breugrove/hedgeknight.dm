@@ -45,16 +45,11 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
 	beltl = /obj/item/quiver/arrows
 	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/rogueweapon/mace/stunmace/hedgeknight
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
+	l_hand = /obj/item/rogueweapon/woodstaff/thornlash
 	id = /obj/item/scomstone
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/signal_horn = 1)
-	if(H.mind)
-		assign_skills(H)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/vine_restraint)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/grove_growth)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/hedge_shield)
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
