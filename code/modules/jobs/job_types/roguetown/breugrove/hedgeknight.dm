@@ -37,7 +37,7 @@
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/foresterarmor
 	cloak = /obj/item/clothing/cloak/templar/dendor
-	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+	neck = /obj/item/clothing/neck/roguetown/psicross/dendor/grove
 	gloves = /obj/item/clothing/gloves/roguetown/forestergauntlets
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail

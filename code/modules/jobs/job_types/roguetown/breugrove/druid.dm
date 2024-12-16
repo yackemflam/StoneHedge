@@ -34,7 +34,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/woodstaff/wise
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
-	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+	neck = /obj/item/clothing/neck/roguetown/psicross/dendor/grove
 	gloves = /obj/item/clothing/gloves/roguetown/forestergauntlets
 	cloak = /obj/item/clothing/cloak/templar/dendor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide

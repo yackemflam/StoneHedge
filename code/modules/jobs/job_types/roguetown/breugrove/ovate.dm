@@ -25,14 +25,11 @@
 
 /datum/outfit/job/roguetown/ovate/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
-	cloak = /obj/item/clothing/cloak/templar/dendor
+	cloak = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
-	gloves = /obj/item/clothing/gloves/roguetown/forestergauntlets
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
-	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
+	shoes = /obj/item/clothing/shoes/roguetown/ridingboots
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/sickle
 	backl = /obj/item/storage/backpack/rogue/satchel
