@@ -1073,7 +1073,7 @@ Slots: [job.spawn_positions]</span>
 		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
 		dat += "<hr>"
 		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
-		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
+		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS + max(0, round(get_playerquality(parent.ckey)/10))] max positive quirks<br>\
 		<b>Quirk balance remaining:</b> [GetQuirkBalance()]</center><br>"
 		for(var/V in SSquirks.quirks)
 			var/datum/quirk/T = SSquirks.quirks[V]
@@ -1301,8 +1301,8 @@ Slots: [job.spawn_positions]</span>
 						return
 					all_quirks -= quirk
 				else
-					if(GetPositiveQuirkCount() >= MAX_QUIRKS)
-						to_chat(user, span_warning("I can't have more than [MAX_QUIRKS] positive quirks!"))
+					if(GetPositiveQuirkCount() >= MAX_QUIRKS + max(0, round(get_playerquality(parent.ckey)/10)))
+						to_chat(user, span_warning("I can't have more than [MAX_QUIRKS + max(0, round(get_playerquality(parent.ckey)/10))] positive quirks!"))
 						return
 					if(balance - value < 0)
 						to_chat(user, span_warning("I don't have enough balance to gain this quirk!"))
