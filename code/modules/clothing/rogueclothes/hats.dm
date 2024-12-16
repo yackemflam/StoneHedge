@@ -1241,6 +1241,8 @@
 
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 	name = "volf helmet"
 	desc = "A helmet made using the remains of a volf, surprisingly comfortable."
 	body_parts_covered = HEAD|HAIR|EARS
@@ -1274,6 +1276,8 @@
 	desc = "Upon closer inspection, this is made of volf fur, not bear fur, but who will know the difference?"
 	body_parts_covered = HEAD|HAIR|EARS
 	flags_inv = HIDEHAIR|HIDEEARS
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 	icon_state = "bearpelt"
 	item_state = "bearpelt"
 	armor = list("blunt" = 50, "slash" = 30, "stab" = 40, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
