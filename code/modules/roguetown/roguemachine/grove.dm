@@ -234,7 +234,7 @@
 	responder.visible_message("<span class='green'>Ancient roots burst from the ground around [target_tree] as [responder] channels nature's call!</span>", \
 							"<span class='green'>You begin channeling druidic energy to create a quick waygate to aid [caller]!</span>")
 
-	if(do_after(responder, 150, target = target_tree))
+	if(do_after(responder, 100, target = target_tree))
 		var/obj/effect/portal/waygate/P = new(get_turf(target_tree))
 		P.name = "emergency waygate"
 		P.desc = "A hastily formed portal of twisted roots and natural energy."
