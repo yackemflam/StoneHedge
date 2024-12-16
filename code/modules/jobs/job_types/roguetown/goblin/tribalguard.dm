@@ -16,7 +16,7 @@
 
 /datum/outfit/job/roguetown/tribalguard/pre_equip(mob/living/carbon/human/H)
 	. = ..()
-	head = /obj/item/clothing/head/roguetown/helmet/leather/volfhead
+	head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	shoes = /obj/item/clothing/shoes/roguetown/boots/bonegreaves
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	armor = /obj/item/clothing/suit/roguetown/armor/bone/chestplate

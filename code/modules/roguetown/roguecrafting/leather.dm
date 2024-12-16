@@ -240,6 +240,12 @@
 	result = /obj/item/clothing/head/roguetown/helmet/leather
 	reqs = list(/obj/item/natural/hide/cured = 1)
 
+/datum/crafting_recipe/roguetown/hunting/studhood
+	name = "leather padded hood"
+	result = /obj/item/clothing/head/roguetown/helmet/leather/armorhood
+	reqs = list(/obj/item/natural/hide/cured = 2)
+	craftdiff = 2
+
 /datum/crafting_recipe/roguetown/hunting/armor
 	name = "leather armor"
 	result = /obj/item/clothing/suit/roguetown/armor/leather
@@ -347,7 +353,7 @@
 
 /datum/crafting_recipe/roguetown/leather/volfhead
 	name = "volf head"
-	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhead
+	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	reqs = list(/obj/item/natural/volf_head = 1, /obj/item/natural/hide = 1)
 	craftdiff = 1
 

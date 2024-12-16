@@ -1,11 +1,4 @@
 //predominantly negative traits
-
-
-/datum/quirk/myvice
-	name = "MY VICE (Free points)"
-	desc = "Free points for I carry my vice with me."
-	value = -2
-
 /datum/quirk/monochromatic
 	name = "Monochromacy"
 	desc = "I see things all gray."
