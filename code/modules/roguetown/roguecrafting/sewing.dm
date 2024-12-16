@@ -445,6 +445,13 @@
 	craftdiff = 4
 	sellprice = 30
 
+/datum/crafting_recipe/roguetown/sewing/leather/bracers/advanced
+	name = "hardened leather bracers"
+	result = /obj/item/clothing/wrists/roguetown/bracers/leather/advanced
+	reqs = list(/obj/item/natural/hide/cured = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 4
+
 /datum/crafting_recipe/roguetown/sewing/coif
 	name = "coif"
 	result = list(/obj/item/clothing/neck/roguetown/coif)
