@@ -19,7 +19,7 @@
 		if(SKILL_LEVEL_APPRENTICE)
 			return 1
 		if(SKILL_LEVEL_JOURNEYMAN)
-			return .5
+			return 0.5
 		if(SKILL_LEVEL_EXPERT)
 			return 0.33
 		if(SKILL_LEVEL_MASTER)
@@ -39,7 +39,7 @@
 		if(SKILL_LEVEL_APPRENTICE)
 			return 1
 		if(SKILL_LEVEL_JOURNEYMAN)
-			return .5
+			return 0.5
 		if(SKILL_LEVEL_EXPERT)
 			return 0.33
 		if(SKILL_LEVEL_MASTER)
@@ -59,7 +59,7 @@
 		if(SKILL_LEVEL_APPRENTICE)
 			return 1
 		if(SKILL_LEVEL_JOURNEYMAN)
-			return .5
+			return 0.5
 		if(SKILL_LEVEL_EXPERT)
 			return 0.33
 		if(SKILL_LEVEL_MASTER)
@@ -99,7 +99,7 @@
 		if(SKILL_LEVEL_APPRENTICE)
 			return 1
 		if(SKILL_LEVEL_JOURNEYMAN)
-			return .5
+			return 0.5
 		if(SKILL_LEVEL_EXPERT)
 			return 0.33
 		if(SKILL_LEVEL_MASTER)
@@ -119,7 +119,7 @@
 		if(SKILL_LEVEL_APPRENTICE)
 			return 1
 		if(SKILL_LEVEL_JOURNEYMAN)
-			return .5
+			return 0.5
 		if(SKILL_LEVEL_EXPERT)
 			return 0.33
 		if(SKILL_LEVEL_MASTER)
@@ -139,7 +139,7 @@
 		if(SKILL_LEVEL_APPRENTICE)
 			return 1
 		if(SKILL_LEVEL_JOURNEYMAN)
-			return .5
+			return 0.5
 		if(SKILL_LEVEL_EXPERT)
 			return 0.33
 		if(SKILL_LEVEL_MASTER)
@@ -163,7 +163,7 @@
 		if(SKILL_LEVEL_APPRENTICE)
 			return 1
 		if(SKILL_LEVEL_JOURNEYMAN)
-			return .5
+			return 0.5
 		if(SKILL_LEVEL_EXPERT)
 			return 0.33
 		if(SKILL_LEVEL_MASTER)
