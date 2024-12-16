@@ -39,8 +39,13 @@
 	ADD_TRAIT(H, TRAIT_TOLERANT, TRAIT_GENERIC)
 	H.set_patron(/datum/patron/inhumen/thief)
 	to_chat(H, span_alertsyndie("I am a BANDIT!"))
-	add_bounty(H.real_name, pick(200,400), TRUE, "Banditry", "Stonehedge")
-	to_chat(H, span_boldwarning("Long ago I did a crime worthy of my bounty being hung on the wall outside of the local inn. I live now with fellow free men in reverence to MATTHIOS whose idol grants us boons and wishes when fed the money, treasures, and metals of the civilized wretches. I must feed the idol to satisfy my greed!"))
+	to_chat(H, span_boldwarning("Long ago I did a crime worthy of my bounty being hung on the wall outside of the local inn. I live now with fellow free men in reverence to THE THIEF whose idol grants us boons and wishes when fed the money, treasures, and metals of the civilized wretches. I must feed the idol to satisfy my greed!"))
+
+/datum/antagonist/bandit/after_name_change()
+	. = ..()
+	//need to do this after name change or it dont work.
+	var/mob/living/carbon/human/H = owner.current
+	add_bounty(H.real_name, pick(300,500), TRUE, "Banditry", "Stonehedge")
 
 /* /datum/antagonist/bandit/greet()
 	to_chat(owner.current, span_alertsyndie("I am a BANDIT!"))
