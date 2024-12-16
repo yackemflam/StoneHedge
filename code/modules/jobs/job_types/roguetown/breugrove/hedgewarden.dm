@@ -11,7 +11,7 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "You are the leader of the Grove's Hedgeguard, combining the martial prowess of a warrior with the authority of a peacekeeper. While the Druids handle matters of nature and ritual, you and your Hedge Knights are the Grove's strong arm of justice - patrolling the forests and the Town's streets alike to maintain order. Your experience has earned you the respect of both the Grove's circle and the townsfolk, making you particularly effective at handling threats that would disturb both natural and civil law."
 	display_order = JDO_HEDGEWARDEN
-	whitelist_req = FALSE
+	selection_color = JCOLOR_GROVE
 
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/bog)
 	outfit = /datum/outfit/job/roguetown/hedgewarden
@@ -50,7 +50,7 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/quiver/Parrows
 	l_hand = /obj/item/rogueweapon/woodstaff/thornlash
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/signal_horn = 1, /obj/item/roguekey/grove = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)

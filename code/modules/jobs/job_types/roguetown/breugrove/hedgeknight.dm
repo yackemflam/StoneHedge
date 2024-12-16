@@ -11,7 +11,7 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "You serve as a martial part of the Grove's Hedgeguard, patrolling the streets of the Town under the Breuddwyd Grove's authority. While your order began as forest rangers devoted to Sylvarn, the Hedge Knights now focus on keeping the peace within the town walls. Armed with stunmace and longbow, you enforce the Five Laws against troublemakers - whether they're rowdy adventurers, local miscreants, or dangerous creatures. Your tabard marks you as an officer of the Grove's justice. Remember: you're trusted to protect the townspeople and maintain order, so don't abuse your authority or abandon your post."
 	display_order = JDO_HEDGEKNIGHT
-	whitelist_req = FALSE
+	selection_color = JCOLOR_GROVE
 	outfit = /datum/outfit/job/roguetown/hedgeknight
 	give_bank_account = 60
 	min_pq = 10
@@ -49,7 +49,7 @@
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 	l_hand = /obj/item/rogueweapon/woodstaff/thornlash
 	id = /obj/item/scomstone
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/signal_horn = 1, /obj/item/roguekey/grove = 1)
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

@@ -106,7 +106,7 @@
 #define HOSTAGE		(1<<7)
 #define NOBLE		(1<<8)
 
-#define GROVE		(1<<0)
+#define GROVE			(1<<1)
 
 #define GREATDRUID		(1<<0)
 #define HEDGEWARDEN		(1<<1)
@@ -114,7 +114,7 @@
 #define HEDGEKNIGHT		(1<<3)
 #define OVATE		(1<<4)
 
-#define GARRISON		(1<<1)
+#define GARRISON		(1<<2)
 
 #define GUARDSMAN	(1<<0)
 #define ROYALGUARD	(1<<1)
@@ -122,7 +122,7 @@
 #define GATEMASTER	(1<<3)
 #define SHERIFF		(1<<4)
 
-#define CHURCHMEN		(1<<2)
+#define CHURCHMEN		(1<<3)
 
 #define PRIEST		(1<<0)
 #define PURITAN		(1<<2)
@@ -130,20 +130,20 @@
 #define GRAVEDIGGER	(1<<4)
 #define CONFESSOR	(1<<5)
 
-#define ACADEMY				(1<<3)
+#define ACADEMY				(1<<4)
 
 #define ACADARCHMAGE 	(1<<0)
 #define ACADMAGE 	(1<<2)
 #define ACADAPP 	(1<<3)
 
-#define COURTIERS	(1<<4)
+#define COURTIERS	(1<<5)
 
 #define JESTER		(1<<0)
 #define PHYSICIAN 	(1<<1)
 #define BUTLER		(1<<2)
 #define COUNCILLOR	(1<<3)
 
-#define YEOMEN		(1<<5)
+#define YEOMEN		(1<<6)
 
 #define BARKEEP		(1<<0)
 #define ARMORSMITH	(1<<1)
@@ -157,7 +157,7 @@
 #define ELDER		(1<<9)
 #define APOTHECARY	(1<<10)
 
-#define PEASANTS	(1<<6)
+#define PEASANTS	(1<<7)
 
 #define HUNTER		(1<<0)
 #define FARMER		(1<<1)
@@ -183,7 +183,7 @@
 #define PRISONERD	(1<<21)
 #define BANDIT		(1<<22)
 
-#define APPRENTICES	(1<<7)
+#define APPRENTICES	(1<<8)
 
 #define APPRENTICE	(1<<0)
 #define CHURCHLING	(1<<1)
@@ -197,7 +197,7 @@
 #define VETERAN		(1<<1)
 #define SELLSWORD		(1<<2)
 
-#define TRIBAL		(1<<8)
+#define TRIBAL		(1<<9)
 
 #define CHIEFTAIN	(1<<0)
 #define TRIBALCOOK	(1<<1)
@@ -206,16 +206,16 @@
 #define TRIBALSHAMAN	(1<<4)
 #define TRIBALVILLAGER	(1<<5)
 
-#define VIKING		(1<<9)
+#define VIKING		(1<<10)
 #define HIGHKING	(1<<0)
 #define VIKINGFARMER	(1<<1)
 #define VIKINGGRUNT	(1<<1)
 
-#define VAMPIRE		(1<<10)
+#define VAMPIRE		(1<<11)
 #define VAMPTHRALL	(1<<0)
 #define VAMPSMITH	(1<<1)
 
-#define SLOP		(1<<11)
+#define SLOP		(1<<12)
 
 #define TESTER		(1<<0)
 #define DEATHKNIGHT (1<<1)

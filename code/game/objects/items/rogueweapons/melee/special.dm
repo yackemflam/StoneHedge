@@ -213,50 +213,6 @@
 		update_icon()
 		playsound(src, pick('sound/items/stunmace_toggle (1).ogg','sound/items/stunmace_toggle (2).ogg','sound/items/stunmace_toggle (3).ogg'), 100, TRUE)
 
-/obj/item/rogueweapon/mace/stunmace/hedgeknight
-	force = 15
-	force_wielded = 15
-	name = "hedgeknight stunmace"
-	icon_state = "stunmace0"
-	desc = "Upon closer inspection, this mace has kneestingers growing all throughout it, rather than being powered by a battery. Only the Hedgeknights themselves bear the fortitude to hold it."
-	gripped_intents = null
-	w_class = WEIGHT_CLASS_NORMAL
-	possible_item_intents = list(/datum/intent/mace/strike/stunner, /datum/intent/mace/smash/stunner)
-	wbalance = 0
-	minstr = 5
-	wdefense = 0
-	charge = 300
-	on = FALSE
-
-/obj/item/rogueweapon/mace/stunmace/hedgeknight/pickup(mob/user)
-	. = ..()
-	var/mob/living/carbon/human/H = user
-	if(!HAS_TRAIT(H, TRAIT_SHOCKIMMUNE) || HAS_TRAIT(H, TRAIT_RAVOX_CURSE))
-		to_chat(H, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
-		H.electrocute_act(15, src) //nobody likes this, its been proven at tgmc but i guess its too late now
-
-/obj/item/rogueweapon/mace/stunmace/hedgeknight/process()
-	var/mob/living/user = loc
-	if(istype(user))
-		if(!HAS_TRAIT(user, TRAIT_SHOCKIMMUNE) || HAS_TRAIT(user, TRAIT_RAVOX_CURSE))
-			to_chat(user, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
-			user.electrocute_act(15, src)
-	if(on)
-		charge--
-	else
-		if(charge < 300)
-			charge += 10
-	if(charge <= 0)
-		on = FALSE
-		charge = 0
-		update_icon()
-		if(istype(user))
-			if(user.a_intent)
-				var/datum/intent/I = user.a_intent
-				if(istype(I))
-					I.afterchange()
-		playsound(src, pick('sound/items/stunmace_toggle (1).ogg','sound/items/stunmace_toggle (2).ogg','sound/items/stunmace_toggle (3).ogg'), 100, TRUE)
-
 /obj/item/rogueweapon/katar
 	slot_flags = ITEM_SLOT_HIP
 	force = 16
@@ -372,7 +328,6 @@
 	var/cuffing = FALSE
 
 /obj/item/rogueweapon/woodstaff/thornlash/funny_attack_effects(mob/living/target, mob/living/user, nodmg)
-	. = ..()
 	if(isliving(target))
 		var/mob/living/L = target
 		var/stamina_damage = wielded ? 35 : 15
@@ -393,6 +348,7 @@
 					var/obj/item/rope/vine_cuffs = new(C)
 					vine_cuffs.name = "thorny vine restraints"
 					vine_cuffs.desc = "Restraints made from druidically-enhanced thorny vines."
+					vine_cuffs.color = "#0F3F0F"
 					C.handcuffed = vine_cuffs
 					C.update_handcuffed()
 					user.visible_message(span_warning("[user] restrains [C] with vines!"))
@@ -400,3 +356,5 @@
 					playsound(C, 'sound/foley/dropsound/cloth_drop.ogg', 30, TRUE)
 					SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 				cuffing = FALSE
+				return
+	. = ..()

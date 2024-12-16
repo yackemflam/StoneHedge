@@ -34,10 +34,13 @@
 		return
 
 	var/list/destinations = list()
+	var/list/sorted_names = list()
 	for(var/obj/effect/landmark/waygate_destination/L in GLOB.landmarks_list)
 		destinations[L.name] = L
+		sorted_names += L.name
+	sorted_names = sortList(sorted_names)
 
-	var/destination_name = input(user, "Where would you like to create a waygate to?", "Waygate Destination") as null|anything in destinations
+	var/destination_name = input(user, "Where would you like to create a waygate to?", "Waygate Destination") as null|anything in sorted_names
 	if(!destination_name)
 		return
 
@@ -141,11 +144,20 @@
 /obj/effect/landmark/waygate_destination/grove
 	name = "Grove"
 
+/obj/effect/landmark/waygate_destination/northgate
+	name = "North Gate"
+
+/obj/effect/landmark/waygate_destination/northeastgate
+	name = "North-East Gate"
+
 /obj/effect/landmark/waygate_destination/prison
 	name = "Prison"
 
-/obj/effect/landmark/waygate_destination/inn
+/obj/effect/landmark/waygate_destination/academy
 	name = "Ravenloft Academy"
+
+/obj/effect/landmark/waygate_destination/southgate
+	name = "South Gate"
 
 /obj/effect/landmark/waygate_destination/inn
 	name = "Sylver Dragonne Inn"
@@ -176,16 +188,20 @@
 		to_chat(user, "<span class='warning'>The shrine's energy hasn't yet recovered. Please wait a moment.</span>")
 		return
 
+	var/choice = alert(user, "Do you wish to summon the Hedge Guard?", "Grove Shrine", "Yes", "No")
+	if(choice != "Yes")
+		return
+
 	last_used = world.time
 
-	var/message = "<span class='boldannounce'>GROVE SHRINE ALERT: [user.name] seeks assistance at [get_area(user)]! (<a href='?src=[REF(src)];alert_response=1;caller=[user.name]'>Create Waygate</a>)</span>"
+	var/message = "<span class='boldannounce'>GROVE SHRINE ALERT: [user.name] seeks assistance! (<a href='?src=[REF(src)];alert_response=1;caller=[user.name]'>Create Emergency Waygate</a>)</span>"
 
 	for(var/mob/M in GLOB.player_list)
 		if(M.mind && (M.mind.assigned_role in list("Great Druid", "Druid", "Hedge Warden", "Hedge Knight")))
 			to_chat(M, message)
 			SEND_SOUND(M, sound('sound/misc/treefall.ogg'))
 
-	to_chat(user, "<span class='green'>You place your hand on the shrine, and feel its ancient magic ripple outward...</span>")
+	to_chat(user, "<span class='notice'>You place your hand on the shrine, and feel its ancient magic ripple outward...</span>")
 	playsound(src, 'sound/misc/treefall.ogg', 50, TRUE)
 
 	var/obj/effect/temp_visual/shrine_activation/effect = new(get_turf(src))

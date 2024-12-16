@@ -11,6 +11,7 @@
 	allowed_ages = list(AGE_ADULT)
 	tutorial = "As an Ovate of the Breuddwyd Grove, you are an apprentice studying both the druidic arts and martial disciplines. Under the guidance of both Druids and Hedge Knights, you learn to balance the sacred wisdom of nature with the practical needs of maintaining order. Your duties include assisting in rituals, learning herb-lore, practicing basic combat techniques, and helping patrol the town's quieter districts. While you don't yet possess the full powers of either a Druid or Hedge Knight, you represent the future of the Grove's traditions."
 	display_order = JDO_OVATE
+	selection_color = JCOLOR_GROVE
 	outfit = /datum/outfit/job/roguetown/ovate
 	give_bank_account = 30
 	min_pq = 0
@@ -36,6 +37,7 @@
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot = 1,
+		/obj/item/roguekey/grove = 1,
 	)
 	if(H.mind)
 		assign_skills(H)

@@ -26,48 +26,43 @@
 /datum/outfit/job/roguetown/druid/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/sickle
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff/wise
-	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
+	backr = /obj/item/rogueweapon/woodstaff/aries
+	head = /obj/item/clothing/head/roguetown/dendormask
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor/grove
-	gloves = /obj/item/clothing/gloves/roguetown/forestergauntlets
-	cloak = /obj/item/clothing/cloak/templar/dendor
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
+	gloves = null
+	cloak = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+	armor = null
 	backpack_contents = list(
-		/obj/item/rogueweapon/huntingknife/stoneknife = 1,
-		/obj/item/rogueweapon/whip = 1,
+		/obj/item/rogueweapon/sickle = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot = 1,
+		/obj/item/roguekey/grove = 1,
+		/obj/item/seeds/random = 3,
 	)
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 2, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/magic/druidic, 4, TRUE) //Allows you to craft briarmasks. Otherwise this does nothing, but maybe one day it will.
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)//wildman can ungah bungah better now
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/druidic, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
 		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/magic/druidic, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/magic/druidic, 2, TRUE)
 		H.change_stat("intelligence", 4)
-		H.change_stat("endurance", 2)
+		H.change_stat("wisdom", 4)
 		H.change_stat("perception", 2)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	if(isseelie(H))
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/seelie_dust)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/summon_rat)
@@ -78,7 +73,9 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/animate_object)
 
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_VINE_WALKER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_WILD_EATER, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
