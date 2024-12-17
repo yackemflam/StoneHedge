@@ -11,7 +11,6 @@
 	experimental_onhip = TRUE
 	w_class = WEIGHT_CLASS_SMALL
 	sewrepair = TRUE
-	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/head/roguetown/equipped(mob/user, slot)
 	. = ..()
@@ -20,29 +19,6 @@
 /obj/item/clothing/head/roguetown/dropped(mob/user)
 	. = ..()
 	user.update_fov_angles()
-
-//Handles debuff from wearing armor. This is slop, it just makes it so you can't put it on.
-//Preferably - make a way to check when armor is on apply status effect of a debuff to stats, on remove, remove debuff. - Tried it a few ways, kept breaking.
-/obj/item/clothing/head/roguetown/mob_can_equip(mob/user, mob/equipper, slot)
-	. = ..()
-	var/mob/living/carbon/human/H = user
-	if(armor_class == ARMOR_CLASS_HEAVY)
-		if(!HAS_TRAIT(H,TRAIT_HEAVYARMOR))
-			to_chat(user, span_warning("You lack the training to wear this armor!"))
-			return FALSE
-		else
-			return
-	if(armor_class == ARMOR_CLASS_MEDIUM)	//Armor class medium
-		if(!HAS_TRAIT(H,TRAIT_HEAVYARMOR))	//First check if heavy armor training; if so, no need to check further. Heavy training = medium training
-			if(!HAS_TRAIT(H,TRAIT_MEDIUMARMOR))		//If no heavy training, check medium training
-				to_chat(user, span_warning("You lack the training to wear this armor!"))	//boo-womp
-				return FALSE
-			else
-				return
-		else
-			return
-	if(armor_class == ARMOR_CLASS_LIGHT)	//No perk check on this one; doing this to avoid future issues.
-		return
 
 
 /obj/item/clothing/head/roguetown/antlerhood
@@ -594,7 +570,6 @@
 	clothing_flags = CANT_SLEEP_IN
 	resistance_flags = FIRE_PROOF
 	sewrepair = FALSE
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/head/roguetown/helmet/skullcap
 	name = "skull cap"
@@ -721,7 +696,6 @@
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 400
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/head/roguetown/helmet/elfbarbute
 	name = "elven barbute"
@@ -736,7 +710,6 @@
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 400
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/head/roguetown/helmet/elfbarbutewings
 	name = "winged elven barbute"
@@ -751,7 +724,6 @@
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 400
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard
 	name = "savoyard"
@@ -1230,14 +1202,11 @@
 	blocksound = PLATEHIT
 	smeltresult = /obj/item/ash
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
-	armor_class = ARMOR_CLASS_MEDIUM
-
 /obj/item/clothing/head/roguetown/helmet/carapacecap/dragon
 	name = "dragonscale cap"
 	desc = "Fiery armored plates sown together to protect your head."
 	color = "#9e5761"
 	armor = list("blunt" = 60, "slash" = 60, "stab" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/head/roguetown/helmet/carapacehelm
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
@@ -1257,7 +1226,6 @@
 	blocksound = PLATEHIT
 	smeltresult = /obj/item/ash
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/head/roguetown/helmet/carapacehelm/dragon
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
@@ -1270,23 +1238,35 @@
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 	max_integrity = 300
 	sellprice = 50
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
-	icon = 'icons/roguetown/clothing/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 	name = "volf helmet"
 	desc = "A helmet made using the remains of a volf, surprisingly comfortable."
 	body_parts_covered = HEAD|HAIR|EARS
 	flags_inv = HIDEHAIR
-	icon_state = "volfhead"
-	item_state = "volfhead"
+	icon_state = "volfhelm"
+	item_state = "volfhelm"
 	armor = list("blunt" = 47, "slash" = 27, "stab" = 37, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
 	anvilrepair = null
 	sewrepair = TRUE
 	blocksound = SOFTHIT
+
+/obj/item/clothing/head/roguetown/helmet/leather/volfhead
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	name = "volf head"
+	desc = "A helmet made using the head of a volf."
+	body_parts_covered = HEAD|HAIR|EARS
+	flags_inv = HIDEHAIR
+	icon_state = "volfhead"
+	item_state = "volfhead"
+	armor = list("blunt" = 45, "slash" = 25, "stab" = 35, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
+	anvilrepair = null
+	sewrepair = TRUE
+	blocksound = SOFTHIT
+	clothing_flags = null
 
 /obj/item/clothing/head/roguetown/helmet/leather/bearhead
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
@@ -1294,8 +1274,6 @@
 	desc = "Upon closer inspection, this is made of volf fur, not bear fur, but who will know the difference?"
 	body_parts_covered = HEAD|HAIR|EARS
 	flags_inv = HIDEHAIR|HIDEEARS
-	icon = 'icons/roguetown/clothing/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 	icon_state = "bearpelt"
 	item_state = "bearpelt"
 	armor = list("blunt" = 50, "slash" = 30, "stab" = 40, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
