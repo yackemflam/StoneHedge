@@ -599,6 +599,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 
 	var/list/omegalist = list()
 	omegalist += list(GLOB.noble_positions)
+	omegalist += list (GLOB.grove_positions)
 	omegalist += list(GLOB.courtier_positions)
 	omegalist += list(GLOB.garrison_positions)
 	omegalist += list(GLOB.church_positions)
@@ -641,6 +642,8 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 			switch (SSjob.name_occupations[category[1]].department_flag)
 				if (NOBLEMEN)
 					cat_name = "Nobles"
+				if (GROVE)
+					cat_name = "Breuddwyd Grove"
 				if (COURTIERS)
 					cat_name = "Courtiers"
 				if (GARRISON)

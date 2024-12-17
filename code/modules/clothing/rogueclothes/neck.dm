@@ -226,6 +226,8 @@
 
 /obj/item/clothing/neck/roguetown/gorget/prisoner/canStrip(mob/living/carbon/human/stripper, mob/living/carbon/human/owner)
 	if(usr.job == "Hedgemaster" || usr.job == "Hedge Knight")
+		to_chat(usr, span_warning("I disable the collar's unremovableness curse... It will only reactivate when worn again."))
+		REMOVE_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 		return TRUE
 	else
 		return ..()
@@ -236,10 +238,20 @@
 
 /obj/item/clothing/neck/roguetown/gorget/prisoner/servant/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
-	if(!(src in user.held_items))
+	if(slot == SLOT_NECK)
 		ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+		ADD_TRAIT(user, TRAIT_PACIFISM, CURSED_ITEM_TRAIT)
 		to_chat(user, span_warning("This collar makes me heed to orders of others, unless it includes self harm or orders that will indirectly or directly harm to town and its population... And also it prevents me from running away..."))
 		to_chat(user, span_alert("Roleplay accordingly to your collar's effects."))
+
+/obj/item/clothing/neck/roguetown/gorget/prisoner/dropped(mob/user)
+	. = ..()
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/prisoner = user
+	if(prisoner.get_item_by_slot(SLOT_NECK) != src)
+		REMOVE_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+		REMOVE_TRAIT(user, TRAIT_PACIFISM, CURSED_ITEM_TRAIT)
 
 /obj/item/clothing/neck/roguetown/psicross
 	name = "divine Symbol"

@@ -213,50 +213,6 @@
 		update_icon()
 		playsound(src, pick('sound/items/stunmace_toggle (1).ogg','sound/items/stunmace_toggle (2).ogg','sound/items/stunmace_toggle (3).ogg'), 100, TRUE)
 
-/obj/item/rogueweapon/mace/stunmace/hedgeknight
-	force = 15
-	force_wielded = 15
-	name = "hedgeknight stunmace"
-	icon_state = "stunmace0"
-	desc = "Upon closer inspection, this mace has kneestingers growing all throughout it, rather than being powered by a battery. Only the Hedgeknights themselves bear the fortitude to hold it."
-	gripped_intents = null
-	w_class = WEIGHT_CLASS_NORMAL
-	possible_item_intents = list(/datum/intent/mace/strike/stunner, /datum/intent/mace/smash/stunner)
-	wbalance = 0
-	minstr = 5
-	wdefense = 0
-	charge = 300
-	on = FALSE
-
-/obj/item/rogueweapon/mace/stunmace/hedgeknight/pickup(mob/user)
-	. = ..()
-	var/mob/living/carbon/human/H = user
-	if(!HAS_TRAIT(H, TRAIT_SHOCKIMMUNE) || HAS_TRAIT(H, TRAIT_RAVOX_CURSE))
-		to_chat(H, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
-		H.electrocute_act(15, src) //nobody likes this, its been proven at tgmc but i guess its too late now
-
-/obj/item/rogueweapon/mace/stunmace/hedgeknight/process()
-	var/mob/living/user = loc
-	if(istype(user))
-		if(!HAS_TRAIT(user, TRAIT_SHOCKIMMUNE) || HAS_TRAIT(user, TRAIT_RAVOX_CURSE))
-			to_chat(user, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
-			user.electrocute_act(15, src)
-	if(on)
-		charge--
-	else
-		if(charge < 300)
-			charge += 10
-	if(charge <= 0)
-		on = FALSE
-		charge = 0
-		update_icon()
-		if(istype(user))
-			if(user.a_intent)
-				var/datum/intent/I = user.a_intent
-				if(istype(I))
-					I.afterchange()
-		playsound(src, pick('sound/items/stunmace_toggle (1).ogg','sound/items/stunmace_toggle (2).ogg','sound/items/stunmace_toggle (3).ogg'), 100, TRUE)
-
 /obj/item/rogueweapon/katar
 	slot_flags = ITEM_SLOT_HIP
 	force = 16
@@ -350,3 +306,56 @@
 	name = "skinning knife"
 	desc = "More than one way to skin a seelie."
 	icon_state = "skinningknife"
+
+
+/obj/item/rogueweapon/woodstaff/thornlash
+	name = "thornlash staff"
+	desc = "A mystical wooden staff wrapped in thorny vines. The vines pulse with druidic energy, ready to inflict nature's judgment upon wrongdoers."
+	force = 5
+	force_wielded = 10
+	possible_item_intents = list(SPEAR_BASH)
+	gripped_intents = list(SPEAR_BASH, /datum/intent/mace/smash/wood)
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	blade_dulling = DULLING_BASHCHOP
+	walking_stick = TRUE
+	max_integrity = 800
+	wdefense = 10
+	associated_skill = /datum/skill/combat/polearms
+	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg', 'sound/combat/wooshes/bladed/wooshsmall (2).ogg', 'sound/combat/wooshes/bladed/wooshsmall (3).ogg')
+	sharpness = IS_BLUNT
+	var/cuffing = FALSE
+
+/obj/item/rogueweapon/woodstaff/thornlash/funny_attack_effects(mob/living/target, mob/living/user, nodmg)
+	. = ..()
+	if(!nodmg && isliving(target))
+		var/mob/living/L = target
+		var/stamina_damage = wielded ? 45 : 25
+		L.rogfat_add(stamina_damage)
+
+		if(L.rogfat >= L.maxrogfat)
+			L.Paralyze(6 SECONDS)
+			to_chat(L, span_danger("The thorns sap my strength, making it impossible to move!"))
+
+		if(iscarbon(L))
+			var/mob/living/carbon/C = L
+			if((C.IsParalyzed() || C.rogfat >= C.maxrogfat) && !C.handcuffed && !cuffing)
+				cuffing = TRUE
+				user.visible_message(span_green("[user] begins wrapping [C]'s wrists with vines!"))
+				to_chat(C, span_userdanger("[user] begins wrapping my wrists with vines!"))
+				if(do_after(user, 5 SECONDS, C))
+					if(C.handcuffed || (!C.IsParalyzed() && C.rogfat < C.maxrogfat))
+						cuffing = FALSE
+						return
+					var/obj/item/rope/vine_cuffs = new(C)
+					vine_cuffs.name = "thorny vine restraints"
+					vine_cuffs.desc = "Restraints made from druidically-enhanced thorny vines."
+					vine_cuffs.color = "#0F3F0F"
+					C.handcuffed = vine_cuffs
+					C.update_handcuffed()
+					user.visible_message(span_warning("[user] restrains [C] with vines!"))
+					to_chat(C, span_userdanger("[user] restrains me with vines!"))
+					playsound(C, 'sound/foley/dropsound/cloth_drop.ogg', 30, TRUE)
+					SSblackbox.record_feedback("tally", "handcuffs", 1, type)
+				cuffing = FALSE

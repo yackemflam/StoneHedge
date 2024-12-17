@@ -9,7 +9,7 @@
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = ALL_CLERIC_PATRONS
 	outfit = /datum/outfit/job/roguetown/templar
-	min_pq = 0
+	min_pq = 5
 	max_pq = null
 	total_positions = 5
 	spawn_positions = 5

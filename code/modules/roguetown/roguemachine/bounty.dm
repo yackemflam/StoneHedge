@@ -237,6 +237,10 @@
 	. = ..()
 	if(!(ishuman(M)))
 		return
+	if(M.loc != loc)
+		M.forceMove(get_turf(src))
+		buckle_mob(M)
+		return
 
 	playsound(src.loc, 'sound/items/beartrap.ogg', 100, TRUE, -1)
 	M.Paralyze(3 SECONDS)
@@ -276,19 +280,18 @@
 		budget2change((reward_amount*2)) //double reward for alive
 		var/newcollar = new /obj/item/clothing/neck/roguetown/gorget/prisoner/servant(get_turf(M))
 		playsound(src.loc, 'sound/items/beartrap.ogg', 100, TRUE, -1)
-		M.doUnEquip(M.wear_neck, TRUE, invdrop = TRUE)
-		M.equip_item(newcollar)
+		M.wear_neck.forceMove(loc)
+		M.equip_to_slot_if_possible(newcollar, SLOT_NECK, FALSE, TRUE, TRUE, TRUE)
 	else
 		say("This skull carries no reward, you fool.")
 		playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
-	M.Stun(2 SECONDS)
+	M.Unconscious(15 SECONDS)
 
 
 	// Head has been "analyzed". Return it.
 	sleep(2 SECONDS)
 	playsound(src, 'sound/combat/vite.ogg', 100, FALSE, -1)
 	unbuckle_all_mobs()
-	M.Paralyze(50, TRUE)
 
 
 /obj/structure/chair/arrestchair/proc/budget2change(budget, mob/user, specify)

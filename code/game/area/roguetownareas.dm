@@ -168,6 +168,14 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
 	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 
+/area/rogue/outdoors/woods/grove
+	name = "The Great Tree"
+	icon_state = "bog"
+
+/area/rogue/outdoors/bog/prison
+	name = "The Great Tree - Dungeons"
+	icon_state = "bog"
+
 
 /area/rogue/outdoors/river
 	name = "river"

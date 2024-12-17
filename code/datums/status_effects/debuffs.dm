@@ -522,25 +522,25 @@
 			var/mob/living/carbon/human/humanboi = owner
 			if(istype(humanboi.wear_mask, /obj/item/clothing/mask/rogue/facemask/leper))
 				if(humanboi.wear_mask.obj_integrity > 0) //we dont use the lepermask effect for this reason.
-					to_chat(owner, span_warning("Agh, my mask stop my muscle spasms, but it hurts all the same."))
+					humanboi.balloon_alert_to_viewers("Spasms and shudders slightly", "Agh, my mask stop my muscle spasms, but it hurts all the same.")
 					humanboi.flash_fullscreen("redflash1")
 					humanboi.add_stress(/datum/stressevent/lepermaskedpain)
 					return
 				else
-					to_chat(owner, span_warning("Ggh- My mask is broken, it can't do anything in this state!"))
+					humanboi.balloon_alert("Ggh- My mask is broken, it can't do anything in this state!")
 		owner.flash_fullscreen("redflash1")
 		owner.add_stress(/datum/stressevent/leprosypain)
 		switch(rand(1,5))
 			if(1)
 				if((owner.mobility_flags & MOBILITY_MOVE) && isturf(owner.loc))
-					to_chat(owner, span_warning("My leg spasms!"))
+					owner.balloon_alert("leg spasm!","My leg spasms!")
 					step(owner, pick(GLOB.cardinals))
 			if(2)
 				if(owner.incapacitated())
 					return
 				var/obj/item/I = owner.get_active_held_item()
 				if(I)
-					to_chat(owner, span_warning("My fingers spasm!"))
+					owner.balloon_alert_to_viewers("fingers spasm!","My fingers spasm!")
 					owner.log_message("used [I] due to a Muscle Spasm", LOG_ATTACK)
 					I.attack_self(owner)
 			if(3)
@@ -556,14 +556,14 @@
 					if(isliving(M))
 						targets += M
 				if(LAZYLEN(targets))
-					to_chat(owner, span_warning("My arm spasms!"))
+					owner.balloon_alert_to_viewers("arm spasm!", "My arm spasms!")
 					owner.log_message(" attacked someone due to a Muscle Spasm", LOG_ATTACK) //the following attack will log itself
 					owner.ClickOn(pick(targets))
 				owner.a_intent = prev_intent
 			if(4)
 				var/prev_intent = owner.a_intent
 				owner.a_intent = INTENT_HARM
-				to_chat(owner, span_warning("My arm spasms!"))
+				owner.balloon_alert_to_viewers("arm spasm!","My arm spasms!")
 				owner.log_message("attacked [owner.p_them()]self to a Muscle Spasm", LOG_ATTACK)
 				owner.ClickOn(owner)
 				owner.a_intent = prev_intent
@@ -575,7 +575,7 @@
 				for(var/turf/T in oview(owner, 3))
 					targets += T
 				if(LAZYLEN(targets) && I)
-					to_chat(owner, span_warning("My arm spasms!"))
+					owner.balloon_alert_to_viewers("arm spasm!", "My arm spasms!")
 					owner.log_message("threw [I] due to a Muscle Spasm", LOG_ATTACK)
 					owner.throw_item(pick(targets))
 

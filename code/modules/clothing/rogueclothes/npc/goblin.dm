@@ -41,6 +41,8 @@
 
 /obj/item/clothing/head/roguetown/helmet/leather/goblin
 	name = "goblin helmet"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 	icon_state = "leather_helm_item"
 	item_state = "leather_helm"
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
