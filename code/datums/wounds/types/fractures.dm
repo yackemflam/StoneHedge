@@ -3,9 +3,9 @@
 	check_name = span_bone("<B>FRACTURE</B>")
 	severity = WOUND_SEVERITY_SEVERE
 	crit_message = list(
-		"The bone shatters!", 
-		"The bone is broken!", 
-		"The %BODYPART is mauled!", 
+		"The bone shatters!",
+		"The bone is broken!",
+		"The %BODYPART is mauled!",
 		"The bone snaps through the skin!",
 	)
 	sound_effect = "wetbreak"
@@ -52,9 +52,9 @@
 	name = "cranial fracture"
 	check_name = span_bone("<B>SKULLCRACK</B>")
 	crit_message = list(
-		"The skull shatters in a gruesome way!", 
-		"The head is smashed!", 
-		"The skull is broken!", 
+		"The skull shatters in a gruesome way!",
+		"The head is smashed!",
+		"The skull is broken!",
 		"The skull caves in!",
 	)
 	sound_effect = "headcrush"
@@ -82,7 +82,7 @@
 		if(iscarbon(affected))
 			var/mob/living/carbon/carbon_affected = affected
 			carbon_affected.update_disabled_bodyparts()
-	if(mortal || HAS_TRAIT(affected, TRAIT_CRITICAL_WEAKNESS))
+	if(mortal && HAS_TRAIT(affected, TRAIT_CRITICAL_WEAKNESS))
 		affected.death()
 
 /datum/wound/fracture/head/on_mob_loss(mob/living/affected)
@@ -152,9 +152,9 @@
 	name = "mandibular fracture"
 	check_name = span_bone("JAW FRACTURE")
 	crit_message = list(
-		"The mandible comes apart beautifully!", 
-		"The jaw is smashed!", 
-		"The jaw is shattered!", 
+		"The mandible comes apart beautifully!",
+		"The jaw is smashed!",
+		"The jaw is shattered!",
 		"The jaw caves in!",
 	)
 	whp = 80
@@ -174,7 +174,7 @@
 	name = "cervical fracture"
 	check_name = span_bone("<B>NECK</B>")
 	crit_message = list(
-		"The spine shatters in a spectacular way!", 
+		"The spine shatters in a spectacular way!",
 		"The spine snaps!",
 		"The spine cracks!",
 		"The spine is broken!",
@@ -226,9 +226,9 @@
 	name = "pelvic fracture"
 	check_name = span_bone("<B>PELVIS</B>")
 	crit_message = list(
-		"The pelvis shatters in a magnificent way!", 
-		"The pelvis is smashed!", 
-		"The pelvis is mauled!", 
+		"The pelvis shatters in a magnificent way!",
+		"The pelvis is smashed!",
+		"The pelvis is mauled!",
 		"The pelvic floor caves in!",
 	)
 	whp = 50
@@ -240,7 +240,7 @@
 		name = "broken buck"
 		check_name = span_bone("BUCKBROKEN")
 		crit_message = "The buck is broken expertly!"
-	
+
 /datum/wound/fracture/groin/on_mob_gain(mob/living/affected)
 	. = ..()
 	affected.Stun(20)
