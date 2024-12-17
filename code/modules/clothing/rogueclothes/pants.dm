@@ -19,7 +19,6 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	flags_inv = HIDECROTCH|HIDEBUTT
 	w_class = WEIGHT_CLASS_SMALL
-	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/under/roguetown/AdjustClothes(mob/user)
 	if(loc == user)
@@ -37,29 +36,6 @@
 					var/mob/living/carbon/H = user
 					H.update_inv_pants()
 	return
-
-//Handles debuff from wearing armor. This is slop, it just makes it so you can't put it on.
-//Preferably - make a way to check when armor is on apply status effect of a debuff to stats, on remove, remove debuff. - Tried it a few ways, kept breaking.
-/obj/item/clothing/pants/roguetown/mob_can_equip(mob/user, mob/equipper, slot)
-	. = ..()
-	var/mob/living/carbon/human/H = user
-	if(armor_class == ARMOR_CLASS_HEAVY)
-		if(!HAS_TRAIT(H,TRAIT_HEAVYARMOR))
-			to_chat(user, span_warning("You lack the training to wear this armor!"))
-			return FALSE
-		else
-			return
-	if(armor_class == ARMOR_CLASS_MEDIUM)	//Armor class medium
-		if(!HAS_TRAIT(H,TRAIT_HEAVYARMOR))	//First check if heavy armor training; if so, no need to check further. Heavy training = medium training
-			if(!HAS_TRAIT(H,TRAIT_MEDIUMARMOR))		//If no heavy training, check medium training
-				to_chat(user, span_warning("You lack the training to wear this armor!"))	//boo-womp
-				return FALSE
-			else
-				return
-		else
-			return
-	if(armor_class == ARMOR_CLASS_LIGHT)	//No perk check on this one; doing this to avoid future issues.
-		return
 
 /obj/item/clothing/under/roguetown/tights
 	name = "tights"
@@ -206,7 +182,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FIRE_PROOF
 	can_hold_endowed = TRUE
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/under/roguetown/brayette
 	name = "brayette"
@@ -230,7 +205,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	clothing_flags = CANT_SLEEP_IN
 	resistance_flags = FIRE_PROOF
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/under/roguetown/chainlegs/iron
 
@@ -242,7 +216,6 @@
 	armor = list("blunt" = 40, "slash" = 80, "stab" = 40, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/iron
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/under/roguetown/platelegs
 	name = "plated chausses"
@@ -266,7 +239,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	clothing_flags = CANT_SLEEP_IN
 	resistance_flags = FIRE_PROOF
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/under/roguetown/heavyroyalplatelegs
 	name = "royal heavyplated chausses"
@@ -284,7 +256,6 @@
 	anvilrepair = /datum/skill/craft/blacksmithing
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/under/roguetown/carapacelegs
 	name = "carapace chausses"
@@ -302,7 +273,6 @@
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/under/roguetown/chainlegs/iron/skirt
 	name = "iron chain skirt"
@@ -341,7 +311,6 @@
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 	color = "#9e5761"
 	sellprice = 50
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/under/roguetown/carapacelegs/dragon/skirt
 	name = "dragonscale plated skirt"
