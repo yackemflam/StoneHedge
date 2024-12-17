@@ -7,30 +7,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	sewrepair = TRUE
 	fiber_salvage = FALSE
-	armor_class = ARMOR_CLASS_LIGHT
-
-//Handles debuff from wearing armor. This is slop, it just makes it so you can't put it on.
-//Preferably - make a way to check when armor is on apply status effect of a debuff to stats, on remove, remove debuff. - Tried it a few ways, kept breaking.
-/obj/item/clothing/wrists/roguetown/mob_can_equip(mob/user, mob/equipper, slot)
-	. = ..()
-	var/mob/living/carbon/human/H = user
-	if(armor_class == ARMOR_CLASS_HEAVY)
-		if(!HAS_TRAIT(H,TRAIT_HEAVYARMOR))
-			to_chat(user, span_warning("You lack the training to wear this armor!"))
-			return FALSE
-		else
-			return
-	if(armor_class == ARMOR_CLASS_MEDIUM)	//Armor class medium
-		if(!HAS_TRAIT(H,TRAIT_HEAVYARMOR))	//First check if heavy armor training; if so, no need to check further. Heavy training = medium training
-			if(!HAS_TRAIT(H,TRAIT_MEDIUMARMOR))		//If no heavy training, check medium training
-				to_chat(user, span_warning("You lack the training to wear this armor!"))	//boo-womp
-				return FALSE
-			else
-				return
-		else
-			return
-	if(armor_class == ARMOR_CLASS_LIGHT)	//No perk check on this one; doing this to avoid future issues.
-		return
 
 /obj/item/clothing/wrists/roguetown/ComponentInitialize()
 	. = ..()
@@ -54,7 +30,6 @@
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	sewrepair = FALSE
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/wrists/roguetown/vambraces
 	name = "iron couter"
@@ -68,7 +43,6 @@
 	max_integrity = 200
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/iron
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/wrists/roguetown/bracers/carapace
 	name = "carapace bracers"
@@ -84,8 +58,6 @@
 	anvilrepair = null
 	smeltresult = /obj/item/ash
 	sewrepair = TRUE
-	armor_class = ARMOR_CLASS_MEDIUM
-
 /obj/item/clothing/wrists/roguetown/bracers/carapace/dragon
 	name = "dragonscale bracers"
 	desc = "Fiber bracers lined with dragonscale to protect your wrists"
@@ -109,7 +81,6 @@
 	sewrepair = TRUE
 	salvage_amount = 1
 	salvage_result = /obj/item/natural/hide/cured
-	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/wrists/roguetown/bracers/leather/advanced
 	name = "hardened leather bracers"
@@ -150,7 +121,6 @@
 	max_integrity = 150
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ash
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/wrists/roguetown/hiddenblade
 	name = "leather bracers"
@@ -158,7 +128,7 @@
 	body_parts_covered = ARMS
 	icon_state = "lbracers"
 	item_state = "lbracers"
-	armor = list("blunt" = 32, "slash" = 12, "stab" = 22, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	max_integrity = 150
@@ -166,7 +136,6 @@
 	smeltresult = /obj/item/ingot/steel
 	var/extended = FALSE
 	var/obj/item/rogueweapon/huntingknife/idagger/steel/hidden/hid
-	armor_class = ARMOR_CLASS_LIGHT //Spend the steel on the blade itself, not the entire bracer and the blade
 
 /obj/item/clothing/wrists/roguetown/hiddenblade/dropped(mob/user)
 	. = ..()
