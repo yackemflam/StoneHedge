@@ -2,21 +2,20 @@
 	title = "Druid"
 	f_title = "Druidess"
 	flag = DRUID
-	department_flag = CHURCHMEN
+	department_flag = GROVE
 	faction = "Station"
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 5
+	spawn_positions = 5
 
 	allowed_sexes = list(MALE, FEMALE)
 	spells = list (/obj/effect/proc_holder/spell/targeted/shapeshift,/obj/effect/proc_holder/spell/aoe_turf/conjure/Wolf,/obj/effect/proc_holder/spell/invoked/infestation5e,/obj/effect/proc_holder/spell/self/primalsavagery5e,)
 	allowed_races = RACES_ALL_KINDSPLUS
-	allowed_patrons = ALL_DIVINE_PATRONS //gets set to natureboi on the outfit anyways lol
 	outfit = /datum/outfit/job/roguetown/druid
-	tutorial = "You have always been drawn to the wild, and the wild drawn to you. When your calling came, it was from Nature and it's deities. You act as a medium between the natural and magickal worlds, often caught between it and the changing pace of society. The people still depend on you for wisdom and balance in this city; and it is often up to you and the various orders who survey the woodland realm to maintain any form of law: be it the lands or the peoples."
+	tutorial = "You are a Druid of the Breuddwyd Grove, a sacred keeper of both natural and traditional law. Drawing power from the ancient spirits of the land, you maintain harmony between civilization and wilderness. As one of the Grove's spiritual authorities and Town's legal authorities, you interpret the wisdom written in both legal scrolls and forest leaves. Your judgments flow from the eternal laws of nature - as a stream shapes the stones, so too does justice shape society. While wielding primal magic and communing with beasts, your paramount duty is to preserve balance: mediating between town and wild, settling disputes through ancient rites, and ensuring both human law and nature's code are respected. Like the great oak that bridges earth and sky, you stand between the ordered realm of civilization and the raw power of the wilderness, drawing wisdom from both to maintain the sacred harmony."
 
 	display_order = JDO_DRUID
 	give_bank_account = FALSE
-	min_pq = 10
+	min_pq = 5
 	max_pq = null
 
 /datum/outfit/job/roguetown/druid
@@ -27,48 +26,43 @@
 /datum/outfit/job/roguetown/druid/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/sickle
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff/wise
-	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
-	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
-	gloves = /obj/item/clothing/gloves/roguetown/forestergauntlets
-	cloak = /obj/item/clothing/cloak/templar/dendor
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
+	backr = /obj/item/rogueweapon/woodstaff/aries
+	head = /obj/item/clothing/head/roguetown/dendormask
+	neck = /obj/item/clothing/neck/roguetown/psicross/dendor/grove
+	gloves = null
+	cloak = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+	armor = null
 	backpack_contents = list(
-		/obj/item/rogueweapon/huntingknife/stoneknife = 1,
-		/obj/item/rogueweapon/whip = 1,
+		/obj/item/rogueweapon/sickle = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot = 1,
+		/obj/item/roguekey/grove = 1,
+		/obj/item/seeds/random = 3,
 	)
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 2, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/magic/druidic, 4, TRUE) //Allows you to craft briarmasks. Otherwise this does nothing, but maybe one day it will.
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)//wildman can ungah bungah better now
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/druidic, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
 		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/magic/druidic, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/magic/druidic, 2, TRUE)
 		H.change_stat("intelligence", 4)
-		H.change_stat("endurance", 2)
+		H.change_stat("wisdom", 4)
 		H.change_stat("perception", 2)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	if(isseelie(H))
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/seelie_dust)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/summon_rat)
@@ -79,7 +73,9 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/animate_object)
 
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_VINE_WALKER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_WILD_EATER, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)

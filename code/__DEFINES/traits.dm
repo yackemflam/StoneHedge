@@ -79,6 +79,7 @@
 #define TRAIT_NORTHMAN "Worshipper of the Fey" //recognized by the fae courts as another loyalist.
 #define TRAIT_FAITHLESS "Ignorant" //being faithless means gods won't really help you, will they
 #define TRAIT_SNEK "Levishth's Resolve" //immune to infections of all types
+#define TRAIT_TRUTHSPEAKER "Truthspeaker" //compelled to speak the truth by order of sylvarn
 
 #define TRAIT_KNEESTINGER_IMMUNITY "Kneestinger Immunity"
 #define TRAIT_BASHDOORS "bashdoors"

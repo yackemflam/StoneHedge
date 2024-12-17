@@ -194,14 +194,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Royal Guard"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/bogmaster
-	name = "Hedgemaster"
-	icon_state = "arrow"
-
-/obj/effect/landmark/start/bogguardsman
-	name = "Hedge Knight"
-	icon_state = "arrow"
-
 /obj/effect/landmark/start/judge
 	name = "Law Mage"
 	icon_state = "arrow"
@@ -246,8 +238,24 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Monk"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/druid
+/obj/effect/landmark/start/greatdruid
+	name = "Great Druid"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/hedgewarden
+	name = "Hedge Warden"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/grovedruid
 	name = "Druid"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/hedgeknight
+	name = "Hedge Knight"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/ovate
+	name = "Ovate"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/templar
