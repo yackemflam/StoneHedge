@@ -5,6 +5,30 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/neck.dmi'
 	bloody_icon_state = "bodyblood"
 	w_class = WEIGHT_CLASS_SMALL
+	armor_class = ARMOR_CLASS_LIGHT
+
+//Handles debuff from wearing armor. This is slop, it just makes it so you can't put it on.
+//Preferably - make a way to check when armor is on apply status effect of a debuff to stats, on remove, remove debuff. - Tried it a few ways, kept breaking.
+/obj/item/clothing/neck/roguetown/mob_can_equip(mob/user, mob/equipper, slot)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(armor_class == ARMOR_CLASS_HEAVY)
+		if(!HAS_TRAIT(H,TRAIT_HEAVYARMOR))
+			to_chat(user, span_warning("You lack the training to wear this armor!"))
+			return FALSE
+		else
+			return
+	if(armor_class == ARMOR_CLASS_MEDIUM)	//Armor class medium
+		if(!HAS_TRAIT(H,TRAIT_HEAVYARMOR))	//First check if heavy armor training; if so, no need to check further. Heavy training = medium training
+			if(!HAS_TRAIT(H,TRAIT_MEDIUMARMOR))		//If no heavy training, check medium training
+				to_chat(user, span_warning("You lack the training to wear this armor!"))	//boo-womp
+				return FALSE
+			else
+				return
+		else
+			return
+	if(armor_class == ARMOR_CLASS_LIGHT)	//No perk check on this one; doing this to avoid future issues.
+		return
 
 /obj/item/clothing/neck/roguetown/coif
 	name = "coif"
@@ -138,6 +162,8 @@
 	body_parts_covered = NECK|EARS|MOUTH|NOSE
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
+	armor_class = ARMOR_CLASS_MEDIUM
+
 
 /obj/item/clothing/neck/roguetown/gorget
 	name = "gorget"
@@ -153,6 +179,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	clothing_flags = CANT_SLEEP_IN
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/neck/roguetown/gorget/leather
 	name = "hardened leather gorget"
@@ -190,6 +217,7 @@
 	. = ..()
 	name = "cursed collar"
 	clothing_flags = null
+	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/neck/roguetown/gorget/prisoner/servant/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
@@ -423,6 +451,7 @@
 	body_parts_covered = NECK|MOUTH
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/neck/roguetown/psicross/ornate
 	name = "ornate amulet"
