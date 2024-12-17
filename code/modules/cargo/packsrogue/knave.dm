@@ -87,6 +87,13 @@
 	cost = 48
 	contains = list(/obj/item/clothing/wrists/roguetown/bracers/leather/advanced)
 
+//Boots
+
+/datum/supply_pack/rogue/Knave/leather/Lboots/Advanced
+	name = "Hardened Leather boots"
+	cost = 48
+	contains = list(/obj/item/clothing/shoes/roguetown/boots/armor/leather/advanced)
+
 //Melee Weapons
 
 /datum/supply_pack/rogue/Knave/dagger
