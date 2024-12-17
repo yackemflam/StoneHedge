@@ -204,6 +204,7 @@
 //bushes
 /obj/structure/flora/bush
 	name = "bush"
+	max_integrity = 5
 	desc = ""
 	icon = 'icons/obj/flora/snowflora.dmi'
 	icon_state = "snowbush1"
@@ -217,6 +218,7 @@
 
 /obj/structure/flora/ausbushes
 	name = "bush"
+	max_integrity = 5
 	desc = ""
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "firstbush_1"
@@ -437,6 +439,7 @@
 
 /obj/structure/flora/junglebush
 	name = "bush"
+	max_integrity = 5
 	desc = ""
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "busha"

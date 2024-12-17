@@ -129,10 +129,6 @@
 /turf/open/floor/rogue/greenstone,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors)
-"mM" = (
-/turf/closed/wall/mineral/rogue/decostone/mossy/long,
-/turf/open/floor/pod/dark,
-/area/rogue/indoors)
 "or" = (
 /obj/structure/roguewindow/openclose,
 /obj/structure/bars/passage/shutter/open,
@@ -210,7 +206,7 @@
 /area/rogue/indoors)
 "GM" = (
 /obj/structure/table/wood/fancy/black,
-/obj/structure/roguemachine/musicbox,
+/obj/item/dmusicbox,
 /turf/open/floor/rogue/greenstone,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors)
@@ -408,9 +404,9 @@ fM
 jM
 FX
 sK
-mM
 sK
-mM
+sK
+sK
 sK
 FX
 "}
