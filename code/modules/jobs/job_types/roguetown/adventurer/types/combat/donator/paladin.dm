@@ -95,6 +95,7 @@
 			H.change_stat("strength", 2)
 			H.change_stat("constitution", 2) // Classic paladin is smurter then the battle master.
 			H.change_stat("intelligence", 2)
+			ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 			H.mind.AddSpell(new	/obj/effect/proc_holder/spell/targeted/churn)
 			H.mind.AddSpell(new	/obj/effect/proc_holder/spell/invoked/lesser_heal)
@@ -138,6 +139,7 @@
 				if("Abyssia")
 					wrists = /obj/item/clothing/neck/roguetown/psicross/abyssor
 					cloak = /obj/item/clothing/cloak/templar/abyssor
+		
 		if("Battle Master")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a battle-master."))
@@ -158,6 +160,7 @@
 			H.change_stat("strength", 2)
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 2)
+			ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 			H.mind.AddSpell(new	/obj/effect/proc_holder/spell/targeted/churn)
 			H.mind.AddSpell(new	/obj/effect/proc_holder/spell/invoked/lesser_heal)
