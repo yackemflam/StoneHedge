@@ -610,7 +610,9 @@
 /area/rogue/outdoors/river)
 "awD" = (
 /obj/structure/fluff/walldeco/maidensigil,
-/obj/item/roguebin/water/gross,
+/obj/item/roguebin/water/gross{
+	pixel_x = 5
+	},
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
@@ -21178,6 +21180,7 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/reagent_containers/glass/bucket,
+/obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
@@ -21382,7 +21385,7 @@
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/river)
 "oSV" = (
-/obj/machinery/light/rogue/torchholder/c,
+/obj/structure/meathook,
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
 	},
