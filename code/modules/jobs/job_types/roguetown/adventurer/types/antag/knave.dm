@@ -31,9 +31,9 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
-	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/leather
-	mask = /obj/item/clothing/mask/rogue/ragmask
-	neck = /obj/item/clothing/head/roguetown/helmet/leather/armorhood
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+	mask = /obj/item/clothing/mask/rogue/facemask/steel
+	neck = /obj/item/clothing/neck/roguetown/coif
 	H.change_stat("strength", 1)
 	H.change_stat("constitution", 1)
 	H.change_stat("intelligence", -3)
@@ -58,6 +58,7 @@
 		if("Bow & Sword") //Poacher
 			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 			beltr = /obj/item/rogueweapon/sword
+			head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm //cool hat
 			backr = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/quiver/arrows
 			backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1, /obj/item/restraints/legcuffs/beartrap = 2) //poacher gets mantraps
