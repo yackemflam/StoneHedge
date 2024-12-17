@@ -217,6 +217,7 @@
 	. = ..()
 	name = "cursed collar"
 	clothing_flags = null
+	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/neck/roguetown/gorget/prisoner/servant/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
