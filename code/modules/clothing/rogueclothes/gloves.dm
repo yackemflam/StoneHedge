@@ -205,7 +205,7 @@
 	icon_state = "graggaritegauntlets"
 	item_state = "graggaritegauntlets"
 	smeltresult = /obj/item/ingot/iron
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/katefractoiigauntlets
 	name = "katefractoii gauntlets"
