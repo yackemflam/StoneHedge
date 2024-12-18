@@ -42,7 +42,7 @@
 	H.change_stat("intelligence", -3)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	H.adjust_blindness(-3)
-	var/weapons = list("Axe & Cudgel","Flail & Shield", "Magic")
+	var/weapons = list("Axe & Cudgel","Flail & Shield","Magic")
 	var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 	H.set_blindness(0)
 	switch(weapon_choice)
