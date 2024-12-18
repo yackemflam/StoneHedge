@@ -49,7 +49,7 @@
 /datum/supply_pack/rogue/Knave/chainmail
 	name = "Haubergeon"
 	cost = 150
-	contains = list(obj/item/clothing/suit/roguetown/armor/chainmail)
+	contains = list(/obj/item/clothing/suit/roguetown/armor/chainmail)
 
 //Gloves
 
@@ -141,7 +141,7 @@
 /datum/supply_pack/rogue/Knave/bow/long
 	name = "Long Bow"
 	cost = 200
-	contains = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long)
+	contains = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow)
 
 /datum/supply_pack/rogue/Knave/quiver
 	name = "Empty Quiver"
