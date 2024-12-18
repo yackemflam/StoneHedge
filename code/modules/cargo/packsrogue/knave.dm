@@ -36,7 +36,7 @@
 
 /datum/supply_pack/rogue/Knave/chain/coif
 	name = "Steel Chain Coif"
-	cost = 150
+	cost = 72
 	contains = list(/obj/item/clothing/neck/roguetown/chaincoif)
 
 //Armor
