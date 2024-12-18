@@ -150,11 +150,12 @@
 				. += span_userdanger("A MONSTER!")
 			if(HAS_TRAIT(src, TRAIT_PUNISHMENT_CURSE))
 				. += span_userdanger("CURSED!")
+			if(!mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)?.disguised && mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)?.is_solo)
+				. += span_boldnotice("A more civil deadite.") //mostly so healers know they cant miracle those to health.
 		if(HAS_TRAIT(src, TRAIT_NORTHMAN) && HAS_TRAIT(user, TRAIT_NORTHMAN))
 			. += span_userdanger("Hollvinr!")
 		if(HAS_TRAIT(src, TRAIT_MANIAC_AWOKEN))
 			. += span_userdanger("MANIAC!")
-
 		if(commie_text)
 			. += commie_text
 		else if(HAS_TRAIT(src, TRAIT_COMMIE) && HAS_TRAIT(user, TRAIT_COMMIE))
