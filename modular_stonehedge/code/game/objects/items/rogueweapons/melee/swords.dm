@@ -1,5 +1,5 @@
 /obj/item/rogueweapon/sword/rapier/combattante
-	name = "Duelling Sword"
+	name = "duelling sword"
 	desc = "Signature weapon of the Combattante Duellists. Considered the pride of the guild, the blade's spiralling design towards the hilt both mimics the Association's logo and is excellent for parrying"
 	possible_item_intents = list(/datum/intent/sword/thrust/combattante, /datum/intent/sword/cut/rapier)
 	minstr = 5
