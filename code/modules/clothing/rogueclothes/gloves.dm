@@ -52,7 +52,7 @@
 	smeltresult = /obj/item/ash
 	anvilrepair = null
 	sewrepair = TRUE
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/carapace/dragon
 	name = "dragonscale gauntlets"
@@ -111,7 +111,7 @@
 	smeltresult = /obj/item/ingot/steel
 	resistance_flags = FIRE_PROOF
 	sewrepair = FALSE
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/chain/iron
 	icon_state = "icgloves"
@@ -137,7 +137,7 @@
 	smeltresult = /obj/item/ingot/steel
 	clothing_flags = CANT_SLEEP_IN
 	sewrepair = FALSE
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/graggaritegauntletsleader
 	name = "nyrnheite leader gauntlets"
@@ -155,7 +155,7 @@
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
 	clothing_flags = CANT_SLEEP_IN
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/grenzelgloves
 	name = "grenzelhoft gloves"
@@ -188,7 +188,7 @@
 	icon_state = "footmangauntlets"
 	item_state = "footmangauntlets"
 	smeltresult = /obj/item/ingot/iron
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/graggaritegauntlets
 	name = "nyrnheite gauntlets"
@@ -222,7 +222,7 @@
 	icon_state = "katefractoiigauntlets"
 	item_state = "katefractoiigauntlets"
 	smeltresult = /obj/item/ingot/iron
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/dwarfgauntlets
 	name = "dwarven gauntlets"
@@ -233,7 +233,7 @@
 	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	resistance_flags = null
 	blocksound = PLATEHIT
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/darkelfbracers
 	name = "raider bracers"
@@ -250,7 +250,7 @@
 	icon_state = "darkelfgauntlets"
 	item_state = "darkelfgauntlets"
 	smeltresult = /obj/item/ingot/steel
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/forestergauntlets
 	name = "forester gauntlets"
@@ -273,7 +273,7 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/iron
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/plate/spellslingergauntlets
 	name = "spellslinger gauntlets"
@@ -290,7 +290,7 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/plate/zybantinegauntlets
 	name = "zybantine gauntlets"
@@ -307,7 +307,7 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/steel
-	armor_class == ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/gloves/roguetown/feldgloves
 	name = "long gloves"
