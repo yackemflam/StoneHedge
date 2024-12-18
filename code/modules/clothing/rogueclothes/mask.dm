@@ -9,7 +9,7 @@
 
 //Handles debuff from wearing armor. This is slop, it just makes it so you can't put it on.
 //Preferably - make a way to check when armor is on apply status effect of a debuff to stats, on remove, remove debuff. - Tried it a few ways, kept breaking.
-/obj/item/clothing/mask/roguetown/mob_can_equip(mob/user, mob/equipper, slot)
+/obj/item/clothing/mask/rogue/mob_can_equip(mob/user, mob/equipper, slot)
 	. = ..()
 	var/mob/living/carbon/human/H = user
 	if(armor_class == ARMOR_CLASS_HEAVY)
@@ -143,6 +143,7 @@
 	icon_state = "goldmask"
 	max_integrity = 75
 	smeltresult = /obj/item/ingot/gold
+	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/mask/rogue/facemask/leper
 	name = "steel leper mask"
