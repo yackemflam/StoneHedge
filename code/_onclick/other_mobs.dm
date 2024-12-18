@@ -408,6 +408,8 @@
 							T.cut_overlay("damage25")
 							for(var/turf/open/transparent/glass/turfie in range(1,T)) //turns surrounding glass to shit also at a chance
 								if(prob(25))
+									var/obj/item/shard/glassshard = new /obj/item/shard(turfie)
+									glassshard.throw_at(turfie) //so they fall down hopefully
 									turfie.ChangeTurf(/turf/open/transparent/openspace, flags = CHANGETURF_INHERIT_AIR)
 							T.Entered(src)
 						else

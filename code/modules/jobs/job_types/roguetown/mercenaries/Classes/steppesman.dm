@@ -27,7 +27,7 @@
 	l_hand = /obj/item/rogueweapon/shield/buckler
 	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
 	if(H.mind)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, pick(4,5,5,6), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 6, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4, TRUE)
@@ -51,5 +51,6 @@
 	H.change_stat("constitution", 1)
 	H.change_stat("endurance", 2)
 	H.change_stat("speed", 2)
-	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)			//No medium armor, use light armors.
-	ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)	//Since Desert Rider gets medium armor and dodge expert, and you don't, here. Stronk now.
+
+	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC) 		//sniper monkey
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)			//No medium armor, use light armors. Dodgeexpert is crazy anyway.

@@ -65,19 +65,19 @@
 
 /datum/quirk/monsterhunter
 	name = "Monster \"Hunter\""
-	desc = "Allows targeting by specific monsters (such as werewolves, goblins and minotaurs etc.) for something very lewd. May be unfair to you in combat."
+	desc = "Allows targeting by specific monsters (such as werewolves, goblins and minotaurs etc.) for something very lewd. May be unfair to you in combat. (CHOOSE PREF QUIRKS ASWELL)"
 	value = 0
 	gain_text = span_notice("I want to feel a monster inside.. or inside a monster.")
 	lose_text = span_notice("I no longer am a degenerate.")
 
 /datum/quirk/monsterhuntermale
-	name = "Monster \"Hunter\" (Male only)"
-	desc = "Only male monsters lust for me... (Optionally pick on top of monster hunter.)"
+	name = "Monster \"Hunter\" (Males)"
+	desc = "Male monsters lust for me..."
 	value = 0
 
 /datum/quirk/monsterhunterfemale
-	name = "Monster \"Hunter\" (Female only)"
-	desc = "Only female monsters lust for me... (Optionally pick on top of monster hunter.)"
+	name = "Monster \"Hunter\" (Females)"
+	desc = "Female monsters lust for me... "
 	value = 0
 
 /datum/quirk/selfawaregeni

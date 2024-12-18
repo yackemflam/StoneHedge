@@ -61,16 +61,14 @@
 			reward_amount += b.amount
 			GLOB.head_bounties -= b
 
-	if(correct_head)
-		qdel(P)
-	else // No valid bounty for this head?
-		say("This skull carries no reward.")
-		playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
-		return
-
 	say(pick(list("Performing intra-cranial inspection...", "Analyzing skull structure...", "Commencing cephalic dissection...")))
 
 	sleep(1 SECONDS)
+
+	if(!correct_head)
+		say("This skull carries no reward.")
+		playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
+		return
 
 	var/list/headcrush = list('sound/combat/fracture/headcrush (2).ogg', 'sound/combat/fracture/headcrush (3).ogg', 'sound/combat/fracture/headcrush (4).ogg')
 	playsound(src, pick_n_take(headcrush), 100, FALSE, -1)
@@ -85,9 +83,7 @@
 	// Head has been "analyzed". Return it.
 	sleep(2 SECONDS)
 	playsound(src, 'sound/combat/vite.ogg', 100, FALSE, -1)
-	stored_head = new /obj/item/bodypart/head(machine_location)
-	stored_head.name = "mutilated head"
-	stored_head.desc = "This head has been violated beyond recognition, the work of a horrific machine."
+	P.forceMove(machine_location)
 
 ///Shows all active bounties to the user.
 /obj/structure/roguemachine/bounty/proc/consult_bounties(mob/living/carbon/human/user)
