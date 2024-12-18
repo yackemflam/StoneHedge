@@ -522,12 +522,11 @@
 			var/mob/living/carbon/human/humanboi = owner
 			if(istype(humanboi.wear_mask, /obj/item/clothing/mask/rogue/facemask/leper))
 				if(humanboi.wear_mask.obj_integrity > 0) //we dont use the lepermask effect for this reason.
-					humanboi.balloon_alert_to_viewers("Spasms and shudders slightly", "Agh, my mask stop my muscle spasms, but it hurts all the same.")
-					humanboi.flash_fullscreen("redflash1")
-					humanboi.add_stress(/datum/stressevent/lepermaskedpain)
+					if(prob(1))
+						humanboi.balloon_alert_to_viewers("Spasms slightly")
+						humanboi.flash_fullscreen("redflash1")
+						humanboi.add_stress(/datum/stressevent/lepermaskedpain)
 					return
-				else
-					humanboi.balloon_alert("Ggh- My mask is broken, it can't do anything in this state!")
 		owner.flash_fullscreen("redflash1")
 		owner.add_stress(/datum/stressevent/leprosypain)
 		switch(rand(1,5))
