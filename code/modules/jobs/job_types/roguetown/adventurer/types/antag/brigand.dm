@@ -58,7 +58,7 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
 		if("Magic")
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
-			H.Mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/forcewall_weak)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/forcewall_weak)
 			H.mind.adjust_spellpoints(1) //Hybrid tax
 			H.change_stat("strength", -2) //Not as strong or tough as a brigand, but much smarter
 			H.change_stat("endurance", -1)
