@@ -763,7 +763,7 @@
 		examination += bodypart.check_for_injuries(user, deep_examination)
 
 #ifdef MATURESERVER
-	var/mob/living/carbon/userino = user
+	var/mob/living/carbon/userino = src
 	examination += "ø ------------ ø" //automatically lists internal organs that have those functions
 	for(var/obj/item/organ/filling_organ/forgan in userino.internal_organs)
 		if(forgan.reagents.total_volume)

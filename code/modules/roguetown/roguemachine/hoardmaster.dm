@@ -10,6 +10,7 @@
 	layer = ABOVE_MOB_LAYER
 	var/upgrade_flags
 	var/current_cat = "1"
+	reject_grove_marked = FALSE
 
 
 /obj/structure/roguemachine/Hoardmaster/Initialize()

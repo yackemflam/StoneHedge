@@ -329,6 +329,7 @@
 		onlearned(user)
 	else
 		to_chat(user, span_notice("I can't memorize any more spells looks like..."))
+		return
 
 /obj/item/book/granter/spell/recoil(mob/user)
 	user.visible_message(span_warning("[src] glows in a black light!"))
