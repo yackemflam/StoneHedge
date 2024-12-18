@@ -24,7 +24,7 @@
   H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 1, TRUE)
   H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
   H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
-  H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 3, TRUE)
+  H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 4, TRUE)
   
   belt = /obj/item/storage/belt/rogue/leather
   pants = /obj/item/clothing/under/roguetown/trou/leather
