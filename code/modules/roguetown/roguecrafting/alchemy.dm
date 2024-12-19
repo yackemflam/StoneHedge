@@ -283,12 +283,12 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1, /obj/item/reagent_containers/food/snacks/grown/herbs = 1)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/alchemy/w2coa
-	name = "transmute small log to coal"
-	result = list(/obj/item/rogueore/coal = 1)
-	reqs = list(/obj/item/grown/log/tree/small = 1)
-	craftdiff = 0
-	subtype_reqs = TRUE
+//datum/crafting_recipe/roguetown/alchemy/w2coa //large logs are now needed to make 1 coal
+//	name = "transmute small log to coal"
+//	result = list(/obj/item/rogueore/coal = 1)
+//	reqs = list(/obj/item/grown/log/tree/small = 1)
+//	craftdiff = 0
+//	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/alchemy/w2l
 	name = "combine small logs into large log"
@@ -298,7 +298,7 @@
 
 /datum/crafting_recipe/roguetown/alchemy/l2coa
 	name = "transmute log to coal"
-	result = list(/obj/item/rogueore/coal,/obj/item/rogueore/coal,/obj/item/rogueore/coal,/obj/item/rogueore/coal)
+	result = list(/obj/item/rogueore/coal,/obj/item/rogueore/coal)
 	reqs = list(/obj/item/grown/log/tree/large = 1)
 	craftdiff = 1
 	subtype_reqs = TRUE
@@ -312,28 +312,28 @@
 /datum/crafting_recipe/roguetown/alchemy/coa2s
 	name = "transmute coal to stones"
 
-	result = list(/obj/item/natural/stone,/obj/item/natural/stone,/obj/item/natural/stone)
+	result = list(/obj/item/natural/stone,/obj/item/natural/stone)
 	reqs = list(/obj/item/rogueore/coal = 1)
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/alchemy/c2irn
+/datum/crafting_recipe/roguetown/alchemy/c2irn //2 - 3 trees to make an iron bar is more than fair
 	name = "transmute coal to iron"
 	result = list(/obj/item/rogueore/iron = 1)
-	reqs = list(/obj/item/rogueore/coal = 2)
+	reqs = list(/obj/item/rogueore/coal = 8)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/alchemy/i2gol
+/datum/crafting_recipe/roguetown/alchemy/i2gol 4
 	name = "transmute iron to gold"
 	result = list(/obj/item/rogueore/gold = 1)
 	reqs = list(/obj/item/rogueore/iron = 4)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/i2top // Keep topers and their trinkets cheap to prevent wealth creep. Cheap means of getting gem dust, for potions.
-	name = "transmute iron to toper"
+	name = "transmute iron to toper"			// Had to nerf it even more because it didn't stop wealth creep at all
 	result = list(/obj/item/roguegem/yellow = 1)
 	reqs = list(
-		/obj/item/rogueore/iron = 1, //Toper will be worth 30 mammon. Iron ingot is worth 25.
-		/obj/item/natural/stone = 1)
+		/obj/item/rogueore/iron = 4, //Toper will be worth 30 mammon. Iron ingot is worth 25.
+		/obj/item/natural/stone = 4)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/alglass // TO-DO: add construction recipe for church windows using this. Touching a church window with mage hand will invert it to the evil version and vice versa.
