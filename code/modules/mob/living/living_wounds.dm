@@ -62,8 +62,7 @@
 	var/healed_any = FALSE
 	if(has_status_effect(/datum/status_effect/buff/fortify))
 		heal_amount *= 1.5
-	if(WOUND_HEAL_MULTIPLIER)
-		heal_amount *= WOUND_HEAL_MULTIPLIER
+	heal_amount *= WOUND_HEAL_MULTIPLIER
 	for(var/datum/wound/wound as anything in get_wounds())
 		if(heal_amount <= 0)
 			continue
