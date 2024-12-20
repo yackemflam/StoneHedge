@@ -322,7 +322,7 @@
 	reqs = list(/obj/item/rogueore/coal = 8)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/alchemy/i2gol 4
+/datum/crafting_recipe/roguetown/alchemy/i2gol
 	name = "transmute iron to gold"
 	result = list(/obj/item/rogueore/gold = 1)
 	reqs = list(/obj/item/rogueore/iron = 4)
