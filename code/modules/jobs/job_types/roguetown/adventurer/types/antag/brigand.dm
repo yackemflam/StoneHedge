@@ -68,4 +68,5 @@
 			ADD_TRAIT(H, TRAIT_LEARNMAGIC, TRAIT_GENERIC)
 
 	H.verbs |= /mob/proc/haltyell
+	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 	H.ambushable = FALSE
