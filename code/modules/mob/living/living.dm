@@ -1540,6 +1540,7 @@
 /mob/living/proc/SoakMob(locations)
 	if(locations & CHEST)
 		ExtinguishMob()
+		wash_mob(src, CLEAN_MEDIUM)
 
 /mob/living/proc/ExtinguishMob()
 	if(on_fire)
