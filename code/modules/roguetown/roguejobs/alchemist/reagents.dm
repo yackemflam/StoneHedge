@@ -293,7 +293,7 @@
 
 /datum/reagent/medicine/antipoisonpot
 	name = "Anti Poison Potion"
-	description = "Quickly nullifies toxins."
+	description = "Quickly nullifies toxins and repairs toxin damage."
 	reagent_state = LIQUID
 	color = "#64bf49"
 	taste_description = "ashes"
@@ -305,7 +305,7 @@
 	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
 		if(R != src)
 			M.reagents.remove_reagent(R.type,5)
-	M.adjustToxLoss(-5, 0)
+	M.adjustToxLoss(-15, 0)
 	..()
 	. = 1
 
