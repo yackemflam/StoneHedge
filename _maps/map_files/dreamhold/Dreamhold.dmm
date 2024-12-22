@@ -13133,8 +13133,7 @@
 	},
 /area/rogue/outdoors/river)
 "iXt" = (
-/obj/structure/handcart,
-/obj/item/rogueweapon/stoneaxe/woodcut,
+/obj/structure/roguemachine/bounty,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -19737,6 +19736,13 @@
 	icon_state = "road"
 	},
 /area/rogue/indoors/shelter/bog)
+"npR" = (
+/obj/structure/roguemachine/atm,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "npY" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
@@ -26560,8 +26566,8 @@
 	name = "Ravenloft Academy"
 	})
 "rIw" = (
-/turf/closed,
-/turf/closed/wall/mineral/rogue/stone/moss,
+/obj/structure/chair/arrestchair,
+/turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -89356,7 +89362,7 @@ xDh
 xDh
 xDh
 lzV
-vxU
+gkJ
 eAD
 qgp
 vxU
@@ -89558,7 +89564,7 @@ prw
 xDh
 xDh
 xDh
-rIw
+gkJ
 qgp
 qgp
 vxU
@@ -89760,7 +89766,7 @@ rPi
 wpF
 xDh
 xDh
-rIw
+gkJ
 qgp
 qgp
 vxU
@@ -89961,8 +89967,8 @@ nVt
 rPi
 prw
 xDh
-xDh
-gkJ
+prw
+vxU
 qgp
 qgp
 vxU
@@ -90163,8 +90169,8 @@ rxm
 bFf
 prw
 prw
-xDh
-gkJ
+prw
+rIw
 qgp
 qgp
 qfv
@@ -90366,7 +90372,7 @@ bFf
 bFf
 prw
 prw
-gkJ
+npR
 qgp
 qgp
 xpu
