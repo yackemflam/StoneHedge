@@ -261,6 +261,7 @@
 	if(!active_item)
 		var/mob/living/L = user
 		L.attunement_points_used += source.attunement_cost
+		L.check_attunement_points()
 		active_item = TRUE
 		switch(infusion_name)
 			if("awareness")
@@ -386,6 +387,7 @@
 	if(active_item)
 		var/mob/living/L = user
 		L.attunement_points_used -= source.attunement_cost
+		L.check_attunement_points()
 		active_item = FALSE
 		switch(infusion_name)
 			if("awareness")
