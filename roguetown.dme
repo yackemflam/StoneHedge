@@ -2324,6 +2324,7 @@
 #include "code\modules\jobs\job_types\roguetown\goblin\tribalsmith.dm"
 #include "code\modules\jobs\job_types\roguetown\goblin\tribalvillager.dm"
 #include "code\modules\jobs\job_types\roguetown\mercenaries\mercenary.dm"
+#include "code\modules\jobs\job_types\roguetown\mercenaries\merch_merc.dm"
 #include "code\modules\jobs\job_types\roguetown\mercenaries\sellsword.dm"
 #include "code\modules\jobs\job_types\roguetown\mercenaries\Classes\desertrider.dm"
 #include "code\modules\jobs\job_types\roguetown\mercenaries\Classes\grenzelhoft.dm"
@@ -3701,5 +3702,4 @@
 #include "modular_stonehedge\code\modules\reagents\machinery\electrolyzer.dm"
 #include "modular_stonehedge\code\modules\roguetown\roguejobs\alchemist\toxins.dm"
 #include "modular_stonehedge\licensed-death-rattler\Death-Rattler\code\Death-Rattler.dm"
-#include "code\modules\jobs\job_types\roguetown\mercenaries\merch_merc.dm"
 // END_INCLUDE
