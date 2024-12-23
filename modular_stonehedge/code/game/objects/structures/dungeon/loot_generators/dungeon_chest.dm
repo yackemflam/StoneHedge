@@ -75,7 +75,7 @@
 
 /obj/structure/closet/crate/chest/refilling/Initialize()
 	. = ..()
-	loot_num_to_spawn = rand(max_loot_num_to_spawn)
+	loot_num_to_spawn = rand(1, max_loot_num_to_spawn)
 
 /obj/structure/closet/crate/chest/refilling/Destroy()
 	. = ..()
@@ -87,7 +87,7 @@
 		icon_state = "dungeon_chest_1"
 		base_icon_state = "dungeon_chest_1"
 		close()
-		loot_num_to_spawn = rand(max_loot_num_to_spawn)
+		loot_num_to_spawn = rand(1, max_loot_num_to_spawn)
 		update_icon()
 		PopulateContents()
 		if(reset_timer)
