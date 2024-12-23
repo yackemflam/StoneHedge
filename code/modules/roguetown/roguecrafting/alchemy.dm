@@ -329,10 +329,10 @@
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/i2top // Keep topaz and their trinkets cheap to prevent wealth creep. Cheap means of getting gem dust, for potions.
-	name = "transmute gold to topaz"
+	name = "transmute iron to topaz"
 	result = list(/obj/item/roguegem/yellow = 1)
 	reqs = list(
-		/obj/item/rogueore/gold = 1,
+		/obj/item/rogueore/iron = 1,
 		/obj/item/natural/stone = 1)
 	craftdiff = 4
 
