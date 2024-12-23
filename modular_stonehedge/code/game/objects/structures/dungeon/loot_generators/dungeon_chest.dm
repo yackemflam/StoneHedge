@@ -82,7 +82,7 @@
 
 /obj/structure/closet/crate/chest/refilling/proc/try_reset_chest()
 	//if its found before and area has no players when timer expire.
-	if(found && playerless_in_area(get_area(src), src))
+	if(found && !players_nearby(src.loc, 12))
 		found = FALSE
 		icon_state = "dungeon_chest_1"
 		base_icon_state = "dungeon_chest_1"
@@ -97,6 +97,11 @@
 		var/fast_time = time_to_reset/4
 		reset_timer = addtimer(CALLBACK(src, PROC_REF(try_reset_chest)), fast_time, TIMER_STOPPABLE)
 
+/obj/structure/closet/crate/chest/refilling/proc/players_nearby(turf/T, distance)
+	for (var/mob/living/carbon/human/H in range(distance, T))
+		if (H.client)
+			return TRUE
+	return FALSE
 
 /obj/structure/closet/crate/chest/refilling/PopulateContents()
 	for(var/obj/item/olditem in contents)
