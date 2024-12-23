@@ -2391,6 +2391,7 @@
 #include "code\modules\language\roguetown\dwarf.dm"
 #include "code\modules\language\roguetown\elf.dm"
 #include "code\modules\language\roguetown\fae.dm"
+#include "code\modules\language\roguetown\grenzelhoftian.dm"
 #include "code\modules\language\roguetown\hellspeak.dm"
 #include "code\modules\language\roguetown\lupian.dm"
 #include "code\modules\language\roguetown\orc.dm"
@@ -3609,6 +3610,7 @@
 #include "modular\Neu_Food\code\raw\NeuFood_processed.dm"
 #include "modular\Neu_Food\code\raw\NeuFood_veggies.dm"
 #include "modular\ze_genesis_call\genesis_call.dm"
+#include "modular_azurepeak\code\game\objects\items\gwstrap.dm"
 #include "modular_causticcove\code\modules\vore\persistence.dm"
 #include "modular_causticcove\code\modules\vore\SSbellies.dm"
 #include "modular_causticcove\code\modules\vore\eating\belly_dat_vr.dm"
@@ -3699,4 +3701,5 @@
 #include "modular_stonehedge\code\modules\reagents\machinery\electrolyzer.dm"
 #include "modular_stonehedge\code\modules\roguetown\roguejobs\alchemist\toxins.dm"
 #include "modular_stonehedge\licensed-death-rattler\Death-Rattler\code\Death-Rattler.dm"
+#include "code\modules\jobs\job_types\roguetown\mercenaries\merch_merc.dm"
 // END_INCLUDE
