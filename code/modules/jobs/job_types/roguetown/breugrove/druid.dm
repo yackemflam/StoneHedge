@@ -19,8 +19,8 @@
 	tutorial = "You are a Druid of the Breuddwyd Grove, a sacred keeper of both natural and traditional law. Drawing power from the ancient spirits of the land, you maintain harmony between civilization and wilderness. As one of the Grove's spiritual authorities and Town's legal authorities, you interpret the wisdom written in both legal scrolls and forest leaves. Your judgments flow from the eternal laws of nature - as a stream shapes the stones, so too does justice shape society. While wielding primal magic and communing with beasts, your paramount duty is to preserve balance: mediating between town and wild, settling disputes through ancient rites, and ensuring both human law and nature's code are respected. Like the great oak that bridges earth and sky, you stand between the ordered realm of civilization and the raw power of the wilderness, drawing wisdom from both to maintain the sacred harmony."
 
 	display_order = JDO_DRUID
-	give_bank_account = FALSE
-	min_pq = 5
+	give_bank_account = 400
+	min_pq = 10
 	max_pq = null
 
 /datum/outfit/job/roguetown/druid
@@ -28,20 +28,34 @@
 	jobtype = /datum/job/roguetown/druid
 	allowed_patrons = list(/datum/patron/divine/sylvarn)
 
+/datum/job/roguetown/druid/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	. = ..()
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		if(istype(H.cloak, /obj/item/clothing/cloak/templar/dendor))
+			var/obj/item/clothing/S = H.cloak
+			var/index = findtext(H.real_name, " ")
+			if(index)
+				index = copytext(H.real_name, 1,index)
+			if(!index)
+				index = H.real_name
+			S.name = "Breuddwyd Grove Tabard ([index])"
+
 /datum/outfit/job/roguetown/druid/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/rogueweapon/whip
+	beltl = /obj/item/rogueweapon/whip/druidic
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff/aries
-	head = /obj/item/clothing/head/roguetown/dendormask
+	backr = /obj/item/rogueweapon/woodstaff/wise
+	head = /obj/item/clothing/head/roguetown/antlerhood
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor/grove
-	gloves = null
-	cloak = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+	gloves = /obj/item/clothing/gloves/roguetown/leather/advanced
+	cloak = /obj/item/clothing/cloak/templar/dendor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
+	shirt = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	backpack_contents = list(
 		/obj/item/rogueweapon/sickle = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot = 1,
@@ -50,6 +64,7 @@
 		/obj/item/rogueweapon/huntingknife/skin = 1,
 	)
 	if(H.mind)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
 
@@ -86,6 +101,8 @@
 	ADD_TRAIT(H, TRAIT_VINE_WALKER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_WILD_EATER, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)

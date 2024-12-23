@@ -15,7 +15,7 @@
 
 	outfit = /datum/outfit/job/roguetown/hedgeknight
 
-	give_bank_account = 1500
+	give_bank_account = 400
 	min_pq = 10
 	max_pq = null
 	cmode_music = 'sound/music/combat_bog.ogg'
@@ -35,7 +35,7 @@
 
 /datum/outfit/job/roguetown/hedgeknight/pre_equip(mob/living/carbon/human/H)
 	. = ..()
-	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
+	head = /obj/item/clothing/head/roguetown/helmet/elfbarbutewings/Hedgeguard
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/foresterarmor
 	cloak = /obj/item/clothing/cloak/templar/dendor
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor/grove
@@ -46,28 +46,31 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
 	beltl = /obj/item/quiver/arrows
 	belt = /obj/item/storage/belt/rogue/leather
+	beltr = /obj/item/rogueweapon/mace/cudgel/thornlash
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
-	l_hand = /obj/item/rogueweapon/woodstaff/thornlash
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1, /obj/item/signal_horn = 1, /obj/item/roguekey/grove = 1,)
 
 	if(H.mind)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
 
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
 
 		H.change_stat("constitution", 4)
 		H.change_stat("perception", 3)
@@ -78,5 +81,8 @@
 	H.verbs |= /mob/proc/haltyell
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_VINE_WALKER, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_WILD_EATER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BLINDFIGHTING, TRAIT_GENERIC)

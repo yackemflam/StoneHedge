@@ -1,5 +1,5 @@
 /obj/structure/roguemachine/bounty
-	name = "Excidium"
+	name = "EXCIDIUM"
 	desc = "A machine that sets and collects bounties. Its bloodied maw could easily fit a human head."
 	icon = 'icons/roguetown/topadd/statue1.dmi'
 	icon_state = "baldguy"
@@ -26,21 +26,28 @@
 	var/mob/living/carbon/human/H = user
 
 	// Main Menu
-	var/list/choices = list("Consult bounties", "Set bounty")
-	if(user.job in list("Hedgemaster", "Hedge Knight"))
-		choices += "Remove bounty"
+	var/list/choices = list("Consult Bounties", "Set Bounty", "Print List of Bounties")
+	if(user.job in list("Great Druid", "Druid", "Hedge Warden", "Hedge Knight", "Ovate"))
+		choices += "Remove Bounty"
+
+	if(user.job in list("Guildmaster", "Guild Appraiser"))
+		choices += "Set Bounty"
+
 	var/selection = input(user, "The Excidium listens", src) as null|anything in choices
 
 	switch(selection)
 
-		if("Consult bounties")
+		if("Consult Bounties")
 			consult_bounties(H)
 
-		if("Set bounty")
+		if("Set Bounty")
 			set_bounty(H)
 
-		if("Remove bounty")
+		if("Remove Bounty")
 			remove_bounty(H)
+
+		if("Print List of Bounties")
+			print_bounty_scroll(H)
 
 /obj/structure/roguemachine/bounty/attackby(obj/item/P, mob/user, params)
 
@@ -54,19 +61,9 @@
 	var/correct_head = FALSE
 
 	var/reward_amount = 0
-	for(var/datum/bounty/b in GLOB.head_bounties)
-		if(b.target == stored_head.real_name)
-			correct_head = TRUE
-			say("A bounty has been sated.")
-			reward_amount += b.amount
-			GLOB.head_bounties -= b
 
-	if(correct_head)
-		qdel(P)
-	else // No valid bounty for this head?
-		say("This skull carries no reward.")
-		playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
-		return
+	user.dropItemToGround(P)
+	P.forceMove(src)
 
 	say(pick(list("Performing intra-cranial inspection...", "Analyzing skull structure...", "Commencing cephalic dissection...")))
 
@@ -79,15 +76,23 @@
 
 	sleep(2 SECONDS)
 
-	if(correct_head)
+	for(var/datum/bounty/b in GLOB.head_bounties)
+		if(b.target == stored_head.real_name)
+			correct_head = TRUE
+			say("A bounty has been sated.")
+			reward_amount += b.amount
+			GLOB.head_bounties -= b
+
+	if(!correct_head)
+		say("This skull carries no reward.")
+		playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
+	else
 		budget2change(reward_amount, user)
 
 	// Head has been "analyzed". Return it.
 	sleep(2 SECONDS)
 	playsound(src, 'sound/combat/vite.ogg', 100, FALSE, -1)
-	stored_head = new /obj/item/bodypart/head(machine_location)
-	stored_head.name = "mutilated head"
-	stored_head.desc = "This head has been violated beyond recognition, the work of a horrific machine."
+	P.forceMove(machine_location)
 
 ///Shows all active bounties to the user.
 /obj/structure/roguemachine/bounty/proc/consult_bounties(mob/living/carbon/human/user)
@@ -222,11 +227,57 @@
 			new_bounty.banner += "By reason of the following: '[new_bounty.reason]'.<BR>"
 	new_bounty.banner += "--------------<BR>"
 
+/obj/structure/roguemachine/bounty/proc/print_bounty_scroll(mob/living/carbon/human/user)
+	if(!GLOB.head_bounties.len)
+		say("No bounties are currently active.")
+		return
 
+	var/cost = 50
+	var/choice = alert(user, "Print a continously updated list of active bounties for [cost] mammons?", "Print Bounty Scroll", "Yes", "No")
+	if(choice != "Yes")
+		return
+
+	if(!(user in SStreasury.bank_accounts))
+		say("You have no bank account.")
+		return
+
+	if(SStreasury.bank_accounts[user] < cost)
+		say("Insufficient funds. [cost] mammons required.")
+		return
+
+	SStreasury.bank_accounts[user] -= cost
+	SStreasury.treasury_value += cost
+	SStreasury.log_entries += "+[cost] to treasury (bounty scroll fee)"
+
+	var/obj/item/paper/scroll/bounty/scroll = new(get_turf(src))
+	scroll.update_bounty_text()
+	playsound(src, 'sound/items/scroll_open.ogg', 100, TRUE)
+	visible_message(span_notice("The [src] prints out a weathered scroll."))
+	say("Your scroll is ready.")
+
+/obj/item/paper/scroll/bounty
+	name = "enchanted bounty scroll"
+	desc = "A weathered scroll enchanted to list the active bounties from the Excidium."
+	icon_state = "scroll"
+	open = FALSE
+
+/obj/item/paper/scroll/bounty/examine(mob/user)
+	. = ..()
+	if(open)
+		update_bounty_text()
+
+/obj/item/paper/scroll/bounty/proc/update_bounty_text()
+	var/scroll_text = "<center>WANTED BY THE EXCIDIUM</center><br><br>"
+
+	for(var/datum/bounty/saved_bounty in GLOB.head_bounties)
+		scroll_text += saved_bounty.banner
+		scroll_text += "<br>"
+
+	info = scroll_text
 
 /obj/structure/chair/arrestchair
-	name = "SLAVEMASTER"
-	desc = "A chairesque machine that collects bounties through enslavement rather than death, for a much greater reward."
+	name = "POENA"
+	desc = "A chairesque machine that clears grove marks and collects bounties, for a greater reward, through enslavement to the Town rather than death."
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "brass_chair"
 	blade_dulling = DULLING_BASH
@@ -246,20 +297,24 @@
 	M.Paralyze(3 SECONDS)
 
 	var/correct_head = FALSE
-
+	var/grove_marked = FALSE
 	var/reward_amount = 0
+
 	for(var/datum/bounty/b in GLOB.head_bounties)
 		if(b.target == M.real_name)
 			correct_head = TRUE
 			reward_amount += b.amount
 			GLOB.head_bounties -= b
 
+	if(M.has_status_effect(/datum/status_effect/grove_outlaw))
+		grove_marked = TRUE
+
 	say(pick(list("Performing intra-cranial inspection...", "Analyzing skull structure...", "Commencing cephalic dissection...")))
 
 	sleep(1 SECONDS)
 
 	if(M.stat == DEAD)
-		say("Yamais' hands are over this one, use the excidium.")
+		say("Yamais' hands are over this one, send them to the EXCIDIUM.")
 		playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 		unbuckle_all_mobs()
 		return
@@ -275,24 +330,38 @@
 
 	sleep(2 SECONDS)
 
-	if(correct_head)
-		say("A bounty has been sated.")
-		budget2change((reward_amount*2)) //double reward for alive
-		var/newcollar = new /obj/item/clothing/neck/roguetown/gorget/prisoner/servant(get_turf(M))
+	if(correct_head || grove_marked)
+		if(correct_head)
+			say("A bounty has been sated.")
+			budget2change((reward_amount*2))
+
+		if(grove_marked)
+			say("Nature's mark detected. Issuing summary judgment and commencing sentencing...")
+			M.remove_status_effect(/datum/status_effect/grove_outlaw)
+
+			for(var/obj/structure/grove_wanted/totem in world)
+				totem.marked_individuals -= M.real_name
+				totem.roundstart_marks -= M.real_name
+
+			for(var/mob/living/carbon/human/grove_member in GLOB.player_list)
+				if(grove_member.job in list("Great Druid", "Druid", "Hedge Warden", "Hedge Knight"))
+					to_chat(grove_member, span_green("<b>Grove Judgment Alert:</b> [M.real_name] has been judged and sentenced by the POENA."))
+					playsound(grove_member, 'sound/misc/treefall.ogg', 50, TRUE)
+
+		var/obj/item/clothing/neck/old_neck = M.get_item_by_slot(SLOT_NECK)
+		if(old_neck)
+			M.dropItemToGround(old_neck, TRUE)
+		var/obj/item/clothing/neck/roguetown/gorget/servant/servant = new(get_turf(M))
+		M.equip_to_slot_or_del(servant, SLOT_NECK, TRUE)
 		playsound(src.loc, 'sound/items/beartrap.ogg', 100, TRUE, -1)
-		M.wear_neck.forceMove(loc)
-		M.equip_to_slot_if_possible(newcollar, SLOT_NECK, FALSE, TRUE, TRUE, TRUE)
 	else
 		say("This skull carries no reward, you fool.")
 		playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 	M.Unconscious(15 SECONDS)
 
-
-	// Head has been "analyzed". Return it.
 	sleep(2 SECONDS)
 	playsound(src, 'sound/combat/vite.ogg', 100, FALSE, -1)
 	unbuckle_all_mobs()
-
 
 /obj/structure/chair/arrestchair/proc/budget2change(budget, mob/user, specify)
 	var/turf/T

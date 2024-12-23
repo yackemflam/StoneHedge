@@ -482,7 +482,7 @@
 	H.devotion?.excommunicate()
 
 /datum/quirk/bounty
-	name = "Hunted Man"
+	name = "Hunted Man (NOT WANTED BY GROVE)"
 	desc = "Someone put a bounty on my head, whether for legitimate reasons or not. The local Adventurers' Guild might be able to protect me if I can make some friends there, but my life will always be in danger from those seeking to collect. (I can get attacked by other people for bounty as justification, for capture or death.)"
 	value = -3
 
@@ -522,14 +522,15 @@
 	to_chat(H, span_notice("Whether I done it or not, I have been accused of [reason], and a [employer] put a bounty on my head!"))
 
 /datum/quirk/outlaw
-	name = "Outlaw"
+	name = "Outlaw (WANTED BY GROVE)"
 	desc = "I'm on the wrong side of the law, I've managed to avoid capture so far but the law is coming for me, it's only a matter of time."
-	value = -2
+	value = -4
 
 /datum/quirk/outlaw/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.apply_status_effect(/datum/status_effect/grove_outlaw, "Wanted Fugitive")
 	make_outlaw(H.real_name, TRUE)
+	H.mind.special_items["Rag Mask"] = /obj/item/clothing/mask/rogue/ragmask
 
 /datum/quirk/sillyvoice
 	name = "Annoying"
@@ -697,3 +698,26 @@
     H.verbs -= vore_verbs
     H.vore_flags &= ~SHOW_VORE_PREFS
     H.disable_vore_mode()
+
+/datum/quirk/maniac
+	name = "Cursed"
+	desc = "...I keep experiencing vivid hallucinations, What is happening here?"
+	value = -4 //it can stun you and knock you down if you get hit by a certain hallucination and make your screen shake in combat.
+
+/datum/quirk/maniac/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.add_curse(/datum/curse/zizo, TRUE)
+	ADD_TRAIT(H, TRAIT_SCHIZO_AMBIENCE, QUIRK_TRAIT)
+	H.cmode_music = 'sound/music/combat_maniac2.ogg' //You gotta understand it's very important.
+
+/datum/quirk/maniacextra
+	name = "Cursed (Extra)"
+	desc = "..I keep experiencing vivid hallucinations, What is happening here? (Same as Cursed, Except the fourth wonder sequence will start when the round start ending.)"
+	value = -4
+
+/datum/quirk/maniacextra/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.add_curse(/datum/curse/zizo, TRUE)
+	ADD_TRAIT(H, TRAIT_SCHIZO_AMBIENCE, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_SOONTOWAKEUP, QUIRK_TRAIT)
+	H.cmode_music = 'sound/music/combat_maniac2.ogg'

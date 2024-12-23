@@ -292,24 +292,25 @@
 			adjustable = CADJUSTED
 			if(toggle_icon_state)
 				icon_state = "[initial(icon_state)]_t"
-			flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+			flags_inv = HIDEEARS|HIDEHAIR
 			body_parts_covered = NECK|HAIR|EARS|HEAD
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
 				H.update_inv_head()
 				H.update_inv_wear_mask() //Snowflake case for Desert Merc hood
 				H.update_inv_cloak()
-			block2add = FOV_BEHIND
+			return
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
 			flags_inv = null
+			body_parts_covered = NECK
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
 					H.update_inv_head()
 					H.update_inv_wear_mask() //Snowflake case for Desert Merc hood
 					H.update_inv_cloak()
-		user.update_fov_angles()
+		return
 
 
 /obj/item/clothing/head/roguetown/menacing
@@ -724,6 +725,13 @@
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 400
+
+/obj/item/clothing/head/roguetown/helmet/elfbarbutewings/Hedgeguard
+	name = "hedgeguard's helm"
+	desc = "An ironwood helm in the style of the Hedge-Guard of the Breuddwyd Grove. It's adorned with ornate thorns and iconography, signifying devotion to Sylvarn."
+	icon_state = "dendorhelm"
+	item_state = "dendorhelm"
+	color = "#9a7a54"
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard
 	name = "savoyard"
@@ -1254,6 +1262,10 @@
 	anvilrepair = null
 	sewrepair = TRUE
 	blocksound = SOFTHIT
+
+/obj/item/clothing/head/roguetown/helmet/leather/volfhelm/greatdruid
+	name = "sylvarn's pelt-covered helm"
+	desc = "A sacred helm passed between Great Druids, crafted from the pelt of one of Sylvarn's own familiars. The volf who provided this pelt was said to have lived for centuries protecting the four aspects of the Wyld Huntsman's seasons, before it was murdered by a group of adventurers for coin. It serves as a reminder that civilization is cruel, as are its people."
 
 /obj/item/clothing/head/roguetown/helmet/leather/bearhead
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP

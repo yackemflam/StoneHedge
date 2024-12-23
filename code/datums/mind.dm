@@ -336,6 +336,7 @@
 	if(skill == /datum/skill/magic/arcane)
 		adjust_spellpoints(amt)
 		current.calculate_attunement_points()
+		current.calculate_spell_slots()
 	if(amt > 0) //positive at
 		for(var/i in 1 to amt)
 			switch(skill_experience[S])

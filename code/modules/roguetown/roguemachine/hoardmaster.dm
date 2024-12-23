@@ -10,6 +10,7 @@
 	layer = ABOVE_MOB_LAYER
 	var/upgrade_flags
 	var/current_cat = "1"
+	reject_grove_marked = FALSE
 
 
 /obj/structure/roguemachine/Hoardmaster/Initialize()
@@ -100,7 +101,7 @@
 			unlocked_cats+="Knight"
 		if("Knave")
 			unlocked_cats+="Knave"
-		if("Rogue Mage")
+		if("Bandit Mage")
 			unlocked_cats+="Mage"
 		if("Sawbones")
 			unlocked_cats+="Sawbones"

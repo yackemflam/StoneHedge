@@ -92,7 +92,7 @@
 				owner.adjust_nutrition(remove_amount) //since hunger factor is so tiny compared to the nutrition levels it has to fill
 			reagents.remove_reagent(reagent_to_make, (remove_amount*4)) //we consume our own reagents for food less efficently, allowing running out (may undo this multiplier later.)
 		else
-			if((reagents.total_volume < reagents.maximum_volume) && refilling) //if organ is not full.
+			if((reagents.total_volume < reagents.maximum_volume) && refilling && owner.nutrition > (NUTRITION_LEVEL_FED + 25)) //if organ is not full.
 				var/max_restore = owner.nutrition > (NUTRITION_LEVEL_WELL_FED) ? reagent_generate_rate * 2 : reagent_generate_rate
 				var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume) // amount restored if fed, capped by reagents.maximum_volume
 				if(uses_nutrient) //consume nutrient
@@ -207,10 +207,10 @@
 				to_chat(owner, span_lovebold("My breasts should start lactating soon..."))
 		if(pregnantaltorgan) //there is no birthing so hopefully 2 hours for one stage is enough to last till round end, there is 0 to 3 belly sizes.
 			pre_pregnancy_size = pregnantaltorgan.organ_size
-			addtimer(CALLBACK(pregnantaltorgan, PROC_REF(handle_preggoness)), 2 HOURS, TIMER_STOPPABLE)
+			addtimer(CALLBACK(pregnantaltorgan, PROC_REF(handle_preggoness)), 30 MINUTES, TIMER_STOPPABLE)
 		else
 			pre_pregnancy_size = organ_size
-			addtimer(CALLBACK(src, PROC_REF(handle_preggoness)), 2 HOURS, TIMER_STOPPABLE)
+			addtimer(CALLBACK(src, PROC_REF(handle_preggoness)), 30 MINUTES, TIMER_STOPPABLE)
 
 /obj/item/organ/filling_organ/proc/handle_preggoness()
 	var/datum/sprite_accessory/acc = accessory_type

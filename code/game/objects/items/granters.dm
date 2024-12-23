@@ -329,6 +329,7 @@
 		onlearned(user)
 	else
 		to_chat(user, span_notice("I can't memorize any more spells looks like..."))
+		return
 
 /obj/item/book/granter/spell/recoil(mob/user)
 	user.visible_message(span_warning("[src] glows in a black light!"))
@@ -599,7 +600,7 @@
 		user.mind.teach_crafting_recipe(crafting_recipe_type)
 		to_chat(user,span_notice("I learned how to make [initial(R.name)]."))
 
-//! --DREAM KEEP SCROLLS-- !/
+//! --BLACKSTONE SCROLLS-- !/
 /obj/item/book/granter/spell/blackstone/
     desc = "A scroll of potential known only to those that can decipher its secrets."
     icon = 'icons/roguetown/items/misc.dmi'

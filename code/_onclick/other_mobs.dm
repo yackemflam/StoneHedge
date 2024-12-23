@@ -408,6 +408,8 @@
 							T.cut_overlay("damage25")
 							for(var/turf/open/transparent/glass/turfie in range(1,T)) //turns surrounding glass to shit also at a chance
 								if(prob(25))
+									var/obj/item/shard/glassshard = new /obj/item/shard(turfie)
+									glassshard.throw_at(turfie) //so they fall down hopefully
 									turfie.ChangeTurf(/turf/open/transparent/openspace, flags = CHANGETURF_INHERIT_AIR)
 							T.Entered(src)
 						else
@@ -498,11 +500,16 @@
 											stealpos.Add(V.get_item_by_slot(SLOT_SHOES))
 								if (length(stealpos) > 0)
 									var/obj/item/picked = pick(stealpos)
+									if(HAS_TRAIT(picked, TRAIT_UNPICKPOCKETABLE))
+										to_chat(src, span_warning("I can't seem to get a grip on [picked]!"))
+										return
 									V.dropItemToGround(picked)
 									put_in_active_hand(picked)
 									to_chat(src, span_green("I stole [picked]!"))
 									V.log_message("has had \the [picked] stolen by [key_name(U)]", LOG_ATTACK, color="black")
 									U.log_message("has stolen \the [picked] from [key_name(V)]", LOG_ATTACK, color="black")
+									if(has_flaw(/datum/charflaw/addiction/kleptomaniac))
+										sate_addiction()
 								else
 									exp_to_gain /= 2 // these can be removed or changed on reviewer's discretion
 									to_chat(src, span_warning("I didn't find anything there. Perhaps I should look elsewhere."))
