@@ -1798,12 +1798,12 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cavewet)
 "aWp" = (
-/obj/structure/fluff/traveltile/dungeon{
-	aportalgoesto = "Dungeon";
-	aportalid = "DungeonRockhill"
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffin13";
+	aportalid = "ffout13"
 	},
-/turf/open/floor/rogue/blocks,
-/area/rogue/under/cavewet)
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/shelter/mountains)
 "aWz" = (
 /obj/structure/stairs,
 /turf/open/floor/rogue/ruinedwood,
@@ -3143,6 +3143,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"bJN" = (
+/obj/structure/spider/stickyweb,
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/under/cavewet)
 "bKu" = (
 /obj/structure/table/wood{
 	dir = 8;
@@ -4314,6 +4318,13 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/caves)
+"csX" = (
+/obj/item/roguegem/blue,
+/obj/item/roguegem/blue,
+/obj/item/roguegem/green,
+/obj/item/roguegem/green,
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "cte" = (
 /obj/effect/decal/border/ruinedwood{
 	dir = 1
@@ -4831,6 +4842,13 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
+"cJN" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffin1";
+	aportalid = "ffout1"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavewet)
 "cJV" = (
 /obj/structure/roguewindow/openclose/reinforced{
 	dir = 1
@@ -5585,6 +5603,10 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
+"dfi" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavewet)
 "dfk" = (
 /obj/structure/flora/newbranch/connector{
 	dir = 4
@@ -10452,6 +10474,13 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/river)
+"fEX" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffout9";
+	aportalid = "ffin9"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/under/cavewet)
 "fFa" = (
 /obj/structure/bars/steel,
 /turf/open/floor/rogue/dirt/road,
@@ -10616,7 +10645,9 @@
 /area/rogue/under/cavewet)
 "fJm" = (
 /obj/structure/spider/stickyweb,
-/obj/structure/closet/crate/chest/refilling/weapon,
+/obj/structure/stairs{
+	dir = 8
+	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
 "fJn" = (
@@ -15040,6 +15071,10 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/cavewet)
+"iin" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/under/cavewet)
 "iiw" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 8;
@@ -16052,6 +16087,10 @@
 "iMU" = (
 /turf/closed,
 /area/rogue/outdoors/caves)
+"iMV" = (
+/obj/item/roguegem/green,
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "iNs" = (
 /obj/structure/flora/roguetree/burnt,
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
@@ -17944,8 +17983,11 @@
 	name = "far stonehedge"
 	})
 "jMj" = (
-/obj/structure/closet/crate/chest/refilling/armor,
-/turf/open/floor/rogue/naturalstone,
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffout14";
+	aportalid = "ffin14"
+	},
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/under/cavewet)
 "jMu" = (
 /obj/structure/chair/wood/rogue{
@@ -20667,6 +20709,13 @@
 /obj/effect/landmark/start/farmer,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
+"lix" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffin5";
+	aportalid = "ffout5"
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/under/cavewet)
 "liA" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/indoors/cave/minotaurcave)
@@ -21154,6 +21203,13 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/shelter/town)
+"ltX" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffin3";
+	aportalid = "ffout3"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavewet)
 "luc" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/structure/roguemachine/scomm{
@@ -21583,6 +21639,14 @@
 "lIa" = (
 /obj/structure/closet/crate/roguecloset,
 /turf/open/floor/carpet/royalblack,
+/area/rogue/under/cavewet)
+"lId" = (
+/obj/structure/closet/crate/chest/refilling/armor,
+/obj/item/roguestatue/gold/loot,
+/obj/item/roguegem/violet,
+/obj/item/riddleofsteel,
+/obj/item/roguegem/blue,
+/turf/open/floor/rogue/blocks,
 /area/rogue/under/cavewet)
 "lIe" = (
 /obj/structure/flora/roguegrass,
@@ -26237,6 +26301,13 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
+"ojk" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffout12";
+	aportalid = "ffin12"
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/cavewet)
 "ojp" = (
 /obj/machinery/gear_painter{
 	icon_state = "shitportal";
@@ -27019,6 +27090,12 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
+"oHX" = (
+/obj/effect/decal/border{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/cavewet)
 "oHZ" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/dirt/nrich,
@@ -28508,17 +28585,11 @@
 	first_time_text = null
 	})
 "pwC" = (
-/obj/structure/bars{
-	color = "#755f48";
-	name = "rusted bars"
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffout11";
+	aportalid = "ffin11"
 	},
-/obj/structure/bars/passage{
-	density = 0;
-	icon_state = "passage1"
-	},
-/turf/open/floor/rogue/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/under/cavewet)
 "pwD" = (
 /obj/structure/flora/grass/jungle/b,
@@ -31984,6 +32055,13 @@
 	first_time_text = "Emerald Shores";
 	name = "Shores of the Emerald Coast"
 	})
+"rhd" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffin14";
+	aportalid = "ffout14"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/shelter/mountains)
 "rhx" = (
 /obj/effect/decal/border/stone/stonepattern1,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -35063,8 +35141,11 @@
 	first_time_text = "The Deepwoods"
 	})
 "sPH" = (
-/obj/structure/closet/crate/chest/refilling/weapon,
-/turf/open/floor/rogue/naturalstone,
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffout13";
+	aportalid = "ffin13"
+	},
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/under/cavewet)
 "sPO" = (
 /turf/open/floor/rogue/grass,
@@ -37176,6 +37257,12 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cavewet)
+"tXb" = (
+/obj/effect/decal/border{
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavewet)
 "tXc" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -38363,6 +38450,13 @@
 /obj/item/reagent_containers/glass/cup/wooden,
 /turf/open/floor/carpet/red,
 /area/rogue/under/cavewet)
+"uBQ" = (
+/obj/item/roguegem/violet,
+/obj/item/roguegem/blue,
+/obj/item/roguegem/blue,
+/obj/item/roguegem/green,
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "uBS" = (
 /obj/machinery/light/rogue/hearth,
 /obj/item/cooking/pan,
@@ -38414,6 +38508,12 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
+"uDe" = (
+/obj/item/roguegem/violet,
+/obj/item/riddleofsteel,
+/obj/effect/mob_spawner/skeleton/lich,
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "uDg" = (
 /obj/structure/flora/roguetree/underworld,
 /obj/structure/flora/roguetree/burnt,
@@ -38665,9 +38765,11 @@
 /turf/open/floor/rogue/dirt/ambush,
 /area/rogue/under/cave)
 "uKI" = (
-/obj/structure/spider/stickyweb,
-/obj/structure/closet/crate/chest/refilling/armor,
-/turf/open/floor/rogue/naturalstone,
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffin2";
+	aportalid = "ffout2"
+	},
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet)
 "uKK" = (
 /obj/structure/table/wood{
@@ -39432,13 +39534,15 @@
 	name = "Tavern Stables"
 	})
 "vhk" = (
-/obj/structure/bars/passage{
-	density = 0;
-	icon_state = "passage1"
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	pixel_x = -8
 	},
-/turf/open/floor/rogue/metal{
-	icon_state = "plating2"
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffin4";
+	aportalid = "ffout4"
 	},
+/turf/open/floor/rogue/twig,
 /area/rogue/under/cavewet)
 "vhv" = (
 /obj/structure/flora/newleaf{
@@ -39584,6 +39688,13 @@
 /obj/structure/closet/dirthole/grave,
 /obj/structure/closet/dirthole/grave,
 /turf/open/floor/rogue/dirt,
+/area/rogue/under/cavewet)
+"vlH" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffin6";
+	aportalid = "ffout6"
+	},
+/turf/open/floor/rogue/twig,
 /area/rogue/under/cavewet)
 "vlK" = (
 /obj/structure/table/vtable,
@@ -39963,6 +40074,18 @@
 /obj/structure/flora/rogueflora/marigold,
 /obj/structure/flora/wildplant/wild_poppy,
 /turf/open/floor/rogue/grass,
+/area/rogue/under/cavewet)
+"vxy" = (
+/obj/structure/fluff/railing/wood{
+	dir = 4;
+	layer = 2.8;
+	pixel_x = 8
+	},
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffin7";
+	aportalid = "ffout7"
+	},
+/turf/open/floor/rogue/twig,
 /area/rogue/under/cavewet)
 "vxU" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -40554,7 +40677,7 @@
 /obj/structure/fluff/railing/fence{
 	dir = 8
 	},
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/dirt,
 /area/rogue/under/cavewet)
 "vPA" = (
 /turf/closed/wall/mineral/rogue/pipe{
@@ -41082,6 +41205,11 @@
 /obj/structure/chair/bench/ultimacouch,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/cavewet)
+"wfa" = (
+/obj/structure/closet/crate/chest/refilling/armor,
+/obj/item/roguegem/violet,
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "wfo" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 8
@@ -41111,6 +41239,12 @@
 "wgK" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/caves)
+"whl" = (
+/obj/structure/closet/crate/chest/refilling/armor,
+/obj/item/roguegem/violet,
+/obj/item/roguegem/blue,
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "whH" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/outdoors/woods{
@@ -42109,6 +42243,12 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
+"wMn" = (
+/obj/item/roguestatue/gold/loot,
+/obj/item/roguegem/blue,
+/obj/item/roguegem/blue,
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "wMq" = (
 /obj/item/natural/bundle/stick,
 /obj/item/natural/bundle/stick,
@@ -42357,6 +42497,13 @@
 	icon_state = "road"
 	},
 /area/rogue/outdoors/woods/grove)
+"wUr" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffout8";
+	aportalid = "ffin8"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/under/cavewet)
 "wUw" = (
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/river{
@@ -43941,6 +44088,12 @@
 	first_time_text = "Ravenloft Academy";
 	name = "Ravenloft Academy"
 	})
+"xLy" = (
+/obj/structure/closet/crate/chest/refilling/armor,
+/obj/item/roguegem/violet,
+/obj/item/riddleofsteel,
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "xLz" = (
 /obj/structure/ladder,
 /turf/open/floor/rogue/wood/herringbone,
@@ -44949,6 +45102,13 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
+"ylA" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffout10";
+	aportalid = "ffin10"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/under/cavewet)
 "ylB" = (
 /obj/machinery/anvil/crafted,
 /turf/open/floor/rogue/cobblerock,
@@ -45980,7 +46140,7 @@ nhM
 (6,1,1) = {"
 nhM
 nhM
-uMM
+cJN
 uMM
 uMM
 uMM
@@ -46182,7 +46342,7 @@ nhM
 (7,1,1) = {"
 nhM
 nhM
-uMM
+uKI
 uMM
 uMM
 uMM
@@ -46384,7 +46544,7 @@ nhM
 (8,1,1) = {"
 nhM
 nhM
-uMM
+ltX
 uMM
 fDV
 fDV
@@ -50703,10 +50863,10 @@ ogQ
 xMw
 xMw
 xMw
-xMw
+hBk
 uMM
-kJd
-kJd
+tVw
+tVw
 tVw
 nhM
 nhM
@@ -50906,10 +51066,10 @@ xMw
 xMw
 scy
 vPy
-xMw
+uMM
 yhr
 sHI
-xMw
+sPH
 nhM
 nhM
 xMw
@@ -51107,11 +51267,11 @@ uMM
 uMM
 hDw
 xMw
-xMw
-xMw
+hBk
+uMM
+dfi
 yhr
-yhr
-xMw
+jMj
 nhM
 nhM
 xMw
@@ -51310,8 +51470,8 @@ sHI
 sGt
 sHI
 xMw
-xMw
-xMw
+uMM
+uMM
 sHI
 xMw
 nhM
@@ -51512,10 +51672,10 @@ lRI
 axO
 axO
 fuB
-axO
-axO
-axO
-axO
+tXb
+oHX
+tXb
+tXb
 nhM
 nhM
 hBk
@@ -52804,7 +52964,7 @@ tVw
 uJQ
 uJQ
 uJQ
-uJQ
+vhk
 nhM
 nhM
 nhM
@@ -53006,7 +53166,7 @@ uMM
 sRV
 sRV
 sRV
-sRV
+lix
 nhM
 nhM
 nhM
@@ -53208,7 +53368,7 @@ tVw
 sRV
 sRV
 sRV
-sRV
+vlH
 nhM
 nhM
 nhM
@@ -53410,7 +53570,7 @@ tVw
 hGC
 hGC
 hGC
-hGC
+vxy
 nhM
 nhM
 nhM
@@ -53498,10 +53658,10 @@ gTO
 gTO
 gTO
 fDV
-fJm
+fci
 gTO
 gTO
-sPH
+jkv
 fci
 jkv
 jkv
@@ -53902,9 +54062,9 @@ fci
 fDV
 jkv
 xXq
-fci
-fci
-jkv
+bJN
+bJN
+nhM
 jkv
 gTO
 gTO
@@ -54104,10 +54264,10 @@ fci
 fci
 fci
 fci
-fci
-fci
-fci
-sPH
+fJm
+fJm
+fJm
+jkv
 gTO
 gTO
 gTO
@@ -54307,9 +54467,9 @@ fDV
 fci
 fci
 jkv
-fDV
-fDV
-fDV
+jkv
+jkv
+jkv
 jkv
 gTO
 gTO
@@ -54505,9 +54665,9 @@ gTO
 gTO
 gTO
 fDV
-uKI
-uKI
-jMj
+fci
+fci
+jkv
 fDV
 fDV
 fDV
@@ -57602,8 +57762,8 @@ kJd
 kJd
 kJd
 kJd
-pwC
-vhk
+hvE
+hvE
 iHb
 tVw
 hBk
@@ -57804,8 +57964,8 @@ kJd
 kJd
 kJd
 kJd
-pwC
-vhk
+hvE
+hvE
 tVw
 tVw
 hBk
@@ -58006,8 +58166,8 @@ kJd
 kJd
 kJd
 kJd
-pwC
-vhk
+hvE
+hvE
 tVw
 tVw
 uMM
@@ -58208,8 +58368,8 @@ hbZ
 wRv
 wRv
 wRv
-pwC
-vhk
+hvE
+hvE
 jvF
 tVw
 uMM
@@ -58627,7 +58787,7 @@ tVw
 tVw
 tVw
 tVw
-tVw
+nhM
 nhM
 nhM
 qMz
@@ -58829,7 +58989,7 @@ tVw
 tVw
 tVw
 tVw
-tVw
+pwC
 nhM
 nhM
 qMz
@@ -59031,7 +59191,7 @@ tVw
 tVw
 tVw
 tVw
-tVw
+ojk
 nhM
 nhM
 gTO
@@ -59233,7 +59393,7 @@ tVw
 tVw
 tVw
 tVw
-tVw
+nhM
 nhM
 nhM
 gTO
@@ -59304,7 +59464,7 @@ xjF
 xus
 nog
 iYu
-xfc
+iin
 xfc
 xfc
 nhM
@@ -60112,9 +60272,9 @@ bYl
 pug
 nog
 iYu
-xfc
-xfc
-xfc
+ylA
+fEX
+wUr
 nhM
 "}
 (76,1,1) = {"
@@ -62930,8 +63090,8 @@ nog
 nog
 nog
 nog
-nog
-nog
+vuv
+vuv
 nog
 nog
 nog
@@ -63132,8 +63292,8 @@ nhM
 nog
 nog
 nog
-nog
-nog
+vuv
+vuv
 nog
 nog
 nog
@@ -63335,7 +63495,7 @@ nog
 wMA
 vuv
 vuv
-gAK
+vuv
 vuv
 nog
 nhM
@@ -68336,7 +68496,7 @@ nog
 nog
 nog
 pSf
-vuv
+xLy
 vuv
 vuv
 alR
@@ -68535,10 +68695,10 @@ gTO
 gTO
 gTO
 nog
+nog
+nog
 vuv
-vuv
-aWp
-vuv
+uBQ
 vuv
 vuv
 vuv
@@ -68737,10 +68897,10 @@ fDV
 fDV
 gTO
 nog
+nog
+nog
 vuv
-vuv
-vuv
-vuv
+csX
 vuv
 vuv
 vuv
@@ -68939,10 +69099,10 @@ fDV
 fDV
 gTO
 nog
+nog
+nog
 vuv
-vuv
-vuv
-vuv
+uDe
 vuv
 vuv
 vuv
@@ -69141,10 +69301,10 @@ fDV
 fDV
 gTO
 nog
+nog
+nog
 vuv
-vuv
-vuv
-vuv
+wMn
 vuv
 vuv
 vuv
@@ -69346,8 +69506,8 @@ nog
 nog
 nog
 pSf
-vuv
-vuv
+iMV
+wfa
 vuv
 vuv
 vuv
@@ -69548,8 +69708,8 @@ nog
 nog
 nog
 vuv
-vuv
-vuv
+whl
+lId
 vuv
 vuv
 vuv
@@ -197447,7 +197607,7 @@ iUy
 clD
 lIq
 hqK
-clD
+aWp
 iUy
 juj
 juj
@@ -197649,7 +197809,7 @@ iUy
 vKN
 kDu
 hqK
-clD
+rhd
 iUy
 clD
 clD

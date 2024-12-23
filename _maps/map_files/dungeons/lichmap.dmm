@@ -2385,6 +2385,13 @@
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/under/cavewet)
+"xy" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffout3";
+	aportalid = "ffin3"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/cavewet)
 "xz" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobble,
@@ -4338,6 +4345,13 @@
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/shield,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
+"Qt" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffout1";
+	aportalid = "ffin1"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/cavewet)
 "Qu" = (
 /mob/living/carbon/human/species/skeleton/npc/dungeon/boss{
 	faction = list("neutral")
@@ -5112,6 +5126,13 @@
 /area/rogue/under/cavewet)
 "Yk" = (
 /turf/closed/mineral/random/rogue/med,
+/area/rogue/under/cavewet)
+"Ym" = (
+/obj/structure/fluff/traveltile/underdark{
+	aportalgoesto = "ffout2";
+	aportalid = "ffin2"
+	},
+/turf/open/floor/rogue/cobble,
 /area/rogue/under/cavewet)
 "Yn" = (
 /obj/structure/flora/roguegrass,
@@ -26689,9 +26710,9 @@ dd
 dd
 dd
 Wj
-dd
-dd
-dd
+xy
+Ym
+Qt
 Wj
 Yk
 Yk
