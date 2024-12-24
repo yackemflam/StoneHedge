@@ -15,18 +15,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "aj" = (
-/obj/structure/bars/passage{
-	name = "gate of life";
-	redstone_id = "mazedungeonlife";
-	max_integrity = 3000
-	},
-/obj/structure/bars/passage{
-	name = "gate of glory";
-	redstone_id = "mazedungeonglory";
-	max_integrity = 3000
-	},
-/turf/open/floor/rogue/blocks,
-/area/rogue/under/cavewet)
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors)
 "al" = (
 /obj/structure/stairs/stone{
 	dir = 1
@@ -271,8 +263,12 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/cavewet)
 "cK" = (
-/obj/item/clothing/cloak/cape/blkknight,
-/turf/open/floor/rogue/grass,
+/obj/structure/bars/passage{
+	name = "gate of wisdom";
+	redstone_id = "mazedungeonwisdom";
+	max_integrity = 3000
+	},
+/turf/open/floor/rogue/blocks,
 /area/rogue/under/cavewet)
 "cP" = (
 /mob/living/carbon/human/species/halforc/orc_raider/ambush,
@@ -406,9 +402,14 @@
 /turf/open/water/sewer,
 /area/rogue/under/cavewet)
 "dV" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors)
+/obj/effect/decal/cleanable/blood/old,
+/obj/structure/bars/passage{
+	name = "gate of diligence";
+	redstone_id = "mazedungeondiligence";
+	max_integrity = 3000
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "dW" = (
 /obj/structure/closet/crate/roguecloset/inn/south,
 /turf/open/floor/rogue/woodturned/nosmooth,
@@ -434,10 +435,6 @@
 /area/rogue/under/cavewet)
 "eq" = (
 /obj/structure/well/fountain2,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors)
-"er" = (
-/obj/item/roguecoin/gold/pile,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "eu" = (
@@ -775,15 +772,6 @@
 /obj/effect/mob_spawner/skeleton/lich,
 /turf/open/floor/rogue/church,
 /area/rogue/under/cavewet)
-"hk" = (
-/obj/effect/decal/cleanable/blood/old,
-/obj/structure/bars/passage{
-	name = "gate of glory";
-	redstone_id = "mazedungeonglory";
-	max_integrity = 3000
-	},
-/turf/open/floor/rogue/blocks,
-/area/rogue/under/cavewet)
 "hn" = (
 /obj/structure/lever/wall{
 	redstone_id = "mazedungeondiligence"
@@ -989,9 +977,9 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
 "jB" = (
-/obj/item/clothing/shoes/roguetown/boots/armor/blkknight,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/cavewet)
+/obj/structure/spawner/invisible/goblin,
+/turf/open/floor/rogue/dirt/nrich,
+/area/rogue/outdoors)
 "jC" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1
@@ -1447,9 +1435,9 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/cavewet)
 "ow" = (
-/obj/item/clothing/cloak/tabard/blkknight,
+/obj/item/roguecoin/gold/pile,
 /turf/open/floor/rogue/grass,
-/area/rogue/under/cavewet)
+/area/rogue/outdoors)
 "oy" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/grown/apple{
@@ -2617,12 +2605,18 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/under/cavewet)
 "zB" = (
-/obj/item/clothing/head/roguetown/helmet/heavy/blkknight,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/cavewet)
+/obj/structure/flora/roguegrass,
+/obj/structure/flora/roguegrass,
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors)
 "zC" = (
-/obj/effect/spawner/roguemap/hauntpile,
-/turf/open/floor/rogue/church,
+/obj/structure/bars/passage{
+	name = "gate of rest";
+	redstone_id = "mazedungeonrest";
+	max_integrity = 3000
+	},
+/turf/open/floor/rogue/blocks,
 /area/rogue/under/cavewet)
 "zG" = (
 /turf/open/floor/rogue/rooftop{
@@ -2874,14 +2868,6 @@
 /obj/machinery/light/rogue/wallfire,
 /turf/closed/wall/mineral/rogue/decostone,
 /area/rogue/under/cavewet)
-"Cb" = (
-/obj/structure/bars/passage{
-	name = "gate of escape";
-	redstone_id = "mazedungeonescape";
-	max_integrity = 10000
-	},
-/turf/open/floor/rogue/blocks,
-/area/rogue/under/cavewet)
 "Ce" = (
 /obj/effect/mob_spawner/skeleton/lich,
 /turf/open/floor/rogue/blocks/stonered,
@@ -2924,14 +2910,6 @@
 "Cw" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
-/area/rogue/under/cavewet)
-"Cz" = (
-/obj/structure/bars/passage{
-	name = "gate of rest";
-	redstone_id = "mazedungeonrest";
-	max_integrity = 3000
-	},
-/turf/open/floor/rogue/blocks,
 /area/rogue/under/cavewet)
 "CD" = (
 /obj/structure/table/wood{
@@ -2989,15 +2967,6 @@
 	},
 /obj/structure/fluff/statue/knight/interior/r,
 /turf/open/floor/rogue/church,
-/area/rogue/under/cavewet)
-"Dd" = (
-/obj/effect/decal/cleanable/blood/old,
-/obj/structure/bars/passage{
-	name = "gate of diligence";
-	redstone_id = "mazedungeondiligence";
-	max_integrity = 3000
-	},
-/turf/open/floor/rogue/blocks,
 /area/rogue/under/cavewet)
 "Dh" = (
 /obj/structure/table/wood,
@@ -4211,11 +4180,6 @@
 /obj/item/candle/skull/lit,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cavewet)
-"OL" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors)
 "OQ" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -4269,9 +4233,9 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/cavewet)
 "Pm" = (
-/obj/item/clothing/under/roguetown/platelegs/blk,
-/turf/open/floor/rogue/grass,
-/area/rogue/under/cavewet)
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "Pn" = (
 /obj/structure/chair/wood/rogue/chair3,
 /turf/open/floor/rogue/woodturned,
@@ -4362,9 +4326,13 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors)
 "Qd" = (
-/obj/structure/spawner/invisible/goblin,
-/turf/open/floor/rogue/dirt/nrich,
-/area/rogue/outdoors)
+/obj/structure/bars/passage{
+	name = "gate of beauty";
+	redstone_id = "mazedungeonbeauty";
+	max_integrity = 3000
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "Qf" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple,
@@ -4427,11 +4395,18 @@
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/cavewet)
 "QF" = (
-/obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass,
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors)
+/obj/structure/bars/passage{
+	name = "gate of life";
+	redstone_id = "mazedungeonlife";
+	max_integrity = 3000
+	},
+/obj/structure/bars/passage{
+	name = "gate of glory";
+	redstone_id = "mazedungeonglory";
+	max_integrity = 3000
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "QI" = (
 /mob/living/simple_animal/hostile/retaliate/gaseousform{
 	faction = list("undead")
@@ -4451,13 +4426,10 @@
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/under/cavewet)
 "QV" = (
-/obj/structure/bars/passage{
-	name = "gate of beauty";
-	redstone_id = "mazedungeonbeauty";
-	max_integrity = 3000
-	},
-/turf/open/floor/rogue/blocks,
-/area/rogue/under/cavewet)
+/obj/structure/flora/roguegrass,
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors)
 "QY" = (
 /obj/structure/fluff/statue/knight/interior/r,
 /obj/item/roguegem/blue,
@@ -4633,9 +4605,11 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cavewet)
 "SA" = (
-/obj/item/clothing/neck/roguetown/blkknight,
-/turf/open/floor/rogue/grass,
-/area/rogue/under/cavewet)
+/obj/structure/flora/roguegrass,
+/obj/structure/flora/roguegrass,
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "SB" = (
 /obj/structure/table/vtable/v2,
 /obj/item/clothing/neck/roguetown/psicross/ravox,
@@ -4709,17 +4683,10 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/cavewet)
 "Tt" = (
-/obj/machinery/light/rogue/lanternpost{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors)
-"TB" = (
 /obj/structure/bars/passage{
-	name = "gate of wisdom";
-	redstone_id = "mazedungeonwisdom";
-	max_integrity = 3000
+	name = "gate of escape";
+	redstone_id = "mazedungeonescape";
+	max_integrity = 10000
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cavewet)
@@ -5026,18 +4993,18 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors)
 "WJ" = (
-/obj/structure/flora/roguegrass,
-/obj/structure/flora/roguegrass,
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors)
+/obj/effect/spawner/roguemap/hauntpile,
+/turf/open/floor/rogue/church,
+/area/rogue/under/cavewet)
 "WL" = (
 /turf/open/floor/rogue/rooftop/green/corner1{
 	dir = 5
 	},
 /area/rogue/outdoors)
 "WM" = (
-/obj/structure/flora/roguegrass,
+/obj/machinery/light/rogue/lanternpost{
+	dir = 1
+	},
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
@@ -5056,9 +5023,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "Xb" = (
-/obj/item/clothing/suit/roguetown/armor/plate/blkknight,
-/turf/open/floor/rogue/grass,
-/area/rogue/under/cavewet)
+/obj/structure/flora/roguegrass,
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "Xf" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/under/roguetown/tights/stockings/silk/random,
@@ -5201,10 +5169,14 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cavewet)
 "Yn" = (
-/obj/structure/flora/roguegrass,
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors)
+/obj/effect/decal/cleanable/blood/old,
+/obj/structure/bars/passage{
+	name = "gate of glory";
+	redstone_id = "mazedungeonglory";
+	max_integrity = 3000
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cavewet)
 "Yo" = (
 /obj/structure/closet/crate/chest/refilling/armor,
 /turf/open/floor/rogue/blocks/newstone,
@@ -7309,7 +7281,7 @@ jh
 WT
 WT
 WT
-Yn
+QV
 ax
 UJ
 RD
@@ -7367,8 +7339,8 @@ Vs
 jh
 ZH
 WT
-Yn
-WM
+QV
+Xb
 oE
 WT
 ZH
@@ -7425,7 +7397,7 @@ UJ
 WT
 ZH
 jh
-dV
+Pm
 CP
 jh
 ZH
@@ -7484,7 +7456,7 @@ aU
 jh
 WT
 jh
-Yn
+QV
 ZH
 SW
 WT
@@ -7694,7 +7666,7 @@ qx
 RD
 tC
 tD
-er
+ow
 yv
 jh
 xN
@@ -7845,8 +7817,8 @@ ZH
 bo
 Ta
 WT
-WJ
-WJ
+zB
+zB
 RD
 "}
 (43,1,1) = {"
@@ -7903,7 +7875,7 @@ tT
 bo
 bo
 ZH
-QF
+SA
 kp
 Qk
 RD
@@ -7961,8 +7933,8 @@ dd
 tT
 jh
 Qk
-QF
-WM
+SA
+Xb
 Vs
 bo
 RD
@@ -8020,7 +7992,7 @@ dd
 tT
 YR
 WT
-WJ
+zB
 WT
 ZH
 bo
@@ -8044,7 +8016,7 @@ jh
 WT
 aU
 jh
-Qd
+jB
 Qw
 VZ
 Qw
@@ -8103,7 +8075,7 @@ jh
 jh
 aU
 EO
-Qd
+jB
 Qw
 bY
 Lg
@@ -8162,7 +8134,7 @@ Vc
 Vc
 Vc
 Vc
-Qd
+jB
 Qw
 bY
 Vc
@@ -8221,7 +8193,7 @@ Fp
 Fp
 Fp
 Vc
-Qd
+jB
 Lg
 Lg
 Vc
@@ -8375,9 +8347,9 @@ tT
 WT
 jh
 wC
-dV
-dV
-WM
+Pm
+Pm
+Xb
 RD
 "}
 (52,1,1) = {"
@@ -8433,9 +8405,9 @@ dd
 tT
 jh
 jh
-OL
-Tt
-dV
+aj
+WM
+Pm
 wC
 RD
 "}
@@ -19727,7 +19699,7 @@ Vc
 Iu
 rP
 xY
-zC
+WJ
 tf
 yx
 Jm
@@ -22356,7 +22328,7 @@ go
 tU
 go
 GS
-Cz
+zC
 GS
 Nl
 sE
@@ -22415,7 +22387,7 @@ yy
 yy
 go
 GS
-aj
+QF
 GS
 Nl
 sE
@@ -22474,7 +22446,7 @@ BG
 yy
 go
 GS
-Dd
+dV
 ZB
 Nl
 sE
@@ -22533,7 +22505,7 @@ Ml
 yy
 go
 GS
-QV
+Qd
 GS
 Nl
 sE
@@ -22651,7 +22623,7 @@ rA
 yy
 go
 GS
-TB
+cK
 GS
 Nl
 sE
@@ -22710,7 +22682,7 @@ mb
 yy
 go
 GS
-hk
+Yn
 GS
 Nl
 sE
@@ -22768,7 +22740,7 @@ Ke
 yy
 yy
 go
-Cb
+Tt
 go
 Wj
 Nl
@@ -25815,8 +25787,8 @@ AX
 AX
 AX
 fF
-ow
-Pm
+gj
+gj
 TS
 Wj
 TS
@@ -25873,9 +25845,9 @@ AX
 AX
 AX
 AX
-jB
-cK
-Xb
+Th
+gj
+gj
 TS
 Wj
 dU
@@ -25932,7 +25904,7 @@ AX
 AX
 AX
 AX
-zB
+Th
 YD
 TS
 TS
@@ -25992,7 +25964,7 @@ AX
 AX
 AX
 Gc
-SA
+gj
 TS
 TS
 AX
