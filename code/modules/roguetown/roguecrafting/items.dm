@@ -782,7 +782,7 @@
 
 /datum/crafting_recipe/roguetown/lharmorconvtwo
 	name = "hardened leather bikini to bra"
-	result = /obj/item/clothing/suit/roguetown/armor/leather/bikini/advanced/bra
+	result = /obj/item/clothing/suit/roguetown/armor/leather/advanced/bikini/bra
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/leather/advanced/bikini = 1)
 
 /datum/crafting_recipe/roguetown/lmarmorconvone
@@ -792,7 +792,7 @@
 
 /datum/crafting_recipe/roguetown/lmarmorconvtwo
 	name = "enhanced leather bikini to bra"
-	result = /obj/item/clothing/suit/roguetown/armor/leather/bikini/masterwork/bra
+	result = /obj/item/clothing/suit/roguetown/armor/leather/masterwork/bikini/bra
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/leather/masterwork/bikini = 1)
 
 /datum/crafting_recipe/roguetown/ichainkiniconv
