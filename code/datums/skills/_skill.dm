@@ -11,7 +11,7 @@
 	var/randomable_dream_xp = TRUE
 
 /datum/skill/proc/get_skill_speed_modifier(level)
-	return
+	return 1
 
 /datum/skill/proc/get_dream_cost_for_level(level)
 	if(length(specific_dream_costs) >= level)
