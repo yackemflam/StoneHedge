@@ -24,7 +24,7 @@ window.status = 'Output';
 var $messages, $subOptions, $subAudio, $selectedSub, $contextMenu, $filterMessages, $last_message, $messagelog;
 var opts = {
 	//General
-//	'messageCount': 0, //A count...of messages...
+	'messageCount': 0, //A count...of messages...
 //	'messageLimit': 2053, //A limit...for the messages...
 	'scrollSnapTolerance': 10, //If within x pixels of bottom
 	'clickTolerance': 10, //Keep focus if outside x pixels of mousedown position on mouseup
@@ -348,9 +348,10 @@ function output(message, flag) {
 		}
 	}
 
-/*
+
 	opts.messageCount++;
 
+	/*
 	//Pop the top message off if history limit reached
 	if (opts.messageCount >= opts.messageLimit) {
 		$messages.children('div.entry:first-child').remove();
