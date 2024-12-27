@@ -9325,7 +9325,10 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/item/reagent_containers/glass/alembic,
+/obj/item/reagent_containers/glass/alembic{
+	pixel_x = 10;
+	pixel_y = 15
+	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -11181,6 +11184,17 @@
 	first_time_text = "The Sylver Dragonne..";
 	name = "Silver Dragon"
 	})
+"fZS" = (
+/obj/structure/bars{
+	icon_state = "barsbent";
+	layer = 2.81
+	},
+/obj/structure/table/wood,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "fZT" = (
 /obj/item/cigbutt/roach,
 /turf/open/floor/rogue/blocks,
@@ -11213,6 +11227,7 @@
 /area/rogue/outdoors/river)
 "gaZ" = (
 /obj/structure/fluff/alch,
+/obj/item/candle/magic/lit,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -11565,8 +11580,24 @@
 	name = "Grove"
 	})
 "gkJ" = (
-/obj/structure/bars/steel,
-/turf/open/water/cleanshallow,
+/obj/effect/decal/cobbleedge{
+	dir = 4;
+	icon_state = "borderfall"
+	},
+/obj/structure/closet/crate/roguecloset/inn/chest,
+/obj/item/storage/roguebag/crafted,
+/obj/item/storage/roguebag/crafted,
+/obj/item/reagent_containers/glass/bucket/wooden,
+/obj/item/reagent_containers/glass/bucket/wooden,
+/obj/item/rogueweapon/stoneaxe/woodcut/steel,
+/obj/item/rogueweapon/shovel,
+/obj/item/rogueweapon/sickle,
+/obj/item/rogueweapon/hoe,
+/obj/machinery/light/rogue/torchholder{
+	dir = 4;
+	icon_state = "torchwall1"
+	},
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -12018,7 +12049,20 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/cavewet)
 "gzu" = (
-/obj/effect/landmark/start/alchemist,
+/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot,
+/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot,
+/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
+/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
+/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
+/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
+/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
+/obj/item/reagent_containers/hypospray/medipen/sealbottle/purify,
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 26
+	},
+/obj/structure/rack/rogue/shelf/big{
+	pixel_y = 0
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -12522,6 +12566,13 @@
 	},
 /obj/item/reagent_containers/food/snacks/store/cheesewheel,
 /turf/open/floor/rogue/blocks/stonered/tiny,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
+"gSA" = (
+/obj/effect/landmark/start/physician,
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -15232,18 +15283,11 @@
 	first_time_text = "The Twilight Woods"
 	})
 "ipS" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
+/obj/machinery/light/rogue/torchholder{
+	dir = 4;
+	icon_state = "torchwall1"
 	},
-/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot,
-/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot,
-/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
-/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
-/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
-/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
-/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,
-/obj/item/reagent_containers/hypospray/medipen/sealbottle/purify,
-/turf/open/floor/rogue/ruinedwood/spiral,
+/turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -16984,7 +17028,7 @@
 	})
 "jqT" = (
 /obj/machinery/light/rogue/torchholder{
-	dir = 4
+	pixel_y = 26
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/garrison{
@@ -19813,6 +19857,16 @@
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/grass,
 /area/rogue/under/cavewet)
+"kMk" = (
+/obj/structure/fluff/walldeco/medposter6{
+	name = "sign";
+	pixel_x = -32
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "kMp" = (
 /obj/structure/fluff/statue/gargoyle/candles,
 /turf/open/floor/rogue/blocks,
@@ -21837,7 +21891,10 @@
 	name = "Silver Dragon"
 	})
 "lSz" = (
-/obj/structure/closet/crate/chest/refilling/medicine,
+/obj/structure/fluff/walldeco/innsign{
+	icon_state = "medposter5";
+	pixel_x = -32
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -24610,10 +24667,6 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/structure/fluff/walldeco/innsign{
-	icon_state = "medposter5";
-	pixel_y = 32
-	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -26813,6 +26866,13 @@
 	first_time_text = "Emerald Shores";
 	name = "Shores of the Emerald Coast"
 	})
+"oEb" = (
+/obj/structure/composter/full,
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "oEe" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -27330,6 +27390,16 @@
 "oRk" = (
 /obj/machinery/light/rogue/wallfire,
 /turf/closed/wall/mineral/rogue/decowood,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
+"oRA" = (
+/obj/structure/mineral_door/wood/fancywood{
+	name = "Adventurers Guild";
+	lockid = "physician"
+	},
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -32014,12 +32084,10 @@
 	name = "Shrine of Lune"
 	})
 "riK" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
+/obj/structure/mineral_door/wood/fancywood{
+	name = "Adventurers Guild";
+	lockid = "physician"
 	},
-/obj/item/reagent_containers/glass/mortar,
-/obj/item/reagent_containers/pill/caffpill,
-/obj/item/reagent_containers/pill/pnkpill,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
@@ -32337,7 +32405,6 @@
 /area/rogue/under/cavewet)
 "rrQ" = (
 /obj/structure/flora/roguegrass,
-/obj/effect/landmark/start/physician,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/bath)
 "rrR" = (
@@ -34401,11 +34468,8 @@
 	first_time_text = "The Twilight Woods"
 	})
 "szZ" = (
-/obj/structure/roguemachine/scomm{
-	pixel_x = -32;
-	pixel_y = 0
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
+/obj/structure/roguemachine/stockpile,
+/turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
@@ -35789,6 +35853,19 @@
 /obj/structure/spacevine,
 /turf/open/floor/rogue/dirt/ambush,
 /area/rogue/outdoors/river)
+"tlf" = (
+/obj/structure/closet/crate/chest,
+/obj/item/reagent_containers/food/snacks/grown/apple,
+/obj/item/reagent_containers/food/snacks/grown/apple,
+/obj/item/reagent_containers/food/snacks/grown/berries/rogue,
+/obj/item/reagent_containers/food/snacks/grown/berries/rogue,
+/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison,
+/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "tli" = (
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cavewet)
@@ -36162,6 +36239,20 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/under/cavewet)
+"txe" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/reagent_containers/glass/mortar,
+/obj/item/reagent_containers/glass/alembic{
+	pixel_x = 10;
+	pixel_y = 15
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "txo" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 8;
@@ -36355,6 +36446,28 @@
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
 	name = "Ravenloft Academy"
+	})
+"tCY" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 8;
+	icon_state = "torchwall1"
+	},
+/obj/structure/closet/crate/roguecloset/dark{
+	keylock = 1;
+	lockid = "physician"
+	},
+/obj/item/clothing/head/roguetown/physician,
+/obj/item/clothing/head/roguetown/physician,
+/obj/item/clothing/mask/rogue/physician,
+/obj/item/clothing/mask/rogue/physician,
+/obj/item/clothing/suit/roguetown/shirt/robe/physician,
+/obj/item/clothing/suit/roguetown/shirt/robe/physician,
+/obj/item/storage/keyring/physician,
+/obj/item/storage/keyring/physician,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
 	})
 "tDy" = (
 /obj/structure/fluff/railing/wood{
@@ -37083,6 +37196,15 @@
 /obj/structure/spawner/invisible/goblin,
 /turf/open/floor/carpet/red,
 /area/rogue/under/cavewet)
+"tWk" = (
+/obj/structure/sink/copper/crafted{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "tWn" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
@@ -40951,6 +41073,17 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"wbq" = (
+/obj/structure/table/church/m,
+/obj/machinery/light/rogue/hearth{
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/glass/bucket/pot,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "wbH" = (
 /obj/structure/chair/wood,
 /obj/effect/landmark/start/merchant,
@@ -41006,6 +41139,15 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cavewet)
+"wel" = (
+/obj/structure/fluff/walldeco/medposter2{
+	name = "sign"
+	},
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "wen" = (
 /mob/living/simple_animal/hostile/retaliate/frog,
 /turf/open/floor/rogue/blocks/paving,
@@ -41316,9 +41458,11 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cavewet)
 "wpF" = (
-/turf/open/water/cleanshallow,
-/turf/closed/mineral/random/rogue,
-/area/rogue/outdoors/river)
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
+	})
 "wpM" = (
 /obj/structure/table/wood,
 /obj/structure/lever{
@@ -42455,6 +42599,13 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
+	})
+"wXW" = (
+/obj/structure/closet/crate/chest/refilling/medicine/guild,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison{
+	first_time_text = "Adventurers Guild";
+	name = "Adventurers Guild"
 	})
 "wYd" = (
 /obj/structure/roguetent,
@@ -97372,7 +97523,7 @@ xDh
 xDh
 lzV
 rPi
-rPi
+bFf
 vxU
 wHV
 qgp
@@ -97574,7 +97725,7 @@ prw
 xDh
 xDh
 prw
-rPi
+bFf
 vxU
 cNu
 cNu
@@ -97776,7 +97927,7 @@ xDh
 xDh
 xDh
 xDh
-prw
+bFf
 vxU
 plk
 qgp
@@ -97978,7 +98129,7 @@ prw
 prw
 xDh
 xDh
-xDh
+bFf
 vxU
 vxU
 uxq
@@ -98182,8 +98333,8 @@ lzV
 xDh
 xDh
 xDh
-lzV
-gkJ
+xDh
+cNu
 eAD
 qgp
 vxU
@@ -98375,17 +98526,17 @@ fWY
 sZB
 sZB
 nVt
-nVt
+rxm
 rxm
 bFf
 bFf
 bFf
-prw
-prw
+bFf
+bFf
 xDh
 xDh
 xDh
-gkJ
+cNu
 qgp
 qgp
 vxU
@@ -98578,16 +98729,16 @@ wgl
 sZB
 nVt
 rxm
-rxm
-nVt
-nVt
-rxm
-rxm
-rPi
-wpF
-xDh
-xDh
-gkJ
+vxU
+vxU
+vxU
+vxU
+vxU
+vxU
+vxU
+vxU
+vxU
+qgp
 qgp
 qgp
 vxU
@@ -98779,17 +98930,17 @@ kan
 trL
 sZB
 nVt
-nVt
-nVt
-nVt
 rxm
-rxm
-nVt
-rPi
-prw
-xDh
-prw
 vxU
+gaZ
+lSz
+gkJ
+tlf
+oEb
+ipS
+wpF
+vxU
+qgp
 qgp
 qgp
 vxU
@@ -98981,16 +99132,16 @@ kan
 lLf
 sZB
 nVt
-lyF
-nVt
-nVt
 rxm
-rxm
-rxm
-bFf
-prw
-prw
-prw
+wel
+txe
+dYB
+dYB
+dYB
+wpF
+wpF
+wpF
+vxU
 qgp
 qgp
 qgp
@@ -99183,16 +99334,16 @@ oum
 sZB
 sZB
 cgq
-lyF
-nVt
-nVt
 rxm
-rxm
-rxm
-bFf
-bFf
-prw
-prw
+vxU
+gzu
+dYB
+dYB
+dYB
+wpF
+wpF
+wpF
+vxU
 npR
 qgp
 qgp
@@ -99385,17 +99536,17 @@ sZB
 sZB
 sZB
 nVt
-nVt
-nVt
-nVt
-nVt
 rxm
-rxm
-bFf
-bFf
-bFf
-prw
 vxU
+wXW
+dYB
+dYB
+dYB
+dYB
+dYB
+dYB
+vxU
+szZ
 qgp
 qgp
 xpu
@@ -99587,17 +99738,17 @@ otA
 xjT
 sZB
 nVt
-nVt
-rxm
-rxm
-rxm
-rxm
 rxm
 vxU
-dwT
+wXW
+qKQ
+wbq
+dYB
+dYB
+tCY
+dYB
 vxU
-vxU
-bTu
+qgp
 qgp
 qgp
 xpu
@@ -99794,9 +99945,9 @@ vxU
 vxU
 vxU
 vxU
-vxU
-gfu
-gaZ
+fZS
+fZS
+dwT
 riK
 vxU
 jqT
@@ -99994,8 +100145,8 @@ lyF
 rxm
 iCo
 xQN
+kMk
 dYB
-szZ
 dYB
 dYB
 dYB
@@ -100398,11 +100549,11 @@ nVt
 rxm
 ior
 afV
-gzu
-afV
 dYB
 afV
-dYB
+gSA
+afV
+gSA
 aIb
 gfu
 qgp
@@ -100804,8 +100955,8 @@ tcT
 hqX
 qHC
 qHC
-dYB
-dYB
+phj
+tWk
 dYB
 dYB
 pRH
@@ -101008,8 +101159,8 @@ vxU
 vxU
 vxU
 gfu
-ipS
-lSz
+gfu
+gfu
 vxU
 vxU
 xkZ
@@ -101209,8 +101360,8 @@ jwm
 wAO
 gfu
 lPg
-vxU
-vxU
+qgp
+qgp
 vxU
 vxU
 nTR
@@ -133128,7 +133279,7 @@ mMK
 xnj
 xnj
 xnj
-daC
+oRA
 dYB
 nNz
 mwE
