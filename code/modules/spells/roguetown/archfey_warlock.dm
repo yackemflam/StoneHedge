@@ -8,7 +8,7 @@
 	sound = 'sound/magic/churn.ogg'
 	invocation_type = "none" //can be none, whisper, emote and shout
 
-/obj/effect/proc_holder/spell/invoked/strip/cast(list/targets, mob/user)
+/obj/effect/proc_holder/spell/invoked/archfey_warlock_strip/cast(list/targets, mob/user)
 	. = ..()
 	user.emote("giggle")
 	var/mob/living/target = targets[1]
@@ -28,21 +28,16 @@
 	range = 1
 	invocation_type = "none" //can be none, whisper, emote and shout
 
-/obj/effect/proc_holder/spell/targeted/seelie_kiss/cast(list/targets, mob/user)
+/obj/effect/proc_holder/spell/targeted/archfey_warlock_seelie_kiss/cast(list/targets, mob/user)
 	. = ..()
 	if(iscarbon(targets[1]))
 		var/mob/living/carbon/target = targets[1]
-		var/obj/item/reagent_containers/powder/K = new /obj/item/reagent_containers/powder/AFSK(target.loc)
-		K.reagents.trans_to(target, K.reagents.total_volume, transfered_by = user, method = "swallow")
+		target.reagents.add_reagent_list(list(/datum/reagent/medicine/healthpot = 12, /datum/reagent/medicine/manapot = 12))
 		target.add_nausea(9)
 		to_chat(target, span_notice("I suddenly feel reinvigorated!"))
 		to_chat(user, span_notice("I have reinvigorated [target] with a kiss."))
 		user.log_message("has blessed [key_name(target)] with a kiss spell, healing them a little", LOG_ATTACK)
 		target.log_message("has been blessed by [key_name(user)] with a kiss spell, healing them a little", LOG_ATTACK)
 		user.emote("kiss")
-		qdel(K)
 		return TRUE
 	return FALSE
-
-/obj/item/reagent_containers/powder/AFSK
-	list_reagents = list(/datum/reagent/medicine/healthpot = 12, /datum/reagent/medicine/manapot = 12) //i am pretty sure these numbers are in "U" whatever that is so this should be much? or enough to OD someone with, i also think the normal seelie kiss should be buffed but not this much
