@@ -720,7 +720,7 @@
 
 /obj/item/rogueweapon/greatsword
 	force = 12
-	force_wielded = 45
+	force_wielded = 40
 	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike)
 	name = "greatsword"
