@@ -39,8 +39,6 @@
 			H.set_blindness(0)
 			ADD_TRAIT(H, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
 
-/datum/outfit/job/roguetown/tribalsmith/pre_equip(mob/living/carbon/human/H)
-	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	belt = /obj/item/storage/belt/rogue/leather
