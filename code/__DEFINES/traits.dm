@@ -123,6 +123,7 @@
 #define TRAIT_BAOTHA_CURSE "The Sacrifice"
 #define TRAIT_NYMPHO_CURSE "Nymphs Curse"
 #define TRAIT_BANDIT_OATH "Bandit Oath"
+#define TRAIT_BANDIT_OATHLITE
 
 //STONEHEDGE TRAITS
 #define TRAIT_USEMAGIC "Use Magic"
