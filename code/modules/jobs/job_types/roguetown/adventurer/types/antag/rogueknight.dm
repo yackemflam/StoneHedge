@@ -49,5 +49,6 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC) //hey buddy you hear about roleplaying
 	ADD_TRAIT(H, TRAIT_PERFECT_TRACKER, TRAIT_GENERIC)//forest police benefit so they can track their targets.
 	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENETIC)
+	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENETIC)
 	H.verbs |= /mob/proc/haltyell
 	H.ambushable = FALSE
