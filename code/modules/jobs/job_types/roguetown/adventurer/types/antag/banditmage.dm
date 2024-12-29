@@ -46,7 +46,7 @@
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/forcewall_weak)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/magicstone5e)
 
-	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENETIC)
+	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
