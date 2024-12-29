@@ -219,25 +219,25 @@
 		to_chat(user, span_warning("I do not know how to work on that."))
 		return
 	if(HAS_TRAIT(user, TRAIT_BANDIT_OATH && (R.skillcraft == smithing)))
-		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!")
+		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!"))
 		return
 	if(HAS_TRAIT(user, TRAIT_BANDIT_OATH && (R.skillcraft == sewing)))
-		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!")
+		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!"))
 		return
 	if(HAS_TRAIT(user, TRAIT_BANDIT_OATH && (R.skillcraft == hunting)))
-		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!")
+		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!"))
 		return
 	if(HAS_TRAIT(user, TRAIT_BANDIT_OATH && (R.skillcraft == alchemy)))
-		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!")
+		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!"))
 		return
 	if(HAS_TRAIT(user, TRAIT_BANDIT_OATHLITE) && (R.skillcraft == smithing))
-		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!")
+		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!"))
 		return
 	if(HAS_TRAIT(user, TRAIT_BANDIT_OATHLITE) && (R.skillcraft == sewing))
-		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!")
+		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!"))
 		return
 	if(HAS_TRAIT(user, TRAIT_BANDIT_OATHLITE) && (R.skillcraft == hunting))
-		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!")
+		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!"))
 		return
 	if(check_contents(R, contents))
 		if(check_tools(user, R, contents))
