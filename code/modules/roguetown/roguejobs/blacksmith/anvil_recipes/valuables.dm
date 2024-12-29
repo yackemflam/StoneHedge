@@ -1,7 +1,6 @@
 /datum/anvil_recipe/valuables
 	appro_skill = /datum/skill/craft/blacksmithing
 	craftdiff = 2
-	anvilskill = MISC
 
 /datum/anvil_recipe/valuables/special/ringf
 	name = "flame ring (+1 Fat, +1 Ftone, +1 Fiber)"
