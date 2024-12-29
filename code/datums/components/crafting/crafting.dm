@@ -218,6 +218,12 @@
 	if(R.alchemists_only && !HAS_TRAIT(user, TRAIT_ALCHEMYKNOWLEDGE))
 		to_chat(user, span_warning("I do not know how to work on that."))
 		return
+	if(HAS_TRAIT(user, TRAIT_BANDIT_OATH))
+		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!")
+		return
+	if(HAS_TRAIT(user, TRAIT_BANDIT_OATHLITE) && !(R.skillcraft == alchemy)) //Sawbones have alchemy
+		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!")
+		return
 	if(check_contents(R, contents))
 		if(check_tools(user, R, contents))
 			if(R.craftsound)
