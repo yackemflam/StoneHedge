@@ -41,6 +41,8 @@
 	H.change_stat("intelligence", -2)
 	H.change_stat("speed", 2)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENETIC)
+	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENETIC)
 	H.adjust_blindness(-3)
 	var/weapons = list("Spear","Sword & Shield")
 	var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
@@ -56,6 +58,6 @@
 			head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
-	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENETIC)
+
 	H.verbs |= /mob/proc/haltyell
 	H.ambushable = FALSE
