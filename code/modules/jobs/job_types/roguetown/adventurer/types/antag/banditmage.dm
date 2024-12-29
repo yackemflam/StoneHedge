@@ -46,6 +46,8 @@
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/forcewall_weak)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/magicstone5e)
 
+	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENETIC)
+
 	H.verbs |= /mob/proc/haltyell
 	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 	H.ambushable = FALSE
