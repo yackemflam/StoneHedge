@@ -9,6 +9,7 @@
 
 /datum/outfit/job/roguetown/bandit/sawbones/pre_equip(mob/living/carbon/human/H)
 	..()
+	ADD_TRAIT(H, TRAIT_BANDIT_OATHSAWBONES, TRAIT_GENETIC)
 	mask = /obj/item/clothing/mask/rogue/facemask/steel
 	head = /obj/item/clothing/head/roguetown/nightman
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
