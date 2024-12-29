@@ -13,7 +13,7 @@
 	var/quality_mod = 0
 	var/progress
 	var/i_type
-	var/anvilskill
+	var/anvilskill = /datum/anvil_recipe/
 
 	var/datum/parent
 
@@ -56,17 +56,22 @@
 		if(user.mind && isliving(user))
 			var/mob/living/L = user
 			var/boon = user.mind.get_learning_boon(appro_skill)
-			if(anvilskill == WEAPON)
+			if(anvilskill == /datum/anvil_recipe/weapons)
 				if(HAS_TRAIT(user, TRAIT_WEAPONSMITH))
 					skill_quality += (rand(skill_level*8, skill_level*10)*moveup) //journeyman, difficulty 2, 1.6 - 2, 1.8 average + 1 = fine gear, Legendary, difficulty 4, 3.888 - 5.184, 4.536 average + 1 = consistent legendaries
 				else
 					skill_quality += (rand(skill_level*5, skill_level*7)*moveup) //journeyman, difficulty 2, 1 - 1.4, 1.2 average + 1 = average gear, legendary, difficulty 4, 2.16 - 3.024, 2.592 average + 1 = consistent flawless if using good steel
-			if(anvilskill == ARMOR)
+			if(anvilskill == /datum/anvil_recipe/armor)
 				if(HAS_TRAIT(user, TRAIT_ARMORSMITH))
 					skill_quality += (rand(skill_level*8, skill_level*10)*moveup)
 				else
 					skill_quality += (rand(skill_level*5, skill_level*7)*moveup)
-			if(anvilskill == MISC)
+			if(anvilskill == /datum/anvil_recipe/valuables)
+				if(HAS_TRAIT(user, TRAIT_METALSMITH))
+					skill_quality += (rand(skill_level*8, skill_level*10)*moveup)
+				else
+					skill_quality += (rand(skill_level*5, skill_level*7)*moveup)
+			if(anvilskill == /datum/anvil_recipe/tools)
 				if(HAS_TRAIT(user, TRAIT_METALSMITH))
 					skill_quality += (rand(skill_level*8, skill_level*10)*moveup)
 				else
