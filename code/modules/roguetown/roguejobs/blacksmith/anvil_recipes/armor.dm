@@ -1,7 +1,6 @@
 /datum/anvil_recipe/armor
 	appro_skill = /datum/skill/craft/blacksmithing
 	craftdiff = 1
-	anvilskill = ARMOR
 
 
 /datum/anvil_recipe/armor/ironchainkini
