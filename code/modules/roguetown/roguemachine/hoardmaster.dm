@@ -105,6 +105,7 @@
 			unlocked_cats+="Mage"
 		if("Sawbones")
 			unlocked_cats+="Sawbones"
+			unlocked_cats+="Reagents"
 
 	if(current_cat == "1")
 		contents += "<center>"
