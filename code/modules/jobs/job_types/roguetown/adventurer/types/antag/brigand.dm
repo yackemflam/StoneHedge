@@ -42,6 +42,7 @@
 	H.change_stat("intelligence", -3)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENETIC)
+	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENETIC)
 	H.adjust_blindness(-3)
 	var/weapons = list("Axe & Cudgel","Flail & Shield","Magic")
 	var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
@@ -67,6 +68,7 @@
 			H.change_stat("intelligence", 4)
 			r_hand = /obj/item/rogueweapon/mace/cudgel
 			ADD_TRAIT(H, TRAIT_LEARNMAGIC, TRAIT_GENERIC)
+			H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 
 	H.verbs |= /mob/proc/haltyell
 	H.ambushable = FALSE
