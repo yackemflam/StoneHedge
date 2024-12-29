@@ -48,7 +48,7 @@
 
 	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENETIC)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
-
+	ADD_TRAIT(H, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 	H.ambushable = FALSE
