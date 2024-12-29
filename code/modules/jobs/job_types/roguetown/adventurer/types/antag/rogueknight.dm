@@ -4,9 +4,9 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/bandit/hedgeknight
-	category_tags = list(CTAG_DISABLED) //No confusion with real hedgeknights, maybe someone can rework this later.
+	category_tags = list(CTAG_BANDIT)
 	cmode_music = 'sound/music/combat_bandit2.ogg'
-	maximum_possible_slots = 1
+	maximum_possible_slots = 1 //Don't want 6 heavy armored knights rolling up to town when 6 brigands are already bad enough
 	min_pq = 30
 
 /datum/outfit/job/roguetown/bandit/hedgeknight/pre_equip(mob/living/carbon/human/H)
@@ -39,11 +39,11 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 4, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/hunting, 1, TRUE)
-	H.change_stat("strength", 4)
-	H.change_stat("endurance", 2)
-	H.change_stat("constitution", 2)
-	H.change_stat("intelligence", -1)
-	H.change_stat("speed", -2)
+	H.change_stat("strength", 3)
+	H.change_stat("endurance", 3)
+	H.change_stat("constitution", 3)
+	H.change_stat("intelligence", -2)
+	H.change_stat("perception", -2)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC) //hey buddy you hear about roleplaying
