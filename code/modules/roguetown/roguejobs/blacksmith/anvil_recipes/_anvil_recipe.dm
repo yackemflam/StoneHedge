@@ -13,7 +13,7 @@
 	var/quality_mod = 0
 	var/progress
 	var/i_type
-	var/anvilskill = 0
+	var/anvilskill
 
 	var/datum/parent
 
