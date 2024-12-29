@@ -43,6 +43,7 @@
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENETIC)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENETIC)
+	ADD_TRAIT(H, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
 	H.adjust_blindness(-3)
 	var/weapons = list("Axe & Cudgel","Flail & Shield","Magic")
 	var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
