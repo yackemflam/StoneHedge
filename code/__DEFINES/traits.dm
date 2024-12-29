@@ -128,10 +128,10 @@
 #define TRAIT_LEARNMAGIC "Learn Magic" //You dont need usemagic if you have learnmagic.
 #define TRAIT_FEINT_IMMUNITY "Unfeintable"
 #define TRAIT_SOONTOWAKEUP "Soon to WAKE up"
+#define TRAIT_ALCHEMYKNOWLEDGE "Alchemy Knowledge"
 #define TRAIT_WEAPONSMITH "I have mastered smithing weapons."
 #define TRAIT_ARMORSMITH "I have mastered smithing protection."
 #define TRAIT_METALSMITH "I have mastered smithing tools and jewelery."
-#define TRAIT_ALCHEMYKNOWLEDGE "Alchemy Knowledge"
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEPROSY = span_necrosis("I'm a disgusting leper..."),
