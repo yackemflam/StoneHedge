@@ -1,7 +1,7 @@
 /datum/anvil_recipe/weapons
 	appro_skill = /datum/skill/craft/blacksmithing  // inheritance yay !!
 	craftdiff = 1
-	var/anvilskill = WEAPON
+	anvilskill = WEAPON
 
 /// BASIC IRON WEAPONS
 // Craft Difficulty: 1 (Base)
