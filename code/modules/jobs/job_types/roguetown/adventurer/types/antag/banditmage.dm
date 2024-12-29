@@ -47,6 +47,7 @@
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/magicstone5e)
 
 	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENETIC)
+	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
 
 	H.verbs |= /mob/proc/haltyell
 	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
