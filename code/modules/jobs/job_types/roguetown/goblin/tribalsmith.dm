@@ -21,6 +21,7 @@
 		"Weaponsmith", //Weapons
 		"Armorsmith", //Armor
 		"Metalsmith" //Tools and Jewels
+		)
 
 	var/classchoice = input("Choose your specialization", "Available styles") as anything in classes
 
