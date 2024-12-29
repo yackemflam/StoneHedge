@@ -14,7 +14,6 @@
 	var/progress
 	var/i_type
 	var/anvilskill = 0
-	var/anvilskillsat = 0 //To make sure they have 
 
 	var/datum/parent
 
