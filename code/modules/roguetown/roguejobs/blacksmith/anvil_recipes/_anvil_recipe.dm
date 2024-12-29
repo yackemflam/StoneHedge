@@ -24,7 +24,7 @@
 	if(HAS_TRAIT(user, TRAIT_BANDIT_OATH))
 		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!"))
 		return
-	if(HAS_TRAIT(user, TRAIT_BANDIT_OATHLITE) //Sawbones have alchemy
+	if(HAS_TRAIT(user, TRAIT_BANDIT_OATHLITE)) //Sawbones have alchemy
 		to_chat(user, span_warning("My oath to Mattios prevents me from crafting!"))
 		return
 	if(progress == 100)
