@@ -66,5 +66,6 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			H.change_stat("strength", 2)
 			H.change_stat("perception", 1)
+	ADD_TRAIT(H, TRAIT_BANDIT_OATH, TRAIT_GENETIC)
 	H.verbs |= /mob/proc/haltyell
 	H.ambushable = FALSE
