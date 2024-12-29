@@ -1,3 +1,8 @@
+/datum/anvil_recipe/valuables
+	appro_skill = /datum/skill/craft/blacksmithing
+	craftdiff = 2
+	anvilskill = MISC
+
 /datum/anvil_recipe/valuables/special/ringf
 	name = "flame ring (+1 Fat, +1 Ftone, +1 Fiber)"
 	req_bar = /obj/item/ingot/iron
@@ -17,13 +22,6 @@
 	req_bar = /obj/item/ingot/silver
 	created_item = list(/obj/item/clothing/ring/silver, /obj/item/clothing/ring/silver, /obj/item/clothing/ring/silver)
 	i_type = "Valuables"
-
-
-
-
-/datum/anvil_recipe/valuables
-	appro_skill = /datum/skill/craft/blacksmithing
-	craftdiff = 2
 
 /datum/anvil_recipe/valuables/gold
 	name = "Statue"
