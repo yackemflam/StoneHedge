@@ -33,7 +33,20 @@
 
 //Makes you a little chilly
 /datum/particle_weather/snow_gentle/weather_act(mob/living/L)
-	L.adjust_bodytemperature(-rand(1,3))
+	//shit that prevents our ass from freezing.
+	var/turf/ceiling = get_step_multiz(src, UP)
+	if(ceiling)
+		if(!istype(ceiling, /turf/open/transparent/openspace))
+			return
+	var/obj/item/bedsheet/rogue/bedsheet = locate() in L.loc
+	if(bedsheet)
+		return
+	for(var/obj/machinery/light/rogue/heater in range(3, L))
+		return
+	var/area/thearea = get_area(L)
+	if(!thearea.outdoors)
+		return
+	L.adjust_bodytemperature(-rand(5,10))
 
 /obj/emitters/weather/snow
 	particles 	= new/particles/weather/snow
@@ -45,7 +58,7 @@
 
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/snow)
-	weather_messages = list("You feel a deep chill.", "The cold wind is freezing you to the bone!")
+	weather_messages = list("You feel a deep chill.", "The cold wind is freezing me to the bone!")
 
 	minSeverity = 40
 	maxSeverity = 100
@@ -55,6 +68,19 @@
 	probability = 1
 	target_trait = PARTICLEWEATHER_SNOW
 
-//Makes you a lot little chilly
+//Makes you a lot chilly
 /datum/particle_weather/snow_storm/weather_act(mob/living/L)
-	L.adjust_bodytemperature(-rand(5,15))
+	//shit that prevents our ass from freezing.
+	var/turf/ceiling = get_step_multiz(src, UP)
+	if(ceiling)
+		if(!istype(ceiling, /turf/open/transparent/openspace))
+			return
+	var/obj/item/bedsheet/rogue/bedsheet = locate() in L.loc
+	if(bedsheet)
+		return
+	for(var/obj/machinery/light/rogue/heater in range(3, L))
+		return
+	var/area/thearea = get_area(L)
+	if(!thearea.outdoors)
+		return
+	L.adjust_bodytemperature(-rand(10,20))
