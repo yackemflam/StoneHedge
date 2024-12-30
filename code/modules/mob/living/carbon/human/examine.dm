@@ -70,10 +70,12 @@
 				display_as_wanderer = TRUE
 		else if(job)
 			var/datum/job/J = SSjob.GetJob(job)
-			if(J.wanderer_examine)
-				display_as_wanderer = TRUE
+			if(J)
+				if(J.wanderer_examine)
+					display_as_wanderer = TRUE
+			/* worthless.
 			if(islatejoin)
-				is_returning = TRUE
+				is_returning = TRUE*/
 		if(display_as_wanderer)
 			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [custom_race_name ? "[custom_race_name] ([race_name])" : "[race_name]"].")
 		else if(used_title)
@@ -304,10 +306,22 @@
 			if(100 to INFINITY)
 				msg += span_danger("[m1] gravely wounded.")
 
-	var/datum/antagonist/vampirelord/vampness = mind.has_antag_datum(/datum/antagonist/vampirelord)
-	if(mind && vampness)
-		if(vampness && !vampness.disguised && vampness.is_solo)
-			msg += span_boldnotice("they have pale skin and sunken features.") //mostly so healers know they cant miracle those to health.
+	if(mind)
+		var/datum/antagonist/vampirelord/vampness = mind.has_antag_datum(/datum/antagonist/vampirelord)
+		if(vampness)
+			if(vampness && !vampness.disguised && vampness.is_solo)
+				msg += span_boldnotice("[m3] pale skin and sunken features.") //mostly so healers know they cant miracle those to health.
+
+		if(user == src)
+			switch(bodytemperature)
+				if(-INFINITY to BODYTEMP_COLD_DAMAGE_LIMIT)
+					msg += span_blue("I feel freezing cold!")
+				if(BODYTEMP_COLD_DAMAGE_LIMIT to BODYTEMP_NORMAL)
+					msg += span_notice("I am shivering from the cold.")
+				if(BODYTEMP_NORMAL to BODYTEMP_HEAT_DAMAGE_LIMIT)
+					msg += span_notice("I am sweating from the heat.")
+				if(BODYTEMP_HEAT_DAMAGE_LIMIT to INFINITY)
+					msg += span_red("I feel burning hot!")
 
 	// Blood volume
 	switch(blood_volume)
