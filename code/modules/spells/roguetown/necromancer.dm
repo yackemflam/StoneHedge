@@ -8,7 +8,7 @@
 	movement_interrupt = FALSE
 	chargedloop = null
 	sound = 'sound/magic/whiteflame.ogg'
-	associated_skill = /datum/skill/magic/arcane
+	associated_skill = /datum/skill/magic/blood
 	antimagic_allowed = TRUE
 	charge_max = 15 SECONDS
 	miracle = FALSE
@@ -17,13 +17,14 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
+		if(target.mob_biotypes & MOB_UNDEAD) //negative energy heals the undead
 			var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(user.zone_selected))
 			if(affecting)
 				if(affecting.heal_damage(50, 50))
 					target.update_damage_overlays()
 				if(affecting.heal_wounds(50))
 					target.update_damage_overlays()
+			target.heal_overall_damage(50, 50, updating_health = TRUE)
 			target.visible_message(span_danger("[target] reforms under the vile energy!"), span_notice("I'm remade by dark magic!"))
 			return TRUE
 		target.visible_message(span_info("Necrotic energy floods over [target]!"), span_userdanger("I feel colder as the dark energy floods into me!"))
@@ -74,7 +75,7 @@
 	no_early_release = TRUE
 	charging_slowdown = 1
 	chargedloop = /datum/looping_sound/invokegen
-	associated_skill = /datum/skill/magic/arcane
+	associated_skill = /datum/skill/magic/blood
 	charge_max = 30 SECONDS
 
 
@@ -113,7 +114,7 @@
 
 	if(target.ckey) //player still inside body
 
-		var/offer = alert(target, "Do you wish to be reanimated as a minion?", "RAISED BY NECROMANCER", "Yes", "No")
+		var/offer = alert(target, "Do you wish to be reanimated as a minion? If you refuse someone else will take over your body.", "RAISED BY NECROMANCER", "Yes", "No")
 		var/offer_time = world.time
 
 		if(offer == "No" || world.time > offer_time + 5 SECONDS)
