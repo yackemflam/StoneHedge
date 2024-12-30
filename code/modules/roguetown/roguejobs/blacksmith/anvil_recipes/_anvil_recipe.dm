@@ -22,10 +22,10 @@
 
 /datum/anvil_recipe/proc/advance(mob/user, breakthrough = FALSE)
 	if(HAS_TRAIT(user, TRAIT_BANDIT_OATH))
-		to_chat(user, span_warning("My oath to Mattios prevents me from smithing!"))
+		to_chat(user, span_warning("My oath to Matthios prevents me from smithing!"))
 		return
 	if(HAS_TRAIT(user, TRAIT_BANDIT_OATHLITE)) //Sawbones have alchemy
-		to_chat(user, span_warning("My oath to Mattios prevents me from smithing!"))
+		to_chat(user, span_warning("My oath to Matthios prevents me from smithing!"))
 		return
 	if(progress == 100)
 		to_chat(user, span_info("It's ready."))
