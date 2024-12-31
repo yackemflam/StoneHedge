@@ -15,7 +15,6 @@
 	var/classes = list(
 		"Weaponsmith", //Weapons
 		"Armorsmith", //Armor
-		"Metalsmith" //Tools and Jewels
 		)
 
 	var/classchoice = input("Choose your specialization", "Available styles") as anything in classes
@@ -30,10 +29,6 @@
 		if("Armorsmith")
 			H.set_blindness(0)
 			ADD_TRAIT(H, TRAIT_ARMORSMITH, TRAIT_GENERIC)
-
-		if("Metalsmith")
-			H.set_blindness(0)
-			ADD_TRAIT(H, TRAIT_METALSMITH, TRAIT_GENERIC)
 
 	belt = /obj/item/storage/belt/rogue/leather
 
