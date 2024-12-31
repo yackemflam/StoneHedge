@@ -5,7 +5,7 @@
 	var/storage_per_size = 10 //added per organ size
 	var/datum/reagent/reagent_to_make = /datum/reagent/consumable/nutriment //naturally generated reagent
 	var/refilling = FALSE //slowly refills when not hungry
-	var/reagent_generate_rate = HUNGER_FACTOR //with refilling
+	var/reagent_generate_rate = 0.1 //with refilling
 	var/hungerhelp = FALSE //if refilling, absorbs reagent_to_make as nutrients if hungry. Conversion is to nutrients direct even if you brew poison in there.
 	var/uses_nutrient = TRUE //incase someone for some reason wanna make an OP paradox i guess.
 	var/organ_sizeable = FALSE //if organ can be resized in prefs etc, SET THIS RIGHT, IT'S IMPORTANT.
@@ -25,9 +25,6 @@
 	//pregnancy vars
 	var/fertility = FALSE //can it be impregnated
 	var/pregnant = FALSE // is it pregnant
-	var/preggotimer //dumbass timer
-	var/pre_pregnancy_size = 0
-	var/obj/item/organ/pregnantaltorgan = null //change to switch which organ grows from pregnancy of this one.
 
 	//misc
 	var/list/altnames = list("bugged place", "bugged organ") //used in thought messages.
@@ -66,7 +63,7 @@
 				to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
 
 	//debuff checks
-	if(reagents.maximum_volume > 40 && bloatable) //if there is space to bloat to begin with, and its bloatable.
+	if(bloatable) //its bloatable.
 		if(reagents.total_volume > (reagents.maximum_volume/3)) //more than 1/3 full, light bloat.
 			if(!reagents.total_volume > (reagents.maximum_volume/2)) //more than half full, heavy bloat.
 				if(!owner.has_status_effect(/datum/status_effect/debuff/bloatone) && !owner.has_status_effect(/datum/status_effect/debuff/bloattwo))
@@ -187,54 +184,3 @@
 								else
 									to_chat(H, span_info("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]."))
 				break
-
-/obj/item/organ/filling_organ/proc/be_impregnated()
-	if(pregnant)
-		return
-	if(!owner)
-		return
-	if(owner.stat == DEAD)
-		return
-	if(owner.has_quirk(/datum/quirk/selfawaregeni))
-		to_chat(owner, span_lovebold("I feel a surge of warmth in my [src.name], I’m definitely pregnant!"))
-	reagents.maximum_volume *= 0.5 //ick ock, should make the thing recalculate on next life tick.
-	pregnant = TRUE
-	if(owner.getorganslot(ORGAN_SLOT_BREASTS)) //shitty default behavior i guess, i aint gonna customiza-ble this fuck that.
-		var/obj/item/organ/filling_organ/breasts/breasties = owner.getorganslot(ORGAN_SLOT_BREASTS)
-		if(!breasties.refilling)
-			breasties.refilling = TRUE
-			if(owner.has_quirk(/datum/quirk/selfawaregeni))
-				to_chat(owner, span_lovebold("My breasts should start lactating soon..."))
-		if(pregnantaltorgan) //there is no birthing so hopefully 2 hours for one stage is enough to last till round end, there is 0 to 3 belly sizes.
-			pre_pregnancy_size = pregnantaltorgan.organ_size
-			addtimer(CALLBACK(pregnantaltorgan, PROC_REF(handle_preggoness)), 30 MINUTES, TIMER_STOPPABLE)
-		else
-			pre_pregnancy_size = organ_size
-			addtimer(CALLBACK(src, PROC_REF(handle_preggoness)), 30 MINUTES, TIMER_STOPPABLE)
-
-/obj/item/organ/filling_organ/proc/handle_preggoness()
-	var/obj/item/organ/belly/bellyussy = owner.getorganslot(ORGAN_SLOT_BELLY)
-
-	var/datum/sprite_accessory/acc = accessory_type
-	to_chat(owner, span_lovebold("I notice my [src] has grown...")) //dont need to repeat this probably if size cant grow anyway.
-	if(organ_sizeable)
-		if(bellyussy.organ_size < 3)
-			bellyussy.organ_size = bellyussy.organ_size + 1
-			acc.get_icon_state()
-			owner.update_body_parts(TRUE)
-			preggotimer = addtimer(CALLBACK(src, PROC_REF(handle_preggoness)), 30 MINUTES, TIMER_STOPPABLE)
-		else
-			deltimer(preggotimer)
-
-/obj/item/organ/filling_organ/proc/undo_preggoness()
-	if(!pregnant)
-		return
-	deltimer(preggotimer)
-	pregnant = FALSE
-	to_chat(owner, span_love("I feel my [src] shrink to how it was before. Pregnancy is no more."))
-	if(owner.getorganslot(ORGAN_SLOT_BELLY))
-		var/obj/item/organ/belly/bellyussy = owner.getorganslot(ORGAN_SLOT_BELLY)
-		var/datum/sprite_accessory/belly/bellyacc = bellyussy.accessory_type
-		bellyussy.organ_size = pre_pregnancy_size
-		bellyacc.get_icon_state()
-	owner.update_body_parts(TRUE)
