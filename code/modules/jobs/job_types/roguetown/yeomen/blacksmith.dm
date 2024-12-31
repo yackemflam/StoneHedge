@@ -35,11 +35,11 @@
 
 		if("Armorsmith")
 			H.set_blindness(0)
-			ADD_TRAIT(H, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_ARMORSMITH, TRAIT_GENERIC)
 
 		if("Metalsmith")
 			H.set_blindness(0)
-			ADD_TRAIT(H, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_METALSMITH, TRAIT_GENERIC)
 
 
 	head = /obj/item/clothing/head/roguetown/hatfur
