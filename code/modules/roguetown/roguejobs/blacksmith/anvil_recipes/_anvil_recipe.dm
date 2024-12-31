@@ -67,16 +67,26 @@
 				else
 					skill_quality += (rand(skill_level*5, skill_level*7)*moveup)
 			if(anvilskill == /datum/anvil_recipe/valuables)
-				if(HAS_TRAIT(user, TRAIT_METALSMITH))
+				if(HAS_TRAIT(user, TRAIT_WEAPONSMITH))
 					skill_quality += (rand(skill_level*8, skill_level*10)*moveup)
 				else
 					skill_quality += (rand(skill_level*5, skill_level*7)*moveup)
 			if(anvilskill == /datum/anvil_recipe/tools)
-				if(HAS_TRAIT(user, TRAIT_METALSMITH))
+				if(HAS_TRAIT(user, TRAIT_WEAPONSMITH))
 					skill_quality += (rand(skill_level*8, skill_level*10)*moveup)
 				else
 					skill_quality += (rand(skill_level*5, skill_level*7)*moveup)
-			
+			if(anvilskill == /datum/anvil_recipe/valuables)
+				if(HAS_TRAIT(user, TRAIT_ARMORSMITH))
+					skill_quality += (rand(skill_level*8, skill_level*10)*moveup)
+				else
+					skill_quality += (rand(skill_level*5, skill_level*7)*moveup)
+			if(anvilskill == /datum/anvil_recipe/tools)
+				if(HAS_TRAIT(user, TRAIT_ARMORSMITH))
+					skill_quality += (rand(skill_level*8, skill_level*10)*moveup)
+				else
+					skill_quality += (rand(skill_level*5, skill_level*7)*moveup)
+						
 			var/amt2raise = L.STAINT/2 // (L.STAINT+L.STASTR)/4 optional: add another stat that isn't int
 			//i feel like leveling up takes forever regardless, this would just make it faster
 			if(amt2raise > 0)
