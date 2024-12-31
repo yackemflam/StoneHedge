@@ -34,11 +34,11 @@
 
 		if("Armorsmith")
 			H.set_blindness(0)
-			ADD_TRAIT(H, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_ARMORMITH, TRAIT_GENERIC)
 
 		if("Metalsmith")
 			H.set_blindness(0)
-			ADD_TRAIT(H, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_METALSMITH, TRAIT_GENERIC)
 
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
