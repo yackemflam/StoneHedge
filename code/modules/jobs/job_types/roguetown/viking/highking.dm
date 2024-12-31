@@ -40,7 +40,7 @@
 
 		if("Armorsmith")
 			H.set_blindness(0)
-			ADD_TRAIT(H, TRAIT_ARMORMITH, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_ARMORSMITH, TRAIT_GENERIC)
 
 		if("Metalsmith")
 			H.set_blindness(0)
