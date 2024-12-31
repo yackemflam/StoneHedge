@@ -49,7 +49,3 @@
 	cost = 24
 	contains = list(/obj/item/natural/antler)
 
-/datum/supply_pack/rogue/Sawbones/leather/hide
-	name = "Hide"
-	cost = 24
-	contains = list(/obj/item/natural/hide)
