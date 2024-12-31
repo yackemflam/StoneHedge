@@ -45,6 +45,7 @@
 		backpack_contents = list(/obj/item/natural/cloth = 2, /obj/item/natural/bundle/fibers/full = 1)
 		id = /obj/item/scomstone
 		if(H.pronouns == SHE_HER)
+		ADD_TRAIT(H, TRAIT_TAILOR, TRAIT_GENERIC)
 			armor = /obj/item/clothing/suit/roguetown/armor/armordress
 			shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress
 			pants = /obj/item/clothing/under/roguetown/tights/random
