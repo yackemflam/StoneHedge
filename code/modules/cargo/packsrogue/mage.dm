@@ -14,6 +14,10 @@
 	cost = 400
 	contains = list(/obj/item/clothing/ring/active/nomag)
 
+/datum/supply_pack/rogue/Mage/spellpoint
+	name = "Arcyne Insight"
+	cost = 100
+	contains = list(/obj/item/book/granter/spell_points)
 
 /datum/supply_pack/rogue/Mage/scryorb
 	name = "Scrying Orb"
@@ -30,16 +34,25 @@
 	cost = 40
 	contains = list(/obj/item/clothing/suit/roguetown/armor/leather)
 
-/datum/supply_pack/rogue/Mage/leather/studded
-	name = "Studded Leather Armor"
-	cost = 80
-	contains = list(/obj/item/clothing/suit/roguetown/armor/leather/studded)
+/datum/supply_pack/rogue/Mage/spellslinger/helmet
+	name = "Spellslinger Helmet"
+	cost = 100
+	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm)
 
-/datum/supply_pack/rogue/Mage/leather/Lhelmet
-	name = "Leather Helmet"
-	cost = 20
-	contains = list(/obj/item/clothing/head/roguetown/helmet/leather)
+/datum/supply_pack/rogue/Mage/spellslinger/armor
+	name = "Spellslinger Armor"
+	cost = 200
+	contains = list(/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor)
 
+/datum/supply_pack/rogue/Mage/spellslinger/gauntlet
+	name = "Spellslinger Gauntlets"
+	cost = 100
+	contains = list(/obj/item/clothing/gloves/roguetown/plate/spellslingergauntlets)
+
+/datum/supply_pack/rogue/Mage/spellslinger/boots
+	name = "Spellslinger Bootss"
+	cost = 100
+	contains = list(/obj/item/clothing/shoes/roguetown/boots/spellslingerboots)
 
 /datum/supply_pack/rogue/Mage/leather/Lbracers
 	name = "Leather bracers"
