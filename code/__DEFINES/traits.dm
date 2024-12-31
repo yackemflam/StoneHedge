@@ -132,6 +132,7 @@
 #define TRAIT_WEAPONSMITH "I have mastered smithing weapons."
 #define TRAIT_ARMORSMITH "I have mastered smithing protection."
 #define TRAIT_METALSMITH "I have mastered smithing tools and jewelery."
+#define TRAIT_TAILOR "I weave cloth like a god weaves time."
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEPROSY = span_necrosis("I'm a disgusting leper..."),
