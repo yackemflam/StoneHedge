@@ -599,7 +599,7 @@
 			else
 				new /mob/living/carbon/human/species/goblin/npc/sergeant(get_turf(src))
 		else
-			new	/mob/living/carbon/human/species/halforc/orc_raider(get_turf(src))
+			new	/mob/living/carbon/human/species/halforc/orc_raider/npc(get_turf(src))
 		sergeants++
 		gobs++
 	if(moon_goblins == 0)
