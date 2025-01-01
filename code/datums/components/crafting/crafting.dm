@@ -296,7 +296,6 @@
 									if(3)
 										modifier = 1
 										I.desc = "[I.desc] It is competently made."
-										modifier = 1
 									if(4)
 										I.name = "fine [I.name]"
 										modifier = 1.1
