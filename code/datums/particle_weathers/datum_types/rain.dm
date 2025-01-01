@@ -48,7 +48,7 @@
 	var/area/thearea = get_area(L)
 	if(!thearea.outdoors)
 		return
-	L.adjust_bodytemperature(-rand(3,5))
+	L.adjust_bodytemperature(-rand(1,4))
 
 /datum/particle_weather/rain_storm
 	name = "Rain storm"
@@ -83,4 +83,4 @@
 	var/area/thearea = get_area(L)
 	if(!thearea.outdoors)
 		return
-	L.adjust_bodytemperature(-rand(5,10))
+	L.adjust_bodytemperature(-rand(4,8))

@@ -548,7 +548,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
 	var/list/possible = list()
 	for(var/datum/mind/V in C.vampires)
-		if(V.special_role == "Vampire Spawn")
+		var/datum/antagonist/vampirelord/vampness = V.has_antag_datum(/datum/antagonist/vampirelord)
+		if(V.special_role == "Vampire Spawn" && !vampness?.is_solo) //cant punish people who arent your spawn.
 			possible[V.current.real_name] = V.current
 	for(var/datum/mind/D in C.deathknights)
 		possible[D.current.real_name] = D.current

@@ -46,7 +46,7 @@
 	var/area/thearea = get_area(L)
 	if(!thearea.outdoors)
 		return
-	L.adjust_bodytemperature(-rand(5,10))
+	L.adjust_bodytemperature(-rand(1,4))
 
 /obj/emitters/weather/snow
 	particles 	= new/particles/weather/snow
@@ -83,4 +83,4 @@
 	var/area/thearea = get_area(L)
 	if(!thearea.outdoors)
 		return
-	L.adjust_bodytemperature(-rand(10,20))
+	L.adjust_bodytemperature(-rand(4,8))
