@@ -294,13 +294,10 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	objectives -= O
 
 /datum/antagonist/vampirelord/proc/forge_vampirelord_objectives()
-	var/list/primary = pick(list("1", "2"))
+	var/list/primary = pick(list("1"))
 	var/list/secondary = pick(list("1", "2", "3"))
 	switch(primary)
 		if("1")
-			var/datum/objective/vampirelord/conquer/T = new
-			objectives += T
-		if("2")
 			var/datum/objective/vampirelord/ascend/T = new
 			objectives += T
 	switch(secondary)
