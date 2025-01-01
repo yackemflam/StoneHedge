@@ -49,7 +49,7 @@
 		)
 
 	var/armor_infusions = list(
-		"propulsion" = 5, //increase walking speed
+		"propulsion" = 3, //+2 speed
 		"magical strength" = 3, //cant be pushed +1 strength?
 		//"tools", //activate to get a hammer, pickaxe, axe, lockpick REMEMBER ME!!!!
 		"fire resistance" = 4, //no fire trait
