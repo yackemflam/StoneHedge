@@ -61,7 +61,7 @@
 			ADD_TRAIT(src, TRAIT_STRONG_GRABBER, TRAIT_GENERIC)
 			src.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 
-/mob/living/carbon/human/proc/give_smithingstyle
+/mob/living/carbon/human/proc/give_smithingstyle(two = FALSE)
 	var/list/smithingstyles = list(
 		"Weaponsmith",
 		"Armorsmith",
