@@ -97,6 +97,24 @@
 	verbage_simple = "carve"
 	verbage = "carves"
 
+/datum/crafting_recipe/roguetown/recurvebowpartial
+	name = "unstrung recurve bow"
+	result = /obj/item/grown/log/tree/recurvebowpartial
+	reqs = list(/obj/item/grown/log/tree/small = 1,/obj/item/natural/hide/cured = 1)
+	tools = /obj/item/rogueweapon/huntingknife
+	verbage_simple = "carve"
+	verbage = "carves"
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/longbowpartial
+	name = "unstrung longbow"
+	result = /obj/item/grown/log/tree/longbowpartial
+	reqs = list(/obj/item/grown/log/tree/large = 1)
+	tools = /obj/item/rogueweapon/huntingknife
+	verbage_simple = "carve"
+	verbage = "carves"
+	craftdiff = 3
+
 /datum/crafting_recipe/roguetown/bow
 	name = "wooden bow"
 	result = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
@@ -104,6 +122,22 @@
 	verbage_simple = "string together"
 	verbage = "strings together"
 	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/recurvebow
+	name = "wooden recurve bow"
+	result = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+	reqs = list(/obj/item/natural/bowstring = 1, /obj/item/grown/log/tree/recurvebowpartial = 1)
+	verbage_simple = "string together"
+	verbage = "strings together"
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/longbow
+	name = "wooden long bow"
+	result = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
+	reqs = list(/obj/item/natural/bowstring = 1, /obj/item/grown/log/tree/longbowpartial = 1)
+	verbage_simple = "string together"
+	verbage = "strings together"
+	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/torch
 	name = "torch"
@@ -738,6 +772,16 @@
 	name = "leather pants to skirt"
 	result = list(/obj/item/clothing/under/roguetown/trou/skirt)
 	reqs = list(/obj/item/clothing/under/roguetown/trou/leather = 1)
+
+/datum/crafting_recipe/roguetown/leatherskirtconvtwo
+	name = "hardened leather pants to skirt"
+	result = list(/obj/item/clothing/under/roguetown/trou/leather/advanced/skirt)
+	reqs = list(/obj/item/clothing/under/roguetown/trou/leather/advanced = 1)
+
+/datum/crafting_recipe/roguetown/leatherskirtconvthree
+	name = "enhanced leather pants to skirt"
+	result = list(/obj/item/clothing/under/roguetown/trou/leather/masterwork/skirt)
+	reqs = list(/obj/item/clothing/under/roguetown/trou/leather/masterwork = 1)
 
 /datum/crafting_recipe/roguetown/larmorconvone
 	name = "leather armor to bikini"

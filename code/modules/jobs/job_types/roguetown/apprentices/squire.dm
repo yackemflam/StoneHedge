@@ -24,9 +24,10 @@
 /datum/outfit/job/roguetown/squire
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	pants = /obj/item/clothing/under/roguetown/chainlegs/iron
+	neck = /obj/item/clothing/neck/roguetown/psicross/dendor/grove
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/storage/keyring/servant
+	beltl = /obj/item/roguekey/grove
 
 /datum/job/roguetown/squire/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	. = ..()

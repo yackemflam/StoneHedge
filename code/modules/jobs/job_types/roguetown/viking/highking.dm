@@ -22,6 +22,25 @@
 
 /datum/outfit/job/roguetown/highking/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.adjust_blindness(-3)
+	var/classes = list(
+		"Weaponsmith", //Weapons
+		"Armorsmith", //Armor
+		)
+
+	var/classchoice = input("Choose your specialization", "Available styles") as anything in classes
+
+
+	switch(classchoice)
+
+		if("Weaponsmith")
+			H.set_blindness(0)
+			ADD_TRAIT(H, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
+
+		if("Armorsmith")
+			H.set_blindness(0)
+			ADD_TRAIT(H, TRAIT_ARMORSMITH, TRAIT_GENERIC)
+
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/dwarfhelm
 	backr = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/stoneaxe/battle
@@ -57,11 +76,11 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/firearms, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/labor/mining, 4, TRUE)
-		H.change_stat("strength", 2)
-		H.change_stat("intelligence", 3)
-		H.change_stat("constitution", 2)
+		H.change_stat("strength", 1)
+		H.change_stat("intelligence", 2)
 		H.change_stat("speed", -1)
-		H.change_stat("endurance", -1)
+		H.change_stat("endurance", 1)
+		H.change_stat("fortune", 2)
 
 /obj/effect/proc_holder/spell/self/convertrole/viking
 	name = "Recruit Clanshield"
