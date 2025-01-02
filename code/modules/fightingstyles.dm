@@ -70,7 +70,7 @@
 	var/smithingstylechoice = input("Choose your smithing specialization", "Available smithing specialization") as anything in smithingstyles
 	trygivesmithinggstyle(stylechoice)
 
-/mob/living/carbon/human/proc/trygivefightingstyle(T)
+/mob/living/carbon/human/proc/trygivesmithingstyle(T)
 	switch(T)
 		if("Weaponsmith")
 			ADD_TRAIT(src, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
