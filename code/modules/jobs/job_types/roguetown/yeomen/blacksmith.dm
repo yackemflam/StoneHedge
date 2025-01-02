@@ -45,7 +45,7 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
 		if(H.age == AGE_OLD)
