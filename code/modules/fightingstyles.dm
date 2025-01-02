@@ -68,7 +68,7 @@
 		)
 
 	var/smithingstylechoice = input("Choose your smithing specialization", "Available smithing specialization") as anything in smithingstyles
-	trygivesmithinggstyle(stylechoice)
+	trygivesmithinggstyle(smithingstylechoice)
 
 /mob/living/carbon/human/proc/trygivesmithingstyle(T)
 	switch(T)
