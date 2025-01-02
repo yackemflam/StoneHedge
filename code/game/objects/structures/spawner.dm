@@ -379,7 +379,7 @@
 /obj/effect/mob_spawner/goblin
 	max_spawned_mobs = 14
 	mobs_to_spawn = 7
-	spawn_interval = 3000 //5 minutes
+	spawn_interval = 4500 //7.5 minutes
 	spawn_range = 9
 	player_range = 13
 	ambush_mobs = list(

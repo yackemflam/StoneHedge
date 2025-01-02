@@ -99,6 +99,7 @@
 			H.change_stat("endurance", 2) // 8 stat points total as a low-skill martial role without magic. Compared to Pally with 7 points.
 			H.change_stat("constitution", 2)
 			H.change_stat("speed", 1)
+			pants = /obj/item/clothing/under/roguetown/trou/leather
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			gloves = /obj/item/clothing/gloves/roguetown/leather
 			belt = /obj/item/storage/belt/rogue/leather
@@ -145,6 +146,7 @@
 			H.change_stat("constitution", 2)
 			H.change_stat("intelligence", 1)
 			H.change_stat("perception", 1)
+			pants = /obj/item/clothing/under/roguetown/trou/leather
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			gloves = /obj/item/clothing/gloves/roguetown/leather
 			belt = /obj/item/storage/belt/rogue/leather
@@ -296,6 +298,9 @@
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_BREADY, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
+			H.cmode_music = 'sound/music/combat_combattante.ogg'
+			H.verbs -= list(/mob/living/carbon/human/proc/mark_target)
+			H.verbs += list(/mob/living/carbon/human/proc/declare_duel)
 
 
 	H.give_fightingstyle(TRUE)
