@@ -5,15 +5,13 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-
 	allowed_races = RACES_ALL_KINDSPLUS
-
-	tutorial = "You've studied for many decades under a master smith. This placed you ahead of your peers by becoming the best in a specialization."
-	outfit = /datum/outfit/job/roguetown/blacksmith
+	tutorial = "You've studied for many decades under a master smith."
 	display_order = JDO_BLACKSMITH
 	give_bank_account = 400
 	min_pq = 0
 	max_pq = null
+	outfit = /datum/outfit/job/roguetown/blacksmith/
 
 /datum/outfit/job/roguetown/blacksmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -26,7 +24,7 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
 		if(H.age == AGE_OLD)
@@ -56,4 +54,5 @@
 	H.change_stat("intelligence", 1)
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
-	H.give_smithingstyle()
+	ADD_TRAIT(src, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_ARMORSMITH, TRAIT_GENERIC)

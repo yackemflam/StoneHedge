@@ -59,4 +59,5 @@
 	H.change_stat("constitution", 2)
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 2)
-	H.give_smithingstyle()
+	ADD_TRAIT(src, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_ARMORSMITH, TRAIT_GENERIC)

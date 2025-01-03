@@ -13,7 +13,6 @@
 	var/quality_mod = 0
 	var/progress
 	var/i_type
-	i_type = "General"
 
 	var/datum/parent
 

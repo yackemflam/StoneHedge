@@ -69,9 +69,13 @@
 
 	var/smithingstylechoice = input("Choose your smithing specialization", "Available smithing specialization") as anything in smithingstyles
 	trygivesmithingstyle(smithingstylechoice)
+	if(two)
+		smithingstyles.Remove(smithingstylechoice)
+		var/smithingstylechoice_two = input("Choose your second specialization", "Available smithing styles") as anything in smithingstyles
+		trygivesmithingstyle(smithingstylechoice_two)
 
-/mob/living/carbon/human/proc/trygivesmithingstyle(T)
-	switch(T)
+/mob/living/carbon/human/proc/trygivesmithingstyle(SS)
+	switch(SS)
 		if("Weaponsmith")
 			ADD_TRAIT(src, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
 

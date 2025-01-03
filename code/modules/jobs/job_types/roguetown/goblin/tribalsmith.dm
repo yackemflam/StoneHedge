@@ -43,4 +43,5 @@
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -2)
-		H.give_smithingstyle()
+		ADD_TRAIT(src, TRAIT_WEAPONSMITH, TRAIT_GENERIC)
+		ADD_TRAIT(src, TRAIT_ARMORSMITH, TRAIT_GENERIC)
