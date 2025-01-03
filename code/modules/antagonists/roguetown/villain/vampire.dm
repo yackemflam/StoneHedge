@@ -347,6 +347,9 @@
 	set name = "Regenerate"
 	set category = "VAMPIRE"
 	var/silver_curse_status = FALSE
+	if(stat == DEAD)
+		to_chat(src, span_warning("I am DEAD.")) //prevents bugging out surgeries hopefully.
+		return
 	for(var/datum/status_effect/debuff/silver_curse/silver_curse in status_effects)
 		silver_curse_status = TRUE
 		break
