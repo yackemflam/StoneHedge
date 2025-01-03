@@ -225,7 +225,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEAPONSMITH = span_info("I have mastered smithing weapons.")
 	TRAIT_ARMORSMITH = span_info("I have mastered smithing protection.")
 	TRAIT_TAILOR = span_info("I weave cloth like a god weaves time.")
-))
+)
 
 // trait accessor defines
 #define ADD_TRAIT(target, trait, source) \
