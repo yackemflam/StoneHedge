@@ -58,6 +58,11 @@
 	desc = "I am feeling sick due to powerful item enchantments."
 	icon_state = "debuff"
 
+/datum/status_effect/buff/magic_sickness/tick()
+	var/mob/living/target = owner
+	var/mob/living/carbon/M = target
+	M.add_nausea(5) //it's a lot, but get the fucking items off. That's the point.
+
 /mob/living/proc/init_faith()
 	set_patron(/datum/patron/godless)
 
@@ -320,9 +325,10 @@
 	if(STALUC > 10)
 		return prob((STALUC - 10) * multi)
 
-/mob/living/proc/calculate_spell_slots()
+/mob/living/proc/calculate_spell_slots(report_slots = FALSE)
 	if(!mind)
 		return
 	//the amount of spells you can memorize out of scrolls, seperate from spellpoints learnt ones.
-	spell_slots = round(max(((STAINT/4) + mind.get_skill_level(/datum/skill/magic/arcane) + spell_slots_bonus) - spell_slots_used, 0))
-	to_chat(src, "I think i can learn [spell_slots - spell_slots_used] more spells.")
+	spell_slots = max(round(((STAINT/4) + mind.get_skill_level(/datum/skill/magic/arcane) + spell_slots_bonus) - spell_slots_used), 0)
+	if(report_slots)
+		to_chat(src, "I think i can learn [spell_slots] more spells.")

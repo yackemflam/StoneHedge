@@ -294,13 +294,10 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	objectives -= O
 
 /datum/antagonist/vampirelord/proc/forge_vampirelord_objectives()
-	var/list/primary = pick(list("1", "2"))
+	var/list/primary = pick(list("1"))
 	var/list/secondary = pick(list("1", "2", "3"))
 	switch(primary)
 		if("1")
-			var/datum/objective/vampirelord/conquer/T = new
-			objectives += T
-		if("2")
 			var/datum/objective/vampirelord/ascend/T = new
 			objectives += T
 	switch(secondary)
@@ -548,7 +545,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
 	var/list/possible = list()
 	for(var/datum/mind/V in C.vampires)
-		if(V.special_role == "Vampire Spawn")
+		var/datum/antagonist/vampirelord/vampness = V.has_antag_datum(/datum/antagonist/vampirelord)
+		if(V.special_role == "Vampire Spawn" && !vampness?.is_solo) //cant punish people who arent your spawn.
 			possible[V.current.real_name] = V.current
 	for(var/datum/mind/D in C.deathknights)
 		possible[D.current.real_name] = D.current
@@ -943,24 +941,24 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/two
 	name = "infiltrate2"
-	explanation_text = "Make a member of the Nobility my spawn."
+	explanation_text = "Make one of the leaders of the town my spawn."
 	triumph_count = 5
 
 /datum/objective/vampirelord/infiltrate/two/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/noblejobs = list("Monarch", "Consort", "Royal Heir", "Hand", "Steward")
+	var/list/noblejobs = list("Monarch", "Consort", "Royal Heir", "Hand", "Steward", "Guildmaster", "Guild Appraiser", "Academy Archmage")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in noblejobs)
 			return TRUE
 
 /datum/objective/vampirelord/spread
 	name = "spread"
-	explanation_text = "Have 10 vampire spawn."
+	explanation_text = "Have 6 vampire spawn."
 	triumph_count = 5
 
 /datum/objective/vampirelord/spread/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	if(C.vampires.len >= 10)
+	if(C.vampires.len >= 6)
 		return TRUE
 
 /datum/objective/vampirelord/stock
@@ -1112,6 +1110,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /obj/effect/landmark/start/vampirespawn
 	name = "Vampire Spawn"
 	icon_state = "arrow"
+	jobspawn_override = list("Vampire Spawn")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampireknight
@@ -1243,7 +1242,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	if(!msg)
 		return
 	for(var/datum/mind/V in C.vampires)
-		to_chat(V, span_boldnotice("A message from [src.real_name]:[msg]"))
+		var/datum/antagonist/vampirelord/vampness = V.has_antag_datum(/datum/antagonist/vampirelord)
+		if(!vampness.is_solo) //no solo vamp peeping telepathy
+			to_chat(V, span_boldnotice("A message from [src.real_name]:[msg]"))
 	for(var/datum/mind/D in C.deathknights)
 		to_chat(D, span_boldnotice("A message from [src.real_name]:[msg]"))
 	for(var/mob/dead/observer/rogue/arcaneeye/A in GLOB.mob_list)

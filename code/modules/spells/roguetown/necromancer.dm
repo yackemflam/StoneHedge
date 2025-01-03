@@ -8,22 +8,26 @@
 	movement_interrupt = FALSE
 	chargedloop = null
 	sound = 'sound/magic/whiteflame.ogg'
-	associated_skill = /datum/skill/magic/arcane
+	associated_skill = /datum/skill/magic/blood
 	antimagic_allowed = TRUE
 	charge_max = 15 SECONDS
 	miracle = FALSE
+	invocation = "Infuse unlife!"
+	invocation_type = "shout"
+	xp_gain = TRUE
 
 /obj/effect/proc_holder/spell/invoked/strengthen_undead/cast(list/targets, mob/living/user)
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
+		if(target.mob_biotypes & MOB_UNDEAD) //negative energy heals the undead
 			var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(user.zone_selected))
 			if(affecting)
 				if(affecting.heal_damage(50, 50))
 					target.update_damage_overlays()
 				if(affecting.heal_wounds(50))
 					target.update_damage_overlays()
+			target.heal_overall_damage(50, 50, updating_health = TRUE)
 			target.visible_message(span_danger("[target] reforms under the vile energy!"), span_notice("I'm remade by dark magic!"))
 			return TRUE
 		target.visible_message(span_info("Necrotic energy floods over [target]!"), span_userdanger("I feel colder as the dark energy floods into me!"))
@@ -49,6 +53,9 @@
 	antimagic_allowed = TRUE
 	charge_max = 15 SECONDS
 	miracle = FALSE
+	invocation = "Eyebite!"
+	invocation_type = "shout"
+	xp_gain = TRUE
 
 /obj/effect/proc_holder/spell/invoked/eyebite/cast(list/targets, mob/living/user)
 	. = ..()
@@ -74,8 +81,9 @@
 	no_early_release = TRUE
 	charging_slowdown = 1
 	chargedloop = /datum/looping_sound/invokegen
-	associated_skill = /datum/skill/magic/arcane
+	associated_skill = /datum/skill/magic/blood
 	charge_max = 30 SECONDS
+	xp_gain = TRUE
 
 
 /**
@@ -113,7 +121,7 @@
 
 	if(target.ckey) //player still inside body
 
-		var/offer = alert(target, "Do you wish to be reanimated as a minion?", "RAISED BY NECROMANCER", "Yes", "No")
+		var/offer = alert(target, "Do you wish to be reanimated as a minion? If you refuse someone else will take over your body.", "RAISED BY NECROMANCER", "Yes", "No")
 		var/offer_time = world.time
 
 		if(offer == "No" || world.time > offer_time + 5 SECONDS)
@@ -241,6 +249,9 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	charge_max = 15 SECONDS
+	invocation = "Ray of Sickness!"
+	invocation_type = "shout"
+	xp_gain = TRUE
 
 /obj/effect/proc_holder/spell/self/command_undead
 	name = "Command Undead"
@@ -287,6 +298,9 @@
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/blood
+	invocation = "Life Steal!"
+	invocation_type = "shout"
+	xp_gain = TRUE
 
 /obj/projectile/magic/lifesteal
 	name = "life steal"
@@ -320,12 +334,12 @@
 		living.visible_message(span_danger("[target] has their life force ripped from their body!!"), \
 				span_userdanger("I feel like i lost a part of me within!"), \
 				span_hear("..."), COMBAT_MESSAGE_RANGE, target)
-		sender.heal_overall_damage(50, 50, updating_health = TRUE)
+		sender.heal_overall_damage(100, 100, updating_health = TRUE)
 		if(sender.blood_volume < BLOOD_VOLUME_NORMAL) //can not overfill
 			sender.blood_volume = min(sender.blood_volume+150, BLOOD_VOLUME_MAXIMUM)
 		var/list/wCount = sender.get_wounds()
 		if(wCount.len > 0)
-			sender.heal_wounds(150) //the fucking wound hps are crazy, this barely heals three normal wounds or something.
+			sender.heal_wounds(150) //the fucking wound hps are crazy.
 			sender.update_damage_overlays()
 			to_chat(sender, span_blue("I feel some of my wounds mend."))
 		sender.update_damage_overlays()
